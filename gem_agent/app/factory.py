@@ -11,6 +11,7 @@ from gem_agent.agents.collector import Collector
 from gem_agent.agents.judge import Judge
 from gem_agent.agents.models import chat_model
 from gem_agent.agents.planner import Planner
+from gem_agent.agents.rulings import RulingsAgent
 from gem_agent.agents.searcher import Searcher
 from gem_agent.cache.docs import DocCache
 from gem_agent.cache.lookups import LookupCatalog
@@ -50,7 +51,7 @@ def build_services(settings: Settings) -> tuple[Services, DocCache, list[Callabl
         # pages sharing the topic's words reached the judge.
         judge=Judge(model, cache, VerdictCache(settings.cache_dir),
                     embedder=embedder if device == "cuda" else SmallEmbedder(settings.judge_cpu_embed_model)),
-        store=RunStore(settings.runs_dir), bus=EventBus(), memory=memory, now=site_now,
+        store=RunStore(settings.runs_dir), bus=EventBus(), memory=memory, now=site_now, rulings=RulingsAgent(model),
         checkpoint_path=settings.runs_dir / "checkpoints.sqlite",
     )
     settings.runs_dir.mkdir(parents=True, exist_ok=True)

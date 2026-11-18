@@ -14,8 +14,8 @@ from typing import Any
 
 from langgraph.graph import END, START, StateGraph
 
-from gem_agent.agents.chat import short_name
 from gem_agent.agents.searcher import Candidate
+from gem_agent.graph.rulings import settle, topic_for
 from gem_agent.graph.services import Services
 from gem_agent.graph.state import RunState
 from gem_agent.graph.store import Outcome
@@ -102,14 +102,13 @@ def build_graph(s: Services) -> StateGraph:
         return {"adjust": adjust, "retries": state.retries + 1}
 
     async def process(state: RunState) -> dict[str, Any]:
-        topics = {short_name(t): t for t in state.request.topics}
         slots = asyncio.Semaphore(s.workers)
         done = list(state.done_ids)
         total = len(state.candidates)
 
         async def one(c: Candidate) -> None:
             async with slots:
-                topic = topics.get(c.group) or state.request.topics[0]
+                topic = topic_for(state.request, c.group)
                 outcome = Outcome(b_id=c.bid.b_id, group=c.group, bid=c.bid)
                 try:
                     files = await s.collector.collect(c.bid, attachments=False)
@@ -118,6 +117,7 @@ def build_graph(s: Services) -> StateGraph:
                         files = await s.collector.collect(c.bid)
                         verdict = await s.judge.judge(topic, c.bid, files, triage=triage)
                     outcome.files, outcome.verdict, outcome.buyer_org = files.files, verdict, files.buyer_org
+                    outcome.ruling = await settle(s, state.user, topic, verdict)
                 except Exception as exc:  # noqa: BLE001 - one bid failing never stops the run (spec 7.1 rung 4)
                     log.warning("bid %s failed: %s", c.bid.bid_number, exc)
                     outcome.error = str(exc)[:300]

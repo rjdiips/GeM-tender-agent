@@ -24,4 +24,5 @@ class Services:
     memory: MemoryStore
     now: Callable[[], datetime]
     checkpoint_path: Path
+    rulings: Any = None  # RulingsAgent; None leaves borderline bids for the user
     workers: int = 4  # bids collected and judged at a time (site traffic is limited per host anyway)

@@ -1,5 +1,8 @@
+import asyncio
+
 import pytest
 
+from gem_agent.agents.rulings import RulingMatch
 from gem_agent.graph.events import EventBus
 from gem_agent.graph.manager import RunManager
 from gem_agent.graph.services import Services
@@ -13,6 +16,7 @@ from tests.graph.fakes import (
     FakeCollector,
     FakeJudge,
     FakePlanner,
+    FakeRulings,
     FakeSearcher,
     bid,
 )
@@ -20,12 +24,13 @@ from tests.graph.fakes import (
 SIGHT = LOS.model_copy(update={"meaning": "Line of Sight: radio survey for telecom towers"})
 
 
-def services(tmp_path, *, chat=None, searcher=None, collector=None, judge=None, planner=None, checkpoint=":memory:"):
+def services(tmp_path, *, chat=None, searcher=None, collector=None, judge=None, planner=None, rulings=None,
+             checkpoint=":memory:"):
     return Services(chat=chat or FakeChat(), planner=planner or FakePlanner(),
                     searcher=searcher or FakeSearcher([[bid(1), bid(2, "Lockers", 18)]]),
                     collector=collector or FakeCollector(), judge=judge or FakeJudge(),
                     store=RunStore(tmp_path / "runs"), bus=EventBus(), memory=MemoryStore(tmp_path), now=lambda: NOW,
-                    checkpoint_path=checkpoint)
+                    checkpoint_path=checkpoint, rulings=rulings)
 
 
 async def ask(manager, text, run_id=None, user="asha"):
@@ -294,3 +299,60 @@ def test_count_lines_sent_without_a_kind_are_marked_as_counts():
     done = {"at": "2026-11-17T15:24:32", "text": "Done: 9 relevant, 24 quarantined."}
     assert _progress([{"type": "progress", "event": old}, {"type": "progress", "event": done}]) == [
         {**old, "kind": "count"}, done]
+
+
+Q = "Does bid 2 count for you?"
+TWO = lambda: [[bid(1), bid(2, "Lockers", 18)]]  # noqa: E731
+
+
+def rule(s, topic="Loan Origination System"):
+    return s.memory.add_ruling("asha", "Core banking add-ons count.", topic=topic, run_id="r0", today=NOW.date(),
+                               evidence="e")
+
+
+async def result_of(events, b_id):
+    return next(e["bid"] for e in events if e["type"] == "result" and e["bid"]["b_id"] == b_id)
+
+
+async def test_a_borderline_bid_waits_for_the_user(tmp_path):
+    s = services(tmp_path, judge=FakeJudge(borderline={2}))
+    b2 = await result_of(await ask(RunManager(s), "LOS tenders"), 2)
+    assert b2["state"] == "borderline" and b2["question"]
+
+
+async def test_an_earlier_ruling_on_the_same_topic_decides_it(tmp_path):
+    s = services(tmp_path, judge=FakeJudge(borderline={2}), rulings=FakeRulings())
+    fact = rule(s)
+    s.rulings.answers[Q] = RulingMatch(fact_id=fact.id, decision="counts")
+    b2 = await result_of(await ask(RunManager(s), "LOS tenders"), 2)
+    assert b2["state"] == "relevant" and b2["ruling"]["by"] == "earlier"
+    assert b2["ruling"]["fact"] == "Core banking add-ons count."
+
+
+async def test_a_ruling_on_another_topic_is_not_used(tmp_path):
+    s = services(tmp_path, judge=FakeJudge(borderline={2}), rulings=FakeRulings())
+    fact = rule(s, topic="AI platform")
+    s.rulings.answers[Q] = RulingMatch(fact_id=fact.id, decision="counts")
+    b2 = await result_of(await ask(RunManager(s), "LOS tenders"), 2)
+    assert s.rulings.resolved == [] and b2["state"] == "borderline"
+
+
+async def test_a_failing_match_leaves_the_bid_borderline(tmp_path):
+    s = services(tmp_path, judge=FakeJudge(borderline={2}), rulings=FakeRulings(fail=True))
+    rule(s)
+    b2 = await result_of(await ask(RunManager(s), "LOS tenders"), 2)
+    assert b2["state"] == "borderline" and not b2.get("error")
+
+
+async def test_a_ruling_made_mid_run_reaches_bids_judged_after_it(tmp_path):
+    collector = BlockingCollector()
+    s = services(tmp_path, collector=collector, judge=FakeJudge(borderline={2}), rulings=FakeRulings())
+    s.workers = 1
+    manager = RunManager(s)
+    task = asyncio.create_task(ask(manager, "LOS tenders"))
+    await asyncio.sleep(0.2)
+    fact = rule(s)  # made while bid 2 (first to close) is still blocked
+    s.rulings.answers[Q] = RulingMatch(fact_id=fact.id, decision="counts")
+    collector.release.set()
+    b2 = await result_of(await task, 2)
+    assert b2["state"] == "relevant" and b2["ruling"]["by"] == "earlier"

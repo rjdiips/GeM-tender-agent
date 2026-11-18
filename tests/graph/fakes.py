@@ -121,3 +121,22 @@ class BlockingCollector(FakeCollector):
     async def collect(self, bid, *, force=False, attachments=True):
         await self.release.wait()
         return await super().collect(bid, force=force, attachments=attachments)
+
+
+class FakeRulings:
+    """`answers` maps a borderline question to the match to return; other questions match nothing."""
+
+    def __init__(self, answers=None, fail=False):
+        self.answers, self.fail, self.resolved, self.written = dict(answers or {}), fail, [], []
+
+    async def resolve(self, topic, question, reason, facts):
+        self.resolved.append(question)
+        if self.fail:
+            raise RuntimeError("model down")
+        return self.answers.get(question)
+
+    async def write_fact(self, topic, question, decision):
+        self.written.append((question, decision))
+        if self.fail:
+            raise RuntimeError("model down")
+        return f"fact for {question} ({decision})"
