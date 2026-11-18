@@ -1,0 +1,486 @@
+# GEM/2026/B/8276263 — Hiring of Consultants - Milestone/Deliverable Based - Management Consultants; Capacity Building, Su
+Buyer department: Department of Financial Services
+Card: None
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+07-12-2026 17:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+08-12-2026 17:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Department Of Financial Services
+संगठन का नाम/Organisation Name
+National Housing Bank (nhb)
+काया%लय का नाम/Office Name
+Ihc Lodhi Road New Delhi
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :mahesh.singh@nhb.org.in 
+Buyer Email id: buycon38.nhbn.dl@gembuyer.in
+व'तु (ेणी /Item Category
+Hiring of Consultants - Milestone/Deliverable Based -
+Management Consultants; Capacity Building, Subject Matter
+Expert; Yes; Hybrid(As specified in scope of work)
+अनुबंध अविध /Contract Period
+ 1 Year(s)
+उ,हं/समान सेवा के िलए अपे./त वगत अनुभव के
+वष%/Years of Past Experience Required for
+same/similar service
+7 Year (s)
+वष1 के अनुभव के िलए एमएसई को छूट 6ा7 है / MSE
+Relaxation for Years Of Experience
+Yes | Partial | Experience - 7 year (s)
+वष1 के अनुभव के िलए 'टाट%अप को छूट 6ा7 है / Startup
+Relaxation for Years Of Experience
+Yes | Partial | Experience - 7 year (s)
+व8ेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Certificate (Requested in
+ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2
+(Requested in ATC),Additional Doc 3 (Requested in
+ATC),Additional Doc 4 (Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+:या आप िनवदाकार< =ारा अपलोड >कए गए द'तावेज़< को
+िनवदा म? भाग लेने वाले सभी िनवदाकार< को >दखाना
+चाहते हA? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+Yes (Documents submitted as part of a clarification or
+representation during the tender/bid process will also be
+displayed to other participated bidders after log in)
+ 
+बड संCया/Bid Number: GEM/2026/B/8276263
+>दनांक /Dated: 14-11-2026
+बड द'तावेज़ / Bid Document
+1 / 6
+
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आवMयक बड क संCया। / Minimum number of
+bids required to disable automatic bid
+extension
+1
+>दन< क संCया, .जनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+3
+ऑटो ए:सट?शन अिधकतम >कतनी बार >कया जाना है। /
+Number of Auto Extension count
+1
+बड से Rरवस% नीलामी स>8य >कया/Bid to RA enabled
+No
+बड का 6कार/Type of Bid
+Two Packet Bid
+तकनीक मूSयांकन के दौरान तकनीक 'पUीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+2 Days
+मूSयांकन पVित/Evaluation Method
+Total value wise evaluation
+मूSय दशा%ने वाला वWीय द'तावेज Xेकअप आवMयक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+आवMयकता/Required
+No
+ईपीबीजी ववरण /ePBG Detail
+एडवाइजर बAक/Advisory Bank
+State Bank of India
+ईपीबीजी 6ितशत (%)/ePBG Percentage(%)
+5.00
+ईपीबीजी क आवMयक अविध (माह) /Duration of ePBG
+required (Months).
+14
+(a).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथ] के प/ म? होनी चा>हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable. 
+लाभाथ] /Beneficiary : 
+Manager
+IHC Lodhi Road New Delhi, Department of Financial Services, National Housing Bank (NHB), Ministry of Finance
+(Prama Basu)
+बोली वभाजन लागू नहं >कया गया/Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+2 / 6
+
+एमआईआई अनुपालन/MII Compliance
+Yes
+1. If the bidder is a Micro or Small Enterprise as per latest orders issued by Ministry of MSME, the bidder shall be
+relaxed from the eligibility criteria of "Experience Criteria" as defined above subject to meeting of quality and
+technical specifications. The bidder seeking Relaxation from Experience Criteria, shall upload the supporting
+documents to prove his eligibility for Relaxation.
+2. If the bidder is a DPIIT registered Startup, the bidder shall be relaxed from the the eligibility criteria of
+"Experience Criteria" as defined above subject to their meeting of quality and technical specifications. The bidder
+seeking Relaxation from Experience Criteria, shall upload the supporting documents to prove his eligibility for
+Relaxation. 
+3. Years of Past Experience required: The bidder must have experience for number of years as indicated above in
+bid document (ending month of March prior to the bid opening) of providing similar type of services to any
+Central / State Govt Organization / PSU. Copies of relevant contracts / orders to be uploaded along with bid in
+support of having provided services during each of the Financial year. 
+4. Estimated Bid Value indicated above is being declared solely for the purpose of guidance on EMD amount and
+for determining the Eligibility Criteria related to Turn Over, Past Performance and Project / Past Experience etc.
+This has no relevance or bearing on the price to be quoted by the bidders and is also not going to have any
+impact on bid participation. Also this is not going to be used as a criteria in determining reasonableness of
+quoted prices which would be determined by the buyer based on its own assessment of reasonableness and
+based on competitive prices received in Bid / RA process. 
+अितRर^ यो_यता /आवMयक डेटा/Additional Qualification/Data Required
+Scope Of work:1794652698.pdf
+Profile of Consultants:1794652712.pdf
+This Bid is based on Quality & Cost Based Selection (QCBS) . The parameter wise qualification
+requirement is as under:-
+Parameter Name
+Max Marks
+Cutoff Marks
+Qualification Methodology
+Document
+As per RFP
+100
+70
+View File
+Buyer Defined Total Qualifying Marks for Technical Qualification: 70
+QCBS Weightage(Technical:Financial):60:40
+Pre Bid Detail(s)
+मूSय िभ,नता खंड द'तावेज़/Pre-Bid
+Date and Time
+6ी-बड 'थान/Pre-Bid Venue
+20-11-2026 16:00:00
+online. Meeting link will be provided in Bank's website
+Hiring Of Consultants - Milestone/Deliverable Based - Manage
+
+## RFP
+=== Attachment 1794652698.pdf (132 pages) (also uploaded as: 1794652712.pdf, 17946530058648.pdf) ===
+Request for Proposal: Selection of Agency for Content Design and Development 
+  
+ 
+ 
+Confidential                                                                                                                              P a g e | - 1 - 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+RFP Reference no:- NHB/L&D/           /2026 
+ 
+ 
+ 
+ 
+ 
+Request for Proposal (RFP)- 
+Selection of Agency for Content Design and Development 
+ 
+ 
+ 
+ 
+ 
+ 
+Learning & Development Department 
+Head Office, National Housing Bank 
+Core 5-A, 4th Floor, India Habitat Centre, Lodhi Road, 
+New Delhi – 110 003 
+Phone: 011-39187503, 011-39187140 
+E-Mail: deepak.nagar@nhb.org.in ; balaji.prabhu@nhb.org.in 
+ 
+
+Request for Proposal: Selection of Agency for Content Design and Development 
+  
+ 
+ 
+Confidential                                                                                                                              P a g e | - 2 - 
+ 
+ 
+ 
+Contents 
+1. 
+IMPORTANT BID DETAILS ..................................................................................................................................... - 6 - 
+2. 
+NATIONAL HOUSING BANK ................................................................................................................................. - 7 - 
+3. 
+PURPOSE: ...................................................................................................................................................................... - 7 - 
+4. 
+OBJECTIVE: ................................................................................................................................................................... - 7 - 
+5. 
+SCOPE OF WORK: ....................................................................................................................................................... - 8 - 
+6. 
+DELIVERABLES: ........................................................................................................................................................ - 11 - 
+7. 
+TIMELINES & MILESTONES: ..
+... scope of work:
+--- (p.8) 5. Scope of Work: 
+ 
+a. The selected vendor shall be responsible for the end-to-end instructional design, 
+content development, and packaging of a comprehensive training curriculum for the 
+course. The content must be tailored for newly joined personnels in the housing finance 
+sector and must integrate adult learning principles to ensure maximum engagement 
+and retention. 
+ 
+b. The vendor must develop structured content that strictly maps to the curriculum 
+provided in the Annexure - XVIII. 
+ 
+c. The selected vendor must possess 
+ 
+1. Domain expertise 
+- 
+Understanding of housing finance concepts: loan products, underwriting, 
+KYC/AML, credit appraisal, operations, collection, sales, recovery, legal, digital 
+transformation, regulatory frameworks (e.g., NHB/RBI guidelines if in India, or 
+equivalent housing finance regulators elsewhere) 
+- 
+Familiarity with affordable housing-specific nuances: subsidy schemes (like 
+PMAY), income documentation challenges for informal-sector borrowers, 
+alternate credit assessment methods 
+- 
+Prior experience creating content for Bank/NBFC/HFC sectors is a strong plus 
+ 
+2. Instructional design capability 
+- 
+Ability to translate technical/compliance-heavy material into structured learning 
+objectives 
+- 
+Skill in applying adult learning principles (chunking, scenario-based learning, 
+spaced repetition) 
+- 
+Experience designing assessments that actually test competency, not just recall 
+ 
+3. Multi-format versatility 
+- 
+Classroom facilitation materials: facilitator guides, participant workbooks, case 
+studies, role-plays 
+- 
+Digital/e-learning formats: SCORM/xAPI-compliant modules, microlearning 
+
+Request for Proposal: Selection of Agency for Content Design and Development 
+ 
+ 
+ 
+Confidential P a g e | - 9 - 
+ 
+ 
+ 
+videos, interactive quizzes, mobile-first content 
+- 
+Ability to repurpose one core content set across both formats without quality loss 
+ 
+4. Technical/tool proficiency 
+- 
+Authoring tools (Articulate Storyline, Adobe Ca
+--- (p.59) scope of work 
+of this RFP 
+(section details) 
+Project 
+Customer 
+Name, 
+Contact Details 
+& Address 
+ 
+10) Languages [For each language indicate proficiency: good, fair, or poor in speaking, 
+reading, and writing]: 
+11) Membership of Professional Associations: 
+ 
+12) Employment Record [Starting with present position and last 2 firms, list in reverse 
+order, giving for each employment (see format here below): dates of employment, 
+
+Request for Proposal: Selection of Agency for Content Design and Development 
+ 
+ 
+ 
+Confidential P a g e | - 60 - 
+ 
+ 
+ 
+name of employing organization, positions held.]: 
+ 
+From (Year): 
+To 
+(Year): 
+Purchaser: 
+13) Positions held: 
+Detailed Tasks 
+Assigned 
+Relevant Work Undertaken that Best Illustrates the 
+experience as required for the Role (provide maximum of 6 
+citations of 10 lines each) 
+(Among the assignments in which the staff has been involved, 
+indicate the following information for those assignments that 
+best illustrate staff capability to handle the tasks listed under 
+point 14 and as required for the role as listed in „List of the 
+key professional positions whose CV and experience 
+would be evaluated‟) 
+Name of assignment or project: 
+Year: 
+Location: 
+Purchaser: 
+Main project features: 
+Positions held: 
+Value of Project (approximate value or range value):
+ 
+14) Certification: 
+I, the undersigned, certify that to the best of my knowledge and belief, this CV correctly 
+describes myself, my qualifications, and my experience. I understand that any wilful 
+misstatement described herein may lead to my disqualification or dismissal, from the 
+assignment if engaged. 
+ 
+Date: 
+ 
+(Signature of staff member or authorized representative of the staff) 
+Full name of Authorized Representative: 
+ 
+ 
+
+Request for Proposal: Selection of Agency for Content Design and Development 
+ 
+ 
+ 
+Confidential P a g e | - 61 - 
+ 
+ 
+ 
+Annexure - XI Resolution Matrix 
+ 
+Resolution Matrix 
+ 
+We declare that we will adhere to following resolution matrix d
+... lines further in:
+(p.4) Request for Proposal: Selection of Agency for Content Design and Development
+(p.5) Request For Proposal
+(p.5) Interpretation: the terms RFP, Tender, Bid have been used interchangeably and it shall be treated as one
+(p.5) and the same for the purpose of this RFP document. All clarifications, amendments, modifications,
+(p.5) supplemental RFP that may be issued in relation to this RFP shall be treated as part and parcel of the RFP
+(p.5) and shall together constitute the RFP document.
+(p.6) Bidding/Tender/RFP Documents
+(p.7) The primary purpose of this Request for Proposal (RFP) is to identify, evaluate, and
+(p.14) This RFP is not exhaustive in describing the functions, activities, responsibilities and
+(p.14) are either not specifically described in this RFP or specifically described but has to undergo
+(p.15) deemed to be implied by and included within the scope of services under this RFP and
+(p.15) in this RFP and Bidder’s response.
+
+=== Attachment 103394121524100 (1 pages) ===
+Login
+Sign Up
+Buyers
+Sellers
+Products
+Services
+Content
+Need Help ?
+FAQs
+Video Guides
+Training Event Calendar
+LMS
+Bid
+Ongoing Bids
+Bid/RA Status
+Login
+Sign Up
+Buyers
+Sellers
+Training
+Forums
+Gallery
+Resources |
+Corporate
+About Us
+MoU's
+Statistics
+Contact Us
+Careers
+Right to Information
+Testimonials
+Web Information Manager
+Help
+Support Desk
+1-800-419-3436 / 1-800-102-3436
+English
+Dark Mode
+Font Size
+A-
+A
+A+
+Skip to Main Content
+Need Help ?
+FAQs
+Feedback
+Raise-a Ticket
+Document Help
+Contact Us
+Products
+Services
+Content
+Forward Auction
+Ongoing Auctions
+FA Buyer Registration
+FA Buyer Log-in
+Bids
+List of Bids
+Railways Bids
+Login
+Sign Up
+Buyers
+Sellers
+categories
+Products
+Computers
+Desktops
+Laptops
+All in One
+Servers
+Office Machines
+Multifunction Machines
+Printers
+Paper Shredding Machines
+Multimedia Projector (MMP)
+Automobiles
+Cars
+Buses
+Utility Vehicles
+Ambulance
+Office Supplies
+Ball Point Pen
+Gel Pen
+Printer or Photo Copier Paper
+Appliances
+Televisions
+Air Conditioner
+Online UPS
+Furniture
+Revolving Chair
+Office Chairs
+Steel Almirah
+Specialized Vehicles
+Hopper Tipper Dumper
+Tractors
+Softwares
+Operating System
+GIS Software
+Two Wheeler
+Motor Cycle
+Bicycle
+Services
+Browse All Categories
+Browse All Products
+GeM Advantages
+GeM Exclusive
+FAQs
+Contact Us
+Rate a Seller
+New on GeM
+This will lead you to GeM website.
+Warning: All unsaved 'data entries' will be lost after language change.
+OK
+Cancel
+Close
+Print
+Special Terms and Conditions
+For
+Hiring of Consultants - Milestone/Deliverable Based
+This Agreement represents Special Terms and Conditions (STC) and Service Level Agreement (SLA) between the Buyer and the Service Provider. The purpose of this Agreement is to facilitate rendering of service for Hiring of Consultants - Milestone/Deliverable Based from the Buyer’s premises, or any other premises as designated by the Buyer. This Agreement outlines the scope of work, obligations of both the Buyer and the Service Provider, special terms and conditions related to the service delivery 

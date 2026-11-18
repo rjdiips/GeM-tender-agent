@@ -1,0 +1,476 @@
+# GEM/2026/B/8244092 — Hiring of Consultants - Milestone/Deliverable Based - Consultancy services for TPAP and BBPS AI Imp
+Buyer department: Bharat Petroleum Corporation Ltd
+Card: None
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+19-11-2026 16:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+20-11-2026 16:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+120 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Petroleum And Natural Gas
+वभाग का नाम/Department Name
+Bharat Petroleum Corporation Ltd
+संगठन का नाम/Organisation Name
+Bharat Petroleum Corporation Ltd
+काया%लय का नाम/Office Name
+North
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :khanabdus@bharatpetroleum.in 
+Buyer Email id: giteshgangadhar@bharatpetroleum.in
+व'तु (ेणी /Item Category
+Hiring of Consultants - Milestone/Deliverable Based -
+Consultancy services for TPAP and BBPS AI Implementation
+and Operationalization; TPAP and BBPS AI; No; Hybrid(As
+specified in scope of work)
+अनुबंध अविध /Contract Period
+ 6 Month(s) 1 Day(s)
+एमएसएमई के िलए अनुभव के वष. और टन%ओवर से छूट 4दान
+क गई है/MSE Relaxation for Years of
+Experience and Turnover
+No
+'टाट%अप के िलए अनुभव के वष. और टन%ओवर से छूट 4दान
+क गई है /Startup Relaxation for Years of
+Experience and Turnover
+No
+व5ेता से मांगे गए द'तावेज़/Document required
+from seller
+Certificate (Requested in ATC),Additional Doc 1 (Requested
+in ATC),Additional Doc 2 (Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+7या आप िनवदाकार9 :ारा अपलोड ;कए गए द'तावेज़9 को
+िनवदा म< भाग लेने वाले सभी िनवदाकार9 को ;दखाना
+चाहते ह>? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+Yes (Documents submitted as part of a clarification or
+representation during the tender/bid process will also be
+displayed to other participated bidders after log in)
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आवBयक बड क संCया। / Minimum number of
+bids required to disable automatic bid
+extension
+3
+ 
+बड संCया/Bid Number: GEM/2026/B/8244092
+;दनांक /Dated: 05-11-2026
+बड द'तावेज़ / Bid Document
+1 / 6
+
+;दन9 क संCया, Mजनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+3
+ऑटो ए7सट<शन अिधकतम ;कतनी बार ;कया जाना है। /
+Number of Auto Extension count
+1
+बड से Pरवस% नीलामी स;5य ;कया/Bid to RA enabled
+No
+बड का 4कार/Type of Bid
+Two Packet Bid
+तकनीक मूQयांकन के दौरान तकनीक 'पSीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+2 Days
+Payment Timelines
+Payments shall be made to the Seller within 30 days of
+issue of service delivery acceptance certificate (SDAC) and
+on-line submission of bills (This is in supersession of 10 days
+time as provided in clause 12 of GeM GTC)
+मूQयांकन पTित/Evaluation Method
+Total value wise evaluation
+मूQय दशा%ने वाला वUीय द'तावेज Vेकअप आवBयक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+मWय'थता खंड/Arbitration Clause
+No
+सुलह खंड/Mediation Clause
+No
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर ब>क/Advisory Bank
+ICICI
+ईएमड रािश/EMD Amount
+100000
+ईपीबीजी ववरण /ePBG Detail
+एडवाइजर ब>क/Advisory Bank
+ICICI
+ईपीबीजी 4ितशत (%)/ePBG Percentage(%)
+5.00
+ईपीबीजी क आवBयक अविध (माह) /Duration of ePBG
+required (Months).
+12
+(a). जेम क शत. के अनुसार ईएमड छूट के इ[छुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ 4'तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा 4दाता ईएमड से छूट के पा  ह>। \यापाPरय9 को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथ] के प^ म< होनी चा;हए। / EMD & Performance security should be
+2 / 6
+
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथ] के प^ म< होनी चा;हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+लाभाथ] /Beneficiary : 
+Bharat Petroleum Corporation Ltd
+As per the tender clause
+(Bharat Petroleum Corporation Ltd)
+UIN Number NCTGC2415P
+बोली वभाजन लागू नहं ;कया गया/ Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+एमएसई खरद वरयता/MSE Purchase Preference
+एमएसई खरद वरयता/MSE Purchase Preference
+Yes
+सू_म और लघु उbम मूल उपकरण िनमा%ताओं/सेवा 4दाता
+को खरद म< 4ाथिमकता, य;द उनका मूQय L1+X% /
+Purchase Preference to MSE OEMs/ Service
+Provider available upto price within L1+X%
+15
+dेeस भुगतान संबंधी ववरण/TReDS Payment Details
+This Bid provides for Trade Receivables Discounting System (TReDS) as Preferred mode of payment.
+For MSME sellers, payments may be processed through a TReDS exchange in which the Buyer is
+registered, subject to applicable policy and regulatory guidelines. Accordingly, sellers intending to
+avail payment through TReDS are required to be registered with at least one TReDS exchange in
+which the buyer is registered.
+Limited Tender
+Limited Tender Applicable
+Yes
+Reason
+The sources of supply are definitely known and possibility of
+fresh source(s) beyond those being tapped is remote.
+List of Seller Organization for participation
+***************, ***************, ***************,
+***************
+1. Purchase preference to Micro and Small Enterprises (MSEs): Purchase preference will be given to MSEs
+having valid Udyam Certificate and whose credentials are validated online through Udyam Registration portal as
+defined in Public Procurement Policy for Micro and Small Enterprises (MSEs) Order, 2012 dated 23.03.2012 issued
+by Ministry of Micro, Small and Medium Enterprises and its subsequent Orders/Notifications issued by concerned
+Ministry. If the bidder wants to avail themselves of the Purchase preference, the bidder must be t
+
+## RFP
+=== Attachment 1793874904.pdf (116 pages) ===
+BHARAT PETROLEUM CORPORATION LIMITED
+RETAIL HQ
+LIMITED TENDER
+CONSULTANCY SERVICES FOR TPAP AND BBPS-AI
+IMPLEMENTATION AND OPERATIONALIZATION.
+CRFQ NO : 1000468478
+GEM ID : GEM/2026/B/8244092
+TENDER DUE DATE AND TIME : 19-11-2026 04:00 PM
+NAME
+DESIGNATION
+MOBILE
+NUMBER
+EMAIL ID
+SANCHALI 
+NAG
+CH. MANAGER-CUSTOMER DIGITAL 
+SOLUTIONS (RETAIL) HQ
+9769534919
+SANCHALINAG@BHARATPETROLEUM.
+IN
+BHARAT PETROLEUM CORPORATION LIMITED, 12TH FLOOR, MAKER TOWER-E, CUFFE PARADE, MUMBAI,
+MAHARASHTRA, INDIA, POSTAL CODE-400005. 
+
+M/s.
+Dear Sir / Madam,
+Subject : INVITATION TO BID
+NAME OF THE JOB : Consultancy services for TPAP and BBPS-AI Implementation and 
+Operationalization.
+1. You are invited to submit your offer as E-bids in Two Part Bid Envelope (Techno-commercial and
+Price Bid) for the above work on the terms and conditions contained in this tender document.
+2. COMPLETION PERIOD :6 Months
+3. This tender document consists of the following Annexures:
+a. Techno-commercial Bid
+I
+Instructions to Bidders
+II
+Checklist
+III
+EMD
+IV
+BOQ
+V
+SCC
+VI
+Scope of Work
+VII
+NDA
+VIII
+General Conditions of Contract
+IX
+Declaration for Holiday Listing and Liquidation
+X
+Declaration for Conﬂict of Interest
+XI
+Declaration for MSE
+XII
+Declaration for Land Border
+XIII
+Declaration for Social Media
+CRFQ NO.: 1000468478 | GEM/2026/B/8244092
+Page No. 2 / 116
+
+4. Tender Details:
+Sr. No.
+Description
+Applicable for this Tender
+4.1
+Type of Job – Service / Works Contract
+Services
+4.2
+Divisibility of Tender
+Non-Divisible
+4.3
+Purchase Preference (MSE)
+Applicable
+4.4
+Preference to Make in India (PPP-MII)
+Applicable
+5. Your online bid should be submitted on or before the due date of this tender. E-tender system
+will automatically close on the due date and time and bidders will not be able to submit their bids
+after the closing time. Bids not in the prescribed format are liable to be rejected. BPCL does not
+take any responsibility for any delay in submission of online bids due to connectivity problem or
+non availability o
+... scope of work:
+--- (p.5) Scope of Work
+44
+NDA
+50
+General Conditions of Contract
+54
+Declaration for Holiday Listing and Liquidation
+100
+Declaration for Conflict of Interest
+102
+Declaration for MSE
+103
+Declaration for Land Border
+104
+Declaration for Social Media
+107
+
+ 
+ 
+ITB 
+ 
+(INSTRUCTIONS TO BIDDER) 
+ 
+1. The terms “BPC”, “BPCL”, The Corporation, the Company and Owner in the 
+appropriate context means Bharat Petroleum Corporation Limited, the Company 
+registered under Companies Act 1956 and includes its successors and assignees. 
+ 
+2. Competitive offers are invited in single or two-part bid ( Bid Qualification Cum 
+Techno Commercial Bid and Price Bid) from eligible bidders (Refer Special 
+Conditions of contract (SCC) of the tender for tender specific details.). Successful 
+bidders will be issued OLA (Outline Agreement) or LOA (Letter of Acceptance. 
+ 
+3. DATES: Bidder shall refer the relevant e-tender portal ( gem.gov.in or 
+bpcltenders.eproc.in ) for the correct Date of Publishing of Tender and Due Date for 
+Submission of Bids, as the tender document is prepared in advance and the publishing 
+of tender on portal may take some time/days, leading to a mismatch with the printed 
+dates. 
+ 
+4. ACCEPTANCE: The ‘submission of bid’ shall be considered as token of having read, 
+understood and acceptance of all the terms and conditions of the tender including all 
+the published corrigenda, without any deviation. 
+ 
+5. CLARIFICATIONS: The bid should strictly be in accordance with the tender terms & 
+conditions and our specifications. Bidders are requested to carefully study all the 
+documents/ annexures and understand the conditions, specifications, drawings, 
+corrigendum etc. before submitting the tender and quoting the rates. In case of doubt, 
+written queries should be raised within 7 days in case of limited tenders and 14 days in 
+case of open tenders from the date of publication of the tender. However this shall not 
+be a justification for request for extension of due date for submission of bid
+--- (p.45) IV. Detailed Scope of Work 
+ 
+a) Agreement finalization with PSP and NPCI/ NBBL Approvals 
+Consultant to provide all the documents required for BPCL to go-live for TPAP & BBPS-AI. 
+Consultant to assist BPCL in meeting all deadlines for acquiring TPAP/BBPS-AI license. 
+ 
+TPAP & BBPS: 
+ 
+i. 
+Assistance in finalizing Terms & Conditions, Roles & Responsibilities, Tri-partite 
+agreement documents shared by NPCI for C-Flow submission. 
+Back to Table of Contents
+CRFQ NO.: 1000468478 | GEM/2026/B/8244092
+Page No. 45 / 116
+
+ii. 
+Support BPCL in resolving queries from external parties like NPCI and Bank and 
+internal leadership related to business case and business plan. Assist in follow-ups & 
+in-person meetings with Bank & NPCI. 
+iii. 
+UAT-CUG Test cases closure, UAT-CUG Testing support, Any document preparation 
+with respect to BRD, FRD, UAT etc. 
+iv. 
+Agreements and contracting – commercial review and support 
+v. 
+Consultant shall review and validate all tripartite/bi-partite agreements, SLAs and 
+annexures. 
+vi. 
+Revenue sharing Agreements review & finalization with PSP /TSP, SLA formulation, 
+Liability fixing, 
+vii. 
+Guidance and providing industry insights in proposing the optimal revenue sharing and 
+commercial model for TPAP and BBPS AI business and framing commercial terms of 
+agreement with optimal in-house estimates. 
+viii. 
+Review and support for all responses required for NPCI & BPCL internal approvals 
+including but not limited to: 
+a) Any operationalization related processes, policies or frameworks required for 
+submission to NPCI and BPCL internal management including but not limited to: 
+b) Roles and Responsibilities 
+c) Onboarding, Risk, KYC / AML policies and procedures and frameworks 
+d) Reviewing existing policies (Cyber-security, Risk), procedures and frameworks of 
+BPCL that may be relevant for the TPAP and BBPS AI set up and submissions 
+e) Support on queries and drafting of responses to NPCI 
+f) Project Management Office (PMO) support for coordinatin
+... lines further in:
+(p.6) Conditions of contract (SCC) of the tender for tender specific details.). Successful
+(p.6) Submission of Bids, as the tender document is prepared in advance and the publishing
+(p.7) tender documents. Bidder shall be required to download and print it such that it is
+(p.7) and shall be specific to the tender for which bid is being submitted.
+(p.9) tender formats provided.
+(p.10) norm as indicated in the tender document, i.e., in this case the Bid Qualification
+(p.10) exemption/ relaxation (as the case may be) for the next tender for such item till
+(p.10) approvals and implementation of various urban housing, buildings and
+(p.12) 7. By making a bid pursuant to the Tender Documents, the bidder / tenderer shall
+(p.34) EMD: NEFT UTR no./e-BG no./CA Certificate in the tender format along with Udyam Certificate freshly downloaded from
+(p.34) 2. We have read and understood all the tender documents as well as corrigenda and agree to all the tender terms and scope of work and have quoted the price accordingly.
+(p.35) 1) Insurance Surety Bond in the tender format
+
+=== Attachment 102642469712644 (1 pages) ===
+Login
+Sign Up
+Buyers
+Sellers
+Products
+Services
+Content
+Need Help ?
+FAQs
+Video Guides
+Training Event Calendar
+LMS
+Bid
+Ongoing Bids
+Bid/RA Status
+Login
+Sign Up
+Buyers
+Sellers
+Training
+Forums
+Gallery
+Resources |
+Corporate
+About Us
+MoU's
+Statistics
+Contact Us
+Careers
+Right to Information
+Testimonials
+Web Information Manager
+Help
+Support Desk
+1-800-419-3436 / 1-800-102-3436
+English
+Dark Mode
+Font Size
+A-
+A
+A+
+Skip to Main Content
+Need Help ?
+FAQs
+Feedback
+Raise-a Ticket
+Document Help
+Contact Us
+Products
+Services
+Content
+Forward Auction
+Ongoing Auctions
+FA Buyer Registration
+FA Buyer Log-in
+Bids
+List of Bids
+Railways Bids
+Login
+Sign Up
+Buyers
+Sellers
+categories
+Products
+Computers
+Desktops
+Laptops
+All in One
+Servers
+Office Machines
+Multifunction Machines
+Printers
+Paper Shredding Machines
+Multimedia Projector (MMP)
+Automobiles
+Cars
+Buses
+Utility Vehicles
+Ambulance
+Office Supplies
+Ball Point Pen
+Gel Pen
+Printer or Photo Copier Paper
+Appliances
+Televisions
+Air Conditioner
+Online UPS
+Furniture
+Revolving Chair
+Office Chairs
+Steel Almirah
+Specialized Vehicles
+Hopper Tipper Dumper
+Tractors
+Softwares
+Operating System
+GIS Software
+Two Wheeler
+Motor Cycle
+Bicycle
+Services
+Browse All Categories
+Browse All Products
+GeM Advantages
+GeM Exclusive
+FAQs
+Contact Us
+Rate a Seller
+New on GeM
+This will lead you to GeM website.
+Warning: All unsaved 'data entries' will be lost after language change.
+OK
+Cancel
+Close
+Print
+Special Terms and Conditions
+For
+Hiring of Consultants - Milestone/Deliverable Based
+This Agreement represents Special Terms and Conditions (STC) and Service Level Agreement (SLA) between the Buyer and the Service Provider. The purpose of this Agreement is to facilitate rendering of service for Hiring of Consultants - Milestone/Deliverable Based from the Buyer’s premises, or any other premises as designated by the Buyer. This Agreement outlines the scope of work, obligations of both the Buyer and the Service Provider, special terms and conditions related to the service delivery 

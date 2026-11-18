@@ -1,0 +1,269 @@
+# GEM/2026/B/8274990 — Custom Bid for Services - ----
+Buyer department: COAL INDIA LIMITED
+Card: Day to day work of shifting/removal of coal face sump pump; coal face sump pump; pump shifting; pump removal; Junad Opencast Mine; Western Coalfields Limited; E&M services; site maintenance; mining equipment handling
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+24-11-2026 12:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+25-11-2026 12:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Coal
+वभाग का नाम/Department Name
+Coal India Limited
+संगठन का नाम/Organisation Name
+Western Coalfields Limited
+काया%लय का नाम/Office Name
+Wcl Nagpur Maharashtra
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :gmmm.wcl@coalindia.in 
+Buyer Email id: cp.chauhan05@coalindia.in
+व'तु (ेणी /Item Category
+Custom Bid for Services - ----
+समान (ेणी/Similar Category
+Repair and Overhauling Service
+अनुबंध अविध /Contract Period
+ 4 Month(s) 11 Day(s)
+उ,हं/समान सेवा के िलए अपे./त वगत अनुभव के
+वष%/Years of Past Experience Required for
+same/similar service
+7 Year (s)
+इसी तरह क सेवाओं का पछला आव5यक अनुभव है/Past
+Experience of Similar Services required
+Yes
+वष6 के अनुभव के िलए एमएसई को छूट :ा; है / MSE
+Relaxation for Years Of Experience
+Yes | Complete
+'टाट%अप के िलए अनुभव के वष6 और टन%ओवर से छूट :दान
+क गई है /Startup Relaxation for Years of
+Experience and Turnover
+No
+व=ेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Certificate (Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+ 
+बड सं?या/Bid Number: GEM/2026/B/8274990
+@दनांक /Dated: 14-11-2026
+बड द'तावेज़ / Bid Document
+1 / 7
+
+Hया आप िनवदाकारI Jारा अपलोड @कए गए द'तावेज़I को
+िनवदा मK भाग लेने वाले सभी िनवदाकारI को @दखाना
+चाहते हM? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+Yes (Documents submitted as part of a clarification or
+representation during the tender/bid process will also be
+displayed to other participated bidders after log in)
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आव5यक बड क सं?या। / Minimum number of
+bids required to disable automatic bid
+extension
+1
+@दनI क सं?या, .जनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+3
+ऑटो एHसटKशन अिधकतम @कतनी बार @कया जाना है। /
+Number of Auto Extension count
+1
+बड से Uरवस% नीलामी स@=य @कया/Bid to RA enabled
+Yes
+Uरवस% नीलामी योVयता िनयम/RA Qualiﬁcation Rule
+50% Lowest Priced Technically Qualified Bidders
+बड का :कार/Type of Bid
+Two Packet Bid
+तकनीक मूWयांकन के दौरान तकनीक 'पYीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+2 Days
+अनुमािनत िनवदा मूWय (सभी करI स@हत) भारतीय Zपये मK
+/ Estimated Bid Value in INR (Inclusive of all
+taxes)
+188127
+Payment Timelines
+Payments shall be made to the Seller within 45 days of
+issue of service delivery acceptance certificate (SDAC) and
+on-line submission of bills (This is in supersession of 10 days
+time as provided in clause 12 of GeM GTC)
+मूWयांकन प[ित/Evaluation Method
+Total value wise evaluation
+मूWय दशा%ने वाला व\ीय द'तावेज ]ेकअप आव5यक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+म^य'थता खंड/Arbitration Clause
+No
+सुलह खंड/Mediation Clause
+No
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+आव5यकता/Required
+No
+ईपीबीजी ववरण /ePBG Detail
+आव5यकता/Required
+No
+2 / 7
+
+बोली वभाजन लागू नहं @कया गया/ Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+एमएसई खरद वरयता/MSE Purchase Preference
+एमएसई खरद वरयता/MSE Purchase Preference
+Yes
+सू`म और लघु उbम मूल उपकरण िनमा%ताओं/सेवा :दाता
+को खरद मK :ाथिमकता, य@द उनका मूWय L1+X% /
+Purchase Preference to MSE OEMs/ Service
+Provider available upto price within L1+X%
+15
+eेfस भुगतान संबंधी ववरण/TReDS Payment Details
+This Bid provides for Trade Receivables Discounting System (TReDS) as Preferred mode of payment.
+For MSME sellers, payments may be processed through a TReDS exchange in which the Buyer is
+registered, subject to applicable policy and regulatory guidelines. Accordingly, sellers intending to
+avail payment through TReDS are required to be registered with at least one TReDS exchange in
+which the buyer is registered.
+S.No.
+Name
+1
+RXIL
+2
+M1XCHANGE
+1. If the bidder is a Micro or Small Enterprise as per latest orders issued by Ministry of MSME, the bidder shall be
+relaxed from the eligibility criteria of "Experience Criteria" as defined above subject to meeting of quality and
+technical specifications. The bidder seeking Relaxation from Experience Criteria, shall upload the supporting
+documents to prove his eligibility for Relaxation. 
+2. Years of Past Experience required: The bidder must have experience for number of years as indicated above in
+bid document (ending month of March prior to the bid opening) of providing similar type of services to any
+Central / State Govt Organization / PSU. Copies of relevant contracts / orders to be uploaded along with bid in
+support of having provided services during each of the Financial year. 
+3. Purchase preference to Micro and Small Enterprises (MSEs): Purchase preference will be given to MSEs
+having valid Udyam Certificate and whose credentials are validated online through Udyam Registration portal as
+defined in Public Procurement Policy for Micro and Small Enterprises (MSEs) Order, 2012 dated 23.03.2012 issued
+by Ministry of Micro, Small and Medium Enterprises and its subsequent Orders/Notifications issued by concerned
+Ministry. If the bidder wants to avail themselves of the Purchase preference, the bidder must be the
+manufacturer / OEM of the offered product on GeM. In respect of bid for Services, the bidder must be the Service
+provider of the offered Service. Traders are excluded from the purview of Public Procurement Policy for Micro and
+Small Enterprises and hence resellers offering products manufactured by some other OEM are not eligible for any
+purchase preference. Relevant documentary evidence in this regard shall be uploaded along with the bid in
+respect of the offered product or se
+
+## RFP
+=== Attachment 1794634426.pdf (21 pages) (also uploaded as: 1794634432.pdf) ===
+केवलनागपुरकोर्टकेअधिकारमे
+Under Jurisdiction of Nagpur Court Only
+उपक्षेत्रीयप्रबंिककायाटलयजुनाडउपक्षेत्र/
+Office of Sub Area Manager Ukni-Junad Sub Area
+ववएवयाववभाग, जुनाडखुलीखदान
+Department of E&M Junad Opencast Mine
+Email –
+CIN – U10100MH1975GO1018626
+www.westerncoal.nic.in
+पंजी. क: पो. उकनी, तह. वणी, यवतमाल,महाराष्ट्र)-445304 Regd. Off PO- Bhalar, Tah Wani , Yavatmal (Mah- 445304)
+संदभटसंख्या/ Ref. No. WCL/WNA/UJSA/JOCM/E&M/2026-27/
+ददनांक/ DATE:
+FOR ESTIMATED COST PUT TO TENDER OF LESS THAN 50 LAKHS
+Tenders are invited under single cover system without reverse auction on the website of GEM
+PORTAL with Estimated Value put to tender below Rs. 50 Lakhs, for the following work: -
+Description of work
+Location
+Estimated Cost
+of Work
+(Including GST)
+Earnest Money (In
+Rs.)
+Period of
+Completion
+(In Days)
+Day
+to
+day
+work
+of
+shifting/removal of coal
+face
+sump
+pump
+of
+Junad OCM.
+Junad OC
+Mine, WNA.
+Rs.188127/-
+Exempted for Tender
+Value less than 5
+Lakhs.
+4 Months.
+For Site visit of location of work, the prospective bidder(s) may contact: -
+Tender inviting authority
+Contact Person(s)/Tender Dealing Officer(s)
+Shri. Chandra Prakash
+Chauhan, Colliery Engineer
+(E&M)
+Shri. Chandra Prakash Chauhan,
+Colliery Engineer (E&M), Junad
+OCM, WNA.
+8919093445
+1. Time Schedule of Tender: -
+Sl
+.
+Particulars
+Date
+Time
+Tender Publication date
+As per Gem Portal
+Document download start date
+Document download end date
+वेस्र्नटकोलफील्ड्सधलधमर्ेड
+WESTERN COALFIELDS LIMITED
+
+Bid Submission start date
+Bid submission end date
+Start date for seeking Clarification on-line
+Last date for seeking Clarification on-line
+Date of Pre-bid meeting (ifany)
+Not Applicable
+Bid Opening date*
+As per Gem Portal
+Note:-
+(i)*subject to change on case to case basis.
+(ii)The auto extension of submission of bids shall be applicable as per details
+mentioned in clause No.17 of NIT.
+(1) The EMD of the unsuccessful bidder (except rejected offer) shall be refunded after
+finalisation of the tender.
+(2) Liquidated Damages Clause:
+... lines further in:
+(p.5) L1 bidder fails to comply the eligibility requirements as per tender documents, EMD shall be
+(p.14) 42) Implementation of CMPF/EPF:
+(p.14) The bidder shall have to ensure implementation of CMPF/EPF, if applicable, in respect of the
+(p.14) workers deployed by him as detailed in the tender document.
+(p.14) ‘General Terms and Conditions’ of ‘Conditions of Contract’ of the tender document.
+
+=== Attachment 1794634441.pdf (1 pages) ===
+GeM Availability Report and Past Transaction Summary
+GeM Availability Report and past transaction summary report is generated based on the specifications searched by the
+Buyer. The specification may be modified appropriately for searching relevant categories on GeM. Buyer may navigate to
+GeM category page by clicking on the category link to view category specifications and products/services available in the
+category.
+Order Count and Order Value displayed is on a cumulative basis since GeM inception.
+1. Search String: Day to day coal face pump shifting
+Search type: Service
+Search Result: Category not available on GeM for the text string searched by the buyer.
+This is a one-time requirement hence new category creation is not proposed / or requirement is recurring but request for
+new category creation will be submitted separately post generation of GeMARPTS.
+Estimated Value Of Procurement: ₹ xxxxxx.x
+Report ID: GEM/GARPTS/25102026/9OVWLKAWFF2F
+Report Name: Day to day coal face pump shifting
+Generated By: Chandra Prakash Chauhan , COAL INDIA LIMITED , Ministry of Coal
+Generated On: 25/10/2026
+Valid till: 24/11/2026
+

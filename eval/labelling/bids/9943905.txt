@@ -1,0 +1,429 @@
+# GEM/2026/B/8081155 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: Department of Financial Services
+Card: Enterprise AI Platform for Indian Bank; Enterprise AI Platform; Enterprise Agentic AI Platform; Large Language Models (LLMs); AI orchestration services; AI governance controls; model lifecycle management; FinOps; AI use cases
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+28-10-2026 15:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+29-10-2026 15:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Department Of Financial Services
+संगठन का नाम/Organisation Name
+Indian Bank
+काया%लय का नाम/Office Name
+Corporateoffice
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :jaseel.pc@indianbank.co.in 
+Buyer Email id: prabhat.singal@indianbank.bank.in
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 3 Year(s)
+बडर का +यूनतम औसत वाष%क टन%ओवर (3 वष2 का)
+/Minimum Average Annual Turnover of the
+bidder (For 3 Years)
+10000 Lakh (s)
+उ+हं/समान सेवा के िलए अपे56त वगत अनुभव के
+वष%/Years of Past Experience Required for
+same/similar service
+3 Year (s)
+टन%ओवर पा ता मानदंड/Turnover eligibility criteria
+To be verified by the buyer at the time of technical
+evaluation
+टन%ओवर के िलए एमएसई को छूट 9ा: है / MSE
+Relaxation for Turnover
+Yes | Partial | Turn over value - 2500 (in lakhs)
+टन%ओवर के िलए 'टाट%अप को छूट 9ा: है / Startup
+Relaxation for Turnover
+Yes | Partial | Turn over value - 2500 (in lakhs)
+व;ेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Bidder Turnover,Certificate (Requested
+in ATC),OEM Authorization Certificate,Additional Doc 1
+(Requested in ATC),Additional Doc 2 (Requested in
+ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4
+(Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+ 
+बड सं=या/Bid Number: GEM/2026/B/8081155
+>दनांक /Dated: 25-09-2026
+बड द'तावेज़ / Bid Document
+1 / 7
+
+Fया आप िनवदाकारH Iारा अपलोड >कए गए द'तावेज़H को
+िनवदा मJ भाग लेने वाले सभी िनवदाकारH को >दखाना
+चाहते हL? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+No
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आवPयक बड क सं=या। / Minimum number of
+bids required to disable automatic bid
+extension
+3
+>दनH क सं=या, 5जनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+3
+ऑटो एFसटJशन अिधकतम >कतनी बार >कया जाना है। /
+Number of Auto Extension count
+1
+बड से Uरवस% नीलामी स>;य >कया/Bid to RA enabled
+No
+बड का 9कार/Type of Bid
+Two Packet Bid
+तकनीक मूVयांकन के दौरान तकनीक 'पXीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+3 Days
+Payment Timelines
+Payments shall be made to the Seller within 45 days of
+issue of service delivery acceptance certificate (SDAC) and
+on-line submission of bills (This is in supersession of 10 days
+time as provided in clause 12 of GeM GTC)
+मूVयांकन पYित/Evaluation Method
+Total value wise evaluation
+मूVय दशा%ने वाला वZीय द'तावेज [ेकअप आवPयक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर बLक/Advisory Bank
+State Bank of India
+ईएमड रािश/EMD Amount
+10000000
+ईपीबीजी ववरण /ePBG Detail
+एडवाइजर बLक/Advisory Bank
+State Bank of India
+ईपीबीजी 9ितशत (%)/ePBG Percentage(%)
+5.00
+ईपीबीजी क आवPयक अविध (माह) /Duration of ePBG
+required (Months).
+39
+2 / 7
+
+(a). जेम क शत2 के अनुसार ईएमड छूट के इ^छुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ 9'तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा 9दाता ईएमड से छूट के पा  हL। `यापाUरयH को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथa के प6 मJ होनी चा>हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथa के प6 मJ होनी चा>हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+लाभाथa /Beneficiary : 
+Asst. General Manager
+Transformation Management Office, 6th Floor, Indian Bank Head Office Building, No.66, Rajaji Salai, Chennai -
+600001
+(Indian Bank)
+बोली वभाजन लागू नहं >कया गया/Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+bेcस भुगतान संबंधी ववरण/TReDS Payment Details
+This Bid provides for Trade Receivables Discounting System (TReDS) as Preferred mode of payment.
+For MSME sellers, payments may be processed through a TReDS exchange in which the Buyer is
+registered, subject to applicable policy and regulatory guidelines. Accordingly, sellers intending to
+avail payment through TReDS are required to be registered with at least one TReDS exchange in
+which the buyer is registered.
+1. If the bidder is a Micro or Small Enterprise (MSE) as per latest orders issued by Ministry of MSME, the bidder
+shall be relaxed from the eligibility criteria of "Bidder Turnover" as defined above subject to meeting of quality
+and technical specifications. If the bidder itself is MSE OEM of the offered products, it would be relaxed from the
+"OEM Average Turnover" criteria also subject to meeting of quality and technical specifications. The bidder
+seeking Relaxation from Turnover, shall upload the supporting documents to prove his eligibility for Relaxation.
+2. If the bidder is a DPIIT registered Startup, the bidder shall be relaxed from the the eligibility criteria of "Bidder
+Turnover" as defined above subject to their meeting of quality and technical specifications. If the bidder is DPIIT
+Registered OEM of the offered products, it would be relaxed from the "OEM Average Turnover" criteria also
+subject to meeting of qualit
+
+## RFP
+=== Attachment EntAI_e8205a5f-ee9f-42ba-bd281790274495206_ib_791638.pdf (250 pages) ===
+Digitization Cell, TMO Department 
+Indian Bank, Head Office Building 
+No.66, Rajaji Salai, Chennai – 600 001 
+ 
+Ref:    GEM/2026/B/8081155                                       
+ 
+         Date: 24/09/2026 
+Request for Proposal (RFP) for Supply, Implementation, Integration and Maintenance of Enterprise AI Platform 
+Page 1 of 250 
+ 
+ 
+ 
+ 
+Request for Proposal (RFP) 
+for 
+Supply, Implementation, Integration and Maintenance of 
+Enterprise Artificial Intelligence (AI) Platform 
+ 
+Issued by: 
+Indian Bank 
+Transformation Management Office, 
+6th Floor, Indian Bank Head Office Building, 
+No.66, Rajaji Salai, Chennai - 600001 
+ 
+Email: digitization.cell@indianbank.bank.in 
+Website: https://www.indianbank.bank.in 
+Phone: +91-44-25279793 / 25278742 / 25279775 
+ 
+ 
+This document is the property of Indian Bank and is meant for exclusive purpose of 
+Bidding as per the Specification, Terms, Condition and Scope indicated in it. This 
+document should not be copied, transferred, reproduced, distributed or recorded on any 
+medium, including all forms of electronic medium, without written permission of Indian 
+Bank. 
+The 
+use 
+of 
+contents 
+of 
+this 
+document 
+for 
+any 
+purpose 
+other 
+than stated herein is strictly prohibited and shall amount to copyright violation and thus, 
+shall be punishable under the Indian Law. 
+RFP Reference No. 
+GEM/2026/B/8081155 
+RFP Issuance Date 
+24/09/2026 
+Last Date of request for Queries/ 
+Clarifications 
+01/10/2026 by 05.00 PM 
+Date and time of Pre-Bid Meeting 
+07/10/2026 at 03.00 PM 
+Last Date for receipt of bids 
+28/10/2026 by 03.00 PM 
+Date and time of opening Technical bids 
+28/10/2026 at 03.30 PM 
+
+Digitization Cell, TMO Department 
+Indian Bank, Head Office Building 
+No.66, Rajaji Salai, Chennai – 600 001 
+ 
+Ref:    GEM/2026/B/8081155                                       
+ 
+         Date: 24/09/2026 
+Request for Proposal (RFP) for Supply, Implementation, Integration and Maintenance of Enterprise AI Platform 
+Page 2 of 250 
+ 
+ 
+ 
+TABLE OF CONTENTS
+... scope of work:
+--- (p.15) Scope of Work 
+136) SQL 
+Structured Query Language 
+137) SRS 
+Software Requirement Specification 
+138) SSO 
+Single Sign-On 
+139) STQC 
+Standardisation Testing and Quality Certification 
+
+Digitization Cell, TMO Department 
+Indian Bank, Head Office Building 
+No.66, Rajaji Salai, Chennai – 600 001 
+ 
+Ref: GEM/2026/B/8081155 
+ 
+ Date: 24/09/2026 
+Request for Proposal (RFP) for Supply, Implementation, Integration and Maintenance of Enterprise AI Platform 
+Page 16 of 250 
+ 
+ 
+140) STR 
+Suspicious Transaction Reporting 
+141) SWIFT 
+Society 
+for 
+Worldwide 
+Interbank 
+Financial 
+Telecommunication 
+142) TCO 
+Total Cost of Ownership 
+143) TDS 
+Tax Deducted at Source 
+144) TLS 
+Transport Layer Security 
+145) TMO 
+Transformation Management Office 
+146) TO 
+Technical Offer 
+147) TS 
+Total Score 
+148) TTFT 
+Time-to-First-Token 
+149) TTS 
+Text-to-Speech 
+150) UAT 
+User Acceptance Testing 
+151) UI 
+User Interface 
+152) UX 
+User Experience 
+153) VAPT 
+Vulnerability Assessment and Penetration Testing 
+154) VM 
+Virtual Machine 
+155) VPC 
+Virtual Private Cloud 
+156) VPN 
+Virtual Private Network 
+157) WAF 
+Web Application Firewall 
+158) WAN 
+Wide Area Network 
+159) WCS 
+Weighted Commercial Score 
+160) WORM 
+Write Once Read Many 
+161) WTS 
+Weighted Technical Score 
+162) XML 
+Extensible Markup Language 
+ 
+Any term used in this document and not specifically defined herein will have the same meaning 
+as provided in relevant RBI regulations and/ or RBI/IBA guidelines and in case of any dispute 
+the decision of the Bank shall be final and binding. 
+ 
+Confidentiality: 
+This document is meant for the specific use by the Bidder/s to participate in the current tendering 
+process. This document in its entirety is subject to Copyright Laws. Indian Bank expects the 
+Bidders or any person acting on behalf of the Bidders to strictly adhere to the instructions given 
+in the document and maintain confidentiality of information. The Bidder/s do hereby undertake 
+that they shall hold the information recei
+--- (p.46) Broad Scope of Work for Supply, Implementation, Integration and Maintenance of 
+Enterprise AI Platform: 
+1. 1. Objective 
+The selected Bidder shall be responsible for the design, implementation, integration, deployment, 
+operationalization and support of an Enterprise AI Platform, establishment of reusable enterprise AI 
+capabilities and implementation of the identified prioritized AI use cases. 
+1.1 Enterprise Agentic AI Platform 
+The Bank envisages Artificial Intelligence led business transformation founded on a layered 
+architecture designed to maximize reusability, governance, interoperability for long-term sustainable 
+AI adoption across the organization. 
+This layer shall serve as the foundational technology stack for AI initiatives for business transformation 
+within the Bank. The proposed platform shall provide centralized and shared services, including but 
+not limited to access to Large Language Models (LLMs) and other AI models hosted in public/ 
+sovereign cloud that provide high end compute, AI orchestration services, AI governance controls, 
+security guardrails, monitoring capabilities, evaluation frameworks, model lifecycle management, 
+observability mechanisms and FinOps. 
+The bidder shall ensure that this foundational layer provides a standardized, secure and scalable 
+environment for the development, deployment and operation of AI solutions across the Bank. 
+1.2 Reusable Enterprise AI Capabilities 
+Built upon the foundational platform, this layer shall comprise modular, reusable and service-oriented 
+AI capabilities that can be consumed by multiple business functions and applications across the 
+enterprise. 
+The proposed architecture shall promote the development of these capabilities as shared enterprise 
+services, thereby reducing duplication of effort, accelerating AI adoption and ensuring consistent 
+governance and operational standards. 
+1.3 Business Use Cases and Applications 
+This layer shall comprise business-specific AI use cases implemente
+... lines further in:
+(p.4) Request for Proposal (RFP) for Supply, Implementation, Integration and Maintenance of Enterprise AI Platform
+(p.7) Annexure – XII: Checklist for the RFP
+(p.8) IMPORTANT DATES AND INFORMATION ON RFP SUBMISSION
+(p.8) Issuance Date of RFP
+(p.9) Section II of this RFP
+(p.9) This RFP will follow e-Procurement (e-Tendering)
+(p.9) The RFP document can also be downloaded from:
+(p.10) bidders regarding this RFP. However, clarifications, modifications and date of extensions,
+(p.10) compliance details of the eligibility and terms & conditions set in the RFP document
+(p.10) mentioned in Point No. 9 of Schedule [A] (Important Dates and Information on RFP
+(p.10) given in the RFP (as per Appendix-II of Section-V) along with the technical bid on
+(p.10) tender documents. Except as provided in this RFP, any document sent by
+
+=== Attachment 1790271918.pdf (40 pages) ===
+Digitization Cell, TMO Department 
+Indian Bank, Head Office Building 
+No.66, Rajaji Salai, Chennai – 600 001 
+ 
+Ref:  GEM/2026/B/                                                                          
+Date: 24/09/2026 
+ 
+ 
+Request for Proposal (RFP) for Supply, Implementation, Integration and Maintenance of Enterprise AI Platform 
+Page 1 of 40 
+ 
+ 
+ 
+ 
+Request for Proposal (RFP) 
+for 
+Supply, Implementation, Integration and Maintenance of Enterprise 
+Artificial Intelligence (AI) Platform 
+ 
+Issued by: 
+Indian Bank 
+Transformation Management Office, 
+6th Floor, Indian Bank Head Office Building, 
+No.66, Rajaji Salai, Chennai - 600001 
+ 
+Email: digitization.cell@indianbank.bank.in 
+Website: https://www.indianbank.bank.in 
+Phone: +91-44-25279793 / 25278742 / 25279775 
+ 
+ 
+This document is the property of Indian Bank and is meant for exclusive purpose of 
+Bidding as per the Specification, Terms, Condition and Scope indicated in it. This 
+document should not be copied, transferred, reproduced, distributed or recorded on any 
+medium, including all forms of electronic medium, without written permission of Indian 
+Bank. 
+The 
+use 
+of 
+contents 
+of 
+this 
+document 
+for 
+any 
+purpose 
+other 
+than stated herein is strictly prohibited and shall amount to copyright violation and thus, 
+shall be punishable under the Indian Law. 
+RFP Reference No. 
+GEM/2026/B/8081049 
+RFP Issuance Date 
+24/09/2026 
+Last Date of request for Queries/ 
+Clarifications 
+01/10/2026 by 05.00 PM 
+Date and time of Pre-Bid Meeting 
+07/10/2026 at 03.00 PM 
+Last Date for receipt of bids 
+28/10/2026 by 03.00 PM 
+Date and time of opening Technical bids 
+28/10/2026 at 03.30 PM 
+
+Digitization Cell, TMO Department 
+Indian Bank, Head Office Building 
+No.66, Rajaji Salai, Chennai – 600 001 
+ 
+Ref:  GEM/2026/B/                                                                          
+Date: 24/09/2026 
+ 
+ 
+Request for Proposal (RFP) for Supply, Implementation, Integration and Maintenance of Enterprise AI Platform 
+P
+... lines further in:
+(p.4) Request for Proposal (RFP) for Supply, Implementation, Integration and Maintenance of Enterprise AI Platform
+(p.17) submission as specified elsewhere in the RFP.

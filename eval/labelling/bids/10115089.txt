@@ -1,0 +1,617 @@
+# GEM/2026/B/8229813 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: REGIONAL RURAL BANKS
+Card: Enterprise Fraud Risk Management Solution (EFRMS), Early Warning System (EWS), and Money Mule Account Detection for Maharashtra Gramin Bank; enterprise fraud risk management solution (EFRMS); early warning system (EWS); money mule account detection; mule network analysis; loan fraud management; transaction monitoring; cross-channel control platform; financial crime risk management
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+26-11-2026 18:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+27-11-2026 18:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Regional Rural Banks
+संगठन का नाम/Organisation Name
+Maharashtra Gramin Bank
+काया%लय का नाम/Office Name
+Head Office
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :hod1.mgb.mh@gembuyer.in 
+Buyer Email id: buycon1.mgb.mh@gembuyer.in
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 5 Year(s)
+पछले 3 व-ीय वष/ का बडर का 0यूनतम औसत वाष%क
+व-ीय टन%ओवर/Minimum Average Annual
+Turnover of the bidder (For the last 3
+Financial Years)
+4800 Lakh (s)
+उ0हं/समान सेवा के िलए अपे78त वगत अनुभव के
+वष%/Years of Past Experience Required for
+same/similar service
+5 Year (s)
+इसी तरह क सेवाओं का पछला आव;यक अनुभव है/Past
+Experience of Similar Services required
+Yes
+टन%ओवर पा ता मानदंड/Turnover eligibility criteria
+To be verified by the buyer at the time of technical
+evaluation
+टन%ओवर के िलए एमएसई को छूट =ा> है / MSE
+Relaxation for Turnover
+Yes | Complete
+टन%ओवर के िलए 'टाट%अप को छूट =ा> है / Startup
+Relaxation for Turnover
+Yes | Complete
+ 
+बड सं?या/Bid Number: GEM/2026/B/8229813
+@दनांक /Dated: 06-11-2026
+बड द'तावेज़ / Bid Document
+1 / 8
+
+वHेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Bidder Turnover,Certificate (Requested
+in ATC),OEM Authorization Certificate,OEM Annual
+Turnover,Additional Doc 1 (Requested in ATC),Additional
+Doc 2 (Requested in ATC),Additional Doc 3 (Requested in
+ATC),Additional Doc 4 (Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+Iया आप िनवदाकारJ Kारा अपलोड @कए गए द'तावेज़J को
+िनवदा मL भाग लेने वाले सभी िनवदाकारJ को @दखाना
+चाहते हN? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+No
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आव;यक बड क सं?या। / Minimum number of
+bids required to disable automatic bid
+extension
+1
+@दनJ क सं?या, 7जनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+3
+ऑटो एIसटLशन अिधकतम @कतनी बार @कया जाना है। /
+Number of Auto Extension count
+1
+बड से Vरवस% नीलामी स@Hय @कया/Bid to RA enabled
+No
+बड का =कार/Type of Bid
+Two Packet Bid
+तकनीक मूWयांकन के दौरान तकनीक 'पYीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+2 Days
+अनुमािनत िनवदा मूWय (सभी करJ स@हत) भारतीय Zपये मL
+/ Estimated Bid Value in INR (Inclusive of all
+taxes)
+120000000
+मूWयांकन प[ित/Evaluation Method
+Total value wise evaluation
+मूWय दशा%ने वाला व-ीय द'तावेज \ेकअप आव;यक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर बNक/Advisory Bank
+State Bank of India
+ईएमड रािश/EMD Amount
+6000000
+ईपीबीजी ववरण /ePBG Detail
+2 / 8
+
+आव;यकता/Required
+No
+(a). जेम क शत/ के अनुसार ईएमड छूट के इ]छुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ ='तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा =दाता ईएमड से छूट के पा  हN। _यापाVरयJ को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथ` के प8 मL होनी चा@हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथ` के प8 मL होनी चा@हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+लाभाथ` /Beneficiary : 
+Assistant Manager
+HEAD OFFICE, REGIONAL RURAL BANKS, MAHARASHTRA GRAMIN BANK, Ministry of Finance
+(Aniruddha Vilasrao Joshi)
+बोली वभाजन लागू नहं @कया गया/Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+1. If the bidder is a Micro or Small Enterprise (MSE) as per latest orders issued by Ministry of MSME, the bidder
+shall be relaxed from the eligibility criteria of "Bidder Turnover" as defined above subject to meeting of quality
+and technical specifications. If the bidder itself is MSE OEM of the offered products, it would be relaxed from the
+"OEM Average Turnover" criteria also subject to meeting of quality and technical specifications. The bidder
+seeking Relaxation from Turnover, shall upload the supporting documents to prove his eligibility for Relaxation.
+2. If the bidder is a DPIIT registered Startup, the bidder shall be relaxed from the the eligibility criteria of "Bidder
+Turnover" as defined above subject to their meeting of quality and technical specifications. If the bidder is DPIIT
+Registered OEM of the offered products, it would be relaxed from the "OEM Average Turnover" criteria also
+subject to meeting of quality and technical specifications. The bidder seeking Relaxation from Turnover shall
+upload the supporting documents to prove his eligibility for Relaxation. 
+3. The minimum average annual financial turnover of the bidder during the last three years, ending on 31st
+March of the previous financial year, should be as indicated above in the bid document. Documentary evidence in
+the form of certified Audited Balance Sheets of relevant periods or a certificate from the Chartered Accountant /
+Cost Accountant indicating the turnover details for the relevant period shall be uploaded with the bid. In case the
+date of constitution / incorporation of the bidder is less than 3-year-old, the average
+
+## RFP
+=== Attachment 1793961738.pdf (226 pages) (also uploaded as: 1793961743.pdf, 1793961749.pdf, 1793964451.pdf, RFP02_7c644830-7e26-48b2-b3981793965778618_buyconmgbit.pdf) ===
+RFP- 02/2026-27 for Supply, Installation, Commissioning and  
+Maintenance of Enterprise Fraud Risk Management Solution  
+(EFRMS),EWS,Money mule account detection with Hardware 
+ 
+Page 1 of 226 
+ 
+MAHARASHTRA GRAMIN BANK 
+ 
+REQUEST FOR PROPOSAL 
+For 
+SUPPLY, INSTALLATION, COMMISSIONING 
+AND MAINTENANCE OF ENTERPRISE 
+FRAUD RISK MANAGEMENT SOLUTION 
+(EFRMS),EWS , MONEY MULE ACCOUNT 
+DETECTION WITH HARDWARE 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Head Office, 33 (Part), Village Golwadi, 
+Growth Centre, Waluj, Mahanagar 4, CIDCO, 
+Chhatrapati Sambhajinagar -431010 
+ 
+ 
+ 
+RFP No-02/2026-27
+(GEM/2026/B/8229813) 
+
+RFP- 02/2026-27 for Supply, Installation, Commissioning and  
+Maintenance of Enterprise Fraud Risk Management Solution  
+(EFRMS),EWS,Money mule account detection with Hardware 
+ 
+Page 2 of 226 
+ 
+ 
+ 
+SECTION-A BID SCHEDULE & ABBREVIATIONS 
+ 
+1. Bid Schedule 
+Sl. No. 
+Description 
+Details 
+1. 
+RFP No. and Date 
+02/2026-27     GEM/2026/B/8229813 
+2. 
+Name of the Wing 
+Transaction Monitoring Department 
+4. 
+Bank’s Address for Communication
+Chief Manager, Transition monitoring Department 
+Maharashtra Gramin Bank, 
+Head Office, 
+Golwadi, Chhatrapati Sambhajinagar, 
+Maharashtra 431001 
+Email: tendershoit@mahagramin.bank.in 
+5. 
+Date of Issue of RFP 
+As per GeM Bid Document 
+6. 
+Earnest Money Deposit 
+(Refundable) 
+As per GeM Bid Document 
+7. 
+Performance Bank 
+Guarantee/Bid Security 
+5 % of  TCO 
+8. 
+Last Date, Time and Venue for 
+Submission of Bids 
+Bid End Date/Time as per GeM Bid Document. 
+Response should be submitted in GeM portal and 
+physical documents should be submitted at below 
+mentioned address before due date/time: 
+Chief Manager, Transaction Monitoring Department 
+Maharashtra Gramin Bank, 
+Head Office,Golwadi, Chhatrapati Sambhajinagar, 
+Maharashtra 431001 
+ 
+9. 
+Date, Time & Venue for opening of 
+Part A - Technical Proposals. 
+Bid Opening Date/Time as per GeM Bid 
+Document. Bid will be opened in GeM Portal. 
+10. 
+Date, Time & Venue for opening of 
+Part B - Commerci
+... scope of work:
+--- (p.9) Scope of Work 
+9. 
+Technical / Functional Requirements 
+ 
+ 
+SECTION C - DELIVERABLE AND SERVICE LEVEL AGREEMENTS 
+1. 
+Project Timelines 
+2. 
+Pre-Dispatch Inspection (PDI) 
+3. 
+Acceptance 
+4. 
+Payment terms 
+5. 
+Uptime 
+6. 
+Penalties & Liquidated damages 
+7. 
+Warranty 
+8. 
+Annual Maintenance Contract 
+(AMC)/Annual Technical Support (ATS) 
+9. 
+Security 
+10. 
+Scope involved during Contract period 
+11. 
+Local support 
+12. 
+Mean Time Between Failures (MTBF) 
+13. 
+Software, Drivers and Manuals 
+14. 
+Documents, 
+Standard 
+Operating 
+Procedures and Manuals 
+15. 
+Defect Liability 
+16. 
+Subcontracting 
+17. 
+Right to Audit 
+18. 
+Spare Parts 
+19. 
+Integration & Interfaces 
+20. 
+Escrow Arrangement 
+SECTION D –BID PROCESS 
+1. 
+Clarification to RFP & Pre-Bid queries 
+2. 
+Pre-Bid Meeting 
+3. 
+Amendment to Bidding Document 
+4. 
+Bid System Offer 
+5. 
+Preparation of Bids 
+6. 
+Earnest Money Deposit (EMD)/ Bank 
+Guarantee In Lieu Of EMD 
+7. 
+Make and Models 
+8. 
+Software Version 
+9. 
+Documentation 
+10. 
+Cost & Currency 
+
+RFP- 02/2026-27 for Supply, Installation, Commissioning and 
+Maintenance of Enterprise Fraud Risk Management Solution 
+(EFRMS),EWS,Money mule account detection with Hardware 
+ 
+Page 10 of 226 
+ 
+11. 
+Erasures or Alterations 
+12. 
+Assumptions/Presumptions/Modifications 
+13. 
+Submission of Bids 
+14. 
+Bid Opening 
+SECTION E –SELECTION OF BIDDER 
+1. 
+Preliminary Scrutiny 
+2. 
+Clarification of Offers 
+3. 
+Evaluation of Bids 
+4. 
+Bidders Presentation /Site Visits / Product 
+Demonstration/POC 
+ 
+5. 
+Normalization of Bids 
+6. 
+Intimation to Qualified/ Successful Bidders
+7. 
+Selection of successful Bidder 
+ 
+ 
+SECTION F – OWNERSHIP & AWARDING OF CONTRACT 
+1. 
+Bid Validity Period 
+2. 
+Proposal ownership 
+3. 
+Project ownership 
+4. 
+Acceptance of offer 
+5. 
+Award of Contract 
+6. 
+Effective Date 
+7. 
+Project Execution 
+8. 
+Fixed Price 
+9. 
+Performance Security 
+10. 
+Execution of Agreement 
+11. 
+Pricing & Payments 
+12. 
+Order Cancellation/Termination of 
+Contract 
+ 
+SECTION G – GENER
+--- (p.11) Scope of Work 
+9. 
+Technical and Functional Requirements 
+10. 
+Non-Disclosure Agreement 
+11. 
+Undertaking of authenticity 
+12. 
+Compliance Statement 
+13. 
+Undertaking Letter 
+14. 
+Escalation Matrix 
+15. 
+Manufacturer Authorization Form 
+16. 
+Letter for EMD Return 
+17. 
+Due Diligence Report 
+18. 
+Undertaking for Not Being NPA 
+
+RFP- 02/2026-27 for Supply, Installation, Commissioning and 
+Maintenance of Enterprise Fraud Risk Management Solution 
+(EFRMS),EWS,Money mule account detection with Hardware 
+ 
+Page 12 of 226 
+ 
+19. 
+Declaration of Land Border 
+20. 
+Declaration on Debarment/Blacklisting 
+21. 
+Commercial Bid/ Bill of Material 
+Annexures (To be submitted with Part B - Commercial Bid) 
+21. 
+Commercial Bid/ Bill of Material 
+ 
+ 
+ 
+APPENDICES 
+A. 
+Instructions to be noted while preparing/submitting Part A – Technical Proposal 
+B. 
+Instruction to be noted while preparing/submitting Part B - Commercial Bid 
+C. 
+Authorization Letter Format 
+D. 
+Bank Guarantee Format for Earnest Money Deposit 
+E. 
+Performa of Bank Guarantee for Contract Performance 
+F. 
+Pre Contract Integrity Pact 
+G. 
+Contract Agreement 
+H. 
+Data Processing Terms and Conditions 
+ 
+ 
+ 
+
+RFP- 02/2026-27 for Supply, Installation, Commissioning and 
+Maintenance of Enterprise Fraud Risk Management Solution 
+(EFRMS),EWS,Money mule account detection with Hardware 
+ 
+Page 13 of 226 
+ 
+ 
+ 
+SECTION B - INTRODUCTION 
+1. INTRODUCTION 
+ 
+About Bank 
+ 
+Maharashtra Gramin Bank is the Regional Rural Bank (RRB) sponsored by the Bank Of Maharashtra under 
+the RRBs Act 1976 for development of the rural economy by providing credit and other facilities for 
+development of agriculture trade and commerce, industry and productive activities in the rural areas. 
+ 
+The share capital of the Bank is contributed by Govt. of India, Bank of Maharashtra and Govt. of 
+Maharashtra in the proportion of 50:35:15 to integrate commercial banking within the broad policy thrust 
+towards social banking keeping in view the local peculiarities
+... lines further in:
+(p.4) RFP- 02/2026-27 for Supply, Installation, Commissioning and
+(p.7) Request for Proposal
+(p.8) The information contained in this Request for Proposal (“RFP”) document or information provided
+(p.8) this RFP document and all other terms and conditions subject to which such information is provided.
+(p.8) This RFP document is not an agreement and is not an offer or invitation by Maharashtra Gramin Bank
+(p.8) and collectively referred to as “Bidder” or “Bidders” respectively). The purpose of this RFP is to
+(p.8) provide the Bidders with information to assist the formulation of their proposals. This RFP does not
+(p.8) of the information in this RFP. Maharashtra Gramin Bank makes no representation or warranty and
+(p.8) completeness of this RFP. The information contained in the RFP document is selective and is subject
+(p.8) any additional information or to update the information in the RFP document or to correct any
+(p.8) of the provisions of this RFP and/or the bidding process, without assigning any reasons whatsoever.
+(p.8) https://gem.gov.in/ ) and it will become part and parcel of RFP.
+
+=== Attachment 1793964442.pdf (36 pages) ===
+1. The Broad Scope of this RFP is: 
+1.1. 
+Maharashtra Gramin Bank, a Regional Rural Bank is offering various delivery 
+channels to its customers. It intends to procure Enterprise Fraud Risk Management 
+(EFRM),EWS & Cross Channel Control Platform Including Mule Account 
+detection Solution to secure its customers and safeguard the interest of Bank. 
+1.2. 
+The Proposed Solution will cover Enterprise-wide Fraud Detection and Prevention 
+covering Core Banking Solution & its surround applications, different channels 
+and banking products/applications as mentioned elsewhere in this Scope document 
+of RFP. Bidder may be a System Integrator or Product OEM. The Proposed 
+Solution should be a Single Integrated solution and proven integration capabilities 
+for all banking channels (including CBS & surrounding applications), products and 
+all banking applications & delivery channels. 
+1.3. 
+The Scope of Work would include Design, Supply, Configuration, Customization, 
+Integration, Testing, User Acceptance, Implementation, and Integration with 
+different channels, Maintenance and Management including Upgrades, Updates 
+and Reconfiguration, Fine Tuning, Onsite Support, Remote Support and Support 
+required during Downtime, DR Drills etc. 
+1.4. 
+The Scope of Work also includes providing Documentation/Manuals, Training, 
+Preventive Maintenance, Warranty Support and Post Warranty AMC/ATS 
+Support, if contracted, for all the Solution Components including the 
+Software/Tools required for fulfilment of the scope. 
+1.5. 
+Selected bidder will provide Term Enterprise License and AMC/ ATS for 5 years 
+for the proposed solution. Thereafter, the Term License and AMC/ ATS may be 
+extended at mutually agreed rates for further period at the discretion of the Bank. 
+1.6. 
+The proposed Solution should comply with various existing and any fresh 
+guidelines / directions issued from time to time by various Statutory and 
+Regulatory authorities like RBI, Govt. of India etc., related to all channels, 
+p
+... scope of work:
+--- (p.10) Broad Scope of Work for the ML based Mule Account Detection Solution: 
+1.70.1. 
+The bidder shall provide, implement, configure, customise, integrate, test, 
+deploy and maintain mule account detection and mule network analysis 
+capability as part of the overall financial crime risk management framework. 
+1.70.2. 
+The 
+solution/module 
+shall 
+support 
+identification, 
+scoring, 
+monitoring,prevention, investigation and reporting of suspected mule accounts 
+and mule networks using transaction behaviour, customer/account profile, cross-
+channel activity, device/IP/location data, beneficiary/VPA linkages, external 
+intelligence inputs and outputs, wherever available. 
+1.70.3. 
+The solution/module shall support rule-based, scenario-based, statistical, 
+behavioural, graph-based and AI/ML-based mule account detection models. 
+1.70.4. 
+The solution/module shall detect mule-risk indicators including, but not limited 
+to: 
+• 
+Multiple inward credits from unrelated parties 
+• 
+Rapid cash withdrawal after inward credits 
+• 
+Rapid outward fund transfer after inward credits 
+• 
+Circular fund movement 
+• 
+Layering of funds through multiple accounts 
+• 
+Newly opened account showing sudden high-value activity 
+• 
+Dormant/inoperative account becoming suddenly active 
+• 
+Low-balance account receiving abnormal credits 
+• 
+High transaction velocity within a short period 
+• 
+Multiple small-value credits followed by high-value debit 
+• 
+Multiple VPAs, devices, IPs or beneficiaries linked to the same 
+account/customer 
+• 
+Frequent change in mobile number, device, VPA or beneficiary 
+• 
+Repeated transactions during unusual hours 
+• 
+Account linked to multiple complaints 
+• 
+Account appearing in suspect registry or mule intelligence feed 
+• 
+Account connected to other suspected mule accounts 
+• 
+Accounts linked through common mobile number, device, IP, address, 
+introducer, beneficiary, VPA, staff/user or any other legally permissible 
+identifier. 
+1.70.5. 
+The solution/module shall support en
+--- (p.13) 2.71 Broad Scope of Work Early Warning System (EWS) for Loan Fraud 
+Management 
+2.71.1 Loan Portfolio Monitoring The solution shall monitor various loan portfolios of the Bank, 
+including Agriculture, MSME, Retail, Housing, Vehicle, Personal Loans, Cash Credit, Overdraft, 
+Term Loans and other secured and unsecured advances. 
+2.71.2 Identification of Early Warning Signals 
+a. The system shall identify early warning indicators based on borrower profile, loan account 
+operations, transaction behaviour, repayment patterns, financial performance and other relevant 
+information. 
+b. The system shall support identification of individual warning indicators as well as combinations of 
+multiple indicators that may indicate potential fraud. 
+c. The solution shall provide a comprehensive set of standard EWS indicators and facilitate 
+configuration of additional Bank-specific indicators as required. 
+2.71.3 Transaction and Account Behaviour Monitoring 
+The system shall identify suspicious activities and abnormal transaction patterns in loan accounts, 
+including: 
+a. Sudden and unusual withdrawals or utilisation of sanctioned limits. 
+b. Diversion or siphoning of loan funds to unrelated accounts or third parties. 
+c. Routing of funds through multiple accounts without apparent business justification. 
+d. Large-value transactions inconsistent with the borrower's business profile. 
+e. Frequent transfer of funds to related parties, associated entities or suspicious beneficiaries. 
+f. Unusual cash withdrawals or transactions immediately after disbursement of loan amounts. 
+g. Sudden decline in credits, business turnover or account activity. 
+h. Transactions indicating possible diversion of funds for purposes other than the sanctioned loan 
+purpose. 
+i. Unusual fund movements between borrower accounts maintained within the Bank, wherever such 
+information is available. 
+2.71.4 Repayment and Loan Account Conduct Monitoring 
+The solution shall monitor loan account conduct and identify w
+... lines further in:
+(p.4) elsewhere in the RFP.
+(p.4) The scope of work shall include testing of the Solution to assess performance,
+(p.4) per technical specification mentioned elsewhere in the RFP.
+(p.10) Broad Scope of Work for the ML based Mule Account Detection Solution:
+(p.13) 2.71 Broad Scope of Work Early Warning System (EWS) for Loan Fraud
+(p.19) The proposed solution shall support implementation of the Bank's approved Early Warning Signal
+(p.19) within the performance parameters specified in the RFP.
+(p.20) a. Configuration and implementation of the EWS module.
+(p.20) Licenses and EFRM Application Software etc. required for implementation of the
+(p.21) to achieve the Intent of RFP. The licenses for the proposed solution should be
+(p.21) etc. quoted as part of this RFP should be sufficient enough to meet the requirement of the
+(p.21) Systems, Testing, Verification, and complete the Installation & implementation of the

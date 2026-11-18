@@ -1,0 +1,314 @@
+# GEM/2026/B/8023932 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: Department of Financial Services
+Card: API gateway and management platform (AMP) for Small Industries Development Bank of India (SIDBI); API gateway; API management platform; enterprise service bus (ESB); enterprise vault; API sandbox; disaster recovery (DR) setup; CI/CD pipelines; API monitoring and logging
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+03-10-2026 16:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+04-10-2026 16:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Department Of Financial Services
+संगठन का नाम/Organisation Name
+Small Industries Development Bank Of India (sidbi)
+काया%लय का नाम/Office Name
+Mumbai
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :nancysinha@sidbi.in 
+Buyer Email id: vincentj@sidbi.in
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 5 Year(s)
+बडर का +यूनतम औसत वाष%क टन%ओवर (3 वष2 का)
+/Minimum Average Annual Turnover of the
+bidder (For 3 Years)
+2500 Lakh (s)
+टन%ओवर पा ता मानदंड/Turnover eligibility criteria
+To be verified by the buyer at the time of technical
+evaluation
+एमएसएमई के िलए अनुभव के वष2 और टन%ओवर से छूट 6दान
+क गई है/MSE Relaxation for Years of
+Experience and Turnover
+No
+'टाट%अप के िलए अनुभव के वष2 और टन%ओवर से छूट 6दान
+क गई है /Startup Relaxation for Years of
+Experience and Turnover
+No
+व7ेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Bidder Turnover,Certificate (Requested
+in ATC),OEM Authorization Certificate,OEM Annual
+Turnover,Additional Doc 1 (Requested in ATC),Additional
+Doc 2 (Requested in ATC),Additional Doc 3 (Requested in
+ATC),Additional Doc 4 (Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+ 
+बड सं9या/Bid Number: GEM/2026/B/8023932
+:दनांक /Dated: 12-09-2026
+बड द'तावेज़ / Bid Document
+1 / 7
+
+Bया आप िनवदाकारD Eारा अपलोड :कए गए द'तावेज़D को
+िनवदा मF भाग लेने वाले सभी िनवदाकारD को :दखाना
+चाहते हH? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+Yes (Documents submitted as part of a clarification or
+representation during the tender/bid process will also be
+displayed to other participated bidders after log in)
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आवLयक बड क सं9या। / Minimum number of
+bids required to disable automatic bid
+extension
+3
+:दनD क सं9या, Oजनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+3
+ऑटो एBसटFशन अिधकतम :कतनी बार :कया जाना है। /
+Number of Auto Extension count
+1
+बड से Rरवस% नीलामी स:7य :कया/Bid to RA enabled
+No
+बड का 6कार/Type of Bid
+Two Packet Bid
+तकनीक मूSयांकन के दौरान तकनीक 'पUीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+2 Days
+Payment Timelines
+Payments shall be made to the Seller within 30 days of
+issue of service delivery acceptance certificate (SDAC) and
+on-line submission of bills (This is in supersession of 10 days
+time as provided in clause 12 of GeM GTC)
+मूSयांकन पVित/Evaluation Method
+Total value wise evaluation
+मूSय दशा%ने वाला वWीय द'तावेज Xेकअप आवLयक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर बHक/Advisory Bank
+State Bank of India
+ईएमड रािश/EMD Amount
+820000
+ईपीबीजी ववरण /ePBG Detail
+एडवाइजर बHक/Advisory Bank
+State Bank of India
+ईपीबीजी 6ितशत (%)/ePBG Percentage(%)
+5.00
+ईपीबीजी क आवLयक अविध (माह) /Duration of ePBG
+required (Months).
+60
+2 / 7
+
+(a). जेम क शत2 के अनुसार ईएमड छूट के इ[छुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ 6'तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा 6दाता ईएमड से छूट के पा  हH। ]यापाRरयD को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथ^ के प_ मF होनी चा:हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथ^ के प_ मF होनी चा:हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+लाभाथ^ /Beneficiary : 
+Deputy General Manager
+Overseas Towers, 756L, Anna Salai, Chennai - 600 002
+(Small Industries Development Bank Of India)
+बोली वभाजन लागू नहं :कया गया/Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+`ेaस भुगतान संबंधी ववरण/TReDS Payment Details
+This Bid provides for Trade Receivables Discounting System (TReDS) as Preferred mode of payment.
+For MSME sellers, payments may be processed through a TReDS exchange in which the Buyer is
+registered, subject to applicable policy and regulatory guidelines. Accordingly, sellers intending to
+avail payment through TReDS are required to be registered with at least one TReDS exchange in
+which the buyer is registered.
+1. The minimum average annual financial turnover of the bidder during the last three years, ending on 31st
+March of the previous financial year, should be as indicated above in the bid document. Documentary evidence in
+the form of certified Audited Balance Sheets of relevant periods or a certificate from the Chartered Accountant /
+Cost Accountant indicating the turnover details for the relevant period shall be uploaded with the bid. In case the
+date of constitution / incorporation of the bidder is less than 3-year-old, the average turnover in respect of the
+completed financial years after the date of constitution shall be taken into account for this criteria. 
+2. Estimated Bid Value indicated above is being declared solely for the purpose of guidance on EMD amount and
+for determining the Eligibility Criteria related to Turn Over, Past Performance and Project / Past Experience etc.
+This h
+
+## RFP
+=== Attachment API_RFP_6fb8ada4-40ee-4031-96f31789216659857_vincentj.pdf (94 pages) ===
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+भारतीय लघु उɮयोग ͪ वकास बɇक 
+Small Industries Development Bank of India 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Request for Proposal for       
+Procurement of API gateway and management platform (AMP) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Issued by: 
+Small Industries Development Bank of India (SIDBI), 
+Information Technology Vertical,  
+2nd Floor, Overseas Towers, 756L, Anna Salai,  
+Chennai, Tamil Nadu – 600 002 
+  
+ 
+ 
+
+RFP for Procurement of API gateway and management platform (AMP)
+ 
+ 
+   
+Page 2 of 94
+ 
+ 
+ 
+1. 
+Definitions 
+1.1. 
+“BANK”, “SIDBI”, “Purchaser”, “Buyer” , “disclosing party” means Small Industries Development 
+Bank of India (SIDBI) 
+1.2. 
+“Bidder’”, “Vendor”, “VENDOR”, “Supplier”, “Service Provider”, “Seller”, “Receiving Party” means 
+the respondent to the RFP document. 
+1.3. 
+“Shortlisted bidder”, “Selected bidder” means to the company on which purchase order has been 
+released by the BANK. 
+1.4. 
+“RfP”, “Tender”, “Bid document’ means the Request for Proposal document. 
+1.5. 
+“Bid” may be referred to as ‘Offer’; 
+1.6. 
+"Agreement" means an agreement entered into by the Purchaser with the successful bidder by 
+signing an agreement form in a given format by the parties, including all the attachments and 
+appendices thereto, and all documents incorporated by reference therein. 
+1.7. 
+“The Contract” means the agreement entered between the Bank and the Supplier, as recorded 
+in the Contract Form signed by the parties, including all attachments and appendices thereto and 
+all documents incorporated by reference therein. 
+1.8. 
+“The Contract Price” means the price payable to the Supplier under the Contract for the full and 
+proper performance of its contractual obligations. 
+1.9. 
+“The Goods” means all of the equipment, machinery and/or other materials which the Supplier is 
+required to supply to the BANK under the Contract. 
+1.10. “The Services” means the supply, installation, configuration, customization, integration, testing, 
+training, commissioning, and ongoin
+... scope of work:
+--- (p.17) Scope of Work 
+5.1. 
+General 
+5.1.1. The bidder shall supply, implement, configure, and support an enterprise-grade API 
+Gateway solution through the GeM (Government e-Marketplace) procurement 
+process, meeting the Bank’s requirements for a secure, scalable, resilient, and 
+governed API ecosystem. The proposed solution shall be industry standards, fully 
+supported by the OEM, and deployable on on-premises, cloud, or hybrid models as 
+per the Bank’s infrastructure guidelines. The solution shall comply with all applicable 
+regulatory and supervisory requirements, including guidelines issued by RBI, and 
+adhere to enterprise-grade information security standards. 
+5.1.2. The Bidder shall implement and maintain the API Management (APIM) platform 
+across five (5) environments: Development (DEV), User Acceptance Testing (UAT), 
+Pre-Production (PRE-PROD), Production (PROD), and Disaster Recovery (DR). The 
+UAT environment shall support both integration and business validation testing. The 
+PRE-PROD environment shall closely mirror the PROD environment for final 
+validation, performance testing, and release readiness. The PROD environment shall 
+host live APIs, while the DR environment shall ensure business continuity and 
+disaster recovery. The solution shall support secure API promotion across 
+environments through automated CI/CD pipelines, role-based access control, 
+monitoring, logging, and compliance with the Bank's security and regulatory 
+requirements. 
+5.1.3. The bidder shall be responsible for end-to-end implementation of the API 
+management platform, including installation, configuration, and commissioning 
+across Implementation, Migration, Testing, Sandbox, and Production environments. 
+A dedicated sandbox environment shall be provided to enable safe testing and 
+onboarding of internal teams and external vendors without impacting production 
+systems. The bidder shall also implement a Disaster Recovery (DR) setup in active-
+passive mode with appropriate data synch
+... lines further in:
+(p.4) RFP for Procurement of API gateway and management platform (AMP)
+(p.5) Request for Proposal for
+(p.5) All queries relating to the RFP
+(p.6) to RFP will be posted on SIDBI website. Bidders must keep a close watch on SIDBI website during the
+(p.6) intervening period before submitting response to RFP.
+(p.7) The purpose of this RFP is to invite proposals from eligible bidders for the supply, installation,
+(p.7) supply, implementation, configuration, integration, testing, training, knowledge transfer,
+(p.8) The Request for Proposal document contains statements derived from information that is believed to
+(p.8) information including forecasts, statements, estimates, or projections contained in this RfP document
+(p.8) the RfP document and the meaning and impact of that information.
+(p.8) Each Recipient should notify the Bank for any error, omission, or discrepancy found in this RfP
+(p.8) A Recipient will, by responding to Bank for RfP, be deemed to have accepted the terms of this
+
+=== Attachment 1789216445.xlsx (1 pages) ===
+[Commerical Bid]
+Commercial Bid Format
+9.4.1    License Cost of APIM Solution (Inclusive of 1 Year Warranty) for the Contract Period of 5 Years
+Sl . No. | Name of Software License Components | License Type  | Qty | Unit Cost Details | Total Cost
+Cost | GST | Total
+A | B | C | D= (B+C) | E=A*D
+1 | License cost for Entire API Management Solution, ESB | Perpetual | 1 | 0 | 0 | 0
+2 | License cost of Enterprise Vault (users) | Perpetual  | 50 | 0 | 0 | 0
+Total Cost (Sum of 1 & 2) | 0
+Bidder must calculate that currently 80 million transactions per month with 15% growth YOY for  both 9.4.1 and 9.4.2(a,b)
+9.4.2a Cost of ATS for License cost for Entire API Management Solution, ESBafter warranty period (of 1 year) for next 4 years: 
+Sl . No. | Name of Software License Component | Year | Qty. | Unit Cost Details | Total Cost
+Cost | GST | Total
+A | B | C | D=(B+C) | E=A*D
+1 | License cost for Entire API Management Solution, ESB | Year2 | 1 | 0 | 0 | 0
+2 | Year3 | 1 | 0 | 0 | 0
+3 | Year4 | 1 | 0 | 0 | 0
+4 | Year5 | 1 | 0 | 0 | 0
+  Total Cost (  Sum of Year 2 to year 5) | 0
+9.4.2b    Cost of ATS for License cost for enterprise Vault after warranty period (of 1 year) for next 4 years: 
+Sl . No. | Name of Software License Component | Year | Qty. | Unit Cost Details | Total Cost
+Cost | GST | Total
+A | B | C | D=(B+C) | E=A*D
+1 | License cost of Enterprise Vault (users) | Year2 | 50 | 0 | 0 | 0
+2 | Year3 | 50 | 0 | 0 | 0
+3 | Year4 | 50 | 0 | 0 | 0
+4 | Year5 | 50 | 0 | 0 | 0
+  Total Cost (  Sum of Year 2 to year 5) | 0
+·Bidder must mention separate line items for all the software components included in the API management solution with 15% growth in transactions for next one year.
+·Bidder shall quote software cost with 1st year warranty 
+·ATS costs will be valid for 4-year support period after warranty of one year for all the software components. 
+·Bidder will ensure back-to-back warranty and ATS arrangement with OEM for all software components during Warranty and ATS period and submi

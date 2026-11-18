@@ -1,0 +1,326 @@
+# GEM/2026/B/8166366 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: Department of Financial Services
+Card: Network Hardware Security Modules (HSMs) for Aadhaar Data Vault (ADV) solution; hardware security modules (HSMs); Aadhaar Data Vault (ADV); cryptographic key management; FIPS 140-3 Level 3 certification; disaster recovery (DR) site HSMs; HSM backup device; e-KYC API integration; secure key storage and distribution
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+11-11-2026 17:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+12-11-2026 17:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Department Of Financial Services
+संगठन का नाम/Organisation Name
+National Bank For Agriculture And Ruraldevelopment
+काया%लय का नाम/Office Name
+Ddsi Ho Mumbai
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :sk.dhinesh@nabard.org 
+Buyer Email id: bhasya.kr@nabard.org
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 5 Year(s) 2 Day(s)
+पछले 3 व-ीय वष/ का बडर का 0यूनतम औसत वाष%क
+व-ीय टन%ओवर/Minimum Average Annual
+Turnover of the bidder (For the last 3
+Financial Years)
+2400 Lakh (s)
+उ0हं/समान सेवा के िलए अपे78त वगत अनुभव के
+वष%/Years of Past Experience Required for
+same/similar service
+2 Year (s)
+इसी तरह क सेवाओं का पछला आव;यक अनुभव है/Past
+Experience of Similar Services required
+Yes
+टन%ओवर पा ता मानदंड/Turnover eligibility criteria
+To be verified by the buyer at the time of technical
+evaluation
+वष/ के अनुभव एवं टन%ओवर से एमएसई को छूट =ा> है /
+MSE Relaxation for Years Of Experience
+and Turnover
+Yes | Complete
+'टाट%अप के िलए अनुभव के वष/ और टन%ओवर से छूट =दान
+क गई है / Startup Relaxation for Years Of
+Experience and Turnover
+Yes | Complete
+ 
+बड सं?या/Bid Number: GEM/2026/B/8166366
+@दनांक /Dated: 21-10-2026
+बड द'तावेज़ / Bid Document
+1 / 7
+
+वHेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Bidder Turnover,Certificate (Requested
+in ATC),OEM Authorization Certificate,OEM Annual
+Turnover,Additional Doc 1 (Requested in ATC),Additional
+Doc 2 (Requested in ATC),Additional Doc 3 (Requested in
+ATC),Additional Doc 4 (Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+Iया आप िनवदाकारJ Kारा अपलोड @कए गए द'तावेज़J को
+िनवदा मL भाग लेने वाले सभी िनवदाकारJ को @दखाना
+चाहते हN? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+No
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आव;यक बड क सं?या। / Minimum number of
+bids required to disable automatic bid
+extension
+3
+@दनJ क सं?या, 7जनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+3
+ऑटो एIसटLशन अिधकतम @कतनी बार @कया जाना है। /
+Number of Auto Extension count
+2
+बड से Vरवस% नीलामी स@Hय @कया/Bid to RA enabled
+No
+बड का =कार/Type of Bid
+Two Packet Bid
+तकनीक मूWयांकन के दौरान तकनीक 'पYीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+2 Days
+अनुमािनत िनवदा मूWय (सभी करJ स@हत) भारतीय Zपये मL
+/ Estimated Bid Value in INR (Inclusive of all
+taxes)
+66000000
+मूWयांकन प[ित/Evaluation Method
+Total value wise evaluation
+मूWय दशा%ने वाला व-ीय द'तावेज \ेकअप आव;यक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+म]य'थता खंड/Arbitration Clause
+No
+सुलह खंड/Mediation Clause
+No
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर बNक/Advisory Bank
+State Bank of India
+ईएमड रािश/EMD Amount
+1300000
+2 / 7
+
+ईपीबीजी ववरण /ePBG Detail
+एडवाइजर बNक/Advisory Bank
+State Bank of India
+ईपीबीजी =ितशत (%)/ePBG Percentage(%)
+5.00
+ईपीबीजी क आव;यक अविध (माह) /Duration of ePBG
+required (Months).
+120
+(a). जेम क शत/ के अनुसार ईएमड छूट के इ`छुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ ='तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा =दाता ईएमड से छूट के पा  हN। aयापाVरयJ को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथb के प8 मL होनी चा@हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथb के प8 मL होनी चा@हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+लाभाथb /Beneficiary : 
+Manager
+DDSI HO Mumbai, Department of Financial Services, National Bank for Agriculture and Rural Development,
+Ministry of Finance
+(Bhasyakarla Ronith)
+बोली वभाजन लागू नहं @कया गया/ Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+एमएसई खरद वरयता/MSE Purchase Preference
+एमएसई खरद वरयता/MSE Purchase Preference
+Yes
+सूcम और लघु उeम मूल उपकरण िनमा%ताओं/सेवा =दाता
+को खरद मL =ाथिमकता, य@द उनका मूWय L1+X% /
+Purchase Preference to MSE OEMs/ Service
+Provider available upto price within L1+X%
+15
+1. If the bidder is a Micro or Small Enterprise as per latest orders issued by Ministry of MSME, the bidder shall be
+relaxed from the eligibility criteria of "Experience Criteria" as defined above subject to meeting of quality and
+technical specifications. The bidder seeking Relaxation from Experience Criteria, shall upload the supporting
+documents to prove his eligibility for Relaxation.
+2. If the bidder is a Micro or Small Enterprise (MSE) as per latest orders issued by Ministry of MSME, the bidder
+shall be relaxed from the eligibility criteria of "Bidder Turnover" as defined above subject to meeting of quality
+and technical specifications. If the bidder itself is MSE OEM of the offered products, it would be relaxed from the
+"OEM Average Turnover" criteria also subject to meeting of quality and technical specifications. The bidder
+seeking Relaxation from Turnover, shall upload the supporting documents to prove his eligibility for Relaxation.
+3. If the bidder is a DPIIT registered Startup, the
+
+## RFP
+=== Attachment 1792579213.pdf (55 pages) ===
+ 
+RFP for Supply, Installation, Implementation and Maintenance of HSM                             Page 1 of 55 
+ 
+Internal
+ 
+Contents 
+ANNEXURE A ............................................................................................................. 3 
+ADDITIONAL TERMS AND CONDITIONS ...................................................... 3 
+ANNEXURE-B ........................................................................................................... 21 
+UNDERTAKING FROM THE BIDDER ............................................................ 21 
+ANNEXURE-C ........................................................................................................... 22 
+Litigation Certificate ........................................................................................... 22 
+Annexure D................................................................................................................ 23 
+Non-Blacklisting/Non –Debarment Declaration ........................................ 23 
+ANNEXURE F ........................................................................................................... 24 
+BIDDER’S INFORMATION ................................................................................ 24 
+ANNEXURE G ........................................................................................................... 26 
+COMPLIANCE STATEMENT ............................................................................. 26 
+Annexure I ................................................................................................................. 27 
+Chartered Accountant’s Certificate ................................................................. 27 
+Annexure J(a) ........................................................................................................... 28 
+MANUFACTURER’S (OEM) AUTHORIZATION FORM (MAF) ................ 28 
+Annexure J(b) .................................................................................
+... lines further in:
+(p.4) RFP for Supply, Installation, Implementation and Maintenance of HSM Page 4 of 55
+(p.5) RFP for Supply, Installation, Implementation and Maintenance of HSM Page 5 of 55
+(p.6) RFP for Supply, Installation, Implementation and Maintenance of HSM Page 6 of 55
+(p.7) RFP for Supply, Installation, Implementation and Maintenance of HSM Page 7 of 55
+(p.7) commissioning, shifting or resolution timeline specified in the RFP, Purchase
+(p.7) or any other liability governed separately under the relevant clauses of the RFP
+(p.7) available under the RFP / contract.
+(p.8) RFP for Supply, Installation, Implementation and Maintenance of HSM Page 8 of 55
+(p.8) as specified in the RFP.
+(p.9) RFP for Supply, Installation, Implementation and Maintenance of HSM Page 9 of 55
+(p.10) RFP for Supply, Installation, Implementation and Maintenance of HSM Page 10 of 55
+(p.11) RFP for Supply, Installation, Implementation and Maintenance of HSM Page 11 of 55
+
+=== Attachment 1792579129.pdf (28 pages) (also uploaded as: 4SLA_e94ea00d-6ff2-49dc-8a5c1792580844326_bhasya.kr.pdf) ===
+ 
+ 
+Internal
+Internal
+Internal
+Internal
+SERVICE LEVEL AGREEMENT 
+FOR SUPPLY, INSTALLATION, IMPLEMENTATION AND 
+MAINTENANCE OF 
+NETWORK HARDWARE SECURITY MODULES (HSMs) FOR THE 
+AADHAAR DATA VAULT (ADV) SOLUTION and Aadhaar related 
+functionalities 
+This Service Level Agreement is executed pursuant to Purchase Order No. [______] 
+dated [___________] issued by National Bank for Agriculture and Rural 
+Development ("NABARD"/"the Bank") to [Service Provider name] ("Service 
+Provider") in connection with RFP Ref. No. [__________] dated [__________]] 
+for supply, installation, configuration, implementation and maintenance of Network 
+HSMs for the Bank's Aadhaar Data Vault (ADV) solution and other Aadhaar-related 
+functionalities. 
+ 
+
+ 
+ 
+Internal
+Internal
+Internal
+Internal
+1. Title & Parties 
+This SERVICE LEVEL AGREEMENT is made on this ___ (day) of ______, 20___ 
+(hereinafter the "Contract"/"SLA"/"Agreement") 
+BY AND BETWEEN: 
+National Bank for Agriculture and Rural Development, a body corporate established 
+under the National Bank for Agriculture and Rural Development Act, 1981, having its 
+Head Office at Plot No. C-24, Block G, Bandra Kurla Complex, Bandra (East), Mumbai 
+– 
+400051, 
+represented 
+herein 
+by 
+its 
+Authorized 
+Representative 
+Shri 
+____________________ (Name, Designation & Department) (hereinafter 
+"NABARD" or "the Bank", which term shall, unless repugnant to the context, include 
+its successors and assigns) of the FIRST PART; 
+AND 
+____________________, 
+a(n) 
+________ 
+incorporated 
+under 
+_____________ and having its registered office at ______________________, 
+represented herein by its Authorized Signatory, Shri ____________________ 
+(Name, Designation) (hereinafter the "Service Provider"/"Bidder", which term shall, 
+unless repugnant to the context, include its successors and permitted assigns) of the 
+OTHER PART. 
+NABARD and the Service Provider shall collectively be referred to as "Parties" and 
+individually as "Party". 
+2. Recitals 
+WHEREAS: 
+1. 
+
+... scope of work:
+--- (p.9) Scope of Work forming part of the RFP, NABARD reserves the right to correct, clarify, 
+or reconcile such conflict or inconsistency, and the Service Provider shall comply with 
+NABARD's decision in this regard. 
+5. Term 
+This Agreement shall commence on the Effective Date and remain valid for a period of 
+five (5) years, comprising three (3) years' Warranty and two (2) years' AMC, unless 
+terminated or extended by mutual written agreement of the Parties. 
+6. Scope of Work 
+6.1 Overview 
+The scope of this RFP is the supply, installation, implementation, and maintenance 
+of Network HSMs (Hardware Security Modules) for the Bank's Aadhaar Data Vault 
+(ADV) solution and other Aadhaar-related functionalities. Coordination with the 
+ADV Solution Provider for integration of the Network HSMs with the ADV solution. 
+A summary of the requirements is set out below. Bidders must submit their 
+response/compliance against each item. 
+6.2 Quantity and Deployment Locations 
+a. The Bidder shall supply, install, configure, implement, and maintain a total 
+of four (4) Network HSM (5000 TPS) appliances and 1 HSM backup device, 
+comprising: 
+• 
+Two (2) HSMs at the Data Centre (DC) Site 
+• 
+Two (2) HSMs at the Disaster Recovery (DR) Site 
+
+ 
+ 
+Internal
+Internal
+Internal
+Internal
+• 
+One (1) HSM backup device 
+b. The Bank reserves the right to change existing locations or add new 
+locations as per its requirement. 
+c. HSMs shall remain covered under Warranty/AMC/ATS during transit and 
+at the new location whenever moved for maintenance or any other purpose. 
+6.3 Technical Requirements 
+a. The HSM shall support dual TCP/IP interfaces, security certificates, secure 
+key management, smart key storage and distribution, and dual power input, 
+as required by the Bank. 
+b. The HSM shall support signing, encryption, and decryption of data, and 
+shall comply with FIPS 140-3 Level 3 certification — for all cryptographic 
+operations, including generation and storage of the Root of Trust Master 
+Key. 
+c
+... lines further in:
+(p.5) other milestone timelines as per the RFP, Annexure A, or the approved project
+(p.7) Service Provider pursuant to the RFP;
+(p.7) 24x7x365 basis as specified in Clause 6 (Scope of Work) and Schedule I,
+(p.8) successful bidder pursuant to the RFP issued by NABARD;
+(p.8) Provider to NABARD as set out in Clause 6 (Scope of Work) and Schedule I of
+(p.8) capacity of each Network HSM (5000 TPS as specified in the RFP);
+(p.8) shall provide warranty support as specified in the Scope of Work;
+(p.9) Scope of Work forming part of the RFP, NABARD reserves the right to correct, clarify,
+(p.9) The scope of this RFP is the supply, installation, implementation, and maintenance
+(p.12) a. The Bidder shall be responsible for the end-to-end supply, installation,
+(p.13) API and e-KYC API), as issued from time to time. At the time of this RFP,
+(p.18) shifting or resolution timeline specified in the RFP, Purchase Order, SLA or any

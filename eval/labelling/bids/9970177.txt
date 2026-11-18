@@ -1,0 +1,406 @@
+# GEM/2026/B/8104144 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: Department of Financial Services
+Card: IT Asset Management (ITAM), IT Operations Management (ITOM), and IT Service Management (ITSM) solution for Bank of Maharashtra; IT Asset Management (ITAM); Configuration Management Database (CMDB); IT Operations Management (ITOM); AI for IT Operations (AIOps); IT Service Management (ITSM); Infrastructure Management; Application Management; On-premises solution
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+21-10-2026 17:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+22-10-2026 17:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Department Of Financial Services
+संगठन का नाम/Organisation Name
+Bank Of Maharashtra
+काया%लय का नाम/Office Name
+Headofficeit
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :hod13.bom.mh@gembuyer.in 
+Buyer Email id: prasad.thakur@mahabank.co.in
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 5 Year(s)
+बडर का +यूनतम औसत वाष%क टन%ओवर (3 वष2 का)
+/Minimum Average Annual Turnover of the
+bidder (For 3 Years)
+6000 Lakh (s)
+उ+हं/समान सेवा के िलए अपे56त वगत अनुभव के
+वष%/Years of Past Experience Required for
+same/similar service
+3 Year (s)
+टन%ओवर पा ता मानदंड/Turnover eligibility criteria
+To be verified by the buyer at the time of technical
+evaluation
+टन%ओवर के िलए एमएसई को छूट 9ा: है / MSE
+Relaxation for Turnover
+Yes | Complete
+टन%ओवर के िलए 'टाट%अप को छूट 9ा: है / Startup
+Relaxation for Turnover
+Yes | Complete
+व;ेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Bidder Turnover,Certificate (Requested
+in ATC),OEM Authorization Certificate,OEM Annual
+Turnover,Additional Doc 1 (Requested in ATC),Additional
+Doc 2 (Requested in ATC),Additional Doc 3 (Requested in
+ATC),Additional Doc 4 (Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+ 
+बड सं=या/Bid Number: GEM/2026/B/8104144
+>दनांक /Dated: 30-09-2026
+बड द'तावेज़ / Bid Document
+1 / 8
+
+Eया आप िनवदाकारG Hारा अपलोड >कए गए द'तावेज़G को
+िनवदा मI भाग लेने वाले सभी िनवदाकारG को >दखाना
+चाहते हK? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+No
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आवOयक बड क सं=या। / Minimum number of
+bids required to disable automatic bid
+extension
+3
+>दनG क सं=या, 5जनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+3
+ऑटो एEसटIशन अिधकतम >कतनी बार >कया जाना है। /
+Number of Auto Extension count
+1
+बड से Tरवस% नीलामी स>;य >कया/Bid to RA enabled
+No
+बड का 9कार/Type of Bid
+Two Packet Bid
+तकनीक मूUयांकन के दौरान तकनीक 'पWीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+2 Days
+Payment Timelines
+Payments shall be made to the Seller within 45 days of
+issue of service delivery acceptance certificate (SDAC) and
+on-line submission of bills (This is in supersession of 10 days
+time as provided in clause 12 of GeM GTC)
+मूUयांकन पXित/Evaluation Method
+Total value wise evaluation
+मूUय दशा%ने वाला वYीय द'तावेज Zेकअप आवOयक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर बKक/Advisory Bank
+State Bank of India
+ईएमड रािश/EMD Amount
+3500000
+ईपीबीजी ववरण /ePBG Detail
+आवOयकता/Required
+No
+(a). जेम क शत2 के अनुसार ईएमड छूट के इ\छुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ 9'तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा 9दाता ईएमड से छूट के पा  हK। ^यापाTरयG को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+2 / 8
+
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथ_ के प6 मI होनी चा>हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथ_ के प6 मI होनी चा>हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+लाभाथ_ /Beneficiary : 
+DGM
+Bank of Maharashtra Corporate Office, Baner-Pashan Link Road, Pashan - 411021
+(Abhinav Choubey)
+बोली वभाजन लागू नहं >कया गया/Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+`ेaस भुगतान संबंधी ववरण/TReDS Payment Details
+This Bid provides for Trade Receivables Discounting System (TReDS) as Preferred mode of payment.
+For MSME sellers, payments may be processed through a TReDS exchange in which the Buyer is
+registered, subject to applicable policy and regulatory guidelines. Accordingly, sellers intending to
+avail payment through TReDS are required to be registered with at least one TReDS exchange in
+which the buyer is registered.
+1. If the bidder is a Micro or Small Enterprise (MSE) as per latest orders issued by Ministry of MSME, the bidder
+shall be relaxed from the eligibility criteria of "Bidder Turnover" as defined above subject to meeting of quality
+and technical specifications. If the bidder itself is MSE OEM of the offered products, it would be relaxed from the
+"OEM Average Turnover" criteria also subject to meeting of quality and technical specifications. The bidder
+seeking Relaxation from Turnover, shall upload the supporting documents to prove his eligibility for Relaxation.
+2. If the bidder is a DPIIT registered Startup, the bidder shall be relaxed from the the eligibility criteria of "Bidder
+Turnover" as defined above subject to their meeting of quality and technical specifications. If the bidder is DPIIT
+Registered OEM of the offered products, it would be relaxed from the "OEM Average Turnover" criteria also
+subject to meeting of quality and technical specifications. The bidder seeking Relaxation from Turnover shall
+upload the supporting documents to prove his eligibility for Relaxation. 
+3. The minimum average annual financial turnover of the bidder during the last three yea
+
+## RFP
+=== Attachment RFP_0fe80d63-6aca-411f-99f11790774503985_prasad.thakur.pdf (266 pages) ===
+  
+RFP 34/2026-27 for Supply, Installation, Configuration, Integration, and 
+Maintenance of IT Asset Management (ITAM), IT Operations Management 
+(ITOM), and IT Service Management (ITSM) solution 
+ 
+Restricted 
+Page 1 of 266 
+ 
+ 
+Bank of Maharashtra 
+    
+ 
+Request for Proposal 
+For 
+RFP 34/2026-27 for Supply, Installation, 
+Configuration, Integration, and Maintenance 
+of IT Asset Management (ITAM), IT 
+Operations Management (ITOM), and IT 
+Service Management (ITSM) solution 
+ 
+ 
+ 
+  
+                                                  
+ 
+ 
+              
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Corporate Office, Montclaire, 134/1, 
+Baner- Pashan Link Road, Pashan– 411021 
+ 
+RFP- 34/2026-27 
+ 
+GEM BID NO- GEM/2026/B/8104144 
+
+  
+RFP 34/2026-27 for Supply, Installation, Configuration, Integration, and 
+Maintenance of IT Asset Management (ITAM), IT Operations Management 
+(ITOM), and IT Service Management (ITSM) solution 
+ 
+Restricted 
+Page 2 of 266 
+ 
+ 
+ 
+Important Clarifications: 
+ 
+Following terms are used in the document interchangeably to mean: 
+SN 
+Abbreviation 
+Full form for Abbreviation 
+1 
+AD 
+Active Directory 
+2 
+AI 
+Artificial Intelligence 
+3 
+AIBOM 
+Artificial Intelligence Bill of Materials 
+4 
+AIOps 
+Artificial Intelligence for IT Operations 
+5 
+AMC 
+Annual Maintenance Contract 
+6 
+API 
+Application programming interface 
+7 
+ASM 
+Automatic Storage Management 
+8 
+Asset ID 
+Asset Identification number 
+9 
+ATM 
+Automated teller machine 
+10 
+ATS 
+Annual Technical Support 
+11 
+Bank 
+Bank of Maharashtra 
+12 
+BAS 
+Breach and Attack Simulation 
+13 
+BCP 
+Business Continuity Plan 
+14 
+BFSI 
+Banking, Financial Services and Insurance 
+15 
+BG 
+Bank Guarantee 
+16 
+BGP 
+Border Gateway Protocol 
+17 
+BI 
+Business Intelligence 
+18 
+Bidder 
+The respondent to the RFP document 
+19 
+Bidder/ Service Provider/ 
+Recipient/ 
+Respondent/ 
+Vendor/ 
+Supplier/ 
+Contractor 
+Signifies those who purchase this tender document and 
+submits Response to it. 
+20 
+BoM 
+Bill of Materials 
+21 
+CAB 
+Change Advisory Board 
+22
+... scope of work:
+--- (p.8) ANNEXURE C: DETAILED SCOPE OF WORK ------------------------------------------------------------------- 121 
+7.36. 
+ANNEXURE D: ELIGIBILITY EVALUATION COMPLIANCE ------------------------------------------------ 170 
+7.37. 
+ANNEXURE E: PAYMENT TERMS ------------------------------------------------------------------------------------- 174 
+7.38. 
+ANNEXURE F: PROJECT TIMELINES ------------------------------------------------------------------------------- 177 
+7.39. 
+ANNEXURE G: SERVICE LEVEL REQUIREMENTS ----------------------------------------------------------- 178 
+7.40. 
+ANNEXURE H: TECHNICAL & FUNCTIONAL SPECIFICATIONS REQUIREMENTS ------------ 189 
+ 
+ 
+
+ 
+RFP 34/2026-27 for Supply, Installation, Configuration, Integration, and 
+Maintenance of IT Asset Management (ITAM), IT Operations Management 
+(ITOM), and IT Service Management (ITSM) solution 
+ 
+Restricted 
+Page 9 of 266 
+ 
+ 
+1. INTRODUCTION 
+ 
+About the Bank 
+Bank of Maharashtra is a public sector bank, formally registered and established on 16.09.1935, in 
+Pune, India. Bank is wholly constituted as a body corporate under the Banking Companies 
+(Acquisition and Transfer of Undertakings) Act, 1970, with its Head Office at 'Lokmangal', Shivaji 
+Nagar, Pune, and its Corporate Office at Montclaire, Baner–Pashan Link Road, Pashan, Pune. The 
+Bank operates a three-tier organizational structure comprising Branches, Zonal Offices and the 
+Corporate Office. 
+The Bank has a nationwide presence of more than 2,800 branches and offices spread across the 
+length and breadth of the country. Alongside its domestic franchise, the Bank operates an 
+International Banking Unit (IBU) at GIFT City, Gandhinagar, licensed under the International 
+Financial Services Centre Authority (IFSCA) framework, extending the Bank's reach into cross-
+border and offshore banking, treasury and trade finance business. 
+The Bank has set up specialized branches and verticals to serve the distinct requirements of 
+MSMEs, corporates, agriculturists, an
+--- (p.24) 4. SCOPE OF WORK 
+ 
+4.1. Introduction 
+ 
+Bank has envisaged Business growth for upcoming 5 years as Bank has already planned to expand 
+its Branches and Business as well as introducing new business solutions. While business growth is 
+evident, Bank is also transforming technologically. 
+ 
+The Bank invites proposals from eligible bidders to supply, installation and maintenance of on-
+premises solution for IT Asset Management (ITAM) with CMDB, IT Operation Management (ITOM) 
+with AIOPs, IT Service Management (ITSM) for end-to-end management of Infrastructure of the 
+Bank which includes all the DC, DR, PMO, Near DR, Head Office, all administrative offices, and 
+branches across PAN India. This invitation of bids is open to all OEMs/Bidders having presence in 
+India to fulfil the minimum qualification criteria as mentioned in RFP document. 
+ 
+Bank expects the Bidder to deliver proposed solution in-line with the delivery schedule and 
+implementation timelines mentioned in Annexure F for “Project Timelines” and technical 
+specification and functional requirements mentioned in Annexure H. In-depth scope of work is 
+outlined in Annexure C for “Detailed Scope of Work” of this RFP document. Bank seeks 
+comprehensive proposals from the bidders who have the capabilities to meet Bank’s requirements. 
+Bank reserves the right to further define the Scope of Work through formal discussions, formal 
+written communications such as letters/e-mails before execution of SLA to that effect, with the 
+successful bidder. 
+ 
+4.2. Broad Scope of Work 
+ 
+The Bank invites proposals from eligible bidders to supply, installation and maintenance of on-
+premises solution for IT Asset Management (ITAM) with CMDB, IT Operation Management (ITOM) 
+with AIOPs, IT Service Management (ITSM), for end-to-end management of Infrastructure and 
+Applications of the Bank. This invitation of bids is open to all OEMs/Bidders having presence in 
+India to fulfil the minimum qualification criteria as mentioned in RFP d
+... lines further in:
+(p.4) RFP 34/2026-27 for Supply, Installation, Configuration, Integration, and
+(p.5) Request for Proposal
+(p.6) Soft Copy of Tender document ------------------------------------------------------------------------------------------- 13
+(p.6) SCOPE OF WORK -------------------------------------------------------------------------------- 24
+(p.6) Broad Scope of Work ---------------------------------------------------------------------------------------------------------- 24
+(p.6) Rules for responding to this tender document. ------------------------------------------------------------------ 27
+(p.8) ANNEXURE 1: CERTIFICATE FOR RFP COST WAIVER FOR MSE/NSIC FIRMS ------------------ 61
+(p.8) ANNEXURE C: DETAILED SCOPE OF WORK ------------------------------------------------------------------- 121
+(p.9) Bank intends to onboard a Bidder for Supply, Installation and Maintenance of ITAM, ITOM
+(p.9) • The detailed Scope of Work is attached in Annexure C – Scope of Work.
+(p.9) requirements and other information in the RFP documents apart from compliance of all
+(p.9) required as per the RFP document or submission of a proposal not substantially
+
+=== Attachment IP_a5d45270-1ed8-4924-811b1790771924333_prasad.thakur.pdf (5 pages) ===
+ 
+Restricted 
+PRE-CONTRACT INTEGRITY PACT 
+(On Maharashtra Stamp Paper) 
+(on applicable stamp duty, time being in force at the cost and expenses of the bidder) 
+ 
+General: 
+”This pre-bid pre-contract Agreement (hereinafter called the Integrity Pact) is made on 
+_____ day of month of _________ 2026 at_(place)________, between on one hand, Bank 
+of 
+Maharashtra 
+through 
+authorized 
+official 
+Shri____________, 
+________________________ , Deputy General Manager, Information Technology, 
+Bank of Maharashtra, a body corporate constituted under Banking Companies (Acquisition 
+and transfer of undertakings) Act 1970, & having its Corporate Office at 134/1, Montclaire, 
+Baner-Pashan Link Road, Pashan, Pune – 411021, (hereinafter called the “BUYER”, which 
+expression shall u n l e s s i t b e r e p u g n a n t t o t h e s u b j e c t th e r e o f , include its 
+successors and assigns) of the First Part  
+and  
+M/s__________________ represented by Shri. ___________________ Chief Executive 
+Officer (herein called the “BIDDER/Seller” which expression shall mean and include 
+unless the context otherwise requires his successors and permitted assigns) of the 
+Second Part. 
+ 
+WHEREAS the BUYER proposes to procure (Name of the Stores/Solution/Item/Services) 
+and the BIDDER/Seller is willing to offer/has offered the stores and__________________. 
+ 
+WHEREAS the BIDDER is a private company / public company / Government 
+undertaking/partnership/ registered export agency/LLP, constituted in accordance with the 
+relevant law in the matter and the BUYER is Bank of Maharashtra. 
+ 
+NOW, THEREFORE, 
+ 
+To avoid all forms of corruption by following a system that is fair transparent and free from any 
+influence/ prejudiced dealings prior to, during and subsequent to the currency of the contract 
+to be entered into with a view to: - 
+ 
+Enabling the BUYER to obtain the desired Solution/product/services at a competitive 
+price in conformity with the defined specifications by avoiding the high cost a

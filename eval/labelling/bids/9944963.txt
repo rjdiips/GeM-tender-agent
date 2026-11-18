@@ -1,0 +1,438 @@
+# GEM/2026/B/8082056 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: Department of Financial Services
+Card: AI-based Full Stack Observability (FSO) Solution for Bank of Maharashtra; Full Stack Observability (FSO); AIOps; Generative AI; Application Performance Monitoring; Infrastructure Monitoring; Containerized Workloads Monitoring; Digital Channels Monitoring; Business Continuity Plan (BCP) Support
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+16-10-2026 17:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+17-10-2026 17:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Department Of Financial Services
+संगठन का नाम/Organisation Name
+Bank Of Maharashtra
+काया%लय का नाम/Office Name
+Headofficeit
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :hod13.bom.mh@gembuyer.in 
+Buyer Email id: prasad.thakur@mahabank.co.in
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 5 Year(s)
+बडर का +यूनतम औसत वाष%क टन%ओवर (3 वष2 का)
+/Minimum Average Annual Turnover of the
+bidder (For 3 Years)
+10000 Lakh (s)
+उ+हं/समान सेवा के िलए अपे56त वगत अनुभव के
+वष%/Years of Past Experience Required for
+same/similar service
+2 Year (s)
+टन%ओवर पा ता मानदंड/Turnover eligibility criteria
+To be verified by the buyer at the time of technical
+evaluation
+टन%ओवर के िलए एमएसई को छूट 9ा: है / MSE
+Relaxation for Turnover
+Yes | Complete
+टन%ओवर के िलए 'टाट%अप को छूट 9ा: है / Startup
+Relaxation for Turnover
+Yes | Complete
+व;ेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Bidder Turnover,Certificate (Requested
+in ATC),OEM Authorization Certificate,OEM Annual
+Turnover,Additional Doc 1 (Requested in ATC),Additional
+Doc 2 (Requested in ATC),Additional Doc 3 (Requested in
+ATC),Additional Doc 4 (Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+ 
+बड सं=या/Bid Number: GEM/2026/B/8082056
+>दनांक /Dated: 25-09-2026
+बड द'तावेज़ / Bid Document
+1 / 8
+
+Fया आप िनवदाकारH Iारा अपलोड >कए गए द'तावेज़H को
+िनवदा मJ भाग लेने वाले सभी िनवदाकारH को >दखाना
+चाहते हL? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+No
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आवPयक बड क सं=या। / Minimum number of
+bids required to disable automatic bid
+extension
+3
+>दनH क सं=या, 5जनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+3
+ऑटो एFसटJशन अिधकतम >कतनी बार >कया जाना है। /
+Number of Auto Extension count
+1
+बड से Uरवस% नीलामी स>;य >कया/Bid to RA enabled
+No
+बड का 9कार/Type of Bid
+Two Packet Bid
+तकनीक मूVयांकन के दौरान तकनीक 'पXीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+2 Days
+Payment Timelines
+Payments shall be made to the Seller within 45 days of
+issue of service delivery acceptance certificate (SDAC) and
+on-line submission of bills (This is in supersession of 10 days
+time as provided in clause 12 of GeM GTC)
+मूVयांकन पYित/Evaluation Method
+Total value wise evaluation
+मूVय दशा%ने वाला वZीय द'तावेज [ेकअप आवPयक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर बLक/Advisory Bank
+State Bank of India
+ईएमड रािश/EMD Amount
+7000000
+ईपीबीजी ववरण /ePBG Detail
+आवPयकता/Required
+No
+(a). जेम क शत2 के अनुसार ईएमड छूट के इ]छुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ 9'तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा 9दाता ईएमड से छूट के पा  हL। _यापाUरयH को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+2 / 8
+
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथ` के प6 मJ होनी चा>हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथ` के प6 मJ होनी चा>हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+लाभाथ` /Beneficiary : 
+DGM, Information Technology
+Bank of Maharashtra, Corporate Office, Montclaire, Montvert, 134/1, Baner-Pashan Link Road, Pashan- 411021
+(Abhinav Choubey)
+बोली वभाजन लागू नहं >कया गया/Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+aेbस भुगतान संबंधी ववरण/TReDS Payment Details
+This Bid provides for Trade Receivables Discounting System (TReDS) as Preferred mode of payment.
+For MSME sellers, payments may be processed through a TReDS exchange in which the Buyer is
+registered, subject to applicable policy and regulatory guidelines. Accordingly, sellers intending to
+avail payment through TReDS are required to be registered with at least one TReDS exchange in
+which the buyer is registered.
+1. If the bidder is a Micro or Small Enterprise (MSE) as per latest orders issued by Ministry of MSME, the bidder
+shall be relaxed from the eligibility criteria of "Bidder Turnover" as defined above subject to meeting of quality
+and technical specifications. If the bidder itself is MSE OEM of the offered products, it would be relaxed from the
+"OEM Average Turnover" criteria also subject to meeting of quality and technical specifications. The bidder
+seeking Relaxation from Turnover, shall upload the supporting documents to prove his eligibility for Relaxation.
+2. If the bidder is a DPIIT registered Startup, the bidder shall be relaxed from the the eligibility criteria of "Bidder
+Turnover" as defined above subject to their meeting of quality and technical specifications. If the bidder is DPIIT
+Registered OEM of the offered products, it would be relaxed from the "OEM Average Turnover" criteria also
+subject to meeting of quality and technical specifications. The bidder seeking Relaxation from Turnover shall
+upload the supporting documents to prove his eligibility for Relaxation. 
+3. The minimum average annual fina
+
+## RFP
+=== Attachment RFP_30f0f38f-4b24-44cb-b7081790318318104_prasad.thakur.pdf (222 pages) ===
+  
+RFP 33/2026-27 for Supply, Installation and Maintenance of AI-based FSO solution 
+ 
+Restricted 
+ 
+ 
+Page 1 of 222 
+ 
+ 
+ 
+Bank of Maharashtra 
+ 
+Request for Proposal for Supply, Installation 
+and Maintenance of AI-based Full Stack 
+Observability (FSO) Solution 
+ 
+ 
+ 
+ 
+  
+                                                
+ 
+ 
+              
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Bank of Maharashtra, Corporate Ofﬁce, 
+Montclaire, 134/1, 
+Baner- Pashan Link Road, Pashan, 
+Pune 411021 
+ 
+RFP - 33/2026-27 
+GEM BID NO-GEM/2026/B/8082056 
+
+  
+RFP 33/2026-27 for Supply, Installation and Maintenance of AI-based FSO solution 
+ 
+Restricted 
+ 
+ 
+Page 2 of 222 
+ 
+ 
+ 
+Important Clarifications: 
+ 
+Following terms are used in the document interchangeably to mean: 
+SN 
+Abbreviation 
+Full form for Abbreviation 
+1 
+AI 
+Artificial Intelligence 
+2 
+AIBOM 
+Artificial Intelligence Bill of Materials 
+3 
+AMC 
+Annual Maintenance Contract 
+4 
+API 
+Application programming interface 
+5 
+Asset ID 
+Asset Identification number 
+6 
+ATM 
+Automated teller machine 
+7 
+ATS 
+Annual Technical Support 
+8 
+Bank 
+Bank of Maharashtra 
+9 
+BCP 
+Business Continuity Plan 
+10 
+BG 
+Bank Guarantee 
+11 
+BGP 
+Border Gateway Protocol 
+12 
+Bidder 
+The respondent to the RFP document 
+13 
+Bidder/ Service Provider/ 
+Recipient/ 
+Respondent/ 
+Vendor/ 
+Supplier/ 
+Contractor 
+Signifies those who purchase this tender document and 
+submits Response to it. 
+14 
+CAPEX 
+Capital Expenditure 
+15 
+CASA 
+Current Account Savings Account 
+16 
+CBOM 
+Cryptography Bill of Materials  
+17 
+CEF 
+Common Event Format 
+18 
+CLF 
+Common Log Format 
+19 
+CMDB 
+Configuration Management Database 
+20 
+CPU 
+Central Processing Unit 
+21 
+CSAF 
+Common Security Advisory Framework 
+22 
+CSV 
+Comma Separated Values 
+23 
+DAST 
+Dynamic Application Security Testing 
+24 
+DC 
+Data Centre 
+25 
+DD 
+Demand Draft 
+26 
+DNS 
+Domain Name System 
+27 
+DR 
+Disaster Recovery 
+28 
+ELF 
+Extended Log Format 
+29 
+EMD 
+Earnest Money Deposit 
+30 
+EOL 
+End of Life 
+31 
+EOS 
+End of Support 
+32 
+EOSS 
+En
+... scope of work:
+--- (p.7) ANNEXURE C: DETAILED SCOPE OF WORK ------------------------------------------------------------------- 117 
+7.35. 
+ANNEXURE D: ELIGIBILITY EVALUATION COMPLIANCE ------------------------------------------------ 178 
+7.36. 
+ANNEXURE E: PAYMENT TERMS ------------------------------------------------------------------------------------- 182 
+7.37. 
+ANNEXURE F: PROJECT TIMELINES ------------------------------------------------------------------------------- 185 
+7.38. 
+ANNEXURE G: SERVICE LEVEL REQUIREMENTS ----------------------------------------------------------- 186 
+7.39. 
+ANNEXURE H: TECHNICAL & FUNCTIONAL SPECIFICATIONS REQUIREMENTS ------------ 196 
+ 
+ 
+ 
+
+ 
+RFP 33/2026-27 for Supply, Installation and Maintenance of AI-based FSO solution 
+ 
+Restricted 
+ 
+ 
+Page 8 of 222 
+ 
+ 
+1. INTRODUCTION 
+ 
+About the Bank 
+Bank of Maharashtra is a public sector bank, formally registered and established on 16.09.1935, in 
+Pune, India. Bank is wholly constituted as a body corporate under the Banking Companies 
+(Acquisition and Transfer of Undertakings) Act, 1970, with its Head Office at 'Lokmangal', Shivaji 
+Nagar, Pune, and its Corporate Office at Montclaire, Baner–Pashan Link Road, Pashan, Pune. The 
+Bank operates a three-tier organizational structure comprising Branches, Zonal Offices and the 
+Corporate Office. 
+The Bank has a nationwide presence of more than 2,800 branches and offices spread across the 
+length and breadth of the country. Alongside its domestic franchise, the Bank operates an 
+International Banking Unit (IBU) at GIFT City, Gandhinagar, licensed under the International 
+Financial Services Centre Authority (IFSCA) framework, extending the Bank's reach into cross-
+border and offshore banking, treasury and trade finance business. 
+The Bank has set up specialized branches and verticals to serve the distinct requirements of 
+MSMEs, corporates, agriculturists, and importers and exporters. The Bank is recognized as a front-
+runner among Public Sector Banks in the adop
+--- (p.23) 4. SCOPE OF WORK 
+ 
+4.1. Introduction 
+ 
+Bank invites proposals from eligible bidders to supply, installation and maintenance of AI 
+based Full Stack Observability (FSO). This invitation of bids is open to all OEMs/Bidders 
+having presence in India to fulfil the minimum qualification criteria as mentioned in RFP 
+document. 
+ 
+The Bank proposes to establish a centralized observability and resilience capability at its Data 
+Centre and Disaster Recovery Centre, enabling proactive monitoring of its critical applications, 
+digital channels, infrastructure and containerized workloads through a Full Stack Observability 
+solution with AIOps and GenAI capabilities. The proposed solution shall provide real-time, 
+business-centric insight into the performance and health of critical banking applications and 
+their underlying infrastructure by leveraging advanced analytics, machine learning, generative 
+AI and unified data correlation. 
+ 
+Bank expects the Bidder to deliver proposed solution in-line with the delivery schedule and 
+implementation timelines mentioned in Annexure F for “Project Timelines” and technical 
+specification and functional requirements mentioned in Annexure H. In-depth scope of work 
+is outlined in Annexure C for “Detailed Scope of Work” of this RFP document. Bank seeks 
+comprehensive proposals from the bidders who have the capabilities to meet Bank’s 
+requirements. Bank reserves the right to further define the Scope of Work through formal 
+discussions, formal written communications such as letters/e-mails before execution of SLA 
+to that effect, with the successful bidder. 
+ 
+4.2. Broad Scope of Work 
+ 
+Bank invites proposals from eligible bidders to supply, installation and maintenance of AI 
+Based Full Stack Observability (FSO). This invitation of bids is open to all OEMs/Bidders 
+having presence in India to fulfil the minimum qualification criteria as mentioned in RFP 
+document. 
+ 
+1. 
+The bidder is required to bid for Supply, Installation and Maintenan
+... lines further in:
+(p.4) RFP 33/2026-27 for Supply, Installation and Maintenance of AI-based FSO solution
+(p.5) Soft Copy of Tender document ------------------------------------------------------------------------------------------- 12
+(p.5) SCOPE OF WORK -------------------------------------------------------------------------------- 23
+(p.5) Broad Scope of Work ---------------------------------------------------------------------------------------------------------- 23
+(p.5) Rules for responding to this tender document ------------------------------------------------------------------- 26
+(p.7) ANNEXURE 1: CERTIFICATE FOR RFP COST WAIVER FOR MSE/NSIC FIRMS ------------------ 59
+(p.7) ANNEXURE C: DETAILED SCOPE OF WORK ------------------------------------------------------------------- 117
+(p.8) Bank intends to on-board a Bidder for Supply, Installation and Maintenance of AI Based FSO
+(p.8) • The detailed Scope of Work is attached in Annexure C – Scope of Work.
+(p.8) requirements and other information in the RFP documents apart from compliance of all
+(p.8) required as per the RFP document or submission of a proposal not substantially
+(p.8) responsive to the RFP document in every respect will be at the Bidder's risk and may
+
+=== Attachment IP_5fde31d6-bfcc-4676-ad071790316193240_prasad.thakur.pdf (6 pages) ===
+ 
+Restricted 
+PRE-CONTRACT INTEGRITY PACT 
+(On Maharashtra Stamp Paper) 
+(on applicable stamp duty, time being in force at the cost and expenses of the bidder) 
+ 
+General: 
+”This pre-bid pre-contract Agreement (hereinafter called the Integrity Pact) is made on 
+_____ day of month of _________ 2026 at_(place)________, between on one hand, Bank 
+of Maharashtra through authorized official Shri____________, Deputy General Manager, 
+Information Technology, Bank of Maharashtra, a body corporate constituted under Banking 
+Companies (Acquisition and transfer of undertakings) Act 1970, & having its Corporate Office 
+at 134/1, Montclaire, Baner-Pashan Link Road, Pashan, Pune – 411021, (hereinafter called 
+the “BUYER”, which expression shall u n l e s s it b e r e p u g n a n t t o t h e s u b j e c t 
+t her eof , include its successors and assigns) of the First Part  
+and  
+M/s__________________ represented by Shri. ___________________ Chief Executive 
+Officer (herein called the “BIDDER/Seller” which expression shall mean and include 
+unless the context otherwise requires his successors and permitted assigns) of the 
+Second Part. 
+ 
+WHEREAS the BUYER proposes to procure (Name of the Stores/Solution/Item/Services) 
+and the BIDDER/Seller is willing to offer/has offered the stores and__________________. 
+ 
+WHEREAS the BIDDER is a private company / public company / Government 
+undertaking/partnership/ registered export agency/LLP, constituted in accordance with the 
+relevant law in the matter and the BUYER is Bank of Maharashtra. 
+ 
+NOW, THEREFORE, 
+ 
+To avoid all forms of corruption by following a system that is fair transparent and free from any 
+influence/ prejudiced dealings prior to, during and subsequent to the currency of the contract 
+to be entered into with a view to: - 
+ 
+Enabling the BUYER to obtain the desired Solution/product/services at a competitive 
+price in conformity with the defined specifications by avoiding the high cost and the 
+distortionary impact of corru

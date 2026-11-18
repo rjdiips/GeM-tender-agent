@@ -1,0 +1,319 @@
+# GEM/2026/B/8250795 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: NA
+Card: DTNBWED Skilling Management Software (TMS 2.0) for Dattopant Thengadi National Board for Workers Education and Development; skilling management software; UPBOCWWB RPL Programme Component; data preservation; backup; disaster recovery; security remediation; platform modernisation; system integration
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+01-12-2026 17:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+02-12-2026 17:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Labour And Employment
+वभाग का नाम/Department Name
+Na
+संगठन का नाम/Organisation Name
+Central Board For Workers Education (cbwe)
+काया%लय का नाम/Office Name
+Head Office
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :ad-gad@cbwe.nic.in 
+Buyer Email id: krishan.0605@cbwe.nic.in
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 3 Year(s) 1 Day(s)
+पछले 3 व-ीय वष/ का बडर का 0यूनतम औसत वाष%क
+व-ीय टन%ओवर/Minimum Average Annual
+Turnover of the bidder (For the last 3
+Financial Years)
+50 Lakh (s)
+उ0हं/समान सेवा के िलए अपे78त वगत अनुभव के
+वष%/Years of Past Experience Required for
+same/similar service
+3 Year (s)
+टन%ओवर पा ता मानदंड/Turnover eligibility criteria
+To be verified by the buyer at the time of technical
+evaluation
+वष/ के अनुभव एवं टन%ओवर से एमएसई को छूट :ा; है /
+MSE Relaxation for Years Of Experience
+and Turnover
+Yes | Complete
+'टाट%अप के िलए अनुभव के वष/ और टन%ओवर से छूट :दान
+क गई है / Startup Relaxation for Years Of
+Experience and Turnover
+Yes | Complete
+व<ेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Bidder Turnover,Certificate (Requested
+in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+ 
+बड सं>या/Bid Number: GEM/2026/B/8250795
+?दनांक /Dated: 06-11-2026
+बड द'तावेज़ / Bid Document
+1 / 8
+
+Fया आप िनवदाकारH Iारा अपलोड ?कए गए द'तावेज़H को
+िनवदा मJ भाग लेने वाले सभी िनवदाकारH को ?दखाना
+चाहते हL? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+Yes (Documents submitted as part of a clarification or
+representation during the tender/bid process will also be
+displayed to other participated bidders after log in)
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आवPयक बड क सं>या। / Minimum number of
+bids required to disable automatic bid
+extension
+1
+?दनH क सं>या, 7जनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+3
+ऑटो एFसटJशन अिधकतम ?कतनी बार ?कया जाना है। /
+Number of Auto Extension count
+1
+बड से Uरवस% नीलामी स?<य ?कया/Bid to RA enabled
+No
+बड का :कार/Type of Bid
+Two Packet Bid
+तकनीक मूVयांकन के दौरान तकनीक 'पXीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+2 Days
+मूVयांकन पYित/Evaluation Method
+Total value wise evaluation
+मूVय दशा%ने वाला व-ीय द'तावेज Zेकअप आवPयक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर बLक/Advisory Bank
+State Bank of India
+ईएमड रािश/EMD Amount
+300000
+ईपीबीजी ववरण /ePBG Detail
+एडवाइजर बLक/Advisory Bank
+State Bank of India
+ईपीबीजी :ितशत (%)/ePBG Percentage(%)
+3.00
+ईपीबीजी क आवPयक अविध (माह) /Duration of ePBG
+required (Months).
+38
+(a). जेम क शत/ के अनुसार ईएमड छूट के इ]छुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ :'तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा :दाता ईएमड से छूट के पा  हL। _यापाUरयH को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+2 / 8
+
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथ` के प8 मJ होनी चा?हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथ` के प8 मJ होनी चा?हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+लाभाथ` /Beneficiary : 
+DIRECTOR GENERAL
+Second Floor Employment Exchange Building, Pusa Road, Near ITI Pusa, New Delhi 110012
+(Dattopant Thengadi National Board For Workers Education And Development)
+बोली वभाजन लागू नहं ?कया गया/Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+1. If the bidder is a Micro or Small Enterprise as per latest orders issued by Ministry of MSME, the bidder shall be
+relaxed from the eligibility criteria of "Experience Criteria" as defined above subject to meeting of quality and
+technical specifications. The bidder seeking Relaxation from Experience Criteria, shall upload the supporting
+documents to prove his eligibility for Relaxation.
+2. If the bidder is a Micro or Small Enterprise (MSE) as per latest orders issued by Ministry of MSME, the bidder
+shall be relaxed from the eligibility criteria of "Bidder Turnover" as defined above subject to meeting of quality
+and technical specifications. If the bidder itself is MSE OEM of the offered products, it would be relaxed from the
+"OEM Average Turnover" criteria also subject to meeting of quality and technical specifications. The bidder
+seeking Relaxation from Turnover, shall upload the supporting documents to prove his eligibility for Relaxation.
+3. If the bidder is a DPIIT registered Startup, the bidder shall be relaxed from the the eligibility criteria of
+"Experience Criteria" as defined above subject to their meeting of quality and technical specifications. The bidder
+seeking Relaxation from Experience Criteria, shall upload the supporting documents to prove his eligibility for
+Relaxation.
+4. If the bidder is a DPIIT registered Startup, the bidder shall be relaxed from the the eligibility criteria of "Bidder
+Turnover" as defined above subject to their meeting of quality and technical specifications. If the bidder is DPIIT
+Registered OEM of the offered 
+
+## RFP
+=== Attachment 1793964004.pdf (53 pages) (also uploaded as: 1793964015.pdf) ===
+Page | 1 
+ 
+ 
+ 
+Request For Proposal 
+For 
+Development, Modernisation and Integration of DTNBWED 
+Skilling Management Software, including the UPBOCWWB 
+RPL Programme Component, and Annual Data Preservation, 
+Backup, Disaster Recovery and Security Remediation 
+(TMS 2.0) 
+for  
+DTNBWED 
+through Government e-Marketplace (GeM) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Office of the Director General 
+DattopantThengadi National Board for Workers  
+Education and Development 
+Ministry of Labour& Employment, Govt. of India 
+ 
+2ndFloor, Employment Exchange Building 
+Pusa complex, Pusa Road, Pusa, New Delhi –110012 
+ 
+
+Page | 2 
+ 
+Disclaimer 
+The information contained in this bid document is provided to the bidder(s) based on the terms and conditions 
+outlined herein. The bid document includes statements derived from information believed to be true and 
+reliable as of the date obtained. However, it does not claim to provide all the necessary or desirable 
+information to enable an intending contracting party to determine whether or not to enter into a contract or 
+arrangement with DattopantThengadi National Board for Workers Education and Development (DTNBWED) 
+in relation to the provision of services. 
+The bid document does not constitute a recommendation, offer, or invitation to enter into a contract, 
+agreement, or any other arrangement concerning the services. The provision of services is subject to the 
+observance of the selection process, and appropriate documentation must be agreed upon between 
+DTNBWED and any successful bidder identified by DTNBWED after completing the selection process 
+outlined in this document. No contractual obligation shall arise from the bid process unless and until a formal 
+contract is signed and executed by duly authorized officers of DTNBWED with the bidder. 
+The purpose of this bid is to provide the bidder(s) with information to assist in the formulation of their 
+proposals. It does not claim to contain all the information each bidder may require. Ea
+... scope of work:
+--- (p.9) 3. SCOPE OF WORK 
+ 
+ 
+DATTOPANT THENGADI NATIONAL BOARD FOR 
+WORKERS EDUCATION AND DEVELOPMENT 
+HEADQUARTERS, NEW DELHI 
+ 
+REQUEST FOR PROPOSAL (RFP) 
+Development, Modernisation and Integration of DTNBWED Skilling Management 
+Software, including the UPBOCWWB RPL Programme Component, and Annual Data 
+Preservation, Backup, Disaster Recovery and Security Remediation (TMS 2.0) 
+ 
+Particular
+Details
+Procuring Entity 
+DattopantThengadi National Board for Workers Education and Development (DTNBWED), Headquarters, 
+New Delhi 
+Bid Number / Date
+To be inserted by the Department / GeM
+Contract Period 
+Proposed: 3 Years from the effective date of contract; detailed implementation plan to be submitted by 
+the bidder 
+Implementation Period 
+Indicatively 7–8 months, subject to approved milestones, infrastructure readiness and third-party 
+dependencies 
+Hosting Environment 
+Department-approved NICSI / MeghRaj 2.0 environment, subject to confirmation of the approved service 
+and tenancy 
+Bid Platform 
+Government e-Marketplace (GeM), subject to confirmation of the appropriate service category and bid 
+configuration 
+ 
+ 
+ 
+
+Page | 10 
+ 
+Contents 
+ 1. Invitation and Purpose 
+ 2. Background and Existing System 
+ 3. Objectives and Three Components of Work 
+ 4. Component I – DTNBWED Platform Assessment, Standardisation and Modernisation 
+ 5. Component II – Comprehensive Skilling Management Software 
+ 6. Component III – Follow-up Actions, Historical Data Preservation and IT Resilience 
+ 7. Common Technical, Security and Data Governance Requirements 
+ 8. Project Management, Roles and Responsibilities 
+ 9. Deliverables and Acceptance Criteria 
+ 10. Indicative Implementation Schedule 
+ 11. Bidder Response Requirements 
+ 12. Commercial Bid Structure and Payment Principles 
+ 13. Warranty, Support and Service Levels 
+ 14. Ownership, Confidentiality and Exit Management 
+ Annexures: Compliance Matrix, Indicative Test Scenarios and Bidder Declarations 
+ 
+ 
+
+Page | 11 
+ 
+1. Invitation
+... lines further in:
+(p.6) annual backup, disaster recovery and security remediation in accordance with the Scope of Work.
+(p.7) c) “Services” means all the services mentioned in scope of work of this document.
+(p.7) hosting technologies required by the Scope of Work.
+(p.7) DTNBWED, as proposed in the RFP/work order.
+(p.7) Scope of Work and approved contract.
+(p.7) development, testing & implementation of all modules listed in Scope of work and first
+(p.9) REQUEST FOR PROPOSAL (RFP)
+(p.11) contractual relationship with UPBOCWWB is created by this RFP.
+(p.18) reference presentation is not an assumed requirement of this RFP. Such functionality shall be excluded
+(p.21) and coordinate approved data/interface matters. They are not procuring or contracting parties under this RFP.
+(p.23) The final RFP should expressly require 24 months of AMC from final acceptance.
+(p.26) in the Scope of Work.
+
+=== Attachment 17939622557766.pdf (1 pages) ===
+Sl. 
+No.
+Bidder’s Query (Summarised)
+Reply of DTNBWED
+1
+Whether the agency is required to 
+arrange the office premises, 
+furniture, workstations and other 
+infrastructure for setting up the 
+Centralized IEC Unit.
+DTNBWED shall provide suitable office space at Rohini, New Delhi, which is ready for use and is in accordance with 
+the applicable norms. The agency shall be responsible for providing the necessary furniture, workstations, 
+equipment and other infrastructure required for the establishment and operation of the Centralized IEC Unit, as 
+prescribed under the RFP.
+2
+Whether five calling stations are 
+required to operate throughout the 
+prescribed working hours and 
+whether a separate Shift 
+Supervisor/Team Leader is required.
+The requirement under the RFP is for five (5) fully equipped calling stations, each staffed by an IEC Unit Executive. 
+The agency shall ensure the availability of all five calling stations throughout the prescribed operating hours, i.e. 
+8:00 AM to 8:00 PM daily. The agency may make suitable shift-wise manpower arrangements to ensure 
+uninterrupted operations within the quoted consolidated monthly rate. No additional Shift Supervisor/Team Leader 
+has been prescribed as a mandatory position under the RFP.
+3
+Whether inbound and outbound calls 
+can be handled through different 
+telephone numbers and whether 
+separate per-minute call charges 
+shall be reimbursed.
+The inbound toll-free number shall be configured to route calls to different numbers based on the options selected 
+by the caller through the IVR system. For outbound calls, the agency may use separate numbers, as required for 
+operational purposes. The bidder shall make all necessary arrangements for the same within the scope and quoted 
+cost of the project. Further, as per Clause 11 of the RFP, the bidder is required to quote a single consolidated 
+monthly rate inclusive of toll-free helpline rental, telecom charges and the call-handling system. No separate 
+reimbursement of per-min

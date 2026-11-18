@@ -1,0 +1,386 @@
+# GEM/2026/B/8150569 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: Department of Financial Services
+Card: DPDP Tools for UCO Bank; data privacy governance platform; Digital Personal Data Protection (DPDP) Act compliance; data privacy tools; privacy governance capabilities; enterprise data privacy governance; DPDP compliance platform; data protection tools; privacy compliance modules
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+03-11-2026 16:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+04-11-2026 16:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Department Of Financial Services
+संगठन का नाम/Organisation Name
+Uco Bank
+काया%लय का नाम/Office Name
+E
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :shouvik.nandi@uco.bank.in 
+Buyer Email id: somnath.mukherjee@uco.bank.in
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 3 Year(s)
+टन%ओवर के िलए एमएसई को छूट 1ा2 है / MSE
+Relaxation for Turnover
+Yes | Complete
+टन%ओवर के िलए 'टाट%अप को छूट 1ा2 है / Startup
+Relaxation for Turnover
+Yes | Complete
+व3ेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Bidder Turnover,Certificate (Requested
+in ATC),OEM Authorization Certificate,Additional Doc 1
+(Requested in ATC),Additional Doc 2 (Requested in
+ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4
+(Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+5या आप िनवदाकार7 8ारा अपलोड 9कए गए द'तावेज़7 को
+िनवदा म: भाग लेने वाले सभी िनवदाकार7 को 9दखाना
+चाहते ह<? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+Yes (Documents submitted as part of a clarification or
+representation during the tender/bid process will also be
+displayed to other participated bidders after log in)
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आव@यक बड क संAया। / Minimum number of
+bids required to disable automatic bid
+extension
+2
+ 
+बड संAया/Bid Number: GEM/2026/B/8150569
+9दनांक /Dated: 12-10-2026
+बड द'तावेज़ / Bid Document
+1 / 7
+
+9दन7 क संAया, Jजनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+5
+ऑटो ए5सट:शन अिधकतम 9कतनी बार 9कया जाना है। /
+Number of Auto Extension count
+1
+बड से Mरवस% नीलामी स93य 9कया/Bid to RA enabled
+No
+बड का 1कार/Type of Bid
+Two Packet Bid
+तकनीक मूNयांकन के दौरान तकनीक 'पPीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+2 Days
+Payment Timelines
+Payments shall be made to the Seller within 30 days of
+issue of service delivery acceptance certificate (SDAC) and
+on-line submission of bills (This is in supersession of 10 days
+time as provided in clause 12 of GeM GTC)
+मूNयांकन पQित/Evaluation Method
+Total value wise evaluation
+मूNय दशा%ने वाला वRीय द'तावेज Sेकअप आव@यक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+मTय'थता खंड/Arbitration Clause
+No
+सुलह खंड/Mediation Clause
+No
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर ब<क/Advisory Bank
+State Bank of India
+ईएमड रािश/EMD Amount
+4000000
+ईपीबीजी ववरण /ePBG Detail
+आव@यकता/Required
+No
+(a). जेम क शतV के अनुसार ईएमड छूट के इXछुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ 1'तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा 1दाता ईएमड से छूट के पा  ह<। YयापाMरय7 को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथ[ के प\ म: होनी चा9हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथ[ के प\ म: होनी चा9हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+2 / 7
+
+लाभाथ[ /Beneficiary : 
+Deputy General Manager
+UCO Bank,3 & 4 DD Bloc, Kolkata 700064
+(Uco Bank)
+बोली वभाजन लागू नहं 9कया गया/ Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+एमएसई खरद वरयता/MSE Purchase Preference
+एमएसई खरद वरयता/MSE Purchase Preference
+Yes
+सू]म और लघु उ`म मूल उपकरण िनमा%ताओं/सेवा 1दाता
+को खरद म: 1ाथिमकता, य9द उनका मूNय L1+X% /
+Purchase Preference to MSE OEMs/ Service
+Provider available upto price within L1+X%
+15
+cेdस भुगतान संबंधी ववरण/TReDS Payment Details
+This Bid provides for Trade Receivables Discounting System (TReDS) as Preferred mode of payment.
+For MSME sellers, payments may be processed through a TReDS exchange in which the Buyer is
+registered, subject to applicable policy and regulatory guidelines. Accordingly, sellers intending to
+avail payment through TReDS are required to be registered with at least one TReDS exchange in
+which the buyer is registered.
+1. If the bidder is a Micro or Small Enterprise (MSE) as per latest orders issued by Ministry of MSME, the bidder
+shall be relaxed from the eligibility criteria of "Bidder Turnover" as defined above subject to meeting of quality
+and technical specifications. If the bidder itself is MSE OEM of the offered products, it would be relaxed from the
+"OEM Average Turnover" criteria also subject to meeting of quality and technical specifications. The bidder
+seeking Relaxation from Turnover, shall upload the supporting documents to prove his eligibility for Relaxation.
+2. If the bidder is a DPIIT registered Startup, the bidder shall be relaxed from the the eligibility criteria of "Bidder
+Turnover" as defined above subject to their meeting of quality and technical specifications. If the bidder is DPIIT
+Registered OEM of the offered products, it would be relaxed from the "OEM Average Turnover" criteria also
+subject to meeting of quality and technical specifications. The bidder seeking Relaxation from Turnover shall
+upload the supporting documents to prove his eligibility for Relaxation. 
+3. Purchase p
+
+## RFP
+=== Attachment ATC_e08be057-4f7f-4b9a-8b941791809034604_SMUKHERJEE_UCO.pdf (186 pages) ===
+ 
+ 
+ 
+Page: 1 of 186 
+ 
+ 
+Selection of System Integrator for 
+implementation of DPDP Tools  
+ 
+ 
+ADDITIONAL TERMS AND CONDITION (ATC) 
+   
+All the clauses mentioned in this Additional Terms and Conditions (ATC) 
+document will be integral part of the bid document. In case of any contradiction 
+or conflict of interest the terms and conditions, eligibility criteria and technical 
+compliance as mentioned in ATC document will prevail. 
+ 
+ABBREVIATION 
+ 
+The long form of some abbreviations commonly used in the bid is given below: 
+Abbreviations 
+Description 
+ACK 
+ACH Payment Acknowledgement 
+AI/ML 
+Artificial Intelligence/Machine Learning 
+AMC 
+Annual Maintenance Contract 
+API 
+Application Programming Interface 
+ATS 
+Annual Technical Services 
+B2C 
+Business-to-Consumer 
+BBPS 
+Bharat Bill Payment System 
+BG 
+Bank Guarantee 
+BOM 
+Bill of Material 
+BPD 
+Business Parameter Definition 
+CBS 
+Core Banking Solutions 
+CIF 
+Customer Identification File/Form 
+CMS 
+Cash Management Services 
+CNA 
+Central Nodal Account 
+CRM 
+Customer Relationship Management 
+CSV 
+Comma-Separated Value 
+CVC 
+Central Vigilance Commission 
+DC 
+Data Center 
+DD 
+Demand Draft 
+DDOS 
+Distributed Denial-of-Service 
+DIT 
+Department of Information Technology 
+DR 
+Disaster Recovery 
+
+ 
+ 
+ 
+Page: 2 of 186 
+ 
+ 
+EFRM 
+Enterprise Fraud Risk Management 
+EMD 
+Earnest Money Deposit 
+EOD 
+End of Day 
+EOL 
+End of Life 
+EOS 
+End of Support/Sell 
+ERP 
+Enterprise Resource Planning 
+FEBA 
+First Enterprise Business Agency 
+FMS 
+Facility Management Services 
+GB 
+Gigabyte 
+GST 
+Goods and Service Tax 
+GUI 
+Graphical User Interface 
+H2H 
+Host to Host 
+HO 
+Head Office 
+HTML 
+Hypertext Markup Language 
+IMPS 
+Immediate Payment Service 
+IPO 
+Initial Public Offering 
+IT 
+Information Technology 
+KYC 
+Know Your Customer 
+LAPS 
+Lending Automation of Processing System 
+LD 
+Liquidated Damage 
+MF 
+Mutual Fund 
+MIS 
+Management Information System 
+MMS 
+Mandate Management System 
+MSE 
+Micro & Small Enterprise 
+MSME 
+Micro Small & Medium Enterpr
+... scope of work:
+--- (p.9) SCOPE OF WORK 
+ 
+1.1 Objective & Scope 
+The objective of this activity is to enable enterprise data privacy governance & 
+compliance platform in the UCO Bank‟s environment. The technological 
+requirements, which include all the modules covered under this RFP for the 
+bank to comply with the Digital Personal Data Protection (DPDP) Act, 2023 and 
+Digital Personal Data Protection Rules 2025, while establishing scalable, 
+auditable, and enterprise-grade privacy governance capabilities across 
+people, processes, and technology. 
+The bidder has to provide the hardware sizing requirement in the Hardware BoM 
+separately. However, the Bank will provide the required hardware in Banks Nu-
+tanix based on premises private cloud where in the required Cores, Memory, in 
+RHEL Linux and basic Nutanix-based Kubernetes platform or Windows servers, 
+Oracle 19 C data base. However, if the solution needs any other Hardware or 
+Software components, it may be quoted separately which needs to be includ-
+ed in the Total Cost of Operation. 
+ 
+Apart from the above options, in case any additional Hardware/Software/ 
+Licenses/ Software for Middleware/ Software related to Containerization, 
+required to implement the proposed Solution, the same should be provided by 
+the bidder & cost of the same should be factored in the TCO. All proposed 
+licenses should have enterprise/premium support from the respective OEMs. 
+The bidder has to provide the hardware sizing requirement as per Annexure-XXI. 
+Bidder is responsible to arrive the sizing independently based on the 
+requirements mentioned in SOW. The hardware proposed for the Platform 
+should not exceed 70% of CPU(s), Memory(s), Hard Disk(s) utilization levels at 
+any given point in time during the contract Period. In case the resource 
+utilization 
+exceeds 
+above 
+level, 
+the 
+bidder must 
+provide 
+additional 
+hardware/software/licenses without any additional cost to the Bank. The Bank is 
+not responsible for any assumption made by the bidder not mee
+... lines further in:
+(p.4) Bank intends to on-board a System Integrator for implementation of DPDP Tools in
+(p.4) implementation of DPDP Tools. The prospective bidders are required to adhere to
+(p.4) the terms of this RFP document and any deviations to the same shall not to be
+(p.4) under the RFP document shall own the single point responsibility for fulfilling all
+(p.4) implementation of the project. Unless agreed to specifically by the Bank in writing
+(p.6) mentioned in the Scope of Work, in
+(p.7) OEM/OSD in the same tender for the same item or product. The
+(p.9) requirements, which include all the modules covered under this RFP for the
+(p.10) The scope of work shall include the following:
+(p.10) End-to-end supply, installation, configuration, hardening, and support of
+(p.10) the solutions specified in this RFP.
+(p.10) The Bank invites responses to this RFP for the following modules to ensure
+
+=== Attachment 1791807364.pdf (72 pages) ===
+Selection of System Integrator for 
+implementation of DPDP Tools  
+ 
+ 
+PART-II 
+SCOPE OF WORK 
+ 
+1.1 Objective & Scope 
+The objective of this activity is to enable enterprise data privacy 
+governance & compliance platform in the UCO Bank‟s environment. The 
+technological requirements, which include all the modules covered under 
+this RFP for the bank to comply with the Digital Personal Data Protection 
+(DPDP) Act, 2023 and Digital Personal Data Protection Rules 2025, while 
+establishing 
+scalable, 
+auditable, 
+and 
+enterprise-grade 
+privacy 
+governance capabilities across people, processes, and technology. 
+The bidder has to provide the hardware sizing requirement in the Hardware 
+BoM separately. However, the Bank will provide the required hardware in 
+Banks Nutanix based on premises private cloud where in the required 
+Cores, Memory, in RHEL Linux and basic Nutanix-based Kubernetes 
+platform or Windows servers, Oracle 19 C data base. However, if the 
+solution needs any other Hardware or Software components, it may be 
+quoted separately which needs to be included in the Total Cost of 
+Operation. 
+ 
+Apart from the above options, in case any additional Hardware/Software/ 
+Licenses/ Software for Middleware/ Software related to Containerization, 
+required to implement the proposed Solution, the same should be 
+provided by the bidder & cost of the same should be factored in the TCO.  
+All proposed licenses should have enterprise/premium support from the 
+respective OEMs. 
+The bidder has to provide the hardware sizing requirement as per 
+Annexure-XXI. Bidder is responsible to arrive the sizing independently 
+based on the requirements mentioned in SOW. The hardware proposed for 
+the Platform should not exceed 70% of CPU(s), Memory(s), Hard Disk(s) 
+utilization levels at any given point in time during the contract Period. In 
+case the resource utilization exceeds above level, the bidder must provide 
+
+additional hardware/software/licenses without any additional cost to the 
+... lines further in:
+(p.5) The bidder shall be responsible for end-to-end supply, installation,
+(p.6) 2. The bidder shall be responsible for end-to-end supply, installation,
+(p.39) infrastructure to meet the RFP requirements.
+(p.40) 26. All the ATS of the software supplied through this RFP needs to be
+(p.46) k. The bidder shall be responsible for supply, installation, configuration, and
+(p.47) functionalities aligned to the scope of the RFP.
+(p.48) aligned to the volumes and capacity envisaged in this RFP.
+(p.50) the bidder‟s Scope of Work they are expected to:
+(p.51) implementation of all components and their changes, if any. The Bidder
+(p.52) o. Measure the progress made in the implementation of the project
+(p.52) team structure in place to ensure smooth implementation of the project. The
+(p.53) a) Implementation of phase requirements

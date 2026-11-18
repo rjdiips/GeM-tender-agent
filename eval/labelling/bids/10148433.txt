@@ -1,0 +1,333 @@
+# GEM/2026/B/8258856 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: Department of Financial Services
+Card: Video Conference (VC) Solution for National Housing Bank; Video Conferencing hardware; Video Conferencing application software; Wireless presentation System; Microsoft Teams Rooms License; VC Support Solutions; Annual Maintenance Contract; Technical Support; Onsite Support Engineer
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+01-12-2026 13:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+02-12-2026 13:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Department Of Financial Services
+संगठन का नाम/Organisation Name
+National Housing Bank (nhb)
+काया%लय का नाम/Office Name
+Ihc Lodhi Road New Delhi
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :mahesh.singh@nhb.org.in 
+Buyer Email id: aman.meena@nhb.org.in
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 3 Year(s)
+पछले 3 व-ीय वष/ का बडर का 0यूनतम औसत वाष%क
+व-ीय टन%ओवर/Minimum Average Annual
+Turnover of the bidder (For the last 3
+Financial Years)
+200 Lakh (s)
+टन%ओवर पा ता मानदंड/Turnover eligibility criteria
+To be verified by the buyer at the time of technical
+evaluation
+टन%ओवर के िलए एमएसई को छूट 7ा8 है / MSE
+Relaxation for Turnover
+Yes | Partial | Turn over value - 0 (in lakhs)
+टन%ओवर के िलए 'टाट%अप को छूट 7ा8 है / Startup
+Relaxation for Turnover
+Yes | Partial | Turn over value - 0 (in lakhs)
+व9ेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Bidder Turnover,Certificate (Requested
+in ATC),OEM Authorization Certificate
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+;या आप िनवदाकार= >ारा अपलोड ?कए गए द'तावेज़= को
+िनवदा म@ भाग लेने वाले सभी िनवदाकार= को ?दखाना
+चाहते हB? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+No
+ 
+बड संDया/Bid Number: GEM/2026/B/8258856
+?दनांक /Dated: 10-11-2026
+बड द'तावेज़ / Bid Document
+1 / 6
+
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आवMयक बड क संDया। / Minimum number of
+bids required to disable automatic bid
+extension
+3
+?दन= क संDया, Pजनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+3
+ऑटो ए;सट@शन अिधकतम ?कतनी बार ?कया जाना है। /
+Number of Auto Extension count
+1
+बड से Sरवस% नीलामी स?9य ?कया/Bid to RA enabled
+No
+बड का 7कार/Type of Bid
+Two Packet Bid
+तकनीक मूTयांकन के दौरान तकनीक 'पVीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+2 Days
+मूTयांकन पWित/Evaluation Method
+Total value wise evaluation
+मूTय दशा%ने वाला व-ीय द'तावेज Xेकअप आवMयक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर बBक/Advisory Bank
+State Bank of India
+ईएमड रािश/EMD Amount
+200000
+ईपीबीजी ववरण /ePBG Detail
+एडवाइजर बBक/Advisory Bank
+State Bank of India
+ईपीबीजी 7ितशत (%)/ePBG Percentage(%)
+5.00
+ईपीबीजी क आवMयक अविध (माह) /Duration of ePBG
+required (Months).
+39
+(a). जेम क शत/ के अनुसार ईएमड छूट के इ[छुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ 7'तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा 7दाता ईएमड से छूट के पा  हB। ]यापाSरय= को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथ^ के प_ म@ होनी चा?हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+2 / 6
+
+(c).ईएमड और संपादन जमानत रािश लाभाथ^ के प_ म@ होनी चा?हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+लाभाथ^ /Beneficiary : 
+Assistant Manager
+IHC Lodhi Road New Delhi, Department of Financial Services, National Housing Bank (NHB), Ministry of Finance
+(Aman Meena)
+बोली वभाजन लागू नहं ?कया गया/Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+1. If the bidder is a Micro or Small Enterprise (MSE) as per latest orders issued by Ministry of MSME, the bidder
+shall be relaxed from the eligibility criteria of "Bidder Turnover" as defined above subject to meeting of quality
+and technical specifications. If the bidder itself is MSE OEM of the offered products, it would be relaxed from the
+"OEM Average Turnover" criteria also subject to meeting of quality and technical specifications. The bidder
+seeking Relaxation from Turnover, shall upload the supporting documents to prove his eligibility for Relaxation.
+2. If the bidder is a DPIIT registered Startup, the bidder shall be relaxed from the the eligibility criteria of "Bidder
+Turnover" as defined above subject to their meeting of quality and technical specifications. If the bidder is DPIIT
+Registered OEM of the offered products, it would be relaxed from the "OEM Average Turnover" criteria also
+subject to meeting of quality and technical specifications. The bidder seeking Relaxation from Turnover shall
+upload the supporting documents to prove his eligibility for Relaxation. 
+3. The minimum average annual financial turnover of the bidder during the last three years, ending on 31st
+March of the previous financial year, should be as indicated above in the bid document. Documentary evidence in
+the form of certified Audited Balance Sheets of relevant periods or a certificate from the Chartered Accountant /
+Cost Accountant indicating the turnover details for the relevant period shall be uploaded with the bid. In case the
+date of constitution / incorporation of the bidder is less than 3-year-old, the average turnover in respect of the
+completed financial years after the date of constitution shall be taken into account for this criteria. 
+4. Estimated Bid Value indicated above is being declared solely for the purpose of guidance on EMD amount and
+for det
+
+## RFP
+=== Attachment 1794293346.pdf (99 pages) (also uploaded as: 1794293351.pdf, 17942934920809.pdf, RFP_ac55b732-554e-40a4-983e1794293558983_akshay.kr.pdf) ===
+ 
+ 
+ 
+RFP Reference No.: HO/ITD/DOC/2026/00467 
+ 
+Request for Proposal (RFP) for 
+Procurement of Video Conference (VC) Solution for the Bank 
+ 
+Information Technology Department 
+Head Office, National Housing Bank 
+Core 5-A, 3
+rd Floor, India Habitat Centre, 
+Lodhi Road, New Delhi – 110 003 
+Phone: 011-3918 7348/413/404/499 
+E-Mail: aman.meena@nhb.org.in; mohit.pal@nhb.org.in; mahesh.singh@nhb.org.in; 
+rajesh.kumar1@nhb.org.in  
+
+GLOSSARY 
+Abbreviation 
+Description 
+AIFI 
+All India Financial Institution 
+ALM 
+Asset Liability Management 
+AMC 
+Annual Maintenance Contract 
+ATS/AMS 
+Annual Technical Support/ Annual Maintenance Support 
+DC 
+Data Centre Site, New Delhi 
+DR 
+Disaster Recovery Site, Mumbai 
+EMD 
+Earnest Money Deposit 
+ERP 
+Enterprise Resource Planning 
+FI/CO 
+Finance /Control 
+GeM 
+Government e-Marketplace 
+HA 
+High Availability 
+HO 
+Head Office, New Delhi 
+IEMs 
+Independent External Monitors 
+ITD 
+Information Technology Department 
+NHB 
+National Housing Bank 
+OEM 
+Original Equipment Manufacturer 
+OS 
+Operating System 
+PBG 
+Performance Bank Guarantee 
+PSB 
+Public Sector Bank 
+PSU 
+Public Sector Undertaking  
+RFP 
+Request for Proposal 
+RO 
+Regional Office 
+SLA 
+Service Level Agreement 
+TCO 
+Total Cost of Ownership 
+VC 
+Video Conference 
+Large 
+Corporate 
+An organization having an average annual turnover of Rs.500 Crore or above 
+during last three years will be considered as Large Corporate for this RFP 
+Service Provider/Vendor/Bidder be read as single entity. The final bidder is termed as Vendor/ 
+Service Provider. 
+Interpretation: the terms RFP, Tender, Bid have been used interchangeably, and it shall be treated as one and 
+the same for the purpose of this RFP document. All clarifications, amendments, modifications, supplemental RFP 
+that may be issued in relation to this RFP shall be treated as part and parcel of the RFP and shall together 
+constitute the RFP document. 
+ 
+
+RFP for Procurement of Video Conference Solution for the bank 
+RFP Reference No.: HO
+... scope of work:
+--- (p.8) 5. Scope of Work 
+The Successful Bidder will be responsible for supply, installation, integration, implementation, support, 
+maintenance, and management of VC Support Solutions with warranty, AMC, and Technical Support 
+of the solution at NHB’s DC at New Delhi and various regional offices for a period of 3 years. 
+1. The Bidder shall provide an end-to-end solution for the identified locations, including supply, 
+installation, commissioning, integration, testing, maintenance etc. of the required Video 
+Conferencing hardware, all necessary application software and maintenance of the equipment 
+supplied for a period of three years (hardware, system and application software, end point 
+equipment etc.) with back-to-back support from the OEM. 
+2. One VC solution for Board Room (Delhi), Conference room (Delhi), Meeting room (Mumbai). 
+3. Size of Board Room (Delhi) is 9.6mX7.85mX2.38m with seating capacity of 22-30 people. 
+4. Size of Conference room (Delhi) is 12.96mX7.45mX2.38m with seating capacity of 60 people. 
+
+RFP for Procurement of Video Conference Solution for the bank 
+RFP Reference No.: HO/ITD/DOC/2026/00467 
+Page 8 of 99 
+ 
+5. Bidder to provide 1 number of Wireless presentation System. The wireless presentation system 
+shall enable users to share content wirelessly from laptops and mobile devices to the room 
+display(s) with a simple one-click operation, without requiring additional software installation 
+for basic presentation functionality. The system shall support secure enterprise deployment 
+and seamless integration with the proposed Video Conferencing solution, including Microsoft 
+Teams, Cisco Webex, Zoom, Google Meet and BharatVC meeting environments. The bidder 
+shall provide all hardware, software, licenses, accessories and integration services necessary 
+for a fully functional wireless presentation solution. Solution should comply with technical 
+specification mentioned in Annexure XXI. 
+6. MAF to be submitted from the respective OEMs involved in the
+--- (p.78) scope of work set out in detail in the RFP and it has the capability to deliver efficient and 
+effective advice/services to NHB. It shall carry out the assignment under this Agreement 
+with due diligence and with the highest standard of professionalism and business ethics. 
+ 
+(iii) That being the Vendor of NHB for a consideration, it shall be accountable for (a) any 
+improper discharge of the assignment under this Agreement and/or (b) any deviant 
+conduct keeping in view the norms of ethical business and professionalism. 
+ 
+(iv) That NHB shall have every right at its discretion to enforce such accountability in case of 
+any improper discharge of contractual obligations and/or any advice/service rendered in 
+the views of NHB is found to be grossly faulty/negligent/deficient and/or any deviant 
+conduct by the Vendor and as a consequence of it, NHB can, irrespective of anything stated 
+herein, terminate this Agreement by giving 15 days prior notice, including to 
+withhold/retain the dues payable to the Vendor by NHB under this Agreement and 
+appropriate/adjust the same for the losses, if any, suffered by NHB without requiring 
+NHB to prove the actual loss. 
+ 
+(v) That the Vendor shall not do anything that will be of any conflict of interest to the Vendor 
+while discharging the obligations under this Agreement and it shall bring to the 
+notice/knowledge of NHB beforehand any possible instance of conflict of interest while 
+rendering any advice or service. Further, the Vendor shall not receive any remuneration 
+in connection with the assignment except as provided in this Agreement. The Vendor 
+and/or any of its affiliates shall not engage in consulting or other activities that will be in 
+conflict with the obligations under this Agreement. 
+ 
+
+RFP for Procurement of Video Conference Solution for the bank 
+RFP Reference No.: HO/ITD/DOC/2026/00467 
+Page - 78 - of 99 
+ 
+(vi) That the Vendor has not been hired for any assignment that would be in conflict with its 
+prior or c
+... lines further in:
+(p.4) RFP for Procurement of Video Conference Solution for the bank
+(p.4) RFP Reference No.: HO/ITD/DOC/2026/00467
+(p.7) The objective of this RFP is to find a suitable agency, having the requisite experience, resources, and
+(p.8) The Successful Bidder will be responsible for supply, installation, integration, implementation, support,
+(p.9) 6. MAF to be submitted from the respective OEMs involved in the contract / RFP as per Annexure
+(p.10) the RFP. Bidder to provide all necessary hardware and software required to make this solution
+(p.10) mentioned in the RFP.
+(p.11) software for successful implementation of Solution at all offices.
+(p.11) these may be required for the successful implementation of the solution, the successful bidder
+(p.11) meet the requirement as mentioned in the RFP including the scalability for the entire contract.
+(p.11) of the RFP for the entire contract period.
+(p.13) RFP. Any non-compliance in this respect will lead to rejection of Bid.
+
+=== Attachment 1794293340.xlsx (1 pages) ===
+[Sheet1]
+A. Price details of Video Conference Solution
+Table 1
+S.No | Location | Item Details* | Quantity | Unit price with 3 years comprehensive onsite warranty and support for hardware and software (excl. taxes) | Tax for column II | Total price with 3 years comprehensive onsite warranty and support (incl. of taxes) for hardware and software
+I | II | III | IV | V=I*(II+IV)
+(% of tax) | (Tax Amount)
+1 | New Delhi, Board Room | VC Solution as per specification mentioned in Annexure XXI (Part A) | 1 |   |   |   |  
+2 | New Delhi, Chintan Kaksh | VC Solution as per specification mentioned in Annexure XXI (Part B) | 1 |   |   |   |  
+3 | Mumbai | VC Solution as per specification mentioned in Annexure XXI (Part C) | 1 |   |   |   |  
+4 | New Delhi | Microsoft Teams Rooms License | 1 |   |   |   |  
+5 | New Delhi | Wireless Presentation System as per specification mentioned in Annexure XXI (Part D) | 1 |   |   |   |  
+  | Total Video Conference Solution Cost (1+2+3+4+5) [A] |  
+B. Charges for Implementation of Video Conference Solution
+Table 2
+S.No | Description | Total Cost excl. taxes | Tax Rate (%) | Tax Amount | Total Cost (Incl. taxes)
+I | II | III | IV= I +III
+1 | Implementation, Commissioning, Testing and all related activities as specified in the scope of work as per RFP |   |   |   |  
+Total Implementation Cost [B] |  
+C. Charges for Onsite Support Engineer
+Table 3
+S.No | Description | 1st year Charges (Excl. taxes) | 2nd year Charges (Excl. taxes) | 3rd year Charges (Excl. taxes) | Total Cost excl. taxes | Tax Rate (%) | Tax Amount | Total Cost (Incl. taxes)
+I | II | III | IV=I+II+III | V | VI | VII= IV+VI
+1 | Charges for Onsite Support Engineer as specified in the scope of work as per RFP |   |   |   |   |   |   |  
+Total Onsite Support Engineer Cost [C] |  
+D. Video Conference Solution Cost (Weightage 90%)
+Table 4
+S.No. | Parameter | Total Cost excl. taxes | Applicable Taxes | Total Cost | Total Cost in words
+Incl. Taxes
+1 | Total Cost of Ownership during 3 y

@@ -1,0 +1,217 @@
+# GEM/2026/B/8150886 — Custom Bid for Services - ----
+Buyer department: Department of Military Affairs
+Card: Anti-Termite Treatment and Pest Control Services for Central Library, Selection Centre, Bhopal, for the Department of Military Affairs, Ministry of Defence; anti-termite treatment; general pest control; chemical barrier treatment; wall and structural joint treatment; wooden furniture treatment; iron almirah protection; paper asset protection; CIB&RC-approved chemicals
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+30-11-2026 18:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+01-12-2026 18:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+30 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Defence
+वभाग का नाम/Department Name
+Department Of Military Affairs
+संगठन का नाम/Organisation Name
+Indian Army
+काया%लय का नाम/Office Name
+***********
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :achakraborty.457k@gov.in 
+Buyer Email id: nishita.shiwran@gov.in
+व'तु (ेणी /Item Category
+Custom Bid for Services - ----
+समान (ेणी/Similar Category
+Pest and Animal Control Service
+अनुबंध अविध /Contract Period
+ 1 Month(s) 1 Day(s)
+उ,हं/समान सेवा के िलए अपे./त वगत अनुभव के
+वष%/Years of Past Experience Required for
+same/similar service
+1 Year (s)
+इसी तरह क सेवाओं का पछला आव5यक अनुभव है/Past
+Experience of Similar Services required
+Yes
+एमएसएमई के िलए अनुभव के वष7 और टन%ओवर से छूट ;दान
+क गई है/MSE Relaxation for Years of
+Experience and Turnover
+No
+'टाट%अप के िलए अनुभव के वष7 और टन%ओवर से छूट ;दान
+क गई है / Startup Relaxation for Years Of
+Experience and Turnover
+Yes | Complete
+व<ेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Bidder Turnover,Certificate (Requested
+in ATC),OEM Authorization Certificate,OEM Annual
+Turnover,Additional Doc 1 (Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+ 
+बड सं>या/Bid Number: GEM/2026/B/8150886
+?दनांक /Dated: 14-11-2026
+बड द'तावेज़ / Bid Document
+1 / 6
+
+Gया आप िनवदाकारH Iारा अपलोड ?कए गए द'तावेज़H को
+िनवदा मJ भाग लेने वाले सभी िनवदाकारH को ?दखाना
+चाहते हL? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+Yes (Documents submitted as part of a clarification or
+representation during the tender/bid process will also be
+displayed to other participated bidders after log in)
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आव5यक बड क सं>या। / Minimum number of
+bids required to disable automatic bid
+extension
+1
+?दनH क सं>या, .जनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+3
+ऑटो एGसटJशन अिधकतम ?कतनी बार ?कया जाना है। /
+Number of Auto Extension count
+1
+बड से Tरवस% नीलामी स?<य ?कया/Bid to RA enabled
+No
+बड का ;कार/Type of Bid
+Two Packet Bid
+तकनीक मूUयांकन के दौरान तकनीक 'पWीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+2 Days
+अनुमािनत िनवदा मूUय (सभी करH स?हत) भारतीय Xपये मJ
+/ Estimated Bid Value in INR (Inclusive of all
+taxes)
+24750
+मूUयांकन पYित/Evaluation Method
+Total value wise evaluation
+मZय'थता खंड/Arbitration Clause
+No
+सुलह खंड/Mediation Clause
+No
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+आव5यकता/Required
+No
+ईपीबीजी ववरण /ePBG Detail
+आव5यकता/Required
+No
+बोली वभाजन लागू नहं ?कया गया/ Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+2 / 6
+
+एमएसई खरद वरयता/MSE Purchase Preference
+एमएसई खरद वरयता/MSE Purchase Preference
+Yes
+सू\म और लघु उ^म मूल उपकरण िनमा%ताओं/सेवा ;दाता
+को खरद मJ ;ाथिमकता, य?द उनका मूUय L1+X% /
+Purchase Preference to MSE OEMs/ Service
+Provider available upto price within L1+X%
+15
+1. If the bidder is a DPIIT registered Startup, the bidder shall be relaxed from the the eligibility criteria of
+"Experience Criteria" as defined above subject to their meeting of quality and technical specifications. The bidder
+seeking Relaxation from Experience Criteria, shall upload the supporting documents to prove his eligibility for
+Relaxation.
+2. If the bidder is a DPIIT registered Startup, the bidder shall be relaxed from the the eligibility criteria of "Bidder
+Turnover" as defined above subject to their meeting of quality and technical specifications. If the bidder is DPIIT
+Registered OEM of the offered products, it would be relaxed from the "OEM Average Turnover" criteria also
+subject to meeting of quality and technical specifications. The bidder seeking Relaxation from Turnover shall
+upload the supporting documents to prove his eligibility for Relaxation. 
+3. Years of Past Experience required: The bidder must have experience for number of years as indicated above in
+bid document (ending month of March prior to the bid opening) of providing similar type of services to any
+Central / State Govt Organization / PSU. Copies of relevant contracts / orders to be uploaded along with bid in
+support of having provided services during each of the Financial year. 
+4. Purchase preference to Micro and Small Enterprises (MSEs): Purchase preference will be given to MSEs
+having valid Udyam Certificate and whose credentials are validated online through Udyam Registration portal as
+defined in Public Procurement Policy for Micro and Small Enterprises (MSEs) Order, 2012 dated 23.03.2012 issued
+by Ministry of Micro, Small and Medium Enterprises and its subsequent Orders/Notifications issued by concerned
+Ministry. If the bidder wants to avail themselves of the Purchase preference, the bidder must be the
+manufacturer / OEM of the offered product on GeM. In respect of bid for Services, the bidder must be the Service
+provider of the offered Service. Traders are excluded from the purview of Public Procurement Policy for Micro and
+Small Enterprises and hence resellers offering products manufactured by some other OEM are not eligible for any
+purchase preference. Relevant documentary evidence in this regard shall be uploaded along with the bid in
+respect of the offered product or service, and Buyer will decide eligibility for purchase preference based on
+documentary evidence submitted in case of product bids, whereas in case of services the eligibility is
+automatically validated. If L-1 is not an MSE and MSE Seller (s) has / have quoted price within L-1+ 15% (Selected
+by Buyer) of margin of purchase 
+
+## RFP
+=== Attachment 1791869705.pdf (1 pages) ===
+SCOPE OF WORK & TECHNICAL SPECIFICATIONS
+Anti-Termite Treatment & Pest Control Services for Central Library
+Location: Central Library, Selection Centre
+Central, Bhopal
+Total Area: 995 Sq. Ft.
+Estimated Value: ₹ 24,750/-
+Warranty Required: Minimum 1 Year
+1. WORK DESCRIPTION
+Execution of comprehensive chemical Anti-Termite Treatment and General Pest Control targeting
+masonry walls, wall-floor joints, iron almirahs, wooden furniture, and paper assets across the 995 Sq.
+Ft. premise of Central Library, Selection Centre Central, Bhopal.
+2. DETAILED SCOPE OF WORK
+Wall & Structural Joint Treatment: Chemical injection, precision drilling, and pressure spraying
+along all interior and exterior masonry walls, wall-floor junctions, plaster cracks, and skirting lines
+to create an unbroken anti-termite chemical barrier.
+Iron Almirahs & Steel Racks Protection: Inspection and chemical barrier treatment around and
+beneath all Iron Almirahs and Steel Racks to isolate steel storage from subterranean termite
+entry.
+Wooden Furniture & Fixtures: Deep chemical spraying and localized treatment of wooden tables,
+chairs, door/window frames, wooden bookshelves, and wooden fittings.
+Protection of 8,000+ Books & Paper Assets: Special care using non-staining, approved
+chemicals to protect over 8,000 library books, documents, registers, and cataloging materials
+without causing chemical staining or moisture damage.
+Chemical Specifications: Exclusive use of CIB&RC-approved, low-odor/odorless chemicals (e.g.,
+Imidacloprid / Chlorpyrifos or equivalent industry-standard formulations).
+3. TERMS & CONDITIONS
+Warranty / Guarantee: Minimum 1 Year comprehensive warranty from the date of
+completion. Free re-treatment within 48 hours of notification if termites reappear on walls,
+furniture, or paper assets during the warranty period.
+Safety & Environmental Standards: All applied chemicals must be eco-friendly, non-staining,
+and approved by the Central Insecticides Board & Registration Committee (CIB&RC).
+Paym
+
+=== Attachment 1791869714.pdf (1 pages) (also uploaded as: atc_559d6460-2e93-41f0-b66c1794658986687_nishita.shiwran@2025.pdf) ===
+SCOPE OF WORK & TECHNICAL SPECIFICATIONS 
+Anti-Termite Treatment & Pest Control Services for Central Library 
+Location: Central Library, Selection Centre 
+Central, Bhopal 
+Estimated Value: 
+24,750/ 
+|1. WORK DESCRIPTION 
+2. DETAILED ScOPE OF WORK 
+Total Area: 995 Sq. Ft. 
+Execution of comprehensive chemical Anti-Termite Treatment and General Pest Control targeting 
+masonry walls, wall-floor joints, iron almirahs, wooden furniture, and paper assets across the 995 Sq. 
+Ft. premise of Central Library, Selection Centre Central, Bhopal. 
+Warranty Required: Minimum 1 Year 
+Wall & Structural Joint Treatment: Chemical injection, precision drilling, and pressure spraying 
+along all interior and exterior masonry walls, wall-floor junctions, plaster cracks, and skirting lines 
+to create an unbroken anti-termite chemical barrier. 
+• Iron Almirahs & Steel Racks Protection: Inspection and chemical barrier treatment around and 
+beneath all Iron Almirahs and Steel Racks to isolate steel storage from subterranean termnite 
+entry. 
+Wooden Furniture & Fixtures: Deep chemical spraying and localized treatment of wooden tables, 
+chairs, door/window frames, wooden bookshelves, and wOoden fittings. 
+Protection of 8,000+ Books & Paper AssetsS: Special care using non-staining, approved 
+chemicals to protect over 8,000 library books, documents, registers, and cataloging materials 
+without causing chemical staining or moisture damage. 
+3. TERMS & 
+CONDITIONS 
+Chemical Specifications: Exclusive use of CIB&RC-approved, low-odor/odorless chemicals (e.g., 
+Imidacloprid / Chlorpyrifos or equivalent industry-standard formulations). 
+Warranty / Guarantee: Minimum 1 Year comprehensive warranty from the date of 
+completion. Free re-treatment within 48 hours of notification if termites reappear on walls, 
+furniture, or paper assets during the warranty period. 
+Safety & Environmental Standards: All applied chemicals must be eco-friendly, non-staining, 
+and approved by the Central Insecticides Board & Reg

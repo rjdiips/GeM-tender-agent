@@ -1,0 +1,494 @@
+# GEM/2026/B/8246845 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: Department of Financial Services
+Card: Enterprise Data Privacy Governance & Compliance Platform for Uttar Pradesh Gramin Bank; consent management; data principal rights management; privacy request management; data inventory and mapping; grievance management; breach and incident support; compliance reporting; DPDP Act 2023 alignment
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+27-11-2026 16:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+28-11-2026 16:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Department Of Financial Services
+संगठन का नाम/Organisation Name
+Regional Rural Banks (rrb)
+काया%लय का नाम/Office Name
+Uttar Pradesh Gramin Bank
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :rampravesh.yadav@upgb.bank.in 
+Buyer Email id: avinashkumar.rai2@upgb.bank.in
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 5 Year(s) 1 Day(s)
+पछले 3 व-ीय वष/ का बडर का 0यूनतम औसत वाष%क
+व-ीय टन%ओवर/Minimum Average Annual
+Turnover of the bidder (For the last 3
+Financial Years)
+500 Lakh (s)
+उ0हं/समान सेवा के िलए अपे78त वगत अनुभव के
+वष%/Years of Past Experience Required for
+same/similar service
+3 Year (s)
+इसी तरह क सेवाओं का पछला आव;यक अनुभव है/Past
+Experience of Similar Services required
+Yes
+टन%ओवर पा ता मानदंड/Turnover eligibility criteria
+To be verified by the buyer at the time of technical
+evaluation
+एमएसएमई के िलए अनुभव के वष/ और टन%ओवर से छूट =दान
+क गई है/MSE Relaxation for Years of
+Experience and Turnover
+No
+'टाट%अप के िलए अनुभव के वष/ और टन%ओवर से छूट =दान
+क गई है /Startup Relaxation for Years of
+Experience and Turnover
+No
+ 
+बड सं>या/Bid Number: GEM/2026/B/8246845
+?दनांक /Dated: 06-11-2026
+बड द'तावेज़ / Bid Document
+1 / 7
+
+वGेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Bidder Turnover,Certificate (Requested
+in ATC),OEM Authorization Certificate,OEM Annual
+Turnover,Additional Doc 1 (Requested in ATC),Additional
+Doc 2 (Requested in ATC),Additional Doc 3 (Requested in
+ATC),Additional Doc 4 (Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+Hया आप िनवदाकारI Jारा अपलोड ?कए गए द'तावेज़I को
+िनवदा मK भाग लेने वाले सभी िनवदाकारI को ?दखाना
+चाहते हM? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+Yes (Documents submitted as part of a clarification or
+representation during the tender/bid process will also be
+displayed to other participated bidders after log in)
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आव;यक बड क सं>या। / Minimum number of
+bids required to disable automatic bid
+extension
+4
+?दनI क सं>या, 7जनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+3
+ऑटो एHसटKशन अिधकतम ?कतनी बार ?कया जाना है। /
+Number of Auto Extension count
+2
+बड से Uरवस% नीलामी स?Gय ?कया/Bid to RA enabled
+No
+बड का =कार/Type of Bid
+Two Packet Bid
+तकनीक मूVयांकन के दौरान तकनीक 'पXीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+3 Days
+अनुमािनत िनवदा मूVय (सभी करI स?हत) भारतीय Yपये मK
+/ Estimated Bid Value in INR (Inclusive of all
+taxes)
+100000000
+Payment Timelines
+Payments shall be made to the Seller within 45 days of
+issue of service delivery acceptance certificate (SDAC) and
+on-line submission of bills (This is in supersession of 10 days
+time as provided in clause 12 of GeM GTC)
+मूVयांकन पZित/Evaluation Method
+Total value wise evaluation
+मूVय दशा%ने वाला व-ीय द'तावेज [ेकअप आव;यक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+म\य'थता खंड/Arbitration Clause
+No
+सुलह खंड/Mediation Clause
+No
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+2 / 7
+
+एडवाईजर बMक/Advisory Bank
+Bank Of Baroda
+ईएमड रािश/EMD Amount
+5000000
+ईपीबीजी ववरण /ePBG Detail
+एडवाइजर बMक/Advisory Bank
+Bank Of Baroda
+ईपीबीजी =ितशत (%)/ePBG Percentage(%)
+5.00
+ईपीबीजी क आव;यक अविध (माह) /Duration of ePBG
+required (Months).
+65
+(a). जेम क शत/ के अनुसार ईएमड छूट के इ_छुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ ='तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा =दाता ईएमड से छूट के पा  हM। `यापाUरयI को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथa के प8 मK होनी चा?हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथa के प8 मK होनी चा?हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+लाभाथa /Beneficiary : 
+General Manager
+UTTAR PRADESH GRAMIN BANK, Department of Financial Services, Regional Rural Banks (RRB), Ministry of
+Finance
+(Shri D K Srivastava)
+बोली वभाजन लागू नहं ?कया गया/ Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+bेcस भुगतान संबंधी ववरण/TReDS Payment Details
+This Bid provides for Trade Receivables Discounting System (TReDS) as Preferred mode of payment.
+For MSME sellers, payments may be processed through a TReDS exchange in which the Buyer is
+registered, subject to applicable policy and regulatory guidelines. Accordingly, sellers intending to
+avail payment through TReDS are required to be registered with at least one TReDS exchange in
+which the buyer is registered.
+1. The minimum average annual financial turnover of the bidder during the last three years, ending on 31st
+March of the previous financial year, should be as indicated above in the bid document. Documentary evidence in
+the form of certified Audited Balance Sheets of relevant periods or a certificate from the Chartered Accountant /
+Cost Accountant indicating the turnover details for the relevant period shall be uploaded with the bid
+
+## RFP
+=== Attachment 1793957792.pdf (156 pages) (also uploaded as: 1793957802.pdf, 1793957816.pdf, DPDPRFP_8b58b72f-0a55-4c2b-b2a21793957900074_Avinashkumar.rai2.pdf) ===
+  
+प्रधान कार्ाालर्: द्वितीर् एवं तृतीर् तल, एनबीसीसी कमर्शार्ल कॉम्प्लेक्स, वरदान खंड, गोमती नगर एक्सटेंशन, लखनऊ-226010 
+Head Office: 2nd and 3rd Floor, NBCC Commercial Complex, Vardan Khand, Gomti Nagar Extension, Lucknow - 226010  
+Phone: 0522 2987902, email- ho@upgb.bank.in 
+Page 1 of 156 
+(सरकार के स्वाद्वमत्वाधीन अनुसूद्वित बैंक) 
+(Scheduled Bank Owned by Government) 
+ 
+ 
+Request for Proposal (RFP) for Selection of 
+Vendor for Supply, Implementation and 
+Maintenance of Enterprise Data Privacy 
+Governance & Compliance Platform (DPDP Act 2023 Aligned) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Uttar Pradesh Gramin Bank 
+EDM Department 
+2nd and 3rd Floor 
+NBCC Commercial Complex 
+Vardan Khand, Gomti Nagar Extension  
+Lucknow – 226010 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+RFP for Selection of Vendor for Supply, Implementation and Maintenance of Enterprise Data 
+Privacy Governance & Compliance Platform (DPDP Act 2023 Aligned) 
+ 
+
+  
+प्रधान कार्ाालर्: द्वितीर् एवं तृतीर् तल, एनबीसीसी कमर्शार्ल कॉम्प्लेक्स, वरदान खंड, गोमती नगर एक्सटेंशन, लखनऊ-226010 
+Head Office: 2nd and 3rd Floor, NBCC Commercial Complex, Vardan Khand, Gomti Nagar Extension, Lucknow - 226010  
+Phone: 0522 2987902, email- ho@upgb.bank.in 
+Page 2 of 156 
+(सरकार के स्वाद्वमत्वाधीन अनुसूद्वित बैंक) 
+(Scheduled Bank Owned by Government) 
+[A] Important Dates:  
+ 
+S.NO. 
+Particulars 
+Timeline 
+1 
+RFP Issuance Date 
+06-11-2026 
+2 
+RFP Coordinator Name, Contact 
+details (Bank) 
+Mr. Anuj Verma, 
+Contact Details – Ph.: 7533962199, Email: 
+EDM.HO@upgb.bank.in 
+Postal Address: The Chief Manager (EDM), Uttar 
+Pradesh Gramin Bank, Second Floor, C-Wing, 
+NBCC Commercial Complex, Vardan Khand, 
+Gomti Nagar Extension, Lucknow - 226010  
+3 
+Pre–bid Meeting details 
+o Pre bid meeting will be held online through 
+Bank’s Online Meeting Platform (i.e. Microsoft 
+Teams) on 16th Nov. 2026 at 03:00 P.M.  
+o Bidder to submit a maximum of -2- participant’s 
+names, contact numbers, designations and e-mail 
+... scope of work:
+--- (p.15) Scope of Work; 
+ 
+Completion of System Integration Testing (SIT); and 
+ 
+Submission and acceptance of relevant test reports and configuration documentation. 
+ 
+3. 30% of License Cost 
+ 
+Payable upon: 
+ 
+ 
+Successful completion of User Acceptance Testing (UAT); 
+ 
+Successful Go-Live of the applicable implementation phase-1; 
+ 
+Demonstration 
+and 
+validation 
+of 
+key 
+privacy 
+functionalities, 
+including 
+consent 
+management/enforcement, data principal rights, privacy request management, data 
+inventory/mapping, grievance management, breach/incident support and applicable 
+compliance reporting; and 
+ 
+Formal Go-Live acceptance/sign-off by the Bank. 
+ 
+
+ 
+प्रधान कार्ाालर्: द्वितीर् एवं तृतीर् तल, एनबीसीसी कमर्शार्ल कॉम्प्लेक्स, वरदान खंड, गोमती नगर एक्सटेंशन, लखनऊ-226010 
+Head Office: 2nd and 3rd Floor, NBCC Commercial Complex, Vardan Khand, Gomti Nagar Extension, Lucknow - 226010 
+Phone: 0522 2987902, email- ho@upgb.bank.in 
+Page 16 of 156 
+(सरकार के स्वाद्वमत्वाधीन अनुसूद्वित बैंक) 
+(Scheduled Bank Owned by Government) 
+4. 20% of License Cost 
+ 
+Payable upon: 
+ 
+ 
+Successful completion of all committed implementation phases-2; 
+ 
+Completion and acceptance of all in-scope integrations and functionalities; 
+ 
+Submission and acceptance of final solution documentation; and 
+ 
+Formal final acceptance by the Bank. 
+ 
+B. Implementation & Integration Cost 
+ 
+The Implementation and Integration Cost shall be released as follows: 
+ 
+1. 20% of Implementation Cost 
+ 
+Payable upon: 
+ 
+ 
+Completion and acceptance of the approved implementation plan, solution architecture and 
+detailed configuration/design; 
+ 
+Completion of initial environment setup and configuration; and 
+ 
+Submission of relevant implementation documents. 
+ 
+2. 30% of Implementation Cost 
+ 
+Payable upon: 
+ 
+ 
+Completion of configuration and implementation of the major privacy governance modules; 
+ 
+Completion of integrations with identified Bank systems/applications/channels; 
+ 
+Completion of SIT; a
+--- (p.59) Scope of work, Approach, Work plan, Personnel schedule, Curriculum Vitae, Experience in 
+related projects etc. You are also requested to provide a reference of the page number, state 
+the clarification point and the comment/ suggestion/ deviation that you propose as shown 
+below. 
+ 
+Name of Bidder: ______________________________ 
+Contact Person: ______________________________ 
+Email: ______________________________________ 
+Contact No.: _________________________________ 
+ 
+S. No. 
+Page 
+Point / 
+Section 
+Clarification Point as stated in the 
+tender document 
+Comment / 
+Suggestion / 
+Deviation 
+1 
+ 
+ 
+ 
+ 
+2 
+ 
+ 
+ 
+ 
+3 
+ 
+ 
+ 
+ 
+4 
+ 
+ 
+ 
+ 
+
+ 
+प्रधान कार्ाालर्: द्वितीर् एवं तृतीर् तल, एनबीसीसी कमर्शार्ल कॉम्प्लेक्स, वरदान खंड, गोमती नगर एक्सटेंशन, लखनऊ-226010 
+Head Office: 2nd and 3rd Floor, NBCC Commercial Complex, Vardan Khand, Gomti Nagar Extension, Lucknow - 226010 
+Phone: 0522 2987902, email- ho@upgb.bank.in 
+Page 60 of 156 
+(सरकार के स्वाद्वमत्वाधीन अनुसूद्वित बैंक) 
+(Scheduled Bank Owned by Government) 
+ 
+Authorised Signatory: __________________ 
+Name: ________________________________ 
+Designation: ___________________________ 
+Bidder Name: __________________________ 
+Date: ____________ Place: __________ 
+Address: _____________ Email and Phone: ________ 
+ 
+ 
+Annexure 10 – Conformity Letter 
+(To be submitted on the letterhead of the Bidder and duly signed by an 
+Authorised Signatory) 
+To, 
+The Competent Authority 
+Uttar Pradesh Gramin Bank 
+2nd & 3rd Floor, NBCC Commercial Complex, 
+Vardan Khand, Sector-1, 
+Gomti Nagar Extention-226010 
+ 
+Subject: Conformity to RFP – [RFP Title] 
+ 
+Dear Sir/Madam, 
+ 
+With reference to our Bid submitted against the above RFP, we hereby confirm our 
+unconditional acceptance and compliance with all terms, conditions, requirements and 
+specifications of the RFP, including all amendments, corrigenda and clarifications issued by 
+the Bank. 
+ 
+We further confirm that no deviation, condition or qualification stated by us shall be binding 
+u
+... lines further in:
+(p.4) B. Rules for Responding to this RFP
+(p.5) 8. Additional Scope of Work
+(p.6) With the implementation of the Digital Personal Data Protection Act, 2023 and the Digital
+(p.6) Compliance Platform through selection of an eligible and experienced bidder for its supply,
+(p.6) obligations related to lawful processing of personal data, implementation of reasonable
+(p.7) The objective of this Request for Proposal (RFP) is to procure, implement, and maintain an
+(p.7) The Bank intends to invite Bidders through this Request for Proposal (RFP) for the selection
+(p.7) of a vendor for the supply, implementation, and maintenance of an Enterprise Data Privacy
+(p.7) This RFP document has been prepared solely for the purpose of enabling the Bank to select
+(p.7) in this RFP who fulfill the eligibility criteria mentioned under Annexure- 02 and are also in a
+(p.7) the above the vendor must also agree to all our terms & conditions mentioned under this RFP.
+(p.7) The RFP document is not a recommendation, offer or invitation to enter into a contract,
+
+=== Attachment 17939559538725.pdf (14 pages) ===
+  
+Ůधान कायाŊलय: िȪतीय एवं तृतीय तल, एनबीसीसी कमिशŊयल कॉ̱ ɘेƛ, वरदान खंड, गोमती नगर एƛटŐशन, लखनऊ-226010 
+Head Office: 2nd and 3rd Floor, NBCC Commercial Complex, Vardan Khand, Gomti Nagar Extension, Lucknow - 226010  
+Phone: 0522 2987902, email- ho@upgb.bank.in 
+ 
+(सरकार के ˢािमȕाधीन अनुसूिचत बœक) 
+(Scheduled Bank Owned by Government) 
+1. EVALUATION PROCESS 
+ 
+The Bank shall adopt a Two-Bid System comprising the Eligibility/Pre-Qualification & Technical 
+Bid and the Commercial Bid.  
+ 
+The evaluation of Bids shall be carried out in the following stages: 
+ 
+Stage 1 – Eligibility / Pre-Qualification Evaluation 
+ 
+o The Eligibility/Pre-Qualification documents submitted by the Bidders shall be evaluated 
+against the criteria specified in Annexure-02 – Evaluation Terms. 
+o Only those Bidders who fulfil all the prescribed mandatory eligibility and pre-qualification 
+criteria and submit the required supporting documents shall qualify for Technical Bid 
+evaluation. 
+o The Bank may seek clarification or additional documentary evidence for verification of the 
+information submitted by the Bidder. Such clarification shall not permit any alteration or 
+modification to the substance of the Bid. 
+o Any Bidder failing to satisfy any mandatory eligibility/pre-qualification criterion shall be 
+treated as non-responsive and shall not be considered for further evaluation. 
+ 
+Stage 2 – Technical Bid Evaluation 
+ 
+Only the Bidders qualifying the Eligibility/Pre-Qualification stage shall be considered for 
+detailed Technical Bid evaluation. 
+ 
+The Technical Bid shall be evaluated with reference to the requirements specified in the RFP, 
+including relevant experience, functional coverage, proposed solution and architecture, 
+security, integration capabilities, implementation methodology, project management, support 
+and service management capabilities, and overall suitability for the Bank. 
+ 
+The Technical Evaluation shall carry a maximum of 100 marks, as follows: 
+ 
+S. No. 
+Technical Eva
+... lines further in:
+(p.6) requirements in the RFP. For avoidance of doubt, requirements expressly identified as
+(p.6) “Mandatory” in this RFP, including the “Additional Mandatory Requirements” specified in
+(p.6) submitted by the Bidder, point-wise compliance against the RFP requirements,
+(p.6) presentation, demonstration and other evaluation activities specified in the RFP.
+(p.6) evaluation criteria specified in this RFP. Where experience-based marks require multiple
+(p.8) Any other cost expressly required under the RFP for successful implementation and
+(p.8) methodology specified in the RFP shall apply.
+(p.8) complete scope of the RFP. No additional payment shall be admissible for any component,
+(p.8) activity, resource or service expressly required under the RFP but not separately quoted by
+(p.9) award of the Contract, subject to fulfilment of all requirements of the RFP, completion of the
+(p.9) as on the date of the RFP.
+(p.10) separate Bid for the same RFP, where such

@@ -1,0 +1,46 @@
+.gt-main { display: flex; flex-direction: column; min-width: 0; min-height: 0; background: radial-gradient(900px 300px at 50% -80px, var(--glow), transparent) }
+.gt-head { height: 54px; flex: none; display: flex; align-items: center; gap: 10px; padding: 0 24px; border-bottom: 1px solid var(--line) }
+.gt-head h1 { font-size: 13.5px; font-weight: 600; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+.gt-status { display: inline-flex; gap: 6px; align-items: center; font-size: 12px; color: var(--ink2); padding: 3px 9px; border: 1px solid var(--line); border-radius: 999px; flex: none }
+.gt-live { width: 7px; height: 7px; border-radius: 50%; background: var(--acc); box-shadow: 0 0 8px var(--acc) }
+.gt-live.run { animation: gtpulse 1s ease-in-out infinite }
+.gt-live.fail { background: var(--bad); box-shadow: none }
+@keyframes gtpulse { 50% { opacity: .3 } }
+.gt-thread { flex: 1; overflow: auto; padding: 28px }
+.gt-me-msg { margin-left: auto; max-width: 440px; padding: 11px 15px; border-radius: 14px 14px 4px 14px; background: var(--me); color: var(--me-ink); border: 1px solid var(--line) }
+.gt-turn { display: flex; gap: 12px; margin-top: 24px }
+.gt-bot { flex: none; width: 28px; height: 28px; border-radius: 9px; display: grid; place-items: center; background: var(--acc-d); color: var(--acc); border: 1px solid var(--acc-line) }
+.gt-glass { background: var(--glass); border: 1px solid var(--line); border-radius: 14px; padding: 16px; backdrop-filter: blur(10px); box-shadow: var(--shadow-card) }
+.gt-eyebrow { font-size: 11px; color: var(--mute); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 4px }
+.gt-meaning { font-size: 15px; font-weight: 500; letter-spacing: -.01em }
+.gt-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px }
+.gt-tag { font-size: 11.5px; padding: 3px 8px; border-radius: 6px; background: var(--line2); border: 1px solid var(--line); color: var(--ink2) }
+.gt-tag.acc { color: var(--acc); border-color: var(--acc-line); background: var(--acc-d) }
+.gt-log { margin: 14px 0 0; padding: 12px 0 0; border-top: 1px solid var(--line); list-style: none }
+.gt-log li { display: flex; gap: 10px; padding: 3px 0; color: var(--ink2) }
+.gt-log .ts { color: var(--mute); flex: none }
+.gt-spin { flex: none; width: 12px; height: 12px; margin-top: 3px; border-radius: 50%; border: 2px solid var(--acc-d); border-top-color: var(--acc); animation: gtspin .8s linear infinite }
+@keyframes gtspin { to { transform: rotate(360deg) } }
+.gt-hit { width: 100%; text-align: left; display: flex; align-items: center; gap: 12px; margin-top: 10px; padding: 11px 14px; border-radius: 12px; border: 1px solid var(--line); background: var(--panel); transition: .15s; box-shadow: var(--shadow-card) }
+.gt-hit:hover { border-color: var(--acc-line); box-shadow: 0 0 0 4px var(--acc-d) }
+.gt-bidno { color: var(--vi) }
+.gt-empty { color: var(--mute); text-align: center; margin-top: 18vh }
+.gt-composer { padding: 12px 24px 22px; flex: none }
+.gt-box { display: flex; gap: 8px; align-items: center; padding: 8px 8px 8px 14px; border-radius: 14px; border: 1px solid var(--line); background: var(--raise); box-shadow: var(--shadow-box) }
+.gt-box:focus-within { border-color: var(--acc-line) }
+.gt-box input { flex: 1; background: transparent; border: none; outline: none; color: var(--ink); font: inherit }
+.gt-send { width: 32px; height: 32px; border-radius: 9px; border: none; background: var(--acc); color: var(--on-acc); display: grid; place-items: center }
+.gt-send:disabled { opacity: .4; cursor: default }
+.gt-send-stop { background: var(--bad); color: #fff }
+.gt-send-stop:hover { filter: brightness(1.1) }
+
+/* shown the moment a request is sent, until the server answers (the model reads it first, which takes seconds) */
+.gt-reading { display: flex; align-items: center; gap: 10px; color: var(--ink2); max-width: 640px; animation: gtfade .25s ease-out }
+.gt-dots { display: inline-flex; gap: 4px }
+.gt-dots i { width: 6px; height: 6px; border-radius: 50%; background: var(--acc); animation: gtbounce 1.1s ease-in-out infinite }
+.gt-dots i:nth-child(2) { animation-delay: .15s }
+.gt-dots i:nth-child(3) { animation-delay: .3s }
+.gt-thinking { animation: gtpulse 1.6s ease-in-out infinite }
+@keyframes gtbounce { 0%, 80%, 100% { transform: translateY(0); opacity: .4 } 40% { transform: translateY(-4px); opacity: 1 } }
+@keyframes gtfade { from { opacity: 0; transform: translateY(4px) } }
+@media (prefers-reduced-motion: reduce) { .gt-dots i, .gt-thinking, .gt-reading { animation: none } }

@@ -1,0 +1,422 @@
+# GEM/2026/B/8147860 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: Department of Financial Services
+Card: Dark Web Monitoring Services for Uco Bank; dark web monitoring; compromised credentials monitoring; sensitive data leakage detection; PII monitoring; deep web scanning; paste site monitoring; cyber-attack contextual analysis; actionable alerting
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+26-10-2026 16:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+27-10-2026 16:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Department Of Financial Services
+संगठन का नाम/Organisation Name
+Uco Bank
+काया%लय का नाम/Office Name
+E
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :shouvik.nandi@uco.bank.in 
+Buyer Email id: srutisudha.das@uco.bank.in
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 3 Year(s)
+टन%ओवर के िलए एमएसई को छूट 1ा2 है / MSE
+Relaxation for Turnover
+Yes | Complete
+टन%ओवर के िलए 'टाट%अप को छूट 1ा2 है / Startup
+Relaxation for Turnover
+Yes | Complete
+व3ेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Bidder Turnover,Certificate (Requested
+in ATC),OEM Authorization Certificate,Additional Doc 1
+(Requested in ATC),Additional Doc 2 (Requested in
+ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4
+(Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+5या आप िनवदाकार7 8ारा अपलोड 9कए गए द'तावेज़7 को
+िनवदा म: भाग लेने वाले सभी िनवदाकार7 को 9दखाना
+चाहते ह<? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+Yes (Documents submitted as part of a clarification or
+representation during the tender/bid process will also be
+displayed to other participated bidders after log in)
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आव@यक बड क संAया। / Minimum number of
+bids required to disable automatic bid
+extension
+2
+ 
+बड संAया/Bid Number: GEM/2026/B/8147860
+9दनांक /Dated: 12-10-2026
+बड द'तावेज़ / Bid Document
+1 / 7
+
+9दन7 क संAया, Jजनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+5
+ऑटो ए5सट:शन अिधकतम 9कतनी बार 9कया जाना है। /
+Number of Auto Extension count
+1
+बड से Mरवस% नीलामी स93य 9कया/Bid to RA enabled
+No
+बड का 1कार/Type of Bid
+Two Packet Bid
+तकनीक मूNयांकन के दौरान तकनीक 'पPीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+2 Days
+Payment Timelines
+Payments shall be made to the Seller within 30 days of
+issue of service delivery acceptance certificate (SDAC) and
+on-line submission of bills (This is in supersession of 10 days
+time as provided in clause 12 of GeM GTC)
+मूNयांकन पQित/Evaluation Method
+Total value wise evaluation
+मूNय दशा%ने वाला वRीय द'तावेज Sेकअप आव@यक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+मTय'थता खंड/Arbitration Clause
+No
+सुलह खंड/Mediation Clause
+No
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर ब<क/Advisory Bank
+State Bank of India
+ईएमड रािश/EMD Amount
+500000
+ईपीबीजी ववरण /ePBG Detail
+आव@यकता/Required
+No
+(a). जेम क शतV के अनुसार ईएमड छूट के इXछुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ 1'तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा 1दाता ईएमड से छूट के पा  ह<। YयापाMरय7 को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथ[ के प\ म: होनी चा9हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथ[ के प\ म: होनी चा9हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+2 / 7
+
+लाभाथ[ /Beneficiary : 
+DGM
+Account Name- M/s H O DIT,Branch- DD Block, Salt Lake branch,IFSC- UCBA0001870
+(Uco Bank)
+बोली वभाजन लागू नहं 9कया गया/ Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+एमएसई खरद वरयता/MSE Purchase Preference
+एमएसई खरद वरयता/MSE Purchase Preference
+Yes
+सू]म और लघु उ`म मूल उपकरण िनमा%ताओं/सेवा 1दाता
+को खरद म: 1ाथिमकता, य9द उनका मूNय L1+X% /
+Purchase Preference to MSE OEMs/ Service
+Provider available upto price within L1+X%
+15
+cेdस भुगतान संबंधी ववरण/TReDS Payment Details
+This Bid provides for Trade Receivables Discounting System (TReDS) as Preferred mode of payment.
+For MSME sellers, payments may be processed through a TReDS exchange in which the Buyer is
+registered, subject to applicable policy and regulatory guidelines. Accordingly, sellers intending to
+avail payment through TReDS are required to be registered with at least one TReDS exchange in
+which the buyer is registered.
+1. If the bidder is a Micro or Small Enterprise (MSE) as per latest orders issued by Ministry of MSME, the bidder
+shall be relaxed from the eligibility criteria of "Bidder Turnover" as defined above subject to meeting of quality
+and technical specifications. If the bidder itself is MSE OEM of the offered products, it would be relaxed from the
+"OEM Average Turnover" criteria also subject to meeting of quality and technical specifications. The bidder
+seeking Relaxation from Turnover, shall upload the supporting documents to prove his eligibility for Relaxation.
+2. If the bidder is a DPIIT registered Startup, the bidder shall be relaxed from the the eligibility criteria of "Bidder
+Turnover" as defined above subject to their meeting of quality and technical specifications. If the bidder is DPIIT
+Registered OEM of the offered products, it would be relaxed from the "OEM Average Turnover" criteria also
+subject to meeting of quality and technical specifications. The bidder seeking Relaxation from Turnover shall
+upload the supporting documents to prove his eligibility for Relaxatio
+
+## RFP
+=== Attachment ATCDW_c5d6c781-c197-4bb2-97261791791762995_Srutidas_UCO.pdf (111 pages) ===
+ 
+ 
+Page: 1 of 111 
+ 
+ 
+               Selection of service provider for Dark Web Monitoring Services   
+ 
+ADDITIONAL TERMS AND CONDITION (ATC) 
+   
+All the clauses mentioned in this Additional Terms and Conditions (ATC) document 
+will be integral part of the bid document. In case of any contradiction or conflict of 
+interest the terms and conditions, eligibility criteria and technical compliance as 
+mentioned in ATC document will prevail. 
+ 
+ABBREVIATION 
+ 
+The long form of some abbreviations commonly used in the bid is given below: 
+Abbreviations 
+Description 
+ATS 
+Annual Technical Services 
+AI/ML 
+Artificial Intelligence/Machine Learning 
+AMC 
+Annual Maintenance Contract 
+B2C 
+Business-to-Consumer 
+BG 
+Bank Guarantee 
+CBS 
+Core Banking Solutions 
+CSPF 
+Cyber Security & Privacy Foundation 
+CSV 
+Comma-Separated Value 
+CVC 
+Central Vigilance Commission 
+CVV 
+Card Verification Value 
+DC 
+Data Center 
+DD 
+Demand Draft 
+DDOS 
+Distributed Denial-of-Service 
+DIT 
+Department of Information Technology 
+DR 
+Disaster Recovery 
+EMD 
+Earnest Money Deposit 
+EOD 
+End of Day 
+EOL 
+End of Life 
+EOS 
+End of Support/Sell 
+ERP 
+Enterprise Resource Planning 
+FMS 
+Facility Management Services 
+GB 
+Gigabyte 
+GST 
+Goods and Service Tax 
+GUI 
+Graphical User Interface 
+H2H 
+Host to Host 
+HO 
+Head Office 
+
+ 
+ 
+Page: 2 of 111 
+ 
+ 
+IT 
+Information Technology 
+I2P 
+Invisible Internet Project 
+IOCs 
+Indicators of Compromise  
+LD 
+Liquidated Damage 
+MSE 
+Micro & Small Enterprise 
+MSME 
+Micro Small & Medium Enterprises 
+MITRE ATT&CK 
+MITRE Adversarial Tactics, Techniques and 
+Common Knowledge 
+NBFC 
+Non-Banking Financial Company 
+NDA 
+Non-Disclosure Agreement 
+OEM 
+Original Equipment Manufacturer 
+OSD 
+Original Solution Developer 
+PBG 
+Performance Bank Guarantee 
+PGP 
+Pretty Good Privacy 
+PO 
+Purchase Order 
+POBO 
+Payments-on-behalf-of 
+POC 
+Proof of Concept 
+PII 
+Personally Identifiable Information 
+ROBO 
+Receivables-on-behalf-of 
+RPO 
+Recovery Point Objective 
+RTO 
+Recovery Time Objective 
+STIX
+... scope of work:
+--- (p.9) Broad Scope of Work 
+ 
+Bank intends to avail Dark Web Monitoring services for 03 (three) years. The details 
+of Dark Web services include the following. 
+Compromised Credentials & Sensitive Data Monitoring 
+ 
+1. The service provider should be able to recognize and report Breached Usernames 
+and passwords over different websites/ apps/ portals corresponding to UCO Bank 
+which have been extracted from third parties or Bank itself. 
+2. The service provider should be able to report any Personally Identifiable 
+Information (PII) and data leaked pertaining to UCO Bank's customers/ employees. 
+3. Services should be capable of identifying and reporting Personal accounts of key 
+people — such as board members or top managers which criminals could have 
+breached. The exact/tentative nos. of personal accounts will be shared with 
+successful bidder. 
+4. The service provider should have the capability of identifying sensitive 
+document/information pertaining to customer/employees' credential and bank 
+debit/credit cards with full details including complete card number being 
+available on internet. 
+5. The service should require with continuous scanning and monitoring, notifying the 
+bank about any critical alert that puts our business, employees, or clients via dark 
+web data leakage of customer/employees, credentials and bank debit/credit 
+cards full details for taking necessary actions. 
+6. The service provider should be able to continuously monitor deep and dark 
+channels to provide Bank early detection of information leakage, contextual 
+analysis of cyber-attacks and actionable alerts. 
+7. The service provider should be to detect any sharing of customer information, 
+account credentials of employees and customers which puts brand and business 
+at risk. 
+8. The proposed service provider must Safeguard the business against data leakage, 
+breaches and the illegal selling of data on a broad range of deep and dark web 
+sites including TOR, I2P, ZeroNet and paste Sites. 
+Card Expo
+--- (p.94) scope of work 
+for 1st year. 
+xx 
+xx 
+ 
+xx 
+2. 
+24x7x365 
+services as per 
+scope of work 
+2nd year. 
+xx 
+xx 
+xx 
+3. 
+24x7x365 
+services as per 
+scope of work 
+for 3rd year. 
+xx 
+xx 
+xx 
+4. 
+Total cost of Ownership for 3 years in number 
+xx 
+5. 
+Total cost of Ownership for 3 years in words 
+xx 
+ 
+Note: 
+a. The calculation for arriving at TCO is properly mentioned in the 
+appropriate columns and we confirm that the above-mentioned rates are 
+accurate. In case of any anomalies in the calculation for arriving at TCO, 
+the Bank will have the right to rectify the same and it will be binding upon 
+our company. 
+b. We have ensured that the price information is filled in the Commercial 
+Offer at appropriate column without any typographical or arithmetic 
+errors. All fields have been filled in correctly. 
+c. We have not added or modified any clauses / statements / recordings / 
+declarations in the commercial offer, which is conditional and / or 
+qualified or subjected to suggestions, which contain any deviation in terms 
+& conditions or any specification. 
+d. We have understood that in case of non-adherence to any of the above, 
+our offer will be summarily rejected 
+e. If the cost for any line item is indicated as zero or blank, then Bank may 
+assume that the said item is provided to the Bank without any cost. 
+f. Bank has discretion to keep any of the line item mentioned above as 
+optional as per Bank's requirement. 
+
+ 
+ 
+Page: 95 of 111 
+g. Present Rate of tax, if applicable, should be quoted in respective columns. 
+The Bank will pay the applicable taxes for the above-mentioned tax type 
+ruling at the time of actual delivery of service/implementation and 
+resultant billing. However, no other tax type will be paid. The Octroi / Entry 
+Tax will be paid extra, wherever applicable on submission of actual tax 
+receipt. 
+h. We understand that any commercial offer which is conditional and / or 
+qualified or subjected to suggestions will also be summarily rejected. This 
+offer shal
+... lines further in:
+(p.4) this RFP document and any deviations to the same shall not to be acceptable to
+(p.4) under the RFP document shall own the single point responsibility for fulfilling all
+(p.4) implementation of the project. Unless agreed to specifically by the Bank in writing
+(p.6) OEM/OSD in the same tender for the same item or product. The
+(p.14) as per Bank's requirement which will display alerts as per scope of work on daily
+(p.16) Selection of service provider for Dark Web
+(p.17) into the contract in accordance with the Terms and Conditions of the RFP.
+(p.18) as key performance indicators for the scope of work. The objective of the SLA is to
+(p.24) licenses as mentioned in the RFP document, after the price validity period, on
+(p.25) scope of work and Annexure – XVIII. Non-compliance to any of the technical
+(p.27) conditions stipulated in this Request for proposal (RFP) are liable for rejection
+(p.27) Bidder should comply with all the points mentioned in the RFP. Non-
+
+=== Attachment 1791791306.pdf (8 pages) ===
+Broad Scope of Work 
+ 
+Bank intends to avail Dark Web Monitoring services for 03 (three) years. The 
+details of Dark Web services include the following.  
+Compromised Credentials & Sensitive Data Monitoring 
+ 
+1. The service provider should be able to recognize and report Breached 
+Usernames 
+and 
+passwords 
+over 
+different 
+websites/ 
+apps/ 
+portals 
+corresponding to UCO Bank which have been extracted from third parties or 
+Bank itself. 
+2. The service provider should be able to report any Personally Identifiable 
+Information (PII) and data leaked pertaining to UCO Bank's customers/ 
+employees. 
+3. Services should be capable of identifying and reporting Personal accounts of 
+key people — such as board members or top managers which criminals could 
+have breached. The exact/tentative nos. of personal accounts will be shared 
+with successful bidder. 
+4. The service provider should have the capability of identifying sensitive 
+document/information pertaining to customer/employees' credential and 
+bank debit/credit cards with full details including complete card number 
+being available on internet. 
+5. The service should require with continuous scanning and monitoring, notifying 
+the bank about any critical alert that puts our business, employees, or clients 
+via dark web data leakage of customer/employees, credentials and bank 
+debit/credit cards full details for taking necessary actions. 
+6. The service provider should be able to continuously monitor deep and dark 
+channels to provide Bank early detection of information leakage, contextual 
+analysis of cyber-attacks and actionable alerts. 
+7. The service provider should be to detect any sharing of customer information, 
+account credentials of employees and customers which puts brand and 
+business at risk. 
+8. The proposed service provider must Safeguard the business against data 
+leakage, breaches and the illegal selling of data on a broad range of deep 
+and dark web sites including TOR, I2P, ZeroNet and paste Sites. 

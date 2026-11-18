@@ -1,0 +1,412 @@
+# GEM/2026/B/8193498 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: Department of Financial Services
+Card: Automated tool for IS audit and ITGRC for Indian Bank; IS audit automation; ITGRC; audit lifecycle automation; control framework; risk tracking; audit data repository; analytics-based prioritisation; AI-assisted audit capabilities
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+19-11-2026 11:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+20-11-2026 11:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Department Of Financial Services
+संगठन का नाम/Organisation Name
+Indian Bank
+काया%लय का नाम/Office Name
+Corporateoffice
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :jaseel.pc@indianbank.co.in 
+Buyer Email id: prabhat.singal@indianbank.bank.in
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 3 Year(s)
+पछले 3 व-ीय वष/ का बडर का 0यूनतम औसत वाष%क
+व-ीय टन%ओवर/Minimum Average Annual
+Turnover of the bidder (For the last 3
+Financial Years)
+1000 Lakh (s)
+टन%ओवर पा ता मानदंड/Turnover eligibility criteria
+To be verified by the buyer at the time of technical
+evaluation
+टन%ओवर के िलए एमएसई को छूट 7ा8 है / MSE
+Relaxation for Turnover
+Yes | Partial | Turn over value - 500 (in lakhs)
+टन%ओवर के िलए 'टाट%अप को छूट 7ा8 है / Startup
+Relaxation for Turnover
+Yes | Partial | Turn over value - 500 (in lakhs)
+व9ेता से मांगे गए द'तावेज़/Document required
+from seller
+Bidder Turnover,Certificate (Requested in ATC),OEM
+Authorization Certificate,OEM Annual Turnover,Additional
+Doc 1 (Requested in ATC),Additional Doc 2 (Requested in
+ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4
+(Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+ 
+बड सं;या/Bid Number: GEM/2026/B/8193498
+<दनांक /Dated: 23-10-2026
+बड द'तावेज़ / Bid Document
+1 / 7
+
+Cया आप िनवदाकारE Fारा अपलोड <कए गए द'तावेज़E को
+िनवदा मG भाग लेने वाले सभी िनवदाकारE को <दखाना
+चाहते हI? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+No
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आवMयक बड क सं;या। / Minimum number of
+bids required to disable automatic bid
+extension
+3
+<दनE क सं;या, Pजनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+3
+ऑटो एCसटGशन अिधकतम <कतनी बार <कया जाना है। /
+Number of Auto Extension count
+1
+बड से Sरवस% नीलामी स<9य <कया/Bid to RA enabled
+No
+बड का 7कार/Type of Bid
+Two Packet Bid
+तकनीक मूTयांकन के दौरान तकनीक 'पVीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+3 Days
+Payment Timelines
+Payments shall be made to the Seller within 45 days of
+issue of service delivery acceptance certificate (SDAC) and
+on-line submission of bills (This is in supersession of 10 days
+time as provided in clause 12 of GeM GTC)
+मूTयांकन पWित/Evaluation Method
+Total value wise evaluation
+मूTय दशा%ने वाला व-ीय द'तावेज Xेकअप आवMयक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर बIक/Advisory Bank
+State Bank of India
+ईएमड रािश/EMD Amount
+800000
+ईपीबीजी ववरण /ePBG Detail
+एडवाइजर बIक/Advisory Bank
+State Bank of India
+ईपीबीजी 7ितशत (%)/ePBG Percentage(%)
+5.00
+ईपीबीजी क आवMयक अविध (माह) /Duration of ePBG
+required (Months).
+38
+2 / 7
+
+(a). जेम क शत/ के अनुसार ईएमड छूट के इ[छुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ 7'तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा 7दाता ईएमड से छूट के पा  हI। ]यापाSरयE को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथ^ के प_ मG होनी चा<हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथ^ के प_ मG होनी चा<हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+लाभाथ^ /Beneficiary : 
+AGM
+Inspection and Audit, HO, Rajaji Salai, Chennai- 600001
+(Indian Bank)
+बोली वभाजन लागू नहं <कया गया/Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+`ेaस भुगतान संबंधी ववरण/TReDS Payment Details
+This Bid provides for Trade Receivables Discounting System (TReDS) as Preferred mode of payment.
+For MSME sellers, payments may be processed through a TReDS exchange in which the Buyer is
+registered, subject to applicable policy and regulatory guidelines. Accordingly, sellers intending to
+avail payment through TReDS are required to be registered with at least one TReDS exchange in
+which the buyer is registered.
+1. If the bidder is a Micro or Small Enterprise (MSE) as per latest orders issued by Ministry of MSME, the bidder
+shall be relaxed from the eligibility criteria of "Bidder Turnover" as defined above subject to meeting of quality
+and technical specifications. If the bidder itself is MSE OEM of the offered products, it would be relaxed from the
+"OEM Average Turnover" criteria also subject to meeting of quality and technical specifications. The bidder
+seeking Relaxation from Turnover, shall upload the supporting documents to prove his eligibility for Relaxation.
+2. If the bidder is a DPIIT registered Startup, the bidder shall be relaxed from the the eligibility criteria of "Bidder
+Turnover" as defined above subject to their meeting of quality and technical specifications. If the bidder is DPIIT
+Registered OEM of the offered products, it would be relaxed from the "OEM Average Turnover" criteria also
+subject to meeting of quality and technical specifications. The bidder seeking Relaxation from Turnover shall
+upload the supporting documents to prove his eligibility for Relaxation. 
+3. The minim
+
+## RFP
+=== Attachment ISAudit_2f3b9f3b-a64d-423c-a60f1792760554317_ib_791638.pdf (162 pages) ===
+Indian Bank, Inspection & Audit Department, Head Office, Chennai 
+Ref: GEM/2026/B/8193498 Date: 23/10/2026 
+Supply, Implementation and Maintenance of Automated tool for IS audit and ITGRC  
+Page 1 of 162 
+ 
+ 
+Inspection & Audit Department 
+Head Office, 66 Rajaji Salai, Chennai - 600 001 
+REQUEST FOR PROPOSAL (RFP) 
+for 
+Supply, Implementation and Maintenance of Automated tool for IS audit 
+and ITGRC  
+RFP Reference No. 
+GEM/2026/B/8193498 
+RFP Issuance Date 
+23/10/2026 
+Last Date of request for Queries/ Clarifications 
+29/10/2026 at 05:30 PM 
+Date and time of Pre-Bid Meeting 
+30/10/2026 at 03:00 PM 
+Last Date for receipt of bids 
+19/11/2026 at 11:00AM 
+Date and time of opening Technical bids 
+20/11/2026 at 11:00AM 
+ 
+ 
+Issued by: 
+Indian Bank, Inspection & Audit Department, Head Office, 66 Rajaji Salai, Chennai - 600 001 
+Email: isaudit@indianbank.bank.in   |   Website: https://www.indianbank.bank.in 
+This document is the property of Indian Bank and is meant for the exclusive purpose of bidding as per the specification, terms, 
+conditions and scope indicated in it. This document should not be copied, transferred, reproduced, distributed or recorded on any 
+medium, including all forms of electronic medium, without written permission of Indian Bank. The use of contents of this document 
+for any purpose other than stated herein is strictly prohibited and shall amount to copyright violation and thus shall be punishable 
+under Indian law. 
+ 
+ 
+
+Indian Bank, Inspection & Audit Department, Head Office, Chennai 
+Ref: GEM/2026/B/8193498 Date: 23/10/2026 
+Supply, Implementation and Maintenance of Automated tool for IS audit and ITGRC  
+Page 2 of 162 
+TABLE OF CONTENTS 
+SCHEDULE A: IMPORTANT DATES AND INFORMATION ON RFP SUBMISSION ............................................. 6 
+SCHEDULE B: GLOSSARY OF TERMS .............................................................................................................. 9 
+SCHEDULE C: DISCLAIMER ..................................
+... scope of work:
+--- (p.11) Scope of Work 
+58 
+SSO 
+Single Sign-On 
+59 
+TCO 
+Total Cost of Ownership 
+60 
+TDS 
+Tax Deducted at Source 
+61 
+TLS 
+Transport Layer Security 
+62 
+UAT 
+User Acceptance Testing 
+63 
+VAPT 
+Vulnerability Assessment and Penetration Testing 
+64 
+WCS / WTS 
+Weighted Commercial Score / Weighted Technical Score 
+65 
+ISC 
+Information Security Committee 
+66 
+ITGRC 
+IT Governance, Risk and Compliance 
+67 
+QCBS 
+Quality and Cost Based Selection 
+ 
+Any term used in this document and not specifically defined herein shall have the same meaning as 
+provided in the relevant RBI regulations and / or RBI / IBA guidelines. In case of any dispute, the decision 
+of the Bank shall be final and binding. 
+Confidentiality 
+This document is meant for the specific use of the bidders to participate in the current tendering process. 
+This document in its entirety is subject to copyright laws. Indian Bank expects the bidders, or any person 
+acting on behalf of the bidders, to strictly adhere to the instructions given in the document and maintain 
+confidentiality of information. The bidders undertake that they shall hold the information received by 
+them under this RFP process or the contract “in trust” and shall maintain utmost confidentiality of such 
+information. The bidders agree and undertake that they shall (a) maintain and use the information only 
+for the purpose permitted by the Bank and (b) allow disclosure of such information to their employees, 
+agents and representatives on a “need to know” basis only and ensure confidentiality of the information 
+disclosed to them. The bidders will be held responsible for any misuse of information contained in this 
+document or obtained from the Bank during the RFP process and are liable to be prosecuted by the Bank 
+if such a breach of confidentiality is brought to the notice of the Bank. By accessing or downloading this 
+document, interested parties agree to be bound by the confidentiality obligations set out herein. 
+ 
+ 
+
+Indian Bank, Inspection &
+--- (p.36) 2. Scope of Work 
+The selected bidder shall supply, install, configure, integrate, implement, maintain and support the tool 
+end to end. The bidder is the single point of accountability for every component, OEM and subcontractor. 
+The bidder shall confirm compliance with each clause of this Section in the Scope of Work compliance 
+statement (Section V, Appendix I, Part 3) and the Compliance Statement (Annexure-XVIII). Obligations 
+stated anywhere else in this RFP form part of the scope. The bidder shall not subcontract or delegate any 
+part of the work to anyone other than its own personnel without the Bank’s prior written consent, which 
+the Bank may give or refuse at its discretion. Any permitted subcontracting shall comply with the RBI 
+directions on outsourcing of IT services. 
+2.1 Scope components by milestone 
+S. 
+No. 
+Component 
+What the bidder delivers 
+Milestone 
+1 
+Tool licences 
+Licences for the offered tool and every module needed for the 
+capability areas in this RFP, for DC, DR and non-production 
+environments (Clause 2.18) 
+M1 
+
+Indian Bank, Inspection & Audit Department, Head Office, Chennai 
+Ref: GEM/2026/B/8193498 Date: 23/10/2026 
+Supply, Implementation and Maintenance of Automated tool for IS audit and ITGRC 
+Page 37 of 162 
+S. 
+No. 
+Component 
+What the bidder delivers 
+Milestone 
+2 
+Third-party components 
+Database, middleware, search, reporting and any other 
+component the application needs, in enterprise editions, 
+licensed in the Bank’s name and listed in the Bill of Material. 
+Oracle components taken from the Bank’s PULA (Clause 2.16) 
+are excluded from supply but shall be listed in the Bill of 
+Material at nil cost. 
+M1 
+3 
+Sizing specification 
+Infrastructure sizing for DC and DR for the full contract period, 
+for the Bank to procure and operate (Clause 2.16) 
+M1 
+4 
+Installation and hardening 
+Installation at DC and DR in active-active mode, hardened to 
+the Bank’s security baseline, with high availability and failover 
+proven 
+M1 
+5 
+Con
+... lines further in:
+(p.4) Supply, Implementation and Maintenance of Automated tool for IS audit and ITGRC
+(p.4) ANNEXURE - XII: Checklist for the RFP .................................................................................................. 139
+(p.6) SCHEDULE A: IMPORTANT DATES AND INFORMATION ON RFP SUBMISSION
+(p.6) Issuance Date of RFP
+(p.6) submission of RFP response)
+(p.6) Section II of this RFP
+(p.6) This RFP will follow the e-Procurement (e-Tendering) process,
+(p.7) The RFP document can also be downloaded from the Bank's website https://www.indianbank.bank.in/
+(p.7) regarding this RFP. Clarifications, modifications and date extensions, if any, will be published on the Bank's
+(p.7) eligibility criteria and the terms and conditions set in this RFP document (including annexures) for
+(p.7) and uploaded along with the tender documents. Except as provided in this RFP, any document
+(p.8) 3. The RFP document, along with addenda and corrigenda, if any, shall be signed and stamped by the
+
+=== Attachment 1792758135.pdf (34 pages) ===
+Indian Bank, Inspection & Audit Department, Head Office, Chennai 
+Ref: GEM/2026/B/8193498 Date: 23/10/2026 
+Supply, Implementation and Maintenance of Automated tool for IS audit and ITGRC  
+ 
+ 
+Page 1 of 34 
+ 
+SECTION - III: OBJECTIVE, PURPOSE AND SCOPE OF WORK 
+This Section sets out the objective and purpose of the procurement (Clause 1) and the Scope of Work 
+(Clause 2). The technical and functional requirements in Section V, Appendix I form part of the scope. 
+Obligations stated anywhere else in this RFP also form part of the scope. 
+1. Objective and Purpose 
+1.1 Background 
+The Bank has undertaken a structured programme to strengthen its Information Systems Audit 
+function in line with the Reserve Bank of India (Commercial Banks – Cybersecurity, Technology: Risk, 
+Resilience and Assurance Framework) Directions, 2026, issued on 31 July 2026 under reference 
+RBI/DoS/2026-27/410. As part of this programme, the Bank has established a three-lines-of-defence 
+operating model, a Common Control Framework, and an updated IS Audit Policy, Standard Operating 
+Procedure that together govern how IS audits are planned, executed, reported and tracked. With this 
+foundation in place, the Bank now intends to automate its IS audit lifecycle. The present process relies 
+on manual validation across multiple tools, manual comparison of reported positions against actuals, 
+and limited ability to track repeat observations, correlate data across audits, or maintain a dynamic 
+view of risk. The Bank has completed the preparatory groundwork for automation, including 
+identification of the audit processes in scope, a catalogue of automation opportunities across the audit 
+lifecycle, an evaluation of available solutions, and a data plan built on a tool-agnostic audit data 
+repository with analytics-based prioritisation and AI-assisted capabilities subject to mandatory human 
+review. Through this RFP, the Bank seeks a right-fit solution and implementation partner that will 
+operate within t
+... scope of work:
+--- (p.5) 2. Scope of Work 
+The selected bidder shall supply, install, configure, integrate, implement, maintain and support the 
+tool end to end. The bidder is the single point of accountability for every component, OEM and 
+subcontractor. The bidder shall confirm compliance with each clause of this Section in the Scope of 
+Work compliance statement (Section V, Appendix I, Part 3) and the Compliance Statement (Annexure-
+XVIII). Obligations stated anywhere else in this RFP form part of the scope. The bidder shall not 
+subcontract or delegate any part of the work to anyone other than its own personnel without the 
+Bank’s prior written consent, which the Bank may give or refuse at its discretion. Any permitted 
+subcontracting shall comply with the RBI directions on outsourcing of IT services. 
+
+Indian Bank, Inspection & Audit Department, Head Office, Chennai 
+Ref: GEM/2026/B/8193498 Date: 23/10/2026 
+Supply, Implementation and Maintenance of Automated tool for IS audit and ITGRC 
+ 
+ 
+Page 6 of 34 
+ 
+2.1 Scope components by milestone 
+S. 
+No. 
+Component 
+What the bidder delivers 
+Milestone 
+1 
+Tool licences 
+Licences for the offered tool and every module needed for the 
+capability areas in this RFP, for DC, DR and non-production 
+environments (Clause 2.18) 
+M1 
+2 
+Third-party components 
+Database, middleware, search, reporting and any other 
+component the application needs, in enterprise editions, 
+licensed in the Bank’s name and listed in the Bill of Material. 
+Oracle components taken from the Bank’s PULA (Clause 2.16) 
+are excluded from supply but shall be listed in the Bill of 
+Material at nil cost. 
+M1 
+3 
+Sizing specification 
+Infrastructure sizing for DC and DR for the full contract period, 
+for the Bank to procure and operate (Clause 2.16) 
+M1 
+4 
+Installation and hardening 
+Installation at DC and DR in active-active mode, hardened to 
+the Bank’s security baseline, with high availability and failover 
+proven 
+M1 
+5 
+Configuration 
+Identifier scheme, audit-type workflows,
+... lines further in:
+(p.4) Supply, Implementation and Maintenance of Automated tool for IS audit and ITGRC
+(p.4) 1.7 Outside the scope of this RFP
+(p.5) • The Bank is buying a product, not a development project. The capabilities in this RFP are
+(p.5) XVIII). Obligations stated anywhere else in this RFP form part of the scope. The bidder shall not
+(p.6) capability areas in this RFP, for DC, DR and non-production
+(p.7) discovered in this RFP during the contract period.
+(p.7) • This RFP is not splittable and will be awarded to a single bidder.
+(p.7) 2), and every requirement there forms part of this Scope of Work. A capability area assigned to
+(p.13) Coverage in this RFP
+(p.15) features of the solution against this Scope of Work.
+(p.18) or degradation of the performance levels in this RFP. Capacity shall be increased by adding
+(p.18) without prejudice to the Bank’s other remedies under this RFP.

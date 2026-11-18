@@ -1,0 +1,401 @@
+# GEM/2026/B/8260645 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: Department of Financial Services
+Card: System Audit of Automation of Income Recognition, Asset Classification and Provisioning (IRAC-P) Process for Indian Bank; income recognition automation; asset classification automation; provisioning automation; IRAC-P norms compliance; system audit; regulatory compliance validation; credit monitoring policy; NPA management policy
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+03-12-2026 15:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+04-12-2026 15:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+120 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Department Of Financial Services
+संगठन का नाम/Organisation Name
+Indian Bank
+काया%लय का नाम/Office Name
+Corporate Office
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :hoestate@indianbank.co.in 
+Buyer Email id: sriram.k@indianbank.bank.in
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 3 Month(s)
+पछले 3 व-ीय वष/ का बडर का 0यूनतम औसत वाष%क
+व-ीय टन%ओवर/Minimum Average Annual
+Turnover of the bidder (For the last 3
+Financial Years)
+100 Lakh (s)
+टन%ओवर पा ता मानदंड/Turnover eligibility criteria
+To be verified by the buyer at the time of technical
+evaluation
+टन%ओवर के िलए एमएसई को छूट 7ा8 है / MSE
+Relaxation for Turnover
+Yes | Partial | Turn over value - 10 (in lakhs)
+टन%ओवर के िलए 'टाट%अप को छूट 7ा8 है / Startup
+Relaxation for Turnover
+Yes | Partial | Turn over value - 10 (in lakhs)
+व9ेता से मांगे गए द'तावेज़/Document required
+from seller
+Bidder Turnover,Certificate (Requested in ATC),Additional
+Doc 1 (Requested in ATC),Additional Doc 2 (Requested in
+ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4
+(Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+;या आप िनवदाकार= >ारा अपलोड ?कए गए द'तावेज़= को
+िनवदा म@ भाग लेने वाले सभी िनवदाकार= को ?दखाना
+चाहते हB? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+No
+ 
+बड संDया/Bid Number: GEM/2026/B/8260645
+?दनांक /Dated: 10-11-2026
+बड द'तावेज़ / Bid Document
+1 / 7
+
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आवMयक बड क संDया। / Minimum number of
+bids required to disable automatic bid
+extension
+3
+?दन= क संDया, Pजनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+3
+ऑटो ए;सट@शन अिधकतम ?कतनी बार ?कया जाना है। /
+Number of Auto Extension count
+1
+बड से Sरवस% नीलामी स?9य ?कया/Bid to RA enabled
+No
+बड का 7कार/Type of Bid
+Two Packet Bid
+तकनीक मूTयांकन के दौरान तकनीक 'पVीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+3 Days
+Payment Timelines
+Payments shall be made to the Seller within 30 days of
+issue of service delivery acceptance certificate (SDAC) and
+on-line submission of bills (This is in supersession of 10 days
+time as provided in clause 12 of GeM GTC)
+मूTयांकन पWित/Evaluation Method
+Total value wise evaluation
+मूTय दशा%ने वाला व-ीय द'तावेज Xेकअप आवMयक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर बBक/Advisory Bank
+State Bank of India
+ईएमड रािश/EMD Amount
+200000
+ईपीबीजी ववरण /ePBG Detail
+एडवाइजर बBक/Advisory Bank
+State Bank of India
+ईपीबीजी 7ितशत (%)/ePBG Percentage(%)
+5.00
+ईपीबीजी क आवMयक अविध (माह) /Duration of ePBG
+required (Months).
+12
+(a). जेम क शत/ के अनुसार ईएमड छूट के इ[छुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ 7'तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा 7दाता ईएमड से छूट के पा  हB। ]यापाSरय= को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+2 / 7
+
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथ^ के प_ म@ होनी चा?हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथ^ के प_ म@ होनी चा?हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+लाभाथ^ /Beneficiary : 
+DGM
+254-260, AVVAI SHANMUGAM SALAI, ROYAPETTAH, CHENNAI 600014
+(Indian Bank)
+बोली वभाजन लागू नहं ?कया गया/Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+`ेaस भुगतान संबंधी ववरण/TReDS Payment Details
+This Bid provides for Trade Receivables Discounting System (TReDS) as Preferred mode of payment.
+For MSME sellers, payments may be processed through a TReDS exchange in which the Buyer is
+registered, subject to applicable policy and regulatory guidelines. Accordingly, sellers intending to
+avail payment through TReDS are required to be registered with at least one TReDS exchange in
+which the buyer is registered.
+1. If the bidder is a Micro or Small Enterprise (MSE) as per latest orders issued by Ministry of MSME, the bidder
+shall be relaxed from the eligibility criteria of "Bidder Turnover" as defined above subject to meeting of quality
+and technical specifications. If the bidder itself is MSE OEM of the offered products, it would be relaxed from the
+"OEM Average Turnover" criteria also subject to meeting of quality and technical specifications. The bidder
+seeking Relaxation from Turnover, shall upload the supporting documents to prove his eligibility for Relaxation.
+2. If the bidder is a DPIIT registered Startup, the bidder shall be relaxed from the the eligibility criteria of "Bidder
+Turnover" as defined above subject to their meeting of quality and technical specifications. If the bidder is DPIIT
+Registered OEM of the offered products, it would be relaxed from the "OEM Average Turnover" criteria also
+subject to meeting of quality and technical specifications. The bidder seeking Relaxation from Turnover shall
+upload the supporting documents to prove his eligibility for Relaxation. 
+3. The minimum average annual financial turnover of the bidder duri
+
+## RFP
+=== Attachment SYSTEMAUD_50a2aa7b-e06c-49db-b1251794312462213_768128.pdf (104 pages) ===
+CO: Credit Monitoring Department 
+Indian Bank, Corporate Office, 
+254-260 Avvai Shanmugam Salai, 
+Royapettah, Chennai – 600 014 
+ 
+ 
+ 
+ 
+   
+ 
+GeM Bid Ref: GEM/2026/B/8260645 
+ 
+ 
+ 
+Date: 10/11/2026 
+  RFP for Engagement of Auditor for conducting System Audit of Automation of IRAC-P Norms  
+Page 1 of 104 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+REQUEST FOR PROPOSAL FOR  
+ 
+“ENGAGEMENT OF AUDITOR FOR CONDUCTING SYSTEM AUDIT OF 
+AUTOMATION OF INCOME RECOGNITION, ASSET CLASSIFICATION AND 
+PROVISIONING NORMS IN BANK” 
+ 
+ 
+RFP Reference No. 
+GEM/2026/B/8260645 
+RFP Issuance Date 
+ 
+10.11.2026 
+Last Date of request for Queries/ Clarifications 
+ 
+16.11.2026 – 05:00 PM 
+ 
+Date and time of Pre-Bid Meeting 
+19.11.2026 – 3:00 PM 
+Last Date for receipt of bids 
+03.12.2026.– 3:00 PM 
+Date and time of opening Technical bids 
+ 
+04.12.2026 – 03:00 PM 
+ 
+ 
+Issued by: 
+ 
+Indian Bank, Corporate Office, 
+Credit Monitoring Department 
+254-260 Avvai Shanmugam Salai, 
+Royapettah, Chennai – 600 014 
+ 
+ 
+Phone: +91-44-2813 4515 / 2813 4425 
+Email:  creditmonitoring@indianbank.bank.in 
+Website: https://indianbank.bank.in 
+ 
+ 
+ 
+This document is the property of Indian Bank and is meant for exclusive purpose of Bidding as per 
+the Specification, Terms, Condition and Scope indicated in it. This document should not be copied, 
+transferred, reproduced, distributed or recorded on any medium, including all forms of electronic 
+medium, without written permission of Indian Bank. The use of contents of this document for any 
+purpose other than stated herein is strictly prohibited and shall amount to copyright violation and 
+thus, shall be punishable under the Indian Law.
+
+CO: Credit Monitoring Department 
+Indian Bank, Corporate Office, 
+254-260 Avvai Shanmugam Salai, 
+Royapettah, Chennai – 600 014 
+ 
+ 
+ 
+ 
+   
+ 
+GeM Bid Ref: GEM/2026/B/8260645 
+ 
+ 
+ 
+Date: 10/11/2026 
+  RFP for Engagement of Auditor for conducting System Audit of Automation of IRAC-P Norms  
+Page 2 of 104 
+ 
+ 
+Page No. 
+SCHEDULE 
+[A] Important Dates and
+... scope of work:
+--- (p.12) Scope of Work 
+93 
+SRS 
+System Requirement Specifications 
+94 
+STP 
+Straight Through Processing 
+95 
+SWIFT 
+Society for Worldwide Interbank Financial Telecommunication 
+96 
+TCO 
+Total Cost of Ownership 
+97 
+TMO 
+Transformation Management Office 
+98 
+UAT 
+User Acceptance Testing 
+99 
+UI / UX 
+User Interface / User Experience 
+100 
+UIDAI 
+Unique Identification Authority of India 
+101 
+UPI 
+Unified Payments Interface 
+102 
+VAPT 
+Vulnerability Assessment & Penetration Testing 
+
+CO: Credit Monitoring Department 
+Indian Bank, Corporate Office, 
+254-260 Avvai Shanmugam Salai, 
+Royapettah, Chennai – 600 014 
+ 
+ 
+ 
+ 
+ 
+ 
+GeM Bid Ref: GEM/2026/B/8260645 
+ 
+ 
+ 
+Date: 10/11/2026 
+ RFP for Engagement of Auditor for conducting System Audit of Automation of IRAC-P Norms 
+Page 13 of 104 
+ 
+Any term used in this document and not specifically defined herein will have the same meaning 
+as provided in relevant RBI regulations and/ or RBI/IBA guidelines and in case of any dispute 
+the decision of the Bank shall be final and binding. 
+ 
+ Confidentiality: 
+ 
+ 
+This document is meant for the specific use by the Bidder/s to participate in the current tendering process. This 
+document in its entirety is subject to Copyright Laws. Indian Bank expects the Bidders or any person acting on 
+behalf of the Bidders to strictly adhere to the instructions given in the document and maintain confidentiality of 
+information. The Bidder/s do hereby undertake that they shall hold the information received by them 
+under this RFP process or the contract “in trust” and they shall maintain utmost confidentiality of such 
+information. The Bidders have to agree and undertake that (a) They shall maintain and use the 
+information only for the purpose as permitted by the Bank (b) To strictly allow disclosure of such 
+information to its employees, agents and representatives on” need to know” basis only and to ensure 
+confidentiality of such information disclosed to them. The Bidders will be held responsible for any
+--- (p.39) Broad Scope of Work 
+System Audit of Automation of Income Recognition, 
+Asset Classification and Provisioning Process in 
+banks 
+ 
+01. 
+Scope of the System Audit: 
+ 
+The System Audit of IRAC-P norms will be governed by the following RBI guidelines and Policies 
+issued by the Bank- 
+ 
+1) RBI Notification dated 14.09.2020 regarding “Automation of Income Recognition, Asset 
+Classification and Provisioning Process in banks” 
+2) RBI Notification dated 12.11.2021 regarding Prudential norms on Income Recognition, Asset 
+Classification and Provisioning pertaining to Advances - Clarifications 
+3) RBI Master Circular dated 01.04.2025 regarding “Prudential norms on Income Recognition, Asset 
+Classification and Provisioning pertaining to Advances” 
+4) RBI Master Circular dated 28.11.2025 regarding “Prudential norms on Income Recognition, Asset 
+Classification and Provisioning pertaining to Advances” 
+5) Credit Monitoring Policy FY 2025- 26 version 1.0.1 effective from 01.04.2025 and modifications 
+issued by Indian Bank from time to time, if any. 
+6) Credit Monitoring Policy FY 2026- 27 version 1.0.1 effective from 01.04.2026 and modifications 
+issued by Indian Bank from time to time, if any. 
+7) Revised NPA Management Policy FY 2024-26 version 2.0 dated 27.09.2024 and effective from 
+27.09.2024 and modifications issued by Indian Bank from time to time, if any. 
+8) Revised NPA Management Policy FY 2026-28 version 1.00 dated 13.02.2026 and effective from 
+01.01.2026 and modifications issued by Indian Bank from time to time, if any. 
+ 
+ 
+List of scope of system audit of automation of income recognition, asset classification and provisioning 
+process during FY’27 is mentioned below: 
+ 
+Sl 
+No 
+Scope of System Audit 
+1 
+The auditor should comprehensively review automation of income recognition, asset classification 
+and provisioning processes to ensure full compliance to regulatory guidelines and undertake 
+comprehensive Audit for validation of the reviewed system modification. 
+2
+... lines further in:
+(p.4) RFP for Engagement of Auditor for conducting System Audit of Automation of IRAC-P Norms
+(p.4) 37. Implementation of Services
+(p.5) Checklist for the RFP
+(p.6) IMPORTANT DATES AND INFORMATION ON RFP SUBMISSION
+(p.6) Issuance Date of RFP
+(p.8) The RFP document can also be downloaded from:
+(p.8) bidders regarding this RFP. However, clarifications, modifications and date of extensions,
+(p.8) details of the eligibility and terms & conditions set in the RFP document (including
+(p.8) Schedule [A] (Important Dates and Information on RFP Submission). Further, Bidders
+(p.8) must submit their commercial bid as per the format given in the RFP (as per Part-II of
+(p.8) documents. Except as provided in this RFP, any document sent by any other
+(p.9) III. The RFP document (along with addendums, if any) needs to be signed and stamped
+
+=== Attachment 17943121652614.pdf (6 pages) ===
+9.2 General Evaluation Criteria 
+ 
+ 
+a) The bidder must fully comply with the eligibility criteria, all mandatory specifications, 
+Functional and Technical Specifications along with other mandatory points as outlined in 
+this RFP. 
+b) Compliance with each requirement must be clearly indicated and submitted. Failure to 
+comply with any one or more Eligibility, Mandatory criteria will result in disqualification of 
+the bidder. 
+c) All bids shall be evaluated by an Evaluation Committee set up for this purpose by the 
+Bank. 
+d) The Bank will examine the bid to determine whether they are complete, whether the 
+documents have been properly signed and whether the bid is generally in order. 
+e) The bank may waive any minor informality, non-conformity, or irregularity in a bid which 
+does not constitute a material deviation. 
+f) Prior to the detailed evaluation, the bank will determine the substantial responsiveness of 
+bid documents. For the purposes of these clauses, a substantially responsive quote is 
+one which conforms to all the terms and conditions of the bid documents without material 
+deviations. 
+g) During the period of evaluation, bidders may be asked to provide more details and 
+explanations about information provided in the proposals. Bidders should respond to such 
+requests within the time frame indicated in the letter / email seeking clarification/ 
+explanation. 
+h) Bidder shall submit all the documents/references required as a prerequisite for 
+qualification, eligibility for valuation and scoring. 
+i) The status of eligibility shall be informed to the bidders individually.  
+j) Inviting bidders for technical presentation or seeking information during technical 
+evaluation shall not be construed that the bidder has qualified in the open tender. 
+k) Technical evaluation will carry a weightage of 30%, and commercial evaluation will carry a 
+weightage of 70%. The combined weightage will determine the successful bidder. 
+l) There will be 20 marks as qualifying mar
+... lines further in:
+(p.4) commercial bid format (Part-II of RFP). Commercial Bid will be opened after Technical

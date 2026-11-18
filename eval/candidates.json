@@ -1,0 +1,408 @@
+[
+ {
+  "b_id": 10164605,
+  "title": "AMC of Integrated Security and Surveillance System - CCTV; Comprehensive; Hardware, Software, Netwo",
+  "buyer": "Ministry of Finance / Department of Financial Services",
+  "group": "aml_likely",
+  "why": "closest by meaning / words"
+ },
+ {
+  "b_id": 10170754,
+  "title": "AMC of Integrated Security and Surveillance System - Monitor Operations, Health Monitoring Solution",
+  "buyer": "Ministry of Finance / Department of Revenue",
+  "group": "aml_likely",
+  "why": "closest by meaning / words"
+ },
+ {
+  "b_id": 10129970,
+  "title": "Custom Bid for Services - RFP for Asset Liability Management (ALM) Solution",
+  "buyer": "Ministry of Finance / BANKING SECTOR",
+  "group": "aml_likely",
+  "why": "closest by meaning / words"
+ },
+ {
+  "b_id": 10131629,
+  "title": "AMC of Integrated Security and Surveillance System - Theft Prevention, Remote Video Monitoring, Fac",
+  "buyer": "Ministry of Finance / Department of Revenue",
+  "group": "aml_likely",
+  "why": "closest by meaning / words"
+ },
+ {
+  "b_id": 10146514,
+  "title": "AMC / CMC of Fire Detection, Fire Alarm, Fire Hydrant and Sprinkler System",
+  "buyer": "Ministry of Finance / Department of Financial Services",
+  "group": "aml_likely",
+  "why": "closest by meaning / words"
+ },
+ {
+  "b_id": 10029781,
+  "title": "ATM Replenishment and Managed Services - Cash Recycler Machine (CRM), Cash Dispenser(CD); Offsite; ",
+  "buyer": "Ministry of Finance / Department of Financial Services",
+  "group": "aml_likely",
+  "why": "closest by meaning / words"
+ },
+ {
+  "b_id": 10117810,
+  "title": "Annual Maintenance Service - Desktops,  Laptops and Peripherals - Desktop, Laptop, Printer, Scanner",
+  "buyer": "Ministry of Finance / Department of Financial Services",
+  "group": "aml_likely",
+  "why": "closest by meaning / words"
+ },
+ {
+  "b_id": 10154798,
+  "title": "Financial Audit Services - Concurrent Audit of Digital Banking Operations; CA Firm",
+  "buyer": "Ministry of Finance / Department of Financial Services",
+  "group": "aml_likely",
+  "why": "closest by meaning / words"
+ },
+ {
+  "b_id": 10170111,
+  "title": "Modular Jewel Safe,LOCK,Time Lock,Duress Alarm System,AMC",
+  "buyer": "Ministry of Finance / Department of Financial Services",
+  "group": "aml_likely",
+  "why": "closest by meaning / words"
+ },
+ {
+  "b_id": 10070697,
+  "title": "Customized AMC/CMC for Pre-owned Products - ARC Of ABB Flow Computer System; ABB Flow Computer Syst",
+  "buyer": "Ministry of Petroleum and Natural Gas / INDIAN OIL CORPORATION LIMITED",
+  "group": "aml_likely",
+  "why": "closest by meaning / words"
+ },
+ {
+  "b_id": 10173788,
+  "title": "AMC of Integrated Security and Surveillance System - AMC OF PRE OWNED CCTV SYSTEMS AND CAMERA; Comp",
+  "buyer": "Ministry of Finance / Department of Financial Services",
+  "group": "aml_likely",
+  "why": "closest by meaning / words"
+ },
+ {
+  "b_id": 10091481,
+  "title": "Annual Maintenance Contract (AMC) for Online effluent monitoring system (OEMS)",
+  "buyer": "PMO / Department of Atomic Energy",
+  "group": "aml_likely",
+  "why": "closest by meaning / words"
+ },
+ {
+  "b_id": 10135354,
+  "title": "20 LPM @ 5 BAR LOS FOR SA (FD) FAN NDV 20H (+ 3% ) AS PER DRG NO 1-00-107-29663 & ATTACHED DOCUMENT",
+  "buyer": "Ministry of Heavy Industries and Public Enterprises / Department of Heavy Industry",
+  "group": "los_likely",
+  "why": "closest by meaning / words"
+ },
+ {
+  "b_id": 10150951,
+  "title": "Office Productivity Suite Software",
+  "buyer": "Ministry of Finance / BANKING SECTOR",
+  "group": "los_likely",
+  "why": "closest by meaning / words"
+ },
+ {
+  "b_id": 10110741,
+  "title": "Software,Software add on,Software Support 1,Software Support 2,Hardware HPC",
+  "buyer": " / Water Resources Department Karnataka",
+  "group": "los_likely",
+  "why": "closest by meaning / words"
+ },
+ {
+  "b_id": 10062290,
+  "title": "Procurement of x86 based Hardware, Software Licenses and associated services for CBS Upgradation",
+  "buyer": "Ministry of Finance / BANKING SECTOR",
+  "group": "los_likely",
+  "why": "closest by meaning / words"
+ },
+ {
+  "b_id": 10149172,
+  "title": "operating software",
+  "buyer": "Ministry of Defence / Department of Military Affairs",
+  "group": "los_likely",
+  "why": "closest by meaning / words"
+ },
+ {
+  "b_id": 10164102,
+  "title": "Data Analytics Service (Version 2) - Operations; Buyer Premise (On Shore); Tools & Softwares, User ",
+  "buyer": "Ministry of Finance / Department of Revenue",
+  "group": "los_likely",
+  "why": "closest by meaning / words"
+ },
+ {
+  "b_id": 9932968,
+  "title": "Software Suite with modules for carrying out multiphysics modelling and simulation.",
+  "buyer": "Department of Atomic Energy / Department of Atomic Energy",
+  "group": "los_likely",
+  "why": "closest by meaning / words"
+ },
+ {
+  "b_id": 10148855,
+  "title": "Advanced mobile data unlocking, extraction, decoding, Analysis and reporting Software",
+  "buyer": " / Home Department Goa",
+  "group": "los_likely",
+  "why": "closest by meaning / words"
+ },
+ {
+  "b_id": 10109078,
+  "title": "Software Support Services 2.0 - As per RFP Document; Operating System Software, Application Softwar",
+  "buyer": " / Education Department Assam",
+  "group": "los_likely",
+  "why": "closest by meaning / words"
+ },
+ {
+  "b_id": 10126513,
+  "title": "TECH ORGANIZER",
+  "buyer": "Ministry of Finance / Department of Financial Services",
+  "group": "los_likely",
+  "why": "closest by meaning / words"
+ },
+ {
+  "b_id": 10102836,
+  "title": "Inferencing system for data processing application",
+  "buyer": "Department of Atomic Energy / Department of Atomic Energy",
+  "group": "los_likely",
+  "why": "closest by meaning / words"
+ },
+ {
+  "b_id": 10156952,
+  "title": "Software Support Services 2.0 - Microsoft; Operating System Software; Proactive Services; Software ",
+  "buyer": "Ministry of Defence / Department of Defence",
+  "group": "los_likely",
+  "why": "closest by meaning / words"
+ },
+ {
+  "b_id": 9994326,
+  "title": "Software Defined Radio,Wide band low noise amplifier,Wide band omni directional antenna,Low loss RF",
+  "buyer": "Ministry of Defence / Department of Military Affairs",
+  "group": "trap",
+  "why": "loss"
+ },
+ {
+  "b_id": 10114249,
+  "title": "Custom Bid for Services - RETRIEVAL OF MASS LOSS COUPONS (REFER SPECIAL CONDITION OF CONTRACT (SCC)",
+  "buyer": "Ministry of Petroleum and Natural Gas / GAIL India Limited",
+  "group": "trap",
+  "why": "loss"
+ },
+ {
+  "b_id": 10094804,
+  "title": "Automated No Load, Load Loss and Temperature rise test bench",
+  "buyer": "Ministry of Power / NA",
+  "group": "trap",
+  "why": "loss"
+ },
+ {
+  "b_id": 10142488,
+  "title": "Clinical Pathology Pad,Bio Chemistry Pad,Haematology Pad,RMO Pad,Prescription Pad,Medical Case Shee",
+  "buyer": "Ministry of Defence / Department of Military Affairs",
+  "group": "trap",
+  "why": "medical AML"
+ },
+ {
+  "b_id": 10119754,
+  "title": "Haematology Analyzer Reagents (V2),Haematology Analyzer Reagents (V2),Haematology Analyzer Reagents",
+  "buyer": "Ministry of AYUSH / NA",
+  "group": "trap",
+  "why": "medical AML"
+ },
+ {
+  "b_id": 10071983,
+  "title": "Haematology Analyzer Reagents (V2)",
+  "buyer": " / Labour and Employment Department Tamil Nadu",
+  "group": "trap",
+  "why": "medical AML"
+ },
+ {
+  "b_id": 10172037,
+  "title": "Motor Insurance Service - Eicher Pro 2110 XP PL CBS BS; 3770 CC",
+  "buyer": "Ministry of Civil Aviation / Airports Authority of India (AAI)",
+  "group": "trap",
+  "why": "CBS acronym"
+ },
+ {
+  "b_id": 10164962,
+  "title": "AMC FOR LMS MOODLE PORTAL AND LIBRARY INFORMATION PORTAL",
+  "buyer": "Ministry of Environment Forest and Climate Change / NA",
+  "group": "related",
+  "why": "loan management only"
+ },
+ {
+  "b_id": 10080484,
+  "title": "PALM 120 Airframe Model,PALM 400 Airframe Model",
+  "buyer": "Ministry of Defence / Department of Military Affairs",
+  "group": "related",
+  "why": "treasury / ALM"
+ },
+ {
+  "b_id": 10138652,
+  "title": "ANTI SMG GUN,IGBT Based PWM,ALM CABEL,ALM CABEL,ALM CABELL,GI WIRE,TPN DISTRUBUTION BOARD,MCCB,XLPE",
+  "buyer": "Ministry of Housing & Urban Affairs (MoHUA) / Central Public Works Department",
+  "group": "related",
+  "why": "treasury / ALM"
+ },
+ {
+  "b_id": 10085207,
+  "title": "Canvas Water Tank",
+  "buyer": "Ministry of Finance / Department of Economic Affairs",
+  "group": "negative_fin",
+  "why": "random financial-sector buyer"
+ },
+ {
+  "b_id": 10164417,
+  "title": "Television (V3)",
+  "buyer": "Ministry of Finance / Department of Revenue",
+  "group": "negative_fin",
+  "why": "random financial-sector buyer"
+ },
+ {
+  "b_id": 9953351,
+  "title": "Height Adjustable Single Operator,Height Adjustable Four Operator,Height Adjustable Three Operator,",
+  "buyer": "Ministry of Finance / Department of Financial Services",
+  "group": "negative_fin",
+  "why": "random financial-sector buyer"
+ },
+ {
+  "b_id": 10135133,
+  "title": "Liability Insurance Service - Indemnity insurance",
+  "buyer": "Ministry of Finance / Department of Financial Services",
+  "group": "negative_fin",
+  "why": "random financial-sector buyer"
+ },
+ {
+  "b_id": 10165694,
+  "title": "Annual Maintenance Service - Desktops,  Laptops and Peripherals - Annual Maintenance Service - Desk",
+  "buyer": "Ministry of Finance / Department of Financial Services",
+  "group": "negative_fin",
+  "why": "random financial-sector buyer"
+ },
+ {
+  "b_id": 10160390,
+  "title": "Revolving Chair (V5)",
+  "buyer": "Ministry of Finance / Department of Revenue",
+  "group": "negative_fin",
+  "why": "random financial-sector buyer"
+ },
+ {
+  "b_id": 10150482,
+  "title": "Monthly Basis Cab & Taxi Hiring Services - SUV; 2000 km x 320 hours; Local 24*7",
+  "buyer": "Ministry of Finance / Department of Revenue",
+  "group": "negative_fin",
+  "why": "random financial-sector buyer"
+ },
+ {
+  "b_id": 10128399,
+  "title": "Entry and Mid Level Desktop Computer",
+  "buyer": "Ministry of Finance / Department of Financial Services",
+  "group": "negative_fin",
+  "why": "random financial-sector buyer"
+ },
+ {
+  "b_id": 10118002,
+  "title": "Gold Purity Testing Meter/ Karat Meter (V2)",
+  "buyer": "Ministry of Finance / Department of Financial Services",
+  "group": "negative_fin",
+  "why": "random financial-sector buyer"
+ },
+ {
+  "b_id": 10083376,
+  "title": "Procurement of GI Standard wire",
+  "buyer": "Ministry of Finance / Department of Economic Affairs",
+  "group": "negative_fin",
+  "why": "random financial-sector buyer"
+ },
+ {
+  "b_id": 10062992,
+  "title": "Hiring of Consultants - Milestone/Deliverable Based - As per ATC; As per ATC; No; Hybrid(As specifi",
+  "buyer": "Ministry of Finance / BANKING SECTOR",
+  "group": "negative_fin",
+  "why": "random financial-sector buyer"
+ },
+ {
+  "b_id": 10162616,
+  "title": "Conference Speakerphone without Bluetooth",
+  "buyer": "Ministry of Finance / Department of Financial Services",
+  "group": "negative_fin",
+  "why": "random financial-sector buyer"
+ },
+ {
+  "b_id": 10128289,
+  "title": "Air Conditioner Spares",
+  "buyer": "Ministry of Finance / Department of Economic Affairs",
+  "group": "negative_fin",
+  "why": "random financial-sector buyer"
+ },
+ {
+  "b_id": 10116017,
+  "title": "Pest and Animal Control Service - Maintenance Contract; Monthly Once and Twice; General Pests/Insec",
+  "buyer": "Ministry of Finance / Department of Financial Services",
+  "group": "negative_fin",
+  "why": "random financial-sector buyer"
+ },
+ {
+  "b_id": 10076224,
+  "title": "Custom Bid for Services - Dismantling, Cleaning, Repairing & Re-fitment of Bio digester Tanks",
+  "buyer": "Ministry of Railways / Indian Railways",
+  "group": "negative",
+  "why": "random"
+ },
+ {
+  "b_id": 10148930,
+  "title": "Photo electric smoke detector,Ionisation type smoke detector,Heat detector dual sensor type with th",
+  "buyer": "Ministry of Communications / Department of Telecommunications (DOT)",
+  "group": "negative",
+  "why": "random"
+ },
+ {
+  "b_id": 10155507,
+  "title": "BEAUTIFIACTION OF ARTERIAL ROAD",
+  "buyer": "Ministry of Defence / Department of Military Affairs",
+  "group": "negative",
+  "why": "random"
+ },
+ {
+  "b_id": 10131282,
+  "title": "T-Shirt (V3),Peak Cap - MHA,T-Shirt (V3),Peak Cap - MHA",
+  "buyer": " / Sports Youth and Cultural Activities Department Gujarat",
+  "group": "negative",
+  "why": "random"
+ },
+ {
+  "b_id": 10158142,
+  "title": "Printing and Photocopying Service - Photocopying; Offsite; AS PER  RFP; Not Applicable; Not Applica",
+  "buyer": " / Energy Department Uttar Pradesh",
+  "group": "negative",
+  "why": "random"
+ },
+ {
+  "b_id": 10151535,
+  "title": "STATIONARY ITEMS",
+  "buyer": "Ministry of Environment Forest and Climate Change / NA",
+  "group": "negative",
+  "why": "random"
+ },
+ {
+  "b_id": 10138548,
+  "title": "3KW CHILLER UNIT",
+  "buyer": "Ministry of Defence / Department of Defence Production",
+  "group": "negative",
+  "why": "random"
+ },
+ {
+  "b_id": 10084660,
+  "title": "Procurement of 1/2\" X Sch. 80S SS Seamless Pipes,Procurement of 1\" X Sch040 SS Seamless Pipes,Procu",
+  "buyer": "Ministry of Chemicals and Fertilizers / Department of Fertilizers",
+  "group": "negative",
+  "why": "random"
+ },
+ {
+  "b_id": 10117645,
+  "title": "SWITCH KEYPAD YCAL/YCWL (736305) , SPARE FOR CHILLER UNIT OF HVAC SYSTEM",
+  "buyer": "Ministry of Chemicals and Fertilizers / Department of Fertilizers",
+  "group": "negative",
+  "why": "random"
+ },
+ {
+  "b_id": 10115349,
+  "title": "Virtual Reality Welding Simulator",
+  "buyer": "Ministry of Railways / Indian Railways",
+  "group": "negative",
+  "why": "random"
+ }
+]

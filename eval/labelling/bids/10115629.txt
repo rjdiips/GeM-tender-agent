@@ -1,0 +1,288 @@
+# GEM/2026/B/8230284 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: Department of Financial Services
+Card: Agriculture Digital Lending Suite for Bank of Maharashtra; Agriculture Digital Lending Suite; Agri Lending Assisted Journeys; Agri Lending STP Journeys; JanSamarth Integrated Assisted Journeys; JanSamarth Integrated STP Journeys; Business Rule Engine (BRE); Digital Onboarding; Eligibility Assessment
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+21-11-2026 17:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+22-11-2026 17:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Department Of Financial Services
+संगठन का नाम/Organisation Name
+Bank Of Maharashtra
+काया%लय का नाम/Office Name
+Headofficeit
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :hod13.bom.mh@gembuyer.in 
+Buyer Email id: ayan.ghosh@bankofmaharashtra.bank.in
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 3 Year(s)
+टन%ओवर के िलए एमएसई को छूट 1ा2 है / MSE
+Relaxation for Turnover
+Yes | Complete
+टन%ओवर के िलए 'टाट%अप को छूट 1ा2 है / Startup
+Relaxation for Turnover
+Yes | Complete
+व3ेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Bidder Turnover,Certificate (Requested
+in ATC),OEM Authorization Certificate,OEM Annual
+Turnover,Additional Doc 1 (Requested in ATC),Additional
+Doc 2 (Requested in ATC),Additional Doc 3 (Requested in
+ATC),Additional Doc 4 (Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+5या आप िनवदाकार7 8ारा अपलोड 9कए गए द'तावेज़7 को
+िनवदा म: भाग लेने वाले सभी िनवदाकार7 को 9दखाना
+चाहते ह<? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+No
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आव@यक बड क संAया। / Minimum number of
+bids required to disable automatic bid
+extension
+3
+ 
+बड संAया/Bid Number: GEM/2026/B/8230284
+9दनांक /Dated: 02-11-2026
+बड द'तावेज़ / Bid Document
+1 / 8
+
+9दन7 क संAया, Jजनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+3
+ऑटो ए5सट:शन अिधकतम 9कतनी बार 9कया जाना है। /
+Number of Auto Extension count
+1
+बड से Mरवस% नीलामी स93य 9कया/Bid to RA enabled
+No
+बड का 1कार/Type of Bid
+Two Packet Bid
+तकनीक मूNयांकन के दौरान तकनीक 'पPीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+2 Days
+Payment Timelines
+Payments shall be made to the Seller within 45 days of
+issue of service delivery acceptance certificate (SDAC) and
+on-line submission of bills (This is in supersession of 10 days
+time as provided in clause 12 of GeM GTC)
+मूNयांकन पQित/Evaluation Method
+Total value wise evaluation
+मूNय दशा%ने वाला वRीय द'तावेज Sेकअप आव@यक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर ब<क/Advisory Bank
+State Bank of India
+ईएमड रािश/EMD Amount
+300000
+ईपीबीजी ववरण /ePBG Detail
+आव@यकता/Required
+No
+(a). जेम क शतT के अनुसार ईएमड छूट के इVछुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ 1'तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा 1दाता ईएमड से छूट के पा  ह<। XयापाMरय7 को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथZ के प[ म: होनी चा9हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथZ के प[ म: होनी चा9हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+लाभाथZ /Beneficiary : 
+Deputy General Manager
+HEADOFFICEIT, Department of Financial Services, Bank of Maharashtra, Ministry of Finance
+2 / 8
+
+(Abhinav Choubey)
+बोली वभाजन लागू नहं 9कया गया/Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+\े]स भुगतान संबंधी ववरण/TReDS Payment Details
+This Bid provides for Trade Receivables Discounting System (TReDS) as Preferred mode of payment.
+For MSME sellers, payments may be processed through a TReDS exchange in which the Buyer is
+registered, subject to applicable policy and regulatory guidelines. Accordingly, sellers intending to
+avail payment through TReDS are required to be registered with at least one TReDS exchange in
+which the buyer is registered.
+1. If the bidder is a Micro or Small Enterprise (MSE) as per latest orders issued by Ministry of MSME, the bidder
+shall be relaxed from the eligibility criteria of "Bidder Turnover" as defined above subject to meeting of quality
+and technical specifications. If the bidder itself is MSE OEM of the offered products, it would be relaxed from the
+"OEM Average Turnover" criteria also subject to meeting of quality and technical specifications. The bidder
+seeking Relaxation from Turnover, shall upload the supporting documents to prove his eligibility for Relaxation.
+2. If the bidder is a DPIIT registered Startup, the bidder shall be relaxed from the the eligibility criteria of "Bidder
+Turnover" as defined above subject to their meeting of quality and technical specifications. If the bidder is DPIIT
+Registered OEM of the offered products, it would be relaxed from the "OEM Average Turnover" criteria also
+subject to meeting of quality and technical specifications. The bidder seeking Relaxation from Turnover shall
+upload the supporting documents to prove his eligibility for Relaxation. 
+3. Estimated Bid Value indicated above is being declared solely for the purpose of guidance on EMD amount and
+for determining the Eligibility Criteria related to Turn Over, Past Performance and Project / Past Experience etc.
+This has no relevance or bearing on the price to be quoted by the bidders and is also not going to have any
+impact on bid participation. Also this is not going to be used as a c
+
+## RFP
+=== Attachment AGRIDLS_1ee79b62-de9e-4f23-b47e1793619478432_ayan.ghosh.pdf (117 pages) ===
+  
+Restricted 
+Page 1 of 117 
+ 
+  
+ 
+ 
+Department of Information Technology 
+8th Floor, A Wing, Downtown Center, 
+Erandwane, Pune- 411004 
+TELE : 020-71228206 
+        e-mail tendershoit@bankofmaharashtra.bank.in 
+AX1/IT/RFP057/2026-27                               
+                                                    Date: 02/11/2026 
+ 
+Reg: RFP amongst empanelled FinTech/Start-ups for “Implementation, Maintenance and 
+Customization of Agriculture Digital Lending Suite with Agri Lending related Assisted / STP 
+Journeys  and JanSamarth Integrated Assisted / STP Journeys for 3 Years” 
+  
+  
+Sealed Bids are called for “Implementation, Maintenance and Customization of Agriculture 
+Digital Lending Suite with Agri Lending related Assisted / STP Journeys  and JanSamarth 
+Integrated Assisted / STP Journeys for 3 Years”. The Price quoted should be inclusive of all 
+taxes including GST which will be reimbursed on actual basis against original document of pay-
+ment. 
+ 
+ RFP Schedule   
+            
+S. No. Task 
+Schedule (Date and Time) 
+1 
+Floating of RFP with Fintechs / Startups 
+02/11/2026 
+2 
+Last date and time for submission of query  05/11/2026, 05:00 P.M. 
+3 
+Pre-bid meeting with Bidders 
+06/11/2026, 11:00 A.M. 
+4 
+Last date for submission of bids 
+21/11/2026, 05.00 P.M. 
+5 
+Place of opening tender offers 
+Online 
+through 
+Gem 
+Portal 
+https://gem.gov.in 
+6 
+Earnest Money Deposit (EMD) 
+Rs. 3,00,000/- 
+7 
+Website 
+https://gem.gov.in 
+ 
+Bank had published Expression of Interest (EOI)-2 ref no. BOM/Fintech_Empanelment/EOI / 
+026/2023-24 for empanelment of Fintechs/Start-ups for various areas. “Digital Journey Develop-
+ment” is one of the major use cases for which this RFP is being published, and Technical and 
+Commercial bids are invited from empanelled vendors through online mode. The Empanelled bid-
+ders for “Digital Journey Development” are as mentioned below: 
+1. Aurionpro Solutions Limited 
+2. Online PSB Loans Limited 
+3. Pennant Technologies Private Limited 
+4. Perfi
+... scope of work:
+--- (p.16) ANNEXURE I - Broad Scope of Work 
+ 
+1. Project Overview 
+The Bank intends to procure, implement, maintain, customize, and support an Agriculture Digital 
+Lending Suite to facilitate Agri Lending related Assisted/Straight-Through Processing (STP) jour-
+neys, and JanSamarth Integrated Assisted / STP Journeys, for a tenure of three (3) years. The Ag-
+riculture Digital Lending Suite shall function as a common digital lending platform covering Agricul-
+ture and Allied Activities products sourced through Customer channels, JanSamarth Portal and Busi-
+ness Correspondent Agents (BCAs). 
+The platform shall enable customer acquisition, digital onboarding, eligibility assessment, underwrit-
+ing, sanction, digital documentation, digital signature, disbursement, subsidy-linked processing and 
+servicing through a unified digital platform. 
+The platform shall support the following common process flow: 
+→ Customer / JanSamarth / BCA 
+→ Application 
+ → Eligibility Check 
+→ KYC Check 
+→ Business Rule Engine (BRE) Check 
+→ STP Mode / Assisted Mode 
+→ Digital Signature 
+→ Core Banking System (CBS) Account Creation. 
+ 
+Any change mandated due to regulatory directives, statutory requirements, Government guidelines, 
+DFS mandates, JanSamarth requirements, RBI guidelines, cybersecurity directives, audit observa-
+tions, compliance requirements, Bank policy revisions, product parameter changes, workflow modi-
+fications, dashboard modifications, report modifications, API upgrades, integration changes or secu-
+rity requirements related to the Agriculture Digital Lending Suite shall be deemed within the scope of 
+the project and shall be implemented by the selected bidder during the contract period. 
+However, implementation of entirely new standalone business applications, unrelated lending prod-
+ucts, major platform replacements, third-party software products not envisaged under this RFP, or 
+functionalities unrelated to the Agriculture Digital Lending Suite shall be treated as change requests
+... lines further in:
+(p.4) except prices. The TECHNICAL BID should include all items asked for in RFP of this docu-
+(p.4) submit an undertaking that there are no deviations to the specifications mentioned in the RFP
+(p.4) For the purpose of clarification of doubts of the bidders on issues related to this RFP, Bank
+(p.5) Bank Guarantee of amount specified in RFP document valid till the end of assignment
+(p.6) The bidders of this RFP have to give presentation/interactions before panel of representa-
+(p.6) Implementation of the proposed solution or
+(p.7) RFP assessment process to ensure that the se-
+(p.9) 1. Scope of Work is attached vide Annexure-I
+(p.9) 20. Certificate for RFP Cost Waiver for MSE/NSIC Firms – Annexure-XX
+(p.9) 34. This RFP is not transferable.
+(p.9) 35. Each bidder is eligible for submitting only one Bid in response to this RFP.
+(p.9) 36. This RFP is not an offer by the Bank, but an invitation to receive offers from Bidders. No
+
+=== Attachment PCIP_19fc583d-409f-49f1-88111793619335440_ayan.ghosh.pdf (6 pages) ===
+PRE-CONTRACT INTEGIRITY PACT 
+                                                 (On stamp paper of Rs. 500/-) 
+ 
+General: 
+”This pre-bid pre-contract Agreement (hereinafter called the Integrity Pact) is made on _____ 
+day of month of _________ 2026 at_(place)________, between on one hand, Bank of 
+Maharashtra through authorized official Shri____________, General Manager, Information 
+Technology Department, Bank of Maharashtra, a body corporate constituted under Banking 
+Companies (Acquisition and transfer of undertakings) Act 1970, & having its Head Office at 
+15.1, ‘Lokmangal’ Shivajinagar Pune – 411005, (hereinafter called the “BUYER”, which 
+expression shall unless it be repugnant to the subject thereof, include its successors and 
+assigns) of the First Part  
+and  
+M/s__________________ represented by Shri. ___________________ Chief Executive 
+Officer (herein called the “BIDDER/Seller” which expression shall mean and include unless 
+the context otherwise requires his successors and permitted assigns) of the Second Part. 
+ 
+WHEREAS the BUYER proposes to procure (Name of the Stores/Solution/Item/Services) 
+and the BIDDER/Seller is willing to offer/has offered the stores and__________________. 
+ 
+WHEREAS the BIDDER is a private company / public company / Government 
+undertaking/partnership/ registered export agency/LLP, constituted in accordance with the 
+relevant law in the matter and the BUYER is Bank of Maharashtra. 
+ 
+NOW, THEREFORE, 
+ 
+To avoid all forms of corruption by following a system that is fair transparent and free from 
+any influence/ prejudiced dealings prior to, during and after the currency of the contract to be 
+entered into with a view to: - 
+ 
+Enabling the BUYER to obtain the desired Solution/product/services at a competitive price in 
+conformity with the defined specifications by avoiding the high cost and the distortionary 
+impact of corruption on public procurement, and 
+ 
+Enabling BIDDERs to abstain from bribing or indulging in any corrupt pr

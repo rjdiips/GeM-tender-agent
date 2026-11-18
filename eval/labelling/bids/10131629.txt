@@ -1,0 +1,158 @@
+# GEM/2026/B/8244403 — AMC of Integrated Security and Surveillance System - Theft Prevention, Remote Video Monitoring, Fac
+Buyer department: Department of Revenue
+Card: None
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+19-11-2026 16:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+20-11-2026 16:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+30 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Department Of Revenue
+संगठन का नाम/Organisation Name
+Cbic Central Board Of Indirect Taxes & Customs
+काया%लय का नाम/Office Name
+Kolkata
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :shilpi.srivastava@gov.in 
+Buyer Email id: dipalid.g119401@gov.in
+व'तु (ेणी /Item Category
+AMC of Integrated Security and Surveillance System - Theft
+Prevention, Remote Video Monitoring, Facility/Asset
+Protection, Monitor Operations, Vandalism Deterrence,
+Employee Safety, Traffic Monitoring, Outdoor Perimeter
+Security, Visitor Management, ..
+अनुबंध अविध /Contract Period
+ 1 Year(s)
+पछले 3 व-ीय वष/ का बडर का 0यूनतम औसत वाष%क
+व-ीय टन%ओवर/Minimum Average Annual
+Turnover of the bidder (For the last 3
+Financial Years)
+6 Lakh (s)
+उ0हं/समान सेवा के िलए अपे78त वगत अनुभव के
+वष%/Years of Past Experience Required for
+same/similar service
+1 Year (s)
+इसी तरह क सेवाओं का पछला आव;यक अनुभव है/Past
+Experience of Similar Services required
+Yes
+टन%ओवर पा ता मानदंड/Turnover eligibility criteria
+To be verified by the buyer at the time of technical
+evaluation
+टन%ओवर के िलए एमएसई को छूट =ा> है / MSE
+Relaxation for Turnover
+Yes | Complete
+टन%ओवर के िलए 'टाट%अप को छूट =ा> है / Startup
+Relaxation for Turnover
+Yes | Complete
+ 
+बड सं?या/Bid Number: GEM/2026/B/8244403
+@दनांक /Dated: 05-11-2026
+बड द'तावेज़ / Bid Document
+1 / 17
+
+वIेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Bidder Turnover,Certificate (Requested
+in ATC),OEM Authorization Certificate,Additional Doc 1
+(Requested in ATC),Additional Doc 2 (Requested in
+ATC),Additional Doc 3 (Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+Jया आप िनवदाकारK Lारा अपलोड @कए गए द'तावेज़K को
+िनवदा मM भाग लेने वाले सभी िनवदाकारK को @दखाना
+चाहते हO? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+Yes (Documents submitted as part of a clarification or
+representation during the tender/bid process will also be
+displayed to other participated bidders after log in)
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आव;यक बड क सं?या। / Minimum number of
+bids required to disable automatic bid
+extension
+3
+@दनK क सं?या, 7जनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+3
+ऑटो एJसटMशन अिधकतम @कतनी बार @कया जाना है। /
+Number of Auto Extension count
+1
+बड से Wरवस% नीलामी स@Iय @कया/Bid to RA enabled
+Yes
+Wरवस% नीलामी योXयता िनयम/RA Qualiﬁcation Rule
+50% Lowest Priced Technically Qualified Bidders
+बड का =कार/Type of Bid
+Two Packet Bid
+तकनीक मूYयांकन के दौरान तकनीक 'प[ीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+2 Days
+अनुमािनत िनवदा मूYय (सभी करK स@हत) भारतीय \पये मM
+/ Estimated Bid Value in INR (Inclusive of all
+taxes)
+180000
+मूYयांकन प]ित/Evaluation Method
+Total value wise evaluation
+मूYय दशा%ने वाला व-ीय द'तावेज ^ेकअप आव;यक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+म_य'थता खंड/Arbitration Clause
+No
+सुलह खंड/Mediation Clause
+No
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+आव;यकता/Required
+No
+2 / 17
+
+ईपीबीजी ववरण /ePBG Detail
+आव;यकता/Required
+No
+बोली वभाजन लागू नहं @कया गया/ Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+एमएसई खरद वरयता/MSE Purchase Preference
+एमएसई खरद वरयता/MSE Purchase Preference
+Yes
+सूaम और लघु उcम मूल उपकरण िनमा%ताओं/सेवा =दाता
+को खरद मM =ाथिमकता, य@द उनका मूYय L1+X% /
+Purchase Preference to MSE OEMs/ Service
+Provider available upto price within L1+X%
+15
+1. If the bidder is a Micro or Small Enterprise (MSE) as per latest orders issued by Ministry of MSME, the bidder
+shall be relaxed from the eligibility criteria of "Bidder Turnover" as defined above subject to meeting of quality
+and technical specifications. If the bidder itself is MSE OEM of the offered products, it would be relaxed from the
+"OEM Average Turnover" criteria also subject to meeting of quality and technical specifications. The bidder
+seeking Relaxation from Turnover, shall upload the supporting documents to prove his eligibility for Relaxation.
+2. If the bidder is a DPIIT registered Startup, the bidder shall be relaxed from the the eligibility criteria of "Bidder
+Turnover" as defined above subject to their meeting of quality and technical specifications. If the bidder is DPIIT
+Registered OEM of the offered products, it would be relaxed from the "OEM Average Turnover" criteria also
+subject to meeting of quality and technical specifications. The bidder seeking Relaxation from Turnover shall
+upload the supporting documents to prove his eligibility for Relaxation. 
+3. The minimum average annual financial turnover of the bidder during the last three years, ending on 31st
+March of the previous financial year, should be as indicated above in the bid document. Documentary evidence in
+the form of certified Audited Balance Sheets of relevant periods or a certificate from the Chartered Accountant /
+Cost Accountant indicating the turnover details for the relevant period shall be uploaded with the bid. In case the
+date of constitution / incorporation of the bidder is less than 3-year-old, the average turnover in respect of the
+completed financial years after the date of constitution shall be taken into account for this criteria. 
+4. Years of Past Experience required: The bidder must have experience for number of years as indicated above in
+bid document (ending month of March prior to the bid opening) of providing similar type of services to any
+Central / State Govt Organization 
+
+## RFP
+

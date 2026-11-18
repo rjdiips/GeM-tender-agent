@@ -1,0 +1,14 @@
+.gt-side { border-right: 1px solid var(--line); padding: 16px 12px; display: flex; flex-direction: column; background: var(--side); min-height: 0 }
+.gt-brand { display: flex; align-items: center; gap: 9px; font-weight: 600; padding: 2px 6px 16px }
+.gt-logo { width: 24px; height: 24px; border-radius: 7px; background: conic-gradient(from 200deg,#34d399,#22d3ee,#a78bfa,#34d399); box-shadow: 0 0 16px var(--acc-line) }
+.gt-new { width: 100%; display: flex; gap: 8px; align-items: center; padding: 8px 10px; border-radius: 9px; border: 1px solid var(--line); background: var(--raise) }
+.gt-new:hover { border-color: var(--acc-line) }
+.gt-label { font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--mute); margin: 20px 8px 6px }
+.gt-runs { overflow: auto; flex: 1; margin: 0; padding: 0; list-style: none }
+.gt-run { width: 100%; text-align: left; padding: 8px; border-radius: 8px; border: 1px solid transparent; background: none; display: block }
+.gt-run:hover { background: var(--line2) }
+.gt-run[aria-current="true"] { background: var(--raise); border-color: var(--line); box-shadow: var(--shadow-card) }
+.gt-run .m { font-size: 12px; color: var(--mute) }
+.gt-pill { font-size: 10.5px; padding: 0 6px; border-radius: 999px; background: var(--acc-d); color: var(--acc); margin-left: 6px }
+.gt-me { display: flex; gap: 10px; align-items: center; padding: 12px 8px 0; border-top: 1px solid var(--line) }
+.gt-av { width: 28px; height: 28px; border-radius: 8px; background: var(--vi-d); color: var(--vi); display: grid; place-items: center; font-size: 12px; font-weight: 600 }

@@ -1,0 +1,427 @@
+# GEM/2026/B/8070903 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: Department of Financial Services
+Card: ATM Switch and Debit Card Management System (DCMS) for Indian Overseas Bank; ATM Switch; Debit Card Management System (DCMS); EFT solution; Hardware; Network Links; Facility Management Services; Migration; Maintenance
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+14-10-2026 16:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+15-10-2026 16:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Department Of Financial Services
+संगठन का नाम/Organisation Name
+Indian Overseas Bank
+काया%लय का नाम/Office Name
+Chennai
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :ddo1.iob.tn@gembuyer.in 
+Buyer Email id: midhwd@iob.bank.in
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 5 Year(s)
+टन%ओवर के िलए एमएसई को छूट 1ा2 है / MSE
+Relaxation for Turnover
+Yes | Complete
+टन%ओवर के िलए 'टाट%अप को छूट 1ा2 है / Startup
+Relaxation for Turnover
+Yes | Complete
+व3ेता से मांगे गए द'तावेज़/Document required
+from seller
+Certificate (Requested in ATC),OEM Authorization
+Certificate,Additional Doc 1 (Requested in ATC),Additional
+Doc 2 (Requested in ATC),Additional Doc 3 (Requested in
+ATC),Additional Doc 4 (Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+5या आप िनवदाकार7 8ारा अपलोड 9कए गए द'तावेज़7 को
+िनवदा म: भाग लेने वाले सभी िनवदाकार7 को 9दखाना
+चाहते ह<? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+Yes (Documents submitted as part of a clarification or
+representation during the tender/bid process will also be
+displayed to other participated bidders after log in)
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आव@यक बड क संAया। / Minimum number of
+bids required to disable automatic bid
+extension
+2
+ 
+बड संAया/Bid Number: GEM/2026/B/8070903
+9दनांक /Dated: 22-09-2026
+बड द'तावेज़ / Bid Document
+1 / 7
+
+9दन7 क संAया, Jजनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+3
+ऑटो ए5सट:शन अिधकतम 9कतनी बार 9कया जाना है। /
+Number of Auto Extension count
+2
+बड से Mरवस% नीलामी स93य 9कया/Bid to RA enabled
+No
+बड का 1कार/Type of Bid
+Two Packet Bid
+तकनीक मूNयांकन के दौरान तकनीक 'पPीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+2 Days
+Payment Timelines
+Payments shall be made to the Seller within 45 days of
+issue of service delivery acceptance certificate (SDAC) and
+on-line submission of bills (This is in supersession of 10 days
+time as provided in clause 12 of GeM GTC)
+मूNयांकन पQित/Evaluation Method
+Total value wise evaluation
+मूNय दशा%ने वाला वRीय द'तावेज Sेकअप आव@यक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर ब<क/Advisory Bank
+State Bank of India
+ईएमड रािश/EMD Amount
+13500000
+ईपीबीजी ववरण /ePBG Detail
+एडवाइजर ब<क/Advisory Bank
+State Bank of India
+ईपीबीजी 1ितशत (%)/ePBG Percentage(%)
+5.00
+ईपीबीजी क आव@यक अविध (माह) /Duration of ePBG
+required (Months).
+62
+(a). जेम क शतV के अनुसार ईएमड छूट के इWछुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ 1'तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा 1दाता ईएमड से छूट के पा  ह<। YयापाMरय7 को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथ[ के प\ म: होनी चा9हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथ[ के प\ म: होनी चा9हए। / Earnest Money Deposit (EMD) shall also be accepted by
+2 / 7
+
+the buyer in the form of a surety bond. 
+लाभाथ[ /Beneficiary : 
+AGM
+CHENNAI, Department of Financial Services, Indian Overseas Bank, Ministry of Finance
+(Agm)
+UIN Number NCTGC2415P
+बोली वभाजन लागू नहं 9कया गया/Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+]े^स भुगतान संबंधी ववरण/TReDS Payment Details
+This Bid provides for Trade Receivables Discounting System (TReDS) as Preferred mode of payment.
+For MSME sellers, payments may be processed through a TReDS exchange in which the Buyer is
+registered, subject to applicable policy and regulatory guidelines. Accordingly, sellers intending to
+avail payment through TReDS are required to be registered with at least one TReDS exchange in
+which the buyer is registered.
+1. If the bidder is a Micro or Small Enterprise (MSE) as per latest orders issued by Ministry of MSME, the bidder
+shall be relaxed from the eligibility criteria of "Bidder Turnover" as defined above subject to meeting of quality
+and technical specifications. If the bidder itself is MSE OEM of the offered products, it would be relaxed from the
+"OEM Average Turnover" criteria also subject to meeting of quality and technical specifications. The bidder
+seeking Relaxation from Turnover, shall upload the supporting documents to prove his eligibility for Relaxation.
+2. If the bidder is a DPIIT registered Startup, the bidder shall be relaxed from the the eligibility criteria of "Bidder
+Turnover" as defined above subject to their meeting of quality and technical specifications. If the bidder is DPIIT
+Registered OEM of the offered products, it would be relaxed from the "OEM Average Turnover" criteria also
+subject to meeting of quality and technical specifications. The bidder seeking Relaxation from Turnover shall
+upload the supporting documents to prove his eligibility for Relaxation. 
+3. Estimated Bid Value indicated above is being declared solely for the purpose of guidance on EMD amount and
+for determining the Eligibility Criteria related to Turn Over, Past Performance a
+
+## RFP
+=== Attachment 1790096452.pdf (346 pages) (also uploaded as: 1790096470.pdf, 17900966416226.pdf, GEMT_4150b2b7-1a60-4fb3-97c81790096712670_buyer2.iob.chennai.pdf, GEMT_3ccdd4b5-838e-4b3d-b1591790096730349_buyer2.iob.chennai.pdf) ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Page 0 of 345 
+ 
+ 
+ 
+ 
+ 
+ 
+GEM TENDER FOR  
+ 
+ 
+SELECTION OF SERVICE PROVIDER FOR ATM SWITCH & DCMS UNDER 
+OPEX MODEL FOR A PERIOD OF 5 YEARS 
+ 
+ 
+ 
+ 
+ 
+Digital Banking Department  
+Central office, Annexe building 
+Indian Overseas Bank 
+763, Anna Salai  
+Chennai 600002 
+
+ 
+GeM tender for the Selection of Service provider for ATM 
+Switch & DCMS under OPEX Model 
+ 
+ 
+_____________________________________________________________________________________________ 
+Page 1 of 345 
+ 
+INDEX 
+Part 1-Disclaimer ........................................................................................................................... 5 
+Part 2-Invitation To The Bid ........................................................................................................... 7 
+2.1 
+Introduction ............................................................................................................... 7 
+2.2 
+Details on bidding process and bid submission: .................................................... 7 
+Part 3. Detailed Project Specific Terms and Conditions ........................................................... 11 
+3.1 
+Introduction ............................................................................................................. 11 
+3.2 
+Project brief ............................................................................................................. 11 
+3.3 
+Contract Period ...................................................................................................... 11 
+3.4 
+Eligibility Criteria (EC) .............................................................................................. 11 
+3.5 
+Cost of Bidding ....................................................................................................... 17 
+3.6 
+Earnest Money Deposit: ......................................................................................... 17 
+3.7 
+Performance Security ............................................
+... scope of work:
+--- (p.6) Scope of work 
+7. 
+Part 7 
+Technical specifications 
+8. 
+Part 8 
+Bid forms, commercial bid and other formats 
+9. 
+Part 9 
+Abbreviations used in the document 
+ 
+Part 1-Disclaimer 
+ 
+The information contained in this tender document or information provided 
+subsequently to bidder(s) or applicants whether verbally or in documentary 
+form by or on behalf of Indian Overseas Bank (Bank), is provided to the bidder(s) 
+on the terms and conditions set out in this tender document and all other terms 
+and conditions subject to which such information is provided. 
+This tender is neither an agreement nor an offer and is only an invitation by Bank 
+to the interested parties for submission of bids. The purpose of this tender is to 
+provide the bidder(s) with information to assist the formulation of their proposals. 
+This tender does not claim to contain all the information each bidder may 
+require. Each bidder should conduct its own investigations and analysis and 
+should check the accuracy, reliability, and completeness of the information in 
+this tender and where necessary obtain independent advice. Bank makes no 
+representation or warranty and shall incur no liability under any law, statute, 
+rules or regulations as to the accuracy, reliability or completeness of this tender. 
+Bank may in its absolute discretion, but without being under any obligation to 
+do so, update, amend or supplement the information in this tender. 
+
+ 
+GeM tender for the Selection of Service provider for ATM 
+Switch & DCMS under OPEX Model 
+ 
+ 
+_____________________________________________________________________________________________ 
+Page 6 of 345 
+ 
+Subject to any law to the contrary, and to the maximum extent permitted by 
+law, Bank and its directors, officers, employees, contractors, representatives, 
+agents, and advisers disclaim all liability from any loss, claim, expense 
+(including, without limitation, any legal fees, costs, charges, demands, actions, 
+liabilities expenses or disbursements incu
+--- (p.60) 6.1 Scope of Work and Minimum Technical Specifications: 
+ 
+ 
+Indian Overseas Bank invites bids from Original Equipment Manufacturers/ Original 
+Software Developers having both ATM Switch & DCMS application for the Supply, 
+Installation, Integration, Upgradation, Implementation , Migration and Maintenance 
+of Hardware, Software, Network Links , Facility Management Services of ATM Switch 
+& DCMS under OPEX Model for a period of 5 (Five) years from the date of 
+acceptance of Go Live with an option for extension for a further period of 3 years 
+based on the requirements, specifications, terms, and conditions laid down in this 
+tender. 
+ 
+Presently, ATM Switch of Bank is running on NARADA YSE Switch provided by M/s 
+Yalamanchilli Software Exports Pvt Ltd (OEM). Debit Card Management system 
+(DCMS) is managed by a CBS System Integrator wherein Yalamanchilli Software 
+Exports Pvt Ltd is Original Software Developer (OSD) of the Solution. 
+ 
+Bank is looking for a bidder to provide a comprehensive EFT solution, Debit Card 
+Management Solution, seamless migration from existing Narada Switch to offer 
+switch, complete maintenance of new EFT Switch and Debit Card Management 
+solution on under Opex Model on an outsourced basis with following facilities/ 
+Services. 
+ 
+The bidder shall perform the role of a system integrator and take accountability of 
+end- to-end solution delivery. The Bidder shall design & deliver integrations between 
+systems internal to the Bank and support various channels. The bidder shall integrate 
+with Bank’s existing services wherever Bank has its own API for any of the FINTECH 
+and other services – the responsibility for such integrations will lie with the successful 
+bidder. Bidder to design and size the optimal hardware required without 
+compromising the performance at DC & DR. Bidder to conduct discovery and 
+ideation sessions with IOB users and its appointed consultants to understand the 
+requirements. Basis the discovery, bidder shall plan, design,
+... lines further in:
+(p.4) GeM tender for the Selection of Service provider for ATM
+(p.6) The information contained in this tender document or information provided
+(p.6) on the terms and conditions set out in this tender document and all other terms
+(p.7) statements, estimates, or projections contained in this RFP document or
+(p.7) Bidders are advised to go through the entire tender document before
+(p.8) (hereinafter referred to as “bidder”) for the Supply, Installation, Integration,
+(p.12) Bank invites proposals from well experienced bidders for supply, installation,
+(p.12) Debit Card Management Solution under OPEX Model. The Scope of Work and
+(p.12) years on same terms and conditions envisaged as per RFP.
+(p.14) format 8.9 of this RFP.
+(p.14) years as on the date of RFP.
+(p.15) laid down in this Request for Proposal
+
+=== Attachment 98650265456656 (1 pages) ===
+Login
+Sign Up
+Buyers
+Sellers
+Products
+Services
+Content
+Need Help ?
+FAQs
+Video Guides
+Training Event Calendar
+LMS
+Bid
+Ongoing Bids
+Bid/RA Status
+Login
+Sign Up
+Buyers
+Sellers
+Training
+Forums
+Gallery
+Resources |
+Corporate
+About Us
+MoU's
+Statistics
+Contact Us
+Careers
+Right to Information
+Testimonials
+Web Information Manager
+Help
+Support Desk
+1-800-419-3436 / 1-800-102-3436
+English
+Dark Mode
+Font Size
+A-
+A
+A+
+Skip to Main Content
+Need Help ?
+FAQs
+Feedback
+Raise-a Ticket
+Document Help
+Contact Us
+Products
+Services
+Content
+Forward Auction
+Ongoing Auctions
+FA Buyer Registration
+FA Buyer Log-in
+Bids
+List of Bids
+Railways Bids
+Login
+Sign Up
+Buyers
+Sellers
+categories
+Products
+Computers
+Desktops
+Laptops
+All in One
+Servers
+Office Machines
+Multifunction Machines
+Printers
+Paper Shredding Machines
+Multimedia Projector (MMP)
+Automobiles
+Cars
+Buses
+Utility Vehicles
+Ambulance
+Office Supplies
+Ball Point Pen
+Gel Pen
+Printer or Photo Copier Paper
+Appliances
+Televisions
+Air Conditioner
+Online UPS
+Furniture
+Revolving Chair
+Office Chairs
+Steel Almirah
+Specialized Vehicles
+Hopper Tipper Dumper
+Tractors
+Softwares
+Operating System
+GIS Software
+Two Wheeler
+Motor Cycle
+Bicycle
+Services
+Browse All Categories
+Browse All Products
+GeM Advantages
+GeM Exclusive
+FAQs
+Contact Us
+Rate a Seller
+New on GeM
+This will lead you to GeM website.
+Warning: All unsaved 'data entries' will be lost after language change.
+OK
+Cancel
+Close
+Print
+SPECIAL TERMS AND CONDITIONS FOR
+HIRING OF AGENCY FOR IT PROJECTS – MILESTONE BASIS
+1. Preamble
+A. All contracts related to milestone-based hiring of Agencies for IT Projects placed through GeM shall be governed by the following set of Terms and Conditions:
+I. General terms and conditions for Goods and Services.
+II. Service STC contained in this document
+III. BID / Reverse Auction specific ATC
+B. The above terms and conditions are in reverse order of precedence i.e. ATC supersedes Service specific STC which supersede GTC, whenever there are any conflicting provisions.
+C. This do

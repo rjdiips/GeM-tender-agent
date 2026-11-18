@@ -1,0 +1,42 @@
+/* "Midnight pro" design tokens (spec 4.1). Dark is the base; [data-theme="light"] overrides. */
+.gt {
+  --bg: #09090b; --panel: #0f0f12; --raise: #16161a; --line: rgba(255,255,255,.11); --line2: rgba(255,255,255,.06);
+  --ink: #ededef; --ink2: #c4c4cc; --mute: #a1a1aa;
+  --acc: #34d399; --acc-d: rgba(52,211,153,.12); --acc-line: rgba(52,211,153,.45); --on-acc: #052e1f;
+  --vi: #a78bfa; --vi-d: rgba(167,139,250,.12); --warn: #fbbf24; --warn-d: rgba(251,191,36,.12); --bad: #f87171;
+  --side: linear-gradient(180deg,#0c0c0f,#09090b); --glow: rgba(52,211,153,.07); --me: linear-gradient(135deg,#1f2937,#18181b);
+  --me-ink: var(--ink); --glass: rgba(22,22,26,.72); --pop: #141418; --pop-line: rgba(255,255,255,.1);
+  --shadow-box: 0 8px 30px rgba(0,0,0,.35); --shadow-card: none; --hover: rgba(255,255,255,.04); --scroll: rgba(255,255,255,.16);
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.gt[data-theme="light"] {
+  --bg: #f4f4f5; --panel: #fff; --raise: #fff; --line: #d4d4d8; --line2: #ececef;
+  --ink: #09090b; --ink2: #27272a; --mute: #52525b;
+  --acc: #047857; --acc-d: rgba(16,185,129,.12); --acc-line: rgba(4,120,87,.45); --on-acc: #fff;
+  --vi: #5b21b6; --vi-d: rgba(124,58,237,.1); --warn: #92400e; --warn-d: #fef3c7; --bad: #b91c1c;
+  --side: linear-gradient(180deg,#fff,#fbfbfc); --glow: rgba(16,185,129,.09); --me: linear-gradient(135deg,#18181b,#27272a);
+  --me-ink: #fafafa; --glass: rgba(255,255,255,.78); --pop: #fff; --pop-line: #e7e7ea;
+  --shadow-box: 0 6px 24px rgba(24,24,27,.07); --shadow-card: 0 1px 2px rgba(24,24,27,.04); --hover: #f4f4f5; --scroll: rgba(0,0,0,.2);
+}
+.gt {
+  font: 13.5px/1.55 Inter, ui-sans-serif, system-ui, sans-serif; color: var(--ink); background: var(--bg);
+  display: grid; grid-template-columns: 252px minmax(420px, 1fr) minmax(520px, 44%); height: 100vh;
+}
+:where(.gt) * { box-sizing: border-box }
+:where(.gt) button { font: inherit; color: inherit; cursor: pointer }
+:where(.gt) a { color: inherit; text-decoration: none }
+.gt ::-webkit-scrollbar { width: 8px } .gt ::-webkit-scrollbar-thumb { background: var(--scroll); border-radius: 8px }
+.gt-mono { font-family: var(--mono); font-size: 11.5px }
+.gt-num { font-variant-numeric: tabular-nums }
+.gt-k { font-size: 11px; color: var(--mute) }
+.gt-icon-btn { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 8px; border: 1px solid var(--line); background: var(--raise); color: var(--ink2) }
+.gt-icon-btn:hover { color: var(--acc); border-color: var(--acc-line) }
+.gt-due { display: inline-flex; gap: 4px; align-items: center; font-size: 11.5px; padding: 2px 8px; border-radius: 6px; color: var(--warn); background: var(--warn-d) }
+.gt-due.calm { color: var(--ink2); background: var(--line2) }
+:focus-visible { outline: 2px solid var(--acc); outline-offset: 2px }
+@media (max-width: 1100px) { .gt { grid-template-columns: 220px 1fr; } .gt-panel { grid-column: 1 / -1; } }
+.gt-qby { margin-top: 10px; padding-top: 8px; border-top: 1px dashed var(--line2); min-width: 0 }
+.gt-qby-k { font-size: 10.5px; letter-spacing: .04em; text-transform: uppercase; color: var(--mute) }
+.gt-qby-when { margin-top: 2px; color: var(--ink2) }
+.gt-qby.soon .gt-qby-when, .gt-qby.soon .gt-qby-k:first-child { color: var(--warn) }
+.gt-qby.passed .gt-qby-when { text-decoration: line-through; opacity: .6 }

@@ -1,0 +1,488 @@
+# GEM/2026/B/8246981 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: Department of Financial Services
+Card: Cash Replenishment Services for Indian Overseas Bank's offsite ATMs and Cash Recyclers; cash replenishment services; ATM cash replenishment; cash recycler unloading; vaulting facility; offsite machine services; security agency services; PSARA compliant security; pan India CRA services
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+26-11-2026 19:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+27-11-2026 19:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Department Of Financial Services
+संगठन का नाम/Organisation Name
+Indian Overseas Bank
+काया%लय का नाम/Office Name
+Chennai
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :ddo1.iob.tn@gembuyer.in 
+Buyer Email id: midhwd@iob.bank.in
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 3 Year(s)
+टन%ओवर के िलए एमएसई को छूट 1ा2 है / MSE
+Relaxation for Turnover
+Yes | Complete
+टन%ओवर के िलए 'टाट%अप को छूट 1ा2 है / Startup
+Relaxation for Turnover
+Yes | Complete
+व3ेता से मांगे गए द'तावेज़/Document required
+from seller
+Certificate (Requested in ATC),Additional Doc 1 (Requested
+in ATC),Additional Doc 2 (Requested in ATC),Additional Doc
+3 (Requested in ATC),Additional Doc 4 (Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+5या आप िनवदाकार7 8ारा अपलोड 9कए गए द'तावेज़7 को
+िनवदा म: भाग लेने वाले सभी िनवदाकार7 को 9दखाना
+चाहते ह<? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+Yes (Documents submitted as part of a clarification or
+representation during the tender/bid process will also be
+displayed to other participated bidders after log in)
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आव@यक बड क संAया। / Minimum number of
+bids required to disable automatic bid
+extension
+2
+ 
+बड संAया/Bid Number: GEM/2026/B/8246981
+9दनांक /Dated: 05-11-2026
+बड द'तावेज़ / Bid Document
+1 / 7
+
+9दन7 क संAया, Kजनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+3
+ऑटो ए5सट:शन अिधकतम 9कतनी बार 9कया जाना है। /
+Number of Auto Extension count
+1
+बड से Nरवस% नीलामी स93य 9कया/Bid to RA enabled
+Yes
+Nरवस% नीलामी योOयता िनयम/RA Qualiﬁcation Rule
+H1-Highest Priced Bid Elimination
+बड का 1कार/Type of Bid
+Two Packet Bid
+तकनीक मूPयांकन के दौरान तकनीक 'पRीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+2 Days
+Payment Timelines
+Payments shall be made to the Seller within 45 days of
+issue of service delivery acceptance certificate (SDAC) and
+on-line submission of bills (This is in supersession of 10 days
+time as provided in clause 12 of GeM GTC)
+मूPयांकन पSित/Evaluation Method
+Total value wise evaluation
+मूPय दशा%ने वाला वTीय द'तावेज Uेकअप आव@यक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+मVय'थता खंड/Arbitration Clause
+No
+सुलह खंड/Mediation Clause
+No
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर ब<क/Advisory Bank
+State Bank of India
+ईएमड रािश/EMD Amount
+12000000
+ईपीबीजी ववरण /ePBG Detail
+एडवाइजर ब<क/Advisory Bank
+State Bank of India
+ईपीबीजी 1ितशत (%)/ePBG Percentage(%)
+5.00
+ईपीबीजी क आव@यक अविध (माह) /Duration of ePBG
+required (Months).
+38
+(a). जेम क शतZ के अनुसार ईएमड छूट के इ[छुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ 1'तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा 1दाता ईएमड से छूट के पा  ह<। \यापाNरय7 को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+2 / 7
+
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथ^ के प_ म: होनी चा9हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथ^ के प_ म: होनी चा9हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+लाभाथ^ /Beneficiary : 
+AGM, ITD
+CHENNAI, Department of Financial Services, Indian Overseas Bank, Ministry of Finance
+(Agm, Itd)
+बोली वभाजन लागू नहं 9कया गया/ Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+एमएसई खरद वरयता/MSE Purchase Preference
+एमएसई खरद वरयता/MSE Purchase Preference
+Yes
+सू`म और लघु उcम मूल उपकरण िनमा%ताओं/सेवा 1दाता
+को खरद म: 1ाथिमकता, य9द उनका मूPय L1+X% /
+Purchase Preference to MSE OEMs/ Service
+Provider available upto price within L1+X%
+15
+eेfस भुगतान संबंधी ववरण/TReDS Payment Details
+This Bid provides for Trade Receivables Discounting System (TReDS) as Preferred mode of payment.
+For MSME sellers, payments may be processed through a TReDS exchange in which the Buyer is
+registered, subject to applicable policy and regulatory guidelines. Accordingly, sellers intending to
+avail payment through TReDS are required to be registered with at least one TReDS exchange in
+which the buyer is registered.
+1. If the bidder is a Micro or Small Enterprise (MSE) as per latest orders issued by Ministry of MSME, the bidder
+shall be relaxed from the eligibility criteria of "Bidder Turnover" as defined above subject to meeting of quality
+and technical specifications. If the bidder itself is MSE OEM of the offered products, it would be relaxed from the
+"OEM Average Turnover" criteria also subject to meeting of quality and technical specifications. The bidder
+seeking Relaxation from Turnover, shall upload the supporting documents to prove his eligibility for Relaxation.
+2. If the bidder is a DPIIT registered Startup, the bidder shall be relaxed from the the eligibility criteria of "Bidder
+Turnover" as defined above subject to their meeting of quality and technical specifications. If the bidder is DPIIT
+Registered OEM of the offered products, it would be relaxed from the "OEM Average Turnover" criteria also
+subject
+
+## RFP
+=== Attachment 1793883847.pdf (119 pages) (also uploaded as: 1793883851.pdf, 10134466-17938839030971.pdf, CRA_54576705-9b76-4212-9d801793883936565_buyer2.iob.chennai.pdf, CRA_c418d029-bd86-4af0-ab861793883950040_buyer2.iob.chennai.pdf) ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Page 0 of 118 
+ 
+ 
+ 
+ 
+ 
+ 
+GEM TENDER FOR  
+ 
+ 
+ENGAGEMENT OF CRA AGENCY FOR CASH REPLENISHMENT SERVICES 
+INTO BANK’S OFFSITE MACHINES 
+ 
+ 
+ 
+ 
+ 
+Digital Banking Department  
+Central office, Annexe building 
+Indian Overseas Bank 
+763, Anna Salai  
+Chennai 600002 
+
+ 
+GEM TENDER FOR ENGAGEMENT OF CRA AGENCY FOR 
+CASH REPLENISHMENT SERVICES INTO BANK’S OFFSITE 
+MACHINES 
+ 
+ 
+_____________________________________________________________________________________________ 
+Page 1 of 118 
+ 
+INDEX 
+Part 1-Disclaimer ........................................................................................................................... 4 
+Part 2-Invitation To The Bid ........................................................................................................... 6 
+2.1 
+Introduction ............................................................................................................... 6 
+2.2 
+Details on bidding process and bid submission: .................................................... 6 
+Part 3. Detailed Project Specific Terms and Conditions ........................................................... 10 
+3.1 
+Introduction ............................................................................................................. 10 
+3.2 
+Project brief ............................................................................................................. 10 
+3.3 
+Contract Period ...................................................................................................... 10 
+3.4 
+Eligibility Criteria (EC) .............................................................................................. 10 
+3.5 
+Cost of Bidding ....................................................................................................... 15 
+3.6 
+Earnest Money Deposit: ......................................................................................... 15 
+3.7 
+Performance Security .....................................
+... scope of work:
+--- (p.5) Scope of work 
+7. 
+Part 7 
+Bid forms, commercial bid and other formats 
+8. 
+Part 8 
+Abbreviations used in the document 
+ 
+Part 1-Disclaimer 
+ 
+The information contained in this tender document or information provided 
+subsequently to bidder(s) or applicants whether verbally or in documentary 
+form by or on behalf of Indian Overseas Bank (Bank), is provided to the bidder(s) 
+on the terms and conditions set out in this tender document and all other terms 
+and conditions subject to which such information is provided. 
+This tender is neither an agreement nor an offer and is only an invitation by Bank 
+to the interested parties for submission of bids. The purpose of this tender is to 
+provide the bidder(s) with information to assist the formulation of their proposals. 
+This tender does not claim to contain all the information each bidder may 
+require. Each bidder should conduct its own investigations and analysis and 
+should check the accuracy, reliability, and completeness of the information in 
+this tender and where necessary obtain independent advice. Bank makes no 
+representation or warranty and shall incur no liability under any law, statute, 
+rules or regulations as to the accuracy, reliability or completeness of this tender. 
+Bank may in its absolute discretion, but without being under any obligation to 
+do so, update, amend or supplement the information in this tender. 
+Subject to any law to the contrary, and to the maximum extent permitted by 
+law, Bank and its directors, officers, employees, contractors, representatives, 
+
+ 
+GEM TENDER FOR ENGAGEMENT OF CRA AGENCY FOR 
+CASH REPLENISHMENT SERVICES INTO BANK’S OFFSITE 
+MACHINES 
+ 
+ 
+_____________________________________________________________________________________________ 
+Page 5 of 118 
+ 
+agents, and advisers disclaim all liability from any loss, claim, expense 
+(including, without limitation, any legal fees, costs, charges, demands, actions, 
+liabilities expenses or disbursements incurred therein or incident
+--- (p.20) 1.Scope of Services evaluation (100 % mark 
+shall be accorded to such bidders for their 
+full compliance to Part 6- Scope of Work of 
+the tender document) 
+20 
+100% 
+20 
+2.Presence of CRA Services Pan India with 
+vaulting facility at least in 200 cities (100% 
+mark shall be accorded to such bidders 
+who are having vaulting facility in 200 and 
+above cities of India) 
+10 
+50% 
+5 
+3. 
+Ability 
+for 
+minimum 
+of 
+18 
+cash 
+replenishments 
+in 
+a 
+month 
+excluding 
+holidays (100% marks shall be accorded to 
+such bidders who will perform 18 cash 
+replenishments 
+per 
+month 
+excluding 
+holidays) 
+10 
+85% 
+8.5 
+4. CRA or its authorized Security Agency 
+should comply PSARA (Private Security 
+Agency Regulation Act 2005) guidelines 
+10 
+100% 
+10 
+5. Bidder Manpower Credentials (100% 
+marks will be accorded to for the proposed 
+resource with experience of 5 years and 
+above) 
+30 
+50% 
+15 
+6. Bidder strategy and expertise in doing 
+replenishment services in ATMs and both 
+replenishment and unloading services in 
+CRs of different makes (100% marks will be 
+accorded for replenishment and unloading 
+activity done in 4 different OEM make 
+terminals or above) 
+20 
+50% 
+10 
+ 
+100 
+68.5 
+ 
+The evaluation/selection process will involve assessment of technical competence 
+as detailed here below. 
+
+ 
+GEM TENDER FOR ENGAGEMENT OF CRA AGENCY FOR 
+CASH REPLENISHMENT SERVICES INTO BANK’S OFFSITE 
+MACHINES 
+ 
+ 
+_____________________________________________________________________________________________ 
+Page 20 of 118 
+ 
+i. 
+A maximum of 100 marks will be allocated for the technical bid. 
+ii. 
+The evaluation of functional and technical capabilities of the bidders of 
+this RFP will be completed first as per the following guidelines. The technical 
+proposals only will be subjected for evaluation at this stage. 
+The bidders scoring less than 68.50 marks (cut-off score) out of 100 marks in the 
+technical evaluation shall not be considered for further selection process and their 
+offers will be dro
+... lines further in:
+(p.4) GEM TENDER FOR ENGAGEMENT OF CRA AGENCY FOR
+(p.4) ANNEXURE-I –SCOPE OF WORK & MINIMUM TECHNICAL SPECIFICATIONS ................. 46
+(p.5) The information contained in this tender document or information provided
+(p.5) on the terms and conditions set out in this tender document and all other terms
+(p.6) statements, estimates, or projections contained in this RFP document or
+(p.6) Bidders are advised to go through the entire tender document before
+(p.11) Cash Replenishment Services into Bank’s Offsite Machines. The Scope of Work
+(p.11) same terms and conditions envisaged as per RFP.
+(p.13) laid down in this Request for Proposal
+(p.16) per Format 7.8 of this RFP.
+(p.20) full compliance to Part 6- Scope of Work of
+(p.20) the tender document)
+
+=== Attachment 102707401105156 (1 pages) ===
+Login
+Sign Up
+Buyers
+Sellers
+Products
+Services
+Content
+Need Help ?
+FAQs
+Video Guides
+Training Event Calendar
+LMS
+Bid
+Ongoing Bids
+Bid/RA Status
+Login
+Sign Up
+Buyers
+Sellers
+Training
+Forums
+Gallery
+Resources |
+Corporate
+About Us
+MoU's
+Statistics
+Contact Us
+Careers
+Right to Information
+Testimonials
+Web Information Manager
+Help
+Support Desk
+1-800-419-3436 / 1-800-102-3436
+English
+Dark Mode
+Font Size
+A-
+A
+A+
+Skip to Main Content
+Need Help ?
+FAQs
+Feedback
+Raise-a Ticket
+Document Help
+Contact Us
+Products
+Services
+Content
+Forward Auction
+Ongoing Auctions
+FA Buyer Registration
+FA Buyer Log-in
+Bids
+List of Bids
+Railways Bids
+Login
+Sign Up
+Buyers
+Sellers
+categories
+Products
+Computers
+Desktops
+Laptops
+All in One
+Servers
+Office Machines
+Multifunction Machines
+Printers
+Paper Shredding Machines
+Multimedia Projector (MMP)
+Automobiles
+Cars
+Buses
+Utility Vehicles
+Ambulance
+Office Supplies
+Ball Point Pen
+Gel Pen
+Printer or Photo Copier Paper
+Appliances
+Televisions
+Air Conditioner
+Online UPS
+Furniture
+Revolving Chair
+Office Chairs
+Steel Almirah
+Specialized Vehicles
+Hopper Tipper Dumper
+Tractors
+Softwares
+Operating System
+GIS Software
+Two Wheeler
+Motor Cycle
+Bicycle
+Services
+Browse All Categories
+Browse All Products
+GeM Advantages
+GeM Exclusive
+FAQs
+Contact Us
+Rate a Seller
+New on GeM
+This will lead you to GeM website.
+Warning: All unsaved 'data entries' will be lost after language change.
+OK
+Cancel
+Close
+Print
+SPECIAL TERMS AND CONDITIONS FOR
+HIRING OF AGENCY FOR IT PROJECTS – MILESTONE BASIS
+1. Preamble
+A. All contracts related to milestone-based hiring of Agencies for IT Projects placed through GeM shall be governed by the following set of Terms and Conditions:
+I. General terms and conditions for Goods and Services.
+II. Service STC contained in this document
+III. BID / Reverse Auction specific ATC
+B. The above terms and conditions are in reverse order of precedence i.e. ATC supersedes Service specific STC which supersede GTC, whenever there are any conflicting provisions.
+C. This do

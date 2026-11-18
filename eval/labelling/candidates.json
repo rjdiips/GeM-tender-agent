@@ -1,0 +1,632 @@
+[
+ {
+  "b_id": 10142481,
+  "bid_number": "GEM/2026/B/8253937",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Finance Department Madhya Pradesh",
+  "card": "Comprehensive Financial Risk and Compliance Solutions for Madhya Pradesh Gramin Bank; anti-money laundering (AML); transaction monitoring; enterprise fraud risk management (EFRM); KYC compliance; PII data redaction; real time data scrubbing; AMLR record status dashboard; CBS integration",
+  "topic": "AML",
+  "why": "documents mention AML (56 pages)",
+  "text_file": "eval/labelling/bids/10142481.txt"
+ },
+ {
+  "b_id": 10143892,
+  "bid_number": "GEM/2026/B/8255061",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "Enterprise KYC, KYB, CKYC & AML Solution for NABARD; Individual KYC; Entity KYB; CKYC registry integration; AML/CFT compliance; screening; transaction monitoring; beneficial owner identification; customer due diligence",
+  "topic": "AML",
+  "why": "documents mention AML (28 pages)",
+  "text_file": "eval/labelling/bids/10143892.txt"
+ },
+ {
+  "b_id": 10115089,
+  "bid_number": "GEM/2026/B/8229813",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "REGIONAL RURAL BANKS",
+  "card": "Enterprise Fraud Risk Management Solution (EFRMS), Early Warning System (EWS), and Money Mule Account Detection for Maharashtra Gramin Bank; enterprise fraud risk management solution (EFRMS); early warning system (EWS); money mule account detection; mule network analysis; loan fraud management; transaction monitoring; cross-channel control platform; financial crime risk management",
+  "topic": "AML",
+  "why": "documents mention AML (23 pages)",
+  "text_file": "eval/labelling/bids/10115089.txt"
+ },
+ {
+  "b_id": 9943905,
+  "bid_number": "GEM/2026/B/8081155",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "Enterprise AI Platform for Indian Bank; Enterprise AI Platform; Enterprise Agentic AI Platform; Large Language Models (LLMs); AI orchestration services; AI governance controls; model lifecycle management; FinOps; AI use cases",
+  "topic": "AML",
+  "why": "documents mention AML (19 pages)",
+  "text_file": "eval/labelling/bids/9943905.txt"
+ },
+ {
+  "b_id": 10115629,
+  "bid_number": "GEM/2026/B/8230284",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "Agriculture Digital Lending Suite for Bank of Maharashtra; Agriculture Digital Lending Suite; Agri Lending Assisted Journeys; Agri Lending STP Journeys; JanSamarth Integrated Assisted Journeys; JanSamarth Integrated STP Journeys; Business Rule Engine (BRE); Digital Onboarding; Eligibility Assessment",
+  "topic": "LOS",
+  "why": "documents mention LOS (18 pages)",
+  "text_file": "eval/labelling/bids/10115629.txt"
+ },
+ {
+  "b_id": 10115998,
+  "bid_number": "GEM/2026/B/8230603",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "MSME Digital Lending Suite for Bank of Maharashtra; MSME Digital Lending Suite; Pre-Qualified Business Loan (PQBL-ETB); Business Loan journeys (NTB Customers); Government credit linked MSME products integration; Straight Through Processing (STP) Journeys; Assisted Lending Journeys; Credit decisioning engine; Loan lifecycle management",
+  "topic": "LOS",
+  "why": "documents mention LOS (18 pages)",
+  "text_file": "eval/labelling/bids/10115998.txt"
+ },
+ {
+  "b_id": 10134317,
+  "bid_number": "GEM/2026/B/8246845",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "Enterprise Data Privacy Governance & Compliance Platform for Uttar Pradesh Gramin Bank; consent management; data principal rights management; privacy request management; data inventory and mapping; grievance management; breach and incident support; compliance reporting; DPDP Act 2023 alignment",
+  "topic": "AML",
+  "why": "documents mention AML (4 pages)",
+  "text_file": "eval/labelling/bids/10134317.txt"
+ },
+ {
+  "b_id": 10168290,
+  "bid_number": "GEM/2026/B/8276263",
+  "title": "Hiring of Consultants - Milestone/Deliverable Based - Management Consultants; Capacity Building, Su",
+  "buyer": "Department of Financial Services",
+  "card": null,
+  "topic": "AML",
+  "why": "documents mention AML (4 pages)",
+  "text_file": "eval/labelling/bids/10168290.txt"
+ },
+ {
+  "b_id": 10131262,
+  "bid_number": "GEM/2026/B/8244092",
+  "title": "Hiring of Consultants - Milestone/Deliverable Based - Consultancy services for TPAP and BBPS AI Imp",
+  "buyer": "Bharat Petroleum Corporation Ltd",
+  "card": null,
+  "topic": "AML",
+  "why": "documents mention AML (4 pages)",
+  "text_file": "eval/labelling/bids/10131262.txt"
+ },
+ {
+  "b_id": 10023621,
+  "bid_number": "GEM/2026/B/8150569",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "DPDP Tools for UCO Bank; data privacy governance platform; Digital Personal Data Protection (DPDP) Act compliance; data privacy tools; privacy governance capabilities; enterprise data privacy governance; DPDP compliance platform; data protection tools; privacy compliance modules",
+  "topic": "AML",
+  "why": "documents mention AML (4 pages)",
+  "text_file": "eval/labelling/bids/10023621.txt"
+ },
+ {
+  "b_id": 9932284,
+  "bid_number": "GEM/2026/B/8070903",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "ATM Switch and Debit Card Management System (DCMS) for Indian Overseas Bank; ATM Switch; Debit Card Management System (DCMS); EFT solution; Hardware; Network Links; Facility Management Services; Migration; Maintenance",
+  "topic": "AML",
+  "why": "documents mention AML (3 pages)",
+  "text_file": "eval/labelling/bids/9932284.txt"
+ },
+ {
+  "b_id": 10140138,
+  "bid_number": "GEM/2026/B/8251924",
+  "title": "Hiring of Consultants - Milestone/Deliverable Based - Engagement of Consultant for Formulation of t",
+  "buyer": "Department of Financial Services",
+  "card": null,
+  "topic": "AML",
+  "why": "documents mention AML (3 pages)",
+  "text_file": "eval/labelling/bids/10140138.txt"
+ },
+ {
+  "b_id": 10000022,
+  "bid_number": "GEM/2026/B/8130088",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "Centralized Forex Processing Centre (FXPC) Solution for Uco Bank; trade finance solution; forex processing; straight through processing (STP); intelligent document processing; SWIFT transmission; Finacle customisations; application management; service desk",
+  "topic": "AML",
+  "why": "documents mention AML (3 pages)",
+  "text_file": "eval/labelling/bids/10000022.txt"
+ },
+ {
+  "b_id": 10106928,
+  "bid_number": "GEM/2026/B/8222959",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "Unit Costing, Product Profitability and Expense Control Framework for Indian Bank; profitability tracking framework; cost-per-transaction framework; unit costing methodology; operating cost segmentation; cost allocation framework; variance analysis dashboard; time and motion study; implementation roadmap",
+  "topic": "LOS",
+  "why": "documents mention LOS (3 pages)",
+  "text_file": "eval/labelling/bids/10106928.txt"
+ },
+ {
+  "b_id": 10069360,
+  "bid_number": "GEM/2026/B/8190490",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "Centralized Monitoring Unit (CMU) for Bank of India; centralized monitoring unit (CMU); image and document analytics; customer master data quality monitoring; KYC compliance monitoring; anomaly detection rules; case management workflow; historical data validation; Centre of Excellence (CoE)",
+  "topic": "AML",
+  "why": "documents mention AML (2 pages)",
+  "text_file": "eval/labelling/bids/10069360.txt"
+ },
+ {
+  "b_id": 10150432,
+  "bid_number": "GEM/2026/B/8260645",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "System Audit of Automation of Income Recognition, Asset Classification and Provisioning (IRAC-P) Process for Indian Bank; income recognition automation; asset classification automation; provisioning automation; IRAC-P norms compliance; system audit; regulatory compliance validation; credit monitoring policy; NPA management policy",
+  "topic": "LOS",
+  "why": "documents mention LOS (2 pages)",
+  "text_file": "eval/labelling/bids/10150432.txt"
+ },
+ {
+  "b_id": 9786268,
+  "bid_number": "GEM/2026/B/7944114",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "Full-Stack Unified Observability Solution with GenAI capability for Union Bank of India; unified observability solution; GenAI capability; full-stack observability; ITRCoE; infrastructure monitoring; application performance monitoring; log management; metrics collection",
+  "topic": "AML",
+  "why": "documents mention AML (2 pages)",
+  "text_file": "eval/labelling/bids/9786268.txt"
+ },
+ {
+  "b_id": 9849029,
+  "bid_number": "GEM/2026/B/7998476",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "SAP HCM HRMS Solution, Gieom Learning & Recruitment Module, and Onsite Facility Management Services for Bank of Maharashtra; SAP HCM HRMS Solution; Gieom Learning Module; Gieom Recruitment Module; SAP Fiori Application; SAP HANA; SAP ABAP; SAP Process Orchestration; Onsite Facility Management Services",
+  "topic": "AML",
+  "why": "documents mention AML (1 pages)",
+  "text_file": "eval/labelling/bids/9849029.txt"
+ },
+ {
+  "b_id": 10095640,
+  "bid_number": "GEM/2026/B/8213128",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "Digital Forensic & Incident Response (DFIR) Lab Tools and Services for Bank of India; digital forensic software; incident response tools; forensic imaging device; Trend Micro XDR Forensic Module; malware analysis workstation; mobile device forensics (Android/iOS); CHFI training and certification; forensic lab hardware setup",
+  "topic": "AML",
+  "why": "documents mention AML (2 pages)",
+  "text_file": "eval/labelling/bids/10095640.txt"
+ },
+ {
+  "b_id": 10165795,
+  "bid_number": "GEM/2026/B/8274149",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "AI-powered Enterprise Extended Detection and Response (XDR) solution for Bank of Maharashtra; Extended Detection and Response (XDR); AI-powered threat detection; automated response; endpoint security; network security; email security; identity security; cloud security",
+  "topic": "AML",
+  "why": "documents mention AML (1 pages)",
+  "text_file": "eval/labelling/bids/10165795.txt"
+ },
+ {
+  "b_id": 10113895,
+  "bid_number": "GEM/2026/B/8228790",
+  "title": "Hiring of Consultants - Milestone/Deliverable Based - Technology Consultants, Engagement of Consult",
+  "buyer": "Department of Financial Services",
+  "card": null,
+  "topic": "AML",
+  "why": "documents mention AML (1 pages)",
+  "text_file": "eval/labelling/bids/10113895.txt"
+ },
+ {
+  "b_id": 9878228,
+  "bid_number": "GEM/2026/B/8023932",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "API gateway and management platform (AMP) for Small Industries Development Bank of India (SIDBI); API gateway; API management platform; enterprise service bus (ESB); enterprise vault; API sandbox; disaster recovery (DR) setup; CI/CD pipelines; API monitoring and logging",
+  "topic": "AML",
+  "why": "documents mention AML (1 pages)",
+  "text_file": "eval/labelling/bids/9878228.txt"
+ },
+ {
+  "b_id": 10168862,
+  "bid_number": "GEM/2026/R/770447",
+  "title": "AI BASED AUTOMATIC NUMBER PLATE RECOGNITION (ANPR) AND SPEED DETECTION SYSTEM",
+  "buyer": "Department of Military Affairs",
+  "card": null,
+  "topic": "LOS",
+  "why": "documents mention LOS (1 pages)",
+  "text_file": "eval/labelling/bids/10168862.txt"
+ },
+ {
+  "b_id": 10042952,
+  "bid_number": "GEM/2026/B/8167771",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "Audio-Video Solution for Conference Room for Central Bank of India; audio-video solution; video conferencing infrastructure; VC Codec; automation controller; power amplifier; HDMI/USB-C switcher; main display; annual maintenance contract",
+  "topic": "AML",
+  "why": "documents mention AML (1 pages)",
+  "text_file": "eval/labelling/bids/10042952.txt"
+ },
+ {
+  "b_id": 10023662,
+  "bid_number": "GEM/2026/B/8150608",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "BANKING SECTOR",
+  "card": "Enterprise Data Privacy Governance & Compliance Platform (DPDP Act 2023 Aligned) for BOBCARD Limited; Consent & Privacy Governance Platform; Data Discovery & Classification; Privacy Governance; DPDP Act Compliance; Source Code Escrow; System Administration Support; Application Platform Support; Card Management System Integration",
+  "topic": "LOS",
+  "why": "documents mention LOS (1 pages)",
+  "text_file": "eval/labelling/bids/10023662.txt"
+ },
+ {
+  "b_id": 9882990,
+  "bid_number": "GEM/2026/B/8028062",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Military Affairs",
+  "card": "Agentic AI Enablement Framework for the Indian Army; agentic AI enablement framework; multiagent orchestration; deterministic AI infrastructure; large language model (LLM) integration; AI security and audit mechanisms; goal-oriented reasoning; Hindi-English code-mixed NLP; AI decision-support capabilities",
+  "topic": "LOS",
+  "why": "documents mention LOS (1 pages)",
+  "text_file": "eval/labelling/bids/9882990.txt"
+ },
+ {
+  "b_id": 10072808,
+  "bid_number": "GEM/2026/B/8193498",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "Automated tool for IS audit and ITGRC for Indian Bank; IS audit automation; ITGRC; audit lifecycle automation; control framework; risk tracking; audit data repository; analytics-based prioritisation; AI-assisted audit capabilities",
+  "topic": "LOS",
+  "why": "documents mention LOS (1 pages)",
+  "text_file": "eval/labelling/bids/10072808.txt"
+ },
+ {
+  "b_id": 9844996,
+  "bid_number": "GEM/2026/B/7994876",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Information Technology and Electronics Department Uttar Pradesh",
+  "card": "Hospital Information Management System (HIMS) for Kalyan Singh Super Speciality Cancer Institute (KSSSCI), Lucknow; Hospital Information Management System (HIMS); ABDM-compliant HIMS; Facility Management Services (FMS); Application Operations; Preventive Maintenance; Managed Support; Data Migration; VAPT / Security Audit",
+  "topic": "LOS",
+  "why": "documents mention LOS (1 pages)",
+  "text_file": "eval/labelling/bids/9844996.txt"
+ },
+ {
+  "b_id": 9944963,
+  "bid_number": "GEM/2026/B/8082056",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "AI-based Full Stack Observability (FSO) Solution for Bank of Maharashtra; Full Stack Observability (FSO); AIOps; Generative AI; Application Performance Monitoring; Infrastructure Monitoring; Containerized Workloads Monitoring; Digital Channels Monitoring; Business Continuity Plan (BCP) Support",
+  "topic": "AML",
+  "why": "documents mention AML (1 pages)",
+  "text_file": "eval/labelling/bids/9944963.txt"
+ },
+ {
+  "b_id": 10132169,
+  "bid_number": "GEM/2026/B/8244877",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "Bank Official Website; hyper-personal interface; MarTech; Chatbot; Voicebot; CRM; Single Data Repository; SSOT; Omni Channel",
+  "topic": "LOS",
+  "why": "documents mention LOS (1 pages)",
+  "text_file": "eval/labelling/bids/10132169.txt"
+ },
+ {
+  "b_id": 10048017,
+  "bid_number": "GEM/2026/B/8172198",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "Software Bill of Materials (SBOM) and Cryptographic Bill of Materials (CBOM) solution for Indian Bank; Software Bill of Materials (SBOM); Cryptographic Bill of Materials (CBOM); Quantum Bill of Materials (QBOM); Artificial Intelligence Bill of Materials (AIBOM); Hardware Bill of Materials (HBOM); SBOM generation; CBOM assessment; SBOM solution implementation",
+  "topic": "LOS",
+  "why": "documents mention LOS (1 pages)",
+  "text_file": "eval/labelling/bids/10048017.txt"
+ },
+ {
+  "b_id": 10049833,
+  "bid_number": "GEM/2026/B/8173820",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "SaaS Security Information and Event Management (SIEM) platform for Indian Bank; Security Information and Event Management (SIEM); User and Entity Behaviour Analysis (UEBA); Security Orchestration and Response (SOAR); Threat Intelligence Platform (TIP); AI-assisted threat hunting; automated alert stitching; hybrid cloud security monitoring; container and API security visibility",
+  "topic": "LOS",
+  "why": "documents mention LOS (1 pages)",
+  "text_file": "eval/labelling/bids/10049833.txt"
+ },
+ {
+  "b_id": 9962723,
+  "bid_number": "GEM/2026/B/8097436",
+  "title": "Flt Cont Computer,AI GPU,Input and Cont Device with Touch Screen Interface,3D Printer with Laser Un",
+  "buyer": "Department of Military Affairs",
+  "card": null,
+  "topic": "LOS",
+  "why": "documents mention LOS (1 pages)",
+  "text_file": "eval/labelling/bids/9962723.txt"
+ },
+ {
+  "b_id": 10150951,
+  "bid_number": "GEM/2026/B/8261114",
+  "title": "Office Productivity Suite Software",
+  "buyer": "BANKING SECTOR",
+  "card": null,
+  "topic": "LOS",
+  "why": "closest by meaning or title words for LOS",
+  "text_file": "eval/labelling/bids/10150951.txt"
+ },
+ {
+  "b_id": 10093237,
+  "bid_number": "GEM/2026/B/8211003",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "BANKING SECTOR",
+  "card": "Digital Rights Management (DRM) Solution for Punjab National Bank; Digital Rights Management (DRM) Solution; License Management; Content Protection; Access Control; Usage Rights Enforcement; On-Premise Deployment; Technical Support (L1/L2); Server Management",
+  "topic": "LOS",
+  "why": "closest by meaning or title words for LOS",
+  "text_file": "eval/labelling/bids/10093237.txt"
+ },
+ {
+  "b_id": 10098108,
+  "bid_number": "GEM/2026/B/8215267",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "Point to Point (P2P) Replication Links for Canara Bank; Point to Point (P2P) replication links; Optical Fiber Cable (OFC) infrastructure; Fiber last mile connectivity; Data Center (DC) to Near Data Center (NDC) connectivity; Whitefield Data Center; Proposed Near Data Center (New-NDC) Bengaluru; System Integration; Commissioning and Maintenance",
+  "topic": "LOS",
+  "why": "closest by meaning or title words for LOS",
+  "text_file": "eval/labelling/bids/10098108.txt"
+ },
+ {
+  "b_id": 10114355,
+  "bid_number": "GEM/2026/B/8229167",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "REGIONAL RURAL BANKS",
+  "card": "Human Resource Management System (HRMS) for Puducherry Grama Bank; human resource management system; HRMS; cloud-based HRMS; on-premises HRMS; SaaS HRMS; employee management; payroll management; attendance management",
+  "topic": "LOS",
+  "why": "closest by meaning or title words for LOS",
+  "text_file": "eval/labelling/bids/10114355.txt"
+ },
+ {
+  "b_id": 10071458,
+  "bid_number": "GEM/2026/B/8192306",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "Domain Name System (DNS) Services for Bank of Baroda; Authoritative DNS Management Solution; Recursive DNS Solution; DNS Infrastructure; Domain Name Resolution; DNS Policy Enforcement; DNS Monitoring and Alerting; DNS Compliance Management; DNS Reporting and Administration",
+  "topic": "LOS",
+  "why": "closest by meaning or title words for LOS",
+  "text_file": "eval/labelling/bids/10071458.txt"
+ },
+ {
+  "b_id": 10118747,
+  "bid_number": "GEM/2026/B/8232915",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "SAS Based Integrated Risk Management Solution (IRMS) enhancement for RBI Capital Charge for Credit Risk Standardised Approach; SAS Based Integrated Risk Management Solution (IRMS); SAS Credit Risk solution; RBI Capital Charge for Credit Risk Standardised Approach; exposure classes and risk weights; credit risk mitigation; external credit assessments; off-balance sheet items; IRB advanced approaches",
+  "topic": "LOS",
+  "why": "closest by meaning or title words for LOS",
+  "text_file": "eval/labelling/bids/10118747.txt"
+ },
+ {
+  "b_id": 10034833,
+  "bid_number": "GEM/2026/B/8160581",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "End-to-End Rewards Program Management System for Card Transactions; reward point management; customer loyalty program; credit card rewards; debit card rewards; prepaid card rewards; employee rewards program; merchant tie-ups management; loyalty points accrual and redemption",
+  "topic": "LOS",
+  "why": "closest by meaning or title words for LOS",
+  "text_file": "eval/labelling/bids/10034833.txt"
+ },
+ {
+  "b_id": 10110741,
+  "bid_number": "GEM/2026/B/8226208",
+  "title": "Software,Software add on,Software Support 1,Software Support 2,Hardware HPC",
+  "buyer": "Water Resources Department Karnataka",
+  "card": null,
+  "topic": "LOS",
+  "why": "closest by meaning or title words for LOS",
+  "text_file": "eval/labelling/bids/10110741.txt"
+ },
+ {
+  "b_id": 9970177,
+  "bid_number": "GEM/2026/B/8104144",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "IT Asset Management (ITAM), IT Operations Management (ITOM), and IT Service Management (ITSM) solution for Bank of Maharashtra; IT Asset Management (ITAM); Configuration Management Database (CMDB); IT Operations Management (ITOM); AI for IT Operations (AIOps); IT Service Management (ITSM); Infrastructure Management; Application Management; On-premises solution",
+  "topic": "LOS",
+  "why": "closest by meaning or title words for LOS",
+  "text_file": "eval/labelling/bids/9970177.txt"
+ },
+ {
+  "b_id": 10148433,
+  "bid_number": "GEM/2026/B/8258856",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "Video Conference (VC) Solution for National Housing Bank; Video Conferencing hardware; Video Conferencing application software; Wireless presentation System; Microsoft Teams Rooms License; VC Support Solutions; Annual Maintenance Contract; Technical Support; Onsite Support Engineer",
+  "topic": "LOS",
+  "why": "closest by meaning or title words for LOS",
+  "text_file": "eval/labelling/bids/10148433.txt"
+ },
+ {
+  "b_id": 10041941,
+  "bid_number": "GEM/2026/B/8166856",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "BANKING SECTOR",
+  "card": "Endpoint Security Solutions and Desktop Management support services for Punjab National Bank and its Sponsored RRBs; Endpoint Security Solutions; Desktop Management; Field Support Engineer; System Administrator; Team Leader; Manpower Supply; IT Infrastructure Support; Helpdesk Services",
+  "topic": "LOS",
+  "why": "closest by meaning or title words for LOS",
+  "text_file": "eval/labelling/bids/10041941.txt"
+ },
+ {
+  "b_id": 10041407,
+  "bid_number": "GEM/2026/B/8166366",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "Network Hardware Security Modules (HSMs) for Aadhaar Data Vault (ADV) solution; hardware security modules (HSMs); Aadhaar Data Vault (ADV); cryptographic key management; FIPS 140-3 Level 3 certification; disaster recovery (DR) site HSMs; HSM backup device; e-KYC API integration; secure key storage and distribution",
+  "topic": "AML",
+  "why": "closest by meaning or title words for AML",
+  "text_file": "eval/labelling/bids/10041407.txt"
+ },
+ {
+  "b_id": 10020519,
+  "bid_number": "GEM/2026/B/8147860",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "Dark Web Monitoring Services for Uco Bank; dark web monitoring; compromised credentials monitoring; sensitive data leakage detection; PII monitoring; deep web scanning; paste site monitoring; cyber-attack contextual analysis; actionable alerting",
+  "topic": "AML",
+  "why": "closest by meaning or title words for AML",
+  "text_file": "eval/labelling/bids/10020519.txt"
+ },
+ {
+  "b_id": 10164605,
+  "bid_number": "GEM/2026/B/8273078",
+  "title": "AMC of Integrated Security and Surveillance System - CCTV; Comprehensive; Hardware, Software, Netwo",
+  "buyer": "Department of Financial Services",
+  "card": null,
+  "topic": "AML",
+  "why": "closest by meaning or title words for AML",
+  "text_file": "eval/labelling/bids/10164605.txt"
+ },
+ {
+  "b_id": 10133248,
+  "bid_number": "GEM/2026/B/8245866",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "Comprehensive Endpoint Antivirus, Application Whitelisting Solution, and Sandbox for Canara Bank; endpoint antivirus; application whitelisting; sandbox; endpoint security; malware protection; application control; threat detection; endpoint management",
+  "topic": "AML",
+  "why": "closest by meaning or title words for AML",
+  "text_file": "eval/labelling/bids/10133248.txt"
+ },
+ {
+  "b_id": 10134466,
+  "bid_number": "GEM/2026/B/8246981",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "Cash Replenishment Services for Indian Overseas Bank's offsite ATMs and Cash Recyclers; cash replenishment services; ATM cash replenishment; cash recycler unloading; vaulting facility; offsite machine services; security agency services; PSARA compliant security; pan India CRA services",
+  "topic": "AML",
+  "why": "closest by meaning or title words for AML",
+  "text_file": "eval/labelling/bids/10134466.txt"
+ },
+ {
+  "b_id": 10154798,
+  "bid_number": "GEM/2026/B/8264466",
+  "title": "Financial Audit Services - Concurrent Audit of Digital Banking Operations; CA Firm",
+  "buyer": "Department of Financial Services",
+  "card": null,
+  "topic": "AML",
+  "why": "closest by meaning or title words for AML",
+  "text_file": "eval/labelling/bids/10154798.txt"
+ },
+ {
+  "b_id": 10158392,
+  "bid_number": "GEM/2026/B/8267606",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "Firewall Analyzer Tool for Stock Holding Corporation of India Limited; firewall rule monitoring; L3 device monitoring; L4 device monitoring; L7 device monitoring; SDWAN Controller integration; firewall policy analysis; network topology mapping; firewall certification and training",
+  "topic": "AML",
+  "why": "closest by meaning or title words for AML",
+  "text_file": "eval/labelling/bids/10158392.txt"
+ },
+ {
+  "b_id": 9879241,
+  "bid_number": "GEM/2026/B/8024742",
+  "title": "SOFTWARES",
+  "buyer": "Department of Military Affairs",
+  "card": null,
+  "topic": "AML",
+  "why": "closest by meaning or title words for AML",
+  "text_file": "eval/labelling/bids/9879241.txt"
+ },
+ {
+  "b_id": 10161125,
+  "bid_number": "GEM/2026/B/8270011",
+  "title": "SOFTWARE FOR SCAL",
+  "buyer": "OIL INDIA Limited",
+  "card": null,
+  "topic": "AML",
+  "why": "closest by meaning or title words for AML",
+  "text_file": "eval/labelling/bids/10161125.txt"
+ },
+ {
+  "b_id": 10170754,
+  "bid_number": "GEM/2026/B/8278203",
+  "title": "AMC of Integrated Security and Surveillance System - Monitor Operations, Health Monitoring Solution",
+  "buyer": "Department of Revenue",
+  "card": null,
+  "topic": "AML",
+  "why": "closest by meaning or title words for AML",
+  "text_file": "eval/labelling/bids/10170754.txt"
+ },
+ {
+  "b_id": 10131629,
+  "bid_number": "GEM/2026/B/8244403",
+  "title": "AMC of Integrated Security and Surveillance System - Theft Prevention, Remote Video Monitoring, Fac",
+  "buyer": "Department of Revenue",
+  "card": null,
+  "topic": "AML",
+  "why": "closest by meaning or title words for AML",
+  "text_file": "eval/labelling/bids/10131629.txt"
+ },
+ {
+  "b_id": 10106818,
+  "bid_number": "GEM/2026/B/8222867",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Information and Public Relations Department Uttar Pradesh",
+  "card": "AI-Powered Facial Recognition Attendance Management System for Department of Information & Public Relations, Uttar Pradesh; facial recognition engine; liveness detection; attendance management system; central dashboard; role-based access control (RBAC); employee lifecycle management; anti-spoofing; offline buffering",
+  "topic": "AML",
+  "why": "random vague title",
+  "text_file": "eval/labelling/bids/10106818.txt"
+ },
+ {
+  "b_id": 10138842,
+  "bid_number": "GEM/2026/B/8250795",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "NA",
+  "card": "DTNBWED Skilling Management Software (TMS 2.0) for Dattopant Thengadi National Board for Workers Education and Development; skilling management software; UPBOCWWB RPL Programme Component; data preservation; backup; disaster recovery; security remediation; platform modernisation; system integration",
+  "topic": "AML",
+  "why": "random vague title",
+  "text_file": "eval/labelling/bids/10138842.txt"
+ },
+ {
+  "b_id": 10120448,
+  "bid_number": "GEM/2026/B/8234440",
+  "title": "Custom Bid for Services - ----",
+  "buyer": "Bharat Petroleum Corporation Ltd",
+  "card": "Annual Maintenance Contract (AMC) for Cummins Make DG Sets at Pune LPG Plant for Bharat Petroleum Corporation Ltd; Cummins DG Set maintenance; 810 kVA DG Set; 250 kVA DG Set; preventive maintenance; B-Check maintenance; C-Check maintenance; fault finding and troubleshooting; minor repairs and rectification",
+  "topic": "AML",
+  "why": "random vague title",
+  "text_file": "eval/labelling/bids/10120448.txt"
+ },
+ {
+  "b_id": 9957490,
+  "bid_number": "GEM/2026/B/8092819",
+  "title": "Custom Bid for Services - ----",
+  "buyer": "Department of Earth Sciences",
+  "card": "Total Management Contract of Ocean Research Vessel (ORV) Sagar Nidhi for National Institute of Ocean Technology (NIOT); ocean research vessel (ORV) Sagar Nidhi; vessel operation and maintenance; crew management; plant and machineries maintenance; ice-class vessel management; scientific research support services; port call agency services; vessel general services",
+  "topic": "AML",
+  "why": "random vague title",
+  "text_file": "eval/labelling/bids/9957490.txt"
+ },
+ {
+  "b_id": 10166795,
+  "bid_number": "GEM/2026/B/8274990",
+  "title": "Custom Bid for Services - ----",
+  "buyer": "COAL INDIA LIMITED",
+  "card": "Day to day work of shifting/removal of coal face sump pump; coal face sump pump; pump shifting; pump removal; Junad Opencast Mine; Western Coalfields Limited; E&M services; site maintenance; mining equipment handling",
+  "topic": "LOS",
+  "why": "random vague title",
+  "text_file": "eval/labelling/bids/10166795.txt"
+ },
+ {
+  "b_id": 10034918,
+  "bid_number": "GEM/2026/B/8160662",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "Software Defined Wide Area Network (SD-WAN) and Branch L2 Managed Switches for Stock Holding Corporation of India Limited; SD-WAN solution; Branch L2 Managed Switches; MPLS integration; Disaster Recovery Site connectivity; Data Center connectivity; Local broadband integration; Central management; Internet traffic management",
+  "topic": "LOS",
+  "why": "random vague title",
+  "text_file": "eval/labelling/bids/10034918.txt"
+ },
+ {
+  "b_id": 10161665,
+  "bid_number": "GEM/2026/B/8270464",
+  "title": "Hiring of Agency for IT Projects- Milestone basis",
+  "buyer": "Department of Financial Services",
+  "card": "IT Facility Management Services and Aruba Switches AMC for Bank of Baroda; IT facility management services; onsite technical resources; desktop support engineer L1; desktop support engineer L2; call coordinator; project manager; Aruba switches; annual maintenance contract (AMC)",
+  "topic": "LOS",
+  "why": "random vague title",
+  "text_file": "eval/labelling/bids/10161665.txt"
+ },
+ {
+  "b_id": 10023985,
+  "bid_number": "GEM/2026/B/8150886",
+  "title": "Custom Bid for Services - ----",
+  "buyer": "Department of Military Affairs",
+  "card": "Anti-Termite Treatment and Pest Control Services for Central Library, Selection Centre, Bhopal, for the Department of Military Affairs, Ministry of Defence; anti-termite treatment; general pest control; chemical barrier treatment; wall and structural joint treatment; wooden furniture treatment; iron almirah protection; paper asset protection; CIB&RC-approved chemicals",
+  "topic": "LOS",
+  "why": "random vague title",
+  "text_file": "eval/labelling/bids/10023985.txt"
+ }
+]

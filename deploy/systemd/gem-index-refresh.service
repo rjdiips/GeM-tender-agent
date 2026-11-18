@@ -1,0 +1,8 @@
+[Unit]
+Description=GeM index: full re-fetch of all open bids (closing-date changes, vanished bids), then embed
+
+[Service]
+Type=oneshot
+WorkingDirectory=/apps/rajdeep_workspace/gem_agent
+Environment=HF_HUB_OFFLINE=1
+ExecStart=/home/finsurge/.local/bin/uv run --no-sync gem-agent index load

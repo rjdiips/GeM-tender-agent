@@ -1,0 +1,470 @@
+# GEM/2026/B/8229167 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: REGIONAL RURAL BANKS
+Card: Human Resource Management System (HRMS) for Puducherry Grama Bank; human resource management system; HRMS; cloud-based HRMS; on-premises HRMS; SaaS HRMS; employee management; payroll management; attendance management
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+01-12-2026 16:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+02-12-2026 16:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Regional Rural Banks
+संगठन का नाम/Organisation Name
+Puduvai Bharathiar Grama Bank
+काया%लय का नाम/Office Name
+Head Office
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :hod1.pbgb.py@gembuyer.in 
+Buyer Email id: buyer1.pbgb.py@gembuyer.in
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 3 Year(s)
+पछले 3 व-ीय वष/ का बडर का 0यूनतम औसत वाष%क
+व-ीय टन%ओवर/Minimum Average Annual
+Turnover of the bidder (For the last 3
+Financial Years)
+75 Lakh (s)
+उ0हं/समान सेवा के िलए अपे78त वगत अनुभव के
+वष%/Years of Past Experience Required for
+same/similar service
+3 Year (s)
+इसी तरह क सेवाओं का पछला आव;यक अनुभव है/Past
+Experience of Similar Services required
+Yes
+टन%ओवर पा ता मानदंड/Turnover eligibility criteria
+To be verified by the buyer at the time of technical
+evaluation
+एमएसएमई के िलए अनुभव के वष/ और टन%ओवर से छूट =दान
+क गई है/MSE Relaxation for Years of
+Experience and Turnover
+No
+'टाट%अप के िलए अनुभव के वष/ और टन%ओवर से छूट =दान
+क गई है /Startup Relaxation for Years of
+Experience and Turnover
+No
+ 
+बड सं>या/Bid Number: GEM/2026/B/8229167
+?दनांक /Dated: 10-11-2026
+बड द'तावेज़ / Bid Document
+1 / 7
+
+वGेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Bidder Turnover,Certificate (Requested
+in ATC),OEM Authorization Certificate,Additional Doc 1
+(Requested in ATC),Additional Doc 2 (Requested in
+ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4
+(Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+Hया आप िनवदाकारI Jारा अपलोड ?कए गए द'तावेज़I को
+िनवदा मK भाग लेने वाले सभी िनवदाकारI को ?दखाना
+चाहते हM? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+Yes (Documents submitted as part of a clarification or
+representation during the tender/bid process will also be
+displayed to other participated bidders after log in)
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आव;यक बड क सं>या। / Minimum number of
+bids required to disable automatic bid
+extension
+1
+?दनI क सं>या, 7जनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+3
+ऑटो एHसटKशन अिधकतम ?कतनी बार ?कया जाना है। /
+Number of Auto Extension count
+1
+बड से Uरवस% नीलामी स?Gय ?कया/Bid to RA enabled
+Yes
+Uरवस% नीलामी योVयता िनयम/RA Qualiﬁcation Rule
+H1-Highest Priced Bid Elimination
+बड का =कार/Type of Bid
+Two Packet Bid
+तकनीक मूWयांकन के दौरान तकनीक 'पYीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+2 Days
+अनुमािनत िनवदा मूWय (सभी करI स?हत) भारतीय Zपये मK
+/ Estimated Bid Value in INR (Inclusive of all
+taxes)
+8000000
+मूWयांकन प[ित/Evaluation Method
+Total value wise evaluation
+मूWय दशा%ने वाला व-ीय द'तावेज \ेकअप आव;यक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+म]य'थता खंड/Arbitration Clause
+No
+सुलह खंड/Mediation Clause
+No
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर बMक/Advisory Bank
+State Bank of India
+ईएमड रािश/EMD Amount
+125000
+2 / 7
+
+ईपीबीजी ववरण /ePBG Detail
+एडवाइजर बMक/Advisory Bank
+State Bank of India
+ईपीबीजी =ितशत (%)/ePBG Percentage(%)
+5.00
+ईपीबीजी क आव;यक अविध (माह) /Duration of ePBG
+required (Months).
+65
+(a). जेम क शत/ के अनुसार ईएमड छूट के इ`छुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ ='तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा =दाता ईएमड से छूट के पा  हM। aयापाUरयI को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथb के प8 मK होनी चा?हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथb के प8 मK होनी चा?हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+लाभाथb /Beneficiary : 
+GENERAL MANAGER
+PUDUCHERRY GRAMA BANK, NO.415, KAMARAJ SALAI, SARAM PUDUCHERRY, 605013
+(Puducherry Grama Bank)
+बोली वभाजन लागू नहं ?कया गया/ Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+एमएसई खरद वरयता/MSE Purchase Preference
+एमएसई खरद वरयता/MSE Purchase Preference
+Yes
+सूcम और लघु उeम मूल उपकरण िनमा%ताओं/सेवा =दाता
+को खरद मK =ाथिमकता, य?द उनका मूWय L1+X% /
+Purchase Preference to MSE OEMs/ Service
+Provider available upto price within L1+X%
+15
+1. The minimum average annual financial turnover of the bidder during the last three years, ending on 31st
+March of the previous financial year, should be as indicated above in the bid document. Documentary evidence in
+the form of certified Audited Balance Sheets of relevant periods or a certificate from the Chartered Accountant /
+Cost Accountant indicating the turnover details for the relevant period shall be uploaded with the bid. In case the
+date of constitution / incorporation of the bidder is less than 3-year-old, the average turnover in respect of the
+completed financial years after the date of constitution shall be taken into account for this criteria. 
+2. Years of Past Experience required: The bidder must have experience for number of years as indicated above in
+bid document (ending month of March prior to the bid opening) of providing similar type of services 
+
+## RFP
+=== Attachment 1794303395.pdf (86 pages) (also uploaded as: 1794303457.pdf, gemlate_25eadcd6-9f98-4e87-84101794303503023_BUYER1_PBGB.pdf) ===
+RFP for Procurement and Implementation of HRMS Solution 
+Page 1 of 86 
+         
+        
+                 
+ 
+ 
+Head Office, 
+415, Kamaraj Salai,  
+Saram, 
+Puducherry- 605013 
+Ph.: 0413 2227850 
+GST No. 34AANAP9061E1ZC 
+Ref: PYGB/HRM/RFP/2026-27 dated 10.11.2026 
+ 
+ 
+ 
+ 
+ 
+REQUEST FOR PROPOSAL (RFP) 
+ 
+for 
+ 
+Implementation of Human Resource Management Solution (HRMS) for Puducherry Grama Bank 
+ 
+RFP Reference No. 
+PYGB/HRM/RFP/2026-27 
+RFP Issuance Date 
+10.11.2026 
+Last Date of request for Queries/ Clarifications 
+16.11.2026 
+Date and Time of Pre-Bid Meeting 
+23.11.2026 – 4.00 PM 
+Last Date for receipt of bids 
+01.12.2026- 4.00 PM 
+Date and time of opening Technical bids 
+02.12.2026- 4.00 PM 
+ 
+Issued by: 
+ 
+Puducherry Grama Bank, 
+Head Office, 
+No.415, Kamaraj Salai, Saram, 
+Puducherry – 605 013.       
+Email: headoffice@pygb.bank.in 
+Website: https://www.pygb.bank.in 
+ 
+ 
+ 
+ 
+ 
+ 
+This document is the property of Puducherry Grama Bank and is meant for exclusive purpose 
+of Bidding as per the Specification, Terms, Condition and Scope indicated in it. This document 
+should not be copied, transferred, reproduced, distributed or recorded on any medium, 
+including all forms of electronic medium, without written permission of Puducherry Grama 
+Bank. The use of contents of this document for any purpose other than stated herein is strictly 
+prohibited and shall amount to copyright violation and thus, shall be punishable under the 
+Indian Law. 
+
+RFP for Procurement and Implementation of HRMS Solution 
+Page 2 of 86 
+         
+        
+                 
+ 
+ 
+Head Office, 
+415, Kamaraj Salai,  
+Saram, 
+Puducherry- 605013 
+Ph.: 0413 2227850 
+GST No. 34AANAP9061E1ZC 
+Ref: PYGB/HRM/RFP/2026-27 dated 10.11.2026 
+SCHEDULE [A]: IMPORTANT DATES AND INFORMATION ON RFP SUBMISSION 
+ 
+S. No 
+Particulars 
+Timeline 
+1 
+Issuance Date of RFP 
+(Date of RFP Issuance) 
+10.11.2026 
+2 
+Last Date of request for 
+Queries/ Clarifications 
+(Last Date of 
+Receiving 
+request for queries / 
+clarificati
+... scope of work:
+--- (p.7) Scope of Work 
+20 
+TCO 
+Total Cost of Ownership 
+21 
+GST 
+Goods and Services Tax 
+ 
+Any term used in this document and not specifically defined herein will have the same meaning as 
+provided in relevant RBI regulations and/ or RBI/ IBA guidelines and in case of any dispute the decision 
+of the Bank shall be final and binding. 
+Confidentiality: 
+ 
+This document is meant for specific use by the Bidder/s to participate in the current tendering process. This 
+document in its entirety is subject to Copyright Laws. Puducherry Grama Bank expects the Bidders or any 
+person acting on behalf of the Bidders to strictly adhere to the instructions given in the document and maintain 
+confidentiality of information. The Bidder/s do hereby undertake that they shall hold the information 
+received by them under this RFP process or the contract “in trust” and they shall maintain utmost 
+confidentiality of such information. The Bidders have to agree and undertake that (a) They shall 
+maintain and use the information only for the purpose as permitted by the Bank (b) To strictly allow 
+disclosure of such information to its employees, agents and representatives on “need to know” basis 
+only and to ensure confidentiality of such information disclosed to them. The Bidders will be held 
+responsible for any misuse of information contained in this document or obtained from the Bank during course 
+of RFP process, and liable to be prosecuted by the Bank in the event such breach of confidentiality obligation 
+is brought to the notice of the Bank. All the interested parties are subject to confidentiality clauses. 
+
+RFP for Procurement and Implementation of HRMS Solution 
+Page 8 of 86 
+ 
+ 
+ 
+ 
+ 
+Head Office, 
+415, Kamaraj Salai, 
+Saram, 
+Puducherry- 605013 
+Ph.: 0413 2227850 
+GST No. 34AANAP9061E1ZC 
+Ref: PYGB/HRM/RFP/2026-27 dated 10.11.2026 
+SCHEDULE [C] DISCLAIMER 
+ 
+The information in this Request for Proposal (“RFP”) document provided to bidders or applicants whether 
+verbally or in documentar
+--- (p.26) Detailed Scope of Work: 
+ 
+➢ The scope for this project is the end-to-end design, deployment, management, and 
+maintenance of a cloud based/on-premises Human Resource Management System for Bank. 
+The solution may either be offered using the Software-as-a-Service (SaaS) model or be 
+deployed on-premises of the Bank’s Data center and Disaster Recovery sites. 
+➢ Deployment of the solution as per Solution Design, including code development, system 
+configurations, and all the technical activities required to deliver a working solution. 
+➢ In case of Implementation of the solution in the cloud environment - backup, disaster 
+recovery, user setup, etc., must be taken care of by bidder. 
+➢ The Bidder must ensure that the SaaS service being offered should be MeitY compliant 
+with all applicable RBI regulations and legal requirements in India. 
+➢ The Bidder will be responsible for integrating and managing third- party components 
+required for deploying a complete solution. These include, but are not limited to: 
+a) Cloud system 
+b) Payment systems 
+c) Message systems 
+➢ Bank during the period of the Contract, based on its technical and functional requirements 
+may intend to add additional third- party applications and interfaces to the system. Bank 
+may intend to modify/add additional functionalities found out during the development 
+without changing the basics. The Service Provider must extend all necessary support and 
+assistance for including them in the Solution with the required third-party applications and 
+interfaces desired by Bank at no additional costs. 
+➢ Application must be Cloud-Native in case of SaaS model. 
+➢ Any new government/ regulatory requirements that impact the provided solution to Bank 
+need to be incorporated as a feature upgrade or an enhancement or a patch and should be 
+provided to Bank at no additional cost during the period of the contract. 
+➢ A declaration to this effect must be submitted by the Bidder with the technical Bid. 
+➢ Bidder should
+... lines further in:
+(p.4) RFP for Procurement and Implementation of HRMS Solution
+(p.4) Ref: PYGB/HRM/RFP/2026-27 dated 10.11.2026
+(p.4) details of the eligibility, Technical Specifications and terms & conditions set in the RFP
+(p.4) Information on RFP Submission). Further, Bidders must submit their commercial bid as per the
+(p.4) format given in the RFP (as per Part-II of Section-V) along with the technical bid. Technical
+(p.4) tender documents in GeM Portal. Except as provided in this RFP, any document sent by
+(p.4) III. The RFP document (along with addendums, if any) needs to be signed and stamped by the
+(p.4) evidence of having read and understood the contents of RFP and its addendums (if any).
+(p.4) IV. Time wherever mentioned in this RFP is as per Indian Standard Time. The above dates and
+(p.5) This RFP is issued by:
+(p.6) to the RFP document.
+(p.6) 3. RFP means the “Request for Proposal” document.
+
+=== Attachment 102300177066025 (1 pages) ===
+Login
+Sign Up
+Buyers
+Sellers
+Products
+Services
+Content
+Need Help ?
+FAQs
+Video Guides
+Training Event Calendar
+LMS
+Bid
+Ongoing Bids
+Bid/RA Status
+Login
+Sign Up
+Buyers
+Sellers
+Training
+Forums
+Gallery
+Resources |
+Corporate
+About Us
+MoU's
+Statistics
+Contact Us
+Careers
+Right to Information
+Testimonials
+Web Information Manager
+Help
+Support Desk
+1-800-419-3436 / 1-800-102-3436
+English
+Dark Mode
+Font Size
+A-
+A
+A+
+Skip to Main Content
+Need Help ?
+FAQs
+Feedback
+Raise-a Ticket
+Document Help
+Contact Us
+Products
+Services
+Content
+Forward Auction
+Ongoing Auctions
+FA Buyer Registration
+FA Buyer Log-in
+Bids
+List of Bids
+Railways Bids
+Login
+Sign Up
+Buyers
+Sellers
+categories
+Products
+Computers
+Desktops
+Laptops
+All in One
+Servers
+Office Machines
+Multifunction Machines
+Printers
+Paper Shredding Machines
+Multimedia Projector (MMP)
+Automobiles
+Cars
+Buses
+Utility Vehicles
+Ambulance
+Office Supplies
+Ball Point Pen
+Gel Pen
+Printer or Photo Copier Paper
+Appliances
+Televisions
+Air Conditioner
+Online UPS
+Furniture
+Revolving Chair
+Office Chairs
+Steel Almirah
+Specialized Vehicles
+Hopper Tipper Dumper
+Tractors
+Softwares
+Operating System
+GIS Software
+Two Wheeler
+Motor Cycle
+Bicycle
+Services
+Browse All Categories
+Browse All Products
+GeM Advantages
+GeM Exclusive
+FAQs
+Contact Us
+Rate a Seller
+New on GeM
+This will lead you to GeM website.
+Warning: All unsaved 'data entries' will be lost after language change.
+OK
+Cancel
+Close
+Print
+SPECIAL TERMS AND CONDITIONS FOR
+HIRING OF AGENCY FOR IT PROJECTS – MILESTONE BASIS
+1. Preamble
+A. All contracts related to milestone-based hiring of Agencies for IT Projects placed through GeM shall be governed by the following set of Terms and Conditions:
+I. General terms and conditions for Goods and Services.
+II. Service STC contained in this document
+III. BID / Reverse Auction specific ATC
+B. The above terms and conditions are in reverse order of precedence i.e. ATC supersedes Service specific STC which supersede GTC, whenever there are any conflicting provisions.
+C. This do

@@ -1,0 +1,320 @@
+# GEM/2026/B/8255061 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: Department of Financial Services
+Card: Enterprise KYC, KYB, CKYC & AML Solution for NABARD; Individual KYC; Entity KYB; CKYC registry integration; AML/CFT compliance; screening; transaction monitoring; beneficial owner identification; customer due diligence
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+30-11-2026 12:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+01-12-2026 12:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Department Of Financial Services
+संगठन का नाम/Organisation Name
+National Bank For Agriculture And Ruraldevelopment
+काया%लय का नाम/Office Name
+Ddsi Ho Mumbai
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :sk.dhinesh@nabard.org 
+Buyer Email id: bhasya.kr@nabard.org
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 6 Year(s) 4 Month(s) 2 Day(s)
+पछले 3 व-ीय वष/ का बडर का 0यूनतम औसत वाष%क
+व-ीय टन%ओवर/Minimum Average Annual
+Turnover of the bidder (For the last 3
+Financial Years)
+500 Lakh (s)
+टन%ओवर पा ता मानदंड/Turnover eligibility criteria
+To be verified by the buyer at the time of technical
+evaluation
+टन%ओवर के िलए एमएसई को छूट 7ा8 है / MSE
+Relaxation for Turnover
+Yes | Complete
+टन%ओवर के िलए 'टाट%अप को छूट 7ा8 है / Startup
+Relaxation for Turnover
+Yes | Complete
+व9ेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Bidder Turnover,Certificate (Requested
+in ATC),OEM Authorization Certificate,Additional Doc 1
+(Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+;या आप िनवदाकार= >ारा अपलोड ?कए गए द'तावेज़= को
+िनवदा म@ भाग लेने वाले सभी िनवदाकार= को ?दखाना
+चाहते हB? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+No
+ 
+बड संDया/Bid Number: GEM/2026/B/8255061
+?दनांक /Dated: 09-11-2026
+बड द'तावेज़ / Bid Document
+1 / 8
+
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आवNयक बड क संDया। / Minimum number of
+bids required to disable automatic bid
+extension
+3
+?दन= क संDया, Qजनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+7
+ऑटो ए;सट@शन अिधकतम ?कतनी बार ?कया जाना है। /
+Number of Auto Extension count
+2
+बड से Tरवस% नीलामी स?9य ?कया/Bid to RA enabled
+No
+बड का 7कार/Type of Bid
+Two Packet Bid
+तकनीक मूUयांकन के दौरान तकनीक 'पWीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+5 Days
+मूUयांकन पXित/Evaluation Method
+Total value wise evaluation
+मूUय दशा%ने वाला व-ीय द'तावेज Yेकअप आवNयक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर बBक/Advisory Bank
+State Bank of India
+ईएमड रािश/EMD Amount
+1000000
+ईपीबीजी ववरण /ePBG Detail
+एडवाइजर बBक/Advisory Bank
+State Bank of India
+ईपीबीजी 7ितशत (%)/ePBG Percentage(%)
+5.00
+ईपीबीजी क आवNयक अविध (माह) /Duration of ePBG
+required (Months).
+80
+(a). जेम क शत/ के अनुसार ईएमड छूट के इ\छुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ 7'तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा 7दाता ईएमड से छूट के पा  हB। ^यापाTरय= को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथ_ के प` म@ होनी चा?हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+2 / 8
+
+(c).ईएमड और संपादन जमानत रािश लाभाथ_ के प` म@ होनी चा?हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+लाभाथ_ /Beneficiary : 
+Manager
+DDSI HO Mumbai, Department of Financial Services, National Bank for Agriculture and Rural Development,
+Ministry of Finance
+(Bhasyakarla Ronith)
+बोली वभाजन लागू नहं ?कया गया/Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+1. If the bidder is a Micro or Small Enterprise (MSE) as per latest orders issued by Ministry of MSME, the bidder
+shall be relaxed from the eligibility criteria of "Bidder Turnover" as defined above subject to meeting of quality
+and technical specifications. If the bidder itself is MSE OEM of the offered products, it would be relaxed from the
+"OEM Average Turnover" criteria also subject to meeting of quality and technical specifications. The bidder
+seeking Relaxation from Turnover, shall upload the supporting documents to prove his eligibility for Relaxation.
+2. If the bidder is a DPIIT registered Startup, the bidder shall be relaxed from the the eligibility criteria of "Bidder
+Turnover" as defined above subject to their meeting of quality and technical specifications. If the bidder is DPIIT
+Registered OEM of the offered products, it would be relaxed from the "OEM Average Turnover" criteria also
+subject to meeting of quality and technical specifications. The bidder seeking Relaxation from Turnover shall
+upload the supporting documents to prove his eligibility for Relaxation. 
+3. The minimum average annual financial turnover of the bidder during the last three years, ending on 31st
+March of the previous financial year, should be as indicated above in the bid document. Documentary evidence in
+the form of certified Audited Balance Sheets of relevant periods or a certificate from the Chartered Accountant /
+Cost Accountant indicating the turnover details for the relevant period shall be uploaded with the bid. In case the
+date of constitution / incorporation of the bidder is less than 3-year-old, the average turnover in respect of the
+completed financial years after the date of constitution shall be taken into account for this criteria. 
+4. Estimated Bid Value indicated above is being declared solely for the purpose of guidance on EMD amo
+
+## RFP
+=== Attachment 1794202504.pdf (107 pages) (also uploaded as: 1794202721.pdf, ATC_02ab55c0-3962-4d2f-a9941794204126828_bhasya.kr.pdf, ATC_451d6dfd-6a36-45f4-9ca91794204105401_bhasya.kr.pdf) ===
+                                                                                       
+ 
+ 
+ 
+ 
+Page 1 of 107 
+ 
+ 
+ 
+Public
+Annexure List 
+ 
+1) Annexure A: Chartered Accountant’s Certificate 
+2) Annexure B: Non-Blacklisting / Non-Debarment Declaration 
+3) Annexure C: Declaration / Undertaking regarding land border 
+procurement restrictions 
+4) Annexure D: Pre Contract Integrity Pact 
+5) Annexure E: Bidder Details 
+6) Annexure F: Bank Mandate Form 
+7) Annexure G: Non-Disclosure Agreement Form 
+8) Annexure H: Power of Attorney 
+9) Annexure J: Performance Bank Guarantee Form 
+10) Annexure K: Service Level Agreement 
+11) Annexure L: Pre-Bid Queries to be submitted by the Bidder(s) 
+ 
+
+                                                                                       
+ 
+ 
+ 
+ 
+Page 2 of 107 
+ 
+ 
+ 
+Public
+Annexure A 
+Chartered Accountant’s Certificate 
+(Statutory Auditor of the Bidder’s Certificate) 
+(On letterhead of the Chartered Accountant’s firm) 
+To 
+The Chief General Manager/Officer in Charge, 
+Department of Digital Strategy and Innovation, 
+National Bank for Agriculture and Rural Development, 
+5th floor, C Wing, C-24, ‘G’ Block, Bandra-Kurla Complex, 
+Mumbai- 400 051 
+ 
+Sir, 
+ 
+The following details of M/s ________________________ given in the table 
+below are certified correct based on the verification of original documents and 
+supporting information: 
+ 
+Financial 
+Year 
+Turnover 
+(In crore) 
+Operating 
+Profit 
+(In 
+crore) 
+Net 
+Profit 
+(In Crore) 
+Net 
+Worth 
+(In crore) 
+As 
+on 
+31 
+March of the 
+FY 
+2023-24 
+ 
+ 
+ 
+ 
+2024-25 
+ 
+ 
+ 
+ 
+2025-26 
+ 
+ 
+ 
+ 
+Average 
+ 
+ 
+ 
+ 
+ 
+Name and Signature (with stamp): 
+Membership number: 
+Name of the Firm: 
+Firm Registration Number (FRN) of the firm: 
+Note: The detailed Balance sheet of the Bidder shall be verified by 
+NABARD. 
+ 
+
+                                                                                       
+ 
+ 
+ 
+ 
+Page 3 of 107 
+ 
+ 
+ 
+Public
+Annexure B 
+Non-Blacklisting / Non –Debarment Declaration 
+ (On the Organi
+... lines further in:
+(p.5) desirous of participating in the Tender Process in response to your captioned RFP /
+(p.5) We, the Bidder have read and understood the contents of the RFP / GEM BID and
+(p.7) memorandum/ order mentioned above and RFP / GEM BID and we are eligible to
+(p.7) person, after having read and understood the terms of RFP / GEM BID and the Office
+(p.8) connection with the tender for, or the execution of a contract, demand, take a
+(p.18) NABARD is engaged in Banking business and floated a RFP Bid to appoint a
+(p.19) services delivered in this RFP or otherwise shall remain confidential.
+(p.29) relating to Request for proposal / GeM Bid ____________________ dated
+(p.29) _________ for ‘Supply, Implementation and Maintenance of Enterprise KYC/AML
+(p.31) 1. NABARD has floated a Request for Proposal / GeM Bid to appoint an System
+(p.31) RFP/GeM Bid Ref No. ________________ (hereinafter referred to as "said
+(p.36) NABARD had issued a Request for Proposal (“RFP”) / GEM BID vide ref No.
+
+=== Attachment 1794202410.pdf (27 pages) ===
+                                                                                       
+ 
+ 
+ 
+ 
+Page 1 of 27 
+ 
+ 
+ 
+Public
+Public
+Scope of Work 
+ 
+NABARD seeks an Enterprise KYC, KYB, CKYC & AML Solution for development, 
+implementation, integration and roll-out across NABARD applications and systems. 
+The Solution shall provide complete end-to-end capabilities for Individual KYC, Entity 
+KYB, CKYC registry integration and lifecycle management, and AML/CFT compliance, 
+screening and transaction monitoring. The Bidder shall be responsible for the design, 
+development, supply, configuration, customization, integration, testing, deployment, 
+security hardening, Go-Live and ongoing support of the complete Solution. 
+ 
+For the purpose of this Scope of Work, “Enterprise KYC, KYB, CKYC and AML 
+Solution” or “Solution” shall mean the complete integrated platform comprising 
+Individual KYC, Entity KYB, CKYC registry integration and lifecycle management, and 
+AML/CFT capabilities specified herein. 
+ 
+The solution shall provide due diligence capabilities including customer acceptance, 
+customer identification procedure, customer due diligence, beneficial owner 
+identification (for entities), ongoing due diligence triggers, automated regulatory 
+compliance flows, and audit ready evidence and reporting as per regulatory and Bank’s 
+KYC/AML policy. 
+ 
+1. Standards based Integration:  
+The Bidder shall provide API/Web-SDK or other applicable standards-based 
+integration so that NABARD applications (web portals, internal systems, and 
+authentication services such as Active Directory/SSO where applicable) can invoke 
+KYC/KYB/CKYC services. Integration shall support initiation, status retrieval, 
+decision outcomes, evidence retrieval, and master record updates. 
+1.1. The solution shall adhere to enterprise architecture principles including 
+modularity, scalability, interoperability, and reusability across NABARD 
+systems. 
+1.2. The solution shall be implemented as a shared enterprise
+... lines further in:
+(p.20) containment, remediation, audit, and implementation of
+(p.21) integrations, implementation of privileged access controls, environment

@@ -1,0 +1,233 @@
+# GEM/2026/B/8245866 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: Department of Financial Services
+Card: Comprehensive Endpoint Antivirus, Application Whitelisting Solution, and Sandbox for Canara Bank; endpoint antivirus; application whitelisting; sandbox; endpoint security; malware protection; application control; threat detection; endpoint management
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+26-11-2026 15:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+27-11-2026 15:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Department Of Financial Services
+संगठन का नाम/Organisation Name
+Canara Bank
+काया%लय का नाम/Office Name
+Department Of Information Technology
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :gemprocurement@canarabank.com 
+Buyer Email id: sureshbabusripathi@canarabank.com
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 5 Year(s)
+वष, के अनुभव एवं टन%ओवर से एमएसई को छूट 3ा4 है /
+MSE Relaxation for Years Of Experience
+and Turnover
+Yes | Complete
+'टाट%अप के िलए अनुभव के वष, और टन%ओवर से छूट 3दान
+क गई है / Startup Relaxation for Years Of
+Experience and Turnover
+Yes | Complete
+व6ेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Bidder Turnover,Certificate (Requested
+in ATC),OEM Authorization Certificate,OEM Annual
+Turnover,Additional Doc 1 (Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+8या आप िनवदाकार: ;ारा अपलोड <कए गए द'तावेज़: को
+िनवदा म= भाग लेने वाले सभी िनवदाकार: को <दखाना
+चाहते ह? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+No
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आवCयक बड क संDया। / Minimum number of
+bids required to disable automatic bid
+extension
+3
+ 
+बड संDया/Bid Number: GEM/2026/B/8245866
+<दनांक /Dated: 05-11-2026
+बड द'तावेज़ / Bid Document
+1 / 8
+
+<दन: क संDया, Nजनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+3
+ऑटो ए8सट=शन अिधकतम <कतनी बार <कया जाना है। /
+Number of Auto Extension count
+1
+बड से Qरवस% नीलामी स<6य <कया/Bid to RA enabled
+No
+बड का 3कार/Type of Bid
+Two Packet Bid
+तकनीक मूRयांकन के दौरान तकनीक 'पTीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+3 Days
+Payment Timelines
+Payments shall be made to the Seller within 45 days of
+issue of service delivery acceptance certificate (SDAC) and
+on-line submission of bills (This is in supersession of 10 days
+time as provided in clause 12 of GeM GTC)
+मूRयांकन पUित/Evaluation Method
+Total value wise evaluation
+मूRय दशा%ने वाला वVीय द'तावेज Wेकअप आवCयक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+मXय'थता खंड/Arbitration Clause
+No
+सुलह खंड/Mediation Clause
+No
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर ब?क/Advisory Bank
+AXIS BANK LTD
+ईएमड रािश/EMD Amount
+11600000
+ईपीबीजी ववरण /ePBG Detail
+एडवाइजर ब?क/Advisory Bank
+AXIS BANK LTD
+ईपीबीजी 3ितशत (%)/ePBG Percentage(%)
+5.00
+ईपीबीजी क आवCयक अविध (माह) /Duration of ePBG
+required (Months).
+64
+(a). जेम क शत, के अनुसार ईएमड छूट के इ\छुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ 3'तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा 3दाता ईएमड से छूट के पा  ह?। ]यापाQरय: को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथ^ के प_ म= होनी चा<हए। / EMD & Performance security should be
+2 / 8
+
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथ^ के प_ म= होनी चा<हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+लाभाथ^ /Beneficiary : 
+Deputy General Manager
+Department Of Information Technology, Department of Financial Services, Canara Bank, Ministry of Finance
+(Nagendra Kumar M)
+बोली वभाजन लागू नहं <कया गया/ Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+`ेaस भुगतान संबंधी ववरण/TReDS Payment Details
+This Bid provides for Trade Receivables Discounting System (TReDS) as Preferred mode of payment.
+For MSME sellers, payments may be processed through a TReDS exchange in which the Buyer is
+registered, subject to applicable policy and regulatory guidelines. Accordingly, sellers intending to
+avail payment through TReDS are required to be registered with at least one TReDS exchange in
+which the buyer is registered.
+1. If the bidder is a Micro or Small Enterprise as per latest orders issued by Ministry of MSME, the bidder shall be
+relaxed from the eligibility criteria of "Experience Criteria" as defined above subject to meeting of quality and
+technical specifications. The bidder seeking Relaxation from Experience Criteria, shall upload the supporting
+documents to prove his eligibility for Relaxation.
+2. If the bidder is a Micro or Small Enterprise (MSE) as per latest orders issued by Ministry of MSME, the bidder
+shall be relaxed from the eligibility criteria of "Bidder Turnover" as defined above subject to meeting of quality
+and technical specifications. If the bidder itself is MSE OEM of the offered products, it would be relaxed from the
+"OEM Average Turnover" criteria also subject to meeting of quality and technical specifications. The bidder
+seeking Relaxation from Turnover, shall upload the supporting documents to prove his eligibility for Relaxation.
+3. If the bidder is a DPIIT registered Startup, the bidder shall be relaxed from the the eligibility criteria of
+"Experience Criteria" as defined above subject to their meeting of quality and technical specifications. The bidder
+seeking Relaxation from Experience Criteria, shall upload the supporting documents to prove his eligibility
+
+## RFP
+=== Attachment IP_b8cc02fc-e770-4908-873c1793881590937_GEM905445.pdf (7 pages) ===
+ 
+Canara Bank, CP & VM Vertical, TS Wing, HO – GEM/2026/B/8245866 dated 05-11-2026 Page 122 of 154 
+ 
+Appendix–F 
+Pre Contract Integrity Pact 
+(This has to be submitted in the non-judicial Stamp Paper of Rs. 500/-) 
+SUB: Selection of Vendor for Supply, Installation, Integration, Maintenance and Support for 
+Comprehensive Antivirus and Application Whitelisting Solution including Sandbox for 
+endpoints for a period of 5 years in Canara Bank 
+Ref: GEM/2026/B/8245866 dated 05-11-2026       
+1. GENERAL 
+1.1. This pre-bid contract Agreement (herein after called the Integrity Pact) is made on_____ day 
+of the month_________ 20____ , between, the Canara Bank, a body corporate constituted 
+under Banking Companies (Acquisition and transfer of undertakings), Act 1970 having its Head 
+office at 112, J.C. Road, Bengaluru 560 002,with branches spread over India and abroad 
+(hereinafter referred to as BUYER which expression shall include its successors and assigns) 
+acting through Shri______________________ , ___________________________, Centralized 
+Procurement and Vendor Management Vertical, Technology Services Wing, HO, Bengaluru 
+representing Canara Bank, of the BUYER, of the FIRST PART 
+AND 
+M/s.________________ represented by Shri ____________Chief Executive Officer/Authorised 
+Signatory (hereinafter called the "BIDDER/SELLER/CONTRACTOR/SERVICE PROVIDER", which 
+expression shall mean and include, unless the context otherwise requires, his successors and 
+permitted assigns), of the SECOND PART 
+WHEREAS the BUYER proposes to select a _______________________________________ 
+________________________________________________ 
+and 
+the 
+BIDDER/SELLER/CONTRACTOR/SERVICE PROVIDER is willing to offer/has offered the 
+stores/services and 
+ 
+1.2. WHEREAS the BIDDER/SELLER/CONTRACTOR/SERVICE PROVIDER is a private company/ public 
+company/Government undertaking/ partnership/ LLP/registered export agency/service 
+provider, duly constituted in accordance with the relevant law governing its
+... lines further in:
+(p.4) shall deposit an amount as specified in RFP/Tender Documents as Earnest Money/Security,
+(p.4) Deposit, with the BUYER through any of the instruments as detailed in the tender documents.
+(p.4) the contractual obligations or for such period as mentioned in RFP/Contract, including
+(p.6) documentation pertaining to the project for which the RFP/Tender is being /has been
+(p.6) years or such longer period as mentioned in RFP/Contract or the complete execution of the
+
+=== Attachment 1793880940.pdf (5 pages) ===
+ 
+ 
+Annexure-8 
+Scope of Work 
+(Should be submitted on Company’s letter head with company seal and signature of 
+the authorized person) 
+SUB: Selection of Vendor for Supply, Installation, Integration, Maintenance and Support 
+for Comprehensive Antivirus and Application Whitelisting Solution including 
+Sandbox for endpoints for a period of 5 years in Canara Bank 
+Ref: GEM/2026/B/8245866 dated 05-11-2026      
+1. Broad Scope: 
+1.1. 
+Bank propose to implement a Comprehensive Endpoint Antivirus, Application 
+Whitelisting, Sandbox for 1.2 Lakh endpoints for period of 5 Years. 
+1.2. 
+The solution shall support up to 1,20,000 endpoints over the contract period, with 
+licences for 85,000 endpoints from Day 1. The architecture shall be scalable to support 
+the full envisaged endpoint capacity without architectural changes. Additional licences 
+shall be procured on a pro-rata basis, subject to the Bank's requirements. 
+1.3. 
+All licenses should be subscription based.  
+1.4. 
+The bidder should have an office setup at Bengaluru, Karnataka. 
+1.5. 
+The validity of contract shall be calculated from the date of project acceptance sign-
+off, post successful implementation of technologies / solutions specified in this RFP to 
+Bank’s satisfaction.  
+1.6. 
+The bidder shall be responsible for Supplying, Installing, Integrating, commissioning & 
+Maintaining the Comprehensive Endpoint Antivirus, Application Whitelisting, Sandbox 
+including the necessary Licenses, Storage,Software, Middleware, Database, Operating 
+System, ATS / Warranty / AMC support. 
+1.7. 
+The required hardware infrastructure for the same will be provided by the Bank. 
+However, the bidder should submit optimal Hardware required for hosting the 
+application on Bank’s Premises. 
+1.8. 
+The entire solution shall be deployed on-premises in the Bank’s DC & DR locations in 
+Active-Active mode with load balancing within and between DC and DR. The entire 
+solution shall support high availability between DC and DR. Both DC & DR Se
+... lines further in:
+(p.5) We hereby comply with the above Scope of Work without any deviations.

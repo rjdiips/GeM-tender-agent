@@ -1,0 +1,547 @@
+# GEM/2026/B/7944114 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: Department of Financial Services
+Card: Full-Stack Unified Observability Solution with GenAI capability for Union Bank of India; unified observability solution; GenAI capability; full-stack observability; ITRCoE; infrastructure monitoring; application performance monitoring; log management; metrics collection
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+21-09-2026 16:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+21-09-2026 16:30:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Department Of Financial Services
+संगठन का नाम/Organisation Name
+Union Bank Of India (ubi)
+काया%लय का नाम/Office Name
+Central Office Dept Of Information Technology
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :hod1.ubn.mh@gembuyer.in 
+Buyer Email id: buycon40.ubiu.mh@gembuyer.in
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 5 Year(s)
+बडर का +यूनतम औसत वाष%क टन%ओवर (3 वष2 का)
+/Minimum Average Annual Turnover of the
+bidder (For 3 Years)
+10000 Lakh (s)
+उ+हं/समान सेवा के िलए अपे56त वगत अनुभव के
+वष%/Years of Past Experience Required for
+same/similar service
+3 Year (s)
+टन%ओवर पा ता मानदंड/Turnover eligibility criteria
+To be verified by the buyer at the time of technical
+evaluation
+टन%ओवर के िलए एमएसई को छूट 9ा: है / MSE
+Relaxation for Turnover
+Yes | Partial | Turn over value - 7500 (in lakhs)
+टन%ओवर के िलए 'टाट%अप को छूट 9ा: है / Startup
+Relaxation for Turnover
+Yes | Partial | Turn over value - 7500 (in lakhs)
+व;ेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Bidder Turnover,Certificate (Requested
+in ATC),OEM Authorization Certificate,OEM Annual
+Turnover,Additional Doc 1 (Requested in ATC),Additional
+Doc 2 (Requested in ATC),Additional Doc 3 (Requested in
+ATC),Additional Doc 4 (Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+ 
+बड सं=या/Bid Number: GEM/2026/B/7944114
+>दनांक /Dated: 21-08-2026
+बड द'तावेज़ / Bid Document
+1 / 6
+
+Fया आप िनवदाकारH Iारा अपलोड >कए गए द'तावेज़H को
+िनवदा मJ भाग लेने वाले सभी िनवदाकारH को >दखाना
+चाहते हL? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+No
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आवPयक बड क सं=या। / Minimum number of
+bids required to disable automatic bid
+extension
+1
+>दनH क सं=या, 5जनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+3
+ऑटो एFसटJशन अिधकतम >कतनी बार >कया जाना है। /
+Number of Auto Extension count
+1
+बड से Uरवस% नीलामी स>;य >कया/Bid to RA enabled
+No
+बड का 9कार/Type of Bid
+Two Packet Bid
+तकनीक मूVयांकन के दौरान तकनीक 'पXीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+3 Days
+Payment Timelines
+Payments shall be made to the Seller within 45 days of
+issue of service delivery acceptance certificate (SDAC) and
+on-line submission of bills (This is in supersession of 10 days
+time as provided in clause 12 of GeM GTC)
+मूVयांकन पYित/Evaluation Method
+Total value wise evaluation
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर बLक/Advisory Bank
+State Bank of India
+ईएमड रािश/EMD Amount
+30000000
+ईपीबीजी ववरण /ePBG Detail
+एडवाइजर बLक/Advisory Bank
+State Bank of India
+ईपीबीजी 9ितशत (%)/ePBG Percentage(%)
+5.00
+ईपीबीजी क आवPयक अविध (माह) /Duration of ePBG
+required (Months).
+62
+(a). जेम क शत2 के अनुसार ईएमड छूट के इ\छुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ 9'तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा 9दाता ईएमड से छूट के पा  हL। ^यापाUरयH को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+2 / 6
+
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथ_ के प6 मJ होनी चा>हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथ_ के प6 मJ होनी चा>हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+लाभाथ_ /Beneficiary : 
+PROCUREMENT VERTICAL
+Union Bank of India, Procurement Department, 1st Floor, Vidhan Bhawan Marg, Central Office, Mumbai-400021
+(Union Bank Of India)
+बोली वभाजन लागू नहं >कया गया/Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+`ेaस भुगतान संबंधी ववरण/TReDS Payment Details
+This Bid provides for Trade Receivables Discounting System (TReDS) as Preferred mode of payment.
+For MSME sellers, payments may be processed through a TReDS exchange in which the Buyer is
+registered, subject to applicable policy and regulatory guidelines. Accordingly, sellers intending to
+avail payment through TReDS are required to be registered with at least one TReDS exchange in
+which the buyer is registered.
+1. If the bidder is a Micro or Small Enterprise (MSE) as per latest orders issued by Ministry of MSME, the bidder
+shall be relaxed from the eligibility criteria of "Bidder Turnover" as defined above subject to meeting of quality
+and technical specifications. If the bidder itself is MSE OEM of the offered products, it would be relaxed from the
+"OEM Average Turnover" criteria also subject to meeting of quality and technical specifications. The bidder
+seeking Relaxation from Turnover, shall upload the supporting documents to prove his eligibility for Relaxation.
+2. If the bidder is a DPIIT registered Startup, the bidder shall be relaxed from the the eligibility criteria of "Bidder
+Turnover" as defined above subject to their meeting of quality and technical specifications. If the bidder is DPIIT
+Registered OEM of the offered products, it would be relaxed from the "OEM Average Turnover" criteria also
+subject to meeting of quality and technical specifications. The bidder seeking Re
+
+## RFP
+=== Attachment RFPITRCOE_d5e3ade2-a1d1-4eec-bd9f1787308690442_UBI_DIT_BUYER2.pdf (147 pages) ===
+ 
+Classification: Public 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Request for Proposal for Procurement of Full- Stack Unified 
+Observability solution with GenAI capability   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+Union Bank of India, Procurement Department 
+     1st Floor, Vidhan Bhawan Marg, 
+      Central Office, Mumbai-400021 
+ 
+ 
+ 
+ 
+ 
+
+RFP for ITRCoE                                                                                        
+    
+ 
+ 
+ 
+ 
+ 
+ 
+Page 2 of 147 
+ 
+   
+Disclaimer 
+ 
+ 
+The information contained in this bid document provided to the Bidder(s) on the terms 
+and conditions set out in this bid document. The bid document contains statements 
+derived from information that is believed to be true and reliable at the date obtained 
+but does not purport to provide all of the information that may be necessary or 
+desirable to enable an intending contracting party to determine whether or not to enter 
+into a contract or arrangement with Bank in relation to the provision of services. 
+ 
+The bid document is not a recommendation, offer or invitation to enter into a contract, 
+agreement or any other arrangement, in respect of the services. The provision of the 
+services is subject to observance of selection process and appropriate documentation 
+being agreed between the Bank and any successful Bidder as identified by the Bank, 
+after completion of the selection process as detailed in this document. No contractual 
+obligation whatsoever shall arise from the bid process unless and until a formal contract 
+is signed and executed by duly authorized officers of Union Bank of India with the 
+Bidder. The purpose of this bid is to provide the Bidder(s) with information to assist the 
+formulation of their proposals. This bid does not claim to contain all the information 
+each Bidder may require. Each Bidder should conduct their own investigations and 
+analysis and should check the accuracy, reliability and completeness of the information 
+in this bid and where necessary obtain independent a
+... scope of work:
+--- (p.104) Scope of Work 
+ 
+We certify that the systems/services offered by us for tender confirms to the specifications 
+stipulated by you with the following deviations 
+ 
+List of deviations 
+ 
+1) ___________________________________________________________ 
+ 
+2) ___________________________________________________________ 
+ 
+3) ___________________________________________________________ 
+ 
+4) ___________________________________________________________ 
+ 
+ 
+Signature: 
+Name 
+Date 
+Seal of company: 
+ 
+ 
+(If left blank it will be construed that there is no deviation from the specifications given 
+above) 
+ 
+ 
+
+RFP for ITRCoE 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Page 105 of 147 
+ 
+ 
+63. Annexure I - Undertaking by Bidder 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Place: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Date: 
+To: 
+The General Manager, 
+ Union Bank of India, 
+ Procurement Department, 
+ 1st Floor, Vidhan Bhawan Marg, 
+ Central Office, Mumbai-400021 
+ 
+ 
+Undertaking (To be submitted by all Bidders’ on their letter head) 
+ 
+ We ________________________ (bidder name), hereby undertake that- 
+• As on date of submission of tender, we are not blacklisted by the Central Government 
+/ any of the State Governments / PSUs in India or any Financial Institution in India. 
+• We also undertake that we are not involved in any legal case that may affect the 
+solvency / existence of our firm or in any other way that may affect capability to 
+provide / continue the services to bank. 
+ 
+Yours faithfully, 
+ 
+Authorized Signatories 
+ (Name, Designation and Seal of the Company) 
+ Date 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+RFP for ITRCoE 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Page 106 of 147 
+ 
+ 
+ 
+64. Annexure J– Confidentiality / Non-Disclosure Agreement 
+ 
+This CONFIDENTIALITY AGREEMENT (the “Agreement”) entered into on this _ day of 
+2026 and shall be deemed to have become in full force and effect from (the “Effective 
+Date”). 
+BY and between M/s.__________________ a company incorporated under the provisions of 
+the Companies Act, _________ in force in India, having its registered office at 
+__
+--- (p.113) Scope of Work for Solution 
+ 
+Number of concurrent users 
+ 
+Name of the contact person for reference 
+ 
+Contact details of contact person 
+ 
+Modules used at Branches/Offices 
+ 
+Project Details 
+a. Operating System 
+b. IDE 
+c. Security features 
+d. Maintenance & support 
+ 
+ 
+(Enclose necessary documentary proof) 
+*Provide Information in respect of at least 1 major customer each for every required 
+experience who fulfills the eligibility Criteria. References may be enclosed from the 
+customer from the above reference. 
+ 
+ 
+ 
+Dated this........ Day of ............... 2026 
+(Signature) 
+(In the capacity of) 
+Duly authorized to sign bid with seal for & on behalf of (Name & Address of the Bidder) 
+ 
+ 
+
+RFP for ITRCoE 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Page 114 of 147 
+ 
+ 
+66. Annexure L – Format for Performance Bank Guarantee 
+ (Covering Delivery obligations) 
+ 
+NOTE: 
+ 
+1. This guarantee should be furnished by a Nationalized Bank / Scheduled Bank, other 
+than Union Bank of India, as per the following format. 
+2. This bank guarantee should be furnished on stamp paper value as per Stamp Act. (not 
+less than Rs.500/-). 
+3. The stamp paper should be purchased either in the Name of the Bank executing the 
+Guarantee or in the name of Union Bank of India. 
+4. This Bank Guarantee should be furnished within 30 days from the date of purchase 
+order or the delivery period prescribed in the purchase order whichever is earlier. 
+5. This Bank Guarantee should be directly sent to the Purchaser by the Issuing Bank under 
+Registered Post with Acknowledge Due. 
+ 
+To 
+The General Manager, 
+ Union Bank of India, 
+ Procurement Department, 
+ 1st Floor, Vidhan Bhawan Marg, 
+ Central Office, Mumbai-400021 
+ 
+Dear Sir, 
+ 
+In consideration of Union Bank of India, Procurement Department, 1st Floor, Vidhan Bhawan 
+Marg, Central Office, Mumbai‐400021, placing an order for Request for Proposal for 
+Procurement of Gen AI – Based Full- Stack Unified Observability Solution for ITRCoE 
+__________________ having registered o
+... lines further in:
+(p.5) General Scope of Work: .................................................................................................... 11
+(p.6) 59. Annexure E – Compliance to RFP Terms & Conditions ................................................. 91
+(p.8) Proposals (RFP) till the conclusion of the contract i.e. final payment or the
+(p.8) Bidders who are interested in participating in this RFP must fulfill the
+(p.9) mentioned under this RFP.
+(p.9) 1 above and which has invited bids under this Request for Proposal and shall be
+(p.9) 4.2. ‘RFP’ means this Request for Proposal prepared by Union Bank of India for
+(p.9) successful bidder for the RFP for Procurement of Full- Stack Unified
+(p.10) H1 Bidder as per the selection criteria set out in the RFP and to whom
+(p.10) deployed/provided by the successful bidder under this RFP for Procurement of
+(p.10) Consortium bidding is not permitted under this RFP.
+(p.11) General Scope of Work:
+
+=== Attachment 95771041367824 (1 pages) ===
+Login
+Sign Up
+Buyers
+Sellers
+Products
+Services
+Content
+Need Help ?
+FAQs
+Video Guides
+Training Event Calendar
+LMS
+Bid
+Ongoing Bids
+Bid/RA Status
+Login
+Sign Up
+Buyers
+Sellers
+Training
+Forums
+Gallery
+Resources |
+Corporate
+About Us
+MoU's
+Statistics
+Contact Us
+Careers
+Right to Information
+Testimonials
+Web Information Manager
+Help
+Support Desk
+1-800-419-3436 / 1-800-102-3436
+English
+Dark Mode
+Font Size
+A-
+A
+A+
+Skip to Main Content
+Need Help ?
+FAQs
+Feedback
+Raise-a Ticket
+Document Help
+Contact Us
+Products
+Services
+Content
+Forward Auction
+Ongoing Auctions
+FA Buyer Registration
+FA Buyer Log-in
+Bids
+List of Bids
+Railways Bids
+Login
+Sign Up
+Buyers
+Sellers
+categories
+Products
+Computers
+Desktops
+Laptops
+All in One
+Servers
+Office Machines
+Multifunction Machines
+Printers
+Paper Shredding Machines
+Multimedia Projector (MMP)
+Automobiles
+Cars
+Buses
+Utility Vehicles
+Ambulance
+Office Supplies
+Ball Point Pen
+Gel Pen
+Printer or Photo Copier Paper
+Appliances
+Televisions
+Air Conditioner
+Online UPS
+Furniture
+Revolving Chair
+Office Chairs
+Steel Almirah
+Specialized Vehicles
+Hopper Tipper Dumper
+Tractors
+Softwares
+Operating System
+GIS Software
+Two Wheeler
+Motor Cycle
+Bicycle
+Services
+Browse All Categories
+Browse All Products
+GeM Advantages
+GeM Exclusive
+FAQs
+Contact Us
+Rate a Seller
+New on GeM
+This will lead you to GeM website.
+Warning: All unsaved 'data entries' will be lost after language change.
+OK
+Cancel
+Close
+Print
+SPECIAL TERMS AND CONDITIONS FOR
+HIRING OF AGENCY FOR IT PROJECTS – MILESTONE BASIS
+1. Preamble
+A. All contracts related to milestone-based hiring of Agencies for IT Projects placed through GeM shall be governed by the following set of Terms and Conditions:
+I. General terms and conditions for Goods and Services.
+II. Service STC contained in this document
+III. BID / Reverse Auction specific ATC
+B. The above terms and conditions are in reverse order of precedence i.e. ATC supersedes Service specific STC which supersede GTC, whenever there are any conflicting provisions.
+C. This do

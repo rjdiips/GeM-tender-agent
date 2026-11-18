@@ -1,0 +1,420 @@
+# GEM/2026/B/8097436 — Flt Cont Computer,AI GPU,Input and Cont Device with Touch Screen Interface,3D Printer with Laser Un
+Buyer department: Department of Military Affairs
+Card: None
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+14-11-2026 15:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+15-11-2026 15:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Defence
+वभाग का नाम/Department Name
+Department Of Military Affairs
+संगठन का नाम/Organisation Name
+Indian Army
+काया%लय का नाम/Office Name
+***********
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :agay-102@nic.in 
+Buyer Email id: swamee.2022@gov.in
+कुल मा ा/Total Quantity
+30
+व'तु (ेणी /Item Category
+Flt Cont Computer , AI GPU , Input and Cont Device with
+Touch Screen Interface , 3D Printer with Laser Unit and
+Filament Combo , Video Input Bundle , AI Video Input ,
+Single Board Computer , Power and GPS Module , AI Visual
+Odometry Module , Workstation With Remote Controller and
+VR Goggles , Instructor Workstation with Controller and VR
+Goggles , Imaging Unit , Aerial Command Controller , Arial
+Command Unit , Rugged Notebook - Laptop (Q2)
+GeMARPTS म* खोजी गई -'.ं/स / Searched
+Strings used in GeMARPTS
+Flt Cont Computer, AI GPU, Input and Cont Device with
+Touch Screen Interface, 3D Printer with Laser Unit and
+Filament Combo, Video Input Bundle, AI Video Input, Single
+Board Computer, Power and GPS Module, AI Visual
+Odometry Module, Workstation With Remote Controller and
+VR Goggles, Instructor Workstation with Controller and VR
+Goggles, Imaging Unit, Aerial Command Controller, Arial
+Command Unit
+Searched String: Flt Cont Computer
+Computer Motherboards, Entry and Mid Level Desktop
+Computer, Computer Processors, Computer Paper (V3)
+Conforming to IS 12766 (In Packet), Computer Keyboards,
+High End Desktop Computer, Computer Mouse, Computer
+Paper (V3) Conforming to IS 12766, Computer Table (V3),
+Computer Monitor (V2)
+Searched String: AI GPU
+Computer Graphics Card (GPU), Planetary Ball Mill for
+Laboratory, Ai Sheath, Advanced Robotics, AI Productivity
+ 
+बड सं0या/Bid Number: GEM/2026/B/8097436
+1दनांक /Dated: 04-11-2026
+बड द'तावेज़ / Bid Document
+1 / 17
+
+GeMARPTS म* खोजा गया प:रणाम / Searched
+Result generated in GeMARPTS
+Assistant Software, Artifical Intelligence (AI) based Video
+Analytics Software, Artificial Insemination (AI) Gun, Digital
+pH Meter, AI Traffic and Vehicle Video Analytics Software,
+Rotary Shaker
+Searched String: Input and Cont Device with Touch Screen
+Interface
+HDMI Switcher, Refrigerated Centrifuge For General And
+Research Purpose, Refrigerated Micro - Centrifuge, Portable
+OT Light
+Searched String: 3D Printer with Laser Unit and Filament
+Combo
+A3 Size Multifunction Printer (MFP), 3D Laser Scanning and
+imaging system (Forensic Use), Multifunction Printer (Print,
+Scan, Copy), Computer Printer (V2), Switch Disconnectors
+and Fuse Combination Units (Switch Fuse Unit) Conforming
+To IS/IEC 60947 (Part 3), Sofa (V3)
+Searched String: Video Input Bundle
+Hay Grass (Loose and Bundle), Video Conferencing Camera /
+Web Camera (V2), Fibre Bundle Strength Tester
+(Stelometer),(Textile), Video Extensometer, Video Recorder
+for CCTV System (V2), Video Laryngoscope, Dslr / Compact /
+Handheld Camcorder Or Video Cameras (V2), Video
+Laryngoscope (V2), Portable Video Bronchoscope, Video
+Conferencing End Point
+Searched String: AI Video Input
+Artifical Intelligence (AI) based Video Analytics Software,
+Video Conferencing Camera / Web Camera (V2), AI Traffic
+and Vehicle Video Analytics Software, Advanced Robotics,
+AI Video Analytics Software for Security, Safety and
+Occupancy Monitoring, Video Recorder for CCTV System
+(V2), Ai Sheath, Dslr / Compact / Handheld Camcorder Or
+Video Cameras (V2), AI Productivity Assistant Software,
+Artificial Insemination (AI) Gun
+Searched String: Single Board Computer
+Computer Motherboards, Entry and Mid Level Desktop
+Computer, Computer Processors, Computer Paper (V3)
+Conforming to IS 12766 (In Packet), Computer Keyboards,
+High End Desktop Computer, Computer Mouse, Computer
+Table (V3), Modular Table / Meeting Table / Centre Table
+(V2), Computer Monitor (V2)
+Searched String: Power and GPS Module
+RF Power Amplifier, Computer Monitor (V2), PRAN: Processor
+and Network Module (NPCIL), Mobile Work Force
+Management Solution Software, Power Bank for Mobile and
+Laptops (V2), Electric Two Wheeler - Motorcycle, Scooter
+and Moped, Electrical Power Connector, Fittings and
+Accessories for Power Transformer, Drain Valve and Flanges
+as per IS:3639, Interface module, Photovoltaic Module (Solar
+Charger) for Batteries as per MHA QRs
+Searched String: AI Visual Odometry Module
+Random Access Memory (RAM) Module, Video, Image and
+Multimedia Forensic Analysis Software
+बड ववरण/Bid Details
+2 / 17
+
+Searched String: Workstation With Remote Controller and
+VR Goggles
+Digital Voice Recording and Replay System for airports
+(AAI), Enterprise Remote Access and Support Software,
+Stationary Lead-Acid Cells and Batteries with Tubular
+Positive Plates Conforming To IS 1651, Delivery Bed (V2),
+Stationary Lead-Acid Cells and Batteries with Plante Positive
+Plates Conforming To IS 1652, Advance Fire Monitor (V2),
+Megaphone-Loud Hailer, Riot Control Helmet with
+accessories (MHA), Portable OT Light
+Searched String: Instructor Workstation with Controller
+and VR Goggles
+Digital Voice Recording and Replay System for airports
+(AAI), Megaphone-Loud Hailer, Stationary Lead-Acid Cells
+and Batteries with Tubular Positive Plates Conforming To IS
+1651, Air Permeability Tester (Textile), Stationary Lead-Acid
+Cells and Batteries with Plante Positive Plates Conforming To
+IS 1652, Riot Control Helmet with accessories (MHA),
+Chemical Splash Proof Goggle, Portable OT Light
+Searched String: Imaging Unit
+Endoscopic Imaging System, Sofa (V3), Magnetic Resonance
+Imaging (MRI) Machine, Cryotherapy Unit, Executive Table
+(V4), PHOTOTHERAPY Unit, X ray baggage inspection
+system as per MHA QR (V3), Forensic Imaging and write
+blocking Device, Metal Storage Cabinet, FORENSIC MOBILE
+MULTI SPECTRAL IMAGING SYSTEM
+Searched String: Aeria
+
+## RFP
+=== Attachment specification_2_2026-09-29-14-30-48_9650afc70abb641d4d2ffa820297367d.pdf (13 pages) ===
+1.
+
+ 
+
+ 
+
+ 
+
+ 
+
+Flight Controller
+Computer
+(Quantity-04)
+
+TECHNICAL SPECIFICATION
+
+ 
+
+Category — | (Quantity — 01)
+
+Chassis Material- Aerospace Grade Aluminum
+
+Size- (85-90) « 45 x 30 mm
+
+Operating Temperature- -40°C to +85°C
+
+Motor PWM I/Os- 8
+
+Auxiliary PWM / Digital l/Os- 4
+
+Dedicated Telemetry Interface- 1
+
+Number Of GPS Supported- 2
+
+Auxiliary UARTs- 2
+
+I2C Interface- 1
+
+CAN Interface- 2
+
+Power and Current, Voltag Measurement Interface- 1
+
+RCIN Interface- 1
+
+USB Interface- 1 ?
+
+SDCARD Interface- 1
+
+° Main Processor- STM32H7 Series 32-Bit ARM Cortex-
+
+M7 Core, 480 Mhz
+
+e Coprocessor- STM32F1 Series 32-Bit ARM Cortex-M3
+
+Core, 72MHz
+
+. Supported RC Signals- PPM/SBUS
+
+e Connectors- Standard And Widely Used Connectors
+
+. Sensors- Triple IMU System
+
+. Sensors Details-
+. IMU (Isolated) MEMS High-Impact Applications
+. IMU3 (Isolated) High Vibration Robustness
+e MAG 1 (Isolated) High-Precision, Ultra- Low
+Noise
+° MAG2 + MAG3 (External) Supports External
+Magnetometer
+
+° BARO1 (Isolated) High-Resolution Barometric
+Pressure Sensor BARO1 (On Board) High-Resolution
+Barometric Pressure Sensor.
+
+Category -ll (Quantity - 01)
+
+Processor: (32-bit Arm Cortex-M7, 480 MHz, featuring a double-
+precision floating-point unit, 2 MB Flash memory, and 1 MB
+RAM).
+
+Sensor Suite : Built-in dual {MU redundancy (BMi088 and
+1CM20689 Accelerometer/Gyro).
+
+IST8310 electronic compass.
+
+MS5611 barometer
+
+Serial Ports: 4 x UART serial ports.
+
+12C Ports: 3 x I2C ports.
+
+CAN Interface: 1 x CAN port.
+
+Outputs: 8 x Standard PWM IO + 5 x Programmable IO.
+
+RC Inputs: 1 x Dedicated SBUS input.
+
+Other Ports: 1 x Power Module input, 1 x GPS & Safety port, 1 x
+USB Type-C, and 1 x TF (MicroSD) card slot.
+
+Power Module Input Voltage: 4.5 V to 5.5 V.
+
+USB Input Voltage: 5 V (40.25 V).
+
+Servo Voltage Input: 0 V to 10 V.
+
+Operating Temperature: -20 °C to 65 °C.
+
+Dimensions: 47 mm x 68 mm x 19 mm.
+
+Weight: 57 g.
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Description
+
+ 
+
+Specification
+
+28 to 14S Power Module
+
+Voltage !nput Range: 2S to 14S 
+
+=== Attachment Mzf80_9xZzMaLwNPm1uRb0zryMgfGAfZaI8pG1lJEpM (1 pages) ===
+Login
+Sign Up
+Buyers
+Sellers
+Products
+Services
+Content
+Need Help ?
+FAQs
+Video Guides
+Training Event Calendar
+LMS
+Bid
+Ongoing Bids
+Bid/RA Status
+Login
+Sign Up
+Buyers
+Sellers
+Training
+Forums
+Gallery
+Resources |
+Corporate
+About Us
+MoU's
+Statistics
+Contact Us
+Careers
+Right to Information
+Testimonials
+Web Information Manager
+Help
+Support Desk
+1-800-419-3436 / 1-800-102-3436
+English
+Dark Mode
+Font Size
+A-
+A
+A+
+Skip to Main Content
+Need Help ?
+FAQs
+Feedback
+Raise-a Ticket
+Document Help
+Contact Us
+Products
+Services
+Content
+Forward Auction
+Ongoing Auctions
+FA Buyer Registration
+FA Buyer Log-in
+Bids
+List of Bids
+Railways Bids
+Login
+Sign Up
+Buyers
+Sellers
+categories
+Products
+Computers
+Desktops
+Laptops
+All in One
+Servers
+Office Machines
+Multifunction Machines
+Printers
+Paper Shredding Machines
+Multimedia Projector (MMP)
+Automobiles
+Cars
+Buses
+Utility Vehicles
+Ambulance
+Office Supplies
+Ball Point Pen
+Gel Pen
+Printer or Photo Copier Paper
+Appliances
+Televisions
+Air Conditioner
+Online UPS
+Furniture
+Revolving Chair
+Office Chairs
+Steel Almirah
+Specialized Vehicles
+Hopper Tipper Dumper
+Tractors
+Softwares
+Operating System
+GIS Software
+Two Wheeler
+Motor Cycle
+Bicycle
+Services
+Browse All Categories
+Browse All Products
+GeM Advantages
+GeM Exclusive
+FAQs
+Contact Us
+Rate a Seller
+New on GeM
+This will lead you to GeM website.
+Warning: All unsaved 'data entries' will be lost after language change.
+OK
+Cancel
+Close
+Catalogue values for Rugged Notebook - Laptop
+Category |
+Specification |
+Bid Requirement (Allowed Values) |
+GENERAL |
+Type |
+Regular, Convertible, Detachable |
+PROCESSOR |
+Processor Make |
+Intel |
+Processor Generation |
+6th, 7th, 8th, 10th, 11th, 12th, 13th, 14th |
+Processor |
+Intel Core i3 or higher, Intel Core i5 or higher, Intel Core i7 or higher, Intel M5, Intel M7 |
+GRAPHICS |
+Graphics Type |
+Integrated, Discrete |
+Graphics |
+nVIDIA GeForce GTX 950M, Radeon RT 360, nVIDIA GeForce GTX 1050M, nVIDIA Quadro P2000, NA |
+Graphics Memory (GB) |
+2, 4, 8, 0 Or higher |
+STORAGE |
+Type of 

@@ -1,0 +1,292 @@
+# GEM/2026/B/8232915 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: Department of Financial Services
+Card: SAS Based Integrated Risk Management Solution (IRMS) enhancement for RBI Capital Charge for Credit Risk Standardised Approach; SAS Based Integrated Risk Management Solution (IRMS); SAS Credit Risk solution; RBI Capital Charge for Credit Risk Standardised Approach; exposure classes and risk weights; credit risk mitigation; external credit assessments; off-balance sheet items; IRB advanced approaches
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+24-11-2026 15:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+25-11-2026 15:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Department Of Financial Services
+संगठन का नाम/Organisation Name
+Canara Bank
+काया%लय का नाम/Office Name
+Department Of Information Technology
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :gemprocurement@canarabank.com 
+Buyer Email id: sureshbabusripathi@canarabank.com
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 3 Month(s)
+वष, के अनुभव एवं टन%ओवर से एमएसई को छूट 3ा4 है /
+MSE Relaxation for Years Of Experience
+and Turnover
+Yes | Complete
+'टाट%अप के िलए अनुभव के वष, और टन%ओवर से छूट 3दान
+क गई है / Startup Relaxation for Years Of
+Experience and Turnover
+Yes | Complete
+व6ेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Bidder Turnover,Certificate (Requested
+in ATC),OEM Annual Turnover,Additional Doc 1 (Requested
+in ATC),Additional Doc 2 (Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+8या आप िनवदाकार: ;ारा अपलोड <कए गए द'तावेज़: को
+िनवदा म= भाग लेने वाले सभी िनवदाकार: को <दखाना
+चाहते ह? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+No
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आवCयक बड क संDया। / Minimum number of
+bids required to disable automatic bid
+extension
+3
+ 
+बड संDया/Bid Number: GEM/2026/B/8232915
+<दनांक /Dated: 03-11-2026
+बड द'तावेज़ / Bid Document
+1 / 8
+
+<दन: क संDया, Nजनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+3
+ऑटो ए8सट=शन अिधकतम <कतनी बार <कया जाना है। /
+Number of Auto Extension count
+1
+बड से Qरवस% नीलामी स<6य <कया/Bid to RA enabled
+No
+बड का 3कार/Type of Bid
+Two Packet Bid
+तकनीक मूRयांकन के दौरान तकनीक 'पTीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+3 Days
+Payment Timelines
+Payments shall be made to the Seller within 45 days of
+issue of service delivery acceptance certificate (SDAC) and
+on-line submission of bills (This is in supersession of 10 days
+time as provided in clause 12 of GeM GTC)
+मूRयांकन पUित/Evaluation Method
+Total value wise evaluation
+मूRय दशा%ने वाला वVीय द'तावेज Wेकअप आवCयक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर ब?क/Advisory Bank
+AXIS BANK LTD
+ईएमड रािश/EMD Amount
+160000
+ईपीबीजी ववरण /ePBG Detail
+एडवाइजर ब?क/Advisory Bank
+AXIS BANK LTD
+ईपीबीजी 3ितशत (%)/ePBG Percentage(%)
+5.00
+ईपीबीजी क आवCयक अविध (माह) /Duration of ePBG
+required (Months).
+7
+(a). जेम क शत, के अनुसार ईएमड छूट के इZछुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ 3'तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा 3दाता ईएमड से छूट के पा  ह?। \यापाQरय: को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथ] के प^ म= होनी चा<हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथ] के प^ म= होनी चा<हए। / Earnest Money Deposit (EMD) shall also be accepted by
+2 / 8
+
+the buyer in the form of a surety bond. 
+लाभाथ] /Beneficiary : 
+DEPUTY GENERAL MANAGAER
+Department Of Information Technology, Department of Financial Services, Canara Bank, Ministry of Finance
+(Nagendra Kumar M)
+बोली वभाजन लागू नहं <कया गया/Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+_े`स भुगतान संबंधी ववरण/TReDS Payment Details
+This Bid provides for Trade Receivables Discounting System (TReDS) as Preferred mode of payment.
+For MSME sellers, payments may be processed through a TReDS exchange in which the Buyer is
+registered, subject to applicable policy and regulatory guidelines. Accordingly, sellers intending to
+avail payment through TReDS are required to be registered with at least one TReDS exchange in
+which the buyer is registered.
+1. If the bidder is a Micro or Small Enterprise as per latest orders issued by Ministry of MSME, the bidder shall be
+relaxed from the eligibility criteria of "Experience Criteria" as defined above subject to meeting of quality and
+technical specifications. The bidder seeking Relaxation from Experience Criteria, shall upload the supporting
+documents to prove his eligibility for Relaxation.
+2. If the bidder is a Micro or Small Enterprise (MSE) as per latest orders issued by Ministry of MSME, the bidder
+shall be relaxed from the eligibility criteria of "Bidder Turnover" as defined above subject to meeting of quality
+and technical specifications. If the bidder itself is MSE OEM of the offered products, it would be relaxed from the
+"OEM Average Turnover" criteria also subject to meeting of quality and technical specifications. The bidder
+seeking Relaxation from Turnover, shall upload the supporting documents to prove his eligibility for Relaxation.
+3. If the bidder is a DPIIT registered Startup, the bidder shall be relaxed from the the eligibility criteria of
+"Experience Criteria" as defined above subject to their meeting of quality and technical specifications. The bidder
+seeking Relaxation from Experience Criteria, shall upload the supporting documents to prove his eligibility for
+Relaxation.
+4. If the bidder is a DPIIT registered Sta
+
+## RFP
+=== Attachment 1793699147.pdf (6 pages) ===
+ 
+ Canara Bank, CP & VM Vertical, T S Wing, HO – GEM/2026/B/8232915 dated 03/11/2026         Page 73 of 131 
+ 
+      Annexure-9 
+Scope of Work 
+(Should be submitted on Company’s letter head with company seal and signature of 
+the authorized person) (To be included in Part A- Eligibility cum Technical Proposal) 
+SUB: Selection of Vendor for implementation of RBI (Commercial Banks-Capital Charge 
+for Credit Risk- Standardised Approach) directions, 2026 in the Bank’s SAS Based 
+Integrated Risk Management Solution (IRMS) 
+Ref: GEM/2026/B/8232915 dated 03/11/2026 
+The SAS Credit Risk solution for the Standardised Approach is already developed and 
+deployed in the Bank’s IRMS. The scope of work covers the enhancement of the Existing 
+Solution for all changes arising out of the Directions, including the advanced approaches 
+and other impacted areas, and is mentioned below. Bidder has to comply with the 
+direction issued by RBI vide master direction ref no. RBI/DOR/2026-27/397 
+DOR.CRE.REC 5/21.06.201/2026-27 dated 27/04/2026 related to RBI (Commercial 
+Banks-Capital Charge for Credit Risk- Standardised Approach) directions, 2026 and all 
+the related guidelines issued by the statutory authority. 
+ The changes are called out by subject; the stage at which each change is to be effected 
+shall be determined by the bidder: 
+Sl 
+No 
+Scope of Work 
+Details 
+1 
+Requirement 
+Validation & 
+Functional 
+Specification 
+To validate, in consultation with the Bank, the requirements 
+arising out of all chapters of the Directions – exposure classes 
+and risk weights, due diligence requirements, external credit 
+assessments, credit risk mitigation, off-balance sheet items 
+and specified categories – against the Existing Solution, 
+covering 
+source 
+data 
+availability, 
+computation 
+and 
+configuration logic, job flows, reporting mart and reports, 
+the advanced approaches (IRB) and MOC flows and all 
+downstream modules consuming credit risk output. No 
+separate gap assessment report is envisag
+... lines further in:
+(p.6) within the scope of this RFP without any additional cost to
+(p.6) We hereby comply with each point of the above Scope of Work without any deviations.
+
+=== Attachment 1793699630.pdf (5 pages) ===
+ 
+ Canara Bank, CP & VM Vertical, T S Wing, HO – GEM/2026/B/8232915 dated 03/11/2026         Page 61 of 131 
+ 
+Annexure-2 
+Pre-Qualification Criteria 
+[On Firm’s / Company’s letter head] 
+SUB: Selection of Vendor for implementation of RBI (Commercial Banks-Capital Charge 
+for Credit Risk- Standardised Approach) directions, 2026 in the Bank’s SAS Based 
+Integrated Risk Management Solution (IRMS) 
+Ref: GEM/2026/B/8232915 dated 03/11/2026 
+We have carefully gone through the contents of the above referred GeM bid replies to 
+pre-bid queries and amendments, and furnish the following information relating to 
+Technical Criteria. 
+Sl. 
+No.
+Criteria 
+Documents to be submitted for 
+Compliance 
+Bidder’s 
+response and
+documents 
+Submitted 
+1.
+The bidder should either be Class-
+I or Class-II local supplier as 
+defined in Public Procurement 
+(Preference to Make in India) 
+Revised Order (English) dated 
+19/07/2024.
+Certificate of local content to be 
+submitted as per Annexure-5 as 
+applicable.  
+ 
+2.
+The Net Worth of bidder firm 
+should not be negative as on 
+31/03/2026 and also should have 
+not been eroded by more than 
+30% (thirty per cent) in the last 
+three 
+years, 
+ending 
+on 
+‘31/03/2026’.
+The 
+bidder 
+should 
+submit 
+certificate from the Company's 
+Chartered Accountant with UDIN 
+to this effect. 
+ 
+3.
+The Company operating should be 
+legally compliant company and 
+can be: 
+a. A 
+partnership firm or 
+a 
+Limited Liability Partnership 
+duly registered under the 
+Limited Liability Partnership 
+Act, 2008. 
+(OR) 
+b. Company duly registered in 
+India as per Indian Companies 
+Act, 1956 or Indian Companies 
+Act, 2013. 
+(OR) 
+c. Proprietorship 
+firm 
+duly 
+registered 
+under 
+the 
+applicable 
+shops 
+and 
+commercial 
+Establishments 
+Act and should be compliant 
+to all the applicable laws. 
+Copy of Certificate of FIRM/LLP 
+registration. 
+ (OR) 
+Copy 
+of 
+Certificate 
+of 
+Incorporation and Certificate of 
+Commencement of business in 
+case of Public Limited Company 
+or Certificate of Inco
+... lines further in:
+(p.4) of the RFP Self-Declaration letter

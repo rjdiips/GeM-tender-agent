@@ -1,0 +1,207 @@
+# GEM/2026/B/8024742 — SOFTWARES
+Buyer department: Department of Military Affairs
+Card: None
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+30-11-2026 18:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+01-12-2026 18:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Defence
+वभाग का नाम/Department Name
+Department Of Military Affairs
+संगठन का नाम/Organisation Name
+Indian Navy
+काया%लय का नाम/Office Name
+***********
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :debdeep.gupta@navy.gov.in 
+Buyer Email id: dinesh.utekar@navy.gov.in
+कुल मा ा/Total Quantity
+4
+व'तु (ेणी /Item Category
+SOFTWARES
+GeMARPTS म* खोजी गई -'.ं/स / Searched
+Strings used in GeMARPTS
+SOFTWARE
+GeMARPTS म* खोजा गया प0रणाम / Searched
+Result generated in GeMARPTS
+Accessibility Software, Enterprise Remote Access and
+Support Software, Virtualisation Software, Antivirus
+Software, Actuarial Modelling and Valuation Software,
+Accounting software (V2), Backup and Recovery Software,
+Office Productivity Suite Software, Recruitment and
+Examination Management Software, Geographic Information
+System (GIS) Software (V3)
+अिधसूचना के िलए चयिनत 5ासंिगक (े-णयाँ / Relevant
+Categories selected for notification
+Accessibility Software
+Antivirus Software
+उ8हं/समान सेवा के िलए अपे-9त वगत अनुभव के
+वष%/Years of Past Experience Required for
+same/similar service
+3 Year (s)
+वष; के अनुभव एवं टन%ओवर से एमएसई को छूट 5ा? है /
+MSE Relaxation for Years Of Experience
+and Turnover
+Yes | Complete
+'टाट%अप के िलए अनुभव के वष; और टन%ओवर से छूट 5दान
+क गई है / Startup Relaxation for Years Of
+Experience and Turnover
+Yes | Complete
+ 
+बड संAया/Bid Number: GEM/2026/B/8024742
+Bदनांक /Dated: 09-11-2026
+बड द'तावेज़ / Bid Document
+1 / 7
+
+वKेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Additional Doc 1 (Requested in
+ATC),Compliance of BoQ specification and supporting
+document
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+Lया आप िनवदाकारN Oारा अपलोड Bकए गए द'तावेज़N को
+िनवदा म* भाग लेने वाले सभी िनवदाकारN को Bदखाना
+चाहते हP? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+Yes (Documents submitted as part of a clarification or
+representation during the tender/bid process will also be
+displayed to other participated bidders after log in)
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आवTयक बड क संAया। / Minimum number of
+bids required to disable automatic bid
+extension
+3
+BदनN क संAया, -जनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+7
+ऑटो एLसट*शन अिधकतम Bकतनी बार Bकया जाना है। /
+Number of Auto Extension count
+3
+बड से 0रवस% नीलामी सBKय Bकया/Bid to RA enabled
+Yes
+0रवस% नीलामी यो/यता िनयम/RA Qualiﬁcation Rule
+50% Lowest Priced Technically Qualified Bidders
+बड का 5कार/Type of Bid
+Two Packet Bid
+तकनीक मूXयांकन के दौरान तकनीक 'पZीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+2 Days
+िनर9ण आवTयक (सूचीब[ िनर9ण 5ािधकरण /जेम के साथ
+पूव% पंजीकृत एज*िसयN Oारा)/Inspection Required (By
+Empanelled Inspection Authority / Agencies
+pre-registered with GeM)
+No
+मूXयांकन प[ित/Evaluation Method
+Total value wise evaluation
+म^य'थता खंड/Arbitration Clause
+No
+सुलह खंड/Mediation Clause
+No
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर बPक/Advisory Bank
+State Bank of India
+ईएमड रािश/EMD Amount
+13570
+ईपीबीजी ववरण /ePBG Detail
+2 / 7
+
+एडवाइजर बPक/Advisory Bank
+State Bank of India
+ईपीबीजी 5ितशत (%)/ePBG Percentage(%)
+5.00
+ईपीबीजी क आवTयक अविध (माह) /Duration of ePBG
+required (Months).
+26
+(a). जेम क शत; के अनुसार ईएमड छूट के इaछुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ 5'तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा 5दाता ईएमड से छूट के पा  हP। bयापा0रयN को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथc के प9 म* होनी चाBहए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथc के प9 म* होनी चाBहए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+लाभाथc /Beneficiary : 
+SO (ESTABLISHMENT)
+HQWNC BALLARD PIER TIGER GATE MUMBAI 400 001
+(So Establishement)
+बोली वभाजन लागू नहं Bकया गया/ Bid splitting not applied.
+एमआईआई खरद वरयता / MII Purchase Preference
+एमआईआई खरद वरयता / MII Purchase Preference
+Yes
+मेक इन इंBडया वKेताओं को खरद म* 5ाथिमकता, यBद
+उनका मूXय L1+X% तक क सीमा म* है / Purchase
+Preference to MII sellers availabele upto price
+within L1+X%
+20
+मेक इन इंBडया खरद म* 5ाथिमकता के िलए बड क मा ा
+का अिधकतम 5ितशत / Maximum Percentage of Bid
+quantity for MII purchase preference
+50
+साव%जिनक खरद (मेक-इन-इंBडया को 5ाथिमकता) आदेश
+2017 के अनुसार केवल Lलास 1/Lलास 2 के 'थानीय
+आपूित%कता%ओं को ह भागीदार क अनुमित है Bदनांक
+16.09.2020 (समय-समय पर संशोिधत एवं लागू) / Allow
+participation only from Class 1/Class 2 local
+suppliers as per the Public
+procurement(Preference to Make-in-india) order
+2017 date 16.09.2020(as amended and
+applicable time to time)
+Yes, in compliance with the MII ORDER : DPIIT Order(as
+amended and applicable time to time)
+एमएसई खरद वरयता/MSE Purchase Preference
+एमएसई खरद वरयता/MSE Purchase Preference
+Yes
+3 / 7
+
+
+## RFP
+=== Attachment software_technical_specifications_2026-09-11-09-09-25_9625bbe62c875d815646ef5884109c3d.pdf (1 pages) ===
+TECHNICAL SPECIFICATIONS OF VARIOUS SOFTWARES
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+| sl | Type of Software Qty
+
+01 Adobe Photoshop 25 version — 1 year subscription 01
+(Offline product)
+
+02 | Adobe Premier Pro 25 — 1 Year subscription 01
+
+03 | Nessus Professional with Two year validity 01
+
+04 01
+
+| Burpsuite Professional with Two year validity
+
+ 
+
+ 
+

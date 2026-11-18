@@ -1,0 +1,320 @@
+# GEM/2026/B/7994876 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: Information Technology and Electronics Department Uttar Pradesh
+Card: Hospital Information Management System (HIMS) for Kalyan Singh Super Speciality Cancer Institute (KSSSCI), Lucknow; Hospital Information Management System (HIMS); ABDM-compliant HIMS; Facility Management Services (FMS); Application Operations; Preventive Maintenance; Managed Support; Data Migration; VAPT / Security Audit
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+14-09-2026 14:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+15-09-2026 14:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+90 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Uttar Pradesh
+वभाग का नाम/Department Name
+Information Technology And Electronics Department Uttar
+Pradesh
+संगठन का नाम/Organisation Name
+N/a
+काया%लय का नाम/Office Name
+U.p. Development Systems Corporation Ltd.
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :sameer.87120@up.gov.in 
+Buyer Email id: buycon22.updesco.lko@gembuyer.in
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 1 Year(s)
+उ,हं/समान सेवा के िलए अपे./त वगत अनुभव के
+वष%/Years of Past Experience Required for
+same/similar service
+3 Year (s)
+इसी तरह क सेवाओं का पछला आव5यक अनुभव है/Past
+Experience of Similar Services required
+Yes
+एमएसएमई के िलए अनुभव के वष7 और टन%ओवर से छूट ;दान
+क गई है/MSE Relaxation for Years of
+Experience and Turnover
+No
+'टाट%अप के िलए अनुभव के वष7 और टन%ओवर से छूट ;दान
+क गई है /Startup Relaxation for Years of
+Experience and Turnover
+No
+व<ेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Bidder Turnover,Certificate (Requested
+in ATC),Additional Doc 1 (Requested in ATC),Additional Doc
+2 (Requested in ATC),Additional Doc 3 (Requested in
+ATC),Additional Doc 4 (Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+ 
+बड सं>या/Bid Number: GEM/2026/B/7994876
+?दनांक /Dated: 03-09-2026
+बड द'तावेज़ / Bid Document
+1 / 7
+
+Gया आप िनवदाकारH Iारा अपलोड ?कए गए द'तावेज़H को
+िनवदा मJ भाग लेने वाले सभी िनवदाकारH को ?दखाना
+चाहते हL? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+Yes (Documents submitted as part of a clarification or
+representation during the tender/bid process will also be
+displayed to other participated bidders after log in)
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आव5यक बड क सं>या। / Minimum number of
+bids required to disable automatic bid
+extension
+3
+?दनH क सं>या, .जनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+3
+ऑटो एGसटJशन अिधकतम ?कतनी बार ?कया जाना है। /
+Number of Auto Extension count
+3
+बड से Tरवस% नीलामी स?<य ?कया/Bid to RA enabled
+Yes
+Tरवस% नीलामी योUयता िनयम/RA Qualiﬁcation Rule
+H1-Highest Priced Bid Elimination
+बड का ;कार/Type of Bid
+Two Packet Bid
+तकनीक मूVयांकन के दौरान तकनीक 'पXीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+2 Days
+अनुमािनत िनवदा मूVय (सभी करH स?हत) भारतीय Yपये मJ
+/ Estimated Bid Value in INR (Inclusive of all
+taxes)
+50000000
+मूVयांकन पZित/Evaluation Method
+Total value wise evaluation
+मूVय दशा%ने वाला व[ीय द'तावेज \ेकअप आव5यक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+म]य'थता खंड/Arbitration Clause
+No
+सुलह खंड/Mediation Clause
+No
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर बLक/Advisory Bank
+State Bank of India
+ईएमड रािश/EMD Amount
+1000000
+ईपीबीजी ववरण /ePBG Detail
+एडवाइजर बLक/Advisory Bank
+State Bank of India
+ईपीबीजी ;ितशत (%)/ePBG Percentage(%)
+3.00
+2 / 7
+
+ईपीबीजी क आव5यक अविध (माह) /Duration of ePBG
+required (Months).
+14
+(a). जेम क शत7 के अनुसार ईएमड छूट के इ`छुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ ;'तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा ;दाता ईएमड से छूट के पा  हL। aयापाTरयH को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथb के प/ मJ होनी चा?हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथb के प/ मJ होनी चा?हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+लाभाथb /Beneficiary : 
+,
+U.P. Development Systems Corporation Ltd., Information Technology and Electronics Department Uttar Pradesh,
+226010
+(Managing Director)
+बोली वभाजन लागू नहं ?कया गया/ Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+एमएसई खरद वरयता/MSE Purchase Preference
+एमएसई खरद वरयता/MSE Purchase Preference
+No
+1. Years of Past Experience required: The bidder must have experience for number of years as indicated above in
+bid document (ending month of March prior to the bid opening) of providing similar type of services to any
+Central / State Govt Organization / PSU. Copies of relevant contracts / orders to be uploaded along with bid in
+support of having provided services during each of the Financial year. 
+2. Estimated Bid Value indicated above is being declared solely for the purpose of guidance on EMD amount and
+for determining the Eligibility Criteria related to Turn Over, Past Performance and Project / Past Experience etc.
+This has no relevance or bearing on the price to be quoted by the bidders and is also not going to have any
+impact on bid participation. Also this is not going to be used as a criteria in determining reasonableness of
+quoted prices which would be determined by the buyer based on its own assessment of reasonableness and
+based on competitive prices received in Bid / RA process. 
+3. Past Experience of Similar Services: The bidder must have successfully executed/completed similar Services
+over the last three years i.e. the current financial year and the last three financial years(ending month of March
+prior to the bid opening): - 
+1. Three similar co
+
+## RFP
+=== Attachment RFPKSSSCI_5e529f59-60b0-49ea-845f1788438595962_vkmaurya.pdf (108 pages) ===
+ 
+ 
+REQUEST FOR PROPOSAL (RFP) 
+ 
+FOR 
+ 
+IMPLEMENTATION AND COMMISSIONING 
+OF A HOSPITAL INFORMATION MANAGEMENT SYSTEM 
+(HIMS) 
+AT KALYAN SINGH SUPER SPECIALITY CANCER INSTITUTE 
+(KSSSCI), LUCKNOW 
+ 
+ 
+RFP Reference No.: UPDESCO/HIMS-KSSSCI/ 
+Date of Issue: [03.09.2026] 
+ 
+ 
+Issued by: 
+Uttar Pradesh Development Systems Corporation Limited (UPDESCO) 
+ 
+ 
+[UPDESCO Registered Office Address — 
+UPTRON Building, Gomti Nagar, Lucknow] 
+ Email:md@updesco.com 
+ 
+ 
+ 
+
+ 
+ 
+Disclaimer 
+This Request for Proposal ("RFP") is issued by Uttar Pradesh Development Systems Corpo-
+ration Limited ("UPDESCO") as the Procuring and Implementing Agency and Facilitator for 
+and on behalf of Kalyan Singh Super Speciality Cancer Institute, Lucknow ("KSSSCI", the 
+"Institute" or the "Adopting Institution"). KSSSCI has issued a formal Work Order / mandate 
+dated 16 June 2026 to UPDESCO for the supply, installation, commissioning, operation and 
+maintenance of the HIMS and associated Facility Management Services (FMS). UPDESCO 
+shall select the System Integrator / Service Provider through a tender process restricted to 
+eligible Category-C or higher empanelled vendors under the applicable UPDESCO / State 
+empanelment framework, subject to the additional project-specific Pre-Qualification, Technical 
+Qualification, Demo and Financial Evaluation criteria set out in this RFP, and the contract for 
+the assignment shall be executed as a Tripartite Agreement among KSSSCI, UPDESCO and 
+the Successful Bidder. Empanelment only establishes eligibility to participate. It shall not by 
+itself confer any right to award, nor shall it dilute the project-specific PQ, TQ, Demo, financial, 
+security, clinical, functional or contractual obligations under this RFP. In this RFP, references 
+to "UPDESCO", the “Facilitator” mean UPDESCO acting in the foregoing capacity; references 
+to the "Procuring Entity" mean UPDESCO conducting and managing the procurement for and 
+on behalf of KSSSCI, except where a right or funct
+... scope of work:
+--- (p.15) 2.3 Scope of Work — UPDESCO (as FACILITATOR) 
+UPDESCO, as Facilitator and procurement agent for KSSSCI, shall be responsible for the 
+following: 
+ 
+Issue of this RFP, conduct of the pre-bid meeting, issue of corrigenda and management 
+of all procurement-stage interactions with prospective bidders. 
+ 
+Constitution of the Tender Evaluation Committee, evaluation of bids, recommendation of 
+award and supporting contract execution. 
+ 
+Ongoing techno-managerial oversight of the Successful Bidder's performance, including 
+review of project plans, deliverable acceptance, SLA reporting, financial verification of 
+invoices prior to release of payment by KSSSCI, and chairing of programme governance 
+meetings. 
+ 
+Audit and assurance — including the right to conduct, or cause to be conducted, security 
+audits, code reviews, performance audits and operational audits at the Successful 
+Bidder's premises and at KSSSCI. 
+ 
+Acting as the single technical interface between KSSSCI and the Successful Bidder 
+during the Contract Term, without prejudice to KSSSCI's rights as the contracting party. 
+2.4 Scope of Work — KSSSCI (Adopting Institution) 
+KSSSCI shall be responsible for the following: 
+ 
+Site readiness — provision of server room (or equivalent rack space), structured cabling, 
+LAN/Wi-Fi backbone, end-user devices (desktops, thin clients, label/barcode printers, 
+document scanners, hand-held devices for ward / pharmacy / blood bank), uninterrupted 
+power and physical security at the Institute in accordance with the Site Readiness 
+Checklist at Annexure VII. 
+ 
+Identification and onboarding of the Institute-side Project Director, Project Manager, 
+departmental Champions and Super-Users; participation in workshops, requirements 
+walk-throughs, configuration sign-offs, UAT and training. 
+ 
+Provision of access to relevant existing data, legacy systems, master data, paper 
+records and SMEs as reasonably required by the Successful Bidder to perform its 
+obligations. 
+ 
+Timely
+--- (p.33) 5. Scope of Work 
+5.1 Engagement Model 
+The successful Bidder (the "System Integrator" or "SI") shall, under a single composite Con-
+tract with the Procuring Entity, undertake the supply, installation, configuration, customisa-
+tion, testing, training, commissioning and Go-Live Acceptance of an integrated, ABDM-com-
+pliant HIMS at KSSSCI. The initial committed award shall include Part A, first-year Part B re-
+curring services and first-year Part C FMS. Part A shall include all implementation obliga-
+tions and twelve (12) months of warranty / defect-liability support from M5 to M6; first-year 
+Part B and Part C shall also operate during that Initial Service Year. After M6, KSSSCI may 
+renew Part B and/or Part C on a year-to-year basis, at its sole discretion, for up to nine (9) 
+optional annual renewal years, subject to satisfactory performance, budget availability, con-
+tinued requirement, approval of the Competent Authority and issuance of a written renewal / 
+work order. The maximum supported lifecycle shall not exceed ten (10) years from M5. 
+All software licences supplied by the SI shall be perpetual, enterprise-wide, sized to the in-
+dicative concurrent-user count specified in Section 1.3, and assignable to KSSSCI on com-
+pletion of the engagement. The SI shall not seek any additional licence fee from the Procur-
+ing Entity during the term of the Contract on account of growth in registered users, beds, 
+OPD footfall or transactional volumes, subject to the upper limits set out in the Bill of Quanti-
+ties (Annexure-III). 
+5.2 Functional Scope: Modules to be Implemented 
+The SI shall implement, integrate and operate the forty-three (43) functional modules listed 
+in Section 5.2.1 below. Each module shall be implemented to the depth specified in the 
+Functional Requirement Specifications (Annexure-I), which forms an integral and binding 
+part of this RFP. 
+The SI shall confirm, at the time of bid submission, compliance with every line item of the 
+Functional Requi
+... lines further in:
+(p.5) 2.3 Scope of Work — UPDESCO (as FACILITATOR) ............................................................... 15
+(p.5) 2.4 Scope of Work — KSSSCI (AdopƟng InsƟtuƟon) ............................................................ 15
+(p.5) 3.1 Availability of RFP Document ......................................................................................... 16
+(p.5) 3.2.7 InterpretaƟon of the RFP ........................................................................................ 17
+(p.5) 3.2.8 Amendment of the RFP ........................................................................................... 17
+(p.6) 5. Scope of Work ...................................................................................................................... 32
+(p.9) This Request for Proposal ("RFP") invites proposals from eligible bidders for the supply, in-
+(p.9) dated 16 June 2026, been appointed by KSSSCI as the Facilitator and is issuing this RFP on
+(p.10) enumerated in the Scope of Work.
+(p.11) In this RFP, unless the context otherwise requires, the following capitalised terms shall have
+(p.11) the meanings set out below. Terms not defined here but used in the body of this RFP shall
+(p.11) half this RFP is issued, and which approves scope, technical specifications,
+
+=== Attachment 1788437665.xlsx (1 pages) ===
+[BoQ]
+Part A — One-Time HIMS Supply and Implementation Cost
+S. No. | Sub-component | Amount (without GST)
+1 | Requirement gathering, institutional study, DPR, FRS/SRS and solution architecture
+2 | Project planning, governance and implementation management
+3 | Module Licences, Customisations, Configurations, Integrations, Implementation Environments, Pre-Go-Live VAPT / DR Readiness and Commissioning as per the FRS / SRS and Scope of Work
+4 | Training, adoption, handholding and documentation
+5 | Data Migration
+Total One-Time Fee (without GST) | 0
+Part B — First-Year Annual Recurring Services (Committed Initial Service Year)
+S. No. | Sub-component | Total Amount 
+1 | Production Hosting / Cloud Infrastructure for the Initial Service Year (development, staging and pre-production environments included in Part-A)
+2 | Application Operations, Preventive Maintenance & Managed Support (excluding warranty defect rectification included in Part-A)
+3 | Enhancement Support (B-1)
+4 | Periodic Post-Go-Live VAPT / Security Audit and Closure of Findings (pre-Go-Live VAPT included in Part-A)
+5 | Bulk transactional SMS (volume per Fact Sheet — see note)(10,00,000)
+6 | Total Recurring Cost (without GST) | 0
+Part C — First-Year Annual Facility Management Services (Committed Initial Service Year)
+S.No. | Role | FTE Count | Months | Monthly Rate per FTE (₹) | Total (₹) over 12 months)
+C1 | Technical Support / Helpdesk Engineers (24×7 by rotation) | 5 | 12 | 0
+C2 | Cloud Infrastructure / Network / Data Centre Engineer | 1 | 12 | 0
+C3 | Software Engineers (HIMS & Lab interfacing / Report Developer) | 2 | 12 | 0
+C4 | Database Engineer / DBA | 1 | 12 | 0
+C5 | Sub-Total Part C (Annual FMS, 9 FTEs, 12 months) | 0
+Part D — Initial Contract Value — Basis for Financial Bid Evaluation
+Sr. No. | Component | Reference | Total (₹)
+1 | Total One-Time Fee | Sub-Total Part A | 0
+2 | Annual Recurring Cost | Sub-Total Part B | 0
+3 | FMS  | Sub-Total Part C | 0
+4 | GRAND TOTAL — Evaluated Bid Value for LCS / L

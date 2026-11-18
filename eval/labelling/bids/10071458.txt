@@ -1,0 +1,333 @@
+# GEM/2026/B/8192306 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: Department of Financial Services
+Card: Domain Name System (DNS) Services for Bank of Baroda; Authoritative DNS Management Solution; Recursive DNS Solution; DNS Infrastructure; Domain Name Resolution; DNS Policy Enforcement; DNS Monitoring and Alerting; DNS Compliance Management; DNS Reporting and Administration
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+13-11-2026 14:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+14-11-2026 14:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Department Of Financial Services
+संगठन का नाम/Organisation Name
+Bank Of Baroda
+काया%लय का नाम/Office Name
+It Department Bcc
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :prakash.kumarsingh@bankofbaroda.co.in 
+Buyer Email id: sanjay.yadav5@bankofbaroda.bank.in
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 5 Year(s)
+पछले 3 व-ीय वष/ का बडर का 0यूनतम औसत वाष%क
+व-ीय टन%ओवर/Minimum Average Annual
+Turnover of the bidder (For the last 3
+Financial Years)
+2000 Lakh (s)
+उ0हं/समान सेवा के िलए अपे78त वगत अनुभव के
+वष%/Years of Past Experience Required for
+same/similar service
+3 Year (s)
+टन%ओवर पा ता मानदंड/Turnover eligibility criteria
+To be verified by the buyer at the time of technical
+evaluation
+एमएसएमई के िलए अनुभव के वष/ और टन%ओवर से छूट :दान
+क गई है/MSE Relaxation for Years of
+Experience and Turnover
+No
+'टाट%अप के िलए अनुभव के वष/ और टन%ओवर से छूट :दान
+क गई है /Startup Relaxation for Years of
+Experience and Turnover
+No
+व;ेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Bidder Turnover,Certificate (Requested
+in ATC),Additional Doc 1 (Requested in ATC),Additional Doc
+2 (Requested in ATC),Additional Doc 3 (Requested in
+ATC),Additional Doc 4 (Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+ 
+बड सं=या/Bid Number: GEM/2026/B/8192306
+>दनांक /Dated: 23-10-2026
+बड द'तावेज़ / Bid Document
+1 / 7
+
+Eया आप िनवदाकारG Hारा अपलोड >कए गए द'तावेज़G को
+िनवदा मI भाग लेने वाले सभी िनवदाकारG को >दखाना
+चाहते हK? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+No
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आवOयक बड क सं=या। / Minimum number of
+bids required to disable automatic bid
+extension
+2
+>दनG क सं=या, 7जनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+7
+ऑटो एEसटIशन अिधकतम >कतनी बार >कया जाना है। /
+Number of Auto Extension count
+1
+बड से Tरवस% नीलामी स>;य >कया/Bid to RA enabled
+No
+बड का :कार/Type of Bid
+Two Packet Bid
+तकनीक मूUयांकन के दौरान तकनीक 'पWीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+2 Days
+Payment Timelines
+Payments shall be made to the Seller within 30 days of
+issue of service delivery acceptance certificate (SDAC) and
+on-line submission of bills (This is in supersession of 10 days
+time as provided in clause 12 of GeM GTC)
+मूUयांकन पXित/Evaluation Method
+Total value wise evaluation
+मूUय दशा%ने वाला व-ीय द'तावेज Yेकअप आवOयक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+मZय'थता खंड/Arbitration Clause
+No
+सुलह खंड/Mediation Clause
+No
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर बKक/Advisory Bank
+State Bank of India
+ईएमड रािश/EMD Amount
+20000000
+ईपीबीजी ववरण /ePBG Detail
+एडवाइजर बKक/Advisory Bank
+State Bank of India
+ईपीबीजी :ितशत (%)/ePBG Percentage(%)
+5.00
+2 / 7
+
+ईपीबीजी क आवOयक अविध (माह) /Duration of ePBG
+required (Months).
+63
+(a). जेम क शत/ के अनुसार ईएमड छूट के इ^छुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ :'तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा :दाता ईएमड से छूट के पा  हK। _यापाTरयG को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथ` के प8 मI होनी चा>हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथ` के प8 मI होनी चा>हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+लाभाथ` /Beneficiary : 
+Chief General Manager IT
+Bank of Baroda, Baroda SUN Tower, IT Department, C-26, G-Block, Bandra-Kurla Complex, Bandar (East), Mumbai
+400051
+(Chief General Manager It)
+बोली वभाजन लागू नहं >कया गया/ Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+एमएसई खरद वरयता/MSE Purchase Preference
+एमएसई खरद वरयता/MSE Purchase Preference
+Yes
+सूaम और लघु उcम मूल उपकरण िनमा%ताओं/सेवा :दाता
+को खरद मI :ाथिमकता, य>द उनका मूUय L1+X% /
+Purchase Preference to MSE OEMs/ Service
+Provider available upto price within L1+X%
+15
+eेfस भुगतान संबंधी ववरण/TReDS Payment Details
+This Bid provides for Trade Receivables Discounting System (TReDS) as Preferred mode of payment.
+For MSME sellers, payments may be processed through a TReDS exchange in which the Buyer is
+registered, subject to applicable policy and regulatory guidelines. Accordingly, sellers intending to
+avail payment through TReDS are required to be registered with at least one TReDS exchange in
+which the buyer is registered.
+1. The minimum average annual financial turnover of the bidder during the last three years, ending on 31st
+March of the previous financial year, should be as indicated above in the bid document. Documentary evidence in
+the form of certified Audited Balance Sheets of relevant periods or a certificate from the Chartered Accountant /
+Cost Accountant indicating the turnover details for the relevant period shall be uploaded with the bid. In case the
+date of constitution / incorporation of the bidder is less than 3-year-old, the average turnover in respect of the
+completed f
+
+## RFP
+=== Attachment 1792741928.pdf (170 pages) (also uploaded as: 1792741942.pdf, 10071458-17927422095475.pdf, ATC_aa22c7f8-4be2-4a75-ba951792742760082_sanjay.yadav5.pdf) ===
+ 
+RFP for Procurement, Deployment, Integration and Maintenance of Domain Name System 
+Bank of Baroda 
+ 
+Page 1 of 170 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Request for Proposal (RFP) for 
+Procurement, Deployment, Integration and 
+Maintenance of Domain Name System 
+ 
+ 
+ 
+ 
+ 
+Bank of Baroda 
+Baroda Sun Tower 
+IT Department 
+C-34, G-Block 
+Bandra Kurla Complex 
+Bandra (East), Mumbai - 400 051 
+ 
+ 
+ 
+ 
+ 
+ 
+RFP / Bid Number: GEM/2026/B/8192306 
+Date: 23rd October 2026 
+
+ 
+RFP for Procurement, Deployment, Integration and Maintenance of Domain Name System 
+Bank of Baroda 
+ 
+Page 2 of 170 
+ 
+[A] Important Dates: 
+# 
+Particulars 
+Timeline 
+1 
+RFP Issuance Date 
+23rd October 2026 
+2 
+RFP Coordinator Name, 
+Contact details (Bank) 
+Mr. Sanjay Yadav 
+Contact Details – Ph.: 022-6917-4116 / 4124, 
+Email: rfp.it.procurement@bankofbaroda.co.in  
+Postal Address: The Chief Manager (IT Procurement), 
+Bank of Baroda, Dena Bhavan, A-Wing, Patel Estate, 
+Behind MTNL, Jogeshwari (West), Mumbai, Maharashtra 
+– 400102.  
+3 
+Pre–bid Meeting details 
+o Pre-bid meeting will be held online through Bank’s 
+Online Meeting Platform (i.e. Microsoft Teams) on 
+30.10.2026 at 04:30 PM 
+o Bidder to submit a maximum of -2- participant’s names, 
+contact numbers, designations and e-mail IDs on 
+rfp.it.procurement@bankofbaroda.com 
+in 
+advance 
+before pre-bid meeting along with pre-bid clarification. 
+o Bidder representatives will have to click the link below 
+to join the Pre-bid meeting: 
+_______________________________________________________________________ 
+Microsoft Teams meeting 
+Join: https://teams.microsoft.com/meet/465589144816381?p=62R15KFAb96K02WWkW 
+Meeting ID: 465 589 144 816 381 
+Passcode: Gm9FS7bf 
+_______________________________________________________________________ 
+4 
+Last Date of Submission 
+of 
+RFP 
+Response 
+(Closing Date)  
+13th November 2026 
+Mode: Online through GeM portal 
+5 
+Eligibility Cum Technical 
+Bid Opening Date 
+As per GeM portal 
+6 
+Commercial Bid 
+Bank will open the commercial bids of only
+... scope of work:
+--- (p.77) A. Scope of Work: 
+The brief scope of work for the bidder is to provide, implement, and manage the Bank's 
+Domain Name System (DNS) Services (Authoritative and Recursive), along with 
+associated support services, through a shared service model hosted in the bidder's 
+own data centres, co-located facilities, or MeitY-empanelled cloud service provider 
+data centres. 
+The services covered as part of Bidder should include following but not limited in any 
+manner. If any services, functions or responsibilities not specifically described in this 
+scope but are an inherent, necessary or customary part of the services and are 
+required for proper performance or provision of the services in accordance with the 
+scope, Bidder shall be deemed to include such services, functions or responsibilities 
+not specifically described at no additional cost to the Bank. 
+1. Purpose and Objective 
+This document outlines the scope of work, roles and responsibilities, and service 
+expectations for the provision and management of the Bank's Domain Name System 
+(DNS) Services (Authoritative and Recursive). The DNS infrastructure plays a vital role 
+in supporting the Bank's digital ecosystem by resolving domain names into IP 
+addresses and enabling uninterrupted access to internet-facing and internal services. 
+The proposed solution shall ensure high availability, security, performance, resilience, 
+and operational efficiency in line with the Bank's business and regulatory 
+requirements. 
+The DNS Management Solution shall encompass robust capabilities for control, policy 
+enforcement, 
+compliance 
+management, 
+monitoring, 
+visibility, 
+administration, 
+reporting, and alerting. The requirements outlined below are indicative and not 
+exhaustive, and the solution shall include all necessary features and functionalities 
+required to meet the Bank's operational, security, and regulatory requirements. 
+A. DNS Management Solution Platform Requirement 
+(1) 
+The Bidder should ensure that proposed DNS M
+... lines further in:
+(p.4) RFP for Procurement, Deployment, Integration and Maintenance of Domain Name System
+(p.4) Rules for Responding to this RFP ................................................................ 21
+(p.7) successors and assigns, intends to issue this RFP document, hereinafter called RFP, to
+(p.7) This Request for Proposal (RFP) document has been prepared solely for the purpose of
+(p.7) participating in this RFP process. The service providers shall satisfy the eligibility criteria
+(p.7) stipulated in this RFP document. Please note that all eligibility, technical, and compliance
+(p.7) requirements must be fulfilled as on RFP date.
+(p.7) The RFP document is not a recommendation, offer or invitation to enter into a contract,
+(p.7) The brief scope of Work is Procurement, Deployment, Integration and Maintenance of
+(p.8) Annexure 12. However, Bank reserves the right to modify/change the scope of work at any
+(p.8) Scope that is not explicitly mentioned in scope of work as excluded would form part of this
+(p.8) RFP, and the service provider is expected to provide the same at no additional cost to the
+
+=== Attachment 1792742003.xlsx (1 pages) ===
+[TCO]
+Annexure 14 - Commercial Bid
+RFP Name
+Bid Number & Date
+Bidder's Name
+A | Authoritative DNS Management Solution
+S No | Service Description | Qty, | Annual Recurring Cost for Year -1 | Annual Recurring Cost for Year -2 | Annual Recurring Cost for Year -3 | Annual Recurring Cost for Year -4 | Annual Recurring Cost for Year -5 | Total Cost for Five Years
+1 | Authoritative DNS 18 Zones (17 zones + 1 Zone with dedicated Static Name Server IPs with high availability (minimum 2 dedicated name server IPs for “. bank.in” zone with DC & DR at Two Geographically separated Seismic Zone) | 18 | 0 | 0 | 0 | 0 | 0 | 0
+2 | One-Time Implementation Cost - Authoritative DNS 18 Zones (17 zones + 1 Zone with dedicated Static Name Server IPs with high availability (minimum 2 dedicated name server IPs for “.bank.in” zone with DC & DR at Two Geographically separated Seismic Zone) | OTC | 0 | XX | XX | XX | XX | 0
+Total (A) | 0 | 0 | 0 | 0 | 0 | 0
+B | Recursive DNS Solution
+1 | Recursive DNS Solution as per Scope with DC & DR at Two Geographically separated Seismic Zone for 80,000 users (minimum 2 dedicated Recursive DNS IPs) | 80000 | 0 | 0 | 0 | 0 | 0 | 0
+2 | One-Time Implementation Cost Recursive DNS Solution | OTC | 0 | XX | XX | XX | XX | 0
+Total (B) | 0 | 0 | 0 | 0 | 0 | 0
+C | Rate Contract for Addition of Authoritative DNS Zones next 5 years (Optional)
+1 | Additional Authoritative DNS Zones Creation | 20 | 0 | 0 | 0 | 0 | 0 | 0
+2 | Additional Users for Recursive DNS Solution | 15000 | 0 | 0 | 0 | 0 | 0 | 0
+Total (C) | 0 | 0 | 0 | 0 | 0 | 0
+GRAND TOTAL (A + B + C) | 0 | 0 | 0 | 0 | 0 | 0
+GST AMOUNT | 0
+TOTAL COST OF OWNERSHIP FOR FIVE YEARS (INCLUSIVE OF GST AMOUNT) | 0
+We abide by following terms and conditions:
+a) All prices to be quoted in Indian Rupee (INR) only and should be inclusive of all taxes, duties, levies, GST etc. 
+b) Price Bid should be comprise values only upto 2 decimal places. For the evaluation purpose, Bank will consider values only upto 2 decimal places for 

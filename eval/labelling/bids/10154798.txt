@@ -1,0 +1,152 @@
+# GEM/2026/B/8264466 — Financial Audit Services - Concurrent Audit of Digital Banking Operations; CA Firm
+Buyer department: Department of Financial Services
+Card: None
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+07-12-2026 17:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+08-12-2026 17:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Department Of Financial Services
+संगठन का नाम/Organisation Name
+Bank Of Baroda
+काया%लय का नाम/Office Name
+Baroda Corporate Centre
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :amod.sovle@bankofbaroda.com 
+Buyer Email id: shantanu.gupta@bankofbaroda.co.in
+व'तु (ेणी /Item Category
+Financial Audit Services - Concurrent Audit of Digital
+Banking Operations; CA Firm
+अनुबंध अविध /Contract Period
+ 3 Year(s)
+उ,हं/समान सेवा के िलए अपे./त वगत अनुभव के
+वष%/Years of Past Experience Required for
+same/similar service
+2 Year (s)
+इसी तरह क सेवाओं का पछला आव5यक अनुभव है/Past
+Experience of Similar Services required
+Yes
+टन%ओवर के िलए एमएसई को छूट 9ा: है / MSE
+Relaxation for Turnover
+Yes | Complete
+'टाट%अप के िलए अनुभव के वष; और टन%ओवर से छूट 9दान
+क गई है /Startup Relaxation for Years of
+Experience and Turnover
+No
+व=ेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Certificate (Requested in
+ATC),Additional Doc 1 (Requested in ATC),Additional Doc 2
+(Requested in ATC),Additional Doc 3 (Requested in
+ATC),Additional Doc 4 (Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+ 
+बड सं?या/Bid Number: GEM/2026/B/8264466
+@दनांक /Dated: 16-11-2026
+बड द'तावेज़ / Bid Document
+1 / 7
+
+Gया आप िनवदाकारH Iारा अपलोड @कए गए द'तावेज़H को
+िनवदा मJ भाग लेने वाले सभी िनवदाकारH को @दखाना
+चाहते हL? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+Yes (Documents submitted as part of a clarification or
+representation during the tender/bid process will also be
+displayed to other participated bidders after log in)
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आव5यक बड क सं?या। / Minimum number of
+bids required to disable automatic bid
+extension
+3
+@दनH क सं?या, .जनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+5
+ऑटो एGसटJशन अिधकतम @कतनी बार @कया जाना है। /
+Number of Auto Extension count
+1
+बड से Tरवस% नीलामी स@=य @कया/Bid to RA enabled
+No
+बड का 9कार/Type of Bid
+Two Packet Bid
+तकनीक मूUयांकन के दौरान तकनीक 'पWीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+6 Days
+,यूनतम मूUय/Floor Price
+This bid has been created/published with floor
+price(minimum value) selected by the Buyer. Service
+Providers are advised to quote above the minimum floor
+value.
+अनुमािनत िनवदा मूUय (सभी करH स@हत) भारतीय Xपये मJ
+/ Estimated Bid Value in INR (Inclusive of all
+taxes)
+1800000
+Payment Timelines
+Payments shall be made to the Seller within 45 days of
+issue of service delivery acceptance certificate (SDAC) and
+on-line submission of bills (This is in supersession of 10 days
+time as provided in clause 12 of GeM GTC)
+मूUयांकन पYित/Evaluation Method
+Total value wise evaluation
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर बLक/Advisory Bank
+State Bank of India
+ईएमड रािश/EMD Amount
+50000
+ईपीबीजी ववरण /ePBG Detail
+आव5यकता/Required
+No
+2 / 7
+
+(a). जेम क शत; के अनुसार ईएमड छूट के इZछुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ 9'तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा 9दाता ईएमड से छूट के पा  हL। \यापाTरयH को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथ] के प/ मJ होनी चा@हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथ] के प/ मJ होनी चा@हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+लाभाथ] /Beneficiary : 
+Central Internal Audit Division
+C-26 G Block Baroda Corporate Centre, Bandra Kurla Complex, Bandra East Mumbai , 400051
+(Bank Of Baroda)
+बोली वभाजन लागू नहं @कया गया/Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+^े_स भुगतान संबंधी ववरण/TReDS Payment Details
+This Bid provides for Trade Receivables Discounting System (TReDS) as Preferred mode of payment.
+For MSME sellers, payments may be processed through a TReDS exchange in which the Buyer is
+registered, subject to applicable policy and regulatory guidelines. Accordingly, sellers intending to
+avail payment through TReDS are required to be registered with at least one TReDS exchange in
+which the buyer is registered.
+1. If the bidder is a Micro or Small Enterprise (MSE) as per latest orders issued by Ministry of MSME, the bidder
+shall be relaxed from the eligibility criteria of "Bidder Turnover" as defined above subject to meeting of quality
+and technical specifications. If the bidder itself is MSE OEM of the offered products, it would be relaxed from the
+"OEM Average Turnover" criteria also subject to meeting of quality and technical specifications. The bidder
+seeking Relaxation from Turnover, shall upload the supporting documents to prove his eligibility for Relaxation. 
+2. Years of Past Experience required: The bidder must have experience for number of years as indicated above in
+bid document (ending month of March prior to the bid opening) of providing similar type of services to any
+Central / State Govt Organization / PSU. Copies of relevant contracts / orders to be uploaded along with bid in
+support of having 
+
+## RFP
+

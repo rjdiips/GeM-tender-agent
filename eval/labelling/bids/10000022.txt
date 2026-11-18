@@ -1,0 +1,484 @@
+# GEM/2026/B/8130088 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: Department of Financial Services
+Card: Centralized Forex Processing Centre (FXPC) Solution for Uco Bank; trade finance solution; forex processing; straight through processing (STP); intelligent document processing; SWIFT transmission; Finacle customisations; application management; service desk
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+03-11-2026 16:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+04-11-2026 16:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Department Of Financial Services
+संगठन का नाम/Organisation Name
+Uco Bank
+काया%लय का नाम/Office Name
+E
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :shouvik.nandi@uco.bank.in 
+Buyer Email id: sugandha.sinha@uco.bank.in
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 5 Year(s)
+टन%ओवर के िलए एमएसई को छूट 1ा2 है / MSE
+Relaxation for Turnover
+Yes | Complete
+टन%ओवर के िलए 'टाट%अप को छूट 1ा2 है / Startup
+Relaxation for Turnover
+Yes | Complete
+व3ेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Bidder Turnover,Certificate (Requested
+in ATC),OEM Authorization Certificate,Additional Doc 1
+(Requested in ATC),Additional Doc 2 (Requested in
+ATC),Additional Doc 3 (Requested in ATC),Additional Doc 4
+(Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+5या आप िनवदाकार7 8ारा अपलोड 9कए गए द'तावेज़7 को
+िनवदा म: भाग लेने वाले सभी िनवदाकार7 को 9दखाना
+चाहते ह<? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+Yes (Documents submitted as part of a clarification or
+representation during the tender/bid process will also be
+displayed to other participated bidders after log in)
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आव@यक बड क संAया। / Minimum number of
+bids required to disable automatic bid
+extension
+2
+ 
+बड संAया/Bid Number: GEM/2026/B/8130088
+9दनांक /Dated: 07-10-2026
+बड द'तावेज़ / Bid Document
+1 / 7
+
+9दन7 क संAया, Kजनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+5
+ऑटो ए5सट:शन अिधकतम 9कतनी बार 9कया जाना है। /
+Number of Auto Extension count
+1
+बड से Nरवस% नीलामी स93य 9कया/Bid to RA enabled
+No
+बड का 1कार/Type of Bid
+Two Packet Bid
+तकनीक मूOयांकन के दौरान तकनीक 'पQीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+3 Days
+Payment Timelines
+Payments shall be made to the Seller within 30 days of
+issue of service delivery acceptance certificate (SDAC) and
+on-line submission of bills (This is in supersession of 10 days
+time as provided in clause 12 of GeM GTC)
+मूOयांकन पRित/Evaluation Method
+Total value wise evaluation
+मूOय दशा%ने वाला वSीय द'तावेज Tेकअप आव@यक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+मUय'थता खंड/Arbitration Clause
+No
+सुलह खंड/Mediation Clause
+No
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर ब<क/Advisory Bank
+State Bank of India
+ईएमड रािश/EMD Amount
+25000000
+ईपीबीजी ववरण /ePBG Detail
+आव@यकता/Required
+No
+(a). जेम क शतW के अनुसार ईएमड छूट के इYछुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ 1'तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा 1दाता ईएमड से छूट के पा  ह<। ZयापाNरय7 को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथ\ के प] म: होनी चा9हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथ\ के प] म: होनी चा9हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+2 / 7
+
+लाभाथ\ /Beneficiary : 
+DGM
+Account Name- M/s H O DIT, Branch- DD Block, Salt Lake branch, IFSC- UCBA0001870
+(Uco Bank)
+बोली वभाजन लागू नहं 9कया गया/ Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+एमएसई खरद वरयता/MSE Purchase Preference
+एमएसई खरद वरयता/MSE Purchase Preference
+Yes
+सू^म और लघु उaम मूल उपकरण िनमा%ताओं/सेवा 1दाता
+को खरद म: 1ाथिमकता, य9द उनका मूOय L1+X% /
+Purchase Preference to MSE OEMs/ Service
+Provider available upto price within L1+X%
+15
+dेeस भुगतान संबंधी ववरण/TReDS Payment Details
+This Bid provides for Trade Receivables Discounting System (TReDS) as Preferred mode of payment.
+For MSME sellers, payments may be processed through a TReDS exchange in which the Buyer is
+registered, subject to applicable policy and regulatory guidelines. Accordingly, sellers intending to
+avail payment through TReDS are required to be registered with at least one TReDS exchange in
+which the buyer is registered.
+1. If the bidder is a Micro or Small Enterprise (MSE) as per latest orders issued by Ministry of MSME, the bidder
+shall be relaxed from the eligibility criteria of "Bidder Turnover" as defined above subject to meeting of quality
+and technical specifications. If the bidder itself is MSE OEM of the offered products, it would be relaxed from the
+"OEM Average Turnover" criteria also subject to meeting of quality and technical specifications. The bidder
+seeking Relaxation from Turnover, shall upload the supporting documents to prove his eligibility for Relaxation.
+2. If the bidder is a DPIIT registered Startup, the bidder shall be relaxed from the the eligibility criteria of "Bidder
+Turnover" as defined above subject to their meeting of quality and technical specifications. If the bidder is DPIIT
+Registered OEM of the offered products, it would be relaxed from the "OEM Average Turnover" criteria also
+subject to meeting of quality and technical specifications. The bidder seeking Relaxation from Turnover shall
+upload the supporting documents to prove his eligibility for Relax
+
+## RFP
+=== Attachment 1791372547.pdf (85 pages) ===
+Broad Scope of Work of the “Proposed Trade Finance Solution” 
+ 
+The Bank intends to procure an Artificial Intelligence (AI) and Machine Learning 
+(ML) powered, centralized enterprise Trade Finance Solution i.e., ―FXPC‖ solution. 
+The core objective is to achieve Straight Through Processing (STP). The solution 
+will automate the end-to-end transaction lifecycle across a multi-entity 
+environment through intelligent document processing and integrated multi-
+platform connectivity.  
+ 
+Description of the envisaged scope is enumerated below . The bidder needs to 
+quote accordingly in the Commercial Sheet mentioned in Annexure XV.  
+ 
+The Bidder needs to consider and envisage all services that would be required in 
+the Scope and ensure the same is delivered to the Bank. The Bank will not 
+accept any plea of the Bidder later for omission of services on the pretext that 
+the same was not explicitly mentioned in the RFP. 
+ 
+The proposed solution is to be implemented for Front Office Layer (Customer / 
+Branch) for request initiation/generation and Mid Office Layer for assessment, 
+compliance and fulfilment. Mid office layer of function will be undertaken at 
+controlling office at respective centre or any centre as per Bank‘s requirement. 
+Back-office layer for processing, sanctioning, reporting, trade settlement, CBS 
+accounting, charges, GST invoices and SWIFT transmission and others. 
+ 
+Bidder should have a comprehensive migration plan for all outstanding legacy 
+transactions from CBS.  
+ 
+A. General / Common Requirement: 
+ 
+TABLE – 1: 
+Sl. No 
+Particular 
+Clause 
+Section 1 : Technical Requirements 
+I 
+Solution 
+Deployment 
+& 
+Environments, 
+Hardware Sizing 
+The FXPC solution will be hosted in Bank‘s Virtualization Environment based 
+infrastructure set up. Bank will provide below mentioned components only as 
+a part of its Nutanix Virtualization environment. The Infrastructure setup and 
+installation is as per RFP‘s requirement to be done by the bidder only. 
+a. 
+Required 
+
+... scope of work:
+--- (p.36) scope of work 
+> 2 Years 
+ Diploma/ Engineering /Graduate. If a science 
+graduate is proposed, he/she should have 
+passed with at least 2nd division (more than 
+50%). 
+ Should have more than two years of relevant 
+experience in providing L1/L2 trade finance 
+Support for the respective in scope proposed 
+trade finance solution 
+TRADE 
+FINANCE 
+L2 service desk – 
+FXPC Application 
+Management 
+and 
+Finacle 
+Customisations 
+[applicable 
+to 
+FXPC solution] as 
+per 
+the 
+RFP‘s 
+scope of work 
+> 4 Years 
+ Diploma/ Engineering /Graduate. If a science 
+graduate is proposed, he/she should have 
+passed with at least 2nd division (more than 
+50%). 
+ Should have more than four years of relevant 
+experience in providing L2 trade finance 
+Support for the respective in scope proposed 
+trade finance solution and out of those 4 
+years of experience, resource should have at 
+least two years of relevant experience in at 
+least one scheduled commercial Bank in 
+India. 
+TRADE 
+FINANCE 
+L3 service desk – 
+FXPC Application 
+Management 
+> 7 years 
+ Diploma/ Engineering /Graduate. If a science 
+graduate is proposed, he/she should have 
+passed with at least 2nd division (more than 
+50%). 
+
+and 
+Finacle 
+Customisations 
+[applicable 
+to 
+FXPC solution] as 
+per 
+the 
+RFP‘s 
+scope of work 
+ Should have more than seven years of 
+relevant experience in providing L2 trade 
+finance Support for the respective in scope 
+proposed trade finance solution and out of 
+those 7 years of experience, resource should 
+have at least three years of development 
+and/or 
+configuration 
+experience 
+(like 
+resolving 
+complex 
+application 
+bugs, 
+database inconsistencies and intricate system 
+integrations) in at least one scheduled 
+commercial Bank in India. 
+Functional 
+lead/SME of Forex 
+& Trade Finance 
+>5 years 
+Functional Lead /SME of Forex 
+ MBA /MCA/ Engineering/ BSc/ MSc/ Bachelor 
+of Commerce (Hons) / Master of Commerce 
+with PMI certification / Prince2Certification 
+ Should have experience as Business
+--- (p.37) scope of work 
+ Should have more than seven years of 
+relevant experience in providing L2 trade 
+finance Support for the respective in scope 
+proposed trade finance solution and out of 
+those 7 years of experience, resource should 
+have at least three years of development 
+and/or 
+configuration 
+experience 
+(like 
+resolving 
+complex 
+application 
+bugs, 
+database inconsistencies and intricate system 
+integrations) in at least one scheduled 
+commercial Bank in India. 
+Functional 
+lead/SME of Forex 
+& Trade Finance 
+>5 years 
+Functional Lead /SME of Forex 
+ MBA /MCA/ Engineering/ BSc/ MSc/ Bachelor 
+of Commerce (Hons) / Master of Commerce 
+with PMI certification / Prince2Certification 
+ Should have experience as Business Analyst in 
+Forex products at least 5 years in at least one 
+Scheduled Commercial Banks in India / 
+Outside India 
+ 
+Functional Lead /SME of Trade Finance 
+ MBA /MCA/ Engineering/ BSc/ MSc/ Bachelor 
+of Commerce (Hons) / Master of Commerce 
+with PMI certification / Prince2Certification 
+ Should have experience as Business Analyst in 
+Trade Finance Modules at least 5 years in at 
+least one Scheduled Commercial Banks in 
+India / Outside India 
+PMO 
+ 
+ MBA/ MCA/ BCA/ MSc/ BSc/ Engineering/ 
+Bachelor of Commerce (Hons) / Master of 
+Commerce 
+ At least 10 years‘ experience in Project 
+management. 
+ Having 
+experience 
+to 
+lead, 
+coordinate 
+programs and focuses on the successful 
+implementation. 
+ 
+
+12. Roles and Responsibility of Level 1 (L1) Service Desk 
+a. Level 1 (L1) Service desk would need to be setup at the Banks‘ premises 
+b. on all working days of the Bank as per Annexure. 
+c. The Bank reserves the right to increase or decrease the number of seats at 
+L1 helpdesk depending on its requirements at the Bank. The Bank also 
+reserves the right to change the locations of helpdesks at its discretion. The 
+Bidder is expected to quote a per seat rate, which shall be used in case the 
+Bank orders for lesser or more number of seats at the L1 helpdesk
+... lines further in:
+(p.9) The Bidder may use the information provided in the RFP to estimate the
+(p.10) mentioned in this RFP at no extra cost to the Bank during the entire contract
+(p.10) already defined) as per the RFP‘s requirement and scope of work. Access of
+(p.11) of the RFP or any bug or error fixes.
+(p.11) existing scope of work due to statutory, regulatory, industry, Bank‘s
+(p.12) mentioned in this RFP as applicable from time-to-time, at no extra cost to the
+(p.14) Requirement Specifications and as per RFP's scope.
+(p.14) testing as per RFP. In this regard, Bidder needs to submit necessary
+(p.15) Finance functionalities for conducting the testing as per RFP. The external
+(p.16) mentioned in this RFP.
+(p.16) OSD mentioned in this RFP, must be factored by those bidders who
+(p.16) of OSD as mentioned in this RFP. During implementation OEM/OSD
+
+=== Attachment 10000022-17913727169959.pdf (7 pages) ===
+A. Eligibility & Technical Evaluation 
+The Eligibility would be evaluated first for the participating bidders. The bidders, 
+who would qualify all Eligibility Criteria, will be shortlisted for the technical bid 
+evaluation. 
+ 
+The overall technical evaluation will involve scoring on the following aspects- 
+ 
+Sl. 
+No 
+Evaluation 
+Parameter 
+Maximum 
+Score 
+Evaluation Criteria 
+Documentary 
+Evidence 
+1 
+Technical 
+Competence 
+50 
+Qualifying 
+Score: 
+Minimum 35 
+As 
+per 
+TECHNICAL 
+COMPETENCE 
+- 
+SCORING CRITERIA 
+2 
+Technical 
+Presentation / 
+Site Visit 
+50 
+Qualifying 
+Score: 
+Minimum 35 
+ 
+Presentation: 
+Presentation 
+before 
+Bank‟s 
+Technical 
+Committee 
+Site Visit: 
+ Site visit by Bank‟s 
+Technical 
+Committee  
+ Feedback 
+received 
+from 
+respective 
+client sites 
+ Demonstrations 
+of 
+modules 
+3 
+Functional 
+Capability 
+600 
+Qualifying 
+Score: 
+Minimum 420 
+As per EVALUATION OF 
+FUNCTIONAL 
+CAPABILITIES 
+– 
+Annexure XXVI 
+Overall Evaluation 
+700 
+Bidders securing overall score 
+of 490 (70%) 
+and above will be considered as technically 
+qualified bidders.  
+ 
+Bank, at its sole discretion, may relax the cut-
+off score to a lower value, which, in any case, 
+
+the overall score will not be less than 455 
+(65%), subject 
+to 
+have 
+qualifying score for 
+each of the three parameters. 
+ 
+The marks scored out of 700 will be converted into 100 marks. The Technical 
+evaluation will be done on the basis of comply chart provided by bidder as 
+per Scope of work and the overall Score of the bidders as mentioned 
+above. 
+ 
+Evaluation of Technical Competence: 
+ 
+Bidder has to ensure minimum score stipulated by the Bank, for qualifying 
+technical evaluation. In Commercial Evaluation, no weightage will be given 
+for Technical Scoring. 
+TECHNICAL COMPETENCE - SCORING CRITERIA 
+Sl. 
+No 
+Evaluation 
+Parameters 
+Max 
+Marks 
+Scoring 
+Methodology 
+Documentary 
+Evidence 
+1 
+The 
+bidder 
+is 
+an 
+OSD or its authorised 
+representative. 
+10 
+ 10 marks – OSD 
+ 05 marks –
+Authorised          
+... lines further in:
+(p.5) the Bank during RFP bid submission.
+(p.6)  All aspects of requirements in the RFP should be covered in the
+(p.6)  Any assumption, if taken in the response to RFP document should be

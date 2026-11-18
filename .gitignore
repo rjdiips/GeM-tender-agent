@@ -1,0 +1,57 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Tool caches
+.ruff_cache/
+.pytest_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+.deepeval/
+
+# --- Secrets / local config ---
+.env
+.env.*
+!.env.example
+
+# --- Node / web (web/ also has its own .gitignore) ---
+node_modules/
+web/dist/
+
+# --- Runtime data (indexes, caches, checkpoints, logs: ~GBs) ---
+data/*
+!data/.gitkeep
+*.log
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.db
+
+# Per-user / generated knowledge
+knowledge/users/*
+!knowledge/users/.gitkeep
+knowledge/topics/*
+!knowledge/topics/.gitkeep
+
+# --- Docs (kept local, not in git) ---
+docs/
+
+# --- Agent / tooling artifacts ---
+.playwright-mcp/
+graphify-out/
+.claude/settings.local.json
+
+# --- Editors / OS ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

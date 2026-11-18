@@ -1,0 +1,227 @@
+# GEM/2026/B/8244877 — Hiring of Agency for IT Projects- Milestone basis
+Buyer department: Department of Financial Services
+Card: Bank Official Website; hyper-personal interface; MarTech; Chatbot; Voicebot; CRM; Single Data Repository; SSOT; Omni Channel
+
+## Bid document
+बड ववरण/Bid Details
+बड बंद होने क तारख/समय /Bid End Date/Time
+03-12-2026 15:00:00
+बड खुलने क तारख/समय /Bid Opening
+Date/Time
+04-12-2026 15:00:00
+बड पेशकश वैधता (बंद होने क तारख से)/Bid Offer
+Validity (From End Date)
+180 (Days)
+मं ालय/रा!य का नाम/Ministry/State Name
+Ministry Of Finance
+वभाग का नाम/Department Name
+Department Of Financial Services
+संगठन का नाम/Organisation Name
+N/a
+काया%लय का नाम/Office Name
+Central Office Central Bank Of India
+िशकायत िनवारण के संपक% ववरण/ Contact details of
+Grievance redressal
+HOD Email id :con6.dfs.mh@gembuyer.in 
+Buyer Email id: buycon60.dfs.mh@gembuyer.in
+व'तु (ेणी /Item Category
+Hiring of Agency for IT Projects- Milestone basis
+अनुबंध अविध /Contract Period
+ 5 Year(s)
+पछले 3 व-ीय वष/ का बडर का 0यूनतम औसत वाष%क
+व-ीय टन%ओवर/Minimum Average Annual
+Turnover of the bidder (For the last 3
+Financial Years)
+3000 Lakh (s)
+उ0हं/समान सेवा के िलए अपे78त वगत अनुभव के
+वष%/Years of Past Experience Required for
+same/similar service
+5 Year (s)
+टन%ओवर पा ता मानदंड/Turnover eligibility criteria
+To be verified by the buyer at the time of technical
+evaluation
+एमएसएमई के िलए अनुभव के वष/ और टन%ओवर से छूट :दान
+क गई है/MSE Relaxation for Years of
+Experience and Turnover
+No
+'टाट%अप के िलए अनुभव के वष/ और टन%ओवर से छूट :दान
+क गई है /Startup Relaxation for Years of
+Experience and Turnover
+No
+व;ेता से मांगे गए द'तावेज़/Document required
+from seller
+Experience Criteria,Bidder Turnover,Certificate (Requested
+in ATC),OEM Authorization Certificate,OEM Annual
+Turnover,Additional Doc 1 (Requested in ATC)
+*In case any bidder is seeking exemption from Experience /
+Turnover Criteria, the supporting documents to prove his
+eligibility for exemption must be uploaded for evaluation by
+the buyer
+ 
+बड सं=या/Bid Number: GEM/2026/B/8244877
+>दनांक /Dated: 05-11-2026
+बड द'तावेज़ / Bid Document
+1 / 7
+
+Fया आप िनवदाकारH Iारा अपलोड >कए गए द'तावेज़H को
+िनवदा मJ भाग लेने वाले सभी िनवदाकारH को >दखाना
+चाहते हL? संदभ% मेनू है/Do you want to show
+documents uploaded by bidders to all
+bidders participated in bid?
+Yes (Documents submitted as part of a clarification or
+representation during the tender/bid process will also be
+displayed to other participated bidders after log in)
+बड लगाने क समय सीमा 'वतः नहं बढ़ाने के िलए
+आवPयक बड क सं=या। / Minimum number of
+bids required to disable automatic bid
+extension
+2
+>दनH क सं=या, 7जनके िलए बड लगाने क समय-सीमा
+बढ़ाई जाएगी। / Number of days for which Bid
+would be auto-extended
+7
+ऑटो एFसटJशन अिधकतम >कतनी बार >कया जाना है। /
+Number of Auto Extension count
+1
+बड से Uरवस% नीलामी स>;य >कया/Bid to RA enabled
+No
+बड का :कार/Type of Bid
+Two Packet Bid
+तकनीक मूVयांकन के दौरान तकनीक 'पXीकरण हेतु
+अनुमत समय /Time allowed for Technical
+Clarifications during technical evaluation
+3 Days
+Payment Timelines
+Payments shall be made to the Seller within 45 days of
+issue of service delivery acceptance certificate (SDAC) and
+on-line submission of bills (This is in supersession of 10 days
+time as provided in clause 12 of GeM GTC)
+मूVयांकन पYित/Evaluation Method
+Total value wise evaluation
+मूVय दशा%ने वाला व-ीय द'तावेज Zेकअप आवPयक है /
+Financial Document Indicating Price
+Breakup Required
+Yes
+बड ववरण/Bid Details
+ईएमड ववरण/EMD Detail
+एडवाईजर बLक/Advisory Bank
+State Bank of India
+ईएमड रािश/EMD Amount
+3000000
+ईपीबीजी ववरण /ePBG Detail
+आवPयकता/Required
+No
+(a). जेम क शत/ के अनुसार ईएमड छूट के इ\छुक बडर को संबंिधत केटेगर के िलए बड के साथ वैध समिथ%त द'तावेज़ :'तुत करने है। एमएसई
+केटेगर के अंतग%त केवल व'तुओं के िलए विनमा%ता तथा सेवाओं के िलए सेवा :दाता ईएमड से छूट के पा  हL। ^यापाUरयH को इस नीित के दायरे से
+बाहर रखा गया है।/EMD EXEMPTION: The bidder seeking EMD exemption, must submit the valid supporting document
+for the relevant category as per GeM GTC with the bid. Under MSE category, only manufacturers for goods and
+2 / 7
+
+Service Providers for Services are eligible for exemption from EMD. Traders are excluded from the purview of this
+Policy.
+(b).ईएमड और संपादन जमानत रािश, जहां यह लागू होती है, लाभाथ_ के प8 मJ होनी चा>हए। / EMD & Performance security should be
+in favour of Beneficiary, wherever it is applicable.
+(c).ईएमड और संपादन जमानत रािश लाभाथ_ के प8 मJ होनी चा>हए। / Earnest Money Deposit (EMD) shall also be accepted by
+the buyer in the form of a surety bond. 
+लाभाथ_ /Beneficiary : 
+General Manager
+Central Bank of India, NBET Deptt. , Tower 7, CBD Belapur Railway Complex, CBD Belapur - 400614
+(Central Bank Of India)
+बोली वभाजन लागू नहं >कया गया/Bid splitting not applied.
+एमआईआई अनुपालन/MII Compliance
+एमआईआई अनुपालन/MII Compliance
+Yes
+`ेaस भुगतान संबंधी ववरण/TReDS Payment Details
+This Bid provides for Trade Receivables Discounting System (TReDS) as Preferred mode of payment.
+For MSME sellers, payments may be processed through a TReDS exchange in which the Buyer is
+registered, subject to applicable policy and regulatory guidelines. Accordingly, sellers intending to
+avail payment through TReDS are required to be registered with at least one TReDS exchange in
+which the buyer is registered.
+1. The minimum average annual financial turnover of the bidder during the last three years, ending on 31st
+March of the previous financial year, should be as indicated above in the bid document. Documentary evidence in
+the form of certified Audited Balance Sheets of relevant periods or a certificate from the Chartered Accountant /
+Cost Accountant indicating the turnover details for the relevant period shall be uploaded with the bid. In case the
+date of constitution / incorporation of the bidder is less than 3-year-old, the average turnover in respect of the
+completed financial years after the date of constitution shall be taken into account for this criteria. 
+2. Years of Past Experience required: The bidder must have experience for number of years as indicated above in
+bid document (ending month of March prior to the bid opening) of providing similar type of services to any
+Central / State Govt Organization / PSU. Copies of relevant contracts / orders to be uploade
+
+## RFP
+=== Attachment 1793868473.pdf (27 pages) ===
+Scope of Work 
+A. General Scope 
+ 
+1. Bank aims to develop an on-premises website with a hyper-personal interface, wherein it dynamically 
+adapts to each user’s individual needs, preferences, and behavior. The new website will be developed to 
+give new look and feel to attract and service customers from all age groups.  
+2. The bidder should provide required Solution and Facility Management Services including but not limited 
+to following system/services for successful development and operation of Official Website: 
+3. System Software, Utilities, Tools, Database (other than the on-prem components provided by the Bank) 
+for hosting of proposed website in Bank’s Data Centre and Disaster Recovery Centre. 
+4. Development and Maintenance of the proposed website.  
+5. Integration with Bank’s Middleware, Applications and Channels. The proposed Website should be 
+seamlessly integrated with various existing Channels and Business Applications of Bank including but not 
+limited to MarTech, Chatbot, Voicebot, CRM, Single Data Repository, SSOT, Omni Channel, Digital 
+Lending Platform, Bank’s Middleware, Complaint Management System etc. 
+6. Revamped/Developed website should be in alignment with corporate theme using latest web technology 
+to showcase bank’s products & services to current and potential clients in attractive, user friendly and 
+easily navigable manner and also comply with industry standards and guidelines of various regulatory 
+bodies including Reserve Bank of India, Govt. of India etc.  
+7. The site should be developed basis on defined information architecture & best practices for UI/UX. This 
+will create a more engaging and seamless experience for users, ultimately leading to improved satisfaction 
+and conversions.  
+8. The bidder will be responsible for development, deployment and maintenance of the new hyper-personal 
+website at Bank’s Data Centre and Disaster Recovery Centre in active-passive mode that will replace our 
+existing official Website www.centralban
+... lines further in:
+(p.7) requirements and confidentiality obligations under this RFP and the resulting Agreement continue
+(p.8) 8. Dynamic Implementation of RSS Feeds, New Feeds etc. for frequently updated pages like:
+(p.8) 11.1. Administration Interface to initiate new tender of category RFP/EOI/EOV/Sale of Property/Other.
+(p.8) 11.3. Category (RFP — Request for Proposal, EOI – Expression of Interest, SOP
+(p.8) History Section” (Archive”) without giving any option to download the detailed tender document
+(p.12) authority, failing which penalties may apply as per RFP/SLA provisions.
+(p.14) 8.3. Rapid implementation of font changes in line with regulatory, branding or business requirements.
+(p.23) technical intervention. The Bidder shall study the existing Website and RFP requirements to assess
+(p.25) 1.1. The Scope of Work under Website Management and Location Management (Hyperlocal Marketing)
+(p.25) management activities as defined under this RFP and the resulting Agreement. No processing shall
+(p.25) The RFP and subsequent Agreement shall mandatorily include contractual provisions covering the
+(p.26) to the Bank. Implementation of such recommendations shall be subject to prior written approval of
+
+=== Attachment IP_Website_9ca65838-2e52-4593-b58a1793869079104_DPTB_CM03.pdf (7 pages) ===
+Integrity Pact 
+1) Each Participating bidder/s shall submit Integrity Pact as per attached Annexure- 7 duly 
+stamped for ₹500. Integrity pact should be submitted by all participating bidders at the 
+time of submission of bid documents or as per satisfaction of the Bank. The Non 
+submission of Integrity Pact as per time schedule prescribed by Bank may be relevant 
+ground of disqualification for participating in Bid process. 
+2) Bank has appointed Independent External Monitor (hereinafter referred to as IEM) for this 
+pact, whose name and e-mail ID are as follows: 
+• Shri Anant Kumar [mail: anant_in@yahoo.com ] 
+• Shri Nirmal Anand Joseph Deva [mail: meghanadeva2022@gmail.com] 
+• For any clarifications/issues, bidders are requested to contact with Bank’s personnel in 
+the mail-id below before contacting with IEM: 
+agmitinterface@centralbank.bank.in  
+cmneocontent@centralbank.bank.in   
+smneodigimktg@centralbank.bank.in 
+smitnbet@centralbank.bank.in 
+3) IEM’s task shall be to review – independently and objectively, whether and to what extent 
+the parties comply with the obligations under this pact. 
+4) IEM shall not be subjected to instructions by the representatives of the parties and perform 
+his functions neutrally and independently. 
+5) Both the parties accept that the IEM has the right to access all the documents relating to 
+the project/procurement, including minutes of meetings. 
+Annexure 7:  Pre- Contract Integrity Pact 
+(need to be stamped as per law) 
+ 
+This Pre- Contract Integrity Pact is made on this ….. the day of …….. 2026  
+                                      
+Between 
+Central Bank of India, a body corporate constituted under the Banking Companies (Acquisition 
+and Transfer of Undertaking) Act 1970 having its Central Office at Chander Mukhi, Nariman 
+Point, Mumbai and among other department of corporate office, CentNeo , 6th Floor, 7th Tower 
+(CBD Railway station) sector 11 CBD Belapur 400614, hereinafter called “Bank / Principal” 
+which expression sha
+... lines further in:
+(p.4) damages equivalent to earnest money deposit/ bid security, as referenced in the RFP.
+(p.4) value or the amount equivalent to the performance bank guarantee, as referenced in the RFP.
