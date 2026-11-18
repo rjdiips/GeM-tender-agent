@@ -64,7 +64,13 @@ async def backfill_queries(judge: Judge, cache: DocCache, verdicts: VerdictCache
             if dry_run:
                 continue
             verdict = o.verdict.model_copy(update={"queries": found})
-            store.save_outcome(run_id, o.model_copy(update={"verdict": verdict}))
+
+            def set_queries(all_: dict[int, Outcome], b_id: int = b_id, found: QueriesDeadline | None = found) -> list[int]:
+                fresh = all_[b_id]  # read inside the lock: a ruling made meanwhile stays
+                all_[b_id] = fresh.model_copy(update={"verdict": fresh.verdict.model_copy(update={"queries": found})})
+                return [b_id]
+
+            store.update_outcomes(run_id, set_queries)
             cached = verdicts.get(verdict.b_id, verdict.topic_key, verdict.doc_hash)
             if cached and (cached.queries is None or cached.queries.source == "documents"):
                 verdicts.put(cached.model_copy(update={"queries": found}))

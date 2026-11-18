@@ -7,7 +7,7 @@ from gem_agent.agents.judge import QUERIES_INSTRUCTIONS, Judge, doc_hash
 from gem_agent.agents.schemas import Evidence, Verdict
 from gem_agent.cache.docs import DocCache
 from gem_agent.cache.verdicts import VerdictCache
-from gem_agent.graph.store import Outcome, RunRecord, RunStore
+from gem_agent.graph.store import Outcome, RunRecord, RunStore, Ruling
 from gem_agent.jobs.backfill_queries import backfill_queries
 from gem_agent.tools.gem.models import Bid
 from tests.agents.helpers import ScriptedLLM, bid_files
@@ -97,3 +97,24 @@ async def test_redo_reads_document_dates_again_and_keeps_gems(cache, tmp_path):
     out = store.outcomes("r1")
     assert out[1].verdict.queries is None and out[2].verdict.queries.source == "gem_pre_bid"
     assert verdicts.get(1, "t", out[1].verdict.doc_hash).queries is None
+
+
+async def test_a_ruling_made_during_the_backfill_survives_it(cache, tmp_path):
+    store, verdicts = RunStore(tmp_path / "runs"), VerdictCache(cache.root)
+    seed(cache, store, verdicts, "r1", 1, ["Bid 1", "terms"], [COVER, "scope"], relevant=True, stage="judge")
+    judge = Judge(ScriptedLLM({QUERIES_INSTRUCTIONS: [ANSWER]}).model(), cache, verdicts)
+
+    class RulingDuringModelCall:
+        async def find_queries(self, *args, **kwargs):
+            def rule(all_):  # the user rules while the slow model call is under way
+                ruling = Ruling(decision="not", by="you", fact_id="f", fact="x", at=datetime(2026, 11, 18))
+                all_[1] = all_[1].model_copy(update={"ruling": ruling, "undone": True})
+                return [1]
+            store.update_outcomes("r1", rule)
+            return await judge.find_queries(*args, **kwargs)
+
+    await backfill_queries(RulingDuringModelCall(), cache, verdicts, store)
+
+    o = store.outcomes("r1")[1]
+    assert o.verdict.queries is not None  # the backfill still wrote its date
+    assert o.ruling is not None and o.ruling.decision == "not" and o.undone
