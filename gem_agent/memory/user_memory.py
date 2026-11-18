@@ -22,6 +22,10 @@ _FACTS = TypeAdapter(list[MemoryFact])
 RUNS_TO_LEARN = 2
 
 
+class FactNotFound(KeyError):
+    """No such fact, or it was removed: a removed fact is not brought back by an edit."""
+
+
 def _norm(text: str) -> str:
     text = re.sub(r"(\w)'re\b", r"\1 are", text.lower())
     return " ".join(re.findall(r"\w+", text))
@@ -132,13 +136,14 @@ class MemoryStore:
         self._save(user, facts)
 
     def correct(self, user: str, fact_id: str, text: str, *, today: date) -> None:
-        """A correction from the user: it becomes a stated fact."""
+        """A correction from the user: it becomes a stated fact. A removed fact stays removed."""
         facts = self.facts(user)
-        for f in facts:
-            if f.id == fact_id:
-                f.fact, f.source, f.since, f.active, f.removed = text, "stated", today, True, False
-                f.evidence = f"you corrected it on {today:%d %b}"
-                f.strength = max(f.strength, RUNS_TO_LEARN)
+        f = next((f for f in facts if f.id == fact_id and not f.removed), None)
+        if f is None:
+            raise FactNotFound(fact_id)
+        f.fact, f.source, f.since, f.active = text, "stated", today, True
+        f.evidence = f"you corrected it on {today:%d %b}"
+        f.strength = max(f.strength, RUNS_TO_LEARN)
         self._save(user, facts)
 
     def forget_all(self, user: str) -> None:

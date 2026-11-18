@@ -3,10 +3,11 @@ from __future__ import annotations
 
 from typing import Any
 
-from fastapi import APIRouter, Depends, Request, Response
+from fastapi import APIRouter, Depends, HTTPException, Request, Response
 from pydantic import BaseModel
 
 from gem_agent.app.auth import current_user
+from gem_agent.memory.user_memory import FactNotFound
 from gem_agent.tools.gem.models import site_now
 
 router = APIRouter()
@@ -26,7 +27,10 @@ def list_memory(request: Request, user: str = Depends(current_user)) -> list[dic
 
 @router.patch("/api/memory/{fact_id}", status_code=204)
 def edit_memory(fact_id: str, body: Edit, request: Request, user: str = Depends(current_user)) -> Response:
-    request.app.state.memory.correct(user, fact_id, body.text.strip(), today=site_now().date())
+    try:
+        request.app.state.memory.correct(user, fact_id, body.text.strip(), today=site_now().date())
+    except FactNotFound as exc:
+        raise HTTPException(status_code=404, detail="no such fact") from exc
     return Response(status_code=204)
 
 

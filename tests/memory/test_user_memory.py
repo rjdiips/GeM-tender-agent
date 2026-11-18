@@ -128,3 +128,15 @@ def test_apply_cannot_change_a_ruling_by_its_id(tmp_path):
     assert m.facts("asha") == before
     m.forget("asha", r.id)  # the user still can
     assert m.ruling_facts("asha", "AI platform") == []
+
+
+def test_a_removed_fact_cannot_be_corrected(tmp_path):
+    import pytest
+
+    from gem_agent.memory.user_memory import FactNotFound
+    s = store(tmp_path)
+    fid = s.add_stated("asha", "x", run_id="r1", today=D).id
+    s.forget("asha", fid)
+    with pytest.raises(FactNotFound):
+        s.correct("asha", fid, "y", today=D)
+    assert s.facts("asha")[0].removed and s.facts("asha")[0].fact == "x"

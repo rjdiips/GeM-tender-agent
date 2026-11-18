@@ -43,6 +43,7 @@ export default function App({ api, now, initialRunId, pollMs = 3000 }: {
     stop.current?.()
     setPending(null)
     setRun(await api.getRun(runId))
+    setRowErrors({})
     setNotes([])
     setTab('relevant')
   }, [api])
@@ -96,13 +97,30 @@ export default function App({ api, now, initialRunId, pollMs = 3000 }: {
     await api.stop(run.run_id)
   }
 
-  // the bids a ruling or a restore changed replace their rows, keyed by b_id
-  const mergeChanged = (changed: BidResult[]) => setRun(cur => cur && ({
-    ...cur, results: cur.results.map(x => changed.find(c => c.b_id === x.b_id) ?? x),
-  }))
-  const restore = async (b: BidResult) => { if (run) mergeChanged(await api.restore(run.run_id, b.b_id)) }
-  const rule = async (b: BidResult, d: 'counts' | 'not') => { if (run) mergeChanged(await api.rule(run.run_id, b.b_id, d)) }
-  const unrule = async (b: BidResult) => { if (run) mergeChanged(await api.unrule(run.run_id, b.b_id)) }
+  // bids whose ruling, undo or restore is on its way (their buttons are disabled), and the last failure per bid
+  const [pendingBids, setPendingBids] = useState<Set<number>>(new Set())
+  const [rowErrors, setRowErrors] = useState<Record<number, string>>({})
+  // the bids a ruling or a restore changed replace their rows, keyed by b_id, if that run is still the one open
+  const act = async (b: BidResult, call: (runId: string) => Promise<BidResult[]>) => {
+    if (!run || pendingBids.has(b.b_id)) return
+    const runId = run.run_id
+    setPendingBids(p => new Set(p).add(b.b_id))
+    setRowErrors(({ [b.b_id]: _, ...rest }) => rest)
+    try {
+      const changed = await call(runId)
+      setRun(cur => cur && cur.run_id === runId ? {
+        ...cur, results: cur.results.map(x => changed.find(c => c.b_id === x.b_id) ?? x),
+      } : cur)
+      api.listMemory().then(setMemory).catch(() => undefined)  // a ruling adds, replaces or removes a fact
+    } catch {
+      setRowErrors(e => ({ ...e, [b.b_id]: "Couldn't save that. Try again." }))
+    } finally {
+      setPendingBids(p => { const next = new Set(p); next.delete(b.b_id); return next })
+    }
+  }
+  const restore = (b: BidResult) => act(b, id => api.restore(id, b.b_id))
+  const rule = (b: BidResult, d: 'counts' | 'not') => act(b, id => api.rule(id, b.b_id, d))
+  const unrule = (b: BidResult) => act(b, id => api.unrule(id, b.b_id))
 
   const forget = async (f: MemoryFactView) => {
     await api.forgetMemory(f.id)
@@ -126,6 +144,7 @@ export default function App({ api, now, initialRunId, pollMs = 3000 }: {
       <Thread run={run} notes={notes} pending={pending} now={nowIso} theme={theme} onToggleTheme={toggle} onAsk={ask}
               onStop={() => void stopRun()} onShowResults={() => setTab('relevant')} />
       <ResultsPanel run={run} busy={pending !== null || run?.status === 'running'} tab={tab} onTab={setTab} now={nowIso} memory={memory}
+                    pendingBids={pendingBids} rowErrors={rowErrors}
                     onRestore={b => void restore(b)} onRule={(b, d) => void rule(b, d)} onUnrule={b => void unrule(b)} onForget={f => void forget(f)} onEdit={(f, t) => void edit(f, t)} />
     </div>
   )

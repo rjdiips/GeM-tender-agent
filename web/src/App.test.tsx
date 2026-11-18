@@ -144,6 +144,50 @@ describe('web chat', () => {
     expect(api.calls).toContain('unrule r1 5')
   })
 
+  it('disables a bid\'s buttons while its ruling is saved, and shows a failure on the row', async () => {
+    const api = new FakeApi()
+    api.current = run({ results: [bid(), bid({ b_id: 5, bid_number: 'GEM/2026/B/5555', state: 'borderline', relevant: false, question: 'Does it count?' })] })
+    let release = () => {}
+    api.hold = new Promise(r => { release = r })
+    api.fail = true
+    const { user } = setup(api)
+    await user.click(await screen.findByRole('button', { name: 'Counts for me' }))
+    expect(screen.getByRole('button', { name: 'Counts for me' })).toBeDisabled()
+    expect(screen.getByRole('button', { name: "Doesn't count" })).toBeDisabled()
+    await act(async () => release())
+    expect(await screen.findByRole('alert')).toHaveTextContent("Couldn't save that. Try again.")
+    expect(screen.getByRole('button', { name: 'Counts for me' })).toBeEnabled()
+  })
+
+  it('refreshes the Memory tab after a ruling', async () => {
+    const api = new FakeApi()
+    api.current = run({ results: [bid({ b_id: 5, bid_number: 'GEM/2026/B/5555', state: 'borderline', relevant: false, question: 'Does it count?' })] })
+    api.changed = [bid({ b_id: 5, bid_number: 'GEM/2026/B/5555', state: 'relevant', relevant: true, ruling: { decision: 'counts', by: 'you', fact: 'it counts' } })]
+    const { user } = setup(api)
+    await user.click(await screen.findByRole('button', { name: 'Counts for me' }))
+    api.memory = [...api.memory, { id: 'f9', fact: 'it counts', evidence: 'you ruled', source: 'stated', since: '2026-11-18', kind: 'ruling', topic: 'x' }]
+    await user.click(screen.getByRole('button', { name: 'undo' }))
+    await user.click(screen.getByRole('tab', { name: /Memory/ }))
+    expect(await screen.findByText('it counts')).toBeInTheDocument()
+  })
+
+  it('a ruling that comes back after another run was opened is not merged into it', async () => {
+    const api = new FakeApi()
+    api.current = run({ results: [bid({ b_id: 5, bid_number: 'GEM/2026/B/5555', state: 'borderline', relevant: false, question: 'Does it count?' })] })
+    api.changed = [bid({ b_id: 5, bid_number: 'GEM/2026/B/5555', state: 'relevant', relevant: true, ruling: { decision: 'counts', by: 'you', fact: 'it counts' } })]
+    let release = () => {}
+    api.hold = new Promise(r => { release = r })
+    const { user } = setup(api)
+    await user.click(await screen.findByRole('button', { name: 'Counts for me' }))
+    api.current = run({ run_id: 'r0', title: 'AML software for banks',
+      results: [bid({ b_id: 5, bid_number: 'GEM/2026/B/5555', state: 'borderline', relevant: false, question: 'Other run?' })] })
+    await user.click(screen.getByText('AML software for banks'))
+    expect(await screen.findByText('Other run?')).toBeInTheDocument()
+    await act(async () => release())
+    expect(screen.getByText('Other run?')).toBeInTheDocument()
+    expect(screen.queryByText(/it counts/)).not.toBeInTheDocument()
+  })
+
   it('shows memory with its source and forgets a fact', async () => {
     const { api, user } = setup()
     await user.click(await screen.findByRole('tab', { name: /Memory/ }))

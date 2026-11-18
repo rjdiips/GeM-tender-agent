@@ -49,6 +49,7 @@ class RunManager:
     def __init__(self, services: Services) -> None:
         self.s = services
         self._tasks: dict[str, asyncio.Task[None]] = {}
+        self._rule_locks: dict[str, asyncio.Lock] = {}
 
     # --- asking ---------------------------------------------------------------------------------------------------
 
@@ -182,25 +183,36 @@ class RunManager:
 
     # --- actions --------------------------------------------------------------------------------------------------
 
+    def _ruling_lock(self, run_id: str) -> asyncio.Lock:
+        """One rule / undo / restore at a time per run, so a double click cannot write two facts.
+        Model calls may run under it; the store's outcomes lock is a different (file) lock."""
+        return self._rule_locks.setdefault(run_id, asyncio.Lock())
+
     async def restore(self, user: str, run_id: str, b_id: int) -> list[dict[str, Any]]:
         """Move a quarantined bid back to relevant; recorded for the memory step (spec 5.5).
         A bid the user ruled "doesn't count" is re-ruled "counts" instead, so the fact follows the click."""
         self._own(user, run_id)
-        outcome = self.s.store.outcomes(run_id)[b_id]
-        if outcome.ruling and outcome.ruling.decision == "not":
-            return await self.rule(user, run_id, b_id, "counts")
+        async with self._ruling_lock(run_id):
+            outcome = self.s.store.outcomes(run_id)[b_id]
+            if outcome.ruling and outcome.ruling.decision == "not":
+                return await self._rule(user, run_id, b_id, "counts")
 
-        def mark(all_: dict[int, Outcome]) -> list[int]:
-            all_[b_id] = all_[b_id].model_copy(update={"restored": True})
-            return [b_id]
+            def mark(all_: dict[int, Outcome]) -> list[int]:
+                all_[b_id] = all_[b_id].model_copy(update={"restored": True})
+                return [b_id]
 
-        changed = self.s.store.update_outcomes(run_id, mark)
-        self._signal(run_id, "restored", b_id)
-        return [bid_result(run_id, o) for o in changed.values()]
+            changed = self.s.store.update_outcomes(run_id, mark)
+            self._signal(run_id, "restored", b_id)
+            return [bid_result(run_id, o) for o in changed.values()]
 
     async def rule(self, user: str, run_id: str, b_id: int, decision: Literal["counts", "not"]) -> list[dict[str, Any]]:
-        """The user's call on a borderline bid: it becomes a fact, and other bids it answers are settled by it.
-        Every model call is made before the one write, so none runs while the outcomes lock is held."""
+        """The user's call on a borderline bid: it becomes a fact, and other bids it answers are settled by it."""
+        self._own(user, run_id)
+        async with self._ruling_lock(run_id):
+            return await self._rule(user, run_id, b_id, decision)
+
+    async def _rule(self, user: str, run_id: str, b_id: int, decision: Literal["counts", "not"]) -> list[dict[str, Any]]:
+        """Every model call is made before the one write, so none runs while the outcomes lock is held."""
         s = self.s
         record = self._own(user, run_id)
         o = s.store.outcomes(run_id)[b_id]
@@ -213,9 +225,10 @@ class RunManager:
             return []
         v, today = o.verdict, s.now().date()
         topic = topic_for(record.request, o.group)
-        replaced_own = old.fact_id if old and old.created_fact else None
-        existing = [f for f in s.memory.ruling_facts(user, short_name(topic)) if f.id != replaced_own]
-        replaced: set[str] = set()
+        # The fact behind the bid's current ruling says the opposite: newest wins, so it is replaced whoever made it.
+        contradicted = o.ruling.fact_id if o.ruling and o.ruling.decision != decision else None
+        existing = [f for f in s.memory.ruling_facts(user, short_name(topic)) if f.id != contradicted]
+        replaced: set[str] = {contradicted} if contradicted else set()
         why = f"replaced by your ruling on {o.bid.bid_number} on {today:%d %b}"
         try:
             match = await s.rulings.resolve(topic, v.question, v.reason, existing)
@@ -227,18 +240,16 @@ class RunManager:
             chosen = matched
         else:
             try:
-                text = await s.rulings.write_fact(topic, v.question, decision)
+                text = (await s.rulings.write_fact(topic, v.question, decision)).strip()
             except Exception as exc:
                 raise RulingFailed(str(exc)) from exc
+            if not text:
+                raise RulingFailed("the model wrote an empty fact")
             chosen = s.memory.add_ruling(user, text, topic=short_name(topic), run_id=run_id, today=today,
                                          evidence=f"you ruled on {o.bid.bid_number} on {today:%d %b}")
             ruling = Ruling(decision=decision, by="you", fact_id=chosen.id, fact=chosen.fact, created_fact=True, at=s.now())
             if match and matched:  # the old fact said the opposite
                 replaced.add(matched.id)
-        if replaced_own:
-            replaced.add(replaced_own)
-        for fact_id in replaced:
-            s.memory.forget(user, fact_id, evidence=why)
 
         def stale(x: Outcome) -> bool:  # settled earlier by a fact that was just replaced
             return bool(x.ruling and x.ruling.by == "earlier" and x.ruling.fact_id in replaced)
@@ -247,8 +258,13 @@ class RunManager:
                   if x.b_id != b_id and x.group == o.group and x.verdict and x.verdict.borderline
                   and ((x.ruling is None and not x.undone) or stale(x))]
         settled = {x.b_id: await settle(s, user, topic, x.verdict, facts=[chosen]) for x in others}
+        moved = False
 
         def write(all_: dict[int, Outcome]) -> list[int]:
+            nonlocal moved
+            if all_[b_id].ruling != o.ruling:  # ruled or undone meanwhile by another writer: leave it be
+                moved = True
+                return [b_id]
             all_[b_id] = all_[b_id].model_copy(update={"ruling": ruling, "undone": False})
             changed = [b_id]
             for other_id, x in list(all_.items()):
@@ -263,32 +279,45 @@ class RunManager:
             return changed
 
         changed = s.store.update_outcomes(run_id, write)
+        if moved:
+            if ruling.created_fact:
+                s.memory.forget(user, ruling.fact_id)
+            return [bid_result(run_id, x) for x in changed.values()]
+        for fact_id in replaced:
+            s.memory.forget(user, fact_id, evidence=why)
         self._signal(run_id, "ruled", b_id, decision=decision)
         return [bid_result(run_id, x) for x in changed.values()]
 
     async def unrule(self, user: str, run_id: str, b_id: int) -> list[dict[str, Any]]:
         """Take a ruling back. A fact this click created goes with it, and so do the bids it settled."""
         self._own(user, run_id)
-        ruling = self.s.store.outcomes(run_id)[b_id].ruling
-        if ruling is None:
-            return []
-        own_fact = ruling.by == "you" and ruling.created_fact
-        if own_fact:
-            self.s.memory.forget(user, ruling.fact_id)
+        async with self._ruling_lock(run_id):
+            ruling = self.s.store.outcomes(run_id)[b_id].ruling
+            if ruling is None:
+                return []
+            own_fact = ruling.by == "you" and ruling.created_fact
+            moved = False
 
-        def clear(all_: dict[int, Outcome]) -> list[int]:
-            changed = [b_id]
-            if own_fact:
-                for other_id, x in all_.items():
-                    if other_id != b_id and x.ruling and x.ruling.by == "earlier" and x.ruling.fact_id == ruling.fact_id:
-                        all_[other_id] = x.model_copy(update={"ruling": None})
-                        changed.append(other_id)
-            all_[b_id] = all_[b_id].model_copy(update={"ruling": None, "undone": True})
-            return changed
+            def clear(all_: dict[int, Outcome]) -> list[int]:
+                nonlocal moved
+                if all_[b_id].ruling != ruling:  # changed meanwhile by another writer: leave it be
+                    moved = True
+                    return [b_id]
+                changed = [b_id]
+                if own_fact:
+                    for other_id, x in all_.items():
+                        if other_id != b_id and x.ruling and x.ruling.by == "earlier" and x.ruling.fact_id == ruling.fact_id:
+                            all_[other_id] = x.model_copy(update={"ruling": None})
+                            changed.append(other_id)
+                all_[b_id] = all_[b_id].model_copy(update={"ruling": None, "undone": True})
+                return changed
 
-        changed = self.s.store.update_outcomes(run_id, clear)
-        self._signal(run_id, "unruled", b_id)
-        return [bid_result(run_id, x) for x in changed.values()]
+            changed = self.s.store.update_outcomes(run_id, clear)
+            if not moved:
+                if own_fact:
+                    self.s.memory.forget(user, ruling.fact_id)
+                self._signal(run_id, "unruled", b_id)
+            return [bid_result(run_id, x) for x in changed.values()]
 
     def _signal(self, run_id: str, kind: str, b_id: int, **extra: Any) -> None:
         self.s.store.append_event(run_id, {"type": "signal", "kind": kind, "b_id": b_id, **extra,

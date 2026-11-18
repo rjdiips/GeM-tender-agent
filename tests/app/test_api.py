@@ -415,3 +415,146 @@ async def test_a_contradicting_match_fact_clears_the_bids_it_had_settled(rclient
     s.rulings.answers[SAME] = RulingMatch(fact_id=old.id, decision="counts")
     await rclient.post(rule_url(run_id, 2), json={"decision": "not"})
     assert s.store.outcomes(run_id)[3].ruling is None
+
+
+def slow_rulings(s):
+    """Give every model call a pause, so two requests on one bid overlap as a double click would."""
+    write, resolve = s.rulings.write_fact, s.rulings.resolve
+
+    async def slow_write(*a, **k):
+        await asyncio.sleep(0.05)
+        return await write(*a, **k)
+
+    async def slow_resolve(*a, **k):
+        await asyncio.sleep(0.05)
+        return await resolve(*a, **k)
+    s.rulings.write_fact, s.rulings.resolve = slow_write, slow_resolve
+
+
+async def test_a_double_click_saves_one_fact_and_undo_clears_everything(rclient, ruling_parts):
+    s = ruling_parts[0]
+    slow_rulings(s)
+    run_id = await ruled_run(rclient)
+    await asyncio.gather(rclient.post(rule_url(run_id, 2), json={"decision": "counts"}),
+                         rclient.post(rule_url(run_id, 2), json={"decision": "counts"}))
+    assert (await kinds(rclient)).count("ruling") == 1
+    fact_id = s.store.outcomes(run_id)[2].ruling.fact_id
+    assert s.store.outcomes(run_id)[3].ruling.fact_id == fact_id
+    await rclient.delete(rule_url(run_id, 2))
+    assert await states(rclient, run_id) == {1: ("relevant", None), 2: ("borderline", None), 3: ("borderline", None)}
+    assert "ruling" not in await kinds(rclient)
+
+
+async def test_a_ruling_that_changed_meanwhile_is_left_alone_and_the_new_fact_dropped(rclient, ruling_parts):
+    """Another writer (e.g. another process) rules the bid between our read and our write."""
+    s = ruling_parts[0]
+    run_id = await ruled_run(rclient)
+    other = Ruling(decision="not", by="you", fact_id="elsewhere", fact="x", at=s.now())
+    real = s.store.update_outcomes
+
+    def racing(rid, fn):
+        def meanwhile(all_):
+            all_[2] = all_[2].model_copy(update={"ruling": other})
+            return [2]
+        real(rid, meanwhile)
+        s.store.update_outcomes = real
+        return real(rid, fn)
+    s.store.update_outcomes = racing
+    changed = (await rclient.post(rule_url(run_id, 2), json={"decision": "counts"})).json()["changed"]
+    assert [b["b_id"] for b in changed] == [2] and changed[0]["ruling"]["fact"] == "x"
+    assert "ruling" not in await kinds(rclient)  # the fact this call wrote was forgotten
+    assert s.store.outcomes(run_id)[3].ruling is None
+
+
+async def test_an_undo_of_a_ruling_that_changed_meanwhile_is_left_alone(rclient, ruling_parts):
+    s = ruling_parts[0]
+    run_id = await ruled_run(rclient)
+    await rclient.post(rule_url(run_id, 2), json={"decision": "counts"})
+    mine = s.store.outcomes(run_id)[2].ruling.fact_id
+    other = Ruling(decision="not", by="you", fact_id="elsewhere", fact="x", at=s.now())
+    real = s.store.update_outcomes
+
+    def racing(rid, fn):
+        def meanwhile(all_):
+            all_[2] = all_[2].model_copy(update={"ruling": other})
+            return [2]
+        real(rid, meanwhile)
+        s.store.update_outcomes = real
+        return real(rid, fn)
+    s.store.update_outcomes = racing
+    changed = (await rclient.delete(rule_url(run_id, 2))).json()["changed"]
+    assert [b["b_id"] for b in changed] == [2] and changed[0]["ruling"]["fact"] == "x"
+    assert not s.store.outcomes(run_id)[2].undone
+    assert [f["id"] for f in (await rclient.get("/api/memory")).json() if f["kind"] == "ruling"] == [mine]
+
+
+async def test_a_blank_fact_from_the_writer_is_502_and_changes_nothing(rclient, ruling_parts):
+    s = ruling_parts[0]
+
+    async def blank(*a, **k):
+        return "   "
+    s.rulings.write_fact = blank
+    run_id = await ruled_run(rclient)
+    before = s.store.outcomes(run_id)
+    assert (await rclient.post(rule_url(run_id, 2), json={"decision": "counts"})).status_code == 502
+    assert "ruling" not in await kinds(rclient) and s.store.outcomes(run_id) == before
+
+
+async def test_re_ruling_against_a_reused_fact_replaces_it_without_the_model_matching_it(rclient, ruling_parts):
+    s = ruling_parts[0]
+    run_id = await ruled_run(rclient)
+    old = s.memory.add_ruling("asha", "Add-ons count.", topic="Loan Origination System", run_id="r0", today=s.now().date(),
+                              evidence="e")
+    s.rulings.answers[SAME] = RulingMatch(fact_id=old.id, decision="counts")
+    s.rulings.match_first = {}
+    await rclient.post(rule_url(run_id, 2), json={"decision": "counts"})  # reuses `old`; bid 3 settled by it
+    assert s.store.outcomes(run_id)[2].ruling.fact_id == old.id and not s.store.outcomes(run_id)[2].ruling.created_fact
+    s.rulings.answers = {}  # the model no longer matches the old fact
+    await rclient.post(rule_url(run_id, 2), json={"decision": "not"})
+    outcomes = s.store.outcomes(run_id)
+    live = [f["id"] for f in (await rclient.get("/api/memory")).json() if f["kind"] == "ruling"]
+    assert live == [outcomes[2].ruling.fact_id] and old.id not in live  # newest wins: no two facts disagree
+    assert next(f for f in s.memory.facts("asha") if f.id == old.id).evidence.startswith("replaced by your ruling on")
+    assert outcomes[3].ruling is None  # it was settled by the replaced fact
+
+
+async def test_re_ruling_a_bid_settled_by_an_earlier_fact_replaces_that_fact(rclient, ruling_parts):
+    s = ruling_parts[0]
+    run_id = await ruled_run(rclient)
+    old = s.memory.add_ruling("asha", "Add-ons count.", topic="Loan Origination System", run_id="r0", today=s.now().date(),
+                              evidence="e")
+
+    def settle_both(all_):
+        for b in (2, 3):
+            all_[b] = all_[b].model_copy(update={"ruling": Ruling(decision="counts", by="earlier", fact_id=old.id,
+                                                                  fact=old.fact, at=s.now())})
+        return [2, 3]
+    s.store.update_outcomes(run_id, settle_both)
+    s.rulings.match_first = {}
+    await rclient.post(rule_url(run_id, 2), json={"decision": "not"})
+    live = [f["id"] for f in (await rclient.get("/api/memory")).json() if f["kind"] == "ruling"]
+    assert old.id not in live and s.store.outcomes(run_id)[3].ruling is None
+
+
+async def test_one_users_ruling_never_touches_another_users_run(rclient):
+    asha_run = await ruled_run(rclient)
+    await login(rclient, "ravi")
+    ravi_run = (await ask(rclient, "LOS tenders"))[0]["run"]["run_id"]
+    await login(rclient)
+    await rclient.post(rule_url(asha_run, 2), json={"decision": "counts"})
+    await login(rclient, "ravi")
+    assert await states(rclient, ravi_run) == {1: ("relevant", None), 2: ("borderline", None), 3: ("borderline", None)}
+    assert "ruling" not in await kinds(rclient)
+    await login(rclient, "ravi-2")
+    third = (await ask(rclient, "LOS tenders"))[0]["run"]["run_id"]  # a later run of another user is not settled either
+    assert await states(rclient, third) == {1: ("relevant", None), 2: ("borderline", None), 3: ("borderline", None)}
+
+
+async def test_editing_a_removed_fact_is_404_and_does_not_revive_it(rclient, ruling_parts):
+    s = ruling_parts[0]
+    await login(rclient)
+    fact = s.memory.add_stated("asha", "We sell LOS software", run_id="r0", today=s.now().date())
+    s.memory.forget("asha", fact.id)
+    assert (await rclient.patch(f"/api/memory/{fact.id}", json={"text": "back"})).status_code == 404
+    assert (await rclient.get("/api/memory")).json() == []
+    assert (await rclient.patch("/api/memory/nope", json={"text": "x"})).status_code == 404

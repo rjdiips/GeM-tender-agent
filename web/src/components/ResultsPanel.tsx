@@ -9,8 +9,9 @@ import './ResultsPanel.css'
 
 export type Tab = 'relevant' | 'quarantine' | 'memory'
 
-export function ResultsPanel({ run, busy = false, tab, onTab, now, memory, onRestore, onRule, onUnrule, onForget, onEdit }: {
+export function ResultsPanel({ run, busy = false, tab, onTab, now, memory, pendingBids, rowErrors, onRestore, onRule, onUnrule, onForget, onEdit }: {
   run: RunView | null; busy?: boolean; tab: Tab; onTab: (t: Tab) => void; now: string; memory: MemoryFactView[]
+  pendingBids?: Set<number>; rowErrors?: Record<number, string>
   onRestore: (b: BidResult) => void; onRule: (b: BidResult, d: 'counts' | 'not') => void; onUnrule: (b: BidResult) => void
   onForget: (f: MemoryFactView) => void; onEdit: (f: MemoryFactView, text: string) => void
 }) {
@@ -40,9 +41,9 @@ export function ResultsPanel({ run, busy = false, tab, onTab, now, memory, onRes
           {rows.length === 0 && busy && tab === 'relevant' && <Searching />}
           {rows.length === 0 && !(busy && tab === 'relevant') && <div className="gt-none">{tab === 'relevant' ? 'No relevant tenders yet.' : 'Nothing quarantined. Bids ruled out land here with the reason, and can be restored.'}</div>}
           {tab === 'relevant' && borderline.length > 0 && <h3 className="gt-section">Borderline: your call</h3>}
-          {tab === 'relevant' && borderline.map(b => <ResultRow key={b.b_id} bid={b} now={now} grouped={grouped} quarantined={false} onRestore={onRestore} onRule={onRule} onUnrule={onUnrule} />)}
+          {tab === 'relevant' && borderline.map(b => <ResultRow key={b.b_id} bid={b} now={now} grouped={grouped} quarantined={false} pending={pendingBids?.has(b.b_id) ?? false} error={rowErrors?.[b.b_id]} onRestore={onRestore} onRule={onRule} onUnrule={onUnrule} />)}
           {tab === 'relevant' && borderline.length > 0 && relevant.length > 0 && <h3 className="gt-section">Relevant</h3>}
-          {(tab === 'relevant' ? relevant : quarantined).map(b => <ResultRow key={b.b_id} bid={b} now={now} grouped={grouped} quarantined={tab === 'quarantine'} onRestore={onRestore} onRule={onRule} onUnrule={onUnrule} />)}
+          {(tab === 'relevant' ? relevant : quarantined).map(b => <ResultRow key={b.b_id} bid={b} now={now} grouped={grouped} quarantined={tab === 'quarantine'} pending={pendingBids?.has(b.b_id) ?? false} error={rowErrors?.[b.b_id]} onRestore={onRestore} onRule={onRule} onUnrule={onUnrule} />)}
         </>}
       </div>
     </section>
@@ -89,8 +90,8 @@ function plural(n: number, word: string) {
   return `${n} ${word}${n === 1 ? '' : 's'}`
 }
 
-function ResultRow({ bid, now, grouped, quarantined, onRestore, onRule, onUnrule }: {
-  bid: BidResult; now: string; grouped: boolean; quarantined: boolean
+function ResultRow({ bid, now, grouped, quarantined, pending, error, onRestore, onRule, onUnrule }: {
+  bid: BidResult; now: string; grouped: boolean; quarantined: boolean; pending: boolean; error?: string
   onRestore: (b: BidResult) => void; onRule: (b: BidResult, d: 'counts' | 'not') => void; onUnrule: (b: BidResult) => void
 }) {
   const [open, setOpen] = useState(false)
@@ -120,17 +121,19 @@ function ResultRow({ bid, now, grouped, quarantined, onRestore, onRule, onUnrule
           <div className="gt-ask">
             <div className="gt-question">{bid.question}</div>
             <div className="gt-rule-btns">
-              <button className="gt-btn" onClick={() => onRule(bid, 'counts')}>Counts for me</button>
-              <button className="gt-btn" onClick={() => onRule(bid, 'not')}>Doesn't count</button>
+              <button className="gt-btn" disabled={pending} onClick={() => onRule(bid, 'counts')}>Counts for me</button>
+              <button className="gt-btn" disabled={pending} onClick={() => onRule(bid, 'not')}>Doesn't count</button>
             </div>
           </div>
         )}
         {bid.ruling && (
           <div className="gt-ruling">
-            {bid.ruling.by === 'earlier' ? 'decided by your earlier ruling' : 'you ruled'}: "{bid.ruling.fact}"{' '}
-            <button className="gt-a" onClick={() => onUnrule(bid)}>undo</button>
+            {/* a "doesn't count" ruling is already the row's reason ("Your ruling: …"), so only the undo is added */}
+            {bid.ruling.decision !== 'not' && <>{bid.ruling.by === 'earlier' ? 'decided by your earlier ruling' : 'you ruled'}: "{bid.ruling.fact}"{' '}</>}
+            <button className="gt-a" disabled={pending} onClick={() => onUnrule(bid)}>undo</button>
           </div>
         )}
+        {error && <div role="alert" style={{ color: 'var(--bad)', fontSize: 12.5, marginTop: 6 }}>{error}</div>}
         {canOpen && (
           <button className="gt-ev" aria-expanded={open} onClick={() => setOpen(!open)}>
             {n > 0
@@ -146,7 +149,7 @@ function ResultRow({ bid, now, grouped, quarantined, onRestore, onRule, onUnrule
       <div className="gt-num"><div>{money(bid.key_facts?.emd)}</div><div className="gt-k">{bid.key_facts?.min_turnover ? `turnover ${bid.key_facts.min_turnover}` : ''}</div></div>
       <div>
         {quarantined
-          ? <button className="gt-icon-btn" aria-label={`Restore ${bid.bid_number}`} title="Restore" onClick={() => onRestore(bid)}><IconUndo /></button>
+          ? <button className="gt-icon-btn" aria-label={`Restore ${bid.bid_number}`} title="Restore" disabled={pending} onClick={() => onRestore(bid)}><IconUndo /></button>
           : mainFile && <a className="gt-icon-btn" href={mainFile.url} download={mainFile.download_name} aria-label={`Download ${mainFile.name}`} title={`Download ${mainFile.name}`}><IconDownload /></a>}
       </div>
       {open && (

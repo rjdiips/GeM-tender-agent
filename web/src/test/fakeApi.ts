@@ -67,10 +67,18 @@ export class FakeApi implements TenderApi {
   }
   /** What the next rule/unrule/restore call returns as changed bids. */
   changed: BidResult[] = []
-  async rule(runId: string, bId: number, decision: 'counts' | 'not') { this.calls.push(`rule ${runId} ${bId} ${decision}`); return this.changed }
-  async unrule(runId: string, bId: number) { this.calls.push(`unrule ${runId} ${bId}`); return this.changed }
+  /** While set, rule/unrule/restore wait for it; `fail` makes them reject (as a 502 would). */
+  hold: Promise<void> | null = null
+  fail = false
+  private async settle() {
+    if (this.hold) await this.hold
+    if (this.fail) throw new Error('POST: 502')
+  }
+  async rule(runId: string, bId: number, decision: 'counts' | 'not') { this.calls.push(`rule ${runId} ${bId} ${decision}`); await this.settle(); return this.changed }
+  async unrule(runId: string, bId: number) { this.calls.push(`unrule ${runId} ${bId}`); await this.settle(); return this.changed }
   async restore(runId: string, bId: number) {
     this.calls.push(`restore ${runId} ${bId}`)
+    await this.settle()
     return this.changed.length ? this.changed : [bid({ b_id: bId, bid_number: 'GEM/2026/B/8264466', relevant: true, state: 'relevant', restored: true })]
   }
   async listMemory() { return this.memory }

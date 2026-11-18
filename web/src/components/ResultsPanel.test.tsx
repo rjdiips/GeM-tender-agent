@@ -89,6 +89,29 @@ describe('borderline section', () => {
     expect(onUnrule).toHaveBeenCalledWith(expect.objectContaining({ b_id: 6 }))
   })
 
+  it('a bid whose ruling is being saved has its buttons disabled, and a failure shows on its row', () => {
+    const ruled = bid({ b_id: 6, ruling: { decision: 'counts', by: 'you', fact: 'AI counts' } })
+    render(panel([border(), ruled], { pendingBids: new Set([5, 6]), rowErrors: { 6: "Couldn't save that. Try again." } }))
+    expect(screen.getByRole('button', { name: 'Counts for me' })).toBeDisabled()
+    expect(screen.getByRole('button', { name: "Doesn't count" })).toBeDisabled()
+    expect(screen.getByRole('button', { name: 'undo' })).toBeDisabled()
+    expect(screen.getByRole('alert')).toHaveTextContent("Couldn't save that. Try again.")
+  })
+
+  it('a pending quarantined bid cannot be restored twice', () => {
+    const q = bid({ b_id: 7, bid_number: 'GEM/2026/B/7777', state: 'quarantined', relevant: false })
+    render(panel([q], { tab: 'quarantine', pendingBids: new Set([7]) }))
+    expect(screen.getByRole('button', { name: 'Restore GEM/2026/B/7777' })).toBeDisabled()
+  })
+
+  it("a doesn't count bid shows its fact once, with an undo", () => {
+    const q = bid({ b_id: 7, state: 'quarantined', relevant: false, reason: 'Your ruling: AI is not analytics',
+                    ruling: { decision: 'not', by: 'you', fact: 'AI is not analytics' } })
+    render(panel([q], { tab: 'quarantine' }))
+    expect(screen.getAllByText(/AI is not analytics/)).toHaveLength(1)
+    expect(screen.getByRole('button', { name: 'undo' })).toBeInTheDocument()
+  })
+
   it('the zip link is hidden when no bid is relevant, even with borderline bids', () => {
     render(panel([border()]))
     expect(screen.queryByText('.zip')).not.toBeInTheDocument()
