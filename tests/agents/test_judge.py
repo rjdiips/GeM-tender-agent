@@ -186,6 +186,7 @@ def test_every_model_facing_schema_requires_all_its_fields():
     from gem_agent.agents.chat import ChooseOutput, UnderstandOutput
     from gem_agent.agents.memory_step import MemoryProposal
     from gem_agent.agents.planner import plan_output_model
+    from gem_agent.agents.rulings import FactOut, resolve_output_model
     from gem_agent.agents.schemas import (
         JudgeOutput,
         KeyFacts,
@@ -196,7 +197,7 @@ def test_every_model_facing_schema_requires_all_its_fields():
     )
 
     models = [ChooseOutput, UnderstandOutput, MemoryProposal, JudgeOutput, KeyFacts, QueriesOut, MemoryChange, NotesOutput,
-              TriageOutput, plan_output_model(["m"], ["d"], ["c"])]
+              TriageOutput, plan_output_model(["m"], ["d"], ["c"]), resolve_output_model(["f1"]), FactOut]
     for model in models:
         schema = model.model_json_schema()
         assert set(schema.get("required", [])) == set(schema["properties"]), model.__name__
@@ -206,6 +207,7 @@ def test_free_text_in_model_answers_is_bounded():
     # 16 Nov live run: the title screen's free-text reason ran past max_tokens and the JSON was cut off
     from gem_agent.agents.chat import ChooseOutput, TopicOut
     from gem_agent.agents.memory_step import MemoryProposal
+    from gem_agent.agents.rulings import FactOut, resolve_output_model
     from gem_agent.agents.schemas import (
         JudgeOutput,
         KeyFacts,
@@ -227,7 +229,7 @@ def test_free_text_in_model_answers_is_bounded():
                     yield f"{path}{name}[]", p["items"]
 
     for model in (ChooseOutput, TopicOut, MemoryProposal, JudgeOutput, KeyFacts, MemoryChange, NotesOutput, QuoteOut,
-                  TriageOutput, ScreenOutput):
+                  TriageOutput, ScreenOutput, FactOut, resolve_output_model(["f1"])):
         schema = model.model_json_schema()
         for path, prop in strings(schema, schema.get("$defs", {})):
             assert "maxLength" in prop or "enum" in prop, f"{model.__name__}.{path}"
