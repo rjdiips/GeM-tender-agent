@@ -1,6 +1,6 @@
 """Run manager: turns a chat message into a run, an answer, or a follow-on run, and streams the events.
 
-- search: a new run (graph: plan → search → process → report).
+- search: a new run (graph: plan → search → process → search_rest → process → report).
 - refine: a follow-on run carrying the earlier requests as history; cached documents and verdicts are reused.
 - show_rejected / memory_list / memory_forget / other: an answer on the current run's stream, no new run.
 Runs execute as background tasks, so a closed page does not stop them; the stream can be rejoined (events()).

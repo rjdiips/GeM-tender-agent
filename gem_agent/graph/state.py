@@ -7,6 +7,7 @@ from pydantic import BaseModel
 
 from gem_agent.agents.schemas import SearchPlan, TenderRequest
 from gem_agent.agents.searcher import Candidate
+from gem_agent.tools.gem.live import SearchProgress
 
 
 class RunState(BaseModel):
@@ -20,3 +21,6 @@ class RunState(BaseModel):
     adjust: Literal["", "widen", "narrow"] = ""
     retries: int = 0
     done_ids: list[int] = []  # bids already collected and judged (skipped when a run resumes)
+    # first: page 1 of every search is being judged; rest: the remaining pages' new bids; done: both judged (spec 6.2)
+    stage: Literal["first", "rest", "done"] = "first"
+    search_progress: dict[str, dict[str, SearchProgress]] = {}  # topic.key() -> search key -> pages read so far

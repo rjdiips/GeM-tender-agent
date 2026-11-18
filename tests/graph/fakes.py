@@ -18,6 +18,7 @@ from gem_agent.agents.schemas import (
 )
 from gem_agent.agents.searcher import Candidate, SearchResult
 from gem_agent.cache.docs import BidFiles, FileRecord
+from gem_agent.tools.gem.live import SearchProgress
 from gem_agent.tools.gem.models import Bid
 from tests.agents.helpers import LOS
 
@@ -53,14 +54,28 @@ class FakePlanner:
 
 
 class FakeSearcher:
-    def __init__(self, results):  # list of lists of bids, one per call
-        self.results, self.calls = list(results), 0
+    """`results`: the first stage's bids, one list per call (the last repeats). `rest`: the second stage's, likewise.
+    Like the real Searcher, the second stage needs the progress the first returned and leaves out `exclude`."""
 
-    async def search(self, topic: TopicDefinition, plan):
-        bids = self.results[min(self.calls, len(self.results) - 1)]
-        self.calls += 1
+    def __init__(self, results, rest=((),), *, ignore_exclude=False):
+        self.results, self.rest, self.calls, self.rest_calls = list(results), [list(r) for r in rest], 0, 0
+        self.stages, self.excluded, self.ignore_exclude = [], [], ignore_exclude
+
+    async def search(self, topic: TopicDefinition, plan, *, stage="first", progress=None, exclude=frozenset()):
+        self.stages.append(stage)
+        if stage == "first":
+            bids = self.results[min(self.calls, len(self.results) - 1)]
+            self.calls += 1
+        else:
+            if not progress or "fake" not in progress:
+                raise KeyError("fake")  # live.rest without the first stage's progress
+            bids = self.rest[min(self.rest_calls, len(self.rest) - 1)]
+            self.rest_calls += 1
+            self.excluded.append(set(exclude))
+        bids = [b for b in bids if self.ignore_exclude or b.b_id not in exclude]
+        done = SearchProgress(num_found=len(bids), pages_read=1 if stage == "first" else 2, page_count=2)
         return SearchResult(candidates=[Candidate(bid=b, group=topic.meaning.split(":")[0], why=["title words"]) for b in bids],
-                            pool=len(bids) * 3)
+                            pool=len(bids) * 3, progress={**(progress or {}), "fake": done})
 
 
 class FakeCollector:

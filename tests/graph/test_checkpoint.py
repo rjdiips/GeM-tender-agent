@@ -9,6 +9,7 @@ from gem_agent.agents.schemas import SearchPlan, TenderRequest
 from gem_agent.agents.searcher import Candidate
 from gem_agent.graph.checkpoint import checkpoint_types, serializer
 from gem_agent.graph.state import RunState
+from gem_agent.tools.gem.live import SearchProgress
 from gem_agent.tools.gem.models import BidType
 from tests.agents.helpers import LOS
 from tests.graph.fakes import bid
@@ -18,11 +19,14 @@ def full_state() -> RunState:
     return RunState(run_id="r1", user="raj", request=TenderRequest(intent="search", user_text="LOS", topics=[LOS]),
                     plans=[SearchPlan(topic_key=LOS.key(), text="loan origination", terms=["LOS"],
                                       published_from=datetime(2026, 11, 3))],
-                    candidates=[Candidate(bid=bid(7), group="LOS", why=["title"])], done_ids=[7])
+                    candidates=[Candidate(bid=bid(7), group="LOS", why=["title"])], done_ids=[7], stage="rest",
+                    search_progress={LOS.key(): {"fullText:LOS": SearchProgress(num_found=40, pages_read=1, page_count=4),
+                                                 "exact:BANKING SECTOR": SearchProgress(num_found=0, pages_read=0,
+                                                                                        page_count=0, failed=True)}})
 
 
 def test_every_type_the_log_warned_about_is_listed():
-    assert {TenderRequest, SearchPlan, BidType, Candidate, RunState} <= checkpoint_types()
+    assert {TenderRequest, SearchPlan, BidType, Candidate, RunState, SearchProgress} <= checkpoint_types()
 
 
 def test_a_run_state_reloads_whole_without_a_warning(caplog):
@@ -31,6 +35,7 @@ def test_a_run_state_reloads_whole_without_a_warning(caplog):
     with caplog.at_level(logging.WARNING):
         back = serde.loads_typed(serde.dumps_typed(state))
     assert back == state
+    assert back.stage == "rest" and back.search_progress[LOS.key()]["fullText:LOS"].pending
     assert not [r for r in caplog.records if "unregistered" in r.getMessage()]
 
 

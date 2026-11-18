@@ -1,4 +1,10 @@
-"""The run graph (spec 5.1): plan → search → (widen / narrow, at most 2 retries) → process → report.
+"""The run graph (spec 5.1, 6.2): plan → search → (widen / narrow, at most 2 retries) → process → search_rest →
+process → report.
+
+Searching has two stages (spec 6.2): `search` reads page 1 of every search and `process` judges that shortlist, so the
+first verdicts do not wait for a broad search; `search_rest` then reads the remaining pages, and the second `process`
+judges only the bids not seen before. The checkpointed `stage` and `search_progress` let a resumed run carry on at
+the second stage without reading page 1 again.
 
 Understanding happens before the graph (the run manager needs the intent to decide whether there is a run at all).
 `process` collects and judges each candidate, closing soonest first, a few at a time: the bid document first and
@@ -20,6 +26,7 @@ from gem_agent.graph.services import Services
 from gem_agent.graph.state import RunState
 from gem_agent.graph.store import Outcome
 from gem_agent.graph.views import bid_result, bid_state
+from gem_agent.tools.gem.titles import is_vague_title
 
 log = logging.getLogger(__name__)
 MAX_RETRIES = 2
@@ -67,6 +74,10 @@ def running_count(read: int, total: int, outcomes: Iterable[Outcome]) -> str:
     return f"Read {read} of {total} bids: {', '.join(parts)}…"
 
 
+def by_closing(candidates: Iterable[Candidate]) -> list[Candidate]:
+    return sorted(candidates, key=lambda c: c.bid.closing.isoformat() if c.bid.closing else "9")
+
+
 def build_graph(s: Services) -> StateGraph:
     async def plan(state: RunState) -> dict[str, Any]:
         note = WIDEN if state.adjust == "widen" else NARROW if state.adjust == "narrow" else ""
@@ -75,25 +86,56 @@ def build_graph(s: Services) -> StateGraph:
         return {"plans": plans}
 
     async def search(state: RunState) -> dict[str, Any]:
+        """Stage 1: page 1 of every search."""
         merged: dict[int, Candidate] = {}
         pool, over_cap = 0, False
+        search_progress: dict[str, Any] = {}
         for topic, plan_ in zip(state.request.topics, state.plans, strict=True):
-            result = await s.searcher.search(topic, plan_)
+            result = await s.searcher.search(topic, plan_, stage="first")
             pool += result.pool
             over_cap |= result.over_cap
+            search_progress[topic.key()] = result.progress
             for c in result.candidates:
                 merged.setdefault(c.bid.b_id, c)
-        candidates = sorted(merged.values(), key=lambda c: c.bid.closing.isoformat() if c.bid.closing else "9")
+        candidates = by_closing(merged.values())
         s.store.save_shortlist(state.run_id, candidates)
         if candidates:
             progress(s, state.run_id, f"Shortlist: {len(candidates)} bids from {pool:,} titles looked at "
                                       "(closing soonest first). Reading documents…")
-        return {"candidates": candidates, "pool": pool, "over_cap": over_cap}
+        return {"candidates": candidates, "pool": pool, "over_cap": over_cap, "search_progress": search_progress}
 
     def after_search(state: RunState) -> str:
-        if state.retries < MAX_RETRIES and (not state.candidates or state.over_cap):
+        if state.stage == "first" and state.retries < MAX_RETRIES and (not state.candidates or state.over_cap):
             return "retry"
         return "process"
+
+    async def search_rest(state: RunState) -> dict[str, Any]:
+        """Stage 2: the remaining pages of every search. Only bids not already in the run are added (and judged)."""
+        seen = {c.bid.b_id for c in state.candidates}
+        new: list[Candidate] = []
+        pool = state.pool
+        search_progress = dict(state.search_progress)
+        for topic, plan_ in zip(state.request.topics, state.plans, strict=True):
+            key = topic.key()
+            if key not in search_progress:  # no stage 1 to continue (a state from before two stages)
+                log.warning("run %s: no stage-1 progress for %s; not searching deeper", state.run_id, key)
+                continue
+            result = await s.searcher.search(topic, plan_, stage="rest", progress=search_progress[key],
+                                             exclude=set(seen))
+            pool += result.pool
+            search_progress[key] = result.progress
+            for c in result.candidates:
+                if c.bid.b_id not in seen:  # the searcher may return a stage-1 bid again; it is judged once
+                    seen.add(c.bid.b_id)
+                    new.append(c)
+        candidates = [*state.candidates, *by_closing(new)]
+        if new:
+            s.store.save_shortlist(state.run_id, candidates)
+            progress(s, state.run_id, f"Searching deeper: {len(new)} more bids to read…")
+        return {"candidates": candidates, "pool": pool, "search_progress": search_progress, "stage": "rest"}
+
+    def after_process(state: RunState) -> str:
+        return "search_rest" if state.stage == "first" else "report"
 
     async def retry(state: RunState) -> dict[str, Any]:
         adjust = "narrow" if state.candidates else "widen"
@@ -135,7 +177,7 @@ def build_graph(s: Services) -> StateGraph:
         if todo:
             count_line(len(done))  # at once, before the first bid finishes
         await asyncio.gather(*(one(c) for c in todo))
-        return {"done_ids": done}
+        return {"done_ids": done, **({"stage": "done"} if state.stage == "rest" else {})}
 
     async def report(state: RunState) -> dict[str, Any]:
         outcomes = list(s.store.outcomes(state.run_id).values())
@@ -150,15 +192,27 @@ def build_graph(s: Services) -> StateGraph:
             text += (" 1 bid needs your call: see Borderline." if borderline == 1
                      else f" {borderline} bids need your call: see Borderline." if borderline else "")
         progress(s, state.run_id, text)
+        await write_cards(state.run_id, [o.bid for o in outcomes if o.files and is_vague_title(o.bid.title)])
         return {}
 
+    async def write_cards(run_id: str, bids: list[Any]) -> None:
+        """Cards for the vague-title bids this run collected (spec 6.2). A failure is logged; the run is still done."""
+        if s.cards is None or not bids:
+            return
+        try:
+            await s.cards(bids)
+        except Exception:  # cards help later searches; they never fail the run
+            log.warning("run %s: writing cards for %d bids failed", run_id, len(bids), exc_info=True)
+
     graph = StateGraph(RunState)
-    for name, fn in (("plan", plan), ("search", search), ("retry", retry), ("process", process), ("report", report)):
+    for name, fn in (("plan", plan), ("search", search), ("retry", retry), ("process", process),
+                     ("search_rest", search_rest), ("report", report)):
         graph.add_node(name, fn)
     graph.add_edge(START, "plan")
     graph.add_edge("plan", "search")
     graph.add_conditional_edges("search", after_search, {"retry": "retry", "process": "process"})
     graph.add_edge("retry", "plan")
-    graph.add_edge("process", "report")
+    graph.add_conditional_edges("process", after_process, {"search_rest": "search_rest", "report": "report"})
+    graph.add_edge("search_rest", "process")
     graph.add_edge("report", END)
     return graph

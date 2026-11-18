@@ -1,4 +1,5 @@
 import asyncio
+import json
 
 import pytest
 
@@ -25,12 +26,12 @@ SIGHT = LOS.model_copy(update={"meaning": "Line of Sight: radio survey for telec
 
 
 def services(tmp_path, *, chat=None, searcher=None, collector=None, judge=None, planner=None, rulings=None,
-             checkpoint=":memory:"):
+             checkpoint=":memory:", cards=None):
     return Services(chat=chat or FakeChat(), planner=planner or FakePlanner(),
                     searcher=searcher or FakeSearcher([[bid(1), bid(2, "Lockers", 18)]]),
                     collector=collector or FakeCollector(), judge=judge or FakeJudge(),
                     store=RunStore(tmp_path / "runs"), bus=EventBus(), memory=MemoryStore(tmp_path), now=lambda: NOW,
-                    checkpoint_path=checkpoint, rulings=rulings)
+                    checkpoint_path=checkpoint, rulings=rulings, cards=cards)
 
 
 async def ask(manager, text, run_id=None, user="asha"):
@@ -172,11 +173,11 @@ async def test_run_view_has_what_the_web_chat_needs(tmp_path):
 
 
 class CrashOnce(FakeSearcher):
-    async def search(self, topic, plan):
+    async def search(self, topic, plan, **kw):
         if self.calls == 0:
             self.calls += 1
             raise RuntimeError("process killed")
-        return await super().search(topic, plan)
+        return await super().search(topic, plan, **kw)
 
 
 async def test_a_crashed_run_resumes_from_its_checkpoint(tmp_path):
@@ -356,3 +357,144 @@ async def test_a_ruling_made_mid_run_reaches_bids_judged_after_it(tmp_path):
     collector.release.set()
     b2 = await result_of(await task, 2)
     assert b2["state"] == "relevant" and b2["ruling"]["by"] == "earlier"
+
+
+# --- two stages: judge page 1, then search deeper (spec 6.2) ---------------------------------------------------------
+
+
+async def test_a_run_judges_page_one_bids_then_searches_deeper_and_judges_the_new_ones(tmp_path):
+    searcher, judge = FakeSearcher([[bid(1), bid(2, closing_day=21)]], rest=[[bid(2, closing_day=21), bid(3, closing_day=19)]]), FakeJudge()
+    s = services(tmp_path, searcher=searcher, judge=judge)
+    events = await ask(RunManager(s), "LOS tenders")
+    assert searcher.stages == ["first", "rest"] and judge.judged == [1, 2, 3]
+    assert searcher.excluded == [{1, 2}]  # every bid already in the run
+    assert [e["bid"]["b_id"] for e in events if e["type"] == "result"] == [1, 2, 3]
+    progress = [e["event"]["text"] for e in events if e["type"] == "progress"]
+    assert "Searching deeper: 1 more bids to read…" in progress
+    assert progress[-1] == "Done: 3 relevant, 0 quarantined."
+    run_id = events[0]["run"]["run_id"]
+    shortlist = json.loads((s.store.root / run_id / "shortlist.json").read_text())
+    assert [r["b_id"] for r in shortlist] == [1, 2, 3]
+
+
+async def test_a_bid_the_second_stage_returns_again_is_judged_once(tmp_path):
+    searcher = FakeSearcher([[bid(1), bid(2)]], rest=[[bid(2), bid(3)]], ignore_exclude=True)
+    judge = FakeJudge()
+    s = services(tmp_path, searcher=searcher, judge=judge)
+    events = await ask(RunManager(s), "LOS tenders")
+    assert sorted(judge.judged) == [1, 2, 3] and len(judge.judged) == 3
+    assert sorted(e["bid"]["b_id"] for e in events if e["type"] == "result") == [1, 2, 3]
+    assert "Searching deeper: 1 more bids to read…" in [e["event"]["text"] for e in events if e["type"] == "progress"]
+
+
+async def test_no_deeper_line_when_the_second_stage_finds_nothing_new(tmp_path):
+    s = services(tmp_path, searcher=FakeSearcher([[bid(1)]], rest=[[bid(1)]]))
+    events = await ask(RunManager(s), "LOS tenders")
+    assert not any(e["event"]["text"].startswith("Searching deeper") for e in events if e["type"] == "progress")
+    assert events[-1] == {"type": "done", "status": "complete"}
+
+
+async def test_the_second_stage_does_not_retry(tmp_path):
+    planner, searcher = FakePlanner(), FakeSearcher([[bid(1)]], rest=[[]])
+    s = services(tmp_path, planner=planner, searcher=searcher)
+    await ask(RunManager(s), "LOS tenders")
+    assert searcher.stages == ["first", "rest"] and len(planner.notes) == 1
+
+
+async def test_bids_found_only_by_the_second_stage_are_reported(tmp_path):
+    s = services(tmp_path, searcher=FakeSearcher([[]], rest=[[bid(3)]]))
+    events = await ask(RunManager(s), "LOS tenders")
+    assert [e["bid"]["b_id"] for e in events if e["type"] == "result"] == [3]
+    assert [e["event"]["text"] for e in events if e["type"] == "progress"][-1] == "Done: 1 relevant, 0 quarantined."
+
+
+async def test_each_meaning_searches_deeper_with_its_own_progress(tmp_path):
+    searcher = FakeSearcher([[bid(1)], [bid(5, "Line of sight survey")]], rest=[[bid(6)], [bid(7)]])
+    s = services(tmp_path, chat=FakeChat(topics=[LOS, SIGHT]), searcher=searcher)
+    events = await ask(RunManager(s), "LOS tenders")
+    assert searcher.stages == ["first", "first", "rest", "rest"]
+    assert searcher.excluded == [{1, 5}, {1, 5, 6}]
+    groups = {e["bid"]["b_id"]: e["bid"]["group"] for e in events if e["type"] == "result"}
+    assert groups == {1: "Loan Origination System", 5: "Line of Sight", 6: "Loan Origination System", 7: "Line of Sight"}
+
+
+class CrashInRest(FakeSearcher):
+    """The process dies once, as stage 2 starts: the last checkpoint is the one after the first `process`."""
+
+    def __init__(self, *a, **kw):
+        super().__init__(*a, **kw)
+        self.crashed = False
+
+    async def search(self, topic, plan, *, stage="first", **kw):
+        if stage == "rest" and not self.crashed:
+            self.crashed = True
+            raise RuntimeError("process killed")
+        return await super().search(topic, plan, stage=stage, **kw)
+
+
+async def test_a_resumed_run_continues_with_the_second_stage(tmp_path):
+    from gem_agent.graph.build import build_graph
+    from gem_agent.graph.checkpoint import checkpointer
+
+    planner, judge = FakePlanner(), FakeJudge()
+    searcher = CrashInRest([[bid(1), bid(2, closing_day=21)]], rest=[[bid(2, closing_day=21), bid(3, closing_day=22)]])
+    s = services(tmp_path, planner=planner, searcher=searcher, judge=judge, checkpoint=tmp_path / "checkpoints.sqlite")
+    manager = RunManager(s)
+    events = await ask(manager, "LOS tenders")
+    run_id = events[0]["run"]["run_id"]
+    assert events[-1] == {"type": "done", "status": "failed"}
+
+    async with checkpointer(s.checkpoint_path) as saver:  # what the run left behind
+        saved = await build_graph(s).compile(checkpointer=saver).aget_state({"configurable": {"thread_id": run_id}})
+    assert saved.next == ("search_rest",)
+    assert saved.values["stage"] == "first" and saved.values["done_ids"] == [1, 2]
+    assert saved.values["search_progress"][LOS.key()]["fake"].pages_read == 1
+
+    searcher.stages.clear()
+    judged_before = list(judge.judged)
+    await manager.resume(run_id)
+    assert searcher.stages == ["rest"] and len(planner.notes) == 1  # neither planned nor searched again
+    assert judged_before == [1, 2] and judge.judged[len(judged_before):] == [3]
+    assert s.store.load(run_id).status == "complete"
+    assert sorted(manager.view("asha", run_id)["results"], key=lambda b: b["b_id"])[2]["b_id"] == 3
+
+
+# --- cards after the run ---------------------------------------------------------------------------------------------
+
+VAGUE = "Hiring of Agency for IT Projects- Milestone basis"
+
+
+class Cards:
+    def __init__(self, fail=False):
+        self.calls, self.fail = [], fail
+
+    async def __call__(self, bids):
+        self.calls.append(list(bids))
+        if self.fail:
+            raise RuntimeError("model down")
+
+
+async def test_cards_are_written_for_vague_bids_collected_in_the_run(tmp_path):
+    vague_bid, failed_vague = bid(2, VAGUE, 18), bid(4, VAGUE, 19)
+    cards = Cards()
+    s = services(tmp_path, searcher=FakeSearcher([[bid(1), vague_bid, failed_vague]]),
+                 collector=FakeCollector(fail={4}), cards=cards)
+    events = await ask(RunManager(s), "LOS tenders")
+    assert cards.calls == [[vague_bid]]  # bid 1 has a plain title; bid 4 collected nothing
+    assert events[-1] == {"type": "done", "status": "complete"}
+
+
+async def test_no_cards_are_asked_for_when_no_vague_bid_was_collected(tmp_path):
+    cards = Cards()
+    s = services(tmp_path, cards=cards)
+    await ask(RunManager(s), "LOS tenders")
+    assert cards.calls == []
+
+
+async def test_a_card_failure_does_not_fail_the_run(tmp_path):
+    cards = Cards(fail=True)
+    s = services(tmp_path, searcher=FakeSearcher([[bid(2, VAGUE)]]), cards=cards)
+    events = await ask(RunManager(s), "LOS tenders")
+    final_message = [e["event"]["text"] for e in events if e["type"] == "progress"][-1]
+    assert cards.calls and final_message.startswith("Done:")
+    assert events[-1] == {"type": "done", "status": "complete"}
