@@ -24,6 +24,10 @@ class HostNotAllowed(ValueError):
     """The URL's host is outside the allowlist."""
 
 
+def host_allowed(host: str, suffix: str) -> bool:
+    return bool(host) and (host == suffix or host.endswith("." + suffix))
+
+
 class GemHttpError(Exception):
     """A request still failed after all retries."""
 
@@ -73,7 +77,13 @@ class HostClient:
             headers={"User-Agent": self._settings.user_agent},
             follow_redirects=True,
             timeout=self._settings.http_timeout_s,
+            # httpx runs request hooks before every hop, so a redirect cannot leave the allowlist.
+            event_hooks={"request": [self._check_host]},
         )
+
+    async def _check_host(self, request: httpx.Request) -> None:
+        if not host_allowed(request.url.host, self._settings.allowed_host_suffix):
+            raise HostNotAllowed(str(request.url))
 
     async def reset(self) -> None:
         """Fresh session: new cookie jar and connections."""
@@ -148,9 +158,7 @@ class ClientPool:
         return cls(settings=settings, shared_dir=settings.rate_limit_dir)
 
     def is_allowed(self, url: str) -> bool:
-        host = httpx.URL(url).host
-        suffix = self.settings.allowed_host_suffix
-        return host == suffix or host.endswith("." + suffix)
+        return host_allowed(httpx.URL(url).host, self.settings.allowed_host_suffix)
 
     def client_for(self, url: str) -> HostClient:
         if not self.is_allowed(url):

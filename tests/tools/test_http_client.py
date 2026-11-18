@@ -155,3 +155,17 @@ async def test_csrf_post_403_gets_a_new_token_on_the_first_retry(gem, clock):
     assert resp.status_code == 200
     paths = [r.url.path for r in gem.requests]
     assert paths == ["/advance-search", "/public-bid-other-details/1", "/advance-search", "/public-bid-other-details/1"]
+
+
+async def test_redirect_to_host_outside_allowlist_is_refused(gem, clock):
+    gem.add("GET", f"{BIDPLUS}/go", lambda r: httpx.Response(302, headers={"Location": "http://169.254.169.254/x"}))
+    pool = make_pool(gem, clock)
+    with pytest.raises(HostNotAllowed):
+        await pool.request("GET", f"{BIDPLUS}/go")
+
+
+async def test_redirect_within_allowlist_is_followed(gem, clock):
+    gem.add("GET", f"{BIDPLUS}/go", lambda r: httpx.Response(302, headers={"Location": f"{BIDPLUS}/there"}))
+    gem.add("GET", f"{BIDPLUS}/there", lambda r: httpx.Response(200, text="ok"))
+    pool = make_pool(gem, clock)
+    assert (await pool.request("GET", f"{BIDPLUS}/go")).text == "ok"

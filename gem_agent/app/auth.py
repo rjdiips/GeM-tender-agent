@@ -7,7 +7,8 @@ import re
 from fastapi import HTTPException, Request, Response
 
 COOKIE = "gem_user"
-_NAME = re.compile(r"^[\w.@-]{1,64}$")
+# Names become folder names under knowledge/, so "." and ".." (and other dot-only names) are refused.
+_NAME = re.compile(r"^(?!\.+$)[\w.@-]{1,64}$")
 
 
 def current_user(request: Request) -> str:

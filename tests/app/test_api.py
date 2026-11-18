@@ -52,6 +52,13 @@ async def test_needs_sign_in(client):
     assert (await client.get("/api/runs")).status_code == 401
 
 
+@pytest.mark.parametrize("name", [".", "..", "...."])
+async def test_dot_only_names_are_refused(client, name):
+    assert (await client.post("/api/login", json={"name": name})).status_code == 422
+    client.cookies.set("gem_user", name)
+    assert (await client.get("/api/me")).status_code == 401
+
+
 async def test_sign_in_and_me(client):
     await login(client)
     assert (await client.get("/api/me")).json() == {"name": "asha", "org": "finsurge"}
