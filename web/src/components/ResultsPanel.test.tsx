@@ -1,5 +1,9 @@
 import { render, screen } from '@testing-library/react'
-import { describe, expect, it } from 'vitest'
+import userEvent from '@testing-library/user-event'
+import { describe, expect, it, vi } from 'vitest'
+import type { BidResult } from '../api/types'
+import { bid, NOW, run } from '../test/fakeApi'
+import { ResultsPanel } from './ResultsPanel'
 import { money } from '../lib/money'
 import { QueriesBy } from './QueriesBy'
 import { Urgency } from './Urgency'
@@ -41,5 +45,59 @@ describe('result details', () => {
     rerender(<QueriesBy queries={{ ...q, source: 'gem_pre_bid' }} now="2026-11-17T10:00:00" />)
     expect(screen.getByText('pre-bid')).toBeInTheDocument()
     expect(container.firstElementChild!.getAttribute('title')).toContain('Pre-bid meeting')
+  })
+})
+
+describe('borderline section', () => {
+  const border = () => bid({ b_id: 5, bid_number: 'GEM/2026/B/5555', state: 'borderline', relevant: false,
+    question: 'Does AI-enabled analytics count as AI software?', reason: 'Analytics with some ML.' })
+  const panel = (results: BidResult[], over: Partial<React.ComponentProps<typeof ResultsPanel>> = {}) => (
+    <ResultsPanel run={run({ results })} tab="relevant" onTab={() => {}} now={NOW} memory={[]}
+                  onRestore={() => {}} onRule={() => {}} onUnrule={() => {}} onForget={() => {}} onEdit={() => {}} {...over} />)
+
+  it('borderline bids sit above the relevant ones with their question and two buttons', () => {
+    render(panel([bid(), border()]))
+    const heading = screen.getByRole('heading', { name: 'Borderline: your call' })
+    expect(screen.getByText('Does AI-enabled analytics count as AI software?')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Counts for me' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: "Doesn't count" })).toBeInTheDocument()
+    const tab = screen.getByRole('tab', { name: /Relevant 1/ })
+    expect(tab).toHaveTextContent('1 to decide')
+    expect(heading.compareDocumentPosition(screen.getByText('GEM/2026/B/8162911')) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+  })
+
+  it('shows no Borderline section when nothing is borderline', () => {
+    render(panel([bid()]))
+    expect(screen.queryByRole('heading', { name: /Borderline/ })).not.toBeInTheDocument()
+  })
+
+  it('clicking a ruling button calls onRule', async () => {
+    const onRule = vi.fn()
+    render(panel([border()], { onRule }))
+    await userEvent.click(screen.getByRole('button', { name: 'Counts for me' }))
+    expect(onRule).toHaveBeenCalledWith(expect.objectContaining({ b_id: 5 }), 'counts')
+    await userEvent.click(screen.getByRole('button', { name: "Doesn't count" }))
+    expect(onRule).toHaveBeenLastCalledWith(expect.objectContaining({ b_id: 5 }), 'not')
+  })
+
+  it('a bid decided by an earlier ruling shows the ruling and an undo link', async () => {
+    const onUnrule = vi.fn()
+    const ruled = bid({ b_id: 6, ruling: { decision: 'counts', by: 'earlier', fact: 'AI that is analytics' } })
+    render(panel([ruled], { onUnrule }))
+    expect(screen.getByText('decided by your earlier ruling: "AI that is analytics"')).toBeInTheDocument()
+    await userEvent.click(screen.getByRole('button', { name: 'undo' }))
+    expect(onUnrule).toHaveBeenCalledWith(expect.objectContaining({ b_id: 6 }))
+  })
+
+  it('the zip link is hidden when no bid is relevant, even with borderline bids', () => {
+    render(panel([border()]))
+    expect(screen.queryByText('.zip')).not.toBeInTheDocument()
+  })
+
+  it('memory lists a ruling fact with its topic', () => {
+    render(panel([], { tab: 'memory', memory: [{ id: 'f9', fact: 'AI that is analytics counts', evidence: 'you ruled on 18 Nov', source: 'stated',
+      since: '2026-11-18', kind: 'ruling', topic: 'AI software' }] }))
+    expect(screen.getByText('AI that is analytics counts')).toBeInTheDocument()
+    expect(screen.getByText('ruling · AI software')).toBeInTheDocument()
   })
 })

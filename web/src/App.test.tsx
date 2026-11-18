@@ -108,7 +108,7 @@ describe('web chat', () => {
 
   it('marks a bid whose documents could not be fetched as not read', async () => {
     const api = new FakeApi()
-    api.current = run({ results: [bid({ relevant: false, files: [], evidence: [], error: '403',
+    api.current = run({ results: [bid({ relevant: false, state: 'quarantined', files: [], evidence: [], error: '403',
                                         reason: 'Not read: GeM refused the request (403) when its documents were fetched.' })] })
     const { user } = setup(api)
     await user.click(await screen.findByRole('tab', { name: /Quarantine/ }))
@@ -128,6 +128,20 @@ describe('web chat', () => {
     await user.click(screen.getByRole('button', { name: 'Restore GEM/2026/B/8264466' }))
     expect(api.calls).toContain('restore r1 2')
     expect(screen.getByRole('tab', { name: /Relevant 2/ })).toBeInTheDocument()
+  })
+
+ it('replaces rows with the bids a ruling changed', async () => {
+    const api = new FakeApi()
+    api.current = run({ results: [bid(), bid({ b_id: 5, bid_number: 'GEM/2026/B/5555', state: 'borderline', relevant: false, question: 'Does it count?' })] })
+    api.changed = [bid({ b_id: 5, bid_number: 'GEM/2026/B/5555', state: 'relevant', relevant: true,
+                         ruling: { decision: 'counts', by: 'you', fact: 'it counts' } })]
+    const { user } = setup(api)
+    await user.click(await screen.findByRole('button', { name: 'Counts for me' }))
+    expect(api.calls).toContain('rule r1 5 counts')
+    expect(await screen.findByRole('tab', { name: /Relevant 2/ })).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: /Borderline/ })).not.toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: 'undo' }))
+    expect(api.calls).toContain('unrule r1 5')
   })
 
   it('shows memory with its source and forgets a fact', async () => {

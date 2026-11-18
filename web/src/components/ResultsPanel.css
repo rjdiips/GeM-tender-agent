@@ -54,3 +54,14 @@ a.gt-file:hover { border-color: var(--acc-line) }
 
 /* what the quotes prove: anything short of the documents is shown as a warning */
 .gt-proof.title, .gt-proof.none { color: var(--warn) }
+
+/* borderline: the user is asked to decide */
+.gt-section { margin: 0; padding: 12px 16px 6px; font-size: 10.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--warn) }
+.gt-todecide { font-size: 11px; color: var(--warn); background: var(--warn-d); border-radius: 6px; padding: 0 5px }
+.gt-ask { margin-top: 8px }
+.gt-question { color: var(--warn); font-size: 12.5px; font-weight: 500 }
+.gt-rule-btns { display: flex; gap: 8px; margin-top: 8px }
+.gt-btn { border: 1px solid var(--line); background: var(--raise); color: var(--ink); border-radius: 7px; padding: 4px 10px; font-size: 12.5px }
+.gt-btn:hover { border-color: var(--acc-line) }
+.gt-ruling { margin-top: 6px; font-size: 12px; color: var(--mute) }
+.gt-srctag.ruling { color: var(--warn); background: var(--warn-d); text-transform: none; letter-spacing: 0 }

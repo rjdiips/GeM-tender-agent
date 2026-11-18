@@ -12,13 +12,13 @@ const files = (...f: [string, number, BidResult['files'][number]['status'], stri
 const RESULTS: BidResult[] = [
   { b_id: 10133210, bid_number: 'GEM/2026/B/8263340', title: 'Hiring of Consultants - Milestone/Deliverable Based - Management Consultants, Functional Consultant',
     buyer: 'Ministry of Finance / Department of Financial Services', buyer_org: 'NaBFID', published: '2026-11-11T14:22:45', closing: '2026-11-18T15:00:00',
-    relevant: true, restored: false, confidence: 0.86, reason: 'A public sector bank is hiring functional consultants to redesign retail lending processes.',
+    relevant: true, state: 'relevant', question: '', ruling: null, restored: false, confidence: 0.86, reason: 'A public sector bank is hiring functional consultants to redesign retail lending processes.',
     evidence: [{ quote: 'The consultant shall assist the Bank in re-engineering its retail credit processes and branch operating model', file: 'RFP_Consultancy.pdf', file_name: 'RFP for Functional Consultants (Retail Lending)', page: 12, verified: true }],
     key_facts: { emd: 'Rs 10,00,000', min_turnover: 'Rs 50 crore', contract_period: '18 months', estimated_value: null, scope_summary: null },
     files: files(['Bid document', 6, 'ok', 'GeM-Bidding-10133210.pdf'], ['RFP for Functional Consultants (Retail Lending)', 64, 'ok', 'RFP_Consultancy.pdf']), needs_review: false, gem_url: gem(10133210), group: 'Management consultancy', error: '' },
   { b_id: 10037444, bid_number: 'GEM/2026/B/8162911', title: 'Hiring of Consultants - Milestone/Deliverable Based - Management Consultants, AS PER RFP; Business Transformation Expert',
     buyer: 'Ministry of Finance / Department of Financial Services', buyer_org: 'Bank of Maharashtra', published: '2026-10-14T11:02:00', closing: '2026-11-23T16:00:00',
-    relevant: true, restored: false, confidence: 1, reason: 'The tender hires management consultants for organisational and business transformation within a public sector bank.',
+    relevant: true, state: 'relevant', question: '', ruling: null, restored: false, confidence: 1, reason: 'The tender hires management consultants for organisational and business transformation within a public sector bank.',
     evidence: [
       { quote: 'The scope of Project Muskaan shall encompass Retail Operations and Branch Banking across both asset and liability products, including centralization of activities', file: 'MUSKANrfp.pdf', file_name: 'RFP for Project Muskaan', page: 30, verified: true },
       { quote: 'Bidder should have experience of minimum 5 years in providing the Services in field of consultancy in organizational transformation', file: 'MUSKANrfp.pdf', file_name: 'RFP for Project Muskaan', page: 37, verified: true }],
@@ -27,11 +27,11 @@ const RESULTS: BidResult[] = [
     needs_review: false, gem_url: gem(10037444), group: 'Management consultancy', error: '' },
   { b_id: 10164020, bid_number: 'GEM/2026/B/8264466', title: 'Financial Audit Services - Concurrent Audit of Digital Banking Operations; CA Firm',
     buyer: 'Ministry of Finance / Department of Financial Services', buyer_org: 'Bank of Baroda', published: '2026-11-16T12:01:10', closing: '2026-12-07T17:00:00',
-    relevant: false, restored: false, confidence: 0.8, reason: 'Concurrent audit by a CA firm: audit services are related but not management consultancy.',
+    relevant: false, state: 'quarantined', question: '', ruling: null, restored: false, confidence: 0.8, reason: 'Concurrent audit by a CA firm: audit services are related but not management consultancy.',
     evidence: [{ quote: 'Appointment of Chartered Accountant firms for concurrent audit of digital banking operations', file: 'Audit_Scope.pdf', file_name: 'Scope of Work', page: 2, verified: true }],
     key_facts: null, files: files(['Bid document', 5, 'ok', 'GeM-Bidding-10164020.pdf'], ['Scope of Work', 14, 'ok', 'Audit_Scope.pdf']), needs_review: false, gem_url: gem(10164020), group: 'Management consultancy', error: '' },
   { b_id: 10170330, bid_number: 'GEM/2026/B/8269932', title: 'Cyber Security Audit - CSCRF', buyer: 'Ministry of Finance / Department of Financial Services', buyer_org: 'Bank of Baroda',
-    published: '2026-11-12T22:30:31', closing: '2026-11-19T09:00:00', relevant: false, restored: false, confidence: 0.85,
+    published: '2026-11-12T22:30:31', closing: '2026-11-19T09:00:00', relevant: false, state: 'borderline', question: 'Does a cyber security audit count as consultancy for you?', ruling: null, restored: false, confidence: 0.85,
     reason: 'A cyber security audit under SEBI CSCRF, not a consultancy engagement.',
     evidence: [{ quote: 'Conduct of cyber security audit in line with the SEBI Cybersecurity and Cyber Resilience Framework', file: 'GeM-Bidding-10170330.pdf', file_name: 'Bid document', page: 3, verified: true }],
     key_facts: null, files: files(['Bid document', 5, 'ok', 'GeM-Bidding-10170330.pdf']), needs_review: false, gem_url: gem(10170330), group: 'Management consultancy', error: '' },
@@ -58,9 +58,9 @@ const RUNS: RunListItem[] = [
 
 export class MockApi implements TenderApi {
   private memory: MemoryFactView[] = [
-    { id: 'm1', fact: 'Interested in bank, NBFC and financial-regulator IT tenders', evidence: 'kept 11 of 11 bids from such buyers', source: 'learned', since: '2026-11-18' },
-    { id: 'm2', fact: 'LOS = Loan Origination System', evidence: 'downloaded the banking group twice; ignored Line of Sight', source: 'learned', since: '2026-11-19' },
-    { id: 'm3', fact: 'We sell AML and LOS software to banks', evidence: 'you said so on 20 Nov', source: 'stated', since: '2026-11-20' },
+    { id: 'm1', fact: 'Interested in bank, NBFC and financial-regulator IT tenders', evidence: 'kept 11 of 11 bids from such buyers', source: 'learned', since: '2026-11-18', kind: 'general', topic: '' },
+    { id: 'm2', fact: 'LOS = Loan Origination System', evidence: 'downloaded the banking group twice; ignored Line of Sight', source: 'learned', since: '2026-11-19', kind: 'general', topic: '' },
+    { id: 'm3', fact: 'We sell AML and LOS software to banks', evidence: 'you said so on 20 Nov', source: 'stated', since: '2026-11-20', kind: 'general', topic: '' },
   ]
   private delayMs: number
   constructor(delayMs = 700) {
@@ -87,7 +87,17 @@ export class MockApi implements TenderApi {
     return () => timers.forEach(clearTimeout)
   }
   async stop() {}
-  async restore() {}
+  async rule(_runId: string, bId: number, decision: 'counts' | 'not') {
+    const b = RESULTS.find(x => x.b_id === bId)
+    if (!b) return []
+    const fact = decision === 'counts' ? `${b.question} counts` : `${b.question} does not count`
+    return [{ ...b, state: decision === 'counts' ? 'relevant' as const : 'quarantined' as const, relevant: decision === 'counts',
+      reason: decision === 'not' ? `Your ruling: ${fact}` : b.reason, ruling: { decision, by: 'you' as const, fact } }]
+  }
+  async unrule(_runId: string, bId: number) { return RESULTS.filter(x => x.b_id === bId) }
+  async restore(_runId: string, bId: number) {
+    return RESULTS.filter(x => x.b_id === bId).map(b => ({ ...b, state: 'relevant' as const, relevant: true, restored: true }))
+  }
   async listMemory() { return this.memory }
   async forgetMemory(id: string) { this.memory = this.memory.filter(f => f.id !== id) }
   async editMemory(id: string, text: string) { this.memory = this.memory.map(f => f.id === id ? { ...f, fact: text, source: 'stated' } : f) }

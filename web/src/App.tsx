@@ -96,11 +96,13 @@ export default function App({ api, now, initialRunId, pollMs = 3000 }: {
     await api.stop(run.run_id)
   }
 
-  const restore = async (b: BidResult) => {
-    if (!run) return
-    await api.restore(run.run_id, b.b_id)
-    setRun({ ...run, results: run.results.map(x => x.b_id === b.b_id ? { ...x, relevant: true, restored: true } : x) })
-  }
+  // the bids a ruling or a restore changed replace their rows, keyed by b_id
+  const mergeChanged = (changed: BidResult[]) => setRun(cur => cur && ({
+    ...cur, results: cur.results.map(x => changed.find(c => c.b_id === x.b_id) ?? x),
+  }))
+  const restore = async (b: BidResult) => { if (run) mergeChanged(await api.restore(run.run_id, b.b_id)) }
+  const rule = async (b: BidResult, d: 'counts' | 'not') => { if (run) mergeChanged(await api.rule(run.run_id, b.b_id, d)) }
+  const unrule = async (b: BidResult) => { if (run) mergeChanged(await api.unrule(run.run_id, b.b_id)) }
 
   const forget = async (f: MemoryFactView) => {
     await api.forgetMemory(f.id)
@@ -124,7 +126,7 @@ export default function App({ api, now, initialRunId, pollMs = 3000 }: {
       <Thread run={run} notes={notes} pending={pending} now={nowIso} theme={theme} onToggleTheme={toggle} onAsk={ask}
               onStop={() => void stopRun()} onShowResults={() => setTab('relevant')} />
       <ResultsPanel run={run} busy={pending !== null || run?.status === 'running'} tab={tab} onTab={setTab} now={nowIso} memory={memory}
-                    onRestore={b => void restore(b)} onForget={f => void forget(f)} onEdit={(f, t) => void edit(f, t)} />
+                    onRestore={b => void restore(b)} onRule={(b, d) => void rule(b, d)} onUnrule={b => void unrule(b)} onForget={f => void forget(f)} onEdit={(f, t) => void edit(f, t)} />
     </div>
   )
 }

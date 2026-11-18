@@ -9,17 +9,19 @@ import './ResultsPanel.css'
 
 export type Tab = 'relevant' | 'quarantine' | 'memory'
 
-export function ResultsPanel({ run, busy = false, tab, onTab, now, memory, onRestore, onForget, onEdit }: {
+export function ResultsPanel({ run, busy = false, tab, onTab, now, memory, onRestore, onRule, onUnrule, onForget, onEdit }: {
   run: RunView | null; busy?: boolean; tab: Tab; onTab: (t: Tab) => void; now: string; memory: MemoryFactView[]
-  onRestore: (b: BidResult) => void; onForget: (f: MemoryFactView) => void; onEdit: (f: MemoryFactView, text: string) => void
+  onRestore: (b: BidResult) => void; onRule: (b: BidResult, d: 'counts' | 'not') => void; onUnrule: (b: BidResult) => void
+  onForget: (f: MemoryFactView) => void; onEdit: (f: MemoryFactView, text: string) => void
 }) {
   const results = run?.results ?? []
-  const relevant = results.filter(b => b.relevant)
-  const quarantined = results.filter(b => !b.relevant)
-  const rows = tab === 'relevant' ? relevant : quarantined
+  const relevant = results.filter(b => b.state === 'relevant')
+  const borderline = results.filter(b => b.state === 'borderline')
+  const quarantined = results.filter(b => b.state === 'quarantined')
+  const rows = tab === 'relevant' ? [...borderline, ...relevant] : quarantined
   const grouped = new Set(results.map(b => b.group)).size > 1
   const tabs: [Tab, React.ReactNode][] = [
-    ['relevant', <>Relevant <span className="gt-n">{relevant.length}</span></>],
+    ['relevant', <>Relevant <span className="gt-n">{relevant.length}</span>{borderline.length > 0 && <span className="gt-todecide">{borderline.length} to decide</span>}</>],
     ['quarantine', <><IconArchive width={13} height={13} />Quarantine <span className="gt-n">{quarantined.length}</span></>],
     ['memory', <><IconBrain width={13} height={13} />Memory</>],
   ]
@@ -37,7 +39,10 @@ export function ResultsPanel({ run, busy = false, tab, onTab, now, memory, onRes
           <div className="gt-thead"><span>Tender</span><span>Closes</span><span>EMD · turnover</span><span /></div>
           {rows.length === 0 && busy && tab === 'relevant' && <Searching />}
           {rows.length === 0 && !(busy && tab === 'relevant') && <div className="gt-none">{tab === 'relevant' ? 'No relevant tenders yet.' : 'Nothing quarantined. Bids ruled out land here with the reason, and can be restored.'}</div>}
-          {rows.map(b => <ResultRow key={b.b_id} bid={b} now={now} grouped={grouped} quarantined={tab === 'quarantine'} onRestore={onRestore} />)}
+          {tab === 'relevant' && borderline.length > 0 && <h3 className="gt-section">Borderline: your call</h3>}
+          {tab === 'relevant' && borderline.map(b => <ResultRow key={b.b_id} bid={b} now={now} grouped={grouped} quarantined={false} onRestore={onRestore} onRule={onRule} onUnrule={onUnrule} />)}
+          {tab === 'relevant' && borderline.length > 0 && relevant.length > 0 && <h3 className="gt-section">Relevant</h3>}
+          {(tab === 'relevant' ? relevant : quarantined).map(b => <ResultRow key={b.b_id} bid={b} now={now} grouped={grouped} quarantined={tab === 'quarantine'} onRestore={onRestore} onRule={onRule} onUnrule={onUnrule} />)}
         </>}
       </div>
     </section>
@@ -84,7 +89,10 @@ function plural(n: number, word: string) {
   return `${n} ${word}${n === 1 ? '' : 's'}`
 }
 
-function ResultRow({ bid, now, grouped, quarantined, onRestore }: { bid: BidResult; now: string; grouped: boolean; quarantined: boolean; onRestore: (b: BidResult) => void }) {
+function ResultRow({ bid, now, grouped, quarantined, onRestore, onRule, onUnrule }: {
+  bid: BidResult; now: string; grouped: boolean; quarantined: boolean
+  onRestore: (b: BidResult) => void; onRule: (b: BidResult, d: 'counts' | 'not') => void; onUnrule: (b: BidResult) => void
+}) {
   const [open, setOpen] = useState(false)
   const n = bid.evidence.length
   const mainFile = bid.files.find(f => f.status === 'ok')
@@ -108,6 +116,21 @@ function ResultRow({ bid, now, grouped, quarantined, onRestore }: { bid: BidResu
         <div className="gt-title">{bid.title}</div>
         <div className="gt-buyer" title={bid.buyer}>{bid.buyer_org ?? bid.buyer.split(' / ').pop()}</div>
         <div className="gt-why">{bid.reason}</div>
+        {bid.state === 'borderline' && (
+          <div className="gt-ask">
+            <div className="gt-question">{bid.question}</div>
+            <div className="gt-rule-btns">
+              <button className="gt-btn" onClick={() => onRule(bid, 'counts')}>Counts for me</button>
+              <button className="gt-btn" onClick={() => onRule(bid, 'not')}>Doesn't count</button>
+            </div>
+          </div>
+        )}
+        {bid.ruling && (
+          <div className="gt-ruling">
+            {bid.ruling.by === 'earlier' ? 'decided by your earlier ruling' : 'you ruled'}: "{bid.ruling.fact}"{' '}
+            <button className="gt-a" onClick={() => onUnrule(bid)}>undo</button>
+          </div>
+        )}
         {canOpen && (
           <button className="gt-ev" aria-expanded={open} onClick={() => setOpen(!open)}>
             {n > 0
@@ -162,7 +185,7 @@ function MemoryList({ facts, onForget, onEdit }: { facts: MemoryFactView[]; onFo
   return <>
     {facts.map(f => (
       <div key={f.id} className="gt-mem">
-        <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}><span className={`gt-srctag ${f.source}`}>{f.source}</span><span className="gt-k">since {f.since}</span></div>
+        <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}><span className={`gt-srctag ${f.source}`}>{f.source}</span>{f.kind === 'ruling' && <span className="gt-srctag ruling">ruling · {f.topic}</span>}<span className="gt-k">since {f.since}</span></div>
         {editing === f.id
           ? <form onSubmit={e => { e.preventDefault(); onEdit(f, draft); setEditing(null) }}>
               <input className="gt-edit" aria-label={`Edit: ${f.fact}`} value={draft} onChange={e => setDraft(e.target.value)} autoFocus />

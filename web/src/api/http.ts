@@ -1,6 +1,6 @@
 // The real TenderApi: the FastAPI backend under /api (gem_agent/app). Sign-in is a cookie set by /api/login.
 import { SseParser } from './sse'
-import { SignInRequired, type MemoryFactView, type RunEvent, type RunListItem, type RunView, type TenderApi, type UserView } from './types'
+import { SignInRequired, type BidResult, type MemoryFactView, type RunEvent, type RunListItem, type RunView, type TenderApi, type UserView } from './types'
 
 async function call<T>(path: string, init?: RequestInit): Promise<T> {
   const r = await fetch(path, { credentials: 'same-origin', ...init })
@@ -19,7 +19,10 @@ export class HttpApi implements TenderApi {
   listRuns() { return call<RunListItem[]>('/api/runs') }
   getRun(runId: string) { return call<RunView>(`/api/runs/${runId}`) }
   async stop(runId: string) { await call(`/api/runs/${runId}/stop`, { method: 'POST' }) }
-  async restore(runId: string, bId: number) { await call(`/api/runs/${runId}/restore/${bId}`, { method: 'POST' }) }
+  private async changed(path: string, init: RequestInit) { return (await call<{ changed: BidResult[] }>(path, init)).changed }
+  rule(runId: string, bId: number, decision: 'counts' | 'not') { return this.changed(`/api/runs/${runId}/rule/${bId}`, json('POST', { decision })) }
+  unrule(runId: string, bId: number) { return this.changed(`/api/runs/${runId}/rule/${bId}`, { method: 'DELETE' }) }
+  restore(runId: string, bId: number) { return this.changed(`/api/runs/${runId}/restore/${bId}`, { method: 'POST' }) }
   listMemory() { return call<MemoryFactView[]>('/api/memory') }
   async forgetMemory(id: string) { await call(`/api/memory/${id}`, { method: 'DELETE' }) }
   async editMemory(id: string, text: string) { await call(`/api/memory/${id}`, json('PATCH', { text })) }

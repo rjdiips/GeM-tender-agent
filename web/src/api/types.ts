@@ -48,6 +48,13 @@ export interface FileInfo {
   url: string // download link for this file
 }
 
+/** The user's ruling on a borderline bid, made now ('you') or carried over from an earlier one ('earlier'). */
+export interface Ruling {
+  decision: 'counts' | 'not'
+  by: 'you' | 'earlier'
+  fact: string
+}
+
 export interface BidResult {
   b_id: number
   bid_number: string
@@ -56,7 +63,10 @@ export interface BidResult {
   buyer_org: string | null // the organisation from the bid document; the listing has none
   published: string
   closing: string
-  relevant: boolean
+  relevant: boolean // state === 'relevant'
+  state: 'relevant' | 'borderline' | 'quarantined'
+  question: string // what the user is asked to decide, for a borderline bid
+  ruling: Ruling | null
   restored: boolean // the user moved it back from quarantine
   confidence: number
   reason: string
@@ -120,6 +130,8 @@ export interface MemoryFactView {
   evidence: string
   source: 'stated' | 'learned'
   since: string
+  kind: 'general' | 'ruling'
+  topic: string // the meaning a ruling applies to; empty for a general fact
 }
 
 export interface UserView {
@@ -153,7 +165,10 @@ export interface TenderApi {
   ask(text: string, onEvent: (e: RunEvent) => void, runId?: string): () => void
   /** Stops a running run; results judged so far are kept. */
   stop(runId: string): Promise<void>
-  restore(runId: string, bId: number): Promise<void>
+  /** Rule on a borderline bid. Returns every bid whose state changed. */
+  rule(runId: string, bId: number, decision: 'counts' | 'not'): Promise<BidResult[]>
+  unrule(runId: string, bId: number): Promise<BidResult[]>
+  restore(runId: string, bId: number): Promise<BidResult[]>
   listMemory(): Promise<MemoryFactView[]>
   forgetMemory(factId: string): Promise<void>
   editMemory(factId: string, text: string): Promise<void>
