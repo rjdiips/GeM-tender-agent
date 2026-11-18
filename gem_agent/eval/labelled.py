@@ -71,19 +71,31 @@ class Score(BaseModel):
     tn: int
     failed: int
     triage_lost: int  # labelled relevant, dropped by triage
+    borderline: int = 0  # verdicts that ask the reader a question
+    unsure: int = 0  # unsure labels that were judged
+    borderline_on_unsure: int = 0  # borderline verdicts on unsure labels
+    unsure_judged_borderline: int = 0  # unsure labels the Judge called borderline (same count, read from the label side)
     precision: float | None
     recall: float | None
 
 
 def score(rows: list[Row], topic: str = "all") -> Score:
+    """A borderline verdict is neither in nor out: it counts as found for recall (the reader sees it) but never as
+    relevant, so precision is untouched."""
     ok = [r for r in rows if r.verdict is not None]
+    border = [r for r in ok if r.verdict.borderline]
     tp = sum(r.label.relevant and r.judged for r in ok)
     fp = sum(not r.label.relevant and r.judged for r in ok)
-    fn = sum(r.label.relevant and not r.judged for r in ok)
-    tn = sum(not r.label.relevant and not r.judged for r in ok)
+    found_borderline = sum(r.label.relevant for r in border)
+    fn = sum(r.label.relevant and not r.judged and not r.verdict.borderline for r in ok)
+    tn = sum(not r.label.relevant and not r.judged and not r.verdict.borderline for r in ok)
     lost = sum(r.label.relevant and r.verdict.stage == "triage" and not r.verdict.relevant for r in ok)
+    on_unsure = sum(r.label.unsure for r in border)
+    found = tp + found_borderline
     return Score(topic=topic, n=len(rows), tp=tp, fp=fp, fn=fn, tn=tn, failed=len(rows) - len(ok), triage_lost=lost,
-                 precision=tp / (tp + fp) if tp + fp else None, recall=tp / (tp + fn) if tp + fn else None)
+                 borderline=len(border), unsure=sum(r.label.unsure for r in ok), borderline_on_unsure=on_unsure,
+                 unsure_judged_borderline=on_unsure,
+                 precision=tp / (tp + fp) if tp + fp else None, recall=found / (found + fn) if found + fn else None)
 
 
 def scores(rows: list[Row]) -> list[Score]:
@@ -93,11 +105,11 @@ def scores(rows: list[Row]) -> list[Score]:
 
 def report(rows: list[Row]) -> str:
     pct = lambda x: "—" if x is None else f"{x:.0%}"  # noqa: E731
-    lines = [f"{'topic':<14}{'n':>4}{'tp':>4}{'fp':>4}{'fn':>4}{'tn':>4}  precision  recall  triage lost  failed"]
+    lines = [f"{'topic':<14}{'n':>4}{'tp':>4}{'fp':>4}{'fn':>4}{'tn':>4}  precision  recall  borderline  triage lost  failed"]
     for s in scores(rows):
         lines.append(f"{s.topic:<14}{s.n:>4}{s.tp:>4}{s.fp:>4}{s.fn:>4}{s.tn:>4}  {pct(s.precision):>9}  "
-                     f"{pct(s.recall):>6}  {s.triage_lost:>11}  {s.failed:>6}")
-    wrong = [r for r in rows if r.verdict is not None and r.judged != r.label.relevant]
+                     f"{pct(s.recall):>6}  {s.borderline:>10}  {s.triage_lost:>11}  {s.failed:>6}")
+    wrong = [r for r in rows if r.verdict is not None and not r.verdict.borderline and r.judged != r.label.relevant]
     if wrong:
         lines.append("\nDisagreements (label → judge):")
         for r in wrong:
@@ -105,6 +117,12 @@ def report(rows: list[Row]) -> str:
             lines.append(f"  {r.label.topic:<12} {r.label.bid_number:<22} {'in' if r.label.relevant else 'out'} → "
                          f"{'in' if v.relevant else 'out'} [{v.stage}{', unsure label' if r.label.unsure else ''}] "
                          f"{v.reason[:110]}")
+    asked = [r for r in rows if r.verdict is not None and r.verdict.borderline]
+    if asked:
+        lines.append("\nBorderline (question):")
+        for r in asked:
+            lines.append(f"  {r.label.topic:<12} {r.label.bid_number:<22} label {'in' if r.label.relevant else 'out'}"
+                         f"{' (unsure)' if r.label.unsure else ''}: {r.verdict.question}")
     for r in rows:
         if r.error:
             lines.append(f"  FAILED {r.label.bid_number}: {r.error[:120]}")
@@ -116,4 +134,6 @@ def rows_json(rows: list[Row]) -> str:
                         "unsure": r.label.unsure, "judged": r.judged,
                         "stage": r.verdict.stage if r.verdict else None,
                         "triage": r.verdict.triage if r.verdict else None,
+                        "borderline": r.verdict.borderline if r.verdict else None,
+                        "question": r.verdict.question if r.verdict else None,
                         "reason": r.verdict.reason if r.verdict else r.error} for r in rows], indent=1)

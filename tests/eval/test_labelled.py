@@ -14,10 +14,11 @@ def label(b_id: int, relevant: bool, topic: str = "aml", unsure: bool = False) -
                  unsure=unsure)
 
 
-def verdict(b_id: int, relevant: bool, stage: str = "judge") -> Verdict:
+def verdict(b_id: int, relevant: bool, stage: str = "judge", borderline: bool = False) -> Verdict:
     return Verdict(b_id=b_id, bid_number=f"GEM/2026/B/{b_id}", topic_key="k", doc_hash="h", relevant=relevant,
                    confidence=0.9, stage=stage, triage="maybe", reason=f"reason {b_id}", model="m",
-                   decided_at=datetime(2026, 11, 17))
+                   decided_at=datetime(2026, 11, 17), borderline=borderline,
+                   question=f"does {b_id} count?" if borderline else "")
 
 
 def test_score_counts_precision_recall_and_triage_losses():
@@ -55,3 +56,26 @@ def test_set_round_trips(tmp_path: Path):
     s.save(tmp_path / "set.json")
     back = LabelledSet.load(tmp_path / "set.json")
     assert back.items[0].b_id == 1 and back.topics["aml"].meaning == TOPIC.meaning and back.rulings == s.rulings
+
+
+def test_borderline_counts_as_found_but_not_as_relevant():
+    rows = [Row(label=label(1, True), verdict=verdict(1, True)),
+            Row(label=label(2, True), verdict=verdict(2, False, borderline=True)),
+            Row(label=label(3, False, unsure=True), verdict=verdict(3, False, borderline=True)),
+            Row(label=label(4, True), verdict=verdict(4, False))]
+    s = score(rows)
+    assert (s.tp, s.fp, s.fn, s.borderline) == (1, 0, 1, 2)
+    assert s.precision == 1.0 and s.recall == pytest.approx(2 / 3)
+    assert s.borderline_on_unsure == 1 and s.unsure == 1 and s.unsure_judged_borderline == 1
+    text = report(rows)
+    assert "Borderline (question):" in text and "does 2 count?" in text
+    assert "GEM/2026/B/2" not in (text.split("Disagreements")[1].split("Borderline (question):")[0]
+                                  if "Disagreements" in text else "")
+
+
+def test_rows_json_carries_borderline_and_question():
+    import json
+
+    from gem_agent.eval.labelled import rows_json
+    out = json.loads(rows_json([Row(label=label(2, True), verdict=verdict(2, False, borderline=True))]))
+    assert out[0]["borderline"] is True and out[0]["question"] == "does 2 count?"
