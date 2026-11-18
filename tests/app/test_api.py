@@ -361,3 +361,57 @@ async def test_ruling_while_the_run_is_going_loses_no_results(tmp_path):
     await stream
     outcomes = s.store.outcomes(run_id)
     assert set(outcomes) == {1, 2} and outcomes[1].ruling and outcomes[1].ruling.by == "you"
+
+
+async def test_ruling_the_same_way_twice_is_a_no_op_and_undo_still_clears(rclient, ruling_parts):
+    s = ruling_parts[0]
+    run_id = await ruled_run(rclient)
+    await rclient.post(rule_url(run_id, 2), json={"decision": "counts"})
+    before, calls = s.store.outcomes(run_id), list(s.rulings.resolved)
+    assert (await rclient.post(rule_url(run_id, 2), json={"decision": "counts"})).json() == {"changed": []}
+    assert s.store.outcomes(run_id) == before and s.rulings.resolved == calls
+    await rclient.delete(rule_url(run_id, 2))
+    assert "ruling" not in await kinds(rclient)
+    assert await states(rclient, run_id) == {1: ("relevant", None), 2: ("borderline", None), 3: ("borderline", None)}
+
+
+async def test_re_ruling_forgets_the_old_fact_and_resettles_what_it_had_settled(rclient, ruling_parts):
+    s = ruling_parts[0]
+    run_id = await ruled_run(rclient)
+    await rclient.post(rule_url(run_id, 2), json={"decision": "counts"})  # bid 3 settled earlier by this fact
+    old_id = s.store.outcomes(run_id)[2].ruling.fact_id
+    s.rulings.match_first = {}  # the new fact matches nothing, so bid 3 must go back to the user
+    changed = (await rclient.post(rule_url(run_id, 2), json={"decision": "not"})).json()["changed"]
+    assert {b["b_id"] for b in changed} == {2, 3}
+    outcomes = s.store.outcomes(run_id)
+    assert outcomes[3].ruling is None and outcomes[2].ruling.decision == "not" and outcomes[2].ruling.fact_id != old_id
+    assert [f["id"] for f in (await rclient.get("/api/memory")).json() if f["kind"] == "ruling"] == [outcomes[2].ruling.fact_id]
+
+
+async def test_restore_resettles_bids_the_replaced_fact_had_settled(rclient, ruling_parts):
+    s = ruling_parts[0]
+    s.rulings.match_first = {SAME: "counts"}
+    run_id = await ruled_run(rclient)
+    await rclient.post(rule_url(run_id, 2), json={"decision": "not"})  # the fake settles bid 3 by this fact
+    await rclient.post(f"/api/runs/{run_id}/restore/2")
+    live = {f["id"] for f in (await rclient.get("/api/memory")).json() if f["kind"] == "ruling"}
+    for o in s.store.outcomes(run_id).values():
+        assert o.ruling is None or o.ruling.fact_id in live
+    assert (await states(rclient, run_id))[2] == ("relevant", "you")
+
+
+async def test_a_contradicting_match_fact_clears_the_bids_it_had_settled(rclient, ruling_parts):
+    s = ruling_parts[0]
+    run_id = await ruled_run(rclient)
+    old = s.memory.add_ruling("asha", "Add-ons count.", topic="Loan Origination System", run_id="r0", today=s.now().date(),
+                              evidence="e")
+    def settle_3(all_):
+        from gem_agent.graph.store import Ruling
+        all_[3] = all_[3].model_copy(update={"ruling": Ruling(decision="counts", by="earlier", fact_id=old.id,
+                                                              fact=old.fact, at=s.now())})
+        return [3]
+    s.store.update_outcomes(run_id, settle_3)
+    s.rulings.match_first = {}
+    s.rulings.answers[SAME] = RulingMatch(fact_id=old.id, decision="counts")
+    await rclient.post(rule_url(run_id, 2), json={"decision": "not"})
+    assert s.store.outcomes(run_id)[3].ruling is None

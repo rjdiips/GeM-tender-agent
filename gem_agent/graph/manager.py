@@ -208,9 +208,15 @@ class RunManager:
             raise NotBorderline(f"bid {b_id} is not borderline")
         if s.rulings is None:
             raise RulingFailed("rulings are not available")
+        old = o.ruling if o.ruling and o.ruling.by == "you" else None
+        if old and old.decision == decision:
+            return []
         v, today = o.verdict, s.now().date()
         topic = topic_for(record.request, o.group)
-        existing = s.memory.ruling_facts(user, short_name(topic))
+        replaced_own = old.fact_id if old and old.created_fact else None
+        existing = [f for f in s.memory.ruling_facts(user, short_name(topic)) if f.id != replaced_own]
+        replaced: set[str] = set()
+        why = f"replaced by your ruling on {o.bid.bid_number} on {today:%d %b}"
         try:
             match = await s.rulings.resolve(topic, v.question, v.reason, existing)
         except Exception as exc:
@@ -228,17 +234,32 @@ class RunManager:
                                          evidence=f"you ruled on {o.bid.bid_number} on {today:%d %b}")
             ruling = Ruling(decision=decision, by="you", fact_id=chosen.id, fact=chosen.fact, created_fact=True, at=s.now())
             if match and matched:  # the old fact said the opposite
-                s.memory.forget(user, matched.id, evidence=f"replaced by your ruling on {o.bid.bid_number} on {today:%d %b}")
-        others = [x for x in s.store.outcomes(run_id).values() if x.b_id != b_id and _open(x) and x.group == o.group]
+                replaced.add(matched.id)
+        if replaced_own:
+            replaced.add(replaced_own)
+        for fact_id in replaced:
+            s.memory.forget(user, fact_id, evidence=why)
+
+        def stale(x: Outcome) -> bool:  # settled earlier by a fact that was just replaced
+            return bool(x.ruling and x.ruling.by == "earlier" and x.ruling.fact_id in replaced)
+
+        others = [x for x in s.store.outcomes(run_id).values()
+                  if x.b_id != b_id and x.group == o.group and x.verdict and x.verdict.borderline
+                  and ((x.ruling is None and not x.undone) or stale(x))]
         settled = {x.b_id: await settle(s, user, topic, x.verdict, facts=[chosen]) for x in others}
 
         def write(all_: dict[int, Outcome]) -> list[int]:
             all_[b_id] = all_[b_id].model_copy(update={"ruling": ruling, "undone": False})
             changed = [b_id]
+            for other_id, x in list(all_.items()):
+                if other_id != b_id and stale(x):  # re-checked now: the replaced fact no longer stands
+                    all_[other_id] = x.model_copy(update={"ruling": None})
+                    changed.append(other_id)
             for other_id, earlier in settled.items():
                 if earlier and other_id in all_ and _open(all_[other_id]):  # still waiting for the user
                     all_[other_id] = all_[other_id].model_copy(update={"ruling": earlier})
-                    changed.append(other_id)
+                    if other_id not in changed:
+                        changed.append(other_id)
             return changed
 
         changed = s.store.update_outcomes(run_id, write)
