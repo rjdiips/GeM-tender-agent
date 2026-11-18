@@ -112,3 +112,36 @@ async def test_an_old_or_unreadable_cache_file_is_ignored(tmp_path):
     assert SearchCache(tmp_path, now=lambda: T0 + timedelta(minutes=61)).get("k") is None
     (next(tmp_path.glob("*.json"))).write_text("{not json")
     assert SearchCache(tmp_path, now=lambda: T0).get("k") is None
+
+
+def _bad_body_site(gem, clock, bad_pages):
+    site = FakeSearchSite({"fullText|aml": rows(8000, 25), "fullText|kyc": rows(9000, 15)})
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        payload = dict(httpx.QueryParams(request.content.decode()))["payload"]
+        for term, page in bad_pages:
+            if f'"searchBid": "{term}"' in payload and f'"page": {page}' in payload:
+                return httpx.Response(200, text="<html>captcha</html>")
+        return site(request)
+
+    gem.add("GET", f"{B}/advance-search", "advance_search.html.gz")
+    gem.add("POST", f"{B}/all-bids-data", handler)
+    session = BidplusSession(ClientPool(transport=gem.transport(), clock=clock, sleep=clock.sleep))
+    return LiveSearcher(session)
+
+
+async def test_a_page_that_is_not_json_fails_only_its_search(gem, clock):
+    live = _bad_body_site(gem, clock, [("aml", 2)])
+    aml, kyc = SearchSpec(kind="fullText", value="aml"), SearchSpec(kind="fullText", value="kyc")
+    first = await live.first_pages([aml, kyc])
+    more = await live.rest([aml, kyc], {o.spec.key: o.progress for o in first})
+    assert more[0].progress.failed and more[0].progress.pages_read == 1
+    assert more[1].progress.pages_read == 2 and not more[1].progress.failed
+
+
+async def test_a_first_page_that_is_not_json_marks_the_search_failed(gem, clock):
+    live = _bad_body_site(gem, clock, [("aml", 1)])
+    aml, kyc = SearchSpec(kind="fullText", value="aml"), SearchSpec(kind="fullText", value="kyc")
+    a, k = await live.first_pages([aml, kyc])
+    assert a.progress.failed and a.progress.pages_read == 0 and a.bids == []
+    assert not k.progress.failed and len(k.bids) == 10

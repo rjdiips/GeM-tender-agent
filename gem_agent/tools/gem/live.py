@@ -22,6 +22,9 @@ from gem_agent.tools.http_client import BidplusSession, GemHttpError
 
 log = logging.getLogger(__name__)
 
+# A page can fail at the HTTP level or arrive as a body parse_page cannot read (HTML error page, missing keys, bad doc).
+_READ_ERRORS = (GemHttpError, httpx.HTTPError, ValueError, KeyError, TypeError)
+
 
 class SearchSpec(BaseModel):
     model_config = ConfigDict(frozen=True)
@@ -86,7 +89,7 @@ class LiveSearcher:
                                      _dedupe(Bid.from_listing(d) for d in docs))
         try:
             page = await self._page(spec, 1)
-        except (GemHttpError, httpx.HTTPError) as exc:
+        except _READ_ERRORS as exc:
             log.warning("search %s failed on page 1: %s", spec.key, exc)
             return SearchOutcome(spec, SearchProgress(num_found=0, pages_read=0, page_count=0, failed=True), [])
         progress = SearchProgress(num_found=page.num_found, pages_read=1, page_count=page.page_count)
@@ -123,7 +126,7 @@ class LiveSearcher:
         for n in range(current.pages_read + 1, current.page_count + 1):
             try:
                 page = await self._page(spec, n)
-            except (GemHttpError, httpx.HTTPError) as exc:
+            except _READ_ERRORS as exc:
                 log.warning("search %s failed on page %d: %s", spec.key, n, exc)
                 new.failed = True
                 break
