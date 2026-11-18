@@ -19,7 +19,8 @@ class Edit(BaseModel):
 @router.get("/api/memory")
 def list_memory(request: Request, user: str = Depends(current_user)) -> list[dict[str, Any]]:
     facts = request.app.state.memory.facts(user)
-    return [{"id": f.id, "fact": f.fact, "evidence": f.evidence, "source": f.source, "since": f.since.isoformat()}
+    return [{"id": f.id, "fact": f.fact, "evidence": f.evidence, "source": f.source, "since": f.since.isoformat(),
+             "kind": f.kind, "topic": f.topic}
             for f in facts if f.active and not f.removed]
 
 

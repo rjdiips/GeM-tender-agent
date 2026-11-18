@@ -53,12 +53,12 @@ class MemoryStore:
 
     def prompt_facts(self, user: str, limit: int = 20) -> list[MemoryFact]:
         """Active facts, newest and strongest first, for the Chat agent's prompt."""
-        active = [f for f in self.facts(user) if f.active and not f.removed]
+        active = [f for f in self.facts(user) if f.active and not f.removed and f.kind == "general"]
         return sorted(active, key=lambda f: (f.since, f.strength), reverse=True)[:limit]
 
     def add_stated(self, user: str, fact: str, *, run_id: str, today: date, evidence: str | None = None) -> MemoryFact:
         facts = self.facts(user)
-        existing = next((f for f in facts if same_fact(f.fact, fact) and not f.removed), None)
+        existing = next((f for f in facts if same_fact(f.fact, fact) and not f.removed and f.kind == "general"), None)
         if existing:
             existing.source, existing.active, existing.since = "stated", True, today
             existing.strength = max(existing.strength, RUNS_TO_LEARN)
@@ -70,13 +70,25 @@ class MemoryStore:
         self._save(user, facts)
         return new
 
+    def add_ruling(self, user: str, fact: str, *, topic: str, run_id: str, today: date, evidence: str) -> MemoryFact:
+        """A ruling is always a new fact: its identity is its id, so it never merges with another."""
+        facts = self.facts(user)
+        new = MemoryFact(id=uuid.uuid4().hex[:8], fact=fact, evidence=evidence, source="stated", since=today,
+                         runs=[run_id], strength=RUNS_TO_LEARN, active=True, kind="ruling", topic=topic)
+        facts.append(new)
+        self._save(user, facts)
+        return new
+
+    def ruling_facts(self, user: str, topic: str) -> list[MemoryFact]:
+        return [f for f in self.facts(user) if f.kind == "ruling" and f.topic == topic and f.active and not f.removed]
+
     def apply(self, user: str, changes: Iterable[MemoryChange], *, run_id: str, today: date) -> None:
         facts = self.facts(user)
         by_id = {f.id: f for f in facts}
         for change in changes:
             target = by_id.get(change.fact_id or "")
             if change.action == "add" and change.fact:
-                target = next((f for f in facts if same_fact(f.fact, change.fact) and not f.removed), None)
+                target = next((f for f in facts if same_fact(f.fact, change.fact) and not f.removed and f.kind == "general"), None)
                 if target is None:
                     target = MemoryFact(id=uuid.uuid4().hex[:8], fact=change.fact, evidence=change.evidence,
                                         source="learned", since=today)
@@ -108,11 +120,13 @@ class MemoryStore:
         if fact.source == "stated" or len(fact.runs) >= RUNS_TO_LEARN:
             fact.active = True
 
-    def forget(self, user: str, fact_id: str) -> None:
+    def forget(self, user: str, fact_id: str, evidence: str | None = None) -> None:
         facts = self.facts(user)
         for f in facts:
             if f.id == fact_id:
                 f.active, f.removed = False, True
+                if evidence is not None:
+                    f.evidence = evidence
         self._save(user, facts)
 
     def correct(self, user: str, fact_id: str, text: str, *, today: date) -> None:

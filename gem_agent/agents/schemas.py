@@ -219,6 +219,8 @@ class MemoryFact(BaseModel):
     strength: int = 0
     active: bool = False
     removed: bool = False
+    kind: Literal["general", "ruling"] = "general"
+    topic: str = ""  # a ruling's topic short name
 
 
 class MemoryChange(BaseModel):

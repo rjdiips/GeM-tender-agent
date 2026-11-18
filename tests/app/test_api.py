@@ -130,6 +130,7 @@ async def test_memory_list_edit_forget(client):
     await login(client)
     [fact] = (await client.get("/api/memory")).json()
     assert fact["fact"] == "We sell LOS software" and fact["source"] == "stated"
+    assert fact["kind"] == "general" and fact["topic"] == ""
     assert (await client.patch(f"/api/memory/{fact['id']}", json={"text": "We sell LOS and AML software"})).status_code == 204
     assert (await client.get("/api/memory")).json()[0]["fact"] == "We sell LOS and AML software"
     assert (await client.delete(f"/api/memory/{fact['id']}")).status_code == 204

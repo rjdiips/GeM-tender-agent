@@ -80,3 +80,40 @@ def test_restated_fact_in_other_words_is_not_duplicated(tmp_path):
     s.add_stated("asha", "we're a banking software company", run_id="r1", today=D)
     s.add_stated("asha", "We are a banking software company.", run_id="r2", today=D)
     assert len(s.facts("asha")) == 1
+
+
+def test_a_ruling_is_active_at_once_and_tied_to_its_topic(tmp_path):
+    m = MemoryStore(tmp_path)
+    f = m.add_ruling("asha", "AI that is one part of a larger system counts as an AI platform",
+                     topic="AI platform", run_id="r1", today=D, evidence="you ruled on GEM/2026/B/7914442 on 18 Nov")
+    assert f.active and f.kind == "ruling" and f.source == "stated"
+    assert m.ruling_facts("asha", "AI platform") == [f]
+    assert m.ruling_facts("asha", "Anti-Money Laundering") == []
+    assert m.ruling_facts("ravi", "AI platform") == []
+
+
+def test_rulings_stay_out_of_the_chat_prompt_and_its_limit(tmp_path):
+    m = MemoryStore(tmp_path)
+    m.add_stated("asha", "We sell LOS software", run_id="r0", today=D)
+    for i in range(25):
+        m.add_ruling("asha", f"ruling {i}", topic="AI platform", run_id="r1", today=D, evidence="e")
+    assert [f.fact for f in m.prompt_facts("asha")] == ["We sell LOS software"]
+
+
+def test_forget_with_evidence_records_why(tmp_path):
+    m = MemoryStore(tmp_path)
+    f = m.add_ruling("asha", "ruling", topic="AI platform", run_id="r1", today=D, evidence="old")
+    m.forget("asha", f.id, "replaced by your ruling on GEM/2026/B/1 on 18 Nov")
+    [g] = m.facts("asha")
+    assert g.removed and not g.active and g.evidence == "replaced by your ruling on GEM/2026/B/1 on 18 Nov"
+    assert m.ruling_facts("asha", "AI platform") == []
+
+
+def test_a_general_fact_with_the_same_words_does_not_merge_with_a_ruling(tmp_path):
+    m = MemoryStore(tmp_path)
+    r = m.add_ruling("asha", "We sell LOS software", topic="LOS", run_id="r1", today=D, evidence="e")
+    g = m.add_stated("asha", "We sell LOS software", run_id="r2", today=D)
+    assert g.id != r.id and g.kind == "general" and r.kind == "ruling"
+    m.apply("asha", [MemoryChange(action="add", fact="We sell LOS software", fact_id=None, evidence="x")], run_id="r3", today=D)
+    assert [f.kind for f in m.facts("asha")] == ["ruling", "general"]
+    assert m.facts("asha")[0].runs == ["r1"]
