@@ -87,6 +87,8 @@ class MemoryStore:
         by_id = {f.id: f for f in facts}
         for change in changes:
             target = by_id.get(change.fact_id or "")
+            if target is not None and target.kind != "general":
+                continue  # a ruling is changed only by the user, never by the memory step
             if change.action == "add" and change.fact:
                 target = next((f for f in facts if same_fact(f.fact, change.fact) and not f.removed and f.kind == "general"), None)
                 if target is None:

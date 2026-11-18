@@ -41,7 +41,7 @@ class MemoryStep:
         self._agent = Agent(model, output_type=NativeOutput(MemoryProposal), instructions=MEMORY_INSTRUCTIONS)
 
     async def after_run(self, user: str, signals: RunSignals, *, today: date) -> list[MemoryChange]:
-        facts = [f for f in self.store.facts(user) if not f.removed]
+        facts = [f for f in self.store.facts(user) if not f.removed and f.kind == "general"]
         listing = "\n".join(
             f"[{f.id}] {f.fact} ({f.source}, {'active' if f.active else 'pending'}, strength {f.strength}): {f.evidence}"
             for f in facts) or "(none yet)"

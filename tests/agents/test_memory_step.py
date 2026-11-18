@@ -31,3 +31,13 @@ async def test_prompt_lists_existing_facts_with_ids_and_the_run(tmp_path):
     prompt = llm.calls[0][1]
     assert f"[{fact.id}] We sell AML software (stated" in prompt
     assert "Downloaded: SBI: AML solution" in prompt and "Hospital AML kit" in prompt
+
+
+async def test_rulings_are_not_shown_to_the_memory_model(tmp_path):
+    store = MemoryStore(tmp_path)
+    store.add_stated("asha", "We sell AML software", run_id="r0", today=D)
+    r = store.add_ruling("asha", "Chatbots count as an AI platform", topic="AI platform", run_id="r0", today=D, evidence="e")
+    llm = ScriptedLLM({MEMORY_INSTRUCTIONS: [{"changes": []}]})
+    await MemoryStep(llm.model(), store).after_run("asha", signals("r1"), today=D)
+    prompt = llm.calls[0][1]
+    assert r.id not in prompt and "Chatbots count" not in prompt and "We sell AML software" in prompt

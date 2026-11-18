@@ -117,3 +117,14 @@ def test_a_general_fact_with_the_same_words_does_not_merge_with_a_ruling(tmp_pat
     m.apply("asha", [MemoryChange(action="add", fact="We sell LOS software", fact_id=None, evidence="x")], run_id="r3", today=D)
     assert [f.kind for f in m.facts("asha")] == ["ruling", "general"]
     assert m.facts("asha")[0].runs == ["r1"]
+
+
+def test_apply_cannot_change_a_ruling_by_its_id(tmp_path):
+    m = MemoryStore(tmp_path)
+    r = m.add_ruling("asha", "ruling", topic="AI platform", run_id="r1", today=D, evidence="e")
+    before = m.facts("asha")
+    for action in ("support", "weaken", "remove", "update"):
+        m.apply("asha", [MemoryChange(action=action, fact="changed", fact_id=r.id, evidence="x")], run_id="r2", today=D)
+    assert m.facts("asha") == before
+    m.forget("asha", r.id)  # the user still can
+    assert m.ruling_facts("asha", "AI platform") == []
