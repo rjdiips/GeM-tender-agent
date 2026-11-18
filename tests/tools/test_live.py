@@ -169,3 +169,44 @@ async def test_a_listing_row_without_a_bid_id_fails_only_its_search(gem, clock):
     a, k = await live.first_pages([aml, kyc])
     assert a.progress.failed and a.bids == []
     assert not k.progress.failed and len(k.bids) == 10
+
+
+async def test_a_non_numeric_numfound_fails_only_its_search(gem, clock):
+    live, site = make_live(gem, clock, {"fullText|aml": rows(12000, 10), "fullText|kyc": rows(13000, 10)})
+    original = site
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        resp = original(request)
+        if b"aml" in request.content:
+            body = resp.json()
+            body["response"]["response"]["numFound"] = "abc"
+            return httpx.Response(200, json=body)
+        return resp
+
+    gem.add("POST", f"{B}/all-bids-data", handler)
+    aml, kyc = SearchSpec(kind="fullText", value="aml"), SearchSpec(kind="fullText", value="kyc")
+    a, k = await live.first_pages([aml, kyc])
+    assert a.progress.failed and a.bids == []
+    assert not k.progress.failed and len(k.bids) == 10
+
+
+async def test_a_non_numeric_bid_id_fails_only_its_search(gem, clock):
+    broken = rows(14000, 10)
+    broken[2]["b_id"] = ["abc"]
+    live, _ = make_live(gem, clock, {"fullText|aml": broken, "fullText|kyc": rows(15000, 10)})
+    aml, kyc = SearchSpec(kind="fullText", value="aml"), SearchSpec(kind="fullText", value="kyc")
+    a, k = await live.first_pages([aml, kyc])
+    assert a.progress.failed and a.bids == []
+    assert not k.progress.failed and len(k.bids) == 10
+
+
+async def test_a_cached_search_with_an_unparseable_doc_is_read_live(gem, clock, tmp_path):
+    key = "category|" + CATEGORY
+    spec = SearchSpec(kind="category", value=CATEGORY)
+    cache = SearchCache(tmp_path, now=lambda: T0)
+    bad = rows(16000, 3)
+    bad[1]["b_id"] = ["abc"]
+    cache.put(key, 3, bad)
+    live, site = make_live(gem, clock, {key: rows(16000, 3)}, cache=cache, cached_keys=frozenset({key}))
+    (out,) = await live.first_pages([spec])
+    assert len(out.bids) == 3 and not out.progress.failed and site.served == [(key, 1)]

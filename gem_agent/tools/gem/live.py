@@ -1,13 +1,12 @@
 """Live GeM searches in two stages: page 1 of every search, then the rest (spec 6.2)."""
 from __future__ import annotations
 
-import json
 import logging
 from dataclasses import dataclass
 from typing import Literal
 
 import httpx
-from pydantic import BaseModel, ConfigDict, ValidationError
+from pydantic import BaseModel, ConfigDict
 
 from gem_agent.cache.search_cache import SearchCache
 from gem_agent.tools.gem.models import Bid
@@ -19,13 +18,14 @@ from gem_agent.tools.gem.search import (
     list_all_bids,
     search_bids,
 )
-from gem_agent.tools.http_client import BidplusSession, GemHttpError
+from gem_agent.tools.http_client import BidplusSession, GemHttpError, HostNotAllowed
 
 log = logging.getLogger(__name__)
 
 # A page can fail at the HTTP level or arrive as a body parse_page cannot read (HTML error page, missing keys, bad doc).
-# Do not widen this to ValueError: HostNotAllowed is one, and an off-allowlist redirect must surface, not become a failed search.
-_READ_ERRORS = (GemHttpError, httpx.HTTPError, json.JSONDecodeError, KeyError, TypeError, ValidationError)
+# ValueError covers bad numbers and pydantic validation. HostNotAllowed is a ValueError too, so every handler re-raises it
+# first: an off-allowlist redirect must surface, not become a failed search.
+_READ_ERRORS = (GemHttpError, httpx.HTTPError, ValueError, KeyError, TypeError)
 
 
 class SearchSpec(BaseModel):
@@ -86,11 +86,18 @@ class LiveSearcher:
             hit = self.cache.get(spec.key)
             if hit is not None:
                 num_found, docs = hit
-                count = -(-num_found // PAGE_SIZE)
-                return SearchOutcome(spec, SearchProgress(num_found=num_found, pages_read=count or 1, page_count=count),
-                                     _dedupe(Bid.from_listing(d) for d in docs))
+                try:
+                    bids = _dedupe(Bid.from_listing(d) for d in docs)
+                except _READ_ERRORS as exc:  # a corrupt cache entry is a miss
+                    log.warning("cached search %s is unreadable, reading it live: %s", spec.key, exc)
+                else:
+                    count = -(-num_found // PAGE_SIZE)
+                    return SearchOutcome(
+                        spec, SearchProgress(num_found=num_found, pages_read=count or 1, page_count=count), bids)
         try:
             page = await self._page(spec, 1)
+        except HostNotAllowed:
+            raise
         except _READ_ERRORS as exc:
             log.warning("search %s failed on page 1: %s", spec.key, exc)
             return SearchOutcome(spec, SearchProgress(num_found=0, pages_read=0, page_count=0, failed=True), [])
@@ -128,6 +135,8 @@ class LiveSearcher:
         for n in range(current.pages_read + 1, current.page_count + 1):
             try:
                 page = await self._page(spec, n)
+            except HostNotAllowed:
+                raise
             except _READ_ERRORS as exc:
                 log.warning("search %s failed on page %d: %s", spec.key, n, exc)
                 new.failed = True
