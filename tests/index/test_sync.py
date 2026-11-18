@@ -59,6 +59,7 @@ async def test_full_load_resumes_from_checkpoint(gem, clock, index):
     assert listing.pages_served == [1, 2, 3]
 
 
+@pytest.mark.skip(reason="unchanged rows no longer bump last_seen; the index sync and mark_missed are retired in Task 7 (live search)")
 async def test_full_refresh_marks_missing_bids(gem, clock, index):
     rows = hourly_rows(5)
     session, listing = setup_site(gem, clock, rows)

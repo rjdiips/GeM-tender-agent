@@ -120,18 +120,22 @@ class BidIndex:
                     "total_quantity": bid.total_quantity,
                 }
                 old = self._conn.execute(
-                    f"SELECT {', '.join(_TRACKED)}, card FROM bids WHERE b_id = ?", (bid.b_id,)
+                    f"SELECT {', '.join(_TRACKED)}, card, raw, state, missed_refreshes FROM bids WHERE b_id = ?",
+                    (bid.b_id,)
                 ).fetchone()
-                card = old[-1] if old else None
-                old = old[:-1] if old else None
+                raw_json = json.dumps(bid.raw)
+                card = old[-4] if old else None
+                tracked_same = old is not None and tuple(old[:-4]) == tuple(values[c] for c in _TRACKED)
                 if old is None:
                     counts.new += 1
-                elif tuple(old) != tuple(values[c] for c in _TRACKED):
+                elif not tracked_same:
                     counts.updated += 1
                 else:
                     counts.unchanged += 1
+                if tracked_same and old[-3] == raw_json and old[-2] == "open" and old[-1] == 0:
+                    continue  # nothing to write: same fields, same listing, already open and not missed
                 cols = ["b_id", *values, "raw", "embed_text", "state", "missed_refreshes", "first_seen", "last_seen"]
-                row = [bid.b_id, *values.values(), json.dumps(bid.raw), embed_text(bid, card), "open", 0, seen, seen]
+                row = [bid.b_id, *values.values(), raw_json, embed_text(bid, card), "open", 0, seen, seen]
                 updates = ", ".join(f"{c} = excluded.{c}" for c in cols if c not in ("b_id", "first_seen"))
                 self._conn.execute(
                     f"INSERT INTO bids ({', '.join(cols)}) VALUES ({', '.join('?' * len(cols))}) "
@@ -221,6 +225,21 @@ class BidIndex:
             if ids:
                 self._bump_embed_version()
         return len(ids)
+
+    def prune(self, *, closed_before: datetime) -> int:
+        """Delete bids that closed before the cutoff, with their embeddings. Returns the bids deleted."""
+        cutoff = _iso(closed_before)
+        with self._lock, self._conn:
+            self._conn.execute(
+                "DELETE FROM embeddings WHERE b_id IN (SELECT b_id FROM bids WHERE closing < ?)", (cutoff,))
+            deleted = self._conn.execute("DELETE FROM bids WHERE closing < ?", (cutoff,)).rowcount
+            if deleted:
+                self._bump_embed_version()
+        return deleted
+
+    def labelled(self) -> list[tuple[int, str | None]]:
+        """(b_id, card) for every bid with a non-NULL card; '' marks a bid whose document was tried."""
+        return [(r[0], r[1]) for r in self._conn.execute("SELECT b_id, card FROM bids WHERE card IS NOT NULL")]
 
     def mark_missed(self, *, refresh_started: datetime, gone_after: int) -> tuple[int, int]:
         """After a complete full refresh: open bids it did not see are missed once more; after

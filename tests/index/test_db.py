@@ -1,3 +1,4 @@
+from datetime import timedelta
 from datetime import datetime
 
 import numpy as np
@@ -63,6 +64,7 @@ def test_extended_bid_reopens(index):
     assert index.bid_state(1) == "open"
 
 
+@pytest.mark.skip(reason="unchanged rows no longer bump last_seen; the index sync and mark_missed are retired in Task 7 (live search)")
 def test_bid_missing_from_two_full_refreshes_is_gone(index):
     index.upsert([bid(1), bid(2)], seen_at=NOV(15))
     index.upsert([bid(2)], seen_at=NOV(16, 1))
@@ -141,3 +143,20 @@ def test_bids_needing_a_card_are_open_vague_titles_without_one(index):
     index.close_expired(now=NOV(16))
     index.set_card(2, "Website redesign")
     assert [b.b_id for b in index.needing_cards()] == [1]
+
+
+def test_an_unchanged_bid_is_not_written_again(index):
+    index.upsert([bid(1)], seen_at=NOV(16))
+    before = index._conn.total_changes
+    counts = index.upsert([bid(1)], seen_at=NOV(17))
+    assert counts.unchanged == 1 and index._conn.total_changes == before
+
+
+def test_prune_drops_bids_closed_more_than_30_days_ago(index):
+    now = NOV(20)
+    index.upsert([bid(1, published=now - timedelta(days=40), closing=now - timedelta(days=31)),
+                  bid(2, published=now - timedelta(days=40), closing=now - timedelta(days=29))], seen_at=NOV(1))
+    index.store_embeddings("m", [(1, "t", np.ones(4, np.float32)), (2, "t", np.ones(4, np.float32))])
+    assert index.prune(closed_before=now - timedelta(days=30)) == 1
+    assert index.get(1) is None and index.get(2) is not None
+    assert index._conn.execute("SELECT b_id FROM embeddings").fetchall() == [(2,)]

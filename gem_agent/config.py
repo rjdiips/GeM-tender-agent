@@ -66,6 +66,10 @@ class Settings(BaseSettings):
     def index_path(self) -> Path:
         return self.data_dir / "index" / "bids.sqlite"
 
+    @property
+    def bid_cache_path(self) -> Path:
+        return self.data_dir / "bids" / "bids.sqlite"
+
 
 @lru_cache
 def get_settings() -> Settings:
