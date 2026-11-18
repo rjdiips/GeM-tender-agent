@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 
 import httpx
+import pytest
 
 from gem_agent.cache.search_cache import SearchCache
 from gem_agent.tools.gem.live import LiveSearcher, SearchProgress, SearchSpec
@@ -145,3 +146,16 @@ async def test_a_first_page_that_is_not_json_marks_the_search_failed(gem, clock)
     a, k = await live.first_pages([aml, kyc])
     assert a.progress.failed and a.progress.pages_read == 0 and a.bids == []
     assert not k.progress.failed and len(k.bids) == 10
+
+
+async def test_a_host_outside_the_allowlist_is_not_swallowed(gem, clock, monkeypatch):
+    from gem_agent.tools.http_client import HostNotAllowed
+
+    live, _ = make_live(gem, clock, {})
+
+    async def refuse(*args, **kwargs):
+        raise HostNotAllowed("https://elsewhere.example/")
+
+    monkeypatch.setattr("gem_agent.tools.gem.live.list_all_bids", refuse)
+    with pytest.raises(HostNotAllowed):
+        await live.first_pages([SearchSpec(kind="fullText", value="aml")])

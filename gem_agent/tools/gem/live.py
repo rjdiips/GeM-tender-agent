@@ -1,12 +1,13 @@
 """Live GeM searches in two stages: page 1 of every search, then the rest (spec 6.2)."""
 from __future__ import annotations
 
+import json
 import logging
 from dataclasses import dataclass
 from typing import Literal
 
 import httpx
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, ValidationError
 
 from gem_agent.cache.search_cache import SearchCache
 from gem_agent.tools.gem.models import Bid
@@ -23,7 +24,8 @@ from gem_agent.tools.http_client import BidplusSession, GemHttpError
 log = logging.getLogger(__name__)
 
 # A page can fail at the HTTP level or arrive as a body parse_page cannot read (HTML error page, missing keys, bad doc).
-_READ_ERRORS = (GemHttpError, httpx.HTTPError, ValueError, KeyError, TypeError)
+# Do not widen this to ValueError: HostNotAllowed is one, and an off-allowlist redirect must surface, not become a failed search.
+_READ_ERRORS = (GemHttpError, httpx.HTTPError, json.JSONDecodeError, KeyError, ValidationError)
 
 
 class SearchSpec(BaseModel):
