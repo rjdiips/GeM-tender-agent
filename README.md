@@ -1,8 +1,5 @@
 # GeM Tender Agent
 
-Spec: [docs/GEM_TENDER_AGENT.md](docs/GEM_TENDER_AGENT.md)
-Flow diagram: [docs/APP_FLOW.md](docs/APP_FLOW.md)
-
 ## Layout
 
 | Path | Contents |
