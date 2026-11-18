@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import re
-from typing import Any
+from typing import Any, Literal
 
 from gem_agent.agents.chat import short_name
 from gem_agent.agents.evidence import too_short
@@ -49,17 +49,35 @@ def error_text(error: str) -> str:
     return f"Not read: {first[:160]}{'…' if len(first) > 160 else ''}"
 
 
+State = Literal["relevant", "borderline", "quarantined"]
+
+
+def bid_state(o: Outcome) -> State:
+    """What a bid is to the reader, decided in one place; the first rule that applies wins."""
+    if o.restored:
+        return "relevant"
+    if o.ruling:
+        return "relevant" if o.ruling.decision == "counts" else "quarantined"
+    if o.verdict and o.verdict.borderline:
+        return "borderline"
+    return "relevant" if o.verdict and o.verdict.relevant else "quarantined"
+
+
 def bid_result(run_id: str, o: Outcome) -> dict[str, Any]:
     v, b = o.verdict, o.bid
     groups = display_files(o.files)
     names = {r.filename: g.name for g in groups for r in g.records}  # quotes name the file they came from
-    relevant = bool(v and v.relevant) or o.restored
+    state = bid_state(o)
+    ruling = o.ruling
     return {
         "b_id": b.b_id, "bid_number": b.bid_number, "title": b.title, "group": o.group,
         "buyer": " / ".join(p for p in (b.ministry, b.department) if p), "buyer_org": o.buyer_org,
         "published": b.published.isoformat() if b.published else "", "closing": b.closing.isoformat() if b.closing else "",
-        "relevant": relevant, "restored": o.restored, "confidence": v.confidence if v else 0.0,
-        "reason": v.reason if v else (error_text(o.error) if o.error else ""),
+        "relevant": state == "relevant", "state": state,
+        "question": v.question if v else "", "ruling": {"decision": ruling.decision, "by": ruling.by, "fact": ruling.fact}
+        if ruling else None, "restored": o.restored, "confidence": v.confidence if v else 0.0,
+        "reason": f"Your ruling: {ruling.fact}" if ruling and ruling.decision == "not"
+        else v.reason if v else (error_text(o.error) if o.error else ""),
         # an unverified quote is either too short to count (it may well be there) or not found in the documents
         "evidence": [{**e.model_dump(), "file_name": names.get(e.file, e.file),
                       "check": "verified" if e.verified else "short" if too_short(e.quote) else "not_found"}
@@ -116,6 +134,6 @@ def run_view(record: RunRecord, outcomes: dict[int, Outcome], events: list[dict[
 
 
 def run_list_item(record: RunRecord, outcomes: dict[int, Outcome]) -> dict[str, Any]:
-    found = sum(1 for o in outcomes.values() if (o.verdict and o.verdict.relevant) or o.restored)
+    found = sum(1 for o in outcomes.values() if bid_state(o) == "relevant")
     return {"run_id": record.run_id, "title": record.title, "when": record.created.isoformat(), "found": found,
             "new_count": 0, "saved_search": False}

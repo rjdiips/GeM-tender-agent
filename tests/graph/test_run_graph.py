@@ -50,6 +50,14 @@ async def test_a_search_streams_understanding_progress_and_each_result(tmp_path)
     assert s.store.load(run_id).status == "complete"
 
 
+async def test_a_borderline_bid_is_counted_apart_in_the_report(tmp_path):
+    s = services(tmp_path, searcher=FakeSearcher([[bid(1), bid(2, "Lockers", 18), bid(3, "Maybe LOS", 19)]]),
+                 judge=FakeJudge(no={2}, borderline={3}))
+    events = await ask(RunManager(s), "LOS tenders")
+    progress = [e["event"]["text"] for e in events if e["type"] == "progress"]
+    assert progress[-1] == "Done: 1 relevant, 1 quarantined. 1 bid needs your call: see Borderline."
+
+
 async def test_results_arrive_closing_soonest_first(tmp_path):
     s = services(tmp_path, searcher=FakeSearcher([[bid(1, closing_day=25), bid(2, closing_day=18)]]))
     events = await ask(RunManager(s), "LOS tenders")

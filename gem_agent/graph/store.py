@@ -2,7 +2,10 @@
 audit trail and are never deleted automatically (spec 11.1)."""
 from __future__ import annotations
 
+import fcntl
 import json
+from collections.abc import Callable, Iterable, Iterator
+from contextlib import contextmanager
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Literal
@@ -30,6 +33,16 @@ class RunRecord(BaseModel):
     error: str = ""
 
 
+class Ruling(BaseModel):
+    """The reader's call on a borderline bid, kept on the outcome (never in the verdict cache)."""
+    decision: Literal["counts", "not"]
+    by: Literal["you", "earlier"]
+    fact_id: str
+    fact: str
+    created_fact: bool = False
+    at: datetime
+
+
 class Outcome(BaseModel):
     b_id: int
     group: str
@@ -39,6 +52,8 @@ class Outcome(BaseModel):
     verdict: Verdict | None = None
     error: str = ""
     restored: bool = False
+    ruling: Ruling | None = None
+    undone: bool = False  # the user undid a ruling on this bid; never settle it automatically again
 
 
 _OUTCOMES = TypeAdapter(dict[int, Outcome])
@@ -85,10 +100,34 @@ class RunStore:
         path = self._dir(run_id) / "outcomes.json"
         return _OUTCOMES.validate_json(path.read_bytes()) if path.exists() else {}
 
-    def save_outcome(self, run_id: str, outcome: Outcome) -> None:
-        all_ = self.outcomes(run_id)
-        all_[outcome.b_id] = outcome
+    @contextmanager
+    def _outcomes_lock(self, run_id: str) -> Iterator[None]:
+        path = self._dir(run_id) / "outcomes.lock"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with path.open("a") as f:
+            fcntl.flock(f, fcntl.LOCK_EX)
+            try:
+                yield
+            finally:
+                fcntl.flock(f, fcntl.LOCK_UN)
+
+    def _write_outcomes(self, run_id: str, all_: dict[int, Outcome]) -> None:
         self._write(self._dir(run_id) / "outcomes.json", _OUTCOMES.dump_json(all_, indent=1).decode())
+
+    def save_outcome(self, run_id: str, outcome: Outcome) -> None:
+        with self._outcomes_lock(run_id):
+            all_ = self.outcomes(run_id)
+            all_[outcome.b_id] = outcome
+            self._write_outcomes(run_id, all_)
+
+    def update_outcomes(self, run_id: str, fn: Callable[[dict[int, Outcome]], Iterable[int]]) -> dict[int, Outcome]:
+        """Read-modify-write under the run's lock: `fn` edits the freshly read outcomes and returns the changed ids.
+        Pure and synchronous, so no model call is ever made while the lock is held."""
+        with self._outcomes_lock(run_id):
+            all_ = self.outcomes(run_id)
+            changed = list(fn(all_))
+            self._write_outcomes(run_id, all_)
+            return {b_id: all_[b_id] for b_id in changed}
 
     def append_event(self, run_id: str, event: dict[str, Any]) -> None:
         path = self._dir(run_id) / "log.jsonl"

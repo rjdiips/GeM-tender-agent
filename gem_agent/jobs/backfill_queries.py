@@ -15,6 +15,7 @@ from gem_agent.agents.schemas import QueriesDeadline
 from gem_agent.cache.docs import DocCache
 from gem_agent.cache.verdicts import VerdictCache
 from gem_agent.graph.store import Outcome, RunStore
+from gem_agent.graph.views import bid_state
 
 log = logging.getLogger(__name__)
 
@@ -46,7 +47,7 @@ async def backfill_queries(judge: Judge, cache: DocCache, verdicts: VerdictCache
         if files is None:
             report.no_documents += 1
             return b_id, None
-        ask = any((o.verdict.relevant or o.restored) and o.verdict.stage != "triage" for _, o in rows)
+        ask = any(bid_state(o) == "relevant" and o.verdict.stage != "triage" for _, o in rows)
         found, asked = await judge.find_queries(rows[0][1].bid, files, ask=ask)
         report.model_calls += asked
         return b_id, found

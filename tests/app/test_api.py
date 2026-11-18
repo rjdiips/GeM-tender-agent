@@ -9,6 +9,7 @@ import pytest
 from gem_agent.app.main import create_app
 from gem_agent.cache.docs import DocCache
 from gem_agent.graph.manager import RunManager
+from gem_agent.graph.store import Ruling
 from tests.graph.fakes import FakeChat, FakeJudge
 from tests.graph.test_run_graph import services
 
@@ -110,6 +111,30 @@ async def test_file_download_and_zip(client):
     z = zipfile.ZipFile(io.BytesIO((await client.get(view["zip_url"])).content))
     assert sorted(z.namelist()) == ["GEM-2026-B-1/GEM-2026-B-1 - Bid document.pdf",
                                     "GEM-2026-B-1/GEM-2026-B-1 - RFP.pdf"]  # relevant bids only
+
+
+async def test_a_borderline_bid_enters_the_zip_only_when_ruled_counts(client, app_parts):
+    await login(client)
+    s = app_parts[0]
+    run_id = (await ask(client, "LOS tenders"))[0]["run"]["run_id"]
+
+    async def zipped():
+        z = zipfile.ZipFile(io.BytesIO((await client.get(f"/api/runs/{run_id}/zip")).content))
+        return any(n.startswith("GEM-2026-B-2/") for n in z.namelist())
+
+    def make_borderline(all_):
+        all_[2] = all_[2].model_copy(update={"verdict": all_[2].verdict.model_copy(update={"borderline": True})})
+        return [2]
+
+    def rule_counts(all_):
+        ruling = Ruling(decision="counts", by="you", fact_id="f", fact="LOS counts", at=s.now())
+        all_[2] = all_[2].model_copy(update={"ruling": ruling})
+        return [2]
+
+    s.store.update_outcomes(run_id, make_borderline)
+    assert not await zipped()
+    s.store.update_outcomes(run_id, rule_counts)
+    assert await zipped()
 
 
 async def test_files_of_other_users_runs_are_refused(client):

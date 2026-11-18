@@ -81,13 +81,14 @@ class FakeCollector:
 
 
 class FakeJudge:
-    """Bids whose id is in `no` are clear triage rejections; the rest are relevant."""
+    """Bids whose id is in `no` are clear triage rejections, those in `borderline` are borderline; the rest are relevant."""
 
-    def __init__(self, no=()):
-        self.no, self.judged = set(no), []
+    def __init__(self, no=(), borderline=()):
+        self.no, self.borderline, self.judged = set(no), set(borderline), []
 
-    def _verdict(self, topic, bid, relevant, stage):
+    def _verdict(self, topic, bid, relevant, stage, borderline=False):
         return Verdict(b_id=bid.b_id, bid_number=bid.bid_number, topic_key=topic.key(), doc_hash="h", relevant=relevant,
+                       borderline=borderline, question=f"Does bid {bid.b_id} count for you?" if borderline else "",
                        confidence=0.9, stage=stage, triage="maybe", reason="RFP asks for an LOS." if relevant else "Lockers.",
                        evidence=[Evidence(quote="implement a Loan Origination System", file="RFP.pdf", page=3, verified=True)],
                        key_facts=KeyFacts(emd="Rs 5 lakh", min_turnover=None, contract_period=None, estimated_value=None,
@@ -104,6 +105,8 @@ class FakeJudge:
 
     async def judge(self, topic, bid, files, triage=None):
         self.judged.append(bid.b_id)
+        if bid.b_id in self.borderline:
+            return self._verdict(topic, bid, False, "judge", borderline=True)
         return self._verdict(topic, bid, True, "judge")
 
 

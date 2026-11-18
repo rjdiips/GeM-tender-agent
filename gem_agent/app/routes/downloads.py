@@ -10,7 +10,7 @@ from fastapi.responses import FileResponse, StreamingResponse
 
 from gem_agent.app.auth import current_user
 from gem_agent.cache.names import display_files, download_name
-from gem_agent.graph.views import with_names
+from gem_agent.graph.views import bid_state, with_names
 
 router = APIRouter()
 
@@ -45,7 +45,7 @@ def zip_all(run_id: str, request: Request, user: str = Depends(current_user)) ->
     buf = io.BytesIO()
     with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
         for o in outcomes.values():
-            if not ((o.verdict and o.verdict.relevant) or o.restored):
+            if bid_state(o) != "relevant":
                 continue
             folder = o.bid.bid_number.replace("/", "-")
             for group in display_files(o.files):  # each document once, under what it is

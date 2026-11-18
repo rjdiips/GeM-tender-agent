@@ -19,7 +19,7 @@ from gem_agent.agents.searcher import Candidate
 from gem_agent.graph.services import Services
 from gem_agent.graph.state import RunState
 from gem_agent.graph.store import Outcome
-from gem_agent.graph.views import bid_result
+from gem_agent.graph.views import bid_result, bid_state
 
 log = logging.getLogger(__name__)
 MAX_RETRIES = 2
@@ -139,14 +139,16 @@ def build_graph(s: Services) -> StateGraph:
 
     async def report(state: RunState) -> dict[str, Any]:
         outcomes = list(s.store.outcomes(state.run_id).values())
-        relevant = sum(1 for o in outcomes if o.verdict and o.verdict.relevant)
-        quarantined = sum(1 for o in outcomes if o.verdict and not o.verdict.relevant)
+        states = [bid_state(o) for o in outcomes if o.verdict]
+        relevant, quarantined, borderline = (states.count(k) for k in ("relevant", "quarantined", "borderline"))
         failed = sum(1 for o in outcomes if o.error)
         if not state.candidates:
             text = (f"No matching tenders found {state.request.window.describe()} "
                     f"(looked at {state.pool:,} titles, searched {state.retries + 1} ways).")
         else:
             text = f"Done: {relevant} relevant, {quarantined} quarantined" + (f", {failed} could not be read" if failed else "") + "."
+            text += (" 1 bid needs your call: see Borderline." if borderline == 1
+                     else f" {borderline} bids need your call: see Borderline." if borderline else "")
         progress(s, state.run_id, text)
         return {}
 
