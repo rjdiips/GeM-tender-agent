@@ -243,3 +243,17 @@ def test_redo_clears_every_card_including_tried_ones():
     assert index.clear_cards() == 2
     assert [b.b_id for b in index.needing_cards()] == [1, 2, 3] 
     assert "Lending" not in index._conn.execute("SELECT embed_text FROM bids WHERE b_id = 1").fetchone()[0]
+
+
+async def test_cards_are_written_only_for_the_given_vague_bids_without_a_card(tmp_path):
+    # vague bids 1, 2 (already has card "x") and 3 are in the index; the run collected 1, 2 and a non-vague bid 4
+    index, cache = setup(tmp_path, n=3)
+    index.set_card(2, "x")
+    at = datetime(2026, 11, 10)
+    plain = Bid.from_listing(row(4, at, datetime(2026, 11, 28), "Supply of chairs"))
+    index.upsert([plain], seen_at=at)
+    b1, b2 = (Bid.from_listing(row(i, at, datetime(2026, 11, 28), VAGUE)) for i in (1, 2))
+    collector = PartialCollector(cache, ["Bid details. Item: Implementation of a loan origination system"])
+    llm = ScriptedLLM({CARD_INSTRUCTIONS: [{"subject": "Loan origination system", "terms": []}]})
+    report = await write_cards(index, collector, llm.model(), bids=[b1, b2, plain])
+    assert report.written == 1 and collector.calls == [(1, True)] and index.card(3) is None

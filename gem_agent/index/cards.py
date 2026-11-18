@@ -29,6 +29,7 @@ from pydantic_ai.models import Model
 
 from gem_agent.index.db import BidIndex
 from gem_agent.tools.gem.models import Bid
+from gem_agent.tools.gem.titles import is_vague_title
 
 log = logging.getLogger(__name__)
 
@@ -154,9 +155,10 @@ def _rfp_sections(collector: Any, files: Any, bid_text: str, max_files: int = 3)
     return "\n\n".join(sections)
 
 
-async def write_cards(index: BidIndex, collector: Any, model: Model, *, limit: int = 40, text_chars: int = 12000,
-                      max_attachments: int = 3) -> CardReport:
-    """Cards for up to `limit` vague-title bids that have none. A bid that fails is left for the next run."""
+async def write_cards(index: BidIndex, collector: Any, model: Model, *, bids: list[Bid] | None = None,
+                      limit: int = 40, text_chars: int = 12000, max_attachments: int = 3) -> CardReport:
+    """Cards for up to `limit` vague-title bids that have none: the given `bids` if any, else every such bid in the
+    index. A bid that fails is left for the next run."""
     agent = Agent(model, output_type=NativeOutput(CardOutput), instructions=CARD_INSTRUCTIONS, retries=2)
     report = CardReport()
 
@@ -164,7 +166,11 @@ async def write_cards(index: BidIndex, collector: Any, model: Model, *, limit: i
         prompt = (f"Title: {bid.title}\nBuyer: {bid.ministry or ''} / {bid.department or ''}\n\n{text}")
         return (await agent.run(prompt, model_settings={"max_tokens": 400, "temperature": 0.0})).output
 
-    for bid in index.needing_cards(limit):
+    if bids is None:
+        todo = index.needing_cards(limit)
+    else:
+        todo = [b for b in bids if is_vague_title(b.title) and index.card(b.b_id) is None][:limit]
+    for bid in todo:
         try:
             files = await collector.collect(bid)
             # the bid document, and for a reverse auction its original bid, which carries the subject
