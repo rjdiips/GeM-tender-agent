@@ -1,5 +1,5 @@
-"""Chat + Planner with the real model and the real local index. Run with: pytest -m live
-One GeM request (the advance-search page, for the category list); ~8 model calls."""
+"""Chat + Planner with the real model and live GeM searches. Run with: pytest -m live
+A few GeM requests (category list, page 1 of the probe searches); ~8 model calls."""
 import functools
 from datetime import timedelta
 
@@ -11,10 +11,10 @@ from gem_agent.agents.planner import Planner
 from gem_agent.cache.lookups import LookupCatalog
 from gem_agent.config import get_settings
 from gem_agent.index.db import BidIndex
-from gem_agent.index.probe import probe_site
+from gem_agent.agents.probe import probe_live
 from gem_agent.memory.topics import TopicStore
 from gem_agent.memory.user_memory import MemoryStore
-from gem_agent.retrieval.embed import BgeM3Embedder
+from gem_agent.tools.gem.live import LiveSearcher
 from gem_agent.tools.gem.models import site_now
 from gem_agent.tools.http_client import BidplusSession, ClientPool
 
@@ -28,7 +28,7 @@ async def test_understanding_and_plans(tmp_path):
         catalog = LookupCatalog(tmp_path, index)
         await catalog.refresh(BidplusSession(pool), today=site_now().date())
         memory = MemoryStore(tmp_path)
-        chat = ChatAgent(chat_model(), probe=functools.partial(probe_site, index, BgeM3Embedder(device="cpu")),
+        chat = ChatAgent(chat_model(), probe=functools.partial(probe_live, LiveSearcher(BidplusSession(pool))),
                          memory=memory, topics=TopicStore(tmp_path))
         planner = Planner(chat_model(), catalog)
         today = site_now().date()
@@ -53,3 +53,20 @@ async def test_understanding_and_plans(tmp_path):
     finally:
         await pool.aclose()
         index.close()
+
+
+async def test_payment_systems_stays_a_broad_class(tmp_path):
+    pool = ClientPool.shared()
+    try:
+        chat = ChatAgent(chat_model(), probe=functools.partial(probe_live, LiveSearcher(BidplusSession(pool))),
+                         memory=MemoryStore(tmp_path), topics=TopicStore(tmp_path))
+        out = await chat.understand("t", "Payment systems tenders", [], run_id="r1")
+        topic = out.request.topics[0]
+        print("MEANING:", topic.meaning, "| MATCH_TERMS:", topic.match_terms)
+        products = {"UPI", "RTGS", "NEFT", "payment switch", "card management", "payment gateway"}
+        terms = " | ".join(topic.match_terms).lower()
+        assert sum(p.lower() in terms for p in products) >= 3
+        named = [p for p in products if p.lower() in topic.meaning.lower()]
+        assert named != ["payment gateway"]
+    finally:
+        await pool.aclose()

@@ -12,7 +12,7 @@ probe runs between the two calls instead of as a tool.
 from __future__ import annotations
 
 import re
-from collections.abc import Callable
+from collections.abc import Awaitable, Callable
 from datetime import date, datetime
 from typing import Annotated, Literal
 
@@ -35,6 +35,9 @@ UNDERSTAND_INSTRUCTIONS = """You turn a request for Indian government (GeM) tend
   When the topic is an acronym or short term with several common expansions in different fields (banking,
   telecom, health, engineering, …), give each plausible expansion as its own candidate. Use what you know about
   the user and the rest of the request to rank them.
+  When the request names a general class of product or service (payment systems, treasury, core banking), the
+  candidate is the whole class: describe it broadly and list its specific products in match_terms; never narrow
+  it to one product.
   match_terms: phrases and synonyms a tender would use, including the acronym. related_but_not_enough: adjacent
   things that alone don't count. not_this: the other meanings of the same words or acronym, and look-alike words.
 - window: "within / in the last N weeks or days" means kind=published with last_days=N*7 or N, unless the user
@@ -124,7 +127,7 @@ SAVED_MEANINGS_IN_PROMPT = 20  # most recent requests; older ones still load whe
 
 
 class ChatAgent:
-    def __init__(self, model: Model, *, probe: Callable[[TopicDefinition, ResolvedWindow], ProbeResult],
+    def __init__(self, model: Model, *, probe: Callable[[TopicDefinition, ResolvedWindow], Awaitable[ProbeResult]],
                  memory: MemoryStore, topics: TopicStore, now: Callable[[], datetime] = site_now) -> None:
         self.probe, self.memory, self.topics, self.now = probe, memory, topics, now
         self._understand = Agent(model, output_type=NativeOutput(UnderstandOutput),
@@ -159,7 +162,7 @@ class ChatAgent:
 
         ranked = sorted(out.candidates, key=lambda c: -c.plausibility)
         candidates = [(c.topic.to_topic(message), c.plausibility) for c in ranked]
-        probes = [self.probe(t, window) for t, _ in candidates]
+        probes = [await self.probe(t, window) for t, _ in candidates]
         if len(candidates) == 1:
             keep, because = [0], "the only plausible meaning"
         else:

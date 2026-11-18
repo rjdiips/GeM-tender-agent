@@ -29,7 +29,7 @@ class FakeProbe:
     def __init__(self, counts):
         self.counts, self.calls = counts, []
 
-    def __call__(self, topic, window):
+    async def __call__(self, topic, window):
         self.calls.append(topic.meaning)
         strong = self.counts.get(topic.meaning, 0)
         return ProbeResult(meaning=topic.meaning, window_count=36104, strong=strong,
