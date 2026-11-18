@@ -86,8 +86,13 @@ class QueriesOut(BaseModel):
     minute: int | None = Field(ge=0, le=59)
 
 
+Decision = Literal["relevant", "borderline", "not_relevant"]
+
+
 class JudgeOutput(BaseModel):
-    relevant: bool
+    decision: Decision
+    question: str = Field(max_length=200, description="for a borderline decision, the one question the reader must "
+                          "answer; empty unless the decision is borderline")
     confidence: float = Field(ge=0, le=1)
     reason: str = Field(max_length=400, description="one sentence a sales person can read")
     # Required, so the enforced JSON schema can't drop them. A "no" quotes what the tender is actually about.
@@ -132,6 +137,8 @@ class Verdict(BaseModel):
     topic_key: str
     doc_hash: str
     relevant: bool
+    borderline: bool = False  # close to the topic; whether it counts is the reader's call (older verdicts have none)
+    question: str = ""  # what to ask the reader when borderline
     confidence: float
     stage: Literal["triage", "judge", "deep"]
     triage: str

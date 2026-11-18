@@ -64,6 +64,7 @@ JUDGE_INSTRUCTIONS = """You decide whether a GeM tender is really about one topi
   learning", "may later include"), or only in GeM's "Similar Category" list on the bid document's first page (GeM
   fills it in from the item category; the buyer did not write it), is not in scope.
 - If the passages don't settle it, answer with a low confidence.
+- Borderline: the documents show something close to the topic, and whether it counts depends on the buyer's purpose or the reader's line of business, not on missing evidence. Then ask, in one sentence, the specific question the reader must answer (e.g. "AI is one part of a digital twin platform. Does that count as an AI platform for you?"). Otherwise leave question empty.
 - Key facts: fill in EMD, minimum turnover, contract period, estimated value and a short scope summary when the
   passages state them; leave them empty otherwise.
 - Queries: the last date and time for bidders to send queries or pre-bid clarifications, when the passages state
@@ -265,7 +266,10 @@ class Judge:
                 out, evidence, review = await self._decide(topic, deep_context, labels, pages)
                 stage = "deep"
         confidence = min(out.confidence, 0.5) if review else out.confidence  # unproven: never high confidence
-        verdict = Verdict(**base, relevant=out.relevant, confidence=confidence, stage=stage,
+        borderline = out.decision == "borderline"
+        question = (out.question.strip() or out.reason) if borderline else ""
+        verdict = Verdict(**base, relevant=out.decision == "relevant", borderline=borderline, question=question,
+                          confidence=confidence, stage=stage,
                           triage=triage.decision, reason=out.reason, evidence=evidence, key_facts=out.key_facts,
                           queries=plausible_queries(gem_pre_bid or self._queries(out.queries, labels, pages), bid.closing,
                                                     bid.published),
@@ -282,7 +286,7 @@ class Judge:
         prompt = f"{topic.render()}\n\n{context}"
         out: JudgeOutput = await self._ask(self._judge, prompt, self.settings.judge_max_tokens)
         evidence = self._check(out, labels, pages)
-        if out.relevant and not any(e.verified for e in evidence):
+        if out.decision != "not_relevant" and not any(e.verified for e in evidence):
             missing = "; ".join(f'"{q.quote}" ({q.file} p.{q.page})' for q in out.evidence) or "none given"
             retry = (f"{prompt}\n\nYour previous answer quoted text that could not be found in the passages: "
                      f"{missing}. Copy each quote exactly from the passages above, with its label and page.")
@@ -297,7 +301,7 @@ class Judge:
                      f"scope of work, the terms) or the bid document's buyer-added terms, with its label and page.")
             out = await self._ask(self._judge, retry, self.settings.judge_max_tokens)
             evidence = self._check(out, labels, pages)
-        review = out.relevant and not (any(e.verified for e in evidence) and self._from_documents(evidence, labels))
+        review = out.decision == "relevant" and not (any(e.verified for e in evidence) and self._from_documents(evidence, labels))
         return out, evidence, review
 
     # --- the last date for queries ------------------------------------------------------------------------------------

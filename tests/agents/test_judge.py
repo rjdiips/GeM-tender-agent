@@ -24,7 +24,7 @@ FACTS = {"emd": "Rs 5,00,000", "min_turnover": "50 crore", "contract_period": "5
 
 
 def yes(confidence=0.9, quotes=(GOOD_QUOTE,)):
-    return {"relevant": True, "confidence": confidence, "reason": "The RFP is for a Loan Origination System.",
+    return {"decision": "relevant", "question": "", "confidence": confidence, "reason": "The RFP is for a Loan Origination System.",
             "evidence": list(quotes), "key_facts": FACTS, "queries": NO_QUERIES}
 
 
@@ -106,7 +106,7 @@ async def test_unverifiable_relevant_verdict_needs_review(cache, files):
 
 
 async def test_not_relevant_is_not_sent_back(cache, files):
-    no = {"relevant": False, "confidence": 0.9, "reason": "Core banking only.",
+    no = {"decision": "not_relevant", "question": "", "confidence": 0.9, "reason": "Core banking only.",
           "evidence": [{"quote": "Introduction to the bank and its branches", "file": "F2", "page": 1}], "key_facts": FACTS,
           "queries": NO_QUERIES}
     llm = ScriptedLLM({TRIAGE_INSTRUCTIONS: [TRIAGE_MAYBE], JUDGE_INSTRUCTIONS: [no]})
@@ -232,6 +232,7 @@ def test_free_text_in_model_answers_is_bounded():
         for path, prop in strings(schema, schema.get("$defs", {})):
             assert "maxLength" in prop or "enum" in prop, f"{model.__name__}.{path}"
     assert "reason" not in ScreenOutput.model_json_schema()["properties"]
+    assert JudgeOutput.model_json_schema()["properties"]["question"]["maxLength"] == 200
 
 
 async def test_screen_then_judge_makes_one_triage_call(cache, files):
@@ -295,7 +296,7 @@ async def test_a_quote_from_the_buyer_added_terms_in_the_bid_document_counts(cac
 
 
 def no(quotes):
-    return {"relevant": False, "confidence": 0.95, "reason": "A land survey, not software.", "evidence": quotes,
+    return {"decision": "not_relevant", "question": "", "confidence": 0.95, "reason": "A land survey, not software.", "evidence": quotes,
             "key_facts": FACTS, "queries": NO_QUERIES}
 
 
@@ -500,3 +501,41 @@ async def test_gems_pre_bid_block_split_across_a_page_break_is_read(cache):
     verdict = await make_judge(llm, cache).judge(LOS, BID.model_copy(update={"b_id": 3}), files)
     q = verdict.queries
     assert q and q.source == "gem_pre_bid" and q.when == datetime(2026, 11, 2, 15, 0) and q.page == 3
+
+
+QUESTION = "AI is one part of a digital twin. Does that count as an AI platform for you?"
+
+
+def borderline(question=QUESTION, reason="Digital twin with an ML layer."):
+    return {**yes(), "decision": "borderline", "question": question, "reason": reason}
+
+
+async def test_borderline_verdict_keeps_the_question_and_is_not_relevant(cache, files):
+    llm = ScriptedLLM({TRIAGE_INSTRUCTIONS: [TRIAGE_MAYBE], JUDGE_INSTRUCTIONS: [borderline()]})
+    v = await make_judge(llm, cache).judge(LOS, BID, files)
+    assert v.borderline is True and v.relevant is False
+    assert v.question.startswith("AI is one part of a digital twin")
+    assert not v.needs_review and llm.count(JUDGE_INSTRUCTIONS) == 1
+
+
+async def test_borderline_without_a_question_falls_back_to_the_reason(cache, files):
+    llm = ScriptedLLM({TRIAGE_INSTRUCTIONS: [TRIAGE_MAYBE], JUDGE_INSTRUCTIONS: [borderline(question="  ")]})
+    v = await make_judge(llm, cache).judge(LOS, BID, files)
+    assert v.borderline and v.question == "Digital twin with an ML layer."
+
+
+async def test_relevant_and_not_relevant_have_no_question(cache, files):
+    stray = {**yes(), "question": "stray text"}
+    llm = ScriptedLLM({TRIAGE_INSTRUCTIONS: [TRIAGE_MAYBE], JUDGE_INSTRUCTIONS: [stray]})
+    v = await make_judge(llm, cache).judge(LOS, BID, files)
+    assert v.relevant and not v.borderline and v.question == ""
+
+
+def test_verdicts_cached_before_borderline_still_load():
+    from gem_agent.agents.schemas import Verdict
+
+    old = {"b_id": 1, "bid_number": "GEM/2026/B/1", "topic_key": "k", "doc_hash": "h", "relevant": True,
+           "confidence": 0.9, "stage": "judge", "triage": "maybe", "reason": "r", "model": "m",
+           "decided_at": "2026-11-01T10:00:00"}
+    v = Verdict.model_validate(old)
+    assert v.borderline is False and v.question == ""
