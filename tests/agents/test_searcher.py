@@ -1,41 +1,43 @@
+import re
 from datetime import datetime
 
 import pytest
 
 from gem_agent.agents.schemas import SearchPlan
-from gem_agent.agents.searcher import SCREEN_INSTRUCTIONS, Searcher, SearchSettings
+from gem_agent.agents.searcher import BASE_SPECS, SCREEN_INSTRUCTIONS, Searcher, SearchSettings, search_specs
 from gem_agent.index.db import BidIndex
-from gem_agent.index.sync import embed_pending
+from gem_agent.tools.gem.live import LiveSearcher
 from gem_agent.tools.gem.models import Bid
+from gem_agent.tools.http_client import BidplusSession, ClientPool
 from tests.agents.helpers import LOS, ScriptedLLM
-from tests.index.helpers import HashEmbedder, row
+from tests.index.helpers import row
+from tests.tools.live_helpers import FakeSearchSite
+
+B = "https://bidplus.gem.gov.in"
+T = datetime(2026, 11, 15)
+CATEGORY = "services_home_itse_hi12433188"
 
 
 def at(day, hour=12):
     return datetime(2026, 11, day, hour)
 
 
-TITLES = {
-    1: ("Supply of Loan Origination System for RRBs", "Department of Financial Services", at(20)),
-    2: ("LOST property lockers", "Department of Revenue", at(19)),
-    3: ("Office chairs", "Department of Revenue", at(18)),
-    4: ("Digital lending platform with loan origination workflow", "REGIONAL RURAL BANKS", at(25)),
-    5: ("Hiring of Agency for IT Projects- Milestone basis", "Department of Financial Services", at(17)),
+def mk(b_id, title, department="Department of Revenue", closing=at(20), published=at(10), **kw):
+    return row(b_id, published, closing, title, department=department, **kw)
+
+
+ROWS = {
+    1: mk(1, "Supply of Loan Origination System for RRBs", "Department of Financial Services", at(20)),
+    2: mk(2, "LOST property lockers", closing=at(19)),
+    3: mk(3, "Office chairs", closing=at(18)),
+    4: mk(4, "Digital lending platform with loan origination workflow", "REGIONAL RURAL BANKS", at(25)),
+    5: mk(5, "Hiring of Agency for IT Projects- Milestone basis", "Department of Financial Services", at(17)),
 }
-
-
-@pytest.fixture
-def index():
-    idx = BidIndex(":memory:")
-    idx.upsert([Bid.from_listing(row(i, at(10), c, t, department=d)) for i, (t, d, c) in TITLES.items()], seen_at=at(15))
-    embed_pending(idx, HashEmbedder())
-    yield idx
-    idx.close()
 
 
 def plan(**kw):
     base = {"topic_key": LOS.key(), "text": LOS.meaning, "terms": ["Loan Origination System", "LOS", "loan origination"],
-            "published_from": at(2, 0), "published_to": at(16), "closing_from": at(16)}
+            "categories": [CATEGORY], "published_from": at(2, 0), "published_to": at(16), "closing_from": at(16)}
     return SearchPlan(**(base | kw))
 
 
@@ -47,138 +49,134 @@ def screened(llm):
     return llm.calls[0][1] if llm.calls else ""
 
 
-async def test_word_and_meaning_matches_go_to_the_title_screen(index):
-    def screen(prompt):
-        import re
-        return {"keep": [int(n) for n, title in re.findall(r"^\[(\d+)\] (.*)$", prompt, re.MULTILINE)
-                         if "rigination" in title or "lending" in title]}
-
-    llm = ScriptedLLM({SCREEN_INSTRUCTIONS: screen})
-    found = await Searcher(llm.model(), index, HashEmbedder()).search(LOS, plan())
-    assert {c.bid.b_id for c in found.candidates} >= {1, 4}
-    assert 3 not in {c.bid.b_id for c in found.candidates}
-    assert "Supply of Loan Origination System for RRBs" in screened(llm)
+def keep_all():
+    return ScriptedLLM({SCREEN_INSTRUCTIONS: lambda p: {"keep": list(range(40))}})
 
 
-async def test_title_screen_never_drops_a_vague_title(index):
+def ids(found):
+    return {c.bid.b_id for c in found.candidates}
+
+
+@pytest.fixture
+def bid_cache():
+    idx = BidIndex(":memory:")
+    yield idx
+    idx.close()
+
+
+def build(gem, clock, bid_cache, llm, by_query, **settings):
+    site = FakeSearchSite(by_query)
+    gem.add("GET", f"{B}/advance-search", "advance_search.html.gz")
+    gem.add("POST", f"{B}/all-bids-data", site)
+    gem.add("POST", f"{B}/search-bids", site)
+    live = LiveSearcher(BidplusSession(ClientPool(transport=gem.transport(), clock=clock, sleep=clock.sleep)))
+    return Searcher(llm.model(), bid_cache, live, settings=SearchSettings(**settings) if settings else None), site
+
+
+def the_site(*row_ids):
+    return {f"category|{CATEGORY}": [ROWS[i] for i in row_ids]}
+
+
+def test_search_specs_start_with_the_base_searches_and_drop_repeats():
+    specs = search_specs(plan(terms=["LOS", "LOS"], ministries=["Ministry of Finance"],
+                              departments=["REGIONAL RURAL BANKS"], prefer_departments=["REGIONAL RURAL BANKS"]))
+    assert specs[: len(BASE_SPECS)] == BASE_SPECS
+    assert [s.key for s in specs[len(BASE_SPECS):]] == ["exact|Ministry of Finance", "exact|REGIONAL RURAL BANKS", "fullText|LOS"]
+    assert len({s.key for s in specs}) == len(specs)
+
+
+async def test_base_searches_run_even_when_the_plan_has_no_categories_or_buyers(gem, clock, bid_cache):
+    searcher, site = build(gem, clock, bid_cache, keep_all(), {})
+    await searcher.search(LOS, plan(terms=["LOS"], categories=[]))
+    assert {k for k, _ in site.served} >= {s.key for s in BASE_SPECS}
+
+
+async def test_first_stage_reads_page_one_and_rest_reads_the_remaining_pages(gem, clock, bid_cache):
+    many = [mk(100 + i, f"Loan origination item {i}") for i in range(25)]
+    searcher, site = build(gem, clock, bid_cache, keep_all(), {"fullText|loan origination": many})
+    p = plan(categories=[], published_from=None, published_to=None, closing_from=None)
+    first = await searcher.search(LOS, p, stage="first")
+    assert {pg for _, pg in site.served} == {1}
+    await searcher.search(LOS, p, stage="rest", progress=first.progress, exclude={c.bid.b_id for c in first.candidates})
+    assert 2 in {pg for k, pg in site.served if k == "fullText|loan origination"}
+
+
+async def test_the_second_stage_returns_only_bids_the_first_did_not(gem, clock, bid_cache):
+    many = [mk(100 + i, f"Loan origination item {i}") for i in range(25)]
+    searcher, _ = build(gem, clock, bid_cache, keep_all(), {"fullText|loan origination": many})
+    p = plan(categories=[], published_from=None, published_to=None, closing_from=None)
+    first = await searcher.search(LOS, p, stage="first")
+    seen = {c.bid.b_id for c in first.candidates}
+    second = await searcher.search(LOS, p, stage="rest", progress=first.progress, exclude=seen)
+    assert second.candidates and not ({c.bid.b_id for c in second.candidates} & seen)
+    assert second.progress["fullText|loan origination"].pages_read == 3
+
+
+async def test_vague_titles_without_a_card_are_never_dropped(gem, clock, bid_cache):
     llm = ScriptedLLM({SCREEN_INSTRUCTIONS: [{"keep": []}]})
-    found = await Searcher(llm.model(), index, HashEmbedder(), settings=SearchSettings(semantic_pool=10)).search(LOS, plan())
-    assert [c.bid.b_id for c in found.candidates] == [5]
+    searcher, _ = build(gem, clock, bid_cache, llm, the_site(3, 5))
+    found = await searcher.search(LOS, plan())
+    assert ids(found) == {5}
     assert "vague title" in found.candidates[0].why[0]
 
 
-async def test_closing_soonest_first_and_capped(index):
-    llm = ScriptedLLM({SCREEN_INSTRUCTIONS: lambda p: {"keep": list(range(10))}})
-    found = await Searcher(llm.model(), index, HashEmbedder(), settings=SearchSettings(cap=3, semantic_pool=10)).search(LOS, plan())
+async def test_a_vague_title_with_a_card_is_screened_by_its_card(gem, clock, bid_cache):
+    bid_cache.upsert([Bid.from_listing(ROWS[5])], seen_at=T)
+    bid_cache.set_card(5, "Loan origination system for RRBs; LOS")
+    llm = ScriptedLLM({SCREEN_INSTRUCTIONS: lambda p: {"keep": [int(n) for n, t in re.findall(r"^\[(\d+)\] (.*)$", p, re.MULTILINE)
+                                                                if "Loan origination system" in t]}})
+    searcher, _ = build(gem, clock, bid_cache, llm, the_site(3, 5))
+    found = await searcher.search(LOS, plan())
+    assert "what it buys: Loan origination system for RRBs" in screened(llm)
+    assert ids(found) == {5} and "vague title" not in " ".join(found.candidates[0].why)
+
+
+async def test_the_window_is_applied_locally(gem, clock, bid_cache):
+    old = mk(6, "Loan origination system old", published=datetime(2026, 10, 30))
+    searcher, _ = build(gem, clock, bid_cache, keep_all(), {f"category|{CATEGORY}": [ROWS[1], old]})
+    found = await searcher.search(LOS, plan(published_from=at(2, 0)))
+    assert 6 not in ids(found) and 1 in ids(found)
+
+
+async def test_hard_buyer_filter_applies_and_preferred_buyers_only_rank(gem, clock, bid_cache):
+    searcher, site = build(gem, clock, bid_cache, keep_all(), the_site(1, 3, 4))
+    found = await searcher.search(LOS, plan(departments=["REGIONAL RURAL BANKS"]))
+    assert ids(found) == {4}
+    assert "exact|REGIONAL RURAL BANKS" in {k for k, _ in site.served}
+    found = await searcher.search(LOS, plan(prefer_departments=["REGIONAL RURAL BANKS"]))
+    assert ids(found) == {1, 3, 4}
+    assert "preferred buyer" in next(c for c in found.candidates if c.bid.b_id == 4).why
+
+
+async def test_bid_types_filter_the_pool(gem, clock, bid_cache):
+    ra = mk(7, "Loan origination reverse auction", bid_type=2)
+    searcher, _ = build(gem, clock, bid_cache, keep_all(), {f"category|{CATEGORY}": [ROWS[1], ra]})
+    assert ids(await searcher.search(LOS, plan(bid_types=[2]))) == {7}
+
+
+async def test_closing_soonest_first_and_capped(gem, clock, bid_cache):
+    searcher, _ = build(gem, clock, bid_cache, keep_all(), the_site(1, 3, 4, 5), cap=3)
+    found = await searcher.search(LOS, plan())
     closings = [c.bid.closing for c in found.candidates]
     assert closings == sorted(closings) and len(found.candidates) == 3 and found.over_cap
 
 
-async def test_preferred_buyers_are_marked_and_ranked_first_within_a_day(index):
-    llm = ScriptedLLM({SCREEN_INSTRUCTIONS: lambda p: {"keep": list(range(10))}})
-    found = await Searcher(llm.model(), index, HashEmbedder(), settings=SearchSettings(semantic_pool=10)).search(
-        LOS, plan(prefer_departments=["REGIONAL RURAL BANKS"]))
-    pref = next(c for c in found.candidates if c.bid.b_id == 4)
-    assert "preferred buyer" in pref.why
+async def test_kept_candidates_are_stored_in_the_bid_cache(gem, clock, bid_cache):
+    searcher, _ = build(gem, clock, bid_cache, keep_all(), the_site(1, 4))
+    found = await searcher.search(LOS, plan())
+    assert found.candidates and all(bid_cache.get(c.bid.b_id) is not None for c in found.candidates)
 
 
-async def test_hard_buyer_filter_applies(index):
-    llm = ScriptedLLM({SCREEN_INSTRUCTIONS: lambda p: {"keep": list(range(10))}})
-    found = await Searcher(llm.model(), index, HashEmbedder()).search(LOS, plan(departments=["REGIONAL RURAL BANKS"]))
-    assert {c.bid.b_id for c in found.candidates} == {4}
-
-
-async def test_closed_window_gives_nothing(index):
+async def test_an_empty_pool_gives_nothing_and_skips_the_screen(gem, clock, bid_cache):
     llm = ScriptedLLM({SCREEN_INSTRUCTIONS: [{"keep": []}]})
-    found = await Searcher(llm.model(), index, HashEmbedder()).search(LOS, plan(published_from=at(12), published_to=at(13)))
+    searcher, _ = build(gem, clock, bid_cache, llm, the_site(1, 4))
+    found = await searcher.search(LOS, plan(published_from=at(12), published_to=at(13)))
     assert found.candidates == [] and found.pool == 0 and llm.calls == []
 
 
-async def test_live_category_search_adds_bids_to_the_pool(gem, clock, index):
-    from gem_agent.tools.http_client import BidplusSession, ClientPool
-
-    gem.add("GET", "https://bidplus.gem.gov.in/advance-search", "advance_search.html.gz")
-    gem.add("POST", "https://bidplus.gem.gov.in/search-bids", "search_category_p1.json")
-    session = BidplusSession(ClientPool(transport=gem.transport(), clock=clock, sleep=clock.sleep))
-    llm = ScriptedLLM({SCREEN_INSTRUCTIONS: lambda p: {"keep": list(range(40))}})
-    found = await Searcher(llm.model(), index, HashEmbedder(), session=session,
-                           settings=SearchSettings(category_pages=1)).search(
-        LOS, plan(published_from=None, published_to=None, closing_from=None, categories=["services_home_itse_hi12433188"]))
-    from_category = [c for c in found.candidates if "category search" in c.why]
-    assert len(from_category) == 10 and index.get(from_category[0].bid.b_id) is not None
-
-
-async def test_a_failed_screen_call_keeps_its_titles(index):
+async def test_a_failed_title_screen_keeps_every_title(gem, clock, bid_cache):
     llm = ScriptedLLM({SCREEN_INSTRUCTIONS: [{"keep": "not a list"}]})  # never valid, even on retry
-    found = await Searcher(llm.model(), index, HashEmbedder(), settings=SearchSettings(semantic_pool=10)).search(LOS, plan())
-    assert {c.bid.b_id for c in found.candidates} == {1, 2, 3, 4, 5}
+    searcher, _ = build(gem, clock, bid_cache, llm, the_site(1, 2, 3, 4))
+    found = await searcher.search(LOS, plan())
+    assert ids(found) == {1, 2, 3, 4}
     assert any("screen failed" in w for c in found.candidates for w in c.why)
-
-
-async def test_category_search_sends_no_half_date_filter(gem, clock, index):
-    # 16 Nov: closing_from set and closing_to not → only bidEndFrom sent → GeM answers 422
-    from gem_agent.tools.http_client import BidplusSession, ClientPool
-
-    gem.add("GET", "https://bidplus.gem.gov.in/advance-search", "advance_search.html.gz")
-    gem.add("POST", "https://bidplus.gem.gov.in/search-bids", "search_category_p1.json")
-    session = BidplusSession(ClientPool(transport=gem.transport(), clock=clock, sleep=clock.sleep))
-    llm = ScriptedLLM({SCREEN_INSTRUCTIONS: lambda p: {"keep": list(range(40))}})
-    await Searcher(llm.model(), index, HashEmbedder(), session=session,
-                   settings=SearchSettings(category_pages=1)).search(
-        LOS, plan(published_from=None, published_to=None, closing_from=at(16), categories=["services_home_itse_hi12433188"]))
-    import json
-    payload = json.loads(gem.form(-1)["payload"])
-    assert (payload["bidEndFrom"], payload["bidEndTo"]) == ("", "")
-
-
-async def test_a_failing_category_search_is_skipped(index):
-    import httpx
-
-    from gem_agent.tools.http_client import ClientPool
-
-    class Rejecting:
-        def __init__(self):
-            self.pool = ClientPool(transport=httpx.MockTransport(lambda r: httpx.Response(422)), clock=at)
-            self._pool = self.pool
-
-        async def post_form(self, path, data, referer=None):
-            return await self.pool.request("POST", "https://bidplus.gem.gov.in/" + path, data=data)
-
-        async def get(self, path):
-            return await self.pool.request("GET", "https://bidplus.gem.gov.in/" + path)
-
-    llm = ScriptedLLM({SCREEN_INSTRUCTIONS: lambda p: {"keep": list(range(40))}})
-    found = await Searcher(llm.model(), index, HashEmbedder(), session=Rejecting()).search(
-        LOS, plan(published_from=None, published_to=None, closing_from=None, categories=["services_home_itse_hi12433188"]))
-    assert {c.bid.b_id for c in found.candidates} == {1, 2, 3, 4, 5}
-
-
-async def test_a_carded_vague_bid_is_screened_on_its_card(index):
-    index.set_card(5, "MSME Digital Lending Suite for the bank; loan origination; digital lending")
-    seen = []
-
-    def screen(prompt):
-        import re
-        seen.append(prompt)
-        return {"keep": [int(n) for n, t in re.findall(r"^\[(\d+)\] (.*)$", prompt, re.MULTILINE) if "Lending Suite" in t]}
-
-    llm = ScriptedLLM({SCREEN_INSTRUCTIONS: screen})
-    found = await Searcher(llm.model(), index, HashEmbedder(), settings=SearchSettings(semantic_pool=10)).search(LOS, plan())
-    assert [c.bid.b_id for c in found.candidates] == [5]
-    assert "what it buys: MSME Digital Lending Suite" in seen[0]
-    assert "vague title" not in " ".join(found.candidates[0].why)
-
-
-async def test_uncarded_vague_bids_join_every_pool(index):
-    # a vague-title bid whose documents never named the subject (card '') must stay reachable for every topic
-    from datetime import datetime as dt
-
-    index.upsert([Bid.from_listing(row(9, at(11), at(21), "Custom Bid for Services - ----", department="Department of Revenue"))],
-                 seen_at=at(15))
-    index.set_card(9, "")
-    llm = ScriptedLLM({SCREEN_INSTRUCTIONS: [{"keep": []}]})
-    found = await Searcher(llm.model(), index, HashEmbedder(), settings=SearchSettings(semantic_pool=1)).search(LOS, plan())
-    ids = {c.bid.b_id for c in found.candidates}
-    assert 9 in ids
-    assert any("no subject found" in w for c in found.candidates if c.bid.b_id == 9 for w in c.why)
-    assert dt  # keeps the import used
