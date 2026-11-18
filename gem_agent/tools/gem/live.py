@@ -25,7 +25,7 @@ log = logging.getLogger(__name__)
 
 # A page can fail at the HTTP level or arrive as a body parse_page cannot read (HTML error page, missing keys, bad doc).
 # Do not widen this to ValueError: HostNotAllowed is one, and an off-allowlist redirect must surface, not become a failed search.
-_READ_ERRORS = (GemHttpError, httpx.HTTPError, json.JSONDecodeError, KeyError, ValidationError)
+_READ_ERRORS = (GemHttpError, httpx.HTTPError, json.JSONDecodeError, KeyError, TypeError, ValidationError)
 
 
 class SearchSpec(BaseModel):

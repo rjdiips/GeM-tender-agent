@@ -159,3 +159,13 @@ async def test_a_host_outside_the_allowlist_is_not_swallowed(gem, clock, monkeyp
     monkeypatch.setattr("gem_agent.tools.gem.live.list_all_bids", refuse)
     with pytest.raises(HostNotAllowed):
         await live.first_pages([SearchSpec(kind="fullText", value="aml")])
+
+
+async def test_a_listing_row_without_a_bid_id_fails_only_its_search(gem, clock):
+    broken = rows(10000, 10)
+    del broken[3]["b_id"]
+    live, _ = make_live(gem, clock, {"fullText|aml": broken, "fullText|kyc": rows(11000, 10)})
+    aml, kyc = SearchSpec(kind="fullText", value="aml"), SearchSpec(kind="fullText", value="kyc")
+    a, k = await live.first_pages([aml, kyc])
+    assert a.progress.failed and a.bids == []
+    assert not k.progress.failed and len(k.bids) == 10
