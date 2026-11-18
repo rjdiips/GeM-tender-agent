@@ -109,6 +109,11 @@ def report(rows: list[Row]) -> str:
     for s in scores(rows):
         lines.append(f"{s.topic:<14}{s.n:>4}{s.tp:>4}{s.fp:>4}{s.fn:>4}{s.tn:>4}  {pct(s.precision):>9}  "
                      f"{pct(s.recall):>6}  {s.borderline:>10}  {s.triage_lost:>11}  {s.failed:>6}")
+    total = scores(rows)[-1]
+    judged = total.n - total.failed
+    lines.append(f"\nBorderline rate: {total.borderline} of {judged} judged ({pct(total.borderline / judged if judged else None)}). "
+                 f"Agreement with unsure labels: {total.borderline_on_unsure} of {total.borderline} borderline verdicts "
+                 f"are on unsure labels; {total.unsure_judged_borderline} of {total.unsure} unsure labels judged borderline.")
     wrong = [r for r in rows if r.verdict is not None and not r.verdict.borderline and r.judged != r.label.relevant]
     if wrong:
         lines.append("\nDisagreements (label → judge):")

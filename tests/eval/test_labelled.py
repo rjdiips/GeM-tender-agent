@@ -69,8 +69,11 @@ def test_borderline_counts_as_found_but_not_as_relevant():
     assert s.borderline_on_unsure == 1 and s.unsure == 1 and s.unsure_judged_borderline == 1
     text = report(rows)
     assert "Borderline (question):" in text and "does 2 count?" in text
-    assert "GEM/2026/B/2" not in (text.split("Disagreements")[1].split("Borderline (question):")[0]
-                                  if "Disagreements" in text else "")
+    assert "Borderline rate: 2 of 4 judged (50%)" in text
+    assert "1 of 2 borderline verdicts are on unsure labels; 1 of 1 unsure labels judged borderline" in text
+    # label 4 is a plain disagreement; the borderline bids must not be listed there
+    disagreements = text.split("Disagreements")[1].split("Borderline (question):")[0]
+    assert "GEM/2026/B/4" in disagreements and "GEM/2026/B/2" not in disagreements
 
 
 def test_rows_json_carries_borderline_and_question():
