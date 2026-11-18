@@ -83,12 +83,12 @@ class FakeCollector:
 class FakeJudge:
     """Bids whose id is in `no` are clear triage rejections, those in `borderline` are borderline; the rest are relevant."""
 
-    def __init__(self, no=(), borderline=()):
-        self.no, self.borderline, self.judged = set(no), set(borderline), []
+    def __init__(self, no=(), borderline=(), question=None):
+        self.no, self.borderline, self.judged, self.question = set(no), set(borderline), [], question
 
     def _verdict(self, topic, bid, relevant, stage, borderline=False):
         return Verdict(b_id=bid.b_id, bid_number=bid.bid_number, topic_key=topic.key(), doc_hash="h", relevant=relevant,
-                       borderline=borderline, question=f"Does bid {bid.b_id} count for you?" if borderline else "",
+                       borderline=borderline, question=(self.question or f"Does bid {bid.b_id} count for you?") if borderline else "",
                        confidence=0.9, stage=stage, triage="maybe", reason="RFP asks for an LOS." if relevant else "Lockers.",
                        evidence=[Evidence(quote="implement a Loan Origination System", file="RFP.pdf", page=3, verified=True)],
                        key_facts=KeyFacts(emd="Rs 5 lakh", min_turnover=None, contract_period=None, estimated_value=None,
@@ -124,19 +124,25 @@ class BlockingCollector(FakeCollector):
 
 
 class FakeRulings:
-    """`answers` maps a borderline question to the match to return; other questions match nothing."""
+    """`answers` maps a borderline question to the match to return; other questions match nothing.
+    `match_first` maps a question to a decision: the first fact offered is matched with it (none offered, no match).
+    `fail_write` makes only write_fact raise."""
 
-    def __init__(self, answers=None, fail=False):
+    def __init__(self, answers=None, fail=False, match_first=None, fail_write=False):
         self.answers, self.fail, self.resolved, self.written = dict(answers or {}), fail, [], []
+        self.match_first, self.fail_write = dict(match_first or {}), fail_write
 
     async def resolve(self, topic, question, reason, facts):
         self.resolved.append(question)
         if self.fail:
             raise RuntimeError("model down")
+        if question in self.match_first and facts:
+            from gem_agent.agents.rulings import RulingMatch
+            return RulingMatch(fact_id=facts[0].id, decision=self.match_first[question])
         return self.answers.get(question)
 
     async def write_fact(self, topic, question, decision):
         self.written.append((question, decision))
-        if self.fail:
+        if self.fail or self.fail_write:
             raise RuntimeError("model down")
         return f"fact for {question} ({decision})"

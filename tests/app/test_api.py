@@ -1,3 +1,4 @@
+import asyncio
 import io
 import json
 import zipfile
@@ -6,11 +7,20 @@ from urllib.parse import unquote
 import httpx
 import pytest
 
+from gem_agent.agents.rulings import RulingMatch
 from gem_agent.app.main import create_app
 from gem_agent.cache.docs import DocCache
 from gem_agent.graph.manager import RunManager
 from gem_agent.graph.store import Ruling
-from tests.graph.fakes import FakeChat, FakeJudge
+from tests.graph.fakes import (
+    BlockingCollector,
+    FakeChat,
+    FakeCollector,
+    FakeJudge,
+    FakeRulings,
+    FakeSearcher,
+    bid,
+)
 from tests.graph.test_run_graph import services
 
 
@@ -94,7 +104,8 @@ async def test_events_replay_a_finished_run(client):
 async def test_restore(client):
     await login(client)
     run_id = (await ask(client, "LOS tenders"))[0]["run"]["run_id"]
-    assert (await client.post(f"/api/runs/{run_id}/restore/2")).status_code == 204
+    r = await client.post(f"/api/runs/{run_id}/restore/2")
+    assert r.status_code == 200 and [b["b_id"] for b in r.json()["changed"]] == [2]
     view = (await client.get(f"/api/runs/{run_id}")).json()
     assert next(b for b in view["results"] if b["b_id"] == 2)["restored"]
 
@@ -187,3 +198,166 @@ async def test_stop_route(app_parts, client):
     assert (await client.post(f"/api/runs/{run_id}/stop")).status_code == 409  # already stopped
     await login(client, "ravi")
     assert (await client.post(f"/api/runs/{run_id}/stop")).status_code == 404
+
+
+# --- rulings ---------------------------------------------------------------------------------------------------
+
+SAME = "Do core banking add-ons count?"
+
+
+@pytest.fixture
+def ruling_parts(tmp_path):
+    """Bid 1 is relevant; bids 2 and 3 are borderline with the same question."""
+    s = services(tmp_path, searcher=FakeSearcher([[bid(1), bid(2, "Core add-on", 18), bid(3, "Core module", 19)]]),
+                 judge=FakeJudge(borderline={2, 3}, question=SAME), rulings=FakeRulings(match_first={SAME: "counts"}))
+    return s, create_app(RunManager(s), memory=s.memory, cache=DocCache(tmp_path / "cache"), org="finsurge")
+
+
+@pytest.fixture
+async def rclient(ruling_parts):
+    async with httpx.AsyncClient(transport=httpx.ASGITransport(app=ruling_parts[1]), base_url="http://t") as c:
+        yield c
+
+
+def rule_url(run_id, b_id):
+    return f"/api/runs/{run_id}/rule/{b_id}"
+
+
+async def ruled_run(client):
+    await login(client)
+    return (await ask(client, "LOS tenders"))[0]["run"]["run_id"]
+
+
+async def kinds(client):
+    return [f["kind"] for f in (await client.get("/api/memory")).json()]
+
+
+async def states(client, run_id):
+    return {b["b_id"]: (b["state"], (b["ruling"] or {}).get("by")) for b in (await client.get(f"/api/runs/{run_id}")).json()["results"]}
+
+
+async def test_rule_counts_saves_a_fact_and_settles_matching_bids(rclient):
+    run_id = await ruled_run(rclient)
+    changed = (await rclient.post(rule_url(run_id, 2), json={"decision": "counts"})).json()["changed"]
+    assert {b["b_id"]: (b["state"], b["ruling"]["by"]) for b in changed} == {2: ("relevant", "you"), 3: ("relevant", "earlier")}
+    assert (await kinds(rclient)).count("ruling") == 1
+
+
+async def test_undo_of_a_click_removes_its_fact_and_unsettles(rclient, ruling_parts):
+    s = ruling_parts[0]
+    run_id = await ruled_run(rclient)
+    await rclient.post(rule_url(run_id, 2), json={"decision": "counts"})
+    changed = (await rclient.delete(rule_url(run_id, 2))).json()["changed"]
+    assert {b["b_id"] for b in changed} == {2, 3}
+    assert await states(rclient, run_id) == {1: ("relevant", None), 2: ("borderline", None), 3: ("borderline", None)}
+    assert "ruling" not in await kinds(rclient)
+    assert s.store.outcomes(run_id)[2].undone and not s.store.outcomes(run_id)[3].undone
+    assert (await rclient.delete(rule_url(run_id, 2))).json() == {"changed": []}
+
+
+async def test_an_undone_bid_is_not_settled_again_by_a_later_ruling(rclient, ruling_parts):
+    run_id = await ruled_run(rclient)
+    await rclient.post(rule_url(run_id, 2), json={"decision": "counts"})
+    await rclient.delete(rule_url(run_id, 3))  # the user takes bid 3 back
+    await rclient.delete(rule_url(run_id, 2))
+    changed = (await rclient.post(rule_url(run_id, 2), json={"decision": "counts"})).json()["changed"]
+    assert [b["b_id"] for b in changed] == [2]
+    assert (await states(rclient, run_id))[3] == ("borderline", None)
+
+
+async def test_a_contradicting_ruling_replaces_the_old_fact(rclient, ruling_parts):
+    s = ruling_parts[0]
+    run_id = await ruled_run(rclient)
+    old = s.memory.add_ruling("asha", "Add-ons count.", topic="Loan Origination System", run_id="r0", today=s.now().date(),
+                              evidence="e")
+    s.rulings.answers[SAME] = RulingMatch(fact_id=old.id, decision="counts")
+    s.rulings.match_first = {}
+    changed = (await rclient.post(rule_url(run_id, 2), json={"decision": "not"})).json()["changed"]
+    assert [b["b_id"] for b in changed] == [2] and changed[0]["state"] == "quarantined"
+    active = [f for f in (await rclient.get("/api/memory")).json() if f["kind"] == "ruling"]
+    assert len(active) == 1 and active[0]["id"] != old.id and "(not)" in active[0]["fact"]
+    assert next(f for f in s.memory.facts("asha") if f.id == old.id).evidence.startswith("replaced by your ruling on GEM/2026/B/2 on ")
+
+
+async def test_a_matching_fact_with_the_same_decision_is_reused(rclient, ruling_parts):
+    s = ruling_parts[0]
+    run_id = await ruled_run(rclient)
+    old = s.memory.add_ruling("asha", "Add-ons count.", topic="Loan Origination System", run_id="r0", today=s.now().date(),
+                              evidence="e")
+    s.rulings.answers[SAME] = RulingMatch(fact_id=old.id, decision="counts")
+    s.rulings.match_first = {}
+    changed = (await rclient.post(rule_url(run_id, 2), json={"decision": "counts"})).json()["changed"]
+    assert s.rulings.written == [] and (await kinds(rclient)).count("ruling") == 1
+    assert changed[0]["ruling"]["fact"] == "Add-ons count."
+    await rclient.delete(rule_url(run_id, 2))  # the fact was not created by this click, so it stays
+    assert (await kinds(rclient)).count("ruling") == 1
+
+
+async def test_restore_of_a_doesnt_count_bid_changes_the_ruling(rclient, ruling_parts):
+    ruling_parts[0].rulings.match_first = {SAME: "not"}
+    run_id = await ruled_run(rclient)
+    await rclient.post(rule_url(run_id, 2), json={"decision": "not"})
+    assert (await states(rclient, run_id))[2] == ("quarantined", "you")
+    changed = (await rclient.post(f"/api/runs/{run_id}/restore/2")).json()["changed"]
+    assert changed[0]["state"] == "relevant" and changed[0]["ruling"]["decision"] == "counts"
+    assert (await kinds(rclient)).count("ruling") == 1
+
+
+async def test_rule_on_a_bid_that_is_not_borderline_is_409(rclient, ruling_parts):
+    s = ruling_parts[0]
+    run_id = await ruled_run(rclient)
+    before = s.store.outcomes(run_id)[1]
+    assert (await rclient.post(rule_url(run_id, 1), json={"decision": "counts"})).status_code == 409
+    assert s.store.outcomes(run_id)[1] == before and s.rulings.resolved == []
+
+
+async def test_rule_and_undo_on_another_users_run_are_404(rclient):
+    run_id = await ruled_run(rclient)
+    await login(rclient, "ravi")
+    assert (await rclient.post(rule_url(run_id, 2), json={"decision": "counts"})).status_code == 404
+    assert (await rclient.delete(rule_url(run_id, 2))).status_code == 404
+    assert (await rclient.post(f"/api/runs/{run_id}/restore/2")).status_code == 404
+    await login(rclient)
+    assert (await rclient.post(rule_url(run_id, 99), json={"decision": "counts"})).status_code == 404
+
+
+async def test_a_failing_fact_writer_is_502_and_changes_nothing(rclient, ruling_parts):
+    s = ruling_parts[0]
+    s.rulings.fail_write = True
+    run_id = await ruled_run(rclient)
+    before = s.store.outcomes(run_id)
+    r = await rclient.post(rule_url(run_id, 2), json={"decision": "counts"})
+    assert r.status_code == 502
+    assert "ruling" not in await kinds(rclient) and s.store.outcomes(run_id) == before
+    assert s.rulings.resolved == [SAME]  # only the match for the clicked bid; the sweep never ran
+
+
+class BlockBid2(BlockingCollector):
+    async def collect(self, bid, *, force=False, attachments=True):
+        if bid.b_id != 2:
+            return await FakeCollector.collect(self, bid, force=force, attachments=attachments)
+        return await super().collect(bid, force=force, attachments=attachments)
+
+
+async def test_ruling_while_the_run_is_going_loses_no_results(tmp_path):
+    collector = BlockBid2()
+    s = services(tmp_path, collector=collector, searcher=FakeSearcher([[bid(1, closing_day=18), bid(2, "Core add-on", 19)]]),
+                 judge=FakeJudge(borderline={1, 2}, question=SAME), rulings=FakeRulings())
+    manager = RunManager(s)
+
+    async def drain():
+        return [e async for e in manager.ask("asha", "LOS tenders")]
+
+    stream = asyncio.create_task(drain())
+    for _ in range(100):  # until bid 1 is saved while bid 2 is still blocked
+        await asyncio.sleep(0.05)
+        runs = s.store.list_runs("asha")
+        if runs and 1 in s.store.outcomes(runs[0].run_id):
+            break
+    run_id = runs[0].run_id
+    assert set(s.store.outcomes(run_id)) == {1}
+    await manager.rule("asha", run_id, 1, "counts")
+    collector.release.set()
+    await stream
+    outcomes = s.store.outcomes(run_id)
+    assert set(outcomes) == {1, 2} and outcomes[1].ruling and outcomes[1].ruling.by == "you"

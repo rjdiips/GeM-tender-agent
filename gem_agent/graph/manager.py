@@ -12,19 +12,29 @@ import contextlib
 import logging
 import uuid
 from collections.abc import AsyncIterator
-from typing import Any
+from typing import Any, Literal
 
+from gem_agent.agents.chat import short_name
 from gem_agent.graph.build import build_graph, emit
 from gem_agent.graph.checkpoint import checkpointer
+from gem_agent.graph.rulings import settle, topic_for
 from gem_agent.graph.services import Services
 from gem_agent.graph.state import RunState
-from gem_agent.graph.store import RunRecord
-from gem_agent.graph.views import run_list_item, run_view, understood_view, with_names
+from gem_agent.graph.store import Outcome, Ruling, RunRecord
+from gem_agent.graph.views import bid_result, run_list_item, run_view, understood_view, with_names
 
 log = logging.getLogger(__name__)
 
 class RunNotRunning(RuntimeError):
     """Stop was asked of a run that is not running (finished, stopped, or failed already)."""
+
+
+class NotBorderline(RuntimeError):
+    """A ruling was asked of a bid that is not waiting for one."""
+
+
+class RulingFailed(RuntimeError):
+    """The model could not write the fact; nothing was changed."""
 
 
 ANSWERS = {
@@ -172,12 +182,98 @@ class RunManager:
 
     # --- actions --------------------------------------------------------------------------------------------------
 
-    async def restore(self, user: str, run_id: str, b_id: int) -> None:
-        """Move a quarantined bid back to relevant; recorded for the memory step (spec 5.5)."""
+    async def restore(self, user: str, run_id: str, b_id: int) -> list[dict[str, Any]]:
+        """Move a quarantined bid back to relevant; recorded for the memory step (spec 5.5).
+        A bid the user ruled "doesn't count" is re-ruled "counts" instead, so the fact follows the click."""
         self._own(user, run_id)
-        outcomes = self.s.store.outcomes(run_id)
-        outcome = outcomes[b_id]
-        outcome.restored = True
-        self.s.store.save_outcome(run_id, outcome)
-        self.s.store.append_event(run_id, {"type": "signal", "kind": "restored", "b_id": b_id,
+        outcome = self.s.store.outcomes(run_id)[b_id]
+        if outcome.ruling and outcome.ruling.decision == "not":
+            return await self.rule(user, run_id, b_id, "counts")
+
+        def mark(all_: dict[int, Outcome]) -> list[int]:
+            all_[b_id] = all_[b_id].model_copy(update={"restored": True})
+            return [b_id]
+
+        changed = self.s.store.update_outcomes(run_id, mark)
+        self._signal(run_id, "restored", b_id)
+        return [bid_result(run_id, o) for o in changed.values()]
+
+    async def rule(self, user: str, run_id: str, b_id: int, decision: Literal["counts", "not"]) -> list[dict[str, Any]]:
+        """The user's call on a borderline bid: it becomes a fact, and other bids it answers are settled by it.
+        Every model call is made before the one write, so none runs while the outcomes lock is held."""
+        s = self.s
+        record = self._own(user, run_id)
+        o = s.store.outcomes(run_id)[b_id]
+        if not (o.verdict and o.verdict.borderline):
+            raise NotBorderline(f"bid {b_id} is not borderline")
+        if s.rulings is None:
+            raise RulingFailed("rulings are not available")
+        v, today = o.verdict, s.now().date()
+        topic = topic_for(record.request, o.group)
+        existing = s.memory.ruling_facts(user, short_name(topic))
+        try:
+            match = await s.rulings.resolve(topic, v.question, v.reason, existing)
+        except Exception as exc:
+            raise RulingFailed(str(exc)) from exc
+        matched = next((f for f in existing if match and f.id == match.fact_id), None)
+        if match and matched and match.decision == decision:
+            ruling = Ruling(decision=decision, by="you", fact_id=matched.id, fact=matched.fact, created_fact=False, at=s.now())
+            chosen = matched
+        else:
+            try:
+                text = await s.rulings.write_fact(topic, v.question, decision)
+            except Exception as exc:
+                raise RulingFailed(str(exc)) from exc
+            chosen = s.memory.add_ruling(user, text, topic=short_name(topic), run_id=run_id, today=today,
+                                         evidence=f"you ruled on {o.bid.bid_number} on {today:%d %b}")
+            ruling = Ruling(decision=decision, by="you", fact_id=chosen.id, fact=chosen.fact, created_fact=True, at=s.now())
+            if match and matched:  # the old fact said the opposite
+                s.memory.forget(user, matched.id, evidence=f"replaced by your ruling on {o.bid.bid_number} on {today:%d %b}")
+        others = [x for x in s.store.outcomes(run_id).values() if x.b_id != b_id and _open(x) and x.group == o.group]
+        settled = {x.b_id: await settle(s, user, topic, x.verdict, facts=[chosen]) for x in others}
+
+        def write(all_: dict[int, Outcome]) -> list[int]:
+            all_[b_id] = all_[b_id].model_copy(update={"ruling": ruling, "undone": False})
+            changed = [b_id]
+            for other_id, earlier in settled.items():
+                if earlier and other_id in all_ and _open(all_[other_id]):  # still waiting for the user
+                    all_[other_id] = all_[other_id].model_copy(update={"ruling": earlier})
+                    changed.append(other_id)
+            return changed
+
+        changed = s.store.update_outcomes(run_id, write)
+        self._signal(run_id, "ruled", b_id, decision=decision)
+        return [bid_result(run_id, x) for x in changed.values()]
+
+    async def unrule(self, user: str, run_id: str, b_id: int) -> list[dict[str, Any]]:
+        """Take a ruling back. A fact this click created goes with it, and so do the bids it settled."""
+        self._own(user, run_id)
+        ruling = self.s.store.outcomes(run_id)[b_id].ruling
+        if ruling is None:
+            return []
+        own_fact = ruling.by == "you" and ruling.created_fact
+        if own_fact:
+            self.s.memory.forget(user, ruling.fact_id)
+
+        def clear(all_: dict[int, Outcome]) -> list[int]:
+            changed = [b_id]
+            if own_fact:
+                for other_id, x in all_.items():
+                    if other_id != b_id and x.ruling and x.ruling.by == "earlier" and x.ruling.fact_id == ruling.fact_id:
+                        all_[other_id] = x.model_copy(update={"ruling": None})
+                        changed.append(other_id)
+            all_[b_id] = all_[b_id].model_copy(update={"ruling": None, "undone": True})
+            return changed
+
+        changed = self.s.store.update_outcomes(run_id, clear)
+        self._signal(run_id, "unruled", b_id)
+        return [bid_result(run_id, x) for x in changed.values()]
+
+    def _signal(self, run_id: str, kind: str, b_id: int, **extra: Any) -> None:
+        self.s.store.append_event(run_id, {"type": "signal", "kind": kind, "b_id": b_id, **extra,
                                            "at": self.s.now().isoformat(timespec="seconds")})
+
+
+def _open(o: Outcome) -> bool:
+    """A borderline bid nobody has ruled on, and that the user has not taken back."""
+    return bool(o.verdict and o.verdict.borderline) and o.ruling is None and not o.undone
