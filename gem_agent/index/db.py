@@ -185,7 +185,7 @@ class BidIndex:
         return [(r[0], r[1]) for r in self._conn.execute("SELECT b_id, card FROM bids WHERE card IS NOT NULL")]
 
     def distinct(self, column: str) -> list[tuple[str, int]]:
-        """Values of ministry or department among open bids, most bids first."""
+        """Values of ministry or department among the cached bids, most bids first."""
         assert column in ("ministry", "department")
         sql = (f"SELECT {column}, COUNT(*) n FROM bids WHERE state = 'open' AND {column} IS NOT NULL "
                f"GROUP BY {column} ORDER BY n DESC")

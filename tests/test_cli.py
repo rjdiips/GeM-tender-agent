@@ -50,6 +50,25 @@ def test_the_index_command_is_gone():
         main(["index", "sync"])
 
 
-def test_httpx_logs_at_warning_after_setup():
-    setup_logging(quiet=False)
+@pytest.fixture
+def clean_root_logger():
+    root = logging.getLogger()
+    handlers, level = root.handlers[:], root.level
+    root.handlers.clear()
+    yield root
+    root.handlers[:] = handlers
+    root.setLevel(level)
+
+
+@pytest.mark.parametrize("quiet, level", [(False, logging.INFO), (True, logging.WARNING)])
+def test_logging_levels_after_setup(clean_root_logger, quiet, level):
+    clean_root_logger.handlers.clear()  # pytest adds its own during the test; basicConfig does nothing beside a handler
+    setup_logging(quiet=quiet)
+    assert clean_root_logger.level == level
     assert logging.getLogger("httpx").level == logging.WARNING
+
+
+def test_migrate_fails_clearly_when_the_old_index_is_missing(tmp_path, monkeypatch):
+    monkeypatch.setattr("gem_agent.cli.get_settings", lambda: Settings(data_dir=tmp_path / "data"))
+    assert main(["bids", "migrate", "--from", str(tmp_path / "nope.sqlite")]) == 2
+    assert not (tmp_path / "nope.sqlite").exists()

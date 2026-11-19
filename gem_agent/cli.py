@@ -21,7 +21,8 @@ def setup_logging(quiet: bool) -> None:
     if quiet:
         logging.basicConfig(level=logging.WARNING, format="%(levelname)s %(name)s: %(message)s")
     else:
-        logging.getLogger("httpx").setLevel(logging.WARNING)
+        logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
+    logging.getLogger("httpx").setLevel(logging.WARNING)
 
 
 def _labelled_path(given: str | None) -> Path:
@@ -36,7 +37,11 @@ def cmd_bids_migrate(args: argparse.Namespace, settings: Settings) -> int:
     from gem_agent.eval.labelled import LabelledSet
 
     keep = {item.b_id for item in LabelledSet.load(_labelled_path(args.labelled)).items}
-    old = BidIndex(Path(args.source) if args.source else settings.index_path)
+    source = Path(args.source) if args.source else settings.index_path
+    if not source.exists():
+        print(f"no old index at {source}", file=sys.stderr)
+        return 2
+    old = BidIndex(source)
     new = BidIndex(settings.bid_cache_path)
     try:
         copied = migrate_bids(old, new, keep)
