@@ -15,7 +15,9 @@ from pydantic import BaseModel
 
 from gem_agent.agents.schemas import TopicDefinition, Verdict
 
-Bucket = Literal["positive", "related", "trap", "random"]
+# live_only / index_only / both: picked by which of a live GeM search and the local index found the bid
+# (live-search tests, 18 Nov; spec 6.2)
+Bucket = Literal["positive", "related", "trap", "random", "live_only", "index_only", "both"]
 
 
 class Label(BaseModel):
