@@ -46,6 +46,7 @@ class SearchProgress(BaseModel):
     skipped: bool = False
     same_as: str | None = None
     failed: bool = False
+    first_ids: list[int] = []  # page 1's bids, for a base search: stage 2 leaves them out when it reads the cache
 
     @property
     def pending(self) -> bool:
@@ -64,7 +65,9 @@ class LiveSearcher:
     def __init__(self, session: BidplusSession, *, cache: SearchCache | None = None,
                  cached_keys: frozenset[str] = frozenset(), skip_over: int = 20000) -> None:
         self.session, self.cache, self.cached_keys, self.skip_over = session, cache, cached_keys, skip_over
-        self._first_bids: dict[str, list[Bid]] = {}  # page-1 bids of base searches, to store them once complete
+        # page-1 bids of base searches, to store each search once it is complete. Keyed by page 1's bids too, so
+        # concurrent runs that saw different first pages never take each other's.
+        self._first_bids: dict[tuple[str, tuple[int, ...]], list[Bid]] = {}
 
     async def _page(self, spec: SearchSpec, page: int) -> SearchPage:
         if spec.kind == "category":
@@ -81,19 +84,29 @@ class LiveSearcher:
             outcomes.append(await self._first(spec, seen))
         return outcomes
 
+    def _cached(self, spec: SearchSpec) -> tuple[int, list[Bid]] | None:
+        """A fresh, readable cache entry for a base search: (num_found, bids); else None."""
+        if not self._cacheable(spec):
+            return None
+        hit = self.cache.get(spec.key)
+        if hit is None:
+            return None
+        num_found, docs = hit
+        try:
+            return num_found, _dedupe(Bid.from_listing(d) for d in docs)
+        except _READ_ERRORS as exc:  # a corrupt cache entry is a miss
+            log.warning("cached search %s is unreadable, reading it live: %s", spec.key, exc)
+            return None
+
+    @staticmethod
+    def _complete(num_found: int, first_ids: list[int] | None = None) -> SearchProgress:
+        count = -(-num_found // PAGE_SIZE)
+        return SearchProgress(num_found=num_found, pages_read=count or 1, page_count=count, first_ids=first_ids or [])
+
     async def _first(self, spec: SearchSpec, seen: dict[tuple[int, tuple[int, ...]], str]) -> SearchOutcome:
-        if self._cacheable(spec):
-            hit = self.cache.get(spec.key)
-            if hit is not None:
-                num_found, docs = hit
-                try:
-                    bids = _dedupe(Bid.from_listing(d) for d in docs)
-                except _READ_ERRORS as exc:  # a corrupt cache entry is a miss
-                    log.warning("cached search %s is unreadable, reading it live: %s", spec.key, exc)
-                else:
-                    count = -(-num_found // PAGE_SIZE)
-                    return SearchOutcome(
-                        spec, SearchProgress(num_found=num_found, pages_read=count or 1, page_count=count), bids)
+        if (hit := self._cached(spec)) is not None:
+            num_found, bids = hit
+            return SearchOutcome(spec, self._complete(num_found), bids)
         try:
             page = await self._page(spec, 1)
         except HostNotAllowed:
@@ -115,16 +128,26 @@ class LiveSearcher:
             if page.page_count <= 1:
                 self.cache.put(spec.key, page.num_found, [b.raw for b in bids])
             else:
-                self._first_bids[spec.key] = bids
+                progress.first_ids = [b.b_id for b in bids]
+                self._first_bids[(spec.key, tuple(progress.first_ids))] = bids
         return SearchOutcome(spec, progress, bids)
 
     async def rest(self, specs: list[SearchSpec], progress: dict[str, SearchProgress]) -> list[SearchOutcome]:
-        """One outcome per spec, in order; a spec with nothing left to read comes back with no bids and its progress."""
+        """One outcome per spec, in order; a spec with nothing left to read comes back with no bids and its progress.
+        A base search another topic (or run) completed within the hour comes from the cache: its bids minus this
+        search's page 1, which stage 1 already returned."""
         outcomes: list[SearchOutcome] = []
         for spec in specs:
             current = progress[spec.key]
             if not current.pending:
                 outcomes.append(SearchOutcome(spec, current, []))
+                continue
+            if (hit := self._cached(spec)) is not None:
+                num_found, bids = hit
+                self._first_bids.pop((spec.key, tuple(current.first_ids)), None)
+                first = set(current.first_ids)
+                outcomes.append(SearchOutcome(spec, self._complete(num_found, current.first_ids),
+                                              [b for b in bids if b.b_id not in first]))
                 continue
             outcomes.append(await self._rest(spec, current))
         return outcomes
@@ -144,7 +167,7 @@ class LiveSearcher:
             bids.extend(page.bids)
             new.pages_read = n
         bids = _dedupe(bids)
-        first = self._first_bids.pop(spec.key, None)
+        first = self._first_bids.pop((spec.key, tuple(current.first_ids)), None)
         if self._cacheable(spec) and first is not None and not new.failed:
             whole = _dedupe([*first, *bids])
             self.cache.put(spec.key, new.num_found, [b.raw for b in whole])

@@ -210,3 +210,38 @@ async def test_a_cached_search_with_an_unparseable_doc_is_read_live(gem, clock, 
     live, site = make_live(gem, clock, {key: rows(16000, 3)}, cache=cache, cached_keys=frozenset({key}))
     (out,) = await live.first_pages([spec])
     assert len(out.bids) == 3 and not out.progress.failed and site.served == [(key, 1)]
+
+
+async def test_a_second_topics_deeper_read_of_a_base_search_comes_from_the_cache(gem, clock, tmp_path):
+    # two meanings in one run: both read page 1 in stage 1; the first's stage 2 reads the rest and stores the search,
+    # so the second's stage 2 takes it from the cache instead of reading every page again
+    key = f"category|{CATEGORY}"
+    spec = SearchSpec(kind="category", value=CATEGORY)
+    cache = SearchCache(tmp_path, now=lambda: T0)
+    live, site = make_live(gem, clock, {key: rows(17000, 25)}, cache=cache, cached_keys=frozenset({key}))
+    (a,) = await live.first_pages([spec])
+    (b,) = await live.first_pages([spec])
+    (a_rest,) = await live.rest([spec], {key: a.progress})
+    served = list(site.served)
+    (b_rest,) = await live.rest([spec], {key: b.progress})
+    assert site.served == served  # no GeM request
+    assert {x.b_id for x in b_rest.bids} == {x.b_id for x in a_rest.bids}  # page 1 is not returned again
+    assert not ({x.b_id for x in b_rest.bids} & {x.b_id for x in b.bids})
+    assert not b_rest.progress.pending and not b_rest.progress.failed
+
+
+async def test_concurrent_runs_store_their_own_first_page(gem, clock, tmp_path):
+    # run X reads page 1; a new bid is published; run Y reads page 1. X's stored search is X's page 1 plus its own
+    # deeper pages, not Y's page 1
+    key = f"category|{CATEGORY}"
+    spec = SearchSpec(kind="category", value=CATEGORY)
+    cache = SearchCache(tmp_path, now=lambda: T0)
+    listing = rows(18000, 25)
+    live, site = make_live(gem, clock, {key: listing}, cache=cache, cached_keys=frozenset({key}))
+    (x,) = await live.first_pages([spec])
+    site.by_query[key] = rows(18900, 1) + listing
+    (y,) = await live.first_pages([spec])
+    assert {b.b_id for b in x.bids} != {b.b_id for b in y.bids}
+    (x_rest,) = await live.rest([spec], {key: x.progress})
+    stored = {d["b_id"][0] if isinstance(d["b_id"], list) else d["b_id"] for d in cache.get(key)[1]}
+    assert stored == {b.b_id for b in x.bids} | {b.b_id for b in x_rest.bids}
