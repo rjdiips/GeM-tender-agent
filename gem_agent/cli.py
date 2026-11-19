@@ -1,100 +1,49 @@
-"""Command-line entry points: chat, index sync, jobs."""
+"""Command-line entry points: chat, bids migrate, eval, jobs."""
 from __future__ import annotations
 
 import argparse
 import asyncio
 import logging
 import sys
-from datetime import timedelta
+from pathlib import Path
 
 from gem_agent.config import Settings, get_settings
 from gem_agent.index.db import BidIndex
-from gem_agent.index.query import IndexQuery, search_index
-from gem_agent.index.sync import NeedFullLoad, SyncBusy, embed_pending, full_load, sync_lock, sync_recent
-from gem_agent.retrieval.embed import BgeM3Embedder, pick_device
-from gem_agent.tools.gem.models import site_now
-from gem_agent.tools.http_client import BidplusSession, ClientPool
+from gem_agent.index.migrate import migrate_bids
 
 log = logging.getLogger("gem_agent")
 
-
-def _embedder(settings: Settings) -> BgeM3Embedder:
-    device = pick_device(settings.embed_device, min_free_mb=settings.embed_min_free_gpu_mb)
-    return BgeM3Embedder(settings.embed_model, device=device)
+LABELLED_SET = "eval/labelled_set.json"
 
 
-async def _write_cards(settings: Settings, index: BidIndex, session: BidplusSession, limit: int,
-                       redo: bool = False) -> None:
-    """Cards for vague-title bids (index/cards.py), before embedding, so the new text is embedded in the same run."""
-    from gem_agent.agents.collector import Collector
-    from gem_agent.agents.models import chat_model
-    from gem_agent.cache.docs import DocCache
-    from gem_agent.index.cards import clear_generic_cards, write_cards
-
-    collector = Collector(session, DocCache(settings.cache_dir))
-    if redo:
-        log.info("cards: cleared all %d to rebuild them", index.clear_cards())
-    cleared = clear_generic_cards(index)
-    if cleared:
-        log.info("cards: cleared %d that only restated the title", cleared)
-    log.info("cards: %s", await write_cards(index, collector, chat_model(settings), limit=limit))
+def setup_logging(quiet: bool) -> None:
+    """Warnings only for chat (its output is the result stream); INFO for jobs. httpx logs every request at INFO."""
+    if quiet:
+        logging.basicConfig(level=logging.WARNING, format="%(levelname)s %(name)s: %(message)s")
+    else:
+        logging.getLogger("httpx").setLevel(logging.WARNING)
 
 
-async def _index_job(settings: Settings, job: str, max_pages: int | None, card_limit: int = 40,
-                     redo: bool = False) -> None:
-    index = BidIndex(settings.index_path)
-    pool = ClientPool.shared(settings)
+def _labelled_path(given: str | None) -> Path:
+    """The labelled set: the path given, else eval/labelled_set.json under the current directory, else the repo's."""
+    if given:
+        return Path(given)
+    here = Path(LABELLED_SET)
+    return here if here.exists() else Path(__file__).resolve().parents[1] / LABELLED_SET
+
+
+def cmd_bids_migrate(args: argparse.Namespace, settings: Settings) -> int:
+    from gem_agent.eval.labelled import LabelledSet
+
+    keep = {item.b_id for item in LabelledSet.load(_labelled_path(args.labelled)).items}
+    old = BidIndex(Path(args.source) if args.source else settings.index_path)
+    new = BidIndex(settings.bid_cache_path)
     try:
-        session = BidplusSession(pool)
-        if job == "load":
-            report = await full_load(index, session, max_pages=max_pages,
-                                     gone_after=settings.index_gone_after_missed_refreshes)
-        elif job == "sync":
-            report = await sync_recent(index, session, margin=timedelta(minutes=settings.index_sync_margin_min))
-        else:  # cards only
-            report = None
-        if report is not None:
-            log.info("%s: %s", job, report)
-        if getattr(report, "complete", True):
-            await _write_cards(settings, index, session, card_limit, redo)
-            log.info("embedded %d titles", embed_pending(index, _embedder(settings)))
+        copied = migrate_bids(old, new, keep)
     finally:
-        await pool.aclose()
-        index.close()
-
-
-def cmd_index(args: argparse.Namespace, settings: Settings) -> int:
-    if args.action in ("load", "sync", "cards"):
-        try:
-            with sync_lock(settings.index_path.with_name("sync.lock")):
-                cards = args.action == "cards"
-                asyncio.run(_index_job(settings, args.action, args.max_pages, args.limit if cards else 40,
-                                       redo=cards and args.redo))
-        except SyncBusy:
-            log.info("another index job is running; skipping this %s", args.action)
-        except NeedFullLoad:
-            log.error("no full load yet: run `gem-agent index load` first")
-            return 2
-        return 0
-    index = BidIndex(settings.index_path)
-    try:
-        if args.action == "embed":
-            log.info("embedded %d titles", embed_pending(index, _embedder(settings)))
-        elif args.action == "stats":
-            for key, value in index.stats().items():
-                print(f"{key}: {value}")
-        elif args.action == "query":
-            from gem_agent.retrieval.rerank import BgeReranker
-
-            q = IndexQuery(text=args.text, terms=args.term or [], limit=args.limit,
-                           published_from=site_now() - timedelta(days=args.days) if args.days else None)
-            reranker = None if args.no_rerank else BgeReranker(settings.rerank_model)
-            for hit in search_index(index, q, _embedder(settings), reranker):
-                b = hit.bid
-                score = f"{hit.rerank:.3f}" if hit.rerank is not None else f"{hit.fused:.4f}"
-                print(f"{score}  {b.bid_number:<22} closes {b.closing:%d %b %H:%M}  {b.title[:90]}")
-    finally:
-        index.close()
+        old.close()
+        new.close()
+    print(f"copied {copied} bids to {settings.bid_cache_path}")
     return 0
 
 
@@ -150,18 +99,12 @@ def main(argv: list[str] | None = None) -> int:
     chat.add_argument("--run", help="follow up on this run id")
     serve = sub.add_parser("serve", help="the web chat (FastAPI)")
     serve.add_argument("--port", type=int)
-    idx = sub.add_parser("index", help="local open-bid index (spec 6.2)")
-    idx.add_argument("action", choices=["load", "sync", "cards", "embed", "stats", "query"],
-                     help="load: full load / nightly re-fetch; sync: newest bids since the last sync")
-    idx.add_argument("text", nargs="?", default="", help="query: meaning to search for")
-    idx.add_argument("--term", action="append", help="query: word-search term (repeatable)")
-    idx.add_argument("--days", type=int, help="query: published within the last N days")
-    idx.add_argument("--limit", type=int, default=20)
-    idx.add_argument("--no-rerank", action="store_true")
-    idx.add_argument("--max-pages", type=int, help="load: stop after N pages (resumes next time)")
-    idx.add_argument("--redo", action="store_true", help="cards: clear every card first and rebuild them all")
+    bids = sub.add_parser("bids", help="the bid cache")
+    bids.add_argument("action", choices=["migrate"], help="migrate: copy cards and labelled bids from the old index")
+    bids.add_argument("--from", dest="source", help="the old index file (default: the configured index path)")
+    bids.add_argument("--labelled", help=f"labelled set whose bids are kept (default {LABELLED_SET})")
     ev = sub.add_parser("eval", help="score the Judge against the labelled set (spec 13)")
-    ev.add_argument("--set", default="eval/labelled_set.json", help="labelled set file")
+    ev.add_argument("--set", default=LABELLED_SET, help="labelled set file")
     ev.add_argument("--topic", help="only this topic")
     ev.add_argument("--parallel", type=int, default=3)
     ev.add_argument("--out", help="write each bid's label and verdict here (JSON)")
@@ -171,11 +114,10 @@ def main(argv: list[str] | None = None) -> int:
                     help="read again the dates taken from buyer documents (GeM pre-bid dates are kept)")
     args = parser.parse_args(argv)
     settings = get_settings()
+    setup_logging(quiet=args.command == "chat")
     if args.command == "chat":
-        logging.basicConfig(level=logging.WARNING, format="%(levelname)s %(name)s: %(message)s")
         asyncio.run(_chat(settings, args.user, args.text, args.run))
         return 0
-    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
     if args.command == "serve":
         import uvicorn
 
@@ -185,19 +127,17 @@ def main(argv: list[str] | None = None) -> int:
         return asyncio.run(_eval(settings, args))
     if args.command == "backfill-queries":
         return asyncio.run(_backfill_queries(settings, args.dry_run, args.redo_documents))
-    return cmd_index(args, settings)
+    return cmd_bids_migrate(args, settings)
 
 
 async def _eval(settings: Settings, args: argparse.Namespace) -> int:
-    from pathlib import Path
-
     from gem_agent.app.factory import build_services
     from gem_agent.eval.labelled import LabelledSet, report, rows_json
     from gem_agent.eval.run import judge_set
 
     services, cache, _ = build_services(settings)
     labelled = LabelledSet.load(Path(args.set))
-    rows = await judge_set(labelled, services.judge, cache, BidIndex(settings.index_path), services.collector,
+    rows = await judge_set(labelled, services.judge, cache, BidIndex(settings.bid_cache_path), services.collector,
                            topic=args.topic, parallel=args.parallel)
     print(report(rows))
     if args.out:

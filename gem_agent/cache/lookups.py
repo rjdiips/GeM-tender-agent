@@ -1,5 +1,5 @@
 """Lookup lists for the Planner (spec 5.2, R2): GeM's categories and ministries from the site, replaced daily
-(spec 11.1), and the ministries and departments that open bids in the index actually carry."""
+(spec 11.1), and the ministries and departments that the bids in the bid cache carry."""
 from __future__ import annotations
 
 import hashlib
@@ -21,9 +21,9 @@ _STOP = {"the", "and", "for", "from", "of", "only", "all", "any", "with"}
 
 
 class LookupCatalog:
-    def __init__(self, cache_dir: Path, index: BidIndex, embedder: Embedder | None = None) -> None:
+    def __init__(self, cache_dir: Path, bid_cache: BidIndex, embedder: Embedder | None = None) -> None:
         self.dir = Path(cache_dir) / "lookups"
-        self.index, self.embedder = index, embedder
+        self.bid_cache, self.embedder = bid_cache, embedder
         self._categories: list[Category] | None = None
         self._vectors: np.ndarray | None = None
 
@@ -87,9 +87,8 @@ class LookupCatalog:
         return [cats[int(i)] for i in list(reciprocal_rank_fusion(rankings))[:k]]
 
     def ministries(self) -> list[str]:
-        """Ministry values as open bids carry them (what an index filter can match); the site's list if the
-        index is empty."""
-        values = [m for m, _ in self.index.distinct("ministry")]
+        """Ministry values as the cached bids carry them; the site's list if the bid cache is empty."""
+        values = [m for m, _ in self.bid_cache.distinct("ministry")]
         if values:
             return values
         data = self._read("ministries")
@@ -100,7 +99,7 @@ class LookupCatalog:
         if not words:
             return []
         words |= {w[:-1] for w in words if w.endswith("s") and len(w) > 4} | {w + "s" for w in words if not w.endswith("s")}
-        depts = self.index.distinct("department")
+        depts = self.bid_cache.distinct("department")
         scores = lexical_scores([d for d, _ in depts], sorted(words))
         ranked = sorted((i for i, s in enumerate(scores) if s > 0), key=lambda i: (-scores[i], -depts[i][1]))
         return [depts[i][0] for i in ranked[:k]]

@@ -16,7 +16,7 @@ from gem_agent.agents.schemas import SearchPlan, TenderRequest, TopicDefinition
 from gem_agent.tools.gem.lookups import Category
 
 PLAN_INSTRUCTIONS = """You plan a search of Indian government (GeM) tenders for one topic.
-The main search is by meaning over all open tender titles, so filters are optional extras:
+Every term runs as a live GeM title search, and GeM matches mainly on a term's first word, so give terms whose first word is specific ("UPI", "RTGS", "Murex"), not "digital …" or "online …". Base searches for bank IT and consultancy bids always run as well, so these are extras:
 - categories: GeM categories that tenders on this topic are filed under; pick only clear fits (they run as extra
   live searches). Many relevant tenders sit in vague categories, so leave it empty if none fit.
 - ministries / departments: the ones that best match the user's buyer hints (if any are offered). Leave them

@@ -8,10 +8,10 @@ import pytest
 from gem_agent.agents.chat import ChatAgent
 from gem_agent.agents.models import chat_model
 from gem_agent.agents.planner import Planner
+from gem_agent.agents.probe import probe_live
 from gem_agent.cache.lookups import LookupCatalog
 from gem_agent.config import get_settings
 from gem_agent.index.db import BidIndex
-from gem_agent.agents.probe import probe_live
 from gem_agent.memory.topics import TopicStore
 from gem_agent.memory.user_memory import MemoryStore
 from gem_agent.tools.gem.live import LiveSearcher
@@ -22,7 +22,7 @@ pytestmark = pytest.mark.live
 
 
 async def test_understanding_and_plans(tmp_path):
-    index = BidIndex(get_settings().index_path)
+    index = BidIndex(get_settings().bid_cache_path)
     pool = ClientPool.shared()
     try:
         catalog = LookupCatalog(tmp_path, index)

@@ -14,7 +14,7 @@ from gem_agent.eval.labelled import LabelledSet, Row
 from gem_agent.index.db import BidIndex
 
 
-async def judge_set(labelled: LabelledSet, judge: Judge, cache: DocCache, index: BidIndex,
+async def judge_set(labelled: LabelledSet, judge: Judge, cache: DocCache, bid_cache: BidIndex,
                     collector: Collector | None = None, *, topic: str | None = None, parallel: int = 3,
                     scratch: Path | None = None) -> list[Row]:
     judge.verdicts = VerdictCache(scratch or Path(tempfile.mkdtemp(prefix="gem-eval-")))
@@ -23,7 +23,7 @@ async def judge_set(labelled: LabelledSet, judge: Judge, cache: DocCache, index:
 
     async def one(item) -> Row:
         async with slots:
-            bid = index.get(item.b_id)
+            bid = bid_cache.get(item.b_id)
             files = cache.load(item.b_id)
             if files is None and collector is not None and bid is not None:
                 files = await collector.collect(bid)

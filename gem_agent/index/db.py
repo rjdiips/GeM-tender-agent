@@ -1,16 +1,13 @@
-"""bids.sqlite: every open bid's listing data plus its title embedding (spec 6.2)."""
+"""bids.sqlite, the bid cache: the listing data of every bid a live search has returned, plus its card (spec 6.2)."""
 from __future__ import annotations
 
-import hashlib
 import json
 import sqlite3
 import threading
-from collections.abc import Iterable, Sequence
+from collections.abc import Iterable
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
-
-import numpy as np
 
 from gem_agent.tools.gem.models import Bid
 
@@ -66,26 +63,11 @@ def embed_text(bid: Bid, card: str | None = None) -> str:
     return " | ".join(p for p in (bid.title, card, bid.ministry, bid.department) if p)
 
 
-def _text_hash(text: str) -> str:
-    return hashlib.sha1(text.encode()).hexdigest()
-
-
 @dataclass
 class UpsertCounts:
     new: int = 0
     updated: int = 0
     unchanged: int = 0
-
-
-@dataclass
-class CandidateRow:
-    b_id: int
-    text: str
-    closing: str | None
-    raw: str
-
-    def bid(self) -> Bid:
-        return Bid.from_listing(json.loads(self.raw))
 
 
 class BidIndex:
@@ -99,7 +81,6 @@ class BidIndex:
         if "card" not in columns:  # indexes built before cards existed
             self._conn.execute("ALTER TABLE bids ADD COLUMN card TEXT")
         self._lock = threading.Lock()
-        self._vector_cache: dict[str, tuple[str | None, np.ndarray, np.ndarray]] = {}
 
     def close(self) -> None:
         self._conn.close()
@@ -181,20 +162,6 @@ class BidIndex:
         return [tuple(r) for r in self._conn.execute(
             "SELECT b_id, title, card FROM bids WHERE card IS NOT NULL AND card != ''")]
 
-    def vague_without_card(self, **filters: object) -> list[Bid]:
-        """Open vague-title bids with no usable card (pending, or tried and nothing found) within the filters: no
-        word or meaning search can reach them, so the Searcher adds them to every pool."""
-        from gem_agent.tools.gem.titles import is_vague_title
-
-        keys = ("published_from", "published_to", "closing_from", "closing_to", "ministries", "departments",
-                "bid_types", "include_closed")
-        defaults: dict[str, object] = {"ministries": (), "departments": (), "bid_types": (), "include_closed": False}
-        where_sql, args = self._where(*[filters.get(k, defaults.get(k)) for k in keys])  # type: ignore[arg-type]
-        sql = ("SELECT raw, title FROM bids" + (where_sql + " AND " if where_sql else " WHERE ") +
-               "(card IS NULL OR card = '') AND (title LIKE 'Hiring of Agency for IT Projects%' OR "
-               "title LIKE 'Custom Bid for Services%')")
-        return [Bid.from_listing(json.loads(raw)) for raw, title in self._conn.execute(sql, args) if is_vague_title(title)]
-
     def needing_cards(self, limit: int | None = None) -> list[Bid]:
         """Open bids whose title says nothing about the subject and that have no card yet, closing soonest first."""
         from gem_agent.tools.gem.titles import is_vague_title
@@ -205,85 +172,17 @@ class BidIndex:
         out = [Bid.from_listing(json.loads(raw)) for raw, title in rows if is_vague_title(title)]
         return out[:limit] if limit else out
 
-    def bid_state(self, b_id: int) -> str | None:
-        row = self._conn.execute("SELECT state FROM bids WHERE b_id = ?", (b_id,)).fetchone()
-        return row[0] if row else None
-
-    def known(self, b_ids: Sequence[int]) -> set[int]:
-        if not b_ids:
-            return set()
-        marks = ",".join("?" * len(b_ids))
-        return {r[0] for r in self._conn.execute(f"SELECT b_id FROM bids WHERE b_id IN ({marks})", list(b_ids))}
-
-    def close_expired(self, *, now: datetime) -> int:
-        """Open bids past their closing date become closed; their embeddings are dropped (spec 11.1)."""
-        with self._lock, self._conn:
-            ids = [r[0] for r in self._conn.execute(
-                "SELECT b_id FROM bids WHERE state = 'open' AND closing < ?", (_iso(now),))]
-            self._conn.executemany("UPDATE bids SET state = 'closed' WHERE b_id = ?", [(i,) for i in ids])
-            self._conn.executemany("DELETE FROM embeddings WHERE b_id = ?", [(i,) for i in ids])
-            if ids:
-                self._bump_embed_version()
-        return len(ids)
-
     def prune(self, *, closed_before: datetime) -> int:
         """Delete bids that closed before the cutoff, with their embeddings. Returns the bids deleted."""
         cutoff = _iso(closed_before)
         with self._lock, self._conn:
             self._conn.execute(
                 "DELETE FROM embeddings WHERE b_id IN (SELECT b_id FROM bids WHERE closing < ?)", (cutoff,))
-            deleted = self._conn.execute("DELETE FROM bids WHERE closing < ?", (cutoff,)).rowcount
-            if deleted:
-                self._bump_embed_version()
-        return deleted
+            return self._conn.execute("DELETE FROM bids WHERE closing < ?", (cutoff,)).rowcount
 
     def labelled(self) -> list[tuple[int, str | None]]:
         """(b_id, card) for every bid with a non-NULL card; '' marks a bid whose document was tried."""
         return [(r[0], r[1]) for r in self._conn.execute("SELECT b_id, card FROM bids WHERE card IS NOT NULL")]
-
-    def mark_missed(self, *, refresh_started: datetime, gone_after: int) -> tuple[int, int]:
-        """After a complete full refresh: open bids it did not see are missed once more; after
-        `gone_after` misses in a row they are gone. A 1.6 h scan of a shifting list can skip a few bids,
-        so one miss alone is not trusted. Returns (missed now, newly gone)."""
-        started = _iso(refresh_started)
-        with self._lock, self._conn:
-            missed = self._conn.execute(
-                "UPDATE bids SET missed_refreshes = missed_refreshes + 1 WHERE state = 'open' AND last_seen < ?",
-                (started,),
-            ).rowcount
-            gone = [r[0] for r in self._conn.execute(
-                "SELECT b_id FROM bids WHERE state = 'open' AND missed_refreshes >= ?", (gone_after,))]
-            self._conn.executemany("UPDATE bids SET state = 'gone' WHERE b_id = ?", [(i,) for i in gone])
-            self._conn.executemany("DELETE FROM embeddings WHERE b_id = ?", [(i,) for i in gone])
-            if gone:
-                self._bump_embed_version()
-        return missed, len(gone)
-
-    def candidates(
-        self,
-        *,
-        published_from: datetime | None = None,
-        published_to: datetime | None = None,
-        closing_from: datetime | None = None,
-        closing_to: datetime | None = None,
-        ministries: Sequence[str] = (),
-        departments: Sequence[str] = (),
-        bid_types: Sequence[int] = (),
-        include_closed: bool = False,
-    ) -> list[CandidateRow]:
-        where_sql, args = self._where(published_from, published_to, closing_from, closing_to, ministries, departments,
-                                      bid_types, include_closed)
-        sql = "SELECT b_id, embed_text, closing, raw FROM bids" + where_sql
-        return [CandidateRow(*r) for r in self._conn.execute(sql, args)]
-
-    def count(self, **filters: object) -> int:
-        """How many bids match the same filters as candidates()."""
-        keys = ("published_from", "published_to", "closing_from", "closing_to", "ministries", "departments",
-                "bid_types", "include_closed")
-        defaults: dict[str, object] = {"ministries": (), "departments": (), "bid_types": (), "include_closed": False}
-        values = [filters.get(k, defaults.get(k)) for k in keys]
-        where_sql, args = self._where(*values)  # type: ignore[arg-type]
-        return self._conn.execute("SELECT COUNT(*) FROM bids" + where_sql, args).fetchone()[0]
 
     def distinct(self, column: str) -> list[tuple[str, int]]:
         """Values of ministry or department among open bids, most bids first."""
@@ -291,85 +190,3 @@ class BidIndex:
         sql = (f"SELECT {column}, COUNT(*) n FROM bids WHERE state = 'open' AND {column} IS NOT NULL "
                f"GROUP BY {column} ORDER BY n DESC")
         return [(r[0], r[1]) for r in self._conn.execute(sql)]
-
-    @staticmethod
-    def _where(
-        published_from: datetime | None, published_to: datetime | None, closing_from: datetime | None,
-        closing_to: datetime | None, ministries: Sequence[str], departments: Sequence[str], bid_types: Sequence[int],
-        include_closed: bool,
-    ) -> tuple[str, list[object]]:
-        where: list[str] = []
-        args: list[object] = []
-        if not include_closed:
-            where.append("state = 'open'")
-        for col, op, value in (("published", ">=", published_from), ("published", "<=", published_to),
-                               ("closing", ">=", closing_from), ("closing", "<=", closing_to)):
-            if value:
-                where.append(f"{col} {op} ?")
-                args.append(_iso(value))
-        for col, values in (("ministry", ministries), ("department", departments), ("bid_type", bid_types)):
-            if values:
-                where.append(f"{col} IN ({','.join('?' * len(values))})")
-                args.extend(values)
-        return (" WHERE " + " AND ".join(where) if where else ""), args
-
-    # --- embeddings ---------------------------------------------------------------------------------------------
-
-    def pending_embeddings(self, model: str, limit: int | None = None) -> list[tuple[int, str]]:
-        """Open bids with no embedding for this model, or whose text changed since."""
-        sql = ("SELECT b.b_id, b.embed_text, e.text_hash FROM bids b "
-               "LEFT JOIN embeddings e ON e.b_id = b.b_id AND e.model = ? WHERE b.state = 'open' ORDER BY b.b_id")
-        out = []
-        for b_id, text, stored_hash in self._conn.execute(sql, (model,)):
-            if stored_hash != _text_hash(text):
-                out.append((b_id, text))
-                if limit and len(out) >= limit:
-                    break
-        return out
-
-    def store_embeddings(self, model: str, items: Iterable[tuple[int, str, np.ndarray]]) -> None:
-        rows = [(b_id, model, _text_hash(text), int(vec.shape[0]), np.asarray(vec, np.float16).tobytes())
-                for b_id, text, vec in items]
-        with self._lock, self._conn:
-            self._conn.executemany("INSERT OR REPLACE INTO embeddings VALUES (?, ?, ?, ?, ?)", rows)
-            self._bump_embed_version()
-
-    def vectors(self, model: str) -> tuple[np.ndarray, np.ndarray]:
-        """(b_ids, float32 matrix) of every stored embedding for the model, cached until embeddings change,
-        including changes made by another process (the sync job)."""
-        version = self.state("embed_version")
-        cached = self._vector_cache.get(model)
-        if cached and cached[0] == version:
-            return cached[1], cached[2]
-        rows = self._conn.execute(
-            "SELECT b_id, dim, vector FROM embeddings WHERE model = ? ORDER BY b_id", (model,)).fetchall()
-        ids = np.array([r[0] for r in rows], dtype=np.int64)
-        matrix = (np.stack([np.frombuffer(r[2], np.float16) for r in rows]).astype(np.float32)
-                  if rows else np.zeros((0, 0), np.float32))
-        self._vector_cache[model] = (version, ids, matrix)
-        return ids, matrix
-
-    def _bump_embed_version(self) -> None:
-        self._conn.execute(
-            "INSERT INTO sync_state VALUES ('embed_version', '1') "
-            "ON CONFLICT(key) DO UPDATE SET value = CAST(value AS INTEGER) + 1")
-
-    # --- sync state and stats -----------------------------------------------------------------------------------
-
-    def state(self, key: str) -> str | None:
-        row = self._conn.execute("SELECT value FROM sync_state WHERE key = ?", (key,)).fetchone()
-        return row[0] if row else None
-
-    def set_state(self, key: str, value: str | None) -> None:
-        with self._lock, self._conn:
-            if value is None:
-                self._conn.execute("DELETE FROM sync_state WHERE key = ?", (key,))
-            else:
-                self._conn.execute("INSERT OR REPLACE INTO sync_state VALUES (?, ?)", (key, value))
-
-    def stats(self) -> dict[str, object]:
-        counts = dict(self._conn.execute("SELECT state, COUNT(*) FROM bids GROUP BY state").fetchall())
-        embedded = self._conn.execute("SELECT model, COUNT(*) FROM embeddings GROUP BY model").fetchall()
-        state = dict(self._conn.execute("SELECT key, value FROM sync_state").fetchall())
-        return {"open": counts.get("open", 0), "closed": counts.get("closed", 0), "gone": counts.get("gone", 0),
-                "embedded": dict(embedded), **state}

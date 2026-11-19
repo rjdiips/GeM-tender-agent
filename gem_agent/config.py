@@ -35,10 +35,6 @@ class Settings(BaseSettings):
     judge_cpu_embed_model: str = "sentence-transformers/all-MiniLM-L6-v2"  # page ranking when the GPU is full
     rerank_model: str = "BAAI/bge-reranker-v2-m3"
 
-    # Local bid index (spec 6.2)
-    index_sync_margin_min: float = 30.0
-    index_gone_after_missed_refreshes: int = 2
-
     # Web chat
     org_name: str = ""
     app_host: str = "0.0.0.0"

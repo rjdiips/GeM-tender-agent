@@ -252,7 +252,7 @@ class TenderRequest(BaseModel):
 
 
 class SearchPlan(BaseModel):
-    """What the Searcher runs for one topic: a local-index query plus optional live category searches."""
+    """What the Searcher runs for one topic: live title searches plus optional category, buyer and bid-type searches."""
 
     topic_key: str
     text: str  # semantic query: the expanded meaning, never a bare acronym

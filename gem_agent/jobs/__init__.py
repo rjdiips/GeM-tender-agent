@@ -1,1 +1,1 @@
-"""Scheduled jobs (systemd timers)."""
+"""One-off jobs run by hand."""

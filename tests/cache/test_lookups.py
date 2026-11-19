@@ -45,7 +45,7 @@ async def test_find_categories_by_words(catalog):
     assert found[0].value == "services_home_itse_hi12433188"
 
 
-async def test_ministries_are_the_values_bids_carry(catalog):
+async def test_ministries_are_the_values_cached_bids_carry(catalog):
     assert catalog.ministries() == ["Ministry of Finance", "Ministry of Defence"]
 
 

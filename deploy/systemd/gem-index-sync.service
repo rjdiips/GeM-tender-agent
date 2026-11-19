@@ -1,8 +1,0 @@
-[Unit]
-Description=GeM index: newest bids since the last sync, then embed (spec 6.2)
-
-[Service]
-Type=oneshot
-WorkingDirectory=/apps/rajdeep_workspace/gem_agent
-Environment=HF_HUB_OFFLINE=1
-ExecStart=/home/finsurge/.local/bin/uv run --no-sync gem-agent index sync
