@@ -84,7 +84,9 @@ _RFP_LINE = re.compile(r"request for proposal|\brfp\b|tender (?:document|for)|se
                        r"supply,? (?:installation|implementation)|implementation of", re.IGNORECASE)
 # a scope-of-work heading ("3.2 Scope of Work", "ANNEXURE I - Broad Scope of Work", "8. Scope of Work:"), not a
 # sentence that mentions it ("Scope of Work is attached vide Annexure-I") nor a contents entry ("Scope of Work .... 15")
-_SCOPE_HEADING = re.compile(r"^[(\s]*(?:(?:\d+(?:\.\d+)*\.?|[ivx]+\.|[a-z][.)])\s*|annexure[\s\w-]{0,12}?[-–:(]\s*)*"
+# The numbering prefix is atomic (?>…): without it a long run of digits (OCR noise, "3333883233833 3222…" in bid
+# 10110777) can be split into section numbers in exponentially many ways, and one line took 13+ min (18 Nov).
+_SCOPE_HEADING = re.compile(r"^[(\s]*(?:(?>\d+(?:\.\d+)*\.?|[ivx]+\.|[a-z][.)])\s*|annexure[\s\w-]{0,12}?[-–:(]\s*)*"
                             r"(?:broad\s+|detailed\s+)?scope\s+of\s+(?:work|services|the\s+project)\b"
                             r"(?!\s+(?:is|are|of|as|shall|would|will|also|described|mentioned|defined))[^.]{0,80}$",
                             re.IGNORECASE)

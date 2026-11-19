@@ -215,6 +215,39 @@ def test_scope_sections_skip_contents_entries_and_sentences_that_mention_the_sco
     assert "attached vide" not in out and "....." not in out
 
 
+def test_a_long_run_of_ocr_digits_does_not_stall_the_scope_search():
+    # 18 Nov: this OCR'd line from bid 10110777's scan held the scope-heading regex for 13+ min (exponential
+    # backtracking over ways to split the digits into section numbers like "3.2"). The regex engine holds the GIL,
+    # so the check runs in a child process that a timeout can kill.
+    import subprocess
+    import sys
+
+    code = """
+from gem_agent.index.cards import _scope_sections
+from gem_agent.tools.pdf.text import PageText
+noise = "3333883233833 322232333833333383333333333333333338"
+texts = ["cover", noise + "\\n" + "1" * 400 + "\\n" + "1." * 300 + "x", "x", "x",
+         "3.2 Scope of Work\\nAML transaction monitoring"]
+print(_scope_sections([PageText(page=n, text=t, method="text") for n, t in enumerate(texts, 1)]))
+"""
+    try:
+        out = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, timeout=20, check=True).stdout
+    except subprocess.TimeoutExpired:
+        raise AssertionError("the scope search was still running after 20 s") from None
+    assert "(p.5) 3.2 Scope of Work\nAML transaction monitoring" in out
+
+
+def test_scope_headings_keep_matching_with_numbering_and_annexure_prefixes():
+    from gem_agent.index.cards import _SCOPE_HEADING
+
+    for heading in ("3.2 Scope of Work", "5.1.2. SCOPE OF WORK AND DELIVERABLES", "iv. Scope of the Project",
+                    "a) Detailed Scope of Services", "ii. a) 3.1 Scope of Work", "Annexure-II: Scope of Work",
+                    "ANNEXURE I - Broad Scope of Work", "8. Scope of Work:", "1 2 3 Scope of work"):
+        assert _SCOPE_HEADING.match(heading), heading
+    for sentence in ("Scope of Work is attached vide Annexure-I", "The scope of work shall include"):
+        assert not _SCOPE_HEADING.match(sentence), sentence
+
+
 async def test_up_to_eight_terms_are_kept_without_category_words(tmp_path):
     index, cache = setup(tmp_path, n=1)
     terms = ["AML", "transaction monitoring", "EFRM", "mule account detection", "early warning system", "KYC",
