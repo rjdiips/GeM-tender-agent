@@ -45,8 +45,19 @@ async def test_find_categories_by_words(catalog):
     assert found[0].value == "services_home_itse_hi12433188"
 
 
-async def test_ministries_are_the_values_cached_bids_carry(catalog):
-    assert catalog.ministries() == ["Ministry of Finance", "Ministry of Defence"]
+async def test_ministries_are_the_cached_bids_values_then_the_sites_list(catalog):
+    # the Planner can only choose what is listed: "only Ministry of Railways" needs Railways even when no cached
+    # bid is from it
+    ministries = catalog.ministries()
+    assert ministries[:2] == ["Ministry of Finance", "Ministry of Defence"]
+    assert "Ministry of Railways" in ministries and len(ministries) == len(set(ministries))
+
+
+async def test_departments_include_buyers_any_search_listed(catalog, index):
+    index.add_buyers([Bid.from_listing(row(9, datetime(2026, 11, 10), datetime(2026, 11, 28),
+                                           ministry="Ministry of Railways", department="RAILWAY BOARD"))])
+    assert catalog.departments(["railway board"]) == ["RAILWAY BOARD"]
+    assert "Ministry of Railways" in catalog.ministries()
 
 
 async def test_departments_matching_buyer_hints(catalog):

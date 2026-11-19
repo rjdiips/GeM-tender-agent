@@ -100,6 +100,8 @@ class Searcher:
         else:
             outcomes = await self.live.rest(specs, progress or {})
         new_progress = {**(progress or {}), **{o.spec.key: o.progress for o in outcomes}}
+        # every buyer the listings name, kept or not, widens the Planner's buyer choices (cache/lookups.py)
+        self.bid_cache.add_buyers(b for o in outcomes for b in o.bids)
 
         pool: dict[int, tuple[Bid, list[str]]] = {}
         for outcome in outcomes:

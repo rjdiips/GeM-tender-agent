@@ -47,6 +47,9 @@ CREATE TABLE IF NOT EXISTS embeddings (
     PRIMARY KEY (b_id, model)
 );
 CREATE TABLE IF NOT EXISTS sync_state (key TEXT PRIMARY KEY, value TEXT);
+-- ministry and department names as GeM's listings write them, from every search a run read: the Planner's buyer
+-- choices, wider than the shortlisted bids above (names only, never pruned: a few hundred short rows)
+CREATE TABLE IF NOT EXISTS buyers (kind TEXT NOT NULL, name TEXT NOT NULL, PRIMARY KEY (kind, name)) WITHOUT ROWID;
 """
 
 # Columns whose change makes an upsert count as "updated".
@@ -183,6 +186,24 @@ class BidIndex:
     def labelled(self) -> list[tuple[int, str | None]]:
         """(b_id, card) for every bid with a non-NULL card; '' marks a bid whose document was tried."""
         return [(r[0], r[1]) for r in self._conn.execute("SELECT b_id, card FROM bids WHERE card IS NOT NULL")]
+
+    def add_buyers(self, bids: Iterable[Bid]) -> int:
+        """Remember the ministry and department names these listing rows carry; only new names are written."""
+        names = {(kind, name) for b in bids for kind, name in (("ministry", b.ministry), ("department", b.department))
+                 if name}
+        if not names:
+            return 0
+        known = set(self._conn.execute("SELECT kind, name FROM buyers").fetchall())
+        new = sorted(names - known)
+        if new:
+            with self._lock, self._conn:
+                self._conn.executemany("INSERT OR IGNORE INTO buyers (kind, name) VALUES (?, ?)", new)
+        return len(new)
+
+    def buyer_names(self, kind: str) -> list[str]:
+        """Ministry or department names seen in any search's listing, sorted."""
+        assert kind in ("ministry", "department")
+        return [r[0] for r in self._conn.execute("SELECT name FROM buyers WHERE kind = ? ORDER BY name", (kind,))]
 
     def distinct(self, column: str) -> list[tuple[str, int]]:
         """Values of ministry or department among the cached bids, most bids first."""

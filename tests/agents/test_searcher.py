@@ -193,3 +193,10 @@ async def test_a_failed_title_screen_keeps_every_title(gem, clock, bid_cache):
     found = await searcher.search(LOS, plan())
     assert ids(found) == {1, 2, 3, 4}
     assert any("screen failed" in w for c in found.candidates for w in c.why)
+
+
+async def test_every_buyer_a_search_lists_is_kept_for_the_planner(gem, clock, bid_cache):
+    llm = ScriptedLLM({SCREEN_INSTRUCTIONS: [{"keep": []}]})
+    searcher, _ = build(gem, clock, bid_cache, llm, the_site(1, 3, 4))
+    await searcher.search(LOS, plan())
+    assert "REGIONAL RURAL BANKS" in bid_cache.buyer_names("department")  # bid 4 was screened out, its buyer kept

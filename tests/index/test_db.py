@@ -88,3 +88,11 @@ def test_prune_drops_bids_closed_more_than_30_days_ago(index):
     assert index.prune(closed_before=now - timedelta(days=30)) == 1
     assert index.get(1) is None and index.get(2) is not None
     assert index._conn.execute("SELECT b_id FROM embeddings").fetchall() == [(2,)]
+
+
+def test_buyer_names_from_listings_are_kept_once(index):
+    index.add_buyers([bid(1, department="RAILWAY BOARD"), bid(2, department="RAILWAY BOARD", ministry=None)])
+    index.add_buyers([bid(3, department="BANKING SECTOR")])
+    assert index.buyer_names("department") == ["BANKING SECTOR", "RAILWAY BOARD"]
+    assert index.buyer_names("ministry") == ["Ministry of Finance"]
+    assert index.get(1) is None  # names only: the bids themselves are not stored

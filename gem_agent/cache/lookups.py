@@ -1,5 +1,9 @@
 """Lookup lists for the Planner (spec 5.2, R2): GeM's categories and ministries from the site, replaced daily
-(spec 11.1), and the ministries and departments that the bids in the bid cache carry."""
+(spec 11.1), merged with the ministries and departments the bid cache knows: those its bids carry and those any
+search's listing named (BidIndex.buyer_names).
+
+GeM's department list (`dept-list-adv`) needs a ministry and an organisation per request, so the site's whole list
+would take thousands of requests a day; departments come from the listings searches already read instead."""
 from __future__ import annotations
 
 import hashlib
@@ -87,12 +91,12 @@ class LookupCatalog:
         return [cats[int(i)] for i in list(reciprocal_rank_fusion(rankings))[:k]]
 
     def ministries(self) -> list[str]:
-        """Ministry values as the cached bids carry them; the site's list if the bid cache is empty."""
-        values = [m for m, _ in self.bid_cache.distinct("ministry")]
-        if values:
-            return values
+        """Ministry values as the cached bids carry them (most bids first), then those searches listed, then the
+        rest of the site's list: the Planner can only choose a listed ministry."""
         data = self._read("ministries")
-        return data["items"] if data else []
+        values = [m for m, _ in self.bid_cache.distinct("ministry")]
+        values += self.bid_cache.buyer_names("ministry") + (data["items"] if data else [])
+        return list(dict.fromkeys(values))
 
     def departments(self, hints: list[str], k: int = 30) -> list[str]:
         words = {w.lower() for h in hints for w in re.findall(r"\w+", h) if len(w) > 2 and w.lower() not in _STOP}
@@ -100,6 +104,8 @@ class LookupCatalog:
             return []
         words |= {w[:-1] for w in words if w.endswith("s") and len(w) > 4} | {w + "s" for w in words if not w.endswith("s")}
         depts = self.bid_cache.distinct("department")
+        counted = {d for d, _ in depts}
+        depts += [(d, 0) for d in self.bid_cache.buyer_names("department") if d not in counted]
         scores = lexical_scores([d for d, _ in depts], sorted(words))
         ranked = sorted((i for i, s in enumerate(scores) if s > 0), key=lambda i: (-scores[i], -depts[i][1]))
         return [depts[i][0] for i in ranked[:k]]
