@@ -175,13 +175,17 @@ class BidIndex:
         out = [Bid.from_listing(json.loads(raw)) for raw, title in rows if is_vague_title(title)]
         return out[:limit] if limit else out
 
-    def prune(self, *, closed_before: datetime) -> int:
-        """Delete bids that closed before the cutoff, with their embeddings. Returns the bids deleted."""
+    def prune(self, *, closed_before: datetime, keep: Iterable[int] = frozenset()) -> int:
+        """Delete bids that closed before the cutoff, with their embeddings, except those in `keep` (the labelled
+        set's, which `eval` reads). Returns the bids deleted."""
         cutoff = _iso(closed_before)
         with self._lock, self._conn:
-            self._conn.execute(
-                "DELETE FROM embeddings WHERE b_id IN (SELECT b_id FROM bids WHERE closing < ?)", (cutoff,))
-            return self._conn.execute("DELETE FROM bids WHERE closing < ?", (cutoff,)).rowcount
+            self._conn.execute("CREATE TEMP TABLE IF NOT EXISTS prune_keep (b_id INTEGER PRIMARY KEY)")
+            self._conn.execute("DELETE FROM prune_keep")
+            self._conn.executemany("INSERT OR IGNORE INTO prune_keep VALUES (?)", ((int(b),) for b in keep))
+            doomed = "SELECT b_id FROM bids WHERE closing < ? AND b_id NOT IN (SELECT b_id FROM prune_keep)"
+            self._conn.execute(f"DELETE FROM embeddings WHERE b_id IN ({doomed})", (cutoff,))
+            return self._conn.execute(f"DELETE FROM bids WHERE b_id IN ({doomed})", (cutoff,)).rowcount
 
     def labelled(self) -> list[tuple[int, str | None]]:
         """(b_id, card) for every bid with a non-NULL card; '' marks a bid whose document was tried."""

@@ -96,3 +96,10 @@ def test_buyer_names_from_listings_are_kept_once(index):
     assert index.buyer_names("department") == ["BANKING SECTOR", "RAILWAY BOARD"]
     assert index.buyer_names("ministry") == ["Ministry of Finance"]
     assert index.get(1) is None  # names only: the bids themselves are not stored
+
+
+def test_prune_keeps_the_bids_it_is_told_to(index):
+    old = dict(published=NOV(1) - timedelta(days=40), closing=NOV(1) - timedelta(days=31))
+    index.upsert([bid(1, **old), bid(2, **old)], seen_at=NOV(1))
+    assert index.prune(closed_before=NOV(1) - timedelta(days=30), keep={2}) == 1
+    assert index.get(1) is None and index.get(2) is not None

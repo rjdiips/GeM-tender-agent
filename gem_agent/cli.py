@@ -25,7 +25,7 @@ def setup_logging(quiet: bool) -> None:
     logging.getLogger("httpx").setLevel(logging.WARNING)
 
 
-def _labelled_path(given: str | None) -> Path:
+def labelled_path(given: str | None) -> Path:
     """The labelled set: the path given, else eval/labelled_set.json under the current directory, else the repo's."""
     if given:
         return Path(given)
@@ -36,7 +36,7 @@ def _labelled_path(given: str | None) -> Path:
 def cmd_bids_migrate(args: argparse.Namespace, settings: Settings) -> int:
     from gem_agent.eval.labelled import LabelledSet
 
-    keep = {item.b_id for item in LabelledSet.load(_labelled_path(args.labelled)).items}
+    keep = {item.b_id for item in LabelledSet.load(labelled_path(args.labelled)).items}
     source = Path(args.source) if args.source else settings.index_path
     if not source.exists():
         print(f"no old index at {source}", file=sys.stderr)

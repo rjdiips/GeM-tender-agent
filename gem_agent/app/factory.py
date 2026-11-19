@@ -3,9 +3,11 @@ cache, the local models, the caches and the five agents. Used by the web app and
 from __future__ import annotations
 
 import functools
+import json
 import logging
 from collections.abc import Awaitable, Callable
-from datetime import timedelta
+from datetime import datetime, timedelta
+from pathlib import Path
 
 from gem_agent.agents.chat import ChatAgent
 from gem_agent.agents.collector import Collector
@@ -42,6 +44,22 @@ def _judge_embedder(settings: Settings):
     return SmallEmbedder(settings.judge_cpu_embed_model)
 
 
+def labelled_b_ids(path: Path) -> set[int]:
+    """The labelled set's b_ids, by a plain JSON read: validating the whole set here would fail on label fields this
+    code does not know yet, and the prune only needs the ids. No file (or an unreadable one): none."""
+    try:
+        return {int(item["b_id"]) for item in json.loads(Path(path).read_text())["items"]}
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        if Path(path).exists():
+            log.warning("labelled set %s unreadable, pruning without it: %s", path, exc)
+        return set()
+
+
+def startup_prune(bid_cache: BidIndex, labelled: Path, now: datetime) -> int:
+    """Bids closed over 30 days ago, except the labelled set's: `bids migrate` copied those in for `eval`."""
+    return bid_cache.prune(closed_before=now - timedelta(days=30), keep=labelled_b_ids(labelled))
+
+
 def build_services(settings: Settings) -> tuple[Services, DocCache, list[Callable[[], Awaitable[None]]]]:
     pool = ClientPool.shared(settings)
     session = BidplusSession(pool)
@@ -75,7 +93,9 @@ def build_services(settings: Settings) -> tuple[Services, DocCache, list[Callabl
             await catalog.refresh(session, today=site_now().date())
 
     async def prune_bid_cache() -> None:
+        from gem_agent.cli import labelled_path
+
         log.info("bid cache: pruned %d bids closed over 30 days ago",
-                 bid_cache.prune(closed_before=site_now() - timedelta(days=30)))
+                 startup_prune(bid_cache, labelled_path(None), site_now()))
 
     return services, cache, [refresh_lookups, prune_bid_cache]
