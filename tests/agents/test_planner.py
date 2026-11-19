@@ -85,5 +85,16 @@ async def test_buyer_only_makes_hard_filters():
 async def test_no_buyer_hints_offers_no_buyers():
     llm = ScriptedLLM({PLAN_INSTRUCTIONS: [GOOD]})
     plan = await Planner(llm.model(), FakeLookups()).plan(request(), LOS)
-    assert "Ministries:" not in llm.calls[0][1]
+    assert "<ministries>" not in llm.calls[0][1] and "<departments>" not in llm.calls[0][1]
     assert plan.ministries == [] and plan.prefer_ministries == []
+
+
+async def test_buyer_candidates_are_listed_one_per_line_in_a_delimited_block():
+    # names come from GeM's listings: joined on one line, a name could forge the separator
+    llm = ScriptedLLM({PLAN_INSTRUCTIONS: [GOOD]})
+    await Planner(llm.model(), FakeLookups()).plan(request(buyer_hints=["finance ministry"]), LOS)
+    prompt = llm.calls[0][1]
+    assert "; ".join(MINISTRIES) not in prompt
+    block = prompt[prompt.index("<ministries>"):prompt.index("</ministries>")]
+    assert block.splitlines()[1:] == [f"- {m}" for m in MINISTRIES]
+    assert "<departments>\n- Department of Financial Services\n</departments>" in prompt

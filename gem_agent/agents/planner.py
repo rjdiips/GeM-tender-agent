@@ -67,10 +67,14 @@ class Planner:
         if request.buyer_hints:
             lines.append("Buyer hints from the user: " + "; ".join(request.buyer_hints))
         lines.append("\nCandidate categories (label (value)):\n" + "\n".join(f"- {c.label} ({c.value})" for c in categories))
+        # buyer names come from GeM's listings: one "- name" line each inside a tagged block, so no name can forge a
+        # separator or end the list
         if departments:
-            lines.append("\nDepartments matching the buyer hints:\n" + "\n".join(f"- {d}" for d in departments))
+            lines.append("\nDepartments matching the buyer hints, one per line:\n<departments>\n"
+                         + "\n".join(f"- {d}" for d in departments) + "\n</departments>")
         if ministries:
-            lines.append("\nMinistries: " + "; ".join(ministries))
+            lines.append("\nMinistries, one per line:\n<ministries>\n"
+                         + "\n".join(f"- {m}" for m in ministries) + "\n</ministries>")
         if note:
             lines.append(f"\nNote: {note}")
         out = (await agent.run("\n".join(lines), model_settings={"max_tokens": 500, "temperature": 0.0})).output
