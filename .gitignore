@@ -46,7 +46,8 @@ docs/
 # --- Agent / tooling artifacts ---
 .playwright-mcp/
 graphify-out/
-.claude/settings.local.json
+.claude/
+AGENTS.md
 
 # --- Editors / OS ---
 .vscode/
@@ -55,3 +56,6 @@ graphify-out/
 *.swo
 .DS_Store
 Thumbs.db
+
+# Live-search run output (raw listings, bid texts, labels, stats; regenerate with the scripts)
+eval/live_search/results/
