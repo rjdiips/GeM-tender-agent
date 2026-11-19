@@ -80,16 +80,47 @@ def cut_line(n: int) -> str:
     return (f"{n} more matching bid{' was' if n == 1 else 's were'} not read; narrow the request to see them.")
 
 
+Progress = dict[str, dict[str, SearchProgress]]  # topic.key() -> search key -> progress
+
+
+def failed_line(failed: int, total: int) -> str:
+    return f"{failed} of {total} GeM searches could not be read; results may be incomplete."
+
+
+def failed_searches(after: Progress, before: Progress | None = None) -> tuple[int, int]:
+    """(failed, read) over distinct searches, all topics. Stage 1 (no `before`): every search. Stage 2: the searches
+    that still had pages, and those of them that failed now."""
+    read: set[str] = set()
+    failed: set[str] = set()
+    for topic, searches in after.items():
+        for key, p in searches.items():
+            was = (before or {}).get(topic, {}).get(key)
+            if before is not None and (was is None or not was.pending):
+                continue
+            read.add(key)
+            if p.failed:
+                failed.add(key)
+    return len(failed), len(read)
+
+
+def gem_failed(search_progress: Progress) -> bool:
+    """Searches failed and none that worked returned any bids: an empty shortlist says nothing about the topic."""
+    searches = [p for t in search_progress.values() for p in t.values()]
+    return any(p.failed for p in searches) and not any(
+        not p.failed and not p.skipped and p.num_found > 0 for p in searches)
+
+
 def wants_retry(*, stage: str, retries: int, candidates: list[Candidate], over_cap: bool,
-                search_progress: dict[str, dict[str, SearchProgress]]) -> bool:
+                search_progress: Progress) -> bool:
     """After stage 1: narrow when the shortlist is over the cap. Widen when it is empty and no search has pages left:
-    page 1 alone is the newest-published bids, so an empty page-1 shortlist goes on to stage 2 instead."""
+    page 1 alone is the newest-published bids, so an empty page-1 shortlist goes on to stage 2 instead. Nor when GeM
+    could not be read: a wider search would fail the same way."""
     if stage != "first" or retries >= MAX_RETRIES:
         return False
     if over_cap:
         return True
     pending = any(p.pending for searches in search_progress.values() for p in searches.values())
-    return not candidates and not pending
+    return not candidates and not pending and not gem_failed(search_progress)
 
 
 def by_closing(candidates: Iterable[Candidate]) -> list[Candidate]:
@@ -123,6 +154,9 @@ def build_graph(s: Services) -> StateGraph:
         if candidates:
             progress(s, state.run_id, f"Shortlist: {len(candidates)} bids from {pool:,} titles looked at "
                                       "(closing soonest first). Reading documents…")
+        failed, read = failed_searches(search_progress)
+        if failed:
+            progress(s, state.run_id, failed_line(failed, read))
         if cut and not wants_retry(stage=state.stage, retries=state.retries, candidates=candidates, over_cap=over_cap,
                                    search_progress=search_progress):
             progress(s, state.run_id, cut_line(cut))  # a narrowing retry comes next otherwise
@@ -165,6 +199,9 @@ def build_graph(s: Services) -> StateGraph:
             progress(s, state.run_id, f"Searching deeper: {len(new)} more bids to read…")
         if cut:
             progress(s, state.run_id, cut_line(cut))
+        failed, read = failed_searches(search_progress, before=state.search_progress)
+        if failed:
+            progress(s, state.run_id, failed_line(failed, read))
         return {"candidates": candidates, "pool": pool, "search_progress": search_progress, "stage": "rest",
                 "cut": state.cut + cut}
 
@@ -218,7 +255,11 @@ def build_graph(s: Services) -> StateGraph:
         states = [bid_state(o) for o in outcomes if o.verdict]
         relevant, quarantined, borderline = (states.count(k) for k in ("relevant", "quarantined", "borderline"))
         failed = sum(1 for o in outcomes if o.error)
-        if not state.candidates:
+        searches = [p for t in state.search_progress.values() for p in t.values()]
+        if not state.candidates and searches and all(p.failed for p in searches):
+            total = len({k for t in state.search_progress.values() for k in t})
+            text = f"GeM could not be searched: all {total} searches failed. Try again in a few minutes."
+        elif not state.candidates:
             text = (f"No matching tenders found {state.request.window.describe()} "
                     f"(looked at {state.pool:,} titles, searched {state.retries + 1} ways).")
         else:

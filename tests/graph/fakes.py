@@ -57,12 +57,13 @@ class FakeSearcher:
     """`results`: the first stage's bids, one list per call (the last repeats). `rest`: the second stage's, likewise.
     Like the real Searcher, the second stage needs the progress the first returned and leaves out `exclude`, and a
     result is cut to the cap (`cap` overrides the settings' one) with the number cut reported. `more_pages`: stage 1
-    leaves pages for stage 2 (False: every search was read whole on page 1)."""
+    leaves pages for stage 2 (False: every search was read whole on page 1). `searches`: per stage, more search
+    progress to report (it may replace "fake"), e.g. failed searches."""
 
-    def __init__(self, results, rest=((),), *, ignore_exclude=False, cap=150, more_pages=True):
+    def __init__(self, results, rest=((),), *, ignore_exclude=False, cap=150, more_pages=True, searches=None):
         self.results, self.rest, self.calls, self.rest_calls = list(results), [list(r) for r in rest], 0, 0
         self.stages, self.excluded, self.ignore_exclude, self.caps = [], [], ignore_exclude, []
-        self.settings, self.more_pages = SearchSettings(cap=cap), more_pages
+        self.settings, self.more_pages, self.searches = SearchSettings(cap=cap), more_pages, dict(searches or {})
 
     async def search(self, topic: TopicDefinition, plan, *, stage="first", progress=None, exclude=frozenset(),
                      cap=None):
@@ -82,9 +83,12 @@ class FakeSearcher:
         cut = max(0, len(bids) - limit)
         pages = 2 if self.more_pages else 1
         done = SearchProgress(num_found=len(bids), pages_read=1 if stage == "first" else pages, page_count=pages)
+        if stage == "rest" and not progress["fake"].pending:
+            done = progress["fake"]  # like live.rest: a search with nothing left keeps its progress (failed, say)
         return SearchResult(candidates=[Candidate(bid=b, group=topic.meaning.split(":")[0], why=["title words"])
                                         for b in bids[:limit]],
-                            pool=len(bids) * 3, over_cap=cut > 0, cut=cut, progress={**(progress or {}), "fake": done})
+                            pool=len(bids) * 3, over_cap=cut > 0, cut=cut,
+                            progress={**(progress or {}), "fake": done, **self.searches.get(stage, {})})
 
 
 class FakeCollector:

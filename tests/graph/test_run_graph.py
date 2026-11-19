@@ -4,6 +4,7 @@ import json
 import pytest
 
 from gem_agent.agents.rulings import RulingMatch
+from gem_agent.tools.gem.live import SearchProgress
 from gem_agent.graph.events import EventBus
 from gem_agent.graph.manager import RunManager
 from gem_agent.graph.services import Services
@@ -408,6 +409,42 @@ async def test_an_empty_first_page_shortlist_searches_deeper_before_widening(tmp
     events = await ask(RunManager(s), "LOS tenders closing in the next 5 days")
     assert searcher.stages == ["first", "rest"] and len(planner.notes) == 1
     assert [e["bid"]["b_id"] for e in events if e["type"] == "result"] == [3]
+
+
+FAILED = SearchProgress(num_found=0, pages_read=0, page_count=0, failed=True)
+
+
+async def test_searches_gem_could_not_read_are_reported_for_each_stage(tmp_path):
+    midway = SearchProgress(num_found=40, pages_read=2, page_count=4, failed=True)
+    searcher = FakeSearcher([[bid(1)]], rest=[[bid(2)]],
+                            searches={"first": {"exact|BANKING SECTOR": FAILED}, "rest": {"fake": midway}})
+    s = services(tmp_path, searcher=searcher)
+    events = await ask(RunManager(s), "LOS tenders")
+    progress = [e["event"]["text"] for e in events if e["type"] == "progress"]
+    assert "1 of 2 GeM searches could not be read; results may be incomplete." in progress  # stage 1
+    assert "1 of 1 GeM searches could not be read; results may be incomplete." in progress  # stage 2: what it read
+    assert events[-1] == {"type": "done", "status": "complete"}
+
+
+async def test_when_gem_cannot_be_searched_the_run_says_so_and_does_not_widen(tmp_path):
+    planner = FakePlanner()
+    searcher = FakeSearcher([[]], searches={"first": {"fake": FAILED, "exact|BANKING SECTOR": FAILED}})
+    s = services(tmp_path, planner=planner, searcher=searcher)
+    events = await ask(RunManager(s), "LOS tenders")
+    assert len(planner.notes) == 1  # widening would only search a GeM that is down again
+    progress = [e["event"]["text"] for e in events if e["type"] == "progress"]
+    assert "2 of 2 GeM searches could not be read; results may be incomplete." in progress
+    assert progress[-1] == "GeM could not be searched: all 2 searches failed. Try again in a few minutes."
+    assert events[-1] == {"type": "done", "status": "complete"}
+
+
+async def test_a_partly_failed_search_with_nothing_readable_does_not_widen(tmp_path):
+    planner = FakePlanner()
+    searcher = FakeSearcher([[]], more_pages=False, searches={"first": {"exact|BANKING SECTOR": FAILED}})
+    s = services(tmp_path, planner=planner, searcher=searcher)
+    events = await ask(RunManager(s), "LOS tenders")
+    assert len(planner.notes) == 1  # the one search that worked matched no bids: the empty result is GeM's failure
+    assert "No matching tenders found" in [e["event"]["text"] for e in events if e["type"] == "progress"][-1]
 
 
 async def test_bids_found_only_by_the_second_stage_are_reported(tmp_path):
