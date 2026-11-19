@@ -14,7 +14,7 @@ from pathlib import Path
 
 import numpy as np
 
-from gem_agent.index.db import BidIndex
+from gem_agent.index.db import BidIndex, buyer_name
 from gem_agent.retrieval.bm25 import lexical_scores
 from gem_agent.retrieval.embed import Embedder
 from gem_agent.retrieval.fusion import reciprocal_rank_fusion
@@ -22,6 +22,11 @@ from gem_agent.tools.gem.lookups import Category, list_categories, list_ministri
 from gem_agent.tools.http_client import BidplusSession
 
 _STOP = {"the", "and", "for", "from", "of", "only", "all", "any", "with"}
+
+
+def _clean(names: list[str]) -> list[str]:
+    """Each name normalised (buyer_name), unsafe ones dropped, first spelling kept."""
+    return list(dict.fromkeys(c for n in names if (c := buyer_name(n))))
 
 
 class LookupCatalog:
@@ -91,22 +96,37 @@ class LookupCatalog:
         return [cats[int(i)] for i in list(reciprocal_rank_fusion(rankings))[:k]]
 
     def ministries(self, k: int = 100) -> list[str]:
-        """Up to `k` ministry values: as the cached bids carry them (most bids first), then those searches listed,
-        then the site's list (77 on 16 Nov), which fills what is left. The Planner can only choose a listed ministry;
-        the bound keeps its prompt and enum small whatever the listings bring."""
+        """Up to `k` ministry values, each normalised (index.db.buyer_name): the cached bids' values (most bids
+        first), then the site's list, then names only searches listed. Every site ministry always keeps its slot;
+        listing-only names fill what is left of `k`. The Planner can only choose a listed ministry; the bound keeps
+        its prompt and enum small whatever the listings bring."""
         data = self._read("ministries")
-        values = [m for m, _ in self.bid_cache.distinct("ministry")]
-        values += self.bid_cache.buyer_names("ministry") + (data["items"] if data else [])
-        return list(dict.fromkeys(values))[:k]
+        site = _clean([*(data["items"] if data else [])])
+        ordered = _clean([*(m for m, _ in self.bid_cache.distinct("ministry")), *site,
+                          *self.bid_cache.buyer_names("ministry")])
+        reserved, spare = set(site), max(0, k - len(site))
+        out: list[str] = []
+        for value in ordered:
+            if value in reserved:
+                out.append(value)
+            elif spare:
+                out.append(value)
+                spare -= 1
+        return out[:k]
 
     def departments(self, hints: list[str], k: int = 30) -> list[str]:
         words = {w.lower() for h in hints for w in re.findall(r"\w+", h) if len(w) > 2 and w.lower() not in _STOP}
         if not words:
             return []
         words |= {w[:-1] for w in words if w.endswith("s") and len(w) > 4} | {w + "s" for w in words if not w.endswith("s")}
-        depts = self.bid_cache.distinct("department")
-        counted = {d for d, _ in depts}
-        depts += [(d, 0) for d in self.bid_cache.buyer_names("department") if d not in counted]
+        counts: dict[str, int] = {}  # normalised name -> cached bids carrying it
+        for name, n in self.bid_cache.distinct("department"):
+            if clean := buyer_name(name):
+                counts[clean] = counts.get(clean, 0) + n
+        for name in self.bid_cache.buyer_names("department"):
+            if clean := buyer_name(name):
+                counts.setdefault(clean, 0)
+        depts = list(counts.items())
         scores = lexical_scores([d for d, _ in depts], sorted(words))
         ranked = sorted((i for i, s in enumerate(scores) if s > 0), key=lambda i: (-scores[i], -depts[i][1]))
         return [depts[i][0] for i in ranked[:k]]

@@ -22,7 +22,7 @@ from pydantic_ai.models import Model
 
 from gem_agent.agents.chat import short_name
 from gem_agent.agents.schemas import SearchPlan, TopicDefinition
-from gem_agent.index.db import BidIndex
+from gem_agent.index.db import BidIndex, buyer_name
 from gem_agent.tools.gem.live import LiveSearcher, SearchProgress, SearchSpec
 from gem_agent.tools.gem.models import Bid, site_now
 from gem_agent.tools.gem.titles import is_vague_title
@@ -37,13 +37,18 @@ BASE_SPECS: list[SearchSpec] = [
 ]
 
 
+def _names(values: list[str]) -> list[str]:
+    """Buyer names normalised as the Planner was offered them (index.db.buyer_name); unsafe ones dropped."""
+    return [c for v in values if (c := buyer_name(v))]
+
+
 def search_specs(plan: SearchPlan) -> list[SearchSpec]:
     """The base searches, then the plan's categories, buyers (hard and preferred) and terms; no repeats, order kept."""
     wanted = [
         *BASE_SPECS,
         *(SearchSpec(kind="category", value=c) for c in plan.categories),
         *(SearchSpec(kind="exact", value=b)
-          for b in [*plan.ministries, *plan.departments, *plan.prefer_ministries, *plan.prefer_departments]),
+          for b in _names([*plan.ministries, *plan.departments, *plan.prefer_ministries, *plan.prefer_departments])),
         *(SearchSpec(kind="fullText", value=t) for t in plan.terms),
     ]
     return list(dict.fromkeys(wanted))
@@ -147,9 +152,10 @@ class Searcher:
             return False
         if (clo and bid.closing < clo) or (chi and bid.closing > chi):
             return False
-        if plan.ministries and bid.ministry not in plan.ministries:
+        # both sides normalised: the Planner chose from names cut to 120 characters, the listing carries them whole
+        if plan.ministries and buyer_name(bid.ministry) not in _names(plan.ministries):
             return False
-        if plan.departments and bid.department not in plan.departments:
+        if plan.departments and buyer_name(bid.department) not in _names(plan.departments):
             return False
         return not plan.bid_types or int(bid.bid_type) in plan.bid_types
 

@@ -220,3 +220,16 @@ async def test_only_buyers_of_bids_in_scope_are_kept(gem, clock, bid_cache):
     await searcher.search(LOS, plan(published_from=at(2, 0)))
     names = bid_cache.buyer_names("department")
     assert "Department of Financial Services" in names and "OUT OF WINDOW DEPT" not in names
+
+
+async def test_a_buyer_name_over_120_characters_passes_its_own_hard_filter(gem, clock, bid_cache):
+    # the Planner chose from names cut to 120 characters; the bid's listing carries all 130
+    long = "Ministry of " + "M" * 118
+    assert len(long) == 130
+    b = mk(8, "Loan origination system", ministry=long)
+    searcher, site = build(gem, clock, bid_cache, keep_all(), {f"category|{CATEGORY}": [b]})
+    found = await searcher.search(LOS, plan(ministries=[long[:120]]))
+    assert ids(found) == {8}
+    exact = [k for k, _ in site.served if k.startswith("exact|Ministry of M")]
+    assert exact == [f"exact|{long[:120]}"]
+    assert search_specs(plan(ministries=[long]))[len(BASE_SPECS)].value == long[:120]

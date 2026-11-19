@@ -70,10 +70,14 @@ def embed_text(bid: Bid, card: str | None = None) -> str:
 BUYER_NAME_MAX = 120
 
 
-def _buyer_name(name: str | None) -> str | None:
-    """A listing's buyer name with whitespace collapsed and cut to BUYER_NAME_MAX; None if it is empty or carries a
-    newline or any other control character."""
-    if not name or any(unicodedata.category(ch) == "Cc" for ch in name):
+_UNSAFE = {"Cc", "Cf", "Zl", "Zp"}  # control (newline, tab), format (zero-width, bidi override), line/para separators
+
+
+def buyer_name(name: str | None) -> str | None:
+    """A buyer name as the Planner, the hard filter and `exact` searches all see it: whitespace collapsed, cut to
+    BUYER_NAME_MAX; None if it is empty or carries a control, format or line/paragraph-separator character. GeM's
+    listings are third-party text bound for the Planner's prompt and enum."""
+    if not name or any(unicodedata.category(ch) in _UNSAFE for ch in name):
         return None
     return " ".join(name.split())[:BUYER_NAME_MAX].strip() or None
 
@@ -205,9 +209,9 @@ class BidIndex:
 
     def add_buyers(self, bids: Iterable[Bid]) -> int:
         """Remember the ministry and department names these listing rows carry; only new names are written. They
-        are third-party text bound for the Planner's prompt and enum, so each is one bounded line (_buyer_name)."""
+        are third-party text bound for the Planner's prompt and enum, so each is one bounded line (buyer_name)."""
         names = {(kind, clean) for b in bids for kind, name in (("ministry", b.ministry), ("department", b.department))
-                 if (clean := _buyer_name(name))}
+                 if (clean := buyer_name(name))}
         if not names:
             return 0
         known = set(self._conn.execute("SELECT kind, name FROM buyers").fetchall())
