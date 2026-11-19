@@ -245,6 +245,20 @@ def test_redo_clears_every_card_including_tried_ones():
     assert "Lending" not in index._conn.execute("SELECT embed_text FROM bids WHERE b_id = 1").fetchone()[0]
 
 
+class NoGem:
+    """A collector whose GeM must not be called: only its document cache is used."""
+
+    def __init__(self, cache):
+        self.cache = cache
+
+    async def collect(self, bid, *, force=False, attachments=True):
+        raise AssertionError(f"GeM request for bid {bid.b_id}")
+
+
+def cached(cache, b_id, files):
+    cache.save(bid_files(cache, b_id, files))
+
+
 async def test_cards_are_written_only_for_the_given_vague_bids_without_a_card(tmp_path):
     # vague bids 1, 2 (already has card "x") and 3 are in the index; the run collected 1, 2 and a non-vague bid 4
     index, cache = setup(tmp_path, n=3)
@@ -253,7 +267,23 @@ async def test_cards_are_written_only_for_the_given_vague_bids_without_a_card(tm
     plain = Bid.from_listing(row(4, at, datetime(2026, 11, 28), "Supply of chairs"))
     index.upsert([plain], seen_at=at)
     b1, b2 = (Bid.from_listing(row(i, at, datetime(2026, 11, 28), VAGUE)) for i in (1, 2))
-    collector = PartialCollector(cache, ["Bid details. Item: Implementation of a loan origination system"])
+    for b_id in (1, 2, 4):
+        cached(cache, b_id, [("bid.pdf", "bid_document", ["Bid details. Item: Implementation of a loan origination system"])])
     llm = ScriptedLLM({CARD_INSTRUCTIONS: [{"subject": "Loan origination system", "terms": []}]})
-    report = await write_cards(index, collector, llm.model(), bids=[b1, b2, plain])
-    assert report.written == 1 and collector.calls == [(1, True)] and index.card(3) is None
+    report = await write_cards(index, NoGem(cache), llm.model(), bids=[b1, b2, plain])
+    assert report.written == 1 and len(llm.calls) == 1 and index.card(1) == "Loan origination system"
+    assert index.card(3) is None
+
+
+async def test_cards_after_a_run_use_only_cached_documents(tmp_path):
+    # spec 6.2: "from the documents already in the cache, so no extra GeM requests". Bid 1 passed triage, so its
+    # attachments are cached; bid 2 has nothing cached and is left for later, not marked tried
+    index, cache = setup(tmp_path, n=2)
+    cached(cache, 1, [("bid.pdf", "bid_document", [HEADER, "Scope of Work:scope.pdf"]),
+                      ("scope.pdf", "attachment", ["Supply of an Enterprise Fraud Risk Management Solution (EFRMS)"])])
+    at = datetime(2026, 11, 10)
+    b1, b2 = (Bid.from_listing(row(i, at, datetime(2026, 11, 28), VAGUE)) for i in (1, 2))
+    llm = ScriptedLLM({CARD_INSTRUCTIONS: subject_if("EFRMS", "Enterprise Fraud Risk Management Solution")})
+    report = await write_cards(index, NoGem(cache), llm.model(), bids=[b1, b2])
+    assert index.card(1) == "Enterprise Fraud Risk Management Solution" and report.written == 1
+    assert index.card(2) is None and report.failed == 0

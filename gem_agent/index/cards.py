@@ -10,8 +10,9 @@ buyer-added terms further into the bid document (page 4-5), or only in the attac
 "Scope of Work: <file>.pdf" — which can itself be a placeholder ("please refer the RFP"); a reverse auction's own
 document has neither: its subject is in the original bid. And a bid document can name a broad subject ("Comprehensive
 Financial Risk and Compliance Solutions") while only the RFP's scope of work names the modules (AML). So the card
-writer always collects the attachments (into the document cache, which the Judge reuses) and reads, in one model
-call, the bid document, an RA's original bid, and up to three RFPs (Scope of Work first, then the largest): each by
+writer collects the attachments (into the document cache, which the Judge reuses) — or, for the bids a run just
+collected, reads only what that run left in the document cache, with no GeM request (spec 6.2) — and reads, in one
+model call, the bid document, an RA's original bid, and up to three RFPs (Scope of Work first, then the largest): each by
 its first pages, its scope-of-work sections and every line that reads like a title, wherever they sit in a 200-400
 page RFP. A card that only restates the title is never stored (the first backfill stored 229 of those): the bid is
 marked tried (card '') and stays a vague title that the Searcher always keeps.
@@ -158,7 +159,10 @@ def _rfp_sections(collector: Any, files: Any, bid_text: str, max_files: int = 3)
 async def write_cards(index: BidIndex, collector: Any, model: Model, *, bids: list[Bid] | None = None,
                       limit: int = 40, text_chars: int = 12000, max_attachments: int = 3) -> CardReport:
     """Cards for up to `limit` vague-title bids that have none: the given `bids` if any, else every such bid in the
-    index. A bid that fails is left for the next run."""
+    index. A bid that fails is left for the next run.
+
+    Given `bids` (a run's, spec 6.2) only the documents already in the document cache are read, so no GeM request is
+    made: a bid triage dropped has only its bid document there, and a bid with nothing cached is left for later."""
     agent = Agent(model, output_type=NativeOutput(CardOutput), instructions=CARD_INSTRUCTIONS, retries=2)
     report = CardReport()
 
@@ -172,7 +176,12 @@ async def write_cards(index: BidIndex, collector: Any, model: Model, *, bids: li
         todo = [b for b in bids if is_vague_title(b.title) and index.card(b.b_id) is None][:limit]
     for bid in todo:
         try:
-            files = await collector.collect(bid)
+            if bids is None:
+                files = await collector.collect(bid)
+            else:
+                files = collector.cache.load(bid.b_id)
+                if files is None or not any(f.role == "bid_document" and f.status == "ok" for f in files.files):
+                    continue
             # the bid document, and for a reverse auction its original bid, which carries the subject
             docs = [f for f in files.files if f.role in ("bid_document", "parent_document") and f.status == "ok"]
             bid_text = "\n".join(p.text for d in docs for p in collector.cache.load_text(d))[:text_chars]
