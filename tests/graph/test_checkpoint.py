@@ -20,8 +20,8 @@ def full_state() -> RunState:
                     plans=[SearchPlan(topic_key=LOS.key(), text="loan origination", terms=["LOS"],
                                       published_from=datetime(2026, 11, 3))],
                     candidates=[Candidate(bid=bid(7), group="LOS", why=["title"])], done_ids=[7], stage="rest",
-                    search_progress={LOS.key(): {"fullText:LOS": SearchProgress(num_found=40, pages_read=1, page_count=4),
-                                                 "exact:BANKING SECTOR": SearchProgress(num_found=0, pages_read=0,
+                    search_progress={LOS.key(): {"fullText|LOS": SearchProgress(num_found=40, pages_read=1, page_count=4),
+                                                 "exact|BANKING SECTOR": SearchProgress(num_found=0, pages_read=0,
                                                                                         page_count=0, failed=True)}})
 
 
@@ -35,7 +35,7 @@ def test_a_run_state_reloads_whole_without_a_warning(caplog):
     with caplog.at_level(logging.WARNING):
         back = serde.loads_typed(serde.dumps_typed(state))
     assert back == state
-    assert back.stage == "rest" and back.search_progress[LOS.key()]["fullText:LOS"].pending
+    assert back.stage == "rest" and back.search_progress[LOS.key()]["fullText|LOS"].pending
     assert not [r for r in caplog.records if "unregistered" in r.getMessage()]
 
 

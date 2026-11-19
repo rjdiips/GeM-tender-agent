@@ -22,7 +22,7 @@
 
 ## Live search
 
-Tenders are found by searching GeM live, in two stages (spec 6.2). The first page of every search is read and judged first, then the rest. Base searches for bank IT and consultancy bids always run, and so do the Planner's terms, categories and buyers. The bids a search returns are kept in a small bid cache (`data/bids/bids.sqlite`, pruned 30 days after they close), and base search results for one hour. No index is kept up to date in the background, so there are no timers or jobs to install. To bring the cards of an old index across, run `uv run gem-agent bids migrate`.
+Tenders are found by searching GeM live, in two stages (spec 6.2). The first page of every search is read and judged first, then the rest. Base searches for bank IT and consultancy bids always run, and so do the Planner's terms, categories and buyers. The bids the Searcher shortlists are kept in a small bid cache (`data/bids/bids.sqlite`, pruned 30 days after they close), and base search results for one hour. No index is kept up to date in the background, so there are no timers or jobs to install. To bring the cards of an old index across, run `uv run gem-agent bids migrate`.
 
 ## Setup
 

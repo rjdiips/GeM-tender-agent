@@ -200,3 +200,15 @@ async def test_every_buyer_a_search_lists_is_kept_for_the_planner(gem, clock, bi
     searcher, _ = build(gem, clock, bid_cache, llm, the_site(1, 3, 4))
     await searcher.search(LOS, plan())
     assert "REGIONAL RURAL BANKS" in bid_cache.buyer_names("department")  # bid 4 was screened out, its buyer kept
+
+
+async def test_a_bid_page_two_repeats_is_not_a_second_stage_candidate(gem, clock, bid_cache):
+    # a new bid published between the two stages pushes page 1's last bid onto page 2
+    many = [mk(100 + i, f"Loan origination item {i}") for i in range(25)]
+    listing = many[:10] + [many[9]] + many[10:]
+    searcher, _ = build(gem, clock, bid_cache, keep_all(), {"fullText|loan origination": listing})
+    p = plan(categories=[], published_from=None, published_to=None, closing_from=None)
+    first = await searcher.search(LOS, p, stage="first")
+    assert 109 in ids(first)
+    second = await searcher.search(LOS, p, stage="rest", progress=first.progress, exclude=ids(first))
+    assert 109 not in ids(second) and len(second.candidates) == 15

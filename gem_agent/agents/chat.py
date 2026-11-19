@@ -3,7 +3,8 @@
 1. One call proposes 1-3 candidate meanings (as TopicDefinitions), the date window, buyer hints, and any facts the
    user stated about themselves (saved to memory at once). Its prompt carries today's date, the user's memory and
    their saved meanings.
-2. Each candidate is checked against the local index (probe_site, no site requests).
+2. Each candidate is checked live (probe_live): page 1 of GeM's search for up to 3 of its terms gives a count and top
+   titles.
 3. Only when two or more candidates remain, a second short call weighs them with that evidence and keeps one or two.
    Two kept meanings are both searched and the results grouped, so a wrong guess costs nothing.
 The server enforces a JSON schema on each answer, which rules out tool calls in the same request; that is why the
