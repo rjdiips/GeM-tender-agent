@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import sqlite3
 import threading
+import unicodedata
 from collections.abc import Iterable
 from dataclasses import dataclass
 from datetime import datetime
@@ -64,6 +65,17 @@ def _iso(value: datetime | None) -> str | None:
 def embed_text(bid: Bid, card: str | None = None) -> str:
     """What gets embedded and word-searched: title, the bid's card if it has one, then buyer (spec 6.2)."""
     return " | ".join(p for p in (bid.title, card, bid.ministry, bid.department) if p)
+
+
+BUYER_NAME_MAX = 120
+
+
+def _buyer_name(name: str | None) -> str | None:
+    """A listing's buyer name with whitespace collapsed and cut to BUYER_NAME_MAX; None if it is empty or carries a
+    newline or any other control character."""
+    if not name or any(unicodedata.category(ch) == "Cc" for ch in name):
+        return None
+    return " ".join(name.split())[:BUYER_NAME_MAX].strip() or None
 
 
 @dataclass
@@ -192,9 +204,10 @@ class BidIndex:
         return [(r[0], r[1]) for r in self._conn.execute("SELECT b_id, card FROM bids WHERE card IS NOT NULL")]
 
     def add_buyers(self, bids: Iterable[Bid]) -> int:
-        """Remember the ministry and department names these listing rows carry; only new names are written."""
-        names = {(kind, name) for b in bids for kind, name in (("ministry", b.ministry), ("department", b.department))
-                 if name}
+        """Remember the ministry and department names these listing rows carry; only new names are written. They
+        are third-party text bound for the Planner's prompt and enum, so each is one bounded line (_buyer_name)."""
+        names = {(kind, clean) for b in bids for kind, name in (("ministry", b.ministry), ("department", b.department))
+                 if (clean := _buyer_name(name))}
         if not names:
             return 0
         known = set(self._conn.execute("SELECT kind, name FROM buyers").fetchall())

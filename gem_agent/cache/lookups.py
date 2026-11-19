@@ -90,13 +90,14 @@ class LookupCatalog:
             rankings.append(list(np.argsort(sims)[::-1][: k * 3]))
         return [cats[int(i)] for i in list(reciprocal_rank_fusion(rankings))[:k]]
 
-    def ministries(self) -> list[str]:
-        """Ministry values as the cached bids carry them (most bids first), then those searches listed, then the
-        rest of the site's list: the Planner can only choose a listed ministry."""
+    def ministries(self, k: int = 100) -> list[str]:
+        """Up to `k` ministry values: as the cached bids carry them (most bids first), then those searches listed,
+        then the site's list (77 on 16 Nov), which fills what is left. The Planner can only choose a listed ministry;
+        the bound keeps its prompt and enum small whatever the listings bring."""
         data = self._read("ministries")
         values = [m for m, _ in self.bid_cache.distinct("ministry")]
         values += self.bid_cache.buyer_names("ministry") + (data["items"] if data else [])
-        return list(dict.fromkeys(values))
+        return list(dict.fromkeys(values))[:k]
 
     def departments(self, hints: list[str], k: int = 30) -> list[str]:
         words = {w.lower() for h in hints for w in re.findall(r"\w+", h) if len(w) > 2 and w.lower() not in _STOP}

@@ -73,3 +73,13 @@ async def test_semantic_category_search_when_an_embedder_is_given(gem, clock, tm
     await cat.refresh(BidplusSession(ClientPool(transport=gem.transport(), clock=clock, sleep=clock.sleep)), today=TODAY)
     found = cat.find_categories("hiring of agency for it projects milestone basis", [], k=3)
     assert "services_home_itse_hi12433188" in [c.value for c in found]
+
+
+async def test_ministries_are_bounded_cached_values_first_then_listed_then_the_site(catalog, index):
+    listed = [Bid.from_listing(row(100 + i, datetime(2026, 11, 10), datetime(2026, 11, 28), ministry=f"Listed {i:03d}"))
+              for i in range(120)]
+    index.add_buyers(listed)
+    ministries = catalog.ministries()
+    assert len(ministries) == 100
+    assert ministries[:3] == ["Ministry of Finance", "Ministry of Defence", "Listed 000"]
+    assert "Ministry of Railways" not in ministries  # the site list only fills what is left of k

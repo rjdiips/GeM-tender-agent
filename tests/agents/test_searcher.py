@@ -212,3 +212,11 @@ async def test_a_bid_page_two_repeats_is_not_a_second_stage_candidate(gem, clock
     assert 109 in ids(first)
     second = await searcher.search(LOS, p, stage="rest", progress=first.progress, exclude=ids(first))
     assert 109 not in ids(second) and len(second.candidates) == 15
+
+
+async def test_only_buyers_of_bids_in_scope_are_kept(gem, clock, bid_cache):
+    old = mk(6, "Loan origination system old", department="OUT OF WINDOW DEPT", published=datetime(2026, 10, 30))
+    searcher, _ = build(gem, clock, bid_cache, keep_all(), {f"category|{CATEGORY}": [ROWS[1], old]})
+    await searcher.search(LOS, plan(published_from=at(2, 0)))
+    names = bid_cache.buyer_names("department")
+    assert "Department of Financial Services" in names and "OUT OF WINDOW DEPT" not in names
