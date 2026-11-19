@@ -47,6 +47,7 @@ docs/
 .playwright-mcp/
 graphify-out/
 .claude/
+.superpowers/
 AGENTS.md
 
 # --- Editors / OS ---
