@@ -20,6 +20,7 @@ from typing import Any
 
 from langgraph.graph import END, START, StateGraph
 
+from gem_agent.agents.chat import short_name
 from gem_agent.agents.searcher import Candidate
 from gem_agent.graph.rulings import settle, topic_for
 from gem_agent.graph.services import Services
@@ -74,6 +75,15 @@ def running_count(read: int, total: int, outcomes: Iterable[Outcome]) -> str:
     return f"Read {read} of {total} bids: {', '.join(parts)}…"
 
 
+def cut_line(n: int) -> str:
+    return (f"{n} more matching bid{' was' if n == 1 else 's were'} not read; narrow the request to see them.")
+
+
+def wants_retry(*, stage: str, retries: int, candidates: list[Candidate], over_cap: bool) -> bool:
+    """After stage 1: narrow when the shortlist is over the cap; widen when it is empty."""
+    return stage == "first" and retries < MAX_RETRIES and (not candidates or over_cap)
+
+
 def by_closing(candidates: Iterable[Candidate]) -> list[Candidate]:
     return sorted(candidates, key=lambda c: c.bid.closing.isoformat() if c.bid.closing else "9")
 
@@ -88,13 +98,16 @@ def build_graph(s: Services) -> StateGraph:
     async def search(state: RunState) -> dict[str, Any]:
         """Stage 1: page 1 of every search."""
         merged: dict[int, Candidate] = {}
-        pool, over_cap = 0, False
+        pool, over_cap, cut = 0, False, 0
         search_progress: dict[str, Any] = {}
+        first_counts: dict[str, int] = {}
         for topic, plan_ in zip(state.request.topics, state.plans, strict=True):
             result = await s.searcher.search(topic, plan_, stage="first")
             pool += result.pool
             over_cap |= result.over_cap
+            cut += result.cut
             search_progress[topic.key()] = result.progress
+            first_counts[topic.key()] = len(result.candidates)
             for c in result.candidates:
                 merged.setdefault(c.bid.b_id, c)
         candidates = by_closing(merged.values())
@@ -102,27 +115,35 @@ def build_graph(s: Services) -> StateGraph:
         if candidates:
             progress(s, state.run_id, f"Shortlist: {len(candidates)} bids from {pool:,} titles looked at "
                                       "(closing soonest first). Reading documents…")
-        return {"candidates": candidates, "pool": pool, "over_cap": over_cap, "search_progress": search_progress}
+        if cut and not wants_retry(stage=state.stage, retries=state.retries, candidates=candidates, over_cap=over_cap):
+            progress(s, state.run_id, cut_line(cut))  # a narrowing retry comes next otherwise
+        return {"candidates": candidates, "pool": pool, "over_cap": over_cap, "search_progress": search_progress,
+                "first_counts": first_counts, "cut": cut}
 
     def after_search(state: RunState) -> str:
-        if state.stage == "first" and state.retries < MAX_RETRIES and (not state.candidates or state.over_cap):
+        if wants_retry(stage=state.stage, retries=state.retries, candidates=state.candidates, over_cap=state.over_cap):
             return "retry"
         return "process"
 
     async def search_rest(state: RunState) -> dict[str, Any]:
-        """Stage 2: the remaining pages of every search. Only bids not already in the run are added (and judged)."""
+        """Stage 2: the remaining pages of every search. Only bids not already in the run are added (and judged).
+        The cap is per topic across both stages, so each topic's stage 2 gets what its stage 1 left of it."""
         seen = {c.bid.b_id for c in state.candidates}
         new: list[Candidate] = []
-        pool = state.pool
+        pool, cut = state.pool, 0
         search_progress = dict(state.search_progress)
         for topic, plan_ in zip(state.request.topics, state.plans, strict=True):
             key = topic.key()
             if key not in search_progress:  # no stage 1 to continue (a state from before two stages)
                 log.warning("run %s: no stage-1 progress for %s; not searching deeper", state.run_id, key)
                 continue
+            taken = state.first_counts.get(key)
+            if taken is None:  # a checkpoint from before first_counts: its stage-1 bids, by group
+                taken = sum(1 for c in state.candidates if c.group == short_name(topic))
             result = await s.searcher.search(topic, plan_, stage="rest", progress=search_progress[key],
-                                             exclude=set(seen))
+                                             exclude=set(seen), cap=s.searcher.settings.cap - taken)
             pool += result.pool
+            cut += result.cut
             search_progress[key] = result.progress
             for c in result.candidates:
                 if c.bid.b_id not in seen:  # the searcher may return a stage-1 bid again; it is judged once
@@ -132,7 +153,10 @@ def build_graph(s: Services) -> StateGraph:
         if new:
             s.store.save_shortlist(state.run_id, candidates)
             progress(s, state.run_id, f"Searching deeper: {len(new)} more bids to read…")
-        return {"candidates": candidates, "pool": pool, "search_progress": search_progress, "stage": "rest"}
+        if cut:
+            progress(s, state.run_id, cut_line(cut))
+        return {"candidates": candidates, "pool": pool, "search_progress": search_progress, "stage": "rest",
+                "cut": state.cut + cut}
 
     def after_process(state: RunState) -> str:
         return "search_rest" if state.stage == "first" else "report"
@@ -191,6 +215,8 @@ def build_graph(s: Services) -> StateGraph:
             text = f"Done: {relevant} relevant, {quarantined} quarantined" + (f", {failed} could not be read" if failed else "") + "."
             text += (" 1 bid needs your call: see Borderline." if borderline == 1
                      else f" {borderline} bids need your call: see Borderline." if borderline else "")
+            if state.cut:
+                text += " " + cut_line(state.cut)
         progress(s, state.run_id, text)
         await write_cards(state.run_id, [o.bid for o in outcomes if o.files and is_vague_title(o.bid.title)])
         return {}

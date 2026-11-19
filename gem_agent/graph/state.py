@@ -18,6 +18,8 @@ class RunState(BaseModel):
     candidates: list[Candidate] = []
     pool: int = 0
     over_cap: bool = False
+    first_counts: dict[str, int] = {}  # topic.key() -> candidates its stage 1 kept: stage 2 gets the rest of the cap
+    cut: int = 0  # titles the cap left out, both stages: reported, since they were never read
     adjust: Literal["", "widen", "narrow"] = ""
     retries: int = 0
     done_ids: list[int] = []  # bids already collected and judged (skipped when a run resumes)

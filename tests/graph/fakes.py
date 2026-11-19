@@ -16,7 +16,7 @@ from gem_agent.agents.schemas import (
     TriageOutput,
     Verdict,
 )
-from gem_agent.agents.searcher import Candidate, SearchResult
+from gem_agent.agents.searcher import Candidate, SearchResult, SearchSettings
 from gem_agent.cache.docs import BidFiles, FileRecord
 from gem_agent.tools.gem.live import SearchProgress
 from gem_agent.tools.gem.models import Bid
@@ -55,14 +55,18 @@ class FakePlanner:
 
 class FakeSearcher:
     """`results`: the first stage's bids, one list per call (the last repeats). `rest`: the second stage's, likewise.
-    Like the real Searcher, the second stage needs the progress the first returned and leaves out `exclude`."""
+    Like the real Searcher, the second stage needs the progress the first returned and leaves out `exclude`, and a
+    result is cut to the cap (`cap` overrides the settings' one) with the number cut reported."""
 
-    def __init__(self, results, rest=((),), *, ignore_exclude=False):
+    def __init__(self, results, rest=((),), *, ignore_exclude=False, cap=150):
         self.results, self.rest, self.calls, self.rest_calls = list(results), [list(r) for r in rest], 0, 0
-        self.stages, self.excluded, self.ignore_exclude = [], [], ignore_exclude
+        self.stages, self.excluded, self.ignore_exclude, self.caps = [], [], ignore_exclude, []
+        self.settings = SearchSettings(cap=cap)
 
-    async def search(self, topic: TopicDefinition, plan, *, stage="first", progress=None, exclude=frozenset()):
+    async def search(self, topic: TopicDefinition, plan, *, stage="first", progress=None, exclude=frozenset(),
+                     cap=None):
         self.stages.append(stage)
+        self.caps.append(cap)
         if stage == "first":
             bids = self.results[min(self.calls, len(self.results) - 1)]
             self.calls += 1
@@ -73,9 +77,12 @@ class FakeSearcher:
             self.rest_calls += 1
             self.excluded.append(set(exclude))
         bids = [b for b in bids if self.ignore_exclude or b.b_id not in exclude]
+        limit = self.settings.cap if cap is None else max(0, cap)
+        cut = max(0, len(bids) - limit)
         done = SearchProgress(num_found=len(bids), pages_read=1 if stage == "first" else 2, page_count=2)
-        return SearchResult(candidates=[Candidate(bid=b, group=topic.meaning.split(":")[0], why=["title words"]) for b in bids],
-                            pool=len(bids) * 3, progress={**(progress or {}), "fake": done})
+        return SearchResult(candidates=[Candidate(bid=b, group=topic.meaning.split(":")[0], why=["title words"])
+                                        for b in bids[:limit]],
+                            pool=len(bids) * 3, over_cap=cut > 0, cut=cut, progress={**(progress or {}), "fake": done})
 
 
 class FakeCollector:

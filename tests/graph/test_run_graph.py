@@ -418,6 +418,31 @@ async def test_each_meaning_searches_deeper_with_its_own_progress(tmp_path):
     assert groups == {1: "Loan Origination System", 5: "Line of Sight", 6: "Loan Origination System", 7: "Line of Sight"}
 
 
+async def test_the_cap_is_per_topic_across_both_stages_and_what_it_cuts_is_reported(tmp_path):
+    searcher = FakeSearcher([[bid(1), bid(2)]], rest=[[bid(3), bid(4), bid(5)]], cap=3)
+    judge = FakeJudge()
+    s = services(tmp_path, searcher=searcher, judge=judge)
+    events = await ask(RunManager(s), "LOS tenders")
+    assert searcher.caps == [None, 1]  # stage 2 gets what stage 1 left of the topic's cap
+    assert sorted(judge.judged) == [1, 2, 3]
+    progress = [e["event"]["text"] for e in events if e["type"] == "progress"]
+    assert "2 more matching bids were not read; narrow the request to see them." in progress
+    assert progress[-1] == ("Done: 3 relevant, 0 quarantined. 2 more matching bids were not read; "
+                            "narrow the request to see them.")
+
+
+async def test_a_first_stage_cut_is_reported_once_the_narrowing_retries_are_used(tmp_path):
+    planner = FakePlanner()
+    searcher = FakeSearcher([[bid(1), bid(2), bid(3)]], rest=[[bid(4)]], cap=2)
+    s = services(tmp_path, planner=planner, searcher=searcher)
+    events = await ask(RunManager(s), "LOS tenders")
+    assert len(planner.notes) == 3 and "more specific" in planner.notes[1]  # narrowed twice, then read
+    assert searcher.caps[-1] == 0  # nothing of the cap is left for stage 2
+    progress = [e["event"]["text"] for e in events if e["type"] == "progress"]
+    assert progress.count("1 more matching bid was not read; narrow the request to see them.") == 2  # each stage's cut
+    assert progress[-1].endswith(" 2 more matching bids were not read; narrow the request to see them.")
+
+
 class CrashInRest(FakeSearcher):
     """The process dies once, as stage 2 starts: the last checkpoint is the one after the first `process`."""
 

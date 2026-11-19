@@ -59,7 +59,7 @@ class SearchSettings(BaseModel):
     # 40 numbers as pretty-printed JSON can pass 300 tokens: on 16 Nov 22:18 the screen was cut off and all 61 titles
     # went to triage unscreened. A higher cap costs nothing unless the model needs it.
     screen_max_tokens: int = 600
-    cap: int = 150  # more than this goes back to the Planner to narrow (spec 5.1)
+    cap: int = 150  # per topic, across both stages; more than this goes back to the Planner to narrow (spec 5.1)
 
 
 class Candidate(BaseModel):
@@ -72,6 +72,7 @@ class SearchResult(BaseModel):
     candidates: list[Candidate]
     pool: int  # titles looked at
     over_cap: bool = False
+    cut: int = 0  # kept titles left out by the cap: never read, so the user is told
     progress: dict[str, SearchProgress] = {}  # per search key, to resume at the second stage
 
 
@@ -89,8 +90,10 @@ class Searcher:
 
     async def search(self, topic: TopicDefinition, plan: SearchPlan, *, stage: Literal["first", "rest"] = "first",
                      progress: dict[str, SearchProgress] | None = None,
-                     exclude: set[int] = frozenset()) -> SearchResult:  # type: ignore[assignment]
-        s = self.settings
+                     exclude: set[int] = frozenset(),  # type: ignore[assignment]
+                     cap: int | None = None) -> SearchResult:
+        """`cap` overrides the settings' cap: stage 2 gets what stage 1 left of the topic's cap."""
+        cap = self.settings.cap if cap is None else max(0, cap)
         specs = search_specs(plan)
         if stage == "first":
             outcomes = await self.live.first_pages(specs)
@@ -126,7 +129,8 @@ class Searcher:
         self.bid_cache.upsert([c.bid for c in out], seen_at=site_now())
         out.sort(key=lambda c: (c.bid.closing or datetime.max).date().isoformat() +
                  ("0" if "preferred buyer" in c.why else "1") + (c.bid.closing or datetime.max).isoformat())
-        return SearchResult(candidates=out[: s.cap], pool=len(pool), over_cap=len(out) > s.cap, progress=new_progress)
+        cut = max(0, len(out) - cap)
+        return SearchResult(candidates=out[:cap], pool=len(pool), over_cap=cut > 0, cut=cut, progress=new_progress)
 
     @staticmethod
     def _in_scope(bid: Bid, plan: SearchPlan) -> bool:

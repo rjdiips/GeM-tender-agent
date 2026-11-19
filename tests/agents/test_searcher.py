@@ -159,6 +159,19 @@ async def test_closing_soonest_first_and_capped(gem, clock, bid_cache):
     found = await searcher.search(LOS, plan())
     closings = [c.bid.closing for c in found.candidates]
     assert closings == sorted(closings) and len(found.candidates) == 3 and found.over_cap
+    assert found.cut == 1  # how many were cut, for the run to tell the user
+
+
+async def test_the_second_stage_keeps_only_the_cap_the_first_left(gem, clock, bid_cache):
+    # the cap is per topic across both stages: the graph passes what is left of it into stage 2
+    many = [mk(100 + i, f"Loan origination item {i}") for i in range(25)]
+    searcher, _ = build(gem, clock, bid_cache, keep_all(), {"fullText|loan origination": many}, cap=12)
+    p = plan(categories=[], published_from=None, published_to=None, closing_from=None)
+    first = await searcher.search(LOS, p, stage="first")
+    assert len(first.candidates) == 10 and first.cut == 0
+    second = await searcher.search(LOS, p, stage="rest", progress=first.progress,
+                                   exclude={c.bid.b_id for c in first.candidates}, cap=2)
+    assert len(second.candidates) == 2 and second.cut == 13 and second.over_cap
 
 
 async def test_kept_candidates_are_stored_in_the_bid_cache(gem, clock, bid_cache):
