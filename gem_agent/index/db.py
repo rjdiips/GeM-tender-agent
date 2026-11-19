@@ -210,8 +210,9 @@ class BidIndex:
         return [r[0] for r in self._conn.execute("SELECT name FROM buyers WHERE kind = ? ORDER BY name", (kind,))]
 
     def distinct(self, column: str) -> list[tuple[str, int]]:
-        """Values of ministry or department among the cached bids, most bids first."""
+        """Values of ministry or department among all the cached bids, most bids first. (Nothing closes rows now:
+        `state` only served the retired index's sync.)"""
         assert column in ("ministry", "department")
-        sql = (f"SELECT {column}, COUNT(*) n FROM bids WHERE state = 'open' AND {column} IS NOT NULL "
+        sql = (f"SELECT {column}, COUNT(*) n FROM bids WHERE {column} IS NOT NULL "
                f"GROUP BY {column} ORDER BY n DESC")
         return [(r[0], r[1]) for r in self._conn.execute(sql)]

@@ -103,3 +103,10 @@ def test_prune_keeps_the_bids_it_is_told_to(index):
     index.upsert([bid(1, **old), bid(2, **old)], seen_at=NOV(1))
     assert index.prune(closed_before=NOV(1) - timedelta(days=30), keep={2}) == 1
     assert index.get(1) is None and index.get(2) is not None
+
+
+def test_distinct_counts_every_cached_bid_whatever_its_old_state(index):
+    # nothing closes rows any more; bids migrated from the index may still say 'closed'
+    index.upsert([bid(1, department="BANKING SECTOR"), bid(2, department="BANKING SECTOR")], seen_at=NOV(16))
+    index._conn.execute("UPDATE bids SET state = 'closed' WHERE b_id = 1")
+    assert index.distinct("department") == [("BANKING SECTOR", 2)]
