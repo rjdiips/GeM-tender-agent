@@ -88,7 +88,7 @@ async def test_a_failing_bid_is_reported_and_the_run_goes_on(tmp_path):
 
 
 async def test_empty_shortlist_widens_at_most_twice(tmp_path):
-    planner, searcher = FakePlanner(), FakeSearcher([[]])
+    planner, searcher = FakePlanner(), FakeSearcher([[]], more_pages=False)
     s = services(tmp_path, planner=planner, searcher=searcher)
     events = await ask(RunManager(s), "LOS tenders")
     assert searcher.calls == 3 and len(planner.notes) == 3 and "broader" in planner.notes[1]
@@ -399,6 +399,15 @@ async def test_the_second_stage_does_not_retry(tmp_path):
     s = services(tmp_path, planner=planner, searcher=searcher)
     await ask(RunManager(s), "LOS tenders")
     assert searcher.stages == ["first", "rest"] and len(planner.notes) == 1
+
+
+async def test_an_empty_first_page_shortlist_searches_deeper_before_widening(tmp_path):
+    # "closing in the next 5 days": page 1 is the newest-published bids, which rarely close soon
+    planner, searcher = FakePlanner(), FakeSearcher([[]], rest=[[bid(3)]])
+    s = services(tmp_path, planner=planner, searcher=searcher)
+    events = await ask(RunManager(s), "LOS tenders closing in the next 5 days")
+    assert searcher.stages == ["first", "rest"] and len(planner.notes) == 1
+    assert [e["bid"]["b_id"] for e in events if e["type"] == "result"] == [3]
 
 
 async def test_bids_found_only_by_the_second_stage_are_reported(tmp_path):

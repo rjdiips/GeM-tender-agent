@@ -27,6 +27,7 @@ from gem_agent.graph.services import Services
 from gem_agent.graph.state import RunState
 from gem_agent.graph.store import Outcome
 from gem_agent.graph.views import bid_result, bid_state
+from gem_agent.tools.gem.live import SearchProgress
 from gem_agent.tools.gem.titles import is_vague_title
 
 log = logging.getLogger(__name__)
@@ -79,9 +80,16 @@ def cut_line(n: int) -> str:
     return (f"{n} more matching bid{' was' if n == 1 else 's were'} not read; narrow the request to see them.")
 
 
-def wants_retry(*, stage: str, retries: int, candidates: list[Candidate], over_cap: bool) -> bool:
-    """After stage 1: narrow when the shortlist is over the cap; widen when it is empty."""
-    return stage == "first" and retries < MAX_RETRIES and (not candidates or over_cap)
+def wants_retry(*, stage: str, retries: int, candidates: list[Candidate], over_cap: bool,
+                search_progress: dict[str, dict[str, SearchProgress]]) -> bool:
+    """After stage 1: narrow when the shortlist is over the cap. Widen when it is empty and no search has pages left:
+    page 1 alone is the newest-published bids, so an empty page-1 shortlist goes on to stage 2 instead."""
+    if stage != "first" or retries >= MAX_RETRIES:
+        return False
+    if over_cap:
+        return True
+    pending = any(p.pending for searches in search_progress.values() for p in searches.values())
+    return not candidates and not pending
 
 
 def by_closing(candidates: Iterable[Candidate]) -> list[Candidate]:
@@ -115,13 +123,15 @@ def build_graph(s: Services) -> StateGraph:
         if candidates:
             progress(s, state.run_id, f"Shortlist: {len(candidates)} bids from {pool:,} titles looked at "
                                       "(closing soonest first). Reading documents…")
-        if cut and not wants_retry(stage=state.stage, retries=state.retries, candidates=candidates, over_cap=over_cap):
+        if cut and not wants_retry(stage=state.stage, retries=state.retries, candidates=candidates, over_cap=over_cap,
+                                   search_progress=search_progress):
             progress(s, state.run_id, cut_line(cut))  # a narrowing retry comes next otherwise
         return {"candidates": candidates, "pool": pool, "over_cap": over_cap, "search_progress": search_progress,
                 "first_counts": first_counts, "cut": cut}
 
     def after_search(state: RunState) -> str:
-        if wants_retry(stage=state.stage, retries=state.retries, candidates=state.candidates, over_cap=state.over_cap):
+        if wants_retry(stage=state.stage, retries=state.retries, candidates=state.candidates, over_cap=state.over_cap,
+                       search_progress=state.search_progress):
             return "retry"
         return "process"
 
