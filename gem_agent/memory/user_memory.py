@@ -149,4 +149,4 @@ class MemoryStore:
     def forget_all(self, user: str) -> None:
         path = self._path(user)
         if path.exists():
-            path.write_text(json.dumps([]))
+            path.write_text(json.dumps([]), encoding="utf-8")

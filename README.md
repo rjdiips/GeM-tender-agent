@@ -30,3 +30,21 @@ Tenders are found by searching GeM live, in two stages (spec 6.2). The first pag
     uv run playwright install chromium
     cp .env.example .env
     cd web && npm install
+
+## Remote models
+
+The LLM already lives behind `LLM_BASE_URL`. Embeddings and reranking can also run on another machine:
+
+| Setting | Meaning |
+|---|---|
+| `EMBED_BASE_URL` | OpenAI-compatible base, including the version, e.g. `http://10.0.10.11:8080/v1` |
+| `EMBED_MODEL` | Model id the server serves, `BAAI/bge-m3` |
+| `RERANK_BASE_URL` | Base of the reranker; the client posts to `<base>/rerank` |
+| `RERANK_MODEL` | Model id the reranker serves, `BAAI/bge-reranker-v2-m3` |
+| `RERANK_STYLE` | `tei` (`{query, texts}`) or `cohere` (`{model, query, documents, top_n}`) |
+
+Leave either URL empty to keep the local model. A server that is down does not fail a bid: the Judge falls
+back to word search, and to the fused order when reranking fails. See `.env.example` for the timeouts.
+
+On Windows, install Tesseract (UB Mannheim build), add it to `PATH` or set `TESSERACT_CMD`, and keep the
+repository out of OneDrive. The file locks and UTF-8 reads/writes are cross-platform.

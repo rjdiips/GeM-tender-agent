@@ -33,12 +33,13 @@ class TopicStore:
 
     def get(self, user: str, text: str) -> list[TopicDefinition]:
         path = self._path(user, text)
-        return self._topics(json.loads(path.read_text())) if path.exists() else []
+        return self._topics(json.loads(path.read_text(encoding="utf-8"))) if path.exists() else []
 
     def save(self, user: str, text: str, topics: list[TopicDefinition]) -> None:
         path = self._path(user, text)
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(json.dumps({"text": normalise(text), "topics": [t.model_dump() for t in topics]}, indent=1))
+        path.write_text(json.dumps({"text": normalise(text), "topics": [t.model_dump() for t in topics]}, indent=1),
+                        encoding="utf-8")
 
     def all(self, user: str, limit: int | None = None) -> list[tuple[str, TopicDefinition]]:
         """(request text, meaning) for the user's saved requests, the most recently saved first; `limit` counts
@@ -46,6 +47,6 @@ class TopicStore:
         paths = sorted(self._dir(user).glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
         out = []
         for path in paths[:limit]:
-            data = json.loads(path.read_text())
+            data = json.loads(path.read_text(encoding="utf-8"))
             out.extend((data["text"], topic) for topic in self._topics(data))
         return out

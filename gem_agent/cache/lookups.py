@@ -40,11 +40,11 @@ class LookupCatalog:
 
     def _read(self, name: str) -> dict | None:
         path = self.dir / f"{name}.json"
-        return json.loads(path.read_text()) if path.exists() else None
+        return json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
 
     def _write(self, name: str, data: dict) -> None:
         self.dir.mkdir(parents=True, exist_ok=True)
-        (self.dir / f"{name}.json").write_text(json.dumps(data))
+        (self.dir / f"{name}.json").write_text(json.dumps(data), encoding="utf-8")
 
     def is_fresh(self, today: date) -> bool:
         data = self._read("categories")

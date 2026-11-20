@@ -29,26 +29,40 @@ from gem_agent.index.cards import write_cards
 from gem_agent.index.db import BidIndex
 from gem_agent.memory.topics import TopicStore
 from gem_agent.memory.user_memory import MemoryStore
-from gem_agent.retrieval.embed import BgeM3Embedder, SmallEmbedder, pick_device
+from gem_agent.retrieval.embed import BgeM3Embedder, RemoteEmbedder, SmallEmbedder, pick_device
+from gem_agent.retrieval.rerank import RemoteReranker
 from gem_agent.tools.gem.live import LiveSearcher
 from gem_agent.tools.gem.models import site_now
 from gem_agent.tools.http_client import BidplusSession, ClientPool
+from gem_agent.tools.pdf.ocr import configure_tesseract
 
 log = logging.getLogger(__name__)
 
 
-def _judge_embedder(settings: Settings):
+def judge_embedder(settings: Settings):
+    """The embedder the Judge ranks pages with: remote when a URL is set, else local GPU/CPU."""
+    if settings.embed_base_url:
+        return RemoteEmbedder(settings.embed_base_url, settings.embed_model, api_key=settings.embed_api_key,
+                              timeout_s=settings.embed_timeout_s, batch_size=settings.embed_batch_size)
     device = pick_device(settings.embed_device, min_free_mb=settings.embed_min_free_gpu_mb)
     if device == "cuda":
         return BgeM3Embedder(settings.embed_model, device=device)
     return SmallEmbedder(settings.judge_cpu_embed_model)
 
 
+def judge_reranker(settings: Settings):
+    """The reranker: remote only today. None keeps the fused (word + dense) order."""
+    if not settings.rerank_base_url:
+        return None
+    return RemoteReranker(settings.rerank_base_url, settings.rerank_model, style=settings.rerank_style,
+                          api_key=settings.rerank_api_key, timeout_s=settings.rerank_timeout_s)
+
+
 def labelled_b_ids(path: Path) -> set[int]:
     """The labelled set's b_ids, by a plain JSON read: validating the whole set here would fail on label fields this
     code does not know yet, and the prune only needs the ids. No file (or an unreadable one): none."""
     try:
-        return {int(item["b_id"]) for item in json.loads(Path(path).read_text())["items"]}
+        return {int(item["b_id"]) for item in json.loads(Path(path).read_text(encoding="utf-8"))["items"]}
     except (OSError, ValueError, KeyError, TypeError) as exc:
         if Path(path).exists():
             log.warning("labelled set %s unreadable, pruning without it: %s", path, exc)
@@ -61,6 +75,8 @@ def startup_prune(bid_cache: BidIndex, labelled: Path, now: datetime) -> int:
 
 
 def build_services(settings: Settings) -> tuple[Services, DocCache, list[Callable[[], Awaitable[None]]]]:
+    if settings.tesseract_cmd:
+        configure_tesseract(settings.tesseract_cmd)
     pool = ClientPool.shared(settings)
     session = BidplusSession(pool)
     bid_cache = BidIndex(settings.bid_cache_path)
@@ -80,7 +96,8 @@ def build_services(settings: Settings) -> tuple[Services, DocCache, list[Callabl
         # bge-m3 costs ~0.4 s a page, so the small English model ranks them instead (17 Nov). Without either, only
         # pages sharing the topic's words reached the judge. Bids are searched live, so bge-m3 is only loaded here,
         # and only when the GPU has room.
-        judge=Judge(model, cache, VerdictCache(settings.cache_dir), embedder=_judge_embedder(settings)),
+        judge=Judge(model, cache, VerdictCache(settings.cache_dir), embedder=judge_embedder(settings),
+                    reranker=judge_reranker(settings)),
         store=RunStore(settings.runs_dir), bus=EventBus(), memory=memory, now=site_now, rulings=RulingsAgent(model),
         checkpoint_path=settings.runs_dir / "checkpoints.sqlite",
         cards=lambda found: write_cards(bid_cache, collector, model, bids=found),

@@ -21,7 +21,7 @@ class SearchCache:
 
     def get(self, key: str) -> tuple[int, list[dict]] | None:
         try:
-            data = json.loads(self._path(key).read_text())
+            data = json.loads(self._path(key).read_text(encoding="utf-8"))
             if data["key"] != key or self.now() - datetime.fromisoformat(data["at"]) > self.ttl:
                 return None
             return int(data["num_found"]), list(data["docs"])
@@ -32,5 +32,6 @@ class SearchCache:
         path = self._path(key)
         path.parent.mkdir(parents=True, exist_ok=True)
         tmp = path.with_suffix(f".{os.getpid()}.tmp")
-        tmp.write_text(json.dumps({"key": key, "at": self.now().isoformat(), "num_found": num_found, "docs": docs}))
+        tmp.write_text(json.dumps({"key": key, "at": self.now().isoformat(), "num_found": num_found, "docs": docs}),
+                       encoding="utf-8")
         os.replace(tmp, path)

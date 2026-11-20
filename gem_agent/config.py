@@ -3,8 +3,11 @@ from __future__ import annotations
 
 from functools import lru_cache
 from pathlib import Path
+from typing import Literal
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+RerankStyle = Literal["tei", "cohere"]
 
 
 class Settings(BaseSettings):
@@ -34,6 +37,20 @@ class Settings(BaseSettings):
     embed_model: str = "BAAI/bge-m3"
     judge_cpu_embed_model: str = "sentence-transformers/all-MiniLM-L6-v2"  # page ranking when the GPU is full
     rerank_model: str = "BAAI/bge-reranker-v2-m3"
+
+    # Remote models: run embeddings and/or the reranker on another machine instead of this one.
+    # Empty URL = local (the behaviour above). The embed base includes the API version, e.g. .../v1.
+    embed_base_url: str = ""
+    embed_api_key: str = ""
+    embed_timeout_s: float = 30.0
+    embed_batch_size: int = 64
+    rerank_base_url: str = ""
+    rerank_style: RerankStyle = "tei"
+    rerank_api_key: str = ""
+    rerank_timeout_s: float = 30.0
+
+    # Windows: full path to tesseract.exe when it is not on PATH (e.g. C:\Program Files\Tesseract-OCR\tesseract.exe)
+    tesseract_cmd: str = ""
 
     # Web chat
     org_name: str = ""

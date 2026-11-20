@@ -1,3 +1,5 @@
+import httpx
+
 from gem_agent.cache.docs import DocCache
 from gem_agent.retrieval.chunks import make_chunks
 from gem_agent.retrieval.passages import find_passages
@@ -44,3 +46,20 @@ def test_acronym_does_not_match_loss(tmp_path):
 def test_no_match_gives_nothing_without_semantic_search(tmp_path):
     cache, bf = files(tmp_path)
     assert find_passages(make_chunks(bf, cache), query="satellite imagery", terms=["satellite"], top_k=5) == []
+
+
+class _Down:
+    """A remote model server that refuses every call."""
+
+    def encode(self, texts):
+        raise httpx.ConnectError("server is down")
+
+    def score(self, query, texts):
+        raise httpx.ConnectError("server is down")
+
+
+def test_dead_remote_models_leave_word_search_working(tmp_path):
+    cache, bf = files(tmp_path)
+    top = find_passages(make_chunks(bf, cache), query="loan origination system",
+                        terms=["LOS", "Loan Origination System"], top_k=2, embedder=_Down(), reranker=_Down())
+    assert (top[0].filename, top[0].page) == ("rfp.pdf", 2)

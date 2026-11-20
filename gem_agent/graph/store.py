@@ -2,7 +2,6 @@
 audit trail and are never deleted automatically (spec 11.1)."""
 from __future__ import annotations
 
-import fcntl
 import json
 from collections.abc import Callable, Iterable, Iterator
 from contextlib import contextmanager
@@ -16,6 +15,7 @@ from gem_agent.agents.schemas import ProbeResult, SearchPlan, TenderRequest, Ver
 from gem_agent.agents.searcher import Candidate
 from gem_agent.cache.docs import FileRecord
 from gem_agent.tools.gem.models import Bid
+from gem_agent.tools.locking import locked
 
 RunStatus = Literal["running", "complete", "failed", "stopped"]
 
@@ -69,7 +69,7 @@ class RunStore:
     def _write(self, path: Path, text: str) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
         tmp = path.with_name(path.name + ".tmp")
-        tmp.write_text(text)
+        tmp.write_text(text, encoding="utf-8")
         tmp.replace(path)
 
     def create(self, record: RunRecord) -> None:
@@ -79,13 +79,13 @@ class RunStore:
         self._write(self._dir(record.run_id) / "run.json", record.model_dump_json(indent=1))
 
     def load(self, run_id: str) -> RunRecord:
-        return RunRecord.model_validate_json((self._dir(run_id) / "run.json").read_text())
+        return RunRecord.model_validate_json((self._dir(run_id) / "run.json").read_text(encoding="utf-8"))
 
     def exists(self, run_id: str) -> bool:
         return (self._dir(run_id) / "run.json").exists()
 
     def list_runs(self, user: str) -> list[RunRecord]:
-        records = [RunRecord.model_validate_json(p.read_text()) for p in self.root.glob("*/run.json")]
+        records = [RunRecord.model_validate_json(p.read_text(encoding="utf-8")) for p in self.root.glob("*/run.json")]
         return sorted((r for r in records if r.user == user), key=lambda r: r.created, reverse=True)
 
     def save_plans(self, run_id: str, plans: list[SearchPlan]) -> None:
@@ -102,14 +102,8 @@ class RunStore:
 
     @contextmanager
     def _outcomes_lock(self, run_id: str) -> Iterator[None]:
-        path = self._dir(run_id) / "outcomes.lock"
-        path.parent.mkdir(parents=True, exist_ok=True)
-        with path.open("a") as f:
-            fcntl.flock(f, fcntl.LOCK_EX)
-            try:
-                yield
-            finally:
-                fcntl.flock(f, fcntl.LOCK_UN)
+        with locked(self._dir(run_id) / "outcomes.lock"):
+            yield
 
     def _write_outcomes(self, run_id: str, all_: dict[int, Outcome]) -> None:
         self._write(self._dir(run_id) / "outcomes.json", _OUTCOMES.dump_json(all_, indent=1).decode())
@@ -132,9 +126,9 @@ class RunStore:
     def append_event(self, run_id: str, event: dict[str, Any]) -> None:
         path = self._dir(run_id) / "log.jsonl"
         path.parent.mkdir(parents=True, exist_ok=True)
-        with path.open("a") as f:
+        with path.open("a", encoding="utf-8") as f:
             f.write(json.dumps(event, default=str) + "\n")
 
     def events(self, run_id: str) -> list[dict[str, Any]]:
         path = self._dir(run_id) / "log.jsonl"
-        return [json.loads(line) for line in path.read_text().splitlines()] if path.exists() else []
+        return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()] if path.exists() else []

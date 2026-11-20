@@ -1,8 +1,11 @@
 import json
 from datetime import datetime, timedelta
 
-from gem_agent.app.factory import labelled_b_ids, startup_prune
+from gem_agent.app.factory import judge_embedder, judge_reranker, labelled_b_ids, startup_prune
+from gem_agent.config import Settings
 from gem_agent.index.db import BidIndex
+from gem_agent.retrieval.embed import RemoteEmbedder
+from gem_agent.retrieval.rerank import RemoteReranker
 from gem_agent.tools.gem.models import Bid
 from tests.index.helpers import row
 
@@ -26,3 +29,13 @@ def test_the_startup_prune_keeps_the_labelled_bids(tmp_path):
     assert startup_prune(index, path, NOW) == 1
     assert index.get(1) is None and index.get(2) is not None
     index.close()
+
+
+def test_remote_urls_select_the_remote_clients():
+    settings = Settings(embed_base_url="http://gpu:8080/v1", rerank_base_url="http://gpu:8081")
+    assert isinstance(judge_embedder(settings), RemoteEmbedder)
+    assert isinstance(judge_reranker(settings), RemoteReranker)
+
+
+def test_without_a_rerank_url_reranking_stays_off():
+    assert judge_reranker(Settings(rerank_base_url="")) is None

@@ -6,6 +6,12 @@ import pytesseract
 from PIL import Image
 
 
+def configure_tesseract(tesseract_cmd: str) -> None:
+    """Point pytesseract at tesseract.exe (Windows installs often do not put it on PATH). Empty: leave it."""
+    if tesseract_cmd:
+        pytesseract.pytesseract.tesseract_cmd = tesseract_cmd
+
+
 def ocr_page(pdf: bytes, index: int, *, dpi: int = 200, lang: str = "eng") -> str:
     """Render one page (0-based index) at `dpi` and read it with Tesseract."""
     doc = pymupdf.open(stream=pdf, filetype="pdf")

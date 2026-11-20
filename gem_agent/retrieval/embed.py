@@ -1,4 +1,4 @@
-"""bge-m3 embeddings, on the GPU only when vLLM leaves room (spec 3.5)."""
+"""bge-m3 embeddings: local (GPU only when vLLM leaves room) or a remote OpenAI-compatible server (spec 3.5)."""
 from __future__ import annotations
 
 import logging
@@ -6,6 +6,7 @@ import subprocess
 from collections.abc import Callable
 from typing import Protocol
 
+import httpx
 import numpy as np
 
 log = logging.getLogger(__name__)
@@ -76,3 +77,38 @@ class SmallEmbedder:
         vectors = self._model.encode(texts, batch_size=32, normalize_embeddings=True, convert_to_numpy=True,
                                      show_progress_bar=False)
         return vectors.astype(np.float32)
+
+
+class RemoteEmbedder:
+    """bge-m3 on another machine, over an OpenAI-compatible `POST {base}/embeddings` (TEI, Infinity, vLLM).
+
+    The base URL includes the API version, e.g. `http://10.0.10.11:8080/v1` for TEI. Every row is
+    L2-normalised before it is returned, so callers see the same float32 rows as the local embedders.
+    """
+
+    def __init__(self, base_url: str, model_name: str = "BAAI/bge-m3", *, api_key: str = "",
+                 timeout_s: float = 60.0, batch_size: int = 64, client: httpx.Client | None = None) -> None:
+        self.model_name = model_name
+        self.batch_size = batch_size
+        self._url = f"{base_url.rstrip('/')}/embeddings"
+        self._client = client or httpx.Client(timeout=timeout_s, headers=self._headers(api_key))
+
+    @staticmethod
+    def _headers(api_key: str) -> dict[str, str]:
+        return {"Authorization": f"Bearer {api_key}"} if api_key else {}
+
+    def encode(self, texts: list[str]) -> np.ndarray:
+        rows: list[list[float]] = []
+        for start in range(0, len(texts), self.batch_size):
+            batch = texts[start : start + self.batch_size]
+            response = self._client.post(self._url, json={"model": self.model_name, "input": batch})
+            response.raise_for_status()
+            data = sorted(response.json()["data"], key=lambda item: item.get("index", 0))
+            if len(data) != len(batch):
+                raise ValueError(f"embedding server returned {len(data)} vectors for {len(batch)} inputs")
+            rows.extend(item["embedding"] for item in data)
+        if not rows:
+            return np.zeros((0, 0), dtype=np.float32)
+        vectors = np.asarray(rows, dtype=np.float32)
+        norms = np.linalg.norm(vectors, axis=1, keepdims=True)
+        return (vectors / np.maximum(norms, 1e-12)).astype(np.float32)

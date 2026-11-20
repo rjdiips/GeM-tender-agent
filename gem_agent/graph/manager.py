@@ -137,7 +137,7 @@ class RunManager:
 
     def running_runs(self) -> list[str]:
         return [r.run_id for p in self.s.store.root.glob("*/run.json")
-                if (r := RunRecord.model_validate_json(p.read_text())).status == "running" and r.run_id not in self._tasks]
+                if (r := RunRecord.model_validate_json(p.read_text(encoding="utf-8"))).status == "running" and r.run_id not in self._tasks]
 
     # --- reading --------------------------------------------------------------------------------------------------
 

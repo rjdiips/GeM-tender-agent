@@ -22,5 +22,5 @@ class VerdictCache:
         path = self._path(verdict.b_id, verdict.topic_key, verdict.doc_hash)
         path.parent.mkdir(parents=True, exist_ok=True)
         tmp = path.with_suffix(".tmp")
-        tmp.write_text(verdict.model_dump_json(indent=1))
+        tmp.write_text(verdict.model_dump_json(indent=1), encoding="utf-8")
         tmp.replace(path)

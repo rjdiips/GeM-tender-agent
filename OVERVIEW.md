@@ -28,7 +28,7 @@ It learns each user's preferences (user memory). Results start streaming within 
 | Orchestration | LangGraph, with a SQLite checkpointer so runs resume after a crash |
 | Agents | pydantic-ai, with outputs enforced by a JSON schema |
 | LLM | Local Qwen (`qwen3.6-35b-a3b`) behind an OpenAI-compatible server (LM Studio / vLLM) |
-| Retrieval | bge-m3 embeddings, bge-reranker-v2-m3, BM25, fusion (PyTorch, GPU or CPU) |
+| Retrieval | bge-m3 embeddings, bge-reranker-v2-m3, BM25, fusion (PyTorch locally, or remote over HTTP) |
 | Site access | httpx with a per-host rate limiter (≥1 s, 4 s after errors); Playwright planned as a fallback |
 | Documents | pypdf, PyMuPDF, Tesseract OCR, openpyxl, python-docx, archive extraction |
 | Storage | SQLite (bid index, checkpoints), file caches for documents and verdicts, JSON for memory |

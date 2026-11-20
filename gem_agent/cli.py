@@ -95,7 +95,21 @@ async def _chat(settings: Settings, user: str, text: str, run_id: str | None) ->
             print(line, flush=True)
 
 
+def _utf8_console() -> None:
+    """Windows consoles default to cp1252; event lines use ✔/✘/→ and the eval report uses —."""
+    if sys.platform != "win32":
+        return
+    for stream in (sys.stdout, sys.stderr):
+        reconfigure = getattr(stream, "reconfigure", None)
+        if reconfigure is not None:
+            try:
+                reconfigure(encoding="utf-8", errors="replace")
+            except (OSError, ValueError):
+                pass
+
+
 def main(argv: list[str] | None = None) -> int:
+    _utf8_console()
     parser = argparse.ArgumentParser(prog="gem-agent")
     sub = parser.add_subparsers(dest="command", required=True)
     chat = sub.add_parser("chat", help="ask for tenders from the command line, results streamed")
@@ -146,7 +160,7 @@ async def _eval(settings: Settings, args: argparse.Namespace) -> int:
                            topic=args.topic, parallel=args.parallel)
     print(report(rows))
     if args.out:
-        Path(args.out).write_text(rows_json(rows))
+        Path(args.out).write_text(rows_json(rows), encoding="utf-8")
     return 0
 
 
@@ -157,14 +171,14 @@ if __name__ == "__main__":
 async def _backfill_queries(settings: Settings, dry_run: bool, redo_documents: bool) -> int:
     from gem_agent.agents.judge import Judge
     from gem_agent.agents.models import chat_model
+    from gem_agent.app.factory import judge_embedder
     from gem_agent.cache.docs import DocCache
     from gem_agent.cache.verdicts import VerdictCache
     from gem_agent.graph.store import RunStore
     from gem_agent.jobs.backfill_queries import backfill_queries
-    from gem_agent.retrieval.embed import SmallEmbedder
 
     cache, verdicts = DocCache(settings.cache_dir), VerdictCache(settings.cache_dir)
-    judge = Judge(chat_model(settings), cache, verdicts, embedder=SmallEmbedder(settings.judge_cpu_embed_model))
+    judge = Judge(chat_model(settings), cache, verdicts, embedder=judge_embedder(settings))
     report = await backfill_queries(judge, cache, verdicts, RunStore(settings.runs_dir), dry_run=dry_run,
                                     redo_documents=redo_documents)
     for bid_number, when in sorted(report.dates.items()):

@@ -7,7 +7,6 @@ lock from its wait until its response is back, so requests to one host are never
 from __future__ import annotations
 
 import asyncio
-import fcntl
 import json
 import statistics
 import time
@@ -15,6 +14,8 @@ from collections.abc import AsyncIterator, Awaitable, Callable
 from contextlib import asynccontextmanager
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
+
+from gem_agent.tools.locking import acquire, release
 
 
 @dataclass
@@ -94,19 +95,15 @@ class AdaptiveRateLimiter:
         if self._shared is None:
             yield
             return
-        self._shared.parent.mkdir(parents=True, exist_ok=True)
         lock_file = self._shared.with_name(self._shared.name + ".lock")
-        with open(lock_file, "w") as handle:  # noqa: ASYNC230 - opening a local lock file does not block
-            while True:
-                try:
-                    fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
-                    break
-                except BlockingIOError:
-                    await asyncio.sleep(self._lock_poll)  # real time: another process is mid-request
-            try:
-                yield
-            finally:
-                fcntl.flock(handle, fcntl.LOCK_UN)
+        handle = acquire(lock_file, blocking=False)
+        while handle is None:
+            await asyncio.sleep(self._lock_poll)  # real time: another process is mid-request
+            handle = acquire(lock_file, blocking=False)
+        try:
+            yield
+        finally:
+            release(handle)
 
     def _state_file(self) -> Path:
         assert self._shared is not None
@@ -116,7 +113,7 @@ class AdaptiveRateLimiter:
         if self._shared is None:
             return
         try:
-            data = json.loads(self._state_file().read_text())
+            data = json.loads(self._state_file().read_text(encoding="utf-8"))
             self._state = _State(**data)
         except (OSError, ValueError, TypeError):
             self._state = _State(interval=self.floor)
@@ -125,5 +122,5 @@ class AdaptiveRateLimiter:
         if self._shared is None:
             return
         tmp = self._state_file().with_suffix(".tmp")
-        tmp.write_text(json.dumps(asdict(self._state)))
+        tmp.write_text(json.dumps(asdict(self._state)), encoding="utf-8")
         tmp.replace(self._state_file())
