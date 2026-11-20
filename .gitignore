@@ -41,14 +41,15 @@ knowledge/topics/*
 !knowledge/topics/.gitkeep
 
 # --- Docs (kept local, not in git) ---
-docs/
+# docs/
 
 # --- Agent / tooling artifacts ---
 .playwright-mcp/
 graphify-out/
 .claude/
 .superpowers/
-AGENTS.md
+# AGENTS.md
+.agents/
 
 # --- Editors / OS ---
 .vscode/
