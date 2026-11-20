@@ -235,22 +235,23 @@ describe('web chat', () => {
     expect(screen.getByText('Shortlist: 4 bids.')).toBeInTheDocument()
   })
 
-  it('keeps the last running count above the Done line', async () => {
+  it('keeps the newest count and adds the Done line when the run completes', async () => {
     const api = new FakeApi()
     api.script = [
       { type: 'started', run: run({ run_id: 'r4', title: 'LOS tenders', request: 'LOS tenders', status: 'running', understood: null, progress: [], results: [] }) },
-      { type: 'progress', event: { at: '2026-11-16T13:50:10', text: 'Read 3 of 4 bids: 8 files downloaded…', kind: 'count' } },
-      { type: 'progress', event: { at: '2026-11-16T13:50:20', text: 'Read 4 of 4 bids: 10 files downloaded…', kind: 'count' } },
-      { type: 'progress', event: { at: '2026-11-16T13:51:00', text: 'Done: 1 relevant, 3 quarantined.' } },
+      { type: 'progress', event: { at: '2026-11-16T13:50:10', text: 'Read 3 of 4 bids: 8 files downloaded…', kind: 'count', phase: 'read' } },
+      { type: 'progress', event: { at: '2026-11-16T13:50:20', text: 'Read 4 of 4 bids: 10 files downloaded…', kind: 'count', phase: 'read' } },
+      { type: 'progress', event: { at: '2026-11-16T13:51:00', text: 'Done: 1 relevant, 3 quarantined.', phase: 'report' } },
       { type: 'done', status: 'complete' },
     ]
     const { user } = setup(api)
     await screen.findByText('Management consultancy · banks')
     await user.type(screen.getByRole('textbox', { name: 'Ask for tenders' }), 'LOS tenders{Enter}')
-    expect(await screen.findByText('Done: 1 relevant, 3 quarantined.')).toBeInTheDocument()
-    const log = screen.getByRole('list', { name: 'Progress' })
-    expect(within(log).getAllByRole('listitem').map(li => li.textContent)).toEqual([
-      '13:50:20Read 4 of 4 bids: 10 files downloaded…', '13:51:00Done: 1 relevant, 3 quarantined.'])
+    const log = await screen.findByRole('list', { name: 'Progress' })
+    const rows = within(log).getAllByRole('listitem').map(li => li.textContent)
+    expect(rows).toHaveLength(2)  // the newest count, then Done
+    expect(rows[0]).toContain('Read 4 of 4 bids: 10 files downloaded…')
+    expect(rows[1]).toContain('Done: 1 relevant, 3 quarantined.')
   })
 
   it('shows the request at once and a waiting turn until the server answers, then placeholder cards', async () => {
@@ -304,7 +305,6 @@ describe('answers and sign-in', () => {
   it('asks for a name when not signed in, then loads', async () => {
     const api = new FakeApi()
     api.signedIn = false
-    window.matchMedia = vi.fn().mockReturnValue({ matches: true, addEventListener: vi.fn(), removeEventListener: vi.fn() })
     render(<App api={api} now={() => NOW} />)
     const user = userEvent.setup()
     await user.type(await screen.findByRole('textbox', { name: 'Your name' }), 'asha{Enter}')

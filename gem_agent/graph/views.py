@@ -126,7 +126,8 @@ def _progress(events: list[dict[str, Any]]) -> list[dict[str, Any]]:
 def run_view(record: RunRecord, outcomes: dict[int, Outcome], events: list[dict[str, Any]]) -> dict[str, Any]:
     return {
         "run_id": record.run_id, "title": record.title, "request": record.request_text, "status": record.status,
-        "parent_run_id": record.parent_run_id, "understood": understood_view(record),
+        "created": record.created.isoformat(), "parent_run_id": record.parent_run_id,
+        "understood": understood_view(record),
         "progress": _progress(events),
         "results": [bid_result(record.run_id, o) for o in outcomes.values() if o.verdict or o.error],
         "zip_url": f"/api/runs/{record.run_id}/zip",

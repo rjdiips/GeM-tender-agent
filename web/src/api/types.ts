@@ -95,10 +95,14 @@ export interface Understood {
   not_this: string[] // what the Judge rules out
 }
 
+/** The step a progress line belongs to; a finished run is rolled up by phase. */
+export type Phase = 'plan' | 'search' | 'retry' | 'read' | 'search_rest' | 'report'
+
 export interface ProgressEvent {
   at: string
   text: string
   kind?: 'count' // the running count: shown as one line, the newest, updated in place
+  phase?: Phase // absent on runs stored before the tag; the chat then infers it from the wording
 }
 
 export type RunStatus = 'running' | 'complete' | 'failed' | 'stopped'
@@ -108,6 +112,7 @@ export interface RunView {
   title: string
   request: string
   status: RunStatus
+  created?: string // when the run started (absent on fixtures and older payloads)
   understood: Understood | null
   progress: ProgressEvent[]
   results: BidResult[]

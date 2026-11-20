@@ -42,11 +42,15 @@ def emit(s: Services, run_id: str, event: dict[str, Any]) -> None:
     s.bus.publish(run_id, event)
 
 
-def progress(s: Services, run_id: str, text: str, kind: str | None = None) -> None:
-    """kind "count": the running count, which the chat shows as one line updated in place (views._progress)."""
+def progress(s: Services, run_id: str, text: str, kind: str | None = None, phase: str | None = None) -> None:
+    """kind "count": the running count, which the chat shows as one line updated in place (views._progress).
+    phase: the step the line belongs to ("plan", "search", "retry", "read", "search_rest", "report"), so a finished
+    run's log rolls up into phases without reading the wording."""
     event: dict[str, Any] = {"at": s.now().isoformat(timespec="seconds"), "text": text}
     if kind:
         event["kind"] = kind
+    if phase:
+        event["phase"] = phase
     emit(s, run_id, {"type": "progress", "event": event})
 
 
@@ -132,6 +136,7 @@ def build_graph(s: Services) -> StateGraph:
         note = WIDEN if state.adjust == "widen" else NARROW if state.adjust == "narrow" else ""
         plans = [await s.planner.plan(state.request, topic, note=note) for topic in state.request.topics]
         s.store.save_plans(state.run_id, plans)
+        progress(s, state.run_id, f"Planned {len(plans)} search{'es' if len(plans) != 1 else ''}…", phase="plan")
         return {"plans": plans}
 
     async def search(state: RunState) -> dict[str, Any]:
@@ -153,13 +158,13 @@ def build_graph(s: Services) -> StateGraph:
         s.store.save_shortlist(state.run_id, candidates)
         if candidates:
             progress(s, state.run_id, f"Shortlist: {len(candidates)} bids from {pool:,} titles looked at "
-                                      "(closing soonest first). Reading documents…")
+                                      "(closing soonest first). Reading documents…", phase="search")
         failed, read = failed_searches(search_progress)
         if failed:
-            progress(s, state.run_id, failed_line(failed, read))
+            progress(s, state.run_id, failed_line(failed, read), phase="search")
         if cut and not wants_retry(stage=state.stage, retries=state.retries, candidates=candidates, over_cap=over_cap,
                                    search_progress=search_progress):
-            progress(s, state.run_id, cut_line(cut))  # a narrowing retry comes next otherwise
+            progress(s, state.run_id, cut_line(cut), phase="search")  # a narrowing retry comes next otherwise
         return {"candidates": candidates, "pool": pool, "over_cap": over_cap, "search_progress": search_progress,
                 "first_counts": first_counts, "cut": cut}
 
@@ -196,12 +201,12 @@ def build_graph(s: Services) -> StateGraph:
         candidates = [*state.candidates, *by_closing(new)]
         if new:
             s.store.save_shortlist(state.run_id, candidates)
-            progress(s, state.run_id, f"Searching deeper: {len(new)} more bids to read…")
+            progress(s, state.run_id, f"Searching deeper: {len(new)} more bids to read…", phase="search_rest")
         if cut:
-            progress(s, state.run_id, cut_line(cut))
+            progress(s, state.run_id, cut_line(cut), phase="search_rest")
         failed, read = failed_searches(search_progress, before=state.search_progress)
         if failed:
-            progress(s, state.run_id, failed_line(failed, read))
+            progress(s, state.run_id, failed_line(failed, read), phase="search_rest")
         return {"candidates": candidates, "pool": pool, "search_progress": search_progress, "stage": "rest",
                 "cut": state.cut + cut}
 
@@ -211,7 +216,7 @@ def build_graph(s: Services) -> StateGraph:
     async def retry(state: RunState) -> dict[str, Any]:
         adjust = "narrow" if state.candidates else "widen"
         progress(s, state.run_id, "Nothing matched by title; widening the search…" if adjust == "widen"
-                 else "Too many matches; narrowing the search…")
+                 else "Too many matches; narrowing the search…", phase="retry")
         return {"adjust": adjust, "retries": state.retries + 1}
 
     async def process(state: RunState) -> dict[str, Any]:
@@ -242,7 +247,8 @@ def build_graph(s: Services) -> StateGraph:
         def count_line(read: int) -> None:
             """After every bid, the last one included: the chat shows only the newest count, so lines don't pile up."""
             outcomes = s.store.outcomes(state.run_id)
-            progress(s, state.run_id, running_count(read, total, (outcomes[b] for b in done if b in outcomes)), "count")
+            progress(s, state.run_id, running_count(read, total, (outcomes[b] for b in done if b in outcomes)), "count",
+                     phase="read")
 
         todo = [c for c in state.candidates if c.bid.b_id not in state.done_ids]
         if todo:
@@ -268,7 +274,7 @@ def build_graph(s: Services) -> StateGraph:
                      else f" {borderline} bids need your call: see Borderline." if borderline else "")
             if state.cut:
                 text += " " + cut_line(state.cut)
-        progress(s, state.run_id, text)
+        progress(s, state.run_id, text, phase="report")
         await write_cards(state.run_id, [o.bid for o in outcomes if o.files and is_vague_title(o.bid.title)])
         return {}
 

@@ -255,8 +255,9 @@ async def test_reading_reports_a_running_count_from_the_start_to_the_last_bid(tm
     progress = [e["event"] for e in events if e["type"] == "progress"]
     texts = [p["text"] for p in progress]
     counts = [p["text"] for p in progress if p.get("kind") == "count"]
-    assert texts[0].startswith("Shortlist: 20 bids")
-    assert texts[1] == counts[0] == "Read 0 of 20 bids: 0 files downloaded, triage dropped 0, 0 relevant so far…"  # at once
+    assert texts[0].startswith("Planned 1 search")
+    assert texts[1].startswith("Shortlist: 20 bids")
+    assert texts[2] == counts[0] == "Read 0 of 20 bids: 0 files downloaded, triage dropped 0, 0 relevant so far…"  # at once
     assert len(counts) == 21  # then after every bid; the chat shows only the newest
     # 16 judged bids x 2 files + 3 triage rejections x 1 (bid document only); bid 7 failed
     assert counts[-1] == "Read 20 of 20 bids: 35 files downloaded, triage dropped 3, 16 relevant so far, 1 could not be read…"
@@ -292,7 +293,9 @@ async def test_the_shortlist_line_right_after_the_card_is_kept(tmp_path):
     events = await ask(RunManager(s), "LOS tenders")
     run_id = events[0]["run"]["run_id"]
     view = run_view(s.store.load(run_id), s.store.outcomes(run_id), s.store.events(run_id))
-    assert view["progress"][0]["text"].startswith("Shortlist: 2 bids")
+    texts = [p["text"] for p in view["progress"]]
+    assert texts[0].startswith("Planned 1 search")
+    assert texts[1].startswith("Shortlist: 2 bids")  # kept, not swallowed by the meaning card
 
 
 def test_count_lines_sent_without_a_kind_are_marked_as_counts():

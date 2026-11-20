@@ -13,10 +13,7 @@ function applyEvent(run: RunView | null, e: RunEvent): RunView | null {
   if (!run) return run
   switch (e.type) {
     case 'understood': return { ...run, understood: e.understood }
-    case 'progress': {  // a new running count replaces the previous one
-      const kept = e.event.kind === 'count' ? run.progress.filter(p => p.kind !== 'count') : run.progress
-      return { ...run, progress: [...kept, e.event] }
-    }
+    case 'progress': return { ...run, progress: [...run.progress, e.event] }  // kept whole: a finished run rolls up by phase
     case 'result': return { ...run, results: [...run.results.filter(b => b.b_id !== e.bid.b_id), e.bid] }
     case 'done': return { ...run, status: e.status }
     default: return run
@@ -105,7 +102,11 @@ export default function App({ api, now, initialRunId, pollMs = 3000 }: {
     if (!run || pendingBids.has(b.b_id)) return
     const runId = run.run_id
     setPendingBids(p => new Set(p).add(b.b_id))
-    setRowErrors(({ [b.b_id]: _, ...rest }) => rest)
+    setRowErrors(errs => {
+      const next = { ...errs }
+      delete next[b.b_id]
+      return next
+    })
     try {
       const changed = await call(runId)
       setRun(cur => cur && cur.run_id === runId ? {
