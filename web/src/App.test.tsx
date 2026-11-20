@@ -5,7 +5,6 @@ import App from './App'
 import { bid, FakeApi, NOW, run } from './test/fakeApi'
 
 function setup(api = new FakeApi(), pollMs?: number) {
-  window.matchMedia = vi.fn().mockReturnValue({ matches: true, addEventListener: vi.fn(), removeEventListener: vi.fn() })
   render(<App api={api} now={() => NOW} initialRunId="r1" pollMs={pollMs} />)
   return { api, user: userEvent.setup() }
 }
@@ -275,12 +274,12 @@ describe('web chat', () => {
     expect(screen.getByText('No relevant tenders yet.')).toBeInTheDocument()
   })
 
-  it('switches between dark and light from the header', async () => {
+  it('switches between light and dark from the header', async () => {
     const { user } = setup()
     const app = await screen.findByTestId('app')
-    expect(app).toHaveAttribute('data-theme', 'dark')
-    await user.click(screen.getByRole('button', { name: 'Switch to light mode' }))
     expect(app).toHaveAttribute('data-theme', 'light')
+    await user.click(screen.getByRole('button', { name: 'Switch to dark mode' }))
+    expect(app).toHaveAttribute('data-theme', 'dark')
   })
 
   it('offers the zip of everything', async () => {
