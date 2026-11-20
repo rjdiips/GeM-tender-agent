@@ -1,0 +1,41 @@
+{
+ "text": "ai transformation tenders this week",
+ "topics": [
+  {
+   "user_text": "AI transformation tenders this week",
+   "meaning": "AI Transformation: Tenders for Artificial Intelligence solutions, including machine learning platforms, generative AI tools, and enterprise AI integration services.",
+   "domain": "Technology/AI",
+   "match_terms": [
+    "AI transformation",
+    "Artificial Intelligence",
+    "AI solutions",
+    "Machine Learning",
+    "Generative AI",
+    "AI platform",
+    "AI integration",
+    "Neural Network",
+    "Deep Learning"
+   ],
+   "acronyms": {
+    "AI": "Artificial Intelligence"
+   },
+   "related_but_not_enough": [
+    "IT Infrastructure",
+    "Cloud Computing",
+    "Data Analytics",
+    "Cybersecurity",
+    "Software Development"
+   ],
+   "not_this": [
+    "Hardware-only purchases",
+    "GPU servers",
+    "Workstations",
+    "Robots",
+    "Lab equipment"
+   ],
+   "buyers": [],
+   "chosen_because": "the only plausible meaning",
+   "other_meanings_searched": []
+  }
+ ]
+}

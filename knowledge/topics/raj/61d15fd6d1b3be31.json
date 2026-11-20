@@ -1,0 +1,39 @@
+{
+ "text": "fintech solutions tender this week",
+ "topics": [
+  {
+   "user_text": "fintech solutions tender this week",
+   "meaning": "Fintech Solutions: software platforms and digital tools for financial services, including payment gateways, digital lending, blockchain-based settlement systems, and open banking APIs used by banks and NBFCs",
+   "domain": "fintech",
+   "match_terms": [
+    "fintech",
+    "financial technology",
+    "digital payment",
+    "payment gateway",
+    "digital lending",
+    "blockchain settlement",
+    "open banking",
+    "neobank platform",
+    "financial software"
+   ],
+   "acronyms": {
+    "Fintech": "Financial Technology"
+   },
+   "related_but_not_enough": [
+    "IT Infrastructure",
+    "Cybersecurity",
+    "Cloud Hosting",
+    "ERP Systems"
+   ],
+   "not_this": [
+    "Hardware Procurement",
+    "Civil Works",
+    "Consulting Services",
+    "General Office Supplies"
+   ],
+   "buyers": [],
+   "chosen_because": "Meaning 0 is the most plausible interpretation of 'fintech solutions' and, although the current tender titles are generic IT project hires rather than specific fintech software, it is the only meaning that accurately reflects the user's intent for financial technology platforms, whereas meanings 1 and 2 refer to banking operations or advisory services which are less relevant to the term 'fintech'.",
+   "other_meanings_searched": []
+  }
+ ]
+}

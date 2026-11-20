@@ -1,0 +1,31 @@
+{
+ "text": "management consultancy from banks, published in the past two weeks",
+ "topic": {
+  "user_text": "management consultancy from banks, published in the past two weeks",
+  "meaning": "Management Consultancy Services: Professional advisory services provided by consulting firms to banks for strategic, operational, or financial improvement.",
+  "domain": "Management Consultancy",
+  "match_terms": [
+   "Management Consultancy",
+   "Consultancy Services",
+   "Management Consulting",
+   "Advisory Services",
+   "Banking Consultancy"
+  ],
+  "acronyms": {},
+  "related_but_not_enough": [
+   "IT Consultancy",
+   "Legal Consultancy",
+   "HR Consultancy"
+  ],
+  "not_this": [
+   "Management Trainee",
+   "Project Management",
+   "Consultant Job"
+  ],
+  "buyers": [
+   "banks"
+  ],
+  "chosen_because": "Meaning [0] has the highest plausibility score (0.95) and matches 32 relevant open tenders, whereas the other meanings have significantly fewer or no matching tenders.",
+  "other_meanings_searched": []
+ }
+}

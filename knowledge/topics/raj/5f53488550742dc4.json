@@ -1,0 +1,38 @@
+{
+ "text": "aml tenders this week",
+ "topics": [
+  {
+   "user_text": "aml tenders this week",
+   "meaning": "AML Software: Anti-Money Laundering software solutions, including transaction monitoring, sanctions screening, and customer risk assessment tools.",
+   "domain": "FinTech/Compliance",
+   "match_terms": [
+    "AML",
+    "Anti-Money Laundering",
+    "AML Software",
+    "Transaction Monitoring",
+    "Sanctions Screening",
+    "KYC",
+    "CDD",
+    "EDD",
+    "Suspicious Activity Report",
+    "FATF"
+   ],
+   "acronyms": {
+    "AML": "Anti-Money Laundering"
+   },
+   "related_but_not_enough": [
+    "Compliance Management Systems",
+    "RegTech",
+    "Risk Management Software"
+   ],
+   "not_this": [
+    "AML (Additive Manufacturing Layer)",
+    "AML (Automated Material Handling)",
+    "AML (Advanced Mobile Location)"
+   ],
+   "buyers": [],
+   "chosen_because": "the only plausible meaning",
+   "other_meanings_searched": []
+  }
+ ]
+}

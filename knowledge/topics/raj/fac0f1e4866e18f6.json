@@ -1,0 +1,38 @@
+{
+ "text": "ai platform tenders",
+ "topics": [
+  {
+   "user_text": "AI platform tenders",
+   "meaning": "AI Platform: software platforms for artificial intelligence, including machine learning operations (MLOps) tools, generative AI frameworks, and enterprise AI integration services",
+   "domain": "technology",
+   "match_terms": [
+    "AI platform",
+    "artificial intelligence platform",
+    "machine learning platform",
+    "MLOps",
+    "generative AI",
+    "AI framework",
+    "AI integration",
+    "AI software",
+    "AI services"
+   ],
+   "acronyms": {},
+   "related_but_not_enough": [
+    "AI hardware",
+    "GPU servers",
+    "AI cameras",
+    "robotics",
+    "lab equipment"
+   ],
+   "not_this": [
+    "AML software",
+    "fraud detection",
+    "KYC services",
+    "AI transformation"
+   ],
+   "buyers": [],
+   "chosen_because": "the only plausible meaning",
+   "other_meanings_searched": []
+  }
+ ]
+}

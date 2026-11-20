@@ -1,0 +1,36 @@
+{
+ "text": "aml tenders last 2 weeks",
+ "topics": [
+  {
+   "user_text": "aml tenders last 2 weeks",
+   "meaning": "AML Software: Anti-Money Laundering software solutions, including transaction monitoring, sanctions screening, and customer risk assessment tools.",
+   "domain": "FinTech",
+   "match_terms": [
+    "AML",
+    "Anti-Money Laundering",
+    "AML Software",
+    "Transaction Monitoring",
+    "Sanctions Screening",
+    "Customer Risk Assessment",
+    "KYC",
+    "CDD",
+    "EDD"
+   ],
+   "acronyms": {
+    "AML": "Anti-Money Laundering"
+   },
+   "related_but_not_enough": [
+    "Compliance Software",
+    "RegTech",
+    "Fraud Detection"
+   ],
+   "not_this": [
+    "AML (Additive Manufacturing Layer)",
+    "AML (Automated Machine Learning)"
+   ],
+   "buyers": [],
+   "chosen_because": "the only plausible meaning",
+   "other_meanings_searched": []
+  }
+ ]
+}

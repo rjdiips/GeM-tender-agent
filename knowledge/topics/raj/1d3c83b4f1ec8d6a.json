@@ -1,0 +1,33 @@
+{
+ "text": "aml software tenders published in the last 1 weeks",
+ "topics": [
+  {
+   "user_text": "AML software tenders published in the last 1 weeks",
+   "meaning": "AML Software: Tenders for Anti-Money Laundering software solutions, including transaction monitoring, sanctions screening, and customer risk assessment tools.",
+   "domain": "Banking & Financial Services",
+   "match_terms": [
+    "AML software",
+    "Anti-Money Laundering",
+    "AML solution",
+    "Transaction Monitoring System",
+    "Sanctions Screening",
+    "Financial Crime Prevention"
+   ],
+   "acronyms": {
+    "AML": "Anti-Money Laundering"
+   },
+   "related_but_not_enough": [
+    "KYC software",
+    "Compliance Management System",
+    "Fraud Detection Software"
+   ],
+   "not_this": [
+    "AML (Additive Manufacturing Layer)",
+    "AML (Asymmetric Multi-Layer)"
+   ],
+   "buyers": [],
+   "chosen_because": "The user's request for 'AML software' aligns with the high plausibility of software solutions, and while the current search window yields only generic IT titles, this meaning is the only one that directly addresses the user's intent for software rather than hardware.",
+   "other_meanings_searched": []
+  }
+ ]
+}

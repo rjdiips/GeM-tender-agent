@@ -1,0 +1,28 @@
+[
+ {
+  "id": "95e81536",
+  "fact": "A tender counts as a ministry's when GeM lists it under that ministry, including public sector banks, regional rural banks, financial institutions, PSUs and offices under it, not only the ministry itself",
+  "evidence": "you said so on 17 Nov",
+  "source": "stated",
+  "since": "2026-11-17",
+  "runs": [
+   "rules-17nov"
+  ],
+  "strength": 2,
+  "active": true,
+  "removed": false
+ },
+ {
+  "id": "c939eeb0",
+  "fact": "Hardware-only purchases (GPU servers or workstations, AI cameras, robots, lab equipment) are not AI tenders; an AI tender must have AI software, a platform or AI services in its scope",
+  "evidence": "you said so on 17 Nov",
+  "source": "stated",
+  "since": "2026-11-17",
+  "runs": [
+   "rules-17nov"
+  ],
+  "strength": 2,
+  "active": true,
+  "removed": false
+ }
+]

@@ -1,0 +1,34 @@
+{
+ "text": "kyc tenders in the last 1 week",
+ "topics": [
+  {
+   "user_text": "kyc tenders in the last 1 week",
+   "meaning": "KYC Services: Tenders for Know Your Customer verification services, including digital KYC, Aadhaar-based verification, and customer onboarding solutions.",
+   "domain": "Government Procurement",
+   "match_terms": [
+    "KYC",
+    "Know Your Customer",
+    "KYC Services",
+    "Customer Verification",
+    "Aadhaar Verification",
+    "Digital KYC",
+    "Onboarding Services"
+   ],
+   "acronyms": {
+    "KYC": "Know Your Customer"
+   },
+   "related_but_not_enough": [
+    "AML",
+    "Due Diligence",
+    "Customer Identity Management"
+   ],
+   "not_this": [
+    "KYC Compliance",
+    "KYC Policy"
+   ],
+   "buyers": [],
+   "chosen_because": "the only plausible meaning",
+   "other_meanings_searched": []
+  }
+ ]
+}

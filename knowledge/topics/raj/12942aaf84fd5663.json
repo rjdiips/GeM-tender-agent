@@ -1,0 +1,41 @@
+{
+ "text": "fraud detection tenders the last 3 weeks",
+ "topics": [
+  {
+   "user_text": "fraud detection tenders the last 3 weeks",
+   "meaning": "Fraud Detection and Prevention Systems: AI-driven fraud detection platforms, transaction monitoring systems, and behavioral analytics tools used by banks and financial institutions to identify suspicious activities",
+   "domain": "Banking & Finance",
+   "match_terms": [
+    "fraud detection",
+    "fraud prevention",
+    "transaction monitoring",
+    "suspicious activity detection",
+    "fraud management system",
+    "FMS",
+    "real-time fraud detection",
+    "behavioral analytics",
+    "anomaly detection",
+    "payment fraud",
+    "account takeover",
+    "identity fraud"
+   ],
+   "acronyms": {
+    "FMS": "Fraud Management System"
+   },
+   "related_but_not_enough": [
+    "AML software",
+    "KYC verification",
+    "compliance monitoring",
+    "risk assessment tools"
+   ],
+   "not_this": [
+    "Fraud Investigation Services",
+    "Forensic Accounting",
+    "Legal Fraud Litigation Support"
+   ],
+   "buyers": [],
+   "chosen_because": "the only plausible meaning",
+   "other_meanings_searched": []
+  }
+ ]
+}

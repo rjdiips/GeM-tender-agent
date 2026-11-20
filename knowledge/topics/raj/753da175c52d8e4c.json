@@ -1,0 +1,35 @@
+{
+ "text": "central bank tenders in the last 1 week",
+ "topics": [
+  {
+   "user_text": "central bank tenders in the last 1 week",
+   "meaning": "Reserve Bank of India (RBI) Tenders: Tenders issued by the Reserve Bank of India for IT infrastructure, security systems, and administrative services.",
+   "domain": "Banking",
+   "match_terms": [
+    "Reserve Bank of India",
+    "RBI",
+    "Central Bank",
+    "RBI tender",
+    "RBI e-procurement"
+   ],
+   "acronyms": {
+    "RBI": "Reserve Bank of India"
+   },
+   "related_but_not_enough": [
+    "State Bank of India",
+    "Public Sector Banks",
+    "NABARD"
+   ],
+   "not_this": [
+    "Ministry of Finance",
+    "Department of Financial Services",
+    "SEBI"
+   ],
+   "buyers": [
+    "central bank"
+   ],
+   "chosen_because": "Although the specific tender count is zero, the Reserve Bank of India is the primary entity referred to by 'central bank' in an Indian context, making it the most plausible interpretation despite the lack of immediate matches.",
+   "other_meanings_searched": []
+  }
+ ]
+}
