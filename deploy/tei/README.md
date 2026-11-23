@@ -123,7 +123,13 @@ Set in `deploy/tei/.env`, then `docker compose up -d embed` (it recreates the co
 ```bash
 EMBED_MODEL_ID=BAAI/bge-small-en-v1.5       # ties MiniLM at hit@8, loses at hit@24, 3x slower
 EMBED_MODEL_ID=BAAI/bge-m3                  # 568M, 1024 dims, ~2.5 pages/s on CPU
-RERANK_MODEL_ID=BAAI/bge-reranker-v2-m3     # in-process only, ~16 s per bid (see above)
+```
+
+The reranker's model lives in the compose file's fallback (`BAAI/bge-reranker-base`) and has
+no `.env` entry, because nothing starts it. To try another one, override it for that run:
+
+```bash
+RERANK_MODEL_ID=BAAI/bge-reranker-v2-m3 docker compose --profile ab up -d rerank
 ```
 
 Only do this if a new A/B (spec 3.5.1, `eval/retrieval_ab/`) says so; the 20 Nov run found no
