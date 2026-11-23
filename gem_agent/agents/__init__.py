@@ -1,1 +1,1 @@
-"""pydantic-ai agents (spec 5.2)."""
+"""pydantic-ai agents."""

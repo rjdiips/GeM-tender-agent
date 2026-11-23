@@ -1,4 +1,4 @@
-"""Judge (spec 5.4): triage, per-bid retrieval, verdict with evidence.
+"""Judge: triage, per-bid retrieval, verdict with evidence.
 
 Per bid:
 1. Triage on title, buyer and bid PDF pages 1-2 (~1.5k tokens). A clear no stops here.
@@ -94,7 +94,7 @@ SCOPE_TERMS = ["scope of work", "eligibility", "pre-qualification", "technical s
 class JudgeSettings(BaseModel):
     triage_chars: int = 5000  # bid PDF pages 1-2 for triage (~1.5k tokens)
     bid_pages_chars: int = 6000
-    context_chars: int = 46000  # ~13k tokens for the verdict (34k before the queries passages, 17 Nov)
+    context_chars: int = 46000  # ~13k tokens for the verdict
     top_k: int = 8
     scope_k: int = 3
     queries_k: int = 2  # opening pages and matches for the queries date, shown first; skipped when GeM's own
@@ -114,8 +114,7 @@ Proof = Literal["documents", "title", "none"]
 
 
 def proof(evidence: list[Evidence], roles: dict[str, str]) -> Proof:
-    """What a verdict's quotes prove, shown in place of the model's own confidence (17 Nov: it answered 0.85 or more
-    for every verdict it gave, so the number told nobody anything).
+    """What a verdict's quotes prove, shown in place of the model's own confidence.
     documents: a verified quote from beyond the title: an attachment, an RA's original bid, or the bid document past
       its first two pages (the buyer-added terms, often the only place a bid without attachments says what it buys).
     title: verified quotes only from the bid document's first pages, which repeat the listing. GeM's general terms
@@ -136,7 +135,7 @@ def doc_hash(files: BidFiles) -> str:
 
 def _file_label(cited: str, labels: list[tuple[str, FileRecord]]) -> str:
     """The file label a quote cites, however the model wrote it: "F3", its file name, or the whole passage header
-    "[F3 p.1 | 1794202410.pdf]" (8255061, 16 Nov: three real quotes all shown "not found")."""
+    "[F3 p.1 | 1794202410.pdf]"."""
     known = {label for label, _ in labels}
     if cited in known:
         return cited
@@ -174,7 +173,7 @@ def queries_date(out: QueriesOut) -> datetime | None:
 def plausible_queries(queries: QueriesDeadline | None, closing: datetime | None,
                       published: datetime | None = None) -> QueriesDeadline | None:
     """Queries close after the bid is published and before it closes. A date on or after closing is the closing date
-    misread (8253937, 17 Nov); one before publication is a typo or misreading ("28 Nov 2025" on 8274258)."""
+    misread; one before publication is a typo or misreading."""
     if queries is None:
         return None
     if closing is not None and queries.when >= closing:
@@ -293,7 +292,7 @@ class Judge:
             out = await self._ask(self._judge, retry, self.settings.judge_max_tokens)
             evidence = self._check(out, labels, pages)
         if any(e.verified for e in evidence) and not self._from_documents(evidence, labels):
-            # the bid PDF's first pages repeat the tender's own title, so a quote from them proves little (16 Nov):
+            # the bid PDF's first pages repeat the tender's own title, so a quote from them proves little:
             # ask for a passage from the buyer-added terms, an attachment or the original bid. A rejection too:
             # 8182010 was ruled out "95% sure" on its title, while its scope (a land survey) said why in plain words
             retry = (f"{prompt}\n\nYour quotes all come from the first pages of the bid document, which repeat the "
@@ -314,7 +313,7 @@ class Judge:
             if record.role != "bid_document":
                 continue
             own = sorted((page, text) for (lbl, page), text in pages.items() if lbl == label)
-            # each page, then each page joined to the next: the block can straddle a page break (8179594, 17 Nov)
+            # each page, then each page joined to the next: the block can straddle a page break
             for i, (page, text) in enumerate(own):
                 found = parse_pre_bid(text)
                 if not found and i + 1 < len(own):
@@ -356,8 +355,8 @@ class Judge:
             verified = verify_quote(q.quote, pages.get((label, page), ""))
             if not verified:
                 # the right file, the wrong page: a docx is one page sent as windows all marked p.1, and the model
-                # cited p.2 and p.3 (8253403, 16 Nov); a PDF quote can be a page off. Then the wrong file: 8266583
-                # quoted the bid document's "Similar Category" list as the Scope of Work (17 Nov). The cited file is
+                # cited p.2 and p.3; a PDF quote can be a page off. Then the wrong file: 8266583
+                # quoted the bid document's "Similar Category" list as the Scope of Work. The cited file is
                 # searched first, then the others; the file and page are corrected.
                 ordered = sorted(pages.items(), key=lambda kv: (kv[0][0] != q.file, kv[0]))
                 label, page = next(((lbl, p) for (lbl, p), text in ordered
@@ -391,7 +390,7 @@ class Judge:
         head = f"{self._header(bid, org)}\n\n=== Bid document, pages 1-2 ===\n{bid_text[: s.bid_pages_chars]}\n"
         parts, used = [head[:budget]], min(len(head), budget)
         terms = [*topic.match_terms, *topic.acronyms]
-        # the queries date sits on a cover page or a schedule that never uses the topic's words (8272331, 17 Nov),
+        # the queries date sits on a cover page or a schedule that never uses the topic's words,
         # so it gets passages of its own, shown first so the budget can't drop them: the opening page of the largest
         # attachments (a cover page states a date once, and a "Queries" clause saying how to send them outranked it)
         # and the best matches for the date itself
@@ -413,7 +412,7 @@ class Judge:
         for chunk in [*dated, *picked, *openings]:
             if chunk.role == "bid_document" and chunk.page <= TITLE_PAGES:
                 continue  # already in the head
-            key = " ".join(chunk.text.split())  # the same RFP uploaded twice shows once (8272331: its copy took slots)
+            key = " ".join(chunk.text.split())  # the same RFP uploaded twice shows once
             if key in seen:
                 continue
             seen.add(key)
@@ -434,7 +433,7 @@ class Judge:
         return dated + find_passages(chunks, query=QUERY_SEARCH, terms=QUERY_TERMS, top_k=k, embedder=self.embedder)
 
     async def find_queries(self, bid: Bid, files: BidFiles, *, ask: bool = True) -> tuple[QueriesDeadline | None, bool]:
-        """The queries date alone, for results judged before 17 Nov: GeM's pre-bid date, else (when `ask`) one small
+        """The queries date alone, for older results: GeM's pre-bid date, else (when `ask`) one small
         call over the queries passages. Returns the date and whether the model was asked."""
         labels, pages, _ = self._pages(files)
         gem = self._gem_pre_bid(labels, pages)

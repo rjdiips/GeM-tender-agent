@@ -1,4 +1,4 @@
-"""Document cache (spec 6.3): cache/docs/<b_id>/ holds each file by SHA-256, its text per page, and a manifest.
+"""Document cache: cache/docs/<b_id>/ holds each file by SHA-256, its text per page, and a manifest.
 GeM's general terms, identical for every bid on a date, live once in cache/gtc/<date>.pdf."""
 from __future__ import annotations
 
@@ -53,7 +53,7 @@ class BidFiles(BaseModel):
         return bool(self.files) and self.files[0].status == "ok"
 
     def readable(self) -> list[FileRecord]:
-        """Files with real text: placeholders, empty and failed files are left out (spec 5.4 step 1)."""
+        """Files with real text: placeholders, empty and failed files are left out."""
         return [f for f in self.files if f.status == "ok" and f.text_path]
 
 

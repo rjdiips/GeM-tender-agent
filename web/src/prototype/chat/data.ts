@@ -1,4 +1,4 @@
-// PROTOTYPE sample data. Bid numbers, titles, buyers and dates are real (local index, 16 Nov 2026).
+// PROTOTYPE sample data. Bid numbers, titles, buyers and dates are real.
 // The verdict for GEM/2026/B/8162911 is the real Judge output; the other verdicts are invented for layout only.
 
 export type Evidence = { quote: string; file: string; page: number; verified: boolean }

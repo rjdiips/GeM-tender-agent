@@ -1,4 +1,4 @@
-"""Typed records parsed from GeM listing rows (spec 3.1)."""
+"""Typed records parsed from GeM listing rows."""
 from __future__ import annotations
 
 from datetime import datetime

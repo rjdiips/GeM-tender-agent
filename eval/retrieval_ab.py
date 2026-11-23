@@ -1,10 +1,10 @@
-"""A/B the passage rankers on the labelled set's quoted pages.
+"""Compare the passage rankers on the labelled set's quoted pages.
 
 The only places embeddings and the reranker are used are `find_passages` (the Judge's
 page ranking) and `LookupCatalog.find_categories` (the Planner's category labels). This
 script exercises the first one offline: for every labelled bid/topic it runs
 `find_passages` over that bid's cached chunks and asks whether the page the verdict
-quoted lands in the top 8 — the metric the spec's 18-bid table used.
+quoted lands in the top 8.
 
 No model calls to the LLM, no crawling, no verdict cache: chunks come from
 `data/cache`, so a run is deterministic and a model can be swapped per run.

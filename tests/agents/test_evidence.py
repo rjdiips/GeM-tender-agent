@@ -30,7 +30,7 @@ GEM_PAGE = ("कुल मा ा/Total Quantity\n29\nव'तु (ेणी /Ite
 
 
 def test_a_quote_stitched_with_an_ellipsis_is_checked_part_by_part_in_any_order():
-    # 8251705 (17 Nov): two real fields, cited in the opposite order to the page, were shown "not found"
+    # 8251705: two real fields, cited in the opposite order to the page, were shown "not found"
     assert verify_quote("Item Category: Revolving Chair (V5) (Q2) ... Total Quantity: 29", GEM_PAGE)
     assert verify_quote("Item Category: Revolving Chair (V5) (Q2) … Total Quantity 29", GEM_PAGE)
 

@@ -1,4 +1,4 @@
-"""probe_live: how a candidate meaning fares against GeM right now, from page 1 of a few searches (spec 5.3)."""
+"""probe_live: how a candidate meaning fares against GeM right now, from page 1 of a few searches."""
 from __future__ import annotations
 
 import logging

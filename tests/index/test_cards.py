@@ -34,7 +34,7 @@ async def test_each_bid_is_read_with_its_attachments_in_one_model_call(tmp_path)
     llm = ScriptedLLM({CARD_INSTRUCTIONS: [{"subject": "MSME Digital Lending Suite implementation for a bank",
                                             "terms": ["digital lending", "loan origination"]}]})
     report = await write_cards(index, collector, llm.model(), limit=10)
-    # always a full collect: the bid PDF can name a broad subject while only the RFP names the modules (16 Nov)
+    # always a full collect: the bid PDF can name a broad subject while only the RFP names the modules
     assert report.written == 2 and collector.calls == [(1, True), (2, True)] and len(llm.calls) == 2
     assert index.card(1) == "MSME Digital Lending Suite implementation for a bank; digital lending; loan origination"
     assert "MSME Digital Lending Suite" in llm.calls[0][1] and VAGUE in llm.calls[0][1]
@@ -61,7 +61,6 @@ HEADER = "Item Category Hiring of Agency for IT Projects- Milestone basis Contra
 
 
 async def test_the_subject_is_read_from_the_whole_bid_document(tmp_path):
-    # 16 Nov: the subject sat on page 4 (buyer-added terms); pages 1-3 only repeat the category
     index, cache = setup(tmp_path, n=1)
     pages = [HEADER, "Bid details and dates", "Scope of Work:1793620055.pdf Payment Terms:1793620061.pdf",
              "Implementation, Maintenance and Customization of MSME Digital Lending Suite with business loan journeys"]
@@ -115,7 +114,6 @@ async def test_rfp_title_deep_inside_a_large_rfp_is_found(tmp_path):
 
 
 async def test_a_placeholder_scope_document_does_not_hide_the_rfp(tmp_path):
-    # 16 Nov: 9 bids had a "Scope of Work" that only said "please refer the RFP"
     index, cache = setup(tmp_path, n=1)
     collector = FullCollector(cache, [HEADER, "Scope of Work:scope.pdf"], [
         ("scope.pdf", ["Please refer the RFP uploaded in Buyer Added Bid Specific ATC"]),
@@ -185,7 +183,7 @@ AML_SCOPE = ("3.2 Scope of Work\nThe Bank intends to on-board a Service Provider
 
 
 async def test_the_rfp_scope_is_read_even_when_the_bid_document_names_a_subject(tmp_path):
-    # 10142481 (16 Nov): the bid PDF said "Comprehensive Financial Risk and Compliance Solutions"; only the RFP's
+    # 10142481: the bid PDF said "Comprehensive Financial Risk and Compliance Solutions"; only the RFP's
     # scope of work said AML, deep in a 379-page RFP whose contents list also names "Scope of Work ..... 15"
     index, cache = setup(tmp_path, n=1)
     bid_doc = [HEADER, "RFP for Comprehensive Financial Risk and Compliance Solutions"]
@@ -216,9 +214,8 @@ def test_scope_sections_skip_contents_entries_and_sentences_that_mention_the_sco
 
 
 def test_a_long_run_of_ocr_digits_does_not_stall_the_scope_search():
-    # 18 Nov: this OCR'd line from bid 10110777's scan held the scope-heading regex for 13+ min (exponential
-    # backtracking over ways to split the digits into section numbers like "3.2"). The regex engine holds the GIL,
-    # so the check runs in a child process that a timeout can kill.
+    # Backtracking over ways to split the digits into section numbers like "3.2" can take minutes; the regex
+    # engine holds the GIL, so the check runs in a child process that a timeout can kill.
     import subprocess
     import sys
 
@@ -309,7 +306,7 @@ async def test_cards_are_written_only_for_the_given_vague_bids_without_a_card(tm
 
 
 async def test_cards_after_a_run_use_only_cached_documents(tmp_path):
-    # spec 6.2: "from the documents already in the cache, so no extra GeM requests". Bid 1 passed triage, so its
+    # From the documents already in the cache, so no extra GeM requests. Bid 1 passed triage, so its
     # attachments are cached; bid 2 has nothing cached and is left for later, not marked tried
     index, cache = setup(tmp_path, n=2)
     cached(cache, 1, [("bid.pdf", "bid_document", [HEADER, "Scope of Work:scope.pdf"]),

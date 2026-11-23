@@ -1,1 +1,1 @@
-"""Local index of all open bids (spec 6.2)."""
+"""Local index of all open bids."""

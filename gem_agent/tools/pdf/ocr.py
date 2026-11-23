@@ -1,4 +1,4 @@
-"""Tesseract OCR (English) for pages with almost no text (spec 3.4). Hindi has no language pack installed."""
+"""Tesseract OCR (English) for pages with almost no text. Hindi has no language pack installed."""
 from __future__ import annotations
 
 import pymupdf

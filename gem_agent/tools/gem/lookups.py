@@ -1,4 +1,4 @@
-"""Ministries, orgs, departments, states, cities, BOQ titles, categories (spec 3.1, R2)."""
+"""Ministries, orgs, departments, states, cities, BOQ titles, categories."""
 from __future__ import annotations
 
 import json
@@ -46,7 +46,7 @@ def _data(body: Any, path: str) -> Any:
 
 
 async def list_ministries(session: BidplusSession) -> list[str]:
-    """All 77 entries, duplicate spellings included: empty ones only cost a "No data found" (spec 5.2)."""
+    """All 77 entries, duplicate spellings included: empty ones only cost a "No data found"."""
     return _clean(_data(await _post_json(session, "ministry-list-adv"), "ministry-list-adv")["MinistryList"])
 
 

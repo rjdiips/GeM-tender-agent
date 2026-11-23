@@ -1,4 +1,4 @@
-"""Chat messages in; events out as server-sent events (spec 4.1)."""
+"""Chat messages in; events out as server-sent events."""
 from __future__ import annotations
 
 import json

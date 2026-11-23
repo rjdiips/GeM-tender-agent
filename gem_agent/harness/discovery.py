@@ -1,1 +1,1 @@
-"""Discovery loop with stuck detection (spec 7.2)."""
+"""Discovery loop with stuck detection."""

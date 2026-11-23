@@ -21,7 +21,7 @@ def _plain(meaning: str) -> str:
 
 
 def understood_view(record: RunRecord) -> dict[str, Any] | None:
-    """What the run looks for, stated once (R11): a sentence, the window and the counts behind it."""
+    """What the run looks for, stated once: a sentence, the window and the counts behind it."""
     req = record.request
     if req is None or not req.topics:
         return None
@@ -37,7 +37,7 @@ def understood_view(record: RunRecord) -> dict[str, Any] | None:
 
 
 def error_text(error: str) -> str:
-    """Why a bid was not read, in words: the stored error can be GeM's whole HTML error page (16 Nov)."""
+    """Why a bid was not read, in words: the stored error can be GeM's whole HTML error page."""
     m = re.search(r":\s*(\d{3})\b", error)
     if m:
         code = int(m.group(1))
@@ -103,12 +103,12 @@ def with_names(outcomes: dict[int, Outcome], cache: DocCache | None) -> dict[int
 
 
 _MEANING_LINE = ("Looking for ", "Searching two meanings")
-_COUNT_LINE = re.compile(r"^Read \d+ of \d+ bids: ")  # runs from 17 Nov 15:00–16:00 sent counts without a kind
+_COUNT_LINE = re.compile(r"^Read \d+ of \d+ bids: ")
 
 
 def _progress(events: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Progress lines as the chat shows them.
-    - No meaning line: runs before 17 Nov sent one right after `understood`; the card states it now.
+    - No meaning line: older runs sent one right after `understood`; the card states it now.
     - Every running count carries kind "count"; the chat shows only the newest, updated in place."""
     lines = []
     for i, e in enumerate(events):

@@ -1,4 +1,4 @@
-"""Post-run memory step (spec 5.5): one short model call reads what the user did in a run and proposes changes
+"""Post-run memory step: one short model call reads what the user did in a run and proposes changes
 to their memory. The store applies them: learned facts need 2 separate runs, contradictions weaken."""
 from __future__ import annotations
 

@@ -38,7 +38,6 @@ def test_remote_urls_select_the_remote_clients():
 
 
 def test_without_an_embed_url_the_judge_uses_minilm(monkeypatch):
-    """Spec 3.5.1: MiniLM is the measured default; the GPU is left to vLLM."""
     from gem_agent.app import factory
 
     class FakeMiniLM:

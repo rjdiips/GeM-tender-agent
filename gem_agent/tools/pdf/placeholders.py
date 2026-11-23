@@ -1,4 +1,4 @@
-"""Placeholder attachment detection by content (spec 3.3).
+"""Placeholder attachment detection by content.
 
 GeM buyers often upload one-line stand-ins ("As per Buyer ATC", "Please refer the RFP uploaded in …"). In the
 199-file survey every placeholder was one page with at most 70 characters of text; the smallest real document

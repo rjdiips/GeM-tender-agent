@@ -1,4 +1,4 @@
-"""One HTTP client per GeM host: cookie jar, keep-alive, CSRF upkeep, error handling (spec 6.1)."""
+"""One HTTP client per GeM host: cookie jar, keep-alive, CSRF upkeep, error handling."""
 from __future__ import annotations
 
 import asyncio
@@ -41,7 +41,7 @@ class TokenNotFound(GemHttpError):
 
 
 def is_no_data(resp: httpx.Response) -> bool:
-    """GeM reports an empty result as HTTP 404 with "No data found" (spec 3.2)."""
+    """GeM reports an empty result as HTTP 404 with "No data found"."""
     return resp.status_code == 404 and "No data found" in resp.text
 
 
@@ -134,7 +134,7 @@ class HostClient:
 
 
 class ClientPool:
-    """One HostClient per allowed host, shared by every run (spec 10)."""
+    """One HostClient per allowed host, shared by every run."""
 
     def __init__(
         self,

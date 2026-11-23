@@ -44,7 +44,7 @@ async def test_a_search_streams_understanding_progress_and_each_result(tmp_path)
     events = await ask(RunManager(s), "LOS tenders published in the last 2 weeks")
     types = [e["type"] for e in events]
     assert types[0] == "started" and types[1] == "understood" and types[-1] == "done"
-    assert types.count("started") == 1 and types.count("understood") == 1  # 16 Nov live run printed them twice
+    assert types.count("started") == 1 and types.count("understood") == 1
     assert types.count("result") == 2
     progress = [e["event"]["text"] for e in events if e["type"] == "progress"]
     understood = next(e["understood"] for e in events if e["type"] == "understood")
@@ -363,7 +363,7 @@ async def test_a_ruling_made_mid_run_reaches_bids_judged_after_it(tmp_path):
     assert b2["state"] == "relevant" and b2["ruling"]["by"] == "earlier"
 
 
-# --- two stages: judge page 1, then search deeper (spec 6.2) ---------------------------------------------------------
+# --- two stages: judge page 1, then search deeper ---------------------------------------------------------
 
 
 async def test_a_run_judges_page_one_bids_then_searches_deeper_and_judges_the_new_ones(tmp_path):

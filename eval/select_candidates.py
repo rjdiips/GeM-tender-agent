@@ -1,4 +1,4 @@
-"""Pick ~80 open bids for the labelled evaluation set (spec 13). Read-only on the index; writes eval/candidates.json."""
+"""Pick ~80 open bids for the labelled evaluation set. Read-only on the index; writes eval/candidates.json."""
 import json
 import random
 import re

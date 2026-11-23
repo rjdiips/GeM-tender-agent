@@ -13,12 +13,12 @@ RerankStyle = Literal["tei", "cohere"]
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
-    # Model: only the already-loaded model is ever named (spec 3.5)
+    # Model: only the already-loaded model is ever named
     llm_base_url: str = "http://10.0.10.11:1234/v1"
     llm_model: str = "qwen/qwen3.6-35b-a3b"
     llm_api_key: str = "not-needed"
 
-    # GeM access (spec 3.2, 6.1, R9)
+    # GeM access
     gem_base_url: str = "https://bidplus.gem.gov.in"
     allowed_host_suffix: str = "gem.gov.in"
     rate_limit_floor_s: float = 1.0
@@ -31,7 +31,7 @@ class Settings(BaseSettings):
     user_agent: str = "Mozilla/5.0"
     daily_request_budget: int = 20000
 
-    # Local models (spec 3.5.1): the Judge ranks pages with all-MiniLM-L6-v2 unless a remote
+    # Local models: the Judge ranks pages with all-MiniLM-L6-v2 unless a remote
     # embedder URL is set. bge-m3 is kept for the eval harness only; the GPU belongs to vLLM.
     embed_model: str = "sentence-transformers/all-MiniLM-L6-v2"  # the id a remote embedder serves
     judge_cpu_embed_model: str = "sentence-transformers/all-MiniLM-L6-v2"  # the local default

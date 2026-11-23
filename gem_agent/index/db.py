@@ -1,4 +1,4 @@
-"""bids.sqlite, the bid cache: the listing data of every bid a live search has returned, plus its card (spec 6.2)."""
+"""bids.sqlite, the bid cache: the listing data of every bid a live search has returned, plus its card."""
 from __future__ import annotations
 
 import json
@@ -63,7 +63,7 @@ def _iso(value: datetime | None) -> str | None:
 
 
 def embed_text(bid: Bid, card: str | None = None) -> str:
-    """What gets embedded and word-searched: title, the bid's card if it has one, then buyer (spec 6.2)."""
+    """What gets embedded and word-searched: title, the bid's card if it has one, then buyer."""
     return " | ".join(p for p in (bid.title, card, bid.ministry, bid.department) if p)
 
 

@@ -1,4 +1,4 @@
-"""Backfill of the queries date for results judged before 17 Nov."""
+"""Backfill of the queries date for older results."""
 from datetime import datetime
 
 import pytest

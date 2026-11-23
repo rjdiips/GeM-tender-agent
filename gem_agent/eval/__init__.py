@@ -1,1 +1,1 @@
-"""Evaluation against the labelled set (spec 13)."""
+"""Evaluation against the labelled set."""

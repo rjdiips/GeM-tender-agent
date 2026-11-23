@@ -1,4 +1,4 @@
-// The contract between the web chat and the FastAPI backend (spec 4.1, 5.2). Mirrors the backend's Pydantic models
+// The contract between the web chat and the FastAPI backend . Mirrors the backend's Pydantic models
 // (agents/schemas.py: Verdict, Evidence, KeyFacts, MemoryFact; cache/docs.py: FileRecord). Dates are ISO strings
 // in IST clock time, as the backend stores them.
 
@@ -72,7 +72,7 @@ export interface BidResult {
   reason: string
   evidence: Evidence[]
   key_facts: KeyFacts | null
-  queries?: QueriesDeadline | null // none when the documents don't state one, or the verdict predates 17 Nov
+  queries?: QueriesDeadline | null // none when the documents don't state one, or the verdict predates it
   files: FileInfo[]
   stage?: 'triage' | 'judge' | 'deep' | null  // triage: ruled out from the title and first pages, no quotes
   /** What the quotes prove (shown instead of the model's own confidence): a verified quote from the documents beyond

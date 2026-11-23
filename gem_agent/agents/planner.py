@@ -1,4 +1,4 @@
-"""Planner (spec 5.2): a SearchPlan from real site values only (R2).
+"""Planner: a SearchPlan from real site values only.
 
 The candidates (categories found for the topic, the ministries in the index, departments matching the user's
 buyer hints) are looked up first and become enums in the answer's JSON schema. vLLM enforces that schema, so the
@@ -55,7 +55,7 @@ class Planner:
         self.model, self.lookups = model, lookups
 
     async def plan(self, request: TenderRequest, topic: TopicDefinition, note: str = "") -> SearchPlan:
-        """`note` carries the graph's request to widen or narrow after a search (spec 5.1)."""
+        """`note` carries the graph's request to widen or narrow after a search."""
         terms = list(dict.fromkeys([*topic.match_terms, *topic.acronyms]))
         categories = self.lookups.find_categories(topic.meaning, terms)
         hints = request.buyer_hints

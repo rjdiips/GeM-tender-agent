@@ -1,4 +1,4 @@
-"""Fill in the last date for queries on results judged before 17 Nov, when verdicts started carrying it.
+"""Fill in the last date for queries on results whose verdicts predate it.
 
 GeM's own pre-bid date is read from the bid document with no model. Otherwise one small model call reads the queries
 passages, only for results a user sees as relevant (relevant, or restored from quarantine) and judged past triage.

@@ -33,7 +33,6 @@ def test_describe_for_progress_line():
 
 
 def test_kind_is_inferred_when_the_model_leaves_it_open():
-    # 16 Nov live run: the model set last_days=14 but left kind at its default
     assert DateWindow(kind="open", last_days=14).resolve(NOW).published_from == datetime(2026, 11, 2)
     w = DateWindow(kind="open", from_date="2026-11-16", to_date="2026-11-26").resolve(NOW)
     assert w.closing_to == datetime(2026, 11, 26, 23, 59, 59)
@@ -46,7 +45,6 @@ def test_model_facing_window_schema_requires_every_field():
 
 
 def test_relative_numbers_win_over_conflicting_dates():
-    # 16 Nov live run: kind=closing, next_days=10, but to_date set to today
     w = DateWindow(kind="closing", next_days=10, from_date="2026-11-16", to_date="2026-11-16").resolve(NOW)
     assert w.closing_to == datetime(2026, 11, 26, 23, 59, 59)
     w = DateWindow(kind="published", last_days=14, from_date="2026-11-15").resolve(NOW)

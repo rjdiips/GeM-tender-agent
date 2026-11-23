@@ -1,4 +1,4 @@
-"""Judge with the real model on a real bid (GEM/2026/B/8162911, a bank's management-consultancy RFP).
+"""Judge with the real model on a real bid.
 Run with: pytest -m live    (~10 GeM requests, 4-8 model calls)"""
 import pytest
 

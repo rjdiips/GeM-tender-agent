@@ -23,7 +23,6 @@ def test_correction_replaces_saved_meaning(tmp_path):
 
 
 def test_a_request_with_two_meanings_keeps_both(tmp_path):
-    # 16 Nov: each topic was saved under the same request key, so "LOS and AML tenders" kept only AML
     s = TopicStore(tmp_path)
     s.save("asha", "LOS and AML tenders", [LOS, AML])
     assert s.get("asha", "LOS and AML tenders") == [LOS, AML]

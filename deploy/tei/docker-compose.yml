@@ -7,7 +7,7 @@
 # profile and is started explicitly after stopping the CPU one, because both bind 8080.
 # Neither TEI nor Compose can choose between them at run time: TEI is built per backend
 # (cpu-1.9 vs 1.9) and Compose cannot pick an image from live VRAM. Both serve
-# all-MiniLM-L6-v2, the measured default (spec 3.5.1).
+# all-MiniLM-L6-v2, the default.
 name: gem-tei
 
 x-tei: &tei
@@ -56,7 +56,7 @@ services:
               capabilities: [gpu]
     mem_limit: 8g
 
-  # Opt-in for A/B only; the app leaves RERANK_BASE_URL empty (spec 3.5.1).
+  # Opt-in only; the app leaves RERANK_BASE_URL empty.
   #   docker compose --profile ab up -d rerank
   rerank:
     <<: *tei

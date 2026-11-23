@@ -1,7 +1,7 @@
-"""Adaptive per-host limiter: 1 s floor, 4 s after real errors (R9, spec 3.2).
+"""Adaptive per-host limiter: 1 s floor, 4 s after real errors.
 
 With `shared_path`, the limiter's state lives in `<shared_path>.json`, guarded by `<shared_path>.lock`, so every
-process on the machine (index timers, chat app, live tests) shares one spacing per host. A process holds the
+process on the machine shares one spacing per host. A process holds the
 lock from its wait until its response is back, so requests to one host are never parallel, even across processes.
 """
 from __future__ import annotations

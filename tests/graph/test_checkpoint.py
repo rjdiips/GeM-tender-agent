@@ -1,4 +1,4 @@
-"""Checkpoints reload our own types by name and nothing else (17 Nov): LangGraph accepts unlisted classes with a
+"""Checkpoints reload our own types by name and nothing else: LangGraph accepts unlisted classes with a
 warning that says they will be blocked in a future version, which would leave interrupted runs unable to resume."""
 import logging
 from datetime import datetime

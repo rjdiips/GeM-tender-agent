@@ -1,4 +1,4 @@
-"""advance-search (search-bids) and all-bids-data listing (spec 3.1)."""
+"""advance-search (search-bids) and all-bids-data listing."""
 from __future__ import annotations
 
 import json
@@ -154,7 +154,7 @@ def _check_page(page: SearchPage) -> None:
 
 
 async def search_bids_all(session: BidplusSession, query: AdvancedQuery, max_pages: int | None = None) -> SearchResult:
-    """Every page of an advanced search (R3). Bids repeated across pages, as the listing shifts, are kept once."""
+    """Every page of an advanced search. Bids repeated across pages, as the listing shifts, are kept once."""
     first = await search_bids(session, query, 1)
     if first.empty_confirmed:
         return SearchResult(num_found=0, bids=[], pages_fetched=1, complete=True, empty_confirmed=True)

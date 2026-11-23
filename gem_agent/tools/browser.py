@@ -1,1 +1,1 @@
-"""Playwright Chromium fallback session (spec 6.1)."""
+"""Playwright Chromium fallback session."""

@@ -1,4 +1,4 @@
-"""Page-sized chunking of bid documents (spec 5.4)."""
+"""Page-sized chunking of bid documents."""
 from __future__ import annotations
 
 from pydantic import BaseModel

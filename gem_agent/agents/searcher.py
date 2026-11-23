@@ -1,4 +1,4 @@
-"""Searcher (spec 5.2, 6.2): a ranked shortlist for one topic, from live GeM searches.
+"""Searcher: a ranked shortlist for one topic, from live GeM searches.
 
 1. Searches: the base searches, then the plan's categories, buyers and terms (search_specs). Stage "first" reads page 1
    of each, stage "rest" the remaining pages (tools/gem/live.py).
@@ -61,10 +61,9 @@ Answer only with the bracketed numbers of the titles to keep: no explanations.""
 
 class SearchSettings(BaseModel):
     screen_batch: int = 40
-    # 40 numbers as pretty-printed JSON can pass 300 tokens: on 16 Nov 22:18 the screen was cut off and all 61 titles
-    # went to triage unscreened. A higher cap costs nothing unless the model needs it.
+    # 40 numbers as pretty-printed JSON can pass 300 tokens. A higher cap costs nothing unless the model needs it.
     screen_max_tokens: int = 600
-    cap: int = 150  # per topic, across both stages; more than this goes back to the Planner to narrow (spec 5.1)
+    cap: int = 150  # per topic, across both stages; more than this goes back to the Planner to narrow
 
 
 class Candidate(BaseModel):
@@ -82,7 +81,7 @@ class SearchResult(BaseModel):
 
 
 class ScreenOutput(BaseModel):
-    # Numbers only. A free-text "reason" here ran past max_tokens on 16 Nov and failed two runs with cut-off JSON.
+    # Numbers only: a free-text "reason" can run past max_tokens and fail the call with cut-off JSON.
     keep: list[int] = Field(description="bracketed numbers of the titles to keep")
 
 
@@ -142,7 +141,7 @@ class Searcher:
     @staticmethod
     def _in_scope(bid: Bid, plan: SearchPlan) -> bool:
         """The plan's window and hard buyer filters, applied here: no date filter goes to the site (GeM rejects a
-        half-open end-date range with 422, 16 Nov)."""
+        half-open end-date range with 422)."""
         lo, hi = plan.published_from, plan.published_to
         clo, chi = plan.closing_from, plan.closing_to
         if lo or hi:

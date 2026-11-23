@@ -1,4 +1,4 @@
-"""Live GeM searches in two stages: page 1 of every search, then the rest (spec 6.2)."""
+"""Live GeM searches in two stages: page 1 of every search, then the rest."""
 from __future__ import annotations
 
 import logging

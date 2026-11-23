@@ -1,4 +1,4 @@
-"""Safe archive listing and extraction (spec 12): listed before reading, paths outside the folder rejected,
+"""Safe archive listing and extraction: listed before reading, paths outside the folder rejected,
 sizes capped. Members are read into memory, never written where the archive says."""
 from __future__ import annotations
 

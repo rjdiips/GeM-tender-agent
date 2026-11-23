@@ -1,5 +1,5 @@
 """Verdicts keyed by (b_id, topic-definition hash, document hash): the same question about the same bid is never
-judged twice (spec 6.3)."""
+judged twice."""
 from __future__ import annotations
 
 from pathlib import Path

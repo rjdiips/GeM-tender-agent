@@ -1,1 +1,1 @@
-"""Reporter agent: summary and zip (R7)."""
+"""Reporter agent: summary and zip."""

@@ -1,7 +1,7 @@
 """The checkpoint store for runs, with our own types allowed by name.
 
 LangGraph reloads a paused or crashed run's state from msgpack. By default it accepts any class with a warning
-("Deserializing unregistered type … This will be blocked in a future version", seen in serve.log on 16 Nov), so an
+, so an
 upgrade would leave every interrupted run unable to resume. Listing our types explicitly keeps resume working and
 blocks anything else, which is also the safer setting: a class named in a checkpoint is imported and called.
 

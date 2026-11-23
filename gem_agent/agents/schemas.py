@@ -1,4 +1,4 @@
-"""Typed agent inputs/outputs: TopicDefinition, triage and judge answers, Verdict (spec 5.2, 5.3)."""
+"""Typed agent inputs/outputs: TopicDefinition, triage and judge answers, Verdict."""
 from __future__ import annotations
 
 import hashlib
@@ -10,7 +10,7 @@ from pydantic import BaseModel, Field
 
 
 class TopicDefinition(BaseModel):
-    """What the user means, written by the Chat agent before any search (spec 5.3)."""
+    """What the user means, written by the Chat agent before any search."""
 
     user_text: str
     meaning: str
@@ -71,8 +71,8 @@ class KeyFacts(BaseModel):
 
 class QueriesOut(BaseModel):
     """The last date for bidders' queries, as numbers: asked for as an ISO string, the model copied the document's
-    "20th November 2026, 05.00 PM" (8272331, 17 Nov). `kind` makes it say what date it quoted: asked only to avoid
-    the closing date, it still gave bid end and submission dates (8229156, 8246802)."""
+    "20th November 2026, 05.00 PM". `kind` makes it say what date it quoted: asked only to avoid
+    the closing date, it still gave bid end and submission dates."""
 
     kind: Literal["queries_deadline", "pre_bid_meeting", "bid_submission", "bid_opening", "other", "none"] = Field(
         description="what the quoted date is: the last date for queries or clarifications, the pre-bid meeting, the "
@@ -122,8 +122,8 @@ class QueriesDeadline(BaseModel):
 
     when: datetime
     source: Literal["gem_pre_bid", "documents"]
-    # GeM's pre-bid date is when the pre-bid meeting is held; an RFP may set an earlier last date for queries
-    # (8230284: queries by 5 Nov 17:00, GeM pre-bid 6 Nov 11:00), so the UI names which one it shows
+    # GeM's pre-bid date is when the pre-bid meeting is held; an RFP may set an earlier last date for queries,
+    # so the UI names which one it shows
     kind: Literal["queries_deadline", "pre_bid_meeting"] = "queries_deadline"
     quote: str
     file: str  # filename
@@ -145,13 +145,13 @@ class Verdict(BaseModel):
     reason: str
     evidence: list[Evidence] = []
     key_facts: KeyFacts | None = None
-    queries: QueriesDeadline | None = None  # verdicts stored before 17 Nov have none
+    queries: QueriesDeadline | None = None  # older verdicts have none
     needs_review: bool = False
     model: str
     decided_at: datetime
 
 
-# --- understanding a request (Chat, spec 5.2-5.3) ----------------------------------------------------------------
+# --- understanding a request ----------------------------------------------------------------
 
 
 class ResolvedWindow(BaseModel):
@@ -174,7 +174,7 @@ class ResolvedWindow(BaseModel):
 
 
 class DateWindow(BaseModel):
-    """What the user said about dates. "Within N weeks" means published unless they say closing (R1)."""
+    """What the user said about dates. "Within N weeks" means published unless they say closing."""
 
     kind: Literal["open", "published", "closing"] = "open"
     last_days: int | None = Field(None, description="published within the last N days")
@@ -206,7 +206,7 @@ class DateWindow(BaseModel):
         return ResolvedWindow(closing_from=now)
 
 
-# --- user memory (spec 5.5) --------------------------------------------------------------------------------------
+# --- user memory --------------------------------------------------------------------------------------
 
 
 class MemoryFact(BaseModel):
@@ -233,7 +233,7 @@ class MemoryChange(BaseModel):
 
 
 class ProbeResult(BaseModel):
-    """How a meaning fares against the local index of open-bid titles (spec 5.3)."""
+    """How a meaning fares against the local index of open-bid titles."""
 
     meaning: str
     window_count: int  # open bids in the date window

@@ -1,4 +1,4 @@
-// GeM tender agent web chat (spec 4.1): runs sidebar | chat thread | results panel, "Midnight pro" in dark and light.
+// GeM tender agent web chat: runs sidebar | chat thread | results panel, "Midnight pro" in dark and light.
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { SignInRequired, type BidResult, type MemoryFactView, type RunEvent, type RunListItem, type RunView, type TenderApi, type UserView } from './api/types'
 import { SignIn } from './components/SignIn'

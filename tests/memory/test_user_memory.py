@@ -75,7 +75,6 @@ def test_forget_everything(tmp_path):
 
 
 def test_restated_fact_in_other_words_is_not_duplicated(tmp_path):
-    # 16 Nov live run saved both of these
     s = store(tmp_path)
     s.add_stated("asha", "we're a banking software company", run_id="r1", today=D)
     s.add_stated("asha", "We are a banking software company.", run_id="r2", today=D)

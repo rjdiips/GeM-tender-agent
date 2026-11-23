@@ -1,4 +1,4 @@
-"""Text extraction per page (PyMuPDF), with OCR only for pages that have almost no text (spec 3.4, 5.4)."""
+"""Text extraction per page (PyMuPDF), with OCR only for pages that have almost no text."""
 from __future__ import annotations
 
 import logging
@@ -28,7 +28,7 @@ def text_chars(text: str) -> int:
 
 def extract_pdf(pdf: bytes, ocr: OcrFn | None, min_chars: int = MIN_TEXT_CHARS) -> list[PageText]:
     """One PageText per page. Garbled Hindi from legacy font encodings is kept as is; the documents are
-    bilingual and the English text carries the content (spec 3.4)."""
+    bilingual and the English text carries the content."""
     try:
         doc = pymupdf.open(stream=pdf, filetype="pdf")
     except (pymupdf.FileDataError, RuntimeError, ValueError) as exc:

@@ -1,7 +1,7 @@
-"""The run graph (spec 5.1, 6.2): plan → search → (widen / narrow, at most 2 retries) → process → search_rest →
+"""The run graph: plan → search → (widen / narrow, at most 2 retries) → process → search_rest →
 process → report.
 
-Searching has two stages (spec 6.2): `search` reads page 1 of every search and `process` judges that shortlist, so the
+Searching has two stages: `search` reads page 1 of every search and `process` judges that shortlist, so the
 first verdicts do not wait for a broad search; `search_rest` then reads the remaining pages, and the second `process`
 judges only the bids not seen before. The checkpointed `stage` and `search_progress` let a resumed run carry on at
 the second stage without reading page 1 again.
@@ -236,7 +236,7 @@ def build_graph(s: Services) -> StateGraph:
                         verdict = await s.judge.judge(topic, c.bid, files, triage=triage)
                     outcome.files, outcome.verdict, outcome.buyer_org = files.files, verdict, files.buyer_org
                     outcome.ruling = await settle(s, state.user, topic, verdict)
-                except Exception as exc:  # noqa: BLE001 - one bid failing never stops the run (spec 7.1 rung 4)
+                except Exception as exc:  # noqa: BLE001 - one bid failing never stops the run
                     log.warning("bid %s failed: %s", c.bid.bid_number, exc)
                     outcome.error = str(exc)[:300]
                 s.store.save_outcome(state.run_id, outcome)
@@ -279,7 +279,7 @@ def build_graph(s: Services) -> StateGraph:
         return {}
 
     async def write_cards(run_id: str, bids: list[Any]) -> None:
-        """Cards for the vague-title bids this run collected (spec 6.2). A failure is logged; the run is still done."""
+        """Cards for the vague-title bids this run collected. A failure is logged; the run is still done."""
         if s.cards is None or not bids:
             return
         try:

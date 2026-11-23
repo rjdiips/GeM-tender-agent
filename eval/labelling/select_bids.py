@@ -1,4 +1,4 @@
-"""Pick the bids for the labelled evaluation set (spec 13) and write a text bundle for each.
+"""Pick the bids for the labelled evaluation set and write a text bundle for each.
 
 Writes eval/labelling/candidates.json and eval/labelling/bids/<b_id>.txt (bid document, up to 2 RFPs, scope
 sections). Read-only on the index and cache. Run: python eval/labelling/select.py

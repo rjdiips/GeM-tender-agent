@@ -1,4 +1,4 @@
-"""Chat agent (spec 5.3): works out what the user means, never asks them to confirm it.
+"""Chat agent: works out what the user means, never asks them to confirm it.
 
 1. One call proposes 1-3 candidate meanings (as TopicDefinitions), the date window, buyer hints, and any facts the
    user stated about themselves (saved to memory at once). Its prompt carries today's date, the user's memory and
@@ -52,13 +52,13 @@ is plausible and has real matching tenders. Never ask the user; give the reason 
 
 
 # Model-facing schemas: every field is required. The server enforces the JSON schema, and a field with a default
-# is one the model may leave out (16 Nov: it set last_days=14 but left kind at its default "open").
+# is one the model may leave out.
 
 
 ShortText = Annotated[str, Field(max_length=150)]  # one phrase; lists of these are bounded item by item
 
 # Free text the model writes is bounded: with an enforced schema, a field that runs past max_tokens cuts the JSON
-# off and the whole call fails (16 Nov: a title screen's long "reason" failed two runs).
+# off and the whole call fails.
 class AcronymOut(BaseModel):
     acronym: str = Field(max_length=20)
     expansion: str = Field(max_length=120)
@@ -184,7 +184,7 @@ class ChatAgent:
             topics[i] = topic.model_copy(update={"chosen_because": because, "other_meanings_searched": others,
                                                  "buyers": list(out.buyer_hints)})
         request.topics = topics
-        # Remember what this phrase meant, so the same request next time starts from it (spec 5.3, memory/topics.py)
+        # Remember what this phrase meant, so the same request next time starts from it
         self.topics.save(user, message, topics)
         return Understanding(request=request, probes=kept_probes,
                              progress_line=self._progress_line(message, topics, kept_probes, window))
@@ -192,7 +192,7 @@ class ChatAgent:
     @staticmethod
     def _progress_line(message: str, topics: list[TopicDefinition], probes: list[ProbeResult],
                        window: ResolvedWindow) -> str:
-        """The first progress line: information, not a question (R11)."""
+        """The first progress line: information, not a question."""
         if len(topics) == 1:
             p = probes[0]
             return (f"Looking for {_noun(short_name(topics[0]))} {window.describe()} "

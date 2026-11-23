@@ -1,1 +1,1 @@
-"""langgraph orchestration, one graph per run (spec 5.1)."""
+"""langgraph orchestration, one graph per run."""

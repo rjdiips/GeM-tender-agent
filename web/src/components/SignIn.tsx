@@ -3,7 +3,7 @@ import type { Theme } from '../theme/useTheme'
 import './Sidebar.css'
 import './Thread.css'
 
-/** Simple username sign-in on the LAN (spec 4.1); the company's auth can replace it. */
+/** Simple username sign-in on the LAN; the company's auth can replace it. */
 export function SignIn({ theme, onSignIn }: { theme: Theme; onSignIn: (name: string) => Promise<void> }) {
   const [name, setName] = useState('')
   const [error, setError] = useState('')

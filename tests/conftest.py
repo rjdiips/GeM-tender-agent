@@ -1,4 +1,4 @@
-"""Shared test helpers: a fake clock and a fake GeM site that serves responses captured live on 16 Nov 2026."""
+"""Shared test helpers: a fake clock and a fake GeM site that serves responses captured live."""
 from __future__ import annotations
 
 import gzip

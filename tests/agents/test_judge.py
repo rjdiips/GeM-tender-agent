@@ -78,7 +78,7 @@ async def test_quote_not_in_the_documents_is_sent_back_once(cache, files):
 
 
 async def test_a_real_quote_cited_on_the_wrong_page_is_found_and_its_page_corrected(cache, files):
-    # 8253403 (16 Nov): a docx is one page, sent as windows marked p.1; the model cited p.3 and p.2
+    # 8253403: a docx is one page, sent as windows marked p.1; the model cited p.3 and p.2
     off_page = {**GOOD_QUOTE, "page": 4}
     llm = ScriptedLLM({TRIAGE_INSTRUCTIONS: [TRIAGE_MAYBE], JUDGE_INSTRUCTIONS: [yes(quotes=[off_page])]})
     verdict = await make_judge(llm, cache).judge(LOS, BID, files)
@@ -88,7 +88,7 @@ async def test_a_real_quote_cited_on_the_wrong_page_is_found_and_its_page_correc
 
 
 async def test_a_quote_citing_the_whole_passage_header_is_checked_against_that_file(cache, files):
-    # 8255061 (16 Nov): the model wrote "[F3 p.1 | 1794202410.pdf]" as the file; three real quotes failed
+    # 8255061: the model wrote "[F3 p.1 | 1794202410.pdf]" as the file; three real quotes failed
     header = {**GOOD_QUOTE, "file": "[F2 p.2 | rfp.pdf]"}
     by_name = {**GOOD_QUOTE, "file": "rfp.pdf"}
     llm = ScriptedLLM({TRIAGE_INSTRUCTIONS: [TRIAGE_MAYBE], JUDGE_INSTRUCTIONS: [yes(quotes=[header, by_name])]})
@@ -204,7 +204,6 @@ def test_every_model_facing_schema_requires_all_its_fields():
 
 
 def test_free_text_in_model_answers_is_bounded():
-    # 16 Nov live run: the title screen's free-text reason ran past max_tokens and the JSON was cut off
     from gem_agent.agents.chat import ChooseOutput, TopicOut
     from gem_agent.agents.memory_step import MemoryProposal
     from gem_agent.agents.rulings import FactOut, resolve_output_model
@@ -262,7 +261,6 @@ BID_QUOTE = {"quote": "Ministry of Finance item Custom Bid for Services", "file"
 
 
 async def test_a_title_quote_alone_is_sent_back_for_an_attachment_quote(cache, files):
-    # 16 Nov: a relevant verdict was accepted on a quote of the tender's own title from the bid PDF
     verdicts = [yes(quotes=[BID_QUOTE]), yes()]
     llm = ScriptedLLM({TRIAGE_INSTRUCTIONS: [TRIAGE_MAYBE], JUDGE_INSTRUCTIONS: verdicts})
     verdict = await make_judge(llm, cache).judge(LOS, BID, files)
@@ -303,7 +301,7 @@ def no(quotes):
 
 
 async def test_a_rejection_quoting_only_the_title_is_sent_back_once_for_a_document_quote(cache, files):
-    # 8182010 (16 Nov): ruled out "95% sure" on its title and a "Buyer:" line from our own header, while its scope
+    # 8182010: ruled out "95% sure" on its title and a "Buyer:" line from our own header, while its scope
     # said plainly that it is a topographical survey
     header = {"quote": "Buyer: Ministry of Finance / Department of Financial Services", "file": "F1", "page": 1}
     scope = {"quote": "Introduction to the bank and its branches", "file": "F2", "page": 1}
@@ -357,7 +355,7 @@ def test_proof_says_what_the_quotes_show_not_how_sure_the_model_felt():
 
 
 async def test_a_real_quote_cited_from_the_wrong_file_is_found_and_its_file_corrected(cache, files):
-    # 8266583 (17 Nov): the bid document's "Similar Category" line was cited as the Scope of Work and shown "not found"
+    # 8266583: the bid document's "Similar Category" line was cited as the Scope of Work and shown "not found"
     wrong_file = {"quote": "Ministry of Finance item Custom Bid for Services", "file": "F2", "page": 1}
     llm = ScriptedLLM({TRIAGE_INSTRUCTIONS: [TRIAGE_MAYBE], JUDGE_INSTRUCTIONS: [yes(quotes=[GOOD_QUOTE, wrong_file])]})
     verdict = await make_judge(llm, cache).judge(LOS, BID, files)
@@ -377,7 +375,7 @@ def test_the_judge_is_told_future_work_and_gems_similar_categories_are_not_in_sc
     assert '"Similar Category"' in TRIAGE_INSTRUCTIONS
 
 
-# --- the last date for queries (17 Nov: 8272331's RFP cover page said it; GeM's listing has no such field) -------
+# --- the last date for queries -------
 
 COVER = ("Date of Publishing Tender : 13th November 2026 Last Date of Tender submission : 7th December 2026, 04.00 PM "
          "Last date for submission of Queries : 20th November 2026, 05.00 PM Technical bid Opening : 8th December 2026")
@@ -442,7 +440,7 @@ def test_an_incomplete_or_impossible_queries_date_is_dropped():
 
 
 async def test_the_rfp_cover_page_reaches_the_judge_when_a_queries_clause_outranks_it(cache):
-    # 8272331 (17 Nov): page 27's "17. QUERIES" clause says "queries" four times and outranked the cover page, which
+    # 8272331: page 27's "17. QUERIES" clause says "queries" four times and outranked the cover page, which
     # states the date once; the same 66-page RFP was uploaded twice, so its copy took the second slot
     clause = "17. QUERIES 17.1 The queries, if any, can be sent by email. Queries format in Annexure. No queries by phone."
     rfp = [COVER, *[f"Section {i} general terms of the RFP" for i in range(2, 27)], clause, SCOPE]
@@ -456,7 +454,6 @@ async def test_the_rfp_cover_page_reaches_the_judge_when_a_queries_clause_outran
 
 
 def test_a_queries_date_on_or_after_closing_is_not_a_queries_date():
-    # 8253937 (17 Nov): the Judge gave the closing date, 30 Nov 17:00, as the queries date
     from gem_agent.agents.judge import plausible_queries
     from gem_agent.agents.schemas import QueriesDeadline
 
@@ -465,7 +462,6 @@ def test_a_queries_date_on_or_after_closing_is_not_a_queries_date():
     assert plausible_queries(q(datetime(2026, 11, 20, 17, 0)), closing)
     assert plausible_queries(q(closing), closing) is None and plausible_queries(None, closing) is None
     assert plausible_queries(q(closing), None)  # no closing date known: kept
-    # 8274258 (17 Nov): "28 Nov 2025" on a bid published in Nov 2026
     published = datetime(2026, 11, 14, 10, 0)
     assert plausible_queries(q(datetime(2025, 11, 28, 17, 0)), closing, published) is None
     assert plausible_queries(q(datetime(2026, 11, 20, 17, 0)), closing, published)
@@ -473,7 +469,7 @@ def test_a_queries_date_on_or_after_closing_is_not_a_queries_date():
 
 
 @pytest.mark.parametrize("answer", [
-    # 8229156, 8246802 (17 Nov): the bid's own end date and the tender submission date, given as the queries date
+    # 8229156, 8246802: the bid's own end date and the tender submission date, given as the queries date
     {"kind": "bid_submission", "quote": "Bid End Date/Time 16-11-2026 11:00:00", "day": 16, "hour": 11},
     # 8263340, 8259765: a sentence about queries with no date in it, and a date from elsewhere
     {"kind": "queries_deadline", "quote": "all the queries are communicated on or before the date given", "day": 13},
@@ -496,7 +492,7 @@ def test_a_pre_bid_meeting_date_counts_and_a_two_digit_year_is_read():
 
 
 async def test_gems_pre_bid_block_split_across_a_page_break_is_read(cache):
-    # 8179594 (17 Nov): the heading ends page 5 of the bid document, the date starts page 6
+    # 8179594: the heading ends page 5 of the bid document, the date starts page 6
     files = rfp_files(cache, ["Bid Number GEM/2026/B/3", "terms ... Pre Bid Detail(s)\nPre-Bid Date and Time",
                               "Pre-Bid Venue\n02-11-2026 15:00:00\nVendor may forward their queries"])
     llm = ScriptedLLM({TRIAGE_INSTRUCTIONS: [{"decision": "clearly_no", "reason": "lockers"}]})

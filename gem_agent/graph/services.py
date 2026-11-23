@@ -1,4 +1,4 @@
-"""Everything a run needs, passed to the graph's nodes (real agents in the app, fakes in tests)."""
+"""Everything a run needs, passed to the graph's nodes."""
 from __future__ import annotations
 
 from collections.abc import Awaitable, Callable
@@ -26,6 +26,6 @@ class Services:
     now: Callable[[], datetime]
     checkpoint_path: Path
     rulings: Any = None  # RulingsAgent; None leaves borderline bids for the user
-    # Writes cards for the vague-title bids a run collected, after the run (spec 6.2); None writes none
+    # Writes cards for the vague-title bids a run collected, after the run; None writes none
     cards: Callable[[list[Bid]], Awaitable[Any]] | None = None
     workers: int = 4  # bids collected and judged at a time (site traffic is limited per host anyway)

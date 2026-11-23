@@ -1,4 +1,4 @@
-"""The shared model client (16 Nov): Qwen's chat template accepts one system message, and only first."""
+"""The shared model client: Qwen's chat template accepts one system message, and only first."""
 from gem_agent.agents.models import chat_model
 from gem_agent.config import Settings
 

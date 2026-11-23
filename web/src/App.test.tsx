@@ -87,7 +87,6 @@ describe('web chat', () => {
   })
 
   it('opens the files of a bid ruled out without quotes', async () => {
-    // triage decides from the title and first pages: no quotes, but the files were fetched (16 Nov)
     const { user } = setup()
     await user.click(await screen.findByRole('tab', { name: /Quarantine/ }))
     await user.click(screen.getByRole('button', { name: /decided from the title and first pages · 2 files/ }))

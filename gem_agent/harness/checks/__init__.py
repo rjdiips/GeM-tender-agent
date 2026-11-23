@@ -1,1 +1,1 @@
-"""Per-capability checks written by us (spec 7.4)."""
+"""Per-capability checks written by us."""

@@ -42,7 +42,7 @@ log = logging.getLogger(__name__)
 def judge_embedder(settings: Settings):
     """The embedder the Judge ranks pages with: remote when a URL is set, else all-MiniLM-L6-v2.
 
-    MiniLM is the measured default (A/B of 20 Nov, spec 3.5.1): the same top-8 hit rate as
+    MiniLM is the measured default: the same top-8 hit rate as
     bge-small and bge-m3, a better top-24 and MRR, and about twice the speed. The GPU is
     left to vLLM — picking bge-m3 whenever the card had room was never measured and would
     contend with the served model.
@@ -96,8 +96,8 @@ def build_services(settings: Settings) -> tuple[Services, DocCache, list[Callabl
         searcher=Searcher(model, bid_cache, live),
         collector=collector,
         # Pages are ranked by meaning too: all-MiniLM-L6-v2 on the CPU by default, or a
-        # remote embedder when EMBED_BASE_URL is set (spec 3.5.1). It more than doubles the
-        # chance the quoted page reaches the Judge's top 8 (20 Nov A/B) and costs seconds,
+        # remote embedder when EMBED_BASE_URL is set. It more than doubles the
+        # chance the quoted page reaches the Judge's top 8 and costs seconds,
         # not the ~45 s a 112-page RFP takes with bge-m3 on the CPU.
         judge=Judge(model, cache, VerdictCache(settings.cache_dir), embedder=judge_embedder(settings),
                     reranker=judge_reranker(settings)),

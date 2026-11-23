@@ -1,1 +1,1 @@
-"""Monty sandbox runner and host modules (spec 7.3)."""
+"""Monty sandbox runner and host modules."""

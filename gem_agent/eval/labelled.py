@@ -1,4 +1,4 @@
-"""The labelled set (spec 13): bids labelled relevant or not for a fixed topic definition, from their documents, with
+"""The labelled set: bids labelled relevant or not for a fixed topic definition, from their documents, with
 the quote that decides it. The Judge is scored against it: precision and recall, and how many relevant bids triage
 dropped (target 0).
 
@@ -16,7 +16,6 @@ from pydantic import BaseModel
 from gem_agent.agents.schemas import TopicDefinition, Verdict
 
 # live_only / index_only / both: picked by which of a live GeM search and the local index found the bid
-# (live-search tests, 18 Nov; spec 6.2)
 Bucket = Literal["positive", "related", "trap", "random", "live_only", "index_only", "both"]
 
 

@@ -1,5 +1,4 @@
-"""Names people can read for a bid's files (16 Nov: the results listed 10115089's files as "1793961738.pdf",
-"1793961743.pdf", … and five of its nine were one RFP the buyer had uploaded into every slot).
+"""Names people can read for a bid's files.
 
 Three sources, no model and no extra requests:
 1. The slot label the bid document gives each upload ("Scope of Work:1793964442.pdf").
@@ -40,7 +39,7 @@ def _new_heading(title: str, nxt: str) -> bool:
     """An all-capitals line after a mixed-case title is another heading ("… S4 HANA) BUYER'S ADDITIONAL TERMS")."""
     letters = [ch for ch in nxt if ch.isalpha()]
     return len(letters) >= 8 and nxt.upper() == nxt and title.upper() != title and not _MARKER.match(title)
-# "Annexure-10" alone on a line heads the line after it ("Technical Evaluation Criteria", 8253403)
+# "Annexure-10" alone on a line heads the line after it
 _MARKER = re.compile(r"^(?:annexure|annex|appendix|schedule|exhibit|enclosure)[\s\-–:]*[\w\-/().]{0,8}$", re.IGNORECASE)
 _PAGE_LINE = re.compile(r"^(?:page\s*\d+(?:\s*of\s*\d+)?|\d+\s*\|\s*p\s*a\s*g\s*e|\d+)$", re.IGNORECASE)
 _PORTAL = {"login", "sign up", "buyers", "sellers", "products"}
@@ -94,7 +93,7 @@ def doc_title(pages: list[Any], max_chars: int = 160) -> str | None:
         lines.pop(0)
     nonblank = [i for i, line in enumerate(lines) if line]
     lines = lines[: nonblank[24] + 1] if len(nonblank) > 25 else lines  # the first 25 lines with text, blanks kept:
-    # a heading stops at a blank line ("Note for Purchase of Karatometer …" then the note itself, 8232278)
+    # a heading stops at a blank line
     good = [i for i, line in enumerate(lines) if _ok_line(line)]
     subject = next((i for i, line in enumerate(lines) if (m := _SUBJECT.match(line)) and _ok_line(m.group(1))), None)
     marker = next((i for i, line in enumerate(lines[:-1]) if _MARKER.match(line) and _ok_line(lines[i + 1])), None)
@@ -258,7 +257,7 @@ def display_files(records: list[FileRecord]) -> list[FileGroup]:
             also = [n for n in dict.fromkeys(r.label or r.filename for r in copies) if n != name]
         out.append(FileGroup(name=name, title=copies[0].title, records=copies, also=also))
     # different texts under one heading are versions, not copies: 10115089's RFP came in two, scoring technical
-    # evaluation out of 300 and out of 100 (16 Nov). Numbered in upload order (GeM's upload ids rise).
+    # evaluation out of 300 and out of 100. Numbered in upload order (GeM's upload ids rise).
     by_name: dict[str, list[FileGroup]] = {}
     for group in out:
         by_name.setdefault(group.name, []).append(group)

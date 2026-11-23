@@ -1,4 +1,4 @@
-"""FastAPI app factory and startup (spec 4.1). `create_app` takes its parts (tests pass fakes); `app()` builds the
+"""FastAPI app factory and startup. `create_app` takes its parts; `app()` builds the
 real services and resumes any run a restart interrupted."""
 from __future__ import annotations
 

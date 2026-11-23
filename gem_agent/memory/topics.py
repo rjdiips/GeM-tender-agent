@@ -1,4 +1,4 @@
-"""Saved topic meanings in knowledge/topics/ (spec 5.3): what a user meant by a request, so a later request with
+"""Saved topic meanings in knowledge/topics/: what a user meant by a request, so a later request with
 the same text starts from it. A request can mean several topics ("LOS and AML tenders"); they are saved together.
 A correction always replaces what was saved."""
 from __future__ import annotations
@@ -28,7 +28,7 @@ class TopicStore:
 
     @staticmethod
     def _topics(data: dict) -> list[TopicDefinition]:
-        raw = data["topics"] if "topics" in data else [data["topic"]]  # "topic": saved before 16 Nov
+        raw = data["topics"] if "topics" in data else [data["topic"]]
         return [TopicDefinition.model_validate(t) for t in raw]
 
     def get(self, user: str, text: str) -> list[TopicDefinition]:

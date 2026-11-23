@@ -1,1 +1,1 @@
-"""PDF and OCR tools (spec 3.4)."""
+"""PDF and OCR tools."""

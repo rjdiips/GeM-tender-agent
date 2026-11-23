@@ -1,1 +1,1 @@
-"""GeM-specific tools (spec 3)."""
+"""GeM-specific tools."""

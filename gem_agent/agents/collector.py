@@ -1,7 +1,7 @@
-"""Collector (spec 5.2): for one bid, the bid PDF, every attachment it links to, the corrigendum, and text.
+"""Collector: for one bid, the bid PDF, every attachment it links to, the corrigendum, and text.
 
 No model is needed: this is plain code, run per bid. Files come from the document cache when the bid has not
-changed; a bid is fetched again only when a corrigendum appears or gains an entry (spec 6.3).
+changed; a bid is fetched again only when a corrigendum appears or gains an entry.
 """
 from __future__ import annotations
 

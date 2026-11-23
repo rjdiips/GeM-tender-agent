@@ -1,4 +1,4 @@
-"""Document routes by bid type, attachment links, downloads (spec 3.3)."""
+"""Document routes by bid type, attachment links, downloads."""
 from __future__ import annotations
 
 import io

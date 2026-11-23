@@ -123,7 +123,6 @@ def test_topic_out_becomes_a_definition():
 
 
 async def test_buyers_the_user_asked_for_become_part_of_the_topic(stores):
-    # 16 Nov live run: "from banks" went to buyer hints only, which the Judge never saw
     llm = ScriptedLLM({UNDERSTAND_INSTRUCTIONS: [candidates((LOS, 0.9), buyer_hints=["banks"])]})
     result = await agent(llm, FakeProbe({}), stores).understand("asha", "LOS tenders from banks", [], run_id="r1")
     topic = result.request.topics[0]

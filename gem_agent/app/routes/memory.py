@@ -1,4 +1,4 @@
-"""Memory panel: list, edit and forget user facts (spec 5.5)."""
+"""Memory panel: list, edit and forget user facts."""
 from __future__ import annotations
 
 from typing import Any

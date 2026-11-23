@@ -32,7 +32,7 @@ def make_docx(build):
 
 
 def test_docx_is_split_at_its_page_breaks_with_tables_in_place():
-    # 8253403 (16 Nov): a 354,000-character RFP was one page, and the model's p.2 and p.3 quotes failed the check
+    # 8253403: a 354,000-character RFP was one page, and the model's p.2 and p.3 quotes failed the check
     from docx.enum.text import WD_BREAK
 
     def build(d):

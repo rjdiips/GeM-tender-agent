@@ -1,4 +1,4 @@
-"""Per-file downloads and the zip of a run's relevant bids (R7). Files come from the shared document cache, but
+"""Per-file downloads and the zip of a run's relevant bids. Files come from the shared document cache, but
 only for bids in one of the user's own runs."""
 from __future__ import annotations
 
@@ -26,7 +26,7 @@ def _outcomes(request: Request, user: str, run_id: str) -> dict:
 
 @router.get("/api/runs/{run_id}/files/{b_id}/{sha}")
 def file(run_id: str, b_id: int, sha: str, request: Request, user: str = Depends(current_user)) -> FileResponse:
-    """The file, saved under what it is ("GEM-2026-B-8229813 - Scope of Work.pdf"), not GeM's upload number."""
+    """The file, saved under what it is, not GeM's upload number."""
     outcome = _outcomes(request, user, run_id).get(b_id)
     groups = display_files(outcome.files) if outcome else []
     group = next((g for g in groups if g.record.sha256 == sha and g.record.path), None)

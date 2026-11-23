@@ -1,1 +1,1 @@
-"""Per-run log.jsonl (R10)."""
+"""Per-run log.jsonl."""

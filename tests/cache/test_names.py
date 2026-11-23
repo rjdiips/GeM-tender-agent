@@ -1,4 +1,4 @@
-"""File names people can read (16 Nov): the results showed "1793961738.pdf" nine times over for 10115089, and five
+"""File names people can read: the results showed "1793961738.pdf" nine times over for 10115089, and five
 of its nine files were one RFP uploaded into every slot."""
 from gem_agent.cache.docs import DocCache
 from gem_agent.cache.names import display_files, doc_title, download_name, ensure_named, name_files
@@ -130,7 +130,7 @@ def test_different_texts_under_one_heading_are_numbered_versions(tmp_path):
 
 
 def test_gem_custom_bid_slots_wrapped_over_two_lines_get_their_full_label(tmp_path):
-    # 8013322 (16 Nov): the label was read from its last line only, "functionality" and "download standard … upload"
+    # 8013322: the label was read from its last line only, "functionality" and "download standard … upload"
     cache = DocCache(tmp_path)
     bid_text = ("Excel Upload Required :\nPRICE BREAKUP - b0.xlsx\nAdditional Qualification/Data Required\n"
                 "As per RFP\nScope of Work:b1.pdf\n"
@@ -153,7 +153,7 @@ def test_gem_custom_bid_slots_wrapped_over_two_lines_get_their_full_label(tmp_pa
 
 
 def test_an_annexure_marker_heads_the_line_after_it():
-    # 8253403 (17 Nov): "Annexure-10" alone was too short to be a heading, so the file showed as 17944654137245.pdf
+    # 8253403: "Annexure-10" alone was too short to be a heading, so the file showed as 17944654137245.pdf
     assert doc_title(page("Annexure-10\nTechnical Evaluation Criteria\n(Should be submitted on Company's letter head)")) \
         == "Annexure-10 Technical Evaluation Criteria"
 

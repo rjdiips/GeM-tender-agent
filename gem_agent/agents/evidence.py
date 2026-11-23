@@ -1,4 +1,4 @@
-"""Checks that a quoted passage really is in the cited page (R5). A model that paraphrases or invents a quote
+"""Checks that a quoted passage really is in the cited page. A model that paraphrases or invents a quote
 does not get its evidence accepted."""
 from __future__ import annotations
 
@@ -27,7 +27,7 @@ def verify_quote(quote: str, page_text: str, min_ratio: float = 0.85) -> bool:
     """Is the quote on the page, word for word (spacing, case and punctuation aside)? A quote the model stitched
     together with "..." is checked part by part, in any order: GeM's bid PDF puts each field's label and value on
     separate lines between Hindi ones, and 8251705's "Item Category: Revolving Chair (V5) (Q2) ... Total Quantity: 29"
-    cited two real fields in the opposite order to the page (17 Nov)."""
+    cited two real fields in the opposite order to the page."""
     if too_short(quote):
         return False
     page = _norm(page_text)

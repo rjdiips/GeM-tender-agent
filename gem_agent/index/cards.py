@@ -1,9 +1,7 @@
 """Bid cards: what a vague-title bid buys, in one line plus the systems in scope, written by the model from its
-documents (spec 6.2).
+documents.
 
-On 16 Nov the only open digital-lending (LOS-type) and fraud-risk tenders sat behind titles such as "Hiring of
-Agency for IT Projects- Milestone basis", out of reach of word and meaning search. The card joins the indexed text,
-so every later search finds the bid.
+The card joins the indexed text, so every later search finds the bid.
 
 Where the subject is (checked on the target bids): GeM's first pages only repeat the category; the subject is in the
 buyer-added terms further into the bid document (page 4-5), or only in the attachment the bid document labels
@@ -11,7 +9,7 @@ buyer-added terms further into the bid document (page 4-5), or only in the attac
 document has neither: its subject is in the original bid. And a bid document can name a broad subject ("Comprehensive
 Financial Risk and Compliance Solutions") while only the RFP's scope of work names the modules (AML). So the card
 writer collects the attachments (into the document cache, which the Judge reuses) — or, for the bids a run just
-collected, reads only what that run left in the document cache, with no GeM request (spec 6.2) — and reads, in one
+collected, reads only what that run left in the document cache, with no GeM request — and reads, in one
 model call, the bid document, an RA's original bid, and up to three RFPs (Scope of Work first, then the largest): each by
 its first pages, its scope-of-work sections and every line that reads like a title, wherever they sit in a 200-400
 page RFP. A card that only restates the title is never stored (the first backfill stored 229 of those): the bid is
@@ -85,7 +83,7 @@ _RFP_LINE = re.compile(r"request for proposal|\brfp\b|tender (?:document|for)|se
 # a scope-of-work heading ("3.2 Scope of Work", "ANNEXURE I - Broad Scope of Work", "8. Scope of Work:"), not a
 # sentence that mentions it ("Scope of Work is attached vide Annexure-I") nor a contents entry ("Scope of Work .... 15")
 # The numbering prefix is atomic (?>…): without it a long run of digits (OCR noise, "3333883233833 3222…" in bid
-# 10110777) can be split into section numbers in exponentially many ways, and one line took 13+ min (18 Nov).
+# 10110777) can be split into section numbers in exponentially many ways, and one line took 13+ min.
 _SCOPE_HEADING = re.compile(r"^[(\s]*(?:(?>\d+(?:\.\d+)*\.?|[ivx]+\.|[a-z][.)])\s*|annexure[\s\w-]{0,12}?[-–:(]\s*)*"
                             r"(?:broad\s+|detailed\s+)?scope\s+of\s+(?:work|services|the\s+project)\b"
                             r"(?!\s+(?:is|are|of|as|shall|would|will|also|described|mentioned|defined))[^.]{0,80}$",
@@ -144,8 +142,7 @@ def _rfp_sections(collector: Any, files: Any, bid_text: str, max_files: int = 3)
     labels |= {f.filename: f.label.lower() for f in files.files if f.label}  # parsed by the collector (cache/names.py)
     attachments = [f for f in files.files if f.role in ("attachment", "archive_member") and f.status == "ok"]
     attachments.sort(key=lambda f: (labels.get(f.filename) != "scope of work", -f.pages))
-    # identical content uploaded under several names counts once, but every name is shown: on 16 Nov one of eight
-    # copies was named "AMLEFRMRFP_..." and the others only by number
+    # identical content uploaded under several names counts once, but every name is shown
     groups: dict[int, list[Any]] = {}
     for record in attachments:
         pages = collector.cache.load_text(record)
@@ -163,7 +160,7 @@ async def write_cards(index: BidIndex, collector: Any, model: Model, *, bids: li
     """Cards for up to `limit` vague-title bids that have none: the given `bids` if any, else every such bid in the
     index. A bid that fails is left for the next run.
 
-    Given `bids` (a run's, spec 6.2) only the documents already in the document cache are read, so no GeM request is
+    Given `bids` only the documents already in the document cache are read, so no GeM request is
     made: a bid triage dropped has only its bid document there, and a bid with nothing cached is left for later."""
     agent = Agent(model, output_type=NativeOutput(CardOutput), instructions=CARD_INSTRUCTIONS, retries=2)
     report = CardReport()

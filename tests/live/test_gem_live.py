@@ -1,4 +1,4 @@
-"""Checks the GeM tools against the real site (spec 3, build step 1). Run with: pytest -m live
+"""Checks the GeM tools against the real site. Run with: pytest -m live
 
 About 30 requests, at least 1 s apart per host.
 """

@@ -1,4 +1,4 @@
-"""Word search with whole-word and acronym-case rules (spec 5.3).
+"""Word search with whole-word and acronym-case rules.
 
 - Text is split into words, so "LOS" never matches inside "LOST", "CLOSE" or "LOSS".
 - An acronym (one all-capitals word of 4 letters or fewer) matches only in its written case.

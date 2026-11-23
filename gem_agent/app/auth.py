@@ -1,4 +1,4 @@
-"""Sign-in (spec 4.1): a simple username on the LAN to start, kept in a cookie; the company's auth can replace
+"""Sign-in: a simple username on the LAN to start, kept in a cookie; the company's auth can replace
 `current_user` later. Each user sees only their own runs, downloads and memory."""
 from __future__ import annotations
 

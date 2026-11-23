@@ -2,7 +2,7 @@ from datetime import datetime
 
 from gem_agent.tools.gem.prebid import parse_pre_bid
 
-# GeM's bid PDF, as extracted (data/cache, 17 Nov): the Hindi labels come out garbled, the date follows the venue label
+# GeM's bid PDF, as extracted: the Hindi labels come out garbled, the date follows the venue label
 GEM_BLOCK = ("Pre Bid Detail(s)\nमूXय िभ*नता खंड द'तावेज़/Pre-Bid\nDate and Time\n9ी-\x01बड 'थान/Pre-Bid Venue\n"
              "25-08-2026 15:00:00\nTender Office\nDigital Radiography System (V2) ( 1 pieces ) \n")
 

@@ -1,4 +1,4 @@
-"""Corrigendum flag and text (spec 3.3)."""
+"""Corrigendum flag and text."""
 from __future__ import annotations
 
 import json

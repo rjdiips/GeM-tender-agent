@@ -1,5 +1,5 @@
 // Demo TenderApi with sample data, used until the backend's chat API exists (build step 6).
-// Bid numbers, titles, buyers and dates are real (local index, 16 Nov 2026); GEM/2026/B/8162911's verdict is the
+// Bid numbers, titles, buyers and dates are real; GEM/2026/B/8162911's verdict is the
 // real Judge output; the other verdicts are illustrative.
 import type { BidResult, MemoryFactView, RunEvent, RunListItem, RunView, TenderApi } from './types'
 

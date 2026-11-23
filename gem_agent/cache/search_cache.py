@@ -1,4 +1,4 @@
-"""Base searches kept for an hour, so a second run does not read the same pages again (spec 6.2)."""
+"""Base searches kept for an hour, so a second run does not read the same pages again."""
 from __future__ import annotations
 
 import hashlib

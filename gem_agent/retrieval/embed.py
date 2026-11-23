@@ -1,5 +1,5 @@
 """Page embeddings for the Judge: all-MiniLM-L6-v2 locally (the default), or a remote
-OpenAI-compatible server (spec 3.5.1). bge-m3 stays for the eval harness and for an
+OpenAI-compatible server. bge-m3 stays for the eval harness and for an
 explicit remote server; the app never loads it into the GPU, which belongs to vLLM."""
 from __future__ import annotations
 
@@ -39,7 +39,7 @@ def pick_device(
     setting: str = "auto", *, min_free_mb: int = 3000, free_gpu_mb: Callable[[], int | None] = free_gpu_mb
 ) -> str:
     """GPU only when `min_free_mb` is free beside vLLM. The app no longer calls this (it always
-    uses `SmallEmbedder` or a remote server, spec 3.5.1); the eval harness uses it to place a
+    uses `SmallEmbedder` or a remote server); the eval harness uses it to place a
     local bge-m3."""
     if setting != "auto":
         return setting
@@ -67,13 +67,7 @@ class BgeM3Embedder:
 
 
 class SmallEmbedder:
-    """all-MiniLM-L6-v2 (22M parameters, English): the Judge's page ranker, in-process on the CPU.
-
-    Measured on the labelled set (20 Nov, spec 3.5.1): the same top-8 hit rate as bge-small and
-    bge-m3 (47.4% of the quoted pages on the relevant cases), a better top-24 (65.8% vs 60.5%)
-    and MRR (0.297 vs 0.218), at ~1.9 s p50 a bid against ~4.3 s for bge-small over TEI. The
-    17 Nov check on 18 bids pointed the same way: 12/18 in 6 s, against 10/18 in 423 s for
-    bge-m3 on the CPU."""
+    """all-MiniLM-L6-v2 (22M parameters, English): the Judge's page ranker, in-process on the CPU."""
 
     def __init__(self, model_name: str = "sentence-transformers/all-MiniLM-L6-v2", max_seq_length: int = 256) -> None:
         from sentence_transformers import SentenceTransformer

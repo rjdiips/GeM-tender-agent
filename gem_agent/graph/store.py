@@ -1,5 +1,5 @@
-"""runs/<run_id>/ (spec 11): run.json, plan.json, shortlist.json, outcomes.json, log.jsonl. Run records are the
-audit trail and are never deleted automatically (spec 11.1)."""
+"""runs/<run_id>/: run.json, plan.json, shortlist.json, outcomes.json, log.jsonl. Run records are the
+audit trail and are never deleted automatically."""
 from __future__ import annotations
 
 import json

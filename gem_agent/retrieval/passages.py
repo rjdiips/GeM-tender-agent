@@ -1,7 +1,7 @@
-"""Find the passages of one bid that bear on the topic (spec 5.4 step 3).
+"""Find the passages of one bid that bear on the topic.
 
 Word search (BM25 with the 5.3 rules) always runs. Dense search and the reranker run only when given: on CPU
-they cost ~2.5 pages/s and ~9 s per 24 pages, so they are used when the embedding device is the GPU (spec 3.5).
+they cost ~2.5 pages/s and ~9 s per 24 pages, so they are used when the embedding device is the GPU.
 A remote model server that is down must not fail the bid, so both are best-effort.
 """
 from __future__ import annotations

@@ -1,4 +1,4 @@
-"""Titles that say nothing about the subject (spec 6.2, the vague-title gap)."""
+"""Titles that say nothing about the subject."""
 from __future__ import annotations
 
 import re
@@ -8,5 +8,5 @@ _VAGUE = re.compile(r"^(hiring of agency for it projects- milestone basis|custom
 
 def is_vague_title(title: str) -> bool:
     """A bare service category: "Hiring of Agency for IT Projects- Milestone basis", or a custom bid with nothing
-    after the dash. On 16 Nov these hid the only open digital-lending (LOS-type) and fraud-risk tenders."""
+    after the dash."""
     return bool(_VAGUE.match(" ".join(title.split())))

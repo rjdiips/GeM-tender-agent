@@ -1,4 +1,4 @@
-"""Fields on a bid document's first page that GeM's listing does not carry (spec 3.1): the buyer's organisation."""
+"""Fields on a bid document's first page that GeM's listing does not carry: the buyer's organisation."""
 from __future__ import annotations
 
 import re

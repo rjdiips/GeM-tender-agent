@@ -19,7 +19,7 @@ sys.path.insert(0, ".")
 from gem_agent.agents.collector import Collector
 from gem_agent.cache.docs import DocCache
 from gem_agent.config import get_settings
-from gem_agent.index.cards import _rfp_sections  # its scope-heading regex was fixed on 18 Nov (spec 14.2)
+from gem_agent.index.cards import _rfp_sections
 from gem_agent.tools.gem.models import Bid
 from gem_agent.tools.http_client import BidplusSession, ClientPool
 
@@ -27,8 +27,7 @@ logging.basicConfig(level=logging.WARNING, format="%(asctime)s %(levelname)s %(n
 log = logging.getLogger("bundle")
 log.setLevel(logging.INFO)
 OUT = Path(sys.argv[1])
-# The notice's line is 20%. On 18 Nov the shared disk stayed at 30-60% all evening, so that run used 50%
-# (BIAS_MAX_IO_PRESSURE=50) to finish the same night.
+# The notice's line is 20%.
 MAX_IO_PRESSURE = float(os.environ.get("BIAS_MAX_IO_PRESSURE", "20"))
 
 

@@ -1,4 +1,4 @@
-"""GeM's own pre-bid date, read from its bid document (17 Nov).
+"""GeM's own pre-bid date, read from its bid document.
 
 GeM publishes no pre-bid or queries field in its listing or details JSON. When a buyer sets one, GeM prints it on
 the bid PDF it generates, in a fixed block: "Pre Bid Detail(s)", the "Pre-Bid Date and Time" and "Pre-Bid Venue"

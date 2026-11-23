@@ -74,7 +74,7 @@ def load_searches(out: Path) -> dict:
 
 
 async def live_searches(session: BidplusSession, topics: dict) -> dict:
-    # One line per finished search, appended: rewriting one growing file after every search wrote ~2 GB on 18 Nov.
+    # One line per finished search, appended.
     path = OUT / "searches.jsonl"
     done = load_searches(OUT)
     wanted = [("category", IT_CATEGORY)] + sorted({(m, t) for d in topics.values() for t in d["match_terms"]
@@ -117,8 +117,7 @@ async def main() -> None:
     finally:
         await pool.aclose()
 
-    # Only read here: nothing below upserts or embeds. BIAS_INDEX_PATH can point at a copy in /dev/shm: on 18 Nov the
-    # shared disk was ~50% busy and the full-table scans of bids.sqlite ran at ~200 KB/s (hours); a copy took 19 s.
+    # Only read here: nothing below upserts or embeds.
     index = BidIndex(os.environ.get("BIAS_INDEX_PATH") or settings.index_path)
     embedder = _embedder(settings)
     searcher = Searcher(chat_model(settings), index, embedder)

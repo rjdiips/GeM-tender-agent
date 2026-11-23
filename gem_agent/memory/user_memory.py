@@ -1,4 +1,4 @@
-"""Per-user facts with evidence: stated vs learned (spec 5.5). Stored in knowledge/users/<user>/memory.json.
+"""Per-user facts with evidence: stated vs learned. Stored in knowledge/users/<user>/memory.json.
 
 - Stated facts ("we're a banking software company") are saved at once.
 - Learned facts become active only when at least 2 separate runs support them.

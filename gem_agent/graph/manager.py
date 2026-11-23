@@ -189,7 +189,7 @@ class RunManager:
         return self._rule_locks.setdefault(run_id, asyncio.Lock())
 
     async def restore(self, user: str, run_id: str, b_id: int) -> list[dict[str, Any]]:
-        """Move a quarantined bid back to relevant; recorded for the memory step (spec 5.5).
+        """Move a quarantined bid back to relevant; recorded for the memory step.
         A bid the user ruled "doesn't count" is re-ruled "counts" instead, so the fact follows the click."""
         self._own(user, run_id)
         async with self._ruling_lock(run_id):

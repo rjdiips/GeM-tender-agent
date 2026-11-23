@@ -1,5 +1,5 @@
-"""Lookup lists for the Planner (spec 5.2, R2): GeM's categories and ministries from the site, replaced daily
-(spec 11.1), merged with the ministries and departments the bid cache knows: those its bids carry and those any
+"""Lookup lists for the Planner: GeM's categories and ministries from the site, replaced daily
+, merged with the ministries and departments the bid cache knows: those its bids carry and those any
 search's listing named (BidIndex.buyer_names).
 
 GeM's department list (`dept-list-adv`) needs a ministry and an organisation per request, so the site's whole list
