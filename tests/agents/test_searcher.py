@@ -171,7 +171,10 @@ async def test_the_second_stage_keeps_only_the_cap_the_first_left(gem, clock, bi
     assert len(first.candidates) == 10 and first.cut == 0
     second = await searcher.search(LOS, p, stage="rest", progress=first.progress,
                                    exclude={c.bid.b_id for c in first.candidates}, cap=2)
-    assert len(second.candidates) == 2 and second.cut == 13 and second.over_cap
+    assert len(second.candidates) == 2 and second.cut == 8 and second.over_cap
+    # two places left means a budget of six bids: page 2 fills it, so the search's third page is not read
+    more = second.progress["fullText|loan origination"]
+    assert (more.pages_read, more.page_count) == (2, 3)
 
 
 async def test_kept_candidates_are_stored_in_the_bid_cache(gem, clock, bid_cache):
@@ -220,6 +223,16 @@ async def test_only_buyers_of_bids_in_scope_are_kept(gem, clock, bid_cache):
     await searcher.search(LOS, plan(published_from=at(2, 0)))
     names = bid_cache.buyer_names("department")
     assert "Department of Financial Services" in names and "OUT OF WINDOW DEPT" not in names
+
+
+async def test_a_bid_the_topics_own_search_found_wins_a_cap_place_over_a_base_search_bid(gem, clock, bid_cache):
+    # a base search finds banking IT bids for any topic; the cap must not let them push the topic's own hits out
+    chairs = mk(6, "Office chairs", "Department of Financial Services", closing=at(18))
+    platform = mk(7, "Loan origination platform", closing=at(28))
+    searcher, _ = build(gem, clock, bid_cache, keep_all(), {"exact|Department of Financial Services": [chairs],
+                                                           "fullText|Loan Origination System": [platform]})
+    found = await searcher.search(LOS, plan(categories=[], terms=["Loan Origination System"]), cap=1)
+    assert [c.bid.b_id for c in found.candidates] == [7]
 
 
 async def test_a_buyer_name_over_120_characters_passes_its_own_hard_filter(gem, clock, bid_cache):

@@ -12,8 +12,10 @@ export function Thread({ run, notes, pending, now, theme, onToggleTheme, onAsk, 
 }) {
   const running = run?.status === 'running'
   const all = run?.progress ?? []
-  const lastCount = all.map(p => p.kind).lastIndexOf('count')
-  const progress = all.filter((p, i) => p.kind !== 'count' || i === lastCount)  // the newest count stays, above Done
+  const newest = new Map<string, number>()
+  all.forEach((p, i) => { if (p.kind === 'count') newest.set(p.phase ?? '', i) })
+  // one count line per phase, the newest: reading and the deeper search each keep theirs, above Done
+  const progress = all.filter((p, i) => p.kind !== 'count' || newest.get(p.phase ?? '') === i)
   const other = theme === 'dark' ? 'light' : 'dark'
   return (
     <main className="gt-main">

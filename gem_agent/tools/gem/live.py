@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import logging
+from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Literal
 
@@ -132,27 +133,45 @@ class LiveSearcher:
                 self._first_bids[(spec.key, tuple(progress.first_ids))] = bids
         return SearchOutcome(spec, progress, bids)
 
-    async def rest(self, specs: list[SearchSpec], progress: dict[str, SearchProgress]) -> list[SearchOutcome]:
+    async def rest(self, specs: list[SearchSpec], progress: dict[str, SearchProgress], *,
+                   budget: int | None = None,
+                   on_page: Callable[[int, int], None] | None = None) -> list[SearchOutcome]:
         """One outcome per spec, in order; a spec with nothing left to read comes back with no bids and its progress.
         A base search another topic (or run) completed within the hour comes from the cache: its bids minus this
-        search's page 1, which stage 1 already returned."""
+        search's page 1, which stage 1 already returned.
+
+        `budget`: stop once this many distinct bids are gathered. Stage 2 only tops up a shortlist, so every page of
+        every search is not worth it: GeM allows about one page a second and a search can run to hundreds of pages.
+        `on_page(bids, budget)`: after each page, for a live count."""
         outcomes: list[SearchOutcome] = []
+        got: set[int] = set()
+
+        def report(bids: int) -> None:
+            if on_page is not None:
+                on_page(len(got) + bids, budget or 0)
+
         for spec in specs:
             current = progress[spec.key]
-            if not current.pending:
+            left = None if budget is None else max(0, budget - len(got))
+            if not current.pending or left == 0:
                 outcomes.append(SearchOutcome(spec, current, []))
                 continue
             if (hit := self._cached(spec)) is not None:
                 num_found, bids = hit
                 self._first_bids.pop((spec.key, tuple(current.first_ids)), None)
                 first = set(current.first_ids)
-                outcomes.append(SearchOutcome(spec, self._complete(num_found, current.first_ids),
-                                              [b for b in bids if b.b_id not in first]))
+                more = [b for b in bids if b.b_id not in first]
+                got.update(b.b_id for b in more)
+                report(0)
+                outcomes.append(SearchOutcome(spec, self._complete(num_found, current.first_ids), more))
                 continue
-            outcomes.append(await self._rest(spec, current))
+            outcome = await self._rest(spec, current, budget=left, on_page=report)
+            got.update(b.b_id for b in outcome.bids)
+            outcomes.append(outcome)
         return outcomes
 
-    async def _rest(self, spec: SearchSpec, current: SearchProgress) -> SearchOutcome:
+    async def _rest(self, spec: SearchSpec, current: SearchProgress, *, budget: int | None = None,
+                    on_page: Callable[[int], None] | None = None) -> SearchOutcome:
         new = current.model_copy()
         bids: list[Bid] = []
         for n in range(current.pages_read + 1, current.page_count + 1):
@@ -166,6 +185,10 @@ class LiveSearcher:
                 break
             bids.extend(page.bids)
             new.pages_read = n
+            if on_page is not None:
+                on_page(len({b.b_id for b in bids}))
+            if budget is not None and len({b.b_id for b in bids}) >= budget:  # the places left are filled
+                break
         bids = _dedupe(bids)
         first = self._first_bids.pop((spec.key, tuple(current.first_ids)), None)
         if self._cacheable(spec) and first is not None and not new.failed:

@@ -22,6 +22,7 @@ class RunState(BaseModel):
     cut: int = 0  # titles the cap left out, both stages: reported, since they were never read
     adjust: Literal["", "widen", "narrow"] = ""
     retries: int = 0
+    sizes: list[int] = []  # the shortlist size after each search round: a retry that barely shrinks it is not repeated
     done_ids: list[int] = []  # bids already collected and judged (skipped when a run resumes)
     # first: page 1 of every search is being judged; rest: the remaining pages' new bids; done: both judged
     stage: Literal["first", "rest", "done"] = "first"

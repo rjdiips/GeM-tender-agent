@@ -37,7 +37,6 @@ export function ResultsPanel({ run, busy = false, tab, onTab, now, memory, pendi
       </div>
       <div className="gt-body" role="tabpanel" id="results-panel" aria-labelledby={`tab-${tab}`}>
         {tab === 'memory' ? <MemoryList facts={memory} onForget={onForget} onEdit={onEdit} /> : <>
-          <div className="gt-thead"><span>Tender</span><span>Closes</span><span>EMD · turnover</span><span /></div>
           {rows.length === 0 && busy && tab === 'relevant' && <Searching />}
           {rows.length === 0 && !(busy && tab === 'relevant') && <div className="gt-none">{tab === 'relevant' ? 'No relevant tenders yet.' : 'Nothing quarantined. Bids ruled out land here with the reason, and can be restored.'}</div>}
           {tab === 'relevant' && borderline.length > 0 && <h3 className="gt-section">Borderline: your call</h3>}
@@ -114,7 +113,7 @@ function ResultRow({ bid, now, grouped, quarantined, pending, error, onRestore, 
           {bid.error && <span className="gt-badge" title="Its documents could not be fetched, so it was not judged">not read</span>}
           {bid.needs_review && <span className="gt-badge" title="No quote could be found in the documents beyond the tender's title: read them before relying on this">check quotes</span>}
         </span>
-        <div className="gt-title">{bid.title}</div>
+        <div className="gt-title" title={bid.title}>{bid.title}</div>
         <div className="gt-buyer" title={bid.buyer}>{bid.buyer_org ?? bid.buyer.split(' / ').pop()}</div>
         <div className="gt-why">{bid.reason}</div>
         {bid.state === 'borderline' && (
@@ -145,8 +144,20 @@ function ResultRow({ bid, now, grouped, quarantined, pending, error, onRestore, 
           </button>
         )}
       </div>
-      <div className="gt-num"><div className="gt-mono">{shortDateTime(bid.closing)}</div><div style={{ marginTop: 6 }}><Urgency closing={bid.closing} now={now} /></div>{bid.queries && <QueriesBy queries={bid.queries} now={now} />}</div>
-      <div className="gt-num"><div>{money(bid.key_facts?.emd)}</div><div className="gt-k">{bid.key_facts?.min_turnover ? `turnover ${bid.key_facts.min_turnover}` : ''}</div></div>
+      <div className="gt-num">
+        <div className="gt-k">Closes</div>
+        <div className="gt-mono">{shortDateTime(bid.closing)}</div>
+        <div style={{ marginTop: 6 }}><Urgency closing={bid.closing} now={now} /></div>
+        {bid.queries && <QueriesBy queries={bid.queries} now={now} />}
+      </div>
+      <div className="gt-num">
+        <div className="gt-k">EMD</div>
+        <div>{money(bid.key_facts?.emd)}</div>
+        {bid.key_facts?.min_turnover && <>
+          <div className="gt-k" style={{ marginTop: 6 }}>Turnover</div>
+          <div>{bid.key_facts.min_turnover}</div>
+        </>}
+      </div>
       <div>
         {quarantined
           ? <button className="gt-icon-btn" aria-label={`Restore ${bid.bid_number}`} title="Restore" disabled={pending} onClick={() => onRestore(bid)}><IconUndo /></button>

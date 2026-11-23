@@ -66,7 +66,7 @@ class FakeSearcher:
         self.settings, self.more_pages, self.searches = SearchSettings(cap=cap), more_pages, dict(searches or {})
 
     async def search(self, topic: TopicDefinition, plan, *, stage="first", progress=None, exclude=frozenset(),
-                     cap=None):
+                     cap=None, on_page=None):
         self.stages.append(stage)
         self.caps.append(cap)
         if stage == "first":
@@ -78,6 +78,8 @@ class FakeSearcher:
             bids = self.rest[min(self.rest_calls, len(self.rest) - 1)]
             self.rest_calls += 1
             self.excluded.append(set(exclude))
+            if on_page is not None and bids:  # like live.rest: the live count climbs with the pages
+                on_page(len(bids), (cap or 0) * 3)
         bids = [b for b in bids if self.ignore_exclude or b.b_id not in exclude]
         limit = self.settings.cap if cap is None else max(0, cap)
         cut = max(0, len(bids) - limit)

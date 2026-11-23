@@ -255,13 +255,14 @@ async def test_reading_reports_a_running_count_from_the_start_to_the_last_bid(tm
     progress = [e["event"] for e in events if e["type"] == "progress"]
     texts = [p["text"] for p in progress]
     counts = [p["text"] for p in progress if p.get("kind") == "count"]
-    assert texts[0].startswith("Planned 1 search")
+    assert texts[0].startswith("Planned 5 GeM searches")  # 4 base searches + the plan's one term
     assert texts[1].startswith("Shortlist: 20 bids")
     assert texts[2] == counts[0] == "Read 0 of 20 bids: 0 files downloaded, triage dropped 0, 0 relevant so far…"  # at once
     assert len(counts) == 21  # then after every bid; the chat shows only the newest
     # 16 judged bids x 2 files + 3 triage rejections x 1 (bid document only); bid 7 failed
     assert counts[-1] == "Read 20 of 20 bids: 35 files downloaded, triage dropped 3, 16 relevant so far, 1 could not be read…"
-    assert texts[-2:] == [counts[-1], "Done: 16 relevant, 3 quarantined, 1 could not be read."]
+    assert texts[-3:] == [counts[-1], "Checking more GeM pages for a wider shortlist…",  # stage 2 is not silent
+                          "Done: 16 relevant, 3 quarantined, 1 could not be read."]
 
 
 def test_every_bid_read_is_in_the_running_count():
@@ -294,7 +295,7 @@ async def test_the_shortlist_line_right_after_the_card_is_kept(tmp_path):
     run_id = events[0]["run"]["run_id"]
     view = run_view(s.store.load(run_id), s.store.outcomes(run_id), s.store.events(run_id))
     texts = [p["text"] for p in view["progress"]]
-    assert texts[0].startswith("Planned 1 search")
+    assert texts[0].startswith("Planned 5 GeM searches")
     assert texts[1].startswith("Shortlist: 2 bids")  # kept, not swallowed by the meaning card
 
 
@@ -375,6 +376,9 @@ async def test_a_run_judges_page_one_bids_then_searches_deeper_and_judges_the_ne
     assert [e["bid"]["b_id"] for e in events if e["type"] == "result"] == [1, 2, 3]
     progress = [e["event"]["text"] for e in events if e["type"] == "progress"]
     assert "Searching deeper: 1 more bids to read…" in progress
+    live = [e["event"]["text"] for e in events if e["type"] == "progress" and e["event"].get("phase") == "search_rest"
+            and e["event"].get("kind") == "count"]
+    assert live == ["More bids found: 2 of 444…"]  # the deeper pages' live count: 3 x the 148 places left
     assert progress[-1] == "Done: 3 relevant, 0 quarantined."
     run_id = events[0]["run"]["run_id"]
     shortlist = json.loads((s.store.root / run_id / "shortlist.json").read_text())
@@ -480,16 +484,16 @@ async def test_the_cap_is_per_topic_across_both_stages_and_what_it_cuts_is_repor
                             "narrow the request to see them.")
 
 
-async def test_a_first_stage_cut_is_reported_once_the_narrowing_retries_are_used(tmp_path):
+async def test_an_over_cap_retry_that_shrinks_nothing_is_not_repeated(tmp_path):
     planner = FakePlanner()
-    searcher = FakeSearcher([[bid(1), bid(2), bid(3)]], rest=[[bid(4)]], cap=2)
+    searcher = FakeSearcher([[bid(1), bid(2), bid(3)]], rest=[[bid(4)]], cap=2)  # 3 bids every round: no shrink
     s = services(tmp_path, planner=planner, searcher=searcher)
     events = await ask(RunManager(s), "LOS tenders")
-    assert len(planner.notes) == 3 and "more specific" in planner.notes[1]  # narrowed twice, then read
-    assert searcher.caps[-1] == 0  # nothing of the cap is left for stage 2
+    assert len(planner.notes) == 2 and "more specific" in planner.notes[1]  # narrowed once, then read
+    assert searcher.stages == ["first", "first"]  # stage 1 used the cap up: stage 2 has no pages to read
     progress = [e["event"]["text"] for e in events if e["type"] == "progress"]
-    assert progress.count("1 more matching bid was not read; narrow the request to see them.") == 2  # each stage's cut
-    assert progress[-1].endswith(" 2 more matching bids were not read; narrow the request to see them.")
+    assert progress.count("1 more matching bid was not read; narrow the request to see them.") == 1  # stage 1's cut
+    assert progress[-1].endswith(" 1 more matching bid was not read; narrow the request to see them.")
 
 
 class CrashInRest(FakeSearcher):

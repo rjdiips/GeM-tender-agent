@@ -8,11 +8,13 @@
 4. Vague titles (a bare service category such as "Hiring of Agency for IT Projects- Milestone basis") say nothing
    about the subject. Once the bid cache holds the bid's card (what it buys, written from its bid document) the screen
    sees the card; until then the bid is never dropped: only its documents can tell.
-5. Closing soonest first; preferred buyers first within a day.
+5. Closing soonest first, after the bids the topic's own terms found (a base search alone fills the cap with banking
+   IT bids for any topic); preferred buyers first within a day.
 """
 from __future__ import annotations
 
 import logging
+from collections.abc import Callable
 from datetime import datetime
 from typing import Literal
 
@@ -35,6 +37,13 @@ BASE_SPECS: list[SearchSpec] = [
     SearchSpec(kind="exact", value="BANKING SECTOR"),
     SearchSpec(kind="fullText", value="consultants"),
 ]
+BASE_KEYS = frozenset(s.key for s in BASE_SPECS)
+
+
+def from_own_search(c: Candidate) -> bool:
+    """Whether one of the topic's own searches found it. A base search alone finds banking IT bids whatever the
+    topic, so its bids go after the topic's own when the cap cuts the shortlist."""
+    return any("|" in w and w not in BASE_KEYS for w in c.why)
 
 
 def _names(values: list[str]) -> list[str]:
@@ -95,14 +104,17 @@ class Searcher:
     async def search(self, topic: TopicDefinition, plan: SearchPlan, *, stage: Literal["first", "rest"] = "first",
                      progress: dict[str, SearchProgress] | None = None,
                      exclude: set[int] = frozenset(),  # type: ignore[assignment]
-                     cap: int | None = None) -> SearchResult:
-        """`cap` overrides the settings' cap: stage 2 gets what stage 1 left of the topic's cap."""
+                     cap: int | None = None,
+                     on_page: Callable[[int, int], None] | None = None) -> SearchResult:
+        """`cap` overrides the settings' cap: stage 2 gets what stage 1 left of the topic's cap.
+        `on_page(bids found, budget)`: stage 2 only, for a live count."""
         cap = self.settings.cap if cap is None else max(0, cap)
         specs = search_specs(plan)
         if stage == "first":
             outcomes = await self.live.first_pages(specs)
         else:
-            outcomes = await self.live.rest(specs, progress or {})
+            # stage 2 only tops up a shortlist: three times the places left is enough, and every page costs a second
+            outcomes = await self.live.rest(specs, progress or {}, budget=cap * 3, on_page=on_page)
         new_progress = {**(progress or {}), **{o.spec.key: o.progress for o in outcomes}}
 
         pool: dict[int, tuple[Bid, list[str]]] = {}
@@ -133,7 +145,8 @@ class Searcher:
                 why = [*why, "preferred buyer"]
             out.append(Candidate(bid=bid, group=short_name(topic), why=why))
         self.bid_cache.upsert([c.bid for c in out], seen_at=site_now())
-        out.sort(key=lambda c: (c.bid.closing or datetime.max).date().isoformat() +
+        out.sort(key=lambda c: ("0" if from_own_search(c) else "1") +  # the topic's own hits get the cap's places first
+                 (c.bid.closing or datetime.max).date().isoformat() +
                  ("0" if "preferred buyer" in c.why else "1") + (c.bid.closing or datetime.max).isoformat())
         cut = max(0, len(out) - cap)
         return SearchResult(candidates=out[:cap], pool=len(pool), over_cap=cut > 0, cut=cut, progress=new_progress)

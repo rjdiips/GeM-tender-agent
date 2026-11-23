@@ -21,7 +21,7 @@ from typing import Any
 from langgraph.graph import END, START, StateGraph
 
 from gem_agent.agents.chat import short_name
-from gem_agent.agents.searcher import Candidate
+from gem_agent.agents.searcher import Candidate, search_specs
 from gem_agent.graph.rulings import settle, topic_for
 from gem_agent.graph.services import Services
 from gem_agent.graph.state import RunState
@@ -115,14 +115,17 @@ def gem_failed(search_progress: Progress) -> bool:
 
 
 def wants_retry(*, stage: str, retries: int, candidates: list[Candidate], over_cap: bool,
-                search_progress: Progress) -> bool:
+                search_progress: Progress, sizes: list[int]) -> bool:
     """After stage 1: narrow when the shortlist is over the cap. Widen when it is empty and no search has pages left:
     page 1 alone is the newest-published bids, so an empty page-1 shortlist goes on to stage 2 instead. Nor when GeM
-    could not be read: a wider search would fail the same way."""
+    could not be read: a wider search would fail the same way.
+
+    The cap's retry is only worth it when narrowing works: the Planner re-runs the topic's own terms every time, so a
+    round that shrank the shortlist by less than a tenth will not get it under the cap. That retry is skipped."""
     if stage != "first" or retries >= MAX_RETRIES:
         return False
     if over_cap:
-        return True
+        return len(sizes) < 2 or sizes[-1] <= sizes[-2] * 0.9
     pending = any(p.pending for searches in search_progress.values() for p in searches.values())
     return not candidates and not pending and not gem_failed(search_progress)
 
@@ -136,7 +139,8 @@ def build_graph(s: Services) -> StateGraph:
         note = WIDEN if state.adjust == "widen" else NARROW if state.adjust == "narrow" else ""
         plans = [await s.planner.plan(state.request, topic, note=note) for topic in state.request.topics]
         s.store.save_plans(state.run_id, plans)
-        progress(s, state.run_id, f"Planned {len(plans)} search{'es' if len(plans) != 1 else ''}…", phase="plan")
+        searches = sum(len(search_specs(p)) for p in plans)  # one plan runs several GeM searches, not one
+        progress(s, state.run_id, f"Planned {searches} GeM search{'es' if searches != 1 else ''}…", phase="plan")
         return {"plans": plans}
 
     async def search(state: RunState) -> dict[str, Any]:
@@ -155,6 +159,7 @@ def build_graph(s: Services) -> StateGraph:
             for c in result.candidates:
                 merged.setdefault(c.bid.b_id, c)
         candidates = by_closing(merged.values())
+        sizes = [*state.sizes, len(candidates)]  # this round's shortlist size: over-cap retries are judged on it
         s.store.save_shortlist(state.run_id, candidates)
         if candidates:
             progress(s, state.run_id, f"Shortlist: {len(candidates)} bids from {pool:,} titles looked at "
@@ -163,14 +168,14 @@ def build_graph(s: Services) -> StateGraph:
         if failed:
             progress(s, state.run_id, failed_line(failed, read), phase="search")
         if cut and not wants_retry(stage=state.stage, retries=state.retries, candidates=candidates, over_cap=over_cap,
-                                   search_progress=search_progress):
+                                   search_progress=search_progress, sizes=sizes):
             progress(s, state.run_id, cut_line(cut), phase="search")  # a narrowing retry comes next otherwise
         return {"candidates": candidates, "pool": pool, "over_cap": over_cap, "search_progress": search_progress,
-                "first_counts": first_counts, "cut": cut}
+                "first_counts": first_counts, "cut": cut, "sizes": sizes}
 
     def after_search(state: RunState) -> str:
         if wants_retry(stage=state.stage, retries=state.retries, candidates=state.candidates, over_cap=state.over_cap,
-                       search_progress=state.search_progress):
+                       search_progress=state.search_progress, sizes=state.sizes):
             return "retry"
         return "process"
 
@@ -181,6 +186,7 @@ def build_graph(s: Services) -> StateGraph:
         new: list[Candidate] = []
         pool, cut = state.pool, 0
         search_progress = dict(state.search_progress)
+        searchable = []  # (topic, plan, the bids stage 1 kept) with pages left to read and places left in the cap
         for topic, plan_ in zip(state.request.topics, state.plans, strict=True):
             key = topic.key()
             if key not in search_progress:  # no stage 1 to continue (a state from before two stages)
@@ -189,8 +195,21 @@ def build_graph(s: Services) -> StateGraph:
             taken = state.first_counts.get(key)
             if taken is None:  # a checkpoint from before first_counts: its stage-1 bids, by group
                 taken = sum(1 for c in state.candidates if c.group == short_name(topic))
+            if taken < s.searcher.settings.cap:  # stage 1 filled the cap: no places left, so no pages to read
+                searchable.append((topic, plan_, taken))
+        if any(p.pending for t, _, _ in searchable for p in search_progress[t.key()].values()):
+            # silent otherwise: page reads take minutes, and the chat shows a spinner meanwhile
+            progress(s, state.run_id, "Checking more GeM pages for a wider shortlist…", phase="search_rest")
+
+        def more_found(bids: int, target: int) -> None:
+            """One line, updated in place: the deeper pages cost a second each, so the count must move."""
+            progress(s, state.run_id, f"More bids found: {bids} of {target}…", "count", phase="search_rest")
+
+        for topic, plan_, taken in searchable:
+            key = topic.key()
             result = await s.searcher.search(topic, plan_, stage="rest", progress=search_progress[key],
-                                             exclude=set(seen), cap=s.searcher.settings.cap - taken)
+                                             exclude=set(seen), cap=s.searcher.settings.cap - taken,
+                                             on_page=more_found)
             pool += result.pool
             cut += result.cut
             search_progress[key] = result.progress
