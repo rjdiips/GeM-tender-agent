@@ -1,0 +1,34 @@
+[
+ {
+  "topic_key": "e5ef718740b016c1",
+  "text": "AI Transformation: Tenders for Artificial Intelligence solutions, including machine learning platforms, generative AI tools, and enterprise AI integration services.; AI transformation; Artificial Intelligence; AI solutions; Machine Learning; Generative AI; AI platform; AI integration",
+  "terms": [
+   "AI transformation",
+   "Artificial Intelligence",
+   "AI solutions",
+   "Machine Learning",
+   "Generative AI",
+   "AI platform",
+   "AI integration",
+   "AI",
+   "LLM",
+   "NLP",
+   "GenAI",
+   "AI adoption",
+   "AI strategy"
+  ],
+  "published_from": "2026-11-09T00:00:00",
+  "published_to": "2026-11-16T22:23:24.346675",
+  "closing_from": "2026-11-16T22:23:24.346675",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [
+   "home_st84346378_star_emer_arti"
+  ],
+  "reasons": "The first category is the primary home for AI tenders. The second category is too specific to education and handwritten scripts, so it is excluded to avoid missing broader enterprise AI transformation tenders. Extra terms capture common variations in tender titles for modern AI projects."
+ }
+]

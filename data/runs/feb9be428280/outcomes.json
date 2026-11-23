@@ -1,0 +1,1511 @@
+{
+ "10112215": {
+  "b_id": 10112215,
+  "group": "AI Platform",
+  "bid": {
+   "b_id": 10112215,
+   "bid_number": "GEM/2026/B/8227393",
+   "title": "AI Network Video Recorder,PTZ Camera 4 MP,24 Port PoE Switch,UTP Cable,Mounting Rack for NVR and Po",
+   "category_id": "home_boq_boql_boql_boq",
+   "ministry": "Ministry of Defence",
+   "department": "Department of Military Affairs",
+   "published": "2026-11-09T10:21:35",
+   "closing": "2026-11-19T11:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1319,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10112215",
+    "b_id": [
+     10112215
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8227393"
+    ],
+    "b_category_name": [
+     "AI Network Video Recorder,PTZ Camera 4 MP,24 Port PoE Switch,UTP Cable,Mounting Rack for NVR and Po"
+    ],
+    "b_total_quantity": [
+     1319
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     12
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-09T10:21:35Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-19T11:00:00Z"
+    ],
+    "bd_category_name": [
+     "AI Network Video Recorder,PTZ Camera 4 MP,24 Port PoE Switch,UTP Cable,Mounting Rack for NVR and Power Supply,Cassing Capping and Conduit Pipes,8 TB Survelliance Internal HDD,RJ 45 Connectors,All Plug and L Band Flexible Pipe and Saddle,UPS 1 KVA with 30 Min Backup,Cable Laying Charges,Camera Installation"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "bbt_title": [
+     "Surveillance Sys in Trg cum Conference Hall"
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_boq_boql_boql_boq"
+    ],
+    "b.b_created_by": [
+     "swcsr_proj1"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Defence"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Military Affairs"
+    ],
+    "bd_details_is_boq": [
+     true
+    ],
+    "bd_details_new_boq": [
+     true
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10112215",
+    "filename": "GeM-Bidding-10112215.pdf",
+    "size": 177481,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "a64ad976d1c509feeab13c0a3751240c9249c1cc625b561e819bc302538b90da",
+    "path": "docs/10112215/files/a64ad976d1c509feeab13c0a3751240c9249c1cc625b561e819bc302538b90da.pdf",
+    "text_path": "docs/10112215/files/a64ad976d1c509feeab13c0a3751240c9249c1cc625b561e819bc302538b90da.pdf.text.json",
+    "pages": 16,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "6b7ba9158405fca5"
+   }
+  ],
+  "buyer_org": "Indian Army",
+  "verdict": {
+   "b_id": 10112215,
+   "bid_number": "GEM/2026/B/8227393",
+   "topic_key": "81403e73b7422162",
+   "doc_hash": "0acec28411e9c60b",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for physical security hardware (cameras, NVRs, cables) and installation services, not for AI software platforms or MLOps tools.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-17T15:01:10.599434"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10143232": {
+  "b_id": 10143232,
+  "group": "AI Platform",
+  "bid": {
+   "b_id": 10143232,
+   "bid_number": "GEM/2026/B/8254585",
+   "title": "Artificial intelligence, Machine Learning, and Deep Learning as a Service - Integration with pre-de",
+   "category_id": "services_home_emer_arti",
+   "ministry": "Ministry of Education",
+   "department": "Department of Higher Education",
+   "published": "2026-11-08T15:27:00",
+   "closing": "2026-11-18T16:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10143232",
+    "b_id": [
+     10143232
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8254585"
+    ],
+    "b_category_name": [
+     "Artificial intelligence, Machine Learning, and Deep Learning as a Service - Integration with pre-de"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-08T15:27:00Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-18T16:00:00Z"
+    ],
+    "bd_category_name": [
+     "Artificial intelligence, Machine Learning, and Deep Learning as a Service - Integration with pre-developed service provider’s module; Machine Learning supported Data Management, Computer Vision and Automated Image Recognition, Integration, Testing, V.."
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_emer_arti"
+    ],
+    "b.b_created_by": [
+     "BUYERZHDC"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Education"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Higher Education"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10143232",
+    "filename": "GeM-Bidding-10143232.pdf",
+    "size": 107753,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "64ca620469a7a7161ddfced7f8ea22043fd2a0fd69ff23753863be7e77c101cc",
+    "path": "docs/10143232/files/64ca620469a7a7161ddfced7f8ea22043fd2a0fd69ff23753863be7e77c101cc.pdf",
+    "text_path": "docs/10143232/files/64ca620469a7a7161ddfced7f8ea22043fd2a0fd69ff23753863be7e77c101cc.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "cde0bb637d26ee60"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10143232/1794112913.pdf",
+    "filename": "1794112913.pdf",
+    "size": 272395,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "7569aa3acf6e35975d82537d23bfa7e8e128abe682ed7e929380a2721f30d0c3",
+    "path": "docs/10143232/files/7569aa3acf6e35975d82537d23bfa7e8e128abe682ed7e929380a2721f30d0c3.pdf",
+    "text_path": "docs/10143232/files/7569aa3acf6e35975d82537d23bfa7e8e128abe682ed7e929380a2721f30d0c3.pdf.text.json",
+    "pages": 2,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Scope of Work",
+    "title": "Scope of Work – AI-SEG (NTPC NETRA) The scope broadly covers integration, testing, validation and deployment of the AI-SEG system at NTPC NETRA, including",
+    "text_key": "f808e3a27653d794"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10143232/1794112922.pdf",
+    "filename": "1794112922.pdf",
+    "size": 415641,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "78c4237d75b1dcae03adf90f15ea97791b1af2729c9fe19ec7d1b487969def00",
+    "path": "docs/10143232/files/78c4237d75b1dcae03adf90f15ea97791b1af2729c9fe19ec7d1b487969def00.pdf",
+    "text_path": "docs/10143232/files/78c4237d75b1dcae03adf90f15ea97791b1af2729c9fe19ec7d1b487969def00.pdf.text.json",
+    "pages": 2,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Payment Terms",
+    "title": "PAYMENT TERMS",
+    "text_key": "ece67293bb446841"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10143232/1794112931.pdf",
+    "filename": "1794112931.pdf",
+    "size": 420045,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "d6adb6fd751a0b6405f77b9347d05e8018c1a1142bda65a32e34f83b0bd7afb4",
+    "path": "docs/10143232/files/d6adb6fd751a0b6405f77b9347d05e8018c1a1142bda65a32e34f83b0bd7afb4.pdf",
+    "text_path": "docs/10143232/files/d6adb6fd751a0b6405f77b9347d05e8018c1a1142bda65a32e34f83b0bd7afb4.pdf.text.json",
+    "pages": 2,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Manpower Requirement",
+    "title": "proposed candidate will be submitted as separate annexes to this tender",
+    "text_key": "c4cd065e5fff040c"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10143232/1794112938.pdf",
+    "filename": "1794112938.pdf",
+    "size": 460879,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "d5c8ab7f1acf5641b563a451ecbd6dc3d25015653bb85328ed832b276ec2b4f0",
+    "path": "docs/10143232/files/d5c8ab7f1acf5641b563a451ecbd6dc3d25015653bb85328ed832b276ec2b4f0.pdf",
+    "text_path": "docs/10143232/files/d5c8ab7f1acf5641b563a451ecbd6dc3d25015653bb85328ed832b276ec2b4f0.pdf.text.json",
+    "pages": 6,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Data Privacy Policy",
+    "title": "document and shall be read together with the GeM General Terms and Conditions, applicable Special Terms & Conditions (STC), Additional Terms & Conditions…",
+    "text_key": "944cce624514c756"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10143232/1794112953.pdf",
+    "filename": "1794112953.pdf",
+    "size": 516840,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "425c0eabb209de4ed72b3bffbb738bd6ddd936da1f7d931bd933a8d544e9fa86",
+    "path": "docs/10143232/files/425c0eabb209de4ed72b3bffbb738bd6ddd936da1f7d931bd933a8d544e9fa86.pdf",
+    "text_path": "docs/10143232/files/425c0eabb209de4ed72b3bffbb738bd6ddd936da1f7d931bd933a8d544e9fa86.pdf.text.json",
+    "pages": 8,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Deployment / Infrastructure Requirement",
+    "title": null,
+    "text_key": "b0f44f9e3a5a0c42"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10143232/1794112961.pdf",
+    "filename": "1794112961.pdf",
+    "size": 425993,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "010515c1de1960acfea53a922a00d143c124dcc79b7e48adade14092c14bd8af",
+    "path": "docs/10143232/files/010515c1de1960acfea53a922a00d143c124dcc79b7e48adade14092c14bd8af.pdf",
+    "text_path": "docs/10143232/files/010515c1de1960acfea53a922a00d143c124dcc79b7e48adade14092c14bd8af.pdf.text.json",
+    "pages": 2,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Existing Workflow / Process / Background",
+    "title": "identified in the AI-SEG technical proposal, the existing arrangement has limited effective pre- segregation capability for problematic materials, particularly…",
+    "text_key": "5e12a32def8003bf"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10143232/1794112988.pdf",
+    "filename": "1794112988.pdf",
+    "size": 472219,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "bd5a1746a92c502a5d3d7857916f411d9d43f9bdb945cce77a6730ae0a8c1638",
+    "path": "docs/10143232/files/bd5a1746a92c502a5d3d7857916f411d9d43f9bdb945cce77a6730ae0a8c1638.pdf",
+    "text_path": "docs/10143232/files/bd5a1746a92c502a5d3d7857916f411d9d43f9bdb945cce77a6730ae0a8c1638.pdf.text.json",
+    "pages": 8,
+    "ocr_pages": [],
+    "error": null,
+    "label": "NDA",
+    "title": "NON-DISCLOSURE AGREEMENT (NDA) This Non-Disclosure Agreement (\"Agreement\" or \"NDA\") is executed on this ___ day",
+    "text_key": "2a9379d29c52bfa2"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10143232/1794114417.pdf",
+    "filename": "1794114417.pdf",
+    "size": 397232,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "37e7bb0f51bfdc5d6fd78acf2c5162d64fafcd5b60f64e472ce9e6e4a71b2c1f",
+    "path": "docs/10143232/files/37e7bb0f51bfdc5d6fd78acf2c5162d64fafcd5b60f64e472ce9e6e4a71b2c1f.pdf",
+    "text_path": "docs/10143232/files/37e7bb0f51bfdc5d6fd78acf2c5162d64fafcd5b60f64e472ce9e6e4a71b2c1f.pdf.text.json",
+    "pages": 3,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Financial Breakup Required",
+    "title": null,
+    "text_key": "ae6777713716f8ab"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadBuyerDoc/10143232/17941153945674.pdf",
+    "filename": "17941153945674.pdf",
+    "size": 484287,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "63e03462848831e04ef708d2a5dcfacce82ae1c70efbd58613bb09392b422941",
+    "path": "docs/10143232/files/63e03462848831e04ef708d2a5dcfacce82ae1c70efbd58613bb09392b422941.pdf",
+    "text_path": "docs/10143232/files/63e03462848831e04ef708d2a5dcfacce82ae1c70efbd58613bb09392b422941.pdf.text.json",
+    "pages": 3,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Eligibility Criteria",
+    "text_key": "50c6cdf6e7e9bd94"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadBuyerDoc/10143232/17941153945842.pdf",
+    "filename": "17941153945842.pdf",
+    "size": 484287,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "63e03462848831e04ef708d2a5dcfacce82ae1c70efbd58613bb09392b422941",
+    "path": "docs/10143232/files/63e03462848831e04ef708d2a5dcfacce82ae1c70efbd58613bb09392b422941.pdf",
+    "text_path": "docs/10143232/files/63e03462848831e04ef708d2a5dcfacce82ae1c70efbd58613bb09392b422941.pdf.text.json",
+    "pages": 3,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Eligibility Criteria",
+    "text_key": "50c6cdf6e7e9bd94"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadBuyerDoc/10143232/17941153945996.pdf",
+    "filename": "17941153945996.pdf",
+    "size": 484287,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "63e03462848831e04ef708d2a5dcfacce82ae1c70efbd58613bb09392b422941",
+    "path": "docs/10143232/files/63e03462848831e04ef708d2a5dcfacce82ae1c70efbd58613bb09392b422941.pdf",
+    "text_path": "docs/10143232/files/63e03462848831e04ef708d2a5dcfacce82ae1c70efbd58613bb09392b422941.pdf.text.json",
+    "pages": 3,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Eligibility Criteria",
+    "text_key": "50c6cdf6e7e9bd94"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadBuyerDoc/10143232/17941153946175.pdf",
+    "filename": "17941153946175.pdf",
+    "size": 484287,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "63e03462848831e04ef708d2a5dcfacce82ae1c70efbd58613bb09392b422941",
+    "path": "docs/10143232/files/63e03462848831e04ef708d2a5dcfacce82ae1c70efbd58613bb09392b422941.pdf",
+    "text_path": "docs/10143232/files/63e03462848831e04ef708d2a5dcfacce82ae1c70efbd58613bb09392b422941.pdf.text.json",
+    "pages": 3,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Eligibility Criteria",
+    "text_key": "50c6cdf6e7e9bd94"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadBuyerDoc/10143232/17941153946345.pdf",
+    "filename": "17941153946345.pdf",
+    "size": 484287,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "63e03462848831e04ef708d2a5dcfacce82ae1c70efbd58613bb09392b422941",
+    "path": "docs/10143232/files/63e03462848831e04ef708d2a5dcfacce82ae1c70efbd58613bb09392b422941.pdf",
+    "text_path": "docs/10143232/files/63e03462848831e04ef708d2a5dcfacce82ae1c70efbd58613bb09392b422941.pdf.text.json",
+    "pages": 3,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Eligibility Criteria",
+    "text_key": "50c6cdf6e7e9bd94"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadBuyerDoc/10143232/17941153946511.pdf",
+    "filename": "17941153946511.pdf",
+    "size": 484287,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "63e03462848831e04ef708d2a5dcfacce82ae1c70efbd58613bb09392b422941",
+    "path": "docs/10143232/files/63e03462848831e04ef708d2a5dcfacce82ae1c70efbd58613bb09392b422941.pdf",
+    "text_path": "docs/10143232/files/63e03462848831e04ef708d2a5dcfacce82ae1c70efbd58613bb09392b422941.pdf.text.json",
+    "pages": 3,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Eligibility Criteria",
+    "text_key": "50c6cdf6e7e9bd94"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadBuyerDoc/10143232/17941153946671.pdf",
+    "filename": "17941153946671.pdf",
+    "size": 484287,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "63e03462848831e04ef708d2a5dcfacce82ae1c70efbd58613bb09392b422941",
+    "path": "docs/10143232/files/63e03462848831e04ef708d2a5dcfacce82ae1c70efbd58613bb09392b422941.pdf",
+    "text_path": "docs/10143232/files/63e03462848831e04ef708d2a5dcfacce82ae1c70efbd58613bb09392b422941.pdf.text.json",
+    "pages": 3,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Eligibility Criteria",
+    "text_key": "50c6cdf6e7e9bd94"
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8254585/CLM0010/ATCAI_0f927ab6-9a34-4f40-96571794122426363_BUYERZHDC.docx",
+    "filename": "ATCAI_0f927ab6-9a34-4f40-96571794122426363_BUYERZHDC.docx",
+    "size": 30793,
+    "kind": "office",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "document",
+    "sha256": "c5d521568b2ce59841c2f85746d2e41bbbc8294bf622d5914dd49e2866e52a9f",
+    "path": "docs/10143232/files/c5d521568b2ce59841c2f85746d2e41bbbc8294bf622d5914dd49e2866e52a9f.docx",
+    "text_path": "docs/10143232/files/c5d521568b2ce59841c2f85746d2e41bbbc8294bf622d5914dd49e2866e52a9f.docx.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "ADDITIONAL TERMS AND CONDITIONS (ATC) Project: Integration, Testing, Validation and Deployment of AI-Driven Robotic System for Intelligent Segregation of…",
+    "text_key": "1e7b0347a05a9825"
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261108",
+    "filename": "gtc-20261108.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261108.pdf",
+    "text_path": "gtc/20261108.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/102885155405824",
+    "filename": "102885155405824",
+    "size": 123093,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "document",
+    "sha256": "e0150568e189967bdbb2a13471c8d81956e4175273b12faa87ea6d7aab7bf6cb",
+    "path": "docs/10143232/files/e0150568e189967bdbb2a13471c8d81956e4175273b12faa87ea6d7aab7bf6cb.html",
+    "text_path": "docs/10143232/files/e0150568e189967bdbb2a13471c8d81956e4175273b12faa87ea6d7aab7bf6cb.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Service level agreement (GeM)",
+    "text_key": "f423332610dac882"
+   }
+  ],
+  "buyer_org": "Delhi University",
+  "verdict": {
+   "b_id": 10143232,
+   "bid_number": "GEM/2026/B/8254585",
+   "topic_key": "81403e73b7422162",
+   "doc_hash": "59fa3f57a2d71f60",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "judge",
+   "triage": "clearly_yes",
+   "reason": "The tender is for the integration and deployment of a specific AI-driven robotic system for waste segregation, not a general-purpose AI platform or MLOps tool.",
+   "evidence": [
+    {
+     "quote": "Artificial intelligence, Machine Learning, and Deep Learning as a Service - Integration with pre-developed service provider’s module; Machine Learning supported Data Management, Computer Vision and Automated Image Recognition, Integration, Testing, V..",
+     "file": "GeM-Bidding-10143232.pdf",
+     "page": 1,
+     "verified": true
+    },
+    {
+     "quote": "The scope broadly covers integration, testing, validation and deployment of the AI-SEG system at NTPC NETRA, including: 1. System Integration o Integrate 2D/3D vision, sensor-fusion systems, robotic controllers and existing conveyor infrastructure.",
+     "file": "1794112913.pdf",
+     "page": 1,
+     "verified": true
+    },
+    {
+     "quote": "Project: Integration, Testing, Validation and Deployment of AI-Driven Robotic System for Intelligent Segregation of Municipal Solid Waste (AI-SEG)",
+     "file": "ATCAI_0f927ab6-9a34-4f40-96571794122426363_BUYERZHDC.docx",
+     "page": 1,
+     "verified": true
+    }
+   ],
+   "key_facts": {
+    "emd": "",
+    "min_turnover": "50 Lakh",
+    "contract_period": "1 Month(s) 12 Day(s)",
+    "estimated_value": "2160000",
+    "scope_summary": "Integration, testing, validation and deployment of an AI-driven robotic system for intelligent segregation of municipal solid waste."
+   },
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-17T15:01:22.089433"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10142539": {
+  "b_id": 10142539,
+  "group": "AI Platform",
+  "bid": {
+   "b_id": 10142539,
+   "bid_number": "GEM/2026/B/8253988",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": null,
+   "department": "Personnel Administrative Reforms and Raj Bhasa Department Jharkhand",
+   "published": "2026-11-07T17:26:57",
+   "closing": "2026-11-18T17:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10142539",
+    "b_id": [
+     10142539
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8253988"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-07T17:26:57Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-18T17:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "Buyerdpo@2021"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_deptName": [
+     "Personnel Administrative Reforms and Raj Bhasa Department Jharkhand"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10142539",
+    "filename": "GeM-Bidding-10142539.pdf",
+    "size": 103686,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "48623a6e98795d806da1b5e6c5e18ab491e5bc27f5f4d3adb2f4251efa56c817",
+    "path": "docs/10142539/files/48623a6e98795d806da1b5e6c5e18ab491e5bc27f5f4d3adb2f4251efa56c817.pdf",
+    "text_path": "docs/10142539/files/48623a6e98795d806da1b5e6c5e18ab491e5bc27f5f4d3adb2f4251efa56c817.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "e44e9035ae4033d8"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/excel/bid-10142539/1794050755.xlsx",
+    "filename": "1794050755.xlsx",
+    "size": 6267,
+    "kind": "office",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "e8d93e13e2cf7daae57c38cbfc66c46409851ce861956a3ced6ddd9f6641fb60",
+    "path": "docs/10142539/files/e8d93e13e2cf7daae57c38cbfc66c46409851ce861956a3ced6ddd9f6641fb60.xlsx",
+    "text_path": "docs/10142539/files/e8d93e13e2cf7daae57c38cbfc66c46409851ce861956a3ced6ddd9f6641fb60.xlsx.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Price Bid Proforma",
+    "title": "[Price Bid Proforma (Form 9)]",
+    "text_key": "7d8c75ddd0c3ba67"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10142539/1794047627.pdf",
+    "filename": "1794047627.pdf",
+    "size": 2969790,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "6c296af64cd99dd12ccbf7158489a9f82726a3325381716587c28dc72356d017",
+    "path": "docs/10142539/files/6c296af64cd99dd12ccbf7158489a9f82726a3325381716587c28dc72356d017.pdf",
+    "text_path": "docs/10142539/files/6c296af64cd99dd12ccbf7158489a9f82726a3325381716587c28dc72356d017.pdf.text.json",
+    "pages": 29,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Payment Terms",
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10142539/1794047650.pdf",
+    "filename": "1794047650.pdf",
+    "size": 2969790,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "6c296af64cd99dd12ccbf7158489a9f82726a3325381716587c28dc72356d017",
+    "path": "docs/10142539/files/6c296af64cd99dd12ccbf7158489a9f82726a3325381716587c28dc72356d017.pdf",
+    "text_path": "docs/10142539/files/6c296af64cd99dd12ccbf7158489a9f82726a3325381716587c28dc72356d017.pdf.text.json",
+    "pages": 29,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Pre-Qualification Criteria",
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10142539/1794048531.pdf",
+    "filename": "1794048531.pdf",
+    "size": 2969790,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "6c296af64cd99dd12ccbf7158489a9f82726a3325381716587c28dc72356d017",
+    "path": "docs/10142539/files/6c296af64cd99dd12ccbf7158489a9f82726a3325381716587c28dc72356d017.pdf",
+    "text_path": "docs/10142539/files/6c296af64cd99dd12ccbf7158489a9f82726a3325381716587c28dc72356d017.pdf.text.json",
+    "pages": 29,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Scope of Work",
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadBuyerDoc/10142539/1794048785855.pdf",
+    "filename": "1794048785855.pdf",
+    "size": 2969790,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "6c296af64cd99dd12ccbf7158489a9f82726a3325381716587c28dc72356d017",
+    "path": "docs/10142539/files/6c296af64cd99dd12ccbf7158489a9f82726a3325381716587c28dc72356d017.pdf",
+    "text_path": "docs/10142539/files/6c296af64cd99dd12ccbf7158489a9f82726a3325381716587c28dc72356d017.pdf.text.json",
+    "pages": 29,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadBuyerDoc/10142539/17940487858742.pdf",
+    "filename": "17940487858742.pdf",
+    "size": 2969790,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "6c296af64cd99dd12ccbf7158489a9f82726a3325381716587c28dc72356d017",
+    "path": "docs/10142539/files/6c296af64cd99dd12ccbf7158489a9f82726a3325381716587c28dc72356d017.pdf",
+    "text_path": "docs/10142539/files/6c296af64cd99dd12ccbf7158489a9f82726a3325381716587c28dc72356d017.pdf.text.json",
+    "pages": 29,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadBuyerDoc/10142539/17940487858924.pdf",
+    "filename": "17940487858924.pdf",
+    "size": 2969790,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "6c296af64cd99dd12ccbf7158489a9f82726a3325381716587c28dc72356d017",
+    "path": "docs/10142539/files/6c296af64cd99dd12ccbf7158489a9f82726a3325381716587c28dc72356d017.pdf",
+    "text_path": "docs/10142539/files/6c296af64cd99dd12ccbf7158489a9f82726a3325381716587c28dc72356d017.pdf.text.json",
+    "pages": 29,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadBuyerDoc/10142539/17940487859105.pdf",
+    "filename": "17940487859105.pdf",
+    "size": 2969790,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "6c296af64cd99dd12ccbf7158489a9f82726a3325381716587c28dc72356d017",
+    "path": "docs/10142539/files/6c296af64cd99dd12ccbf7158489a9f82726a3325381716587c28dc72356d017.pdf",
+    "text_path": "docs/10142539/files/6c296af64cd99dd12ccbf7158489a9f82726a3325381716587c28dc72356d017.pdf.text.json",
+    "pages": 29,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8253988/CLM0010/ITB_a94a57e6-a88f-42f0-9b751794052374108_Buyerdpo@2021.pdf",
+    "filename": "ITB_a94a57e6-a88f-42f0-9b751794052374108_Buyerdpo@2021.pdf",
+    "size": 2969790,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "6c296af64cd99dd12ccbf7158489a9f82726a3325381716587c28dc72356d017",
+    "path": "docs/10142539/files/6c296af64cd99dd12ccbf7158489a9f82726a3325381716587c28dc72356d017.pdf",
+    "text_path": "docs/10142539/files/6c296af64cd99dd12ccbf7158489a9f82726a3325381716587c28dc72356d017.pdf.text.json",
+    "pages": 29,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261107",
+    "filename": "gtc-20261107.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261107.pdf",
+    "text_path": "gtc/20261107.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/102871097366521",
+    "filename": "102871097366521",
+    "size": 108414,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "document",
+    "sha256": "3f1a43faa0b161322c59a9760df63329192f94e6672d4cc4f1e4c95b960aeca9",
+    "path": "docs/10142539/files/3f1a43faa0b161322c59a9760df63329192f94e6672d4cc4f1e4c95b960aeca9.html",
+    "text_path": "docs/10142539/files/3f1a43faa0b161322c59a9760df63329192f94e6672d4cc4f1e4c95b960aeca9.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Service level agreement (GeM)",
+    "text_key": "3f1745a4d182258e"
+   }
+  ],
+  "buyer_org": "N/a",
+  "verdict": {
+   "b_id": 10142539,
+   "bid_number": "GEM/2026/B/8253988",
+   "topic_key": "81403e73b7422162",
+   "doc_hash": "d02eb4e0029bb222",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "judge",
+   "triage": "maybe",
+   "reason": "The tender is for general software development and IT project management services, not for the procurement of an AI platform.",
+   "evidence": [
+    {
+     "quote": "Includes Ambulance Booking App, Software Development, AI Model Development & Training, Platform Configuration, HL7/FHIR & Device-Software Integration",
+     "file": "1794050755.xlsx",
+     "page": 1,
+     "verified": true
+    },
+    {
+     "quote": "This service “Hiring of Agency for IT Projects – Milestone based” may be availed for hiring a software development agency for undertaking a project related to development or maintenance of an IT solution.",
+     "file": "102871097366521",
+     "page": 1,
+     "verified": true
+    },
+    {
+     "quote": "No hardware procurement, supply, or physical maintenance costs are included in this bid.",
+     "file": "1794050755.xlsx",
+     "page": 1,
+     "verified": true
+    }
+   ],
+   "key_facts": {
+    "emd": "200000",
+    "min_turnover": "200 Lakh",
+    "contract_period": "3 Month(s) 1 Day(s)",
+    "estimated_value": "",
+    "scope_summary": "Hiring of agency for IT projects including software development, AI model training, and O&M support."
+   },
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-17T15:01:22.133953"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10121552": {
+  "b_id": 10121552,
+  "group": "AI Platform",
+  "bid": {
+   "b_id": 10121552,
+   "bid_number": "GEM/2026/B/8235455",
+   "title": "Custom Bid for Services - Supply installation testing & commissioning of AI based enabled human & o",
+   "category_id": "services_home_cust",
+   "ministry": "Ministry of Steel",
+   "department": "Steel Authority of India Limited",
+   "published": "2026-11-03T18:25:32",
+   "closing": "2026-11-18T19:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10121552",
+    "b_id": [
+     10121552
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8235455"
+    ],
+    "b_category_name": [
+     "Custom Bid for Services - Supply installation testing & commissioning of AI based enabled human & o"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-03T18:25:32Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-18T19:00:00Z"
+    ],
+    "bd_category_name": [
+     "Custom Bid for Services - Supply installation testing & commissioning of AI based enabled human & object Detection System in Box Wagon Tippler"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cust"
+    ],
+    "b.b_created_by": [
+     "buyer11.isp.wb"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Steel"
+    ],
+    "ba_official_details_deptName": [
+     "Steel Authority of India Limited"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10121552",
+    "filename": "GeM-Bidding-10121552.pdf",
+    "size": 107913,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "46e7c5d2719596c9136267098a7ba9d5c76d430938f13b4c6a998a393d4d56b7",
+    "path": "docs/10121552/files/46e7c5d2719596c9136267098a7ba9d5c76d430938f13b4c6a998a393d4d56b7.pdf",
+    "text_path": "docs/10121552/files/46e7c5d2719596c9136267098a7ba9d5c76d430938f13b4c6a998a393d4d56b7.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "a6a54cafa69081a1"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/downloadOmppdfile/",
+    "filename": "downloadOmppdfile",
+    "size": 0,
+    "kind": "empty",
+    "status": "empty",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": null,
+    "path": null,
+    "text_path": null,
+    "pages": 0,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/excel/bid-10121552/1793705117.xlsx",
+    "filename": "1793705117.xlsx",
+    "size": 15921,
+    "kind": "office",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "d539e02010557abc9de2c9ed287087557e05504f68322a24ad8e37dc2e5b4582",
+    "path": "docs/10121552/files/d539e02010557abc9de2c9ed287087557e05504f68322a24ad8e37dc2e5b4582.xlsx",
+    "text_path": "docs/10121552/files/d539e02010557abc9de2c9ed287087557e05504f68322a24ad8e37dc2e5b4582.xlsx.text.json",
+    "pages": 3,
+    "ocr_pages": [],
+    "error": null,
+    "label": "PRICE FORMAT",
+    "title": "AI-BASED HUMAN & OBJECT DETECTION SYSTEM FOR BOX WAGON TIPPLER (BWT), NEW CHP, COB-10",
+    "text_key": "fbbad346573c3e4b"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10121552/1793705126.pdf",
+    "filename": "1793705126.pdf",
+    "size": 373664,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "7fd98f1ffcf2654c37245ca950a2cc5a8d1b94cbe53ffa1bdcb9615b30ef64f4",
+    "path": "docs/10121552/files/7fd98f1ffcf2654c37245ca950a2cc5a8d1b94cbe53ffa1bdcb9615b30ef64f4.pdf",
+    "text_path": "docs/10121552/files/7fd98f1ffcf2654c37245ca950a2cc5a8d1b94cbe53ffa1bdcb9615b30ef64f4.pdf.text.json",
+    "pages": 18,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Project introduction",
+    "title": "RFQ Title",
+    "text_key": "f86eef77e86f3405"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10121552/1793705132.pdf",
+    "filename": "1793705132.pdf",
+    "size": 113231,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "054185973e99494d5e8d66ddc768f1b97c231b3599208c68e0b16c4649d82742",
+    "path": "docs/10121552/files/054185973e99494d5e8d66ddc768f1b97c231b3599208c68e0b16c4649d82742.pdf",
+    "text_path": "docs/10121552/files/054185973e99494d5e8d66ddc768f1b97c231b3599208c68e0b16c4649d82742.pdf.text.json",
+    "pages": 2,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Instruction To Bidder",
+    "title": "INSTRUCTIONS TO BIDDERS",
+    "text_key": "b74ae271bd9ac869"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10121552/1793705136.pdf",
+    "filename": "1793705136.pdf",
+    "size": 373664,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "7fd98f1ffcf2654c37245ca950a2cc5a8d1b94cbe53ffa1bdcb9615b30ef64f4",
+    "path": "docs/10121552/files/7fd98f1ffcf2654c37245ca950a2cc5a8d1b94cbe53ffa1bdcb9615b30ef64f4.pdf",
+    "text_path": "docs/10121552/files/7fd98f1ffcf2654c37245ca950a2cc5a8d1b94cbe53ffa1bdcb9615b30ef64f4.pdf.text.json",
+    "pages": 18,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Scope of Work",
+    "title": "RFQ Title",
+    "text_key": "f86eef77e86f3405"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10121552/1793705142.pdf",
+    "filename": "1793705142.pdf",
+    "size": 1162213,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "2372d006bc520f1c8e510c6a31f08fd69ee0f4e00d0632b1a8a4ae87de5b2529",
+    "path": "docs/10121552/files/2372d006bc520f1c8e510c6a31f08fd69ee0f4e00d0632b1a8a4ae87de5b2529.pdf",
+    "text_path": "docs/10121552/files/2372d006bc520f1c8e510c6a31f08fd69ee0f4e00d0632b1a8a4ae87de5b2529.pdf.text.json",
+    "pages": 9,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Pre Qualification Criteria (PQC)",
+    "title": null,
+    "text_key": "3080cbdf96758086"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10121552/1793705146.pdf",
+    "filename": "1793705146.pdf",
+    "size": 373664,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "7fd98f1ffcf2654c37245ca950a2cc5a8d1b94cbe53ffa1bdcb9615b30ef64f4",
+    "path": "docs/10121552/files/7fd98f1ffcf2654c37245ca950a2cc5a8d1b94cbe53ffa1bdcb9615b30ef64f4.pdf",
+    "text_path": "docs/10121552/files/7fd98f1ffcf2654c37245ca950a2cc5a8d1b94cbe53ffa1bdcb9615b30ef64f4.pdf.text.json",
+    "pages": 18,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Payment Terms",
+    "title": "RFQ Title",
+    "text_key": "f86eef77e86f3405"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10121552/1793705150.pdf",
+    "filename": "1793705150.pdf",
+    "size": 373664,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "7fd98f1ffcf2654c37245ca950a2cc5a8d1b94cbe53ffa1bdcb9615b30ef64f4",
+    "path": "docs/10121552/files/7fd98f1ffcf2654c37245ca950a2cc5a8d1b94cbe53ffa1bdcb9615b30ef64f4.pdf",
+    "text_path": "docs/10121552/files/7fd98f1ffcf2654c37245ca950a2cc5a8d1b94cbe53ffa1bdcb9615b30ef64f4.pdf.text.json",
+    "pages": 18,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Penalties",
+    "title": "RFQ Title",
+    "text_key": "f86eef77e86f3405"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10121552/1793705156.pdf",
+    "filename": "1793705156.pdf",
+    "size": 35490,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "3a2c63a7fe4fbd6441dda7914642b231900dff257b3c2b6a2c0766bee019d2ea",
+    "path": "docs/10121552/files/3a2c63a7fe4fbd6441dda7914642b231900dff257b3c2b6a2c0766bee019d2ea.pdf",
+    "text_path": "docs/10121552/files/3a2c63a7fe4fbd6441dda7914642b231900dff257b3c2b6a2c0766bee019d2ea.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": "GEM Availability Report (GAR)",
+    "title": "GeM Availability Report and past transaction summary report is generated based on the specifications searched by the Buyer. The specification may be modified…",
+    "text_key": "9122b0497ffc9b44"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10121552/1793705164.pdf",
+    "filename": "1793705164.pdf",
+    "size": 8565903,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "702961b63a3ae47b2b51711d8665567786b5b2006f92e4c4f74cd6d10fe71953",
+    "path": "docs/10121552/files/702961b63a3ae47b2b51711d8665567786b5b2006f92e4c4f74cd6d10fe71953.pdf",
+    "text_path": "docs/10121552/files/702961b63a3ae47b2b51711d8665567786b5b2006f92e4c4f74cd6d10fe71953.pdf.text.json",
+    "pages": 38,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Any other Documents As per Specific Requirement of Buyer -1",
+    "title": "FORMAT FOR UNDERTAKING TO BE UPLOADED / SUBMITTED BY THE AUTHORIZED SIGNATORY OF THE BIDDER ON ITS LETTERHEAD ALONG WITH THE TENDER DOCUMENTS",
+    "text_key": "1f3b5ff06149c15c"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10121552/1793705170.pdf",
+    "filename": "1793705170.pdf",
+    "size": 10158486,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "65158099517828e3b33d88ddddef61aa20a318fb75b8122f6dbef25df0e114a6",
+    "path": "docs/10121552/files/65158099517828e3b33d88ddddef61aa20a318fb75b8122f6dbef25df0e114a6.pdf",
+    "text_path": "docs/10121552/files/65158099517828e3b33d88ddddef61aa20a318fb75b8122f6dbef25df0e114a6.pdf.text.json",
+    "pages": 128,
+    "ocr_pages": [
+     57,
+     58,
+     59,
+     60,
+     61,
+     62,
+     89,
+     90,
+     91,
+     92,
+     93,
+     94,
+     95,
+     96,
+     97,
+     98,
+     99,
+     100,
+     101,
+     102,
+     103,
+     104,
+     105,
+     106,
+     107,
+     110,
+     111,
+     112,
+     113,
+     114,
+     115,
+     116
+    ],
+    "error": null,
+    "label": "Any other Documents As per Specific Requirement of Buyer -2",
+    "title": "General Conditions of Contract - Services",
+    "text_key": "d34ed788b54a7286"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10121552/1793705173.pdf",
+    "filename": "1793705173.pdf",
+    "size": 759673,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "a1263f330e6a810e6bf91bdf71a7101d0b2d4b842755d7564b4e036eb482c28d",
+    "path": "docs/10121552/files/a1263f330e6a810e6bf91bdf71a7101d0b2d4b842755d7564b4e036eb482c28d.pdf",
+    "text_path": "docs/10121552/files/a1263f330e6a810e6bf91bdf71a7101d0b2d4b842755d7564b4e036eb482c28d.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Undertaking of Competent Authority",
+    "title": "Undertaking for Custom Bid for Services Creation on GeM",
+    "text_key": "1d0ac808d2f69312"
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261103",
+    "filename": "gtc-20261103.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261103.pdf",
+    "text_path": "gtc/20261103.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/102445814888704",
+    "filename": "102445814888704",
+    "size": 104933,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "document",
+    "sha256": "1fce7b9c4c00fbf5c9eb68b2a792b4aa2bd06a45c2923bb129c0e86bdd37f8e7",
+    "path": "docs/10121552/files/1fce7b9c4c00fbf5c9eb68b2a792b4aa2bd06a45c2923bb129c0e86bdd37f8e7.html",
+    "text_path": "docs/10121552/files/1fce7b9c4c00fbf5c9eb68b2a792b4aa2bd06a45c2923bb129c0e86bdd37f8e7.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Service level agreement (GeM)",
+    "text_key": "707673db90c8e1bc"
+   }
+  ],
+  "buyer_org": "Iisco Steel Plant",
+  "verdict": {
+   "b_id": 10121552,
+   "bid_number": "GEM/2026/B/8235455",
+   "topic_key": "81403e73b7422162",
+   "doc_hash": "b9dbe544994d1b79",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "judge",
+   "triage": "maybe",
+   "reason": "The tender is for a specific industrial safety system (human/object detection) installed on a coal tippler, not a general-purpose AI platform or MLOps tool.",
+   "evidence": [
+    {
+     "quote": "Supply of AI System at BWT of COB#10",
+     "file": "1793705117.xlsx",
+     "page": 1,
+     "verified": true
+    },
+    {
+     "quote": "AI vision system continuously monitors the BWT pit and integrates with the tippling sequence... If a person or object enters the danger zone, the AI algorithm identifies the breach... instantly activating the site hooter warning beacon",
+     "file": "1793705126.pdf",
+     "page": 4,
+     "verified": true
+    },
+    {
+     "quote": "Permanent perpetual Edge-AI software license, browser-based UI, zone configuration, automatic violation reporting with snapshot capture",
+     "file": "1793705126.pdf",
+     "page": 6,
+     "verified": true
+    }
+   ],
+   "key_facts": {
+    "emd": "",
+    "min_turnover": "6.49 Lakh",
+    "contract_period": "4 Month(s)",
+    "estimated_value": "",
+    "scope_summary": "Supply, installation, and commissioning of an AI-based human and object detection system for a Box Wagon Tippler, including 3 years of AMC."
+   },
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-17T15:01:27.392736"
+  },
+  "error": "",
+  "restored": false
+ }
+}

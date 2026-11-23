@@ -1,0 +1,74 @@
+{
+ "run_id": "9405459b195e",
+ "user": "raj",
+ "title": "AML software tenders published in the last 2 weeks",
+ "request_text": "AML software tenders published in the last 2 weeks",
+ "created": "2026-11-16T20:43:23.667361",
+ "status": "complete",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "AML software tenders published in the last 2 weeks",
+  "topics": [
+   {
+    "user_text": "AML software tenders published in the last 2 weeks",
+    "meaning": "AML Software: Software solutions for Anti-Money Laundering compliance, including transaction monitoring, KYC, and sanctions screening.",
+    "domain": "Banking & Financial Services",
+    "match_terms": [
+     "AML",
+     "Anti-Money Laundering",
+     "AML Software",
+     "Transaction Monitoring",
+     "KYC",
+     "Know Your Customer",
+     "Sanctions Screening",
+     "CFT",
+     "Counter Financing of Terrorism"
+    ],
+    "acronyms": {
+     "AML": "Anti-Money Laundering"
+    },
+    "related_but_not_enough": [
+     "Fraud Detection",
+     "Risk Management",
+     "Compliance Management",
+     "Financial Crime Prevention"
+    ],
+    "not_this": [
+     "AML (Additive Manufacturing Layer)",
+     "AML (Automated Machine Learning)"
+    ],
+    "buyers": [],
+    "chosen_because": "Meaning [0] has the highest plausibility (0.95) and matches 5 relevant open tenders, whereas Meaning [1] has lower plausibility and fewer matches, and Meaning [2] has negligible plausibility and no matches.",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-11-02T00:00:00",
+   "published_to": "2026-11-16T20:43:17.333480",
+   "closing_from": "2026-11-16T20:43:17.333480",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "AML Software: Software solutions for Anti-Money Laundering compliance, including transaction monitoring, KYC, and sanctions screening.",
+   "window_count": 29257,
+   "strong": 5,
+   "top_titles": [
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "FILTERS FOR BEML CFT",
+    "AMC of Integrated Security and Surveillance System - Monitor Operations, Health Monitoring Solution",
+    "FILTERS REQUIRED FOR ROSENBAUER CFT MINI",
+    "AMC of Integrated Security and Surveillance System - CCTV; Comprehensive; Hardware, Software, Netwo",
+    "Hiring of Agency for IT Projects- Milestone basis"
+   ]
+  }
+ ],
+ "error": ""
+}

@@ -1,0 +1,57 @@
+[
+ {
+  "topic_key": "c7500fc1dcc9cef4",
+  "text": "Management Consultancy Services: Professional advisory services for strategic planning, operational efficiency, and organizational restructuring.; Management Consultancy; Management Consulting; Consultancy Services; Strategic Advisory; Management Advisory; Mgmt Consultancy",
+  "terms": [
+   "Management Consultancy",
+   "Management Consulting",
+   "Consultancy Services",
+   "Strategic Advisory",
+   "Management Advisory",
+   "Mgmt Consultancy",
+   "MCS"
+  ],
+  "published_from": "2026-11-02T00:00:00",
+  "published_to": "2026-11-16T16:01:47.898846",
+  "closing_from": "2026-11-16T16:01:47.898846",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [
+   "Ministry of Finance"
+  ],
+  "prefer_departments": [
+   "REGIONAL RURAL BANKS"
+  ],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "The Ministry of Finance oversees public sector banks, making it the most relevant ministry for bank-specific tenders. No specific GeM category perfectly isolates general management consultancy for banks, so categories are left empty to avoid missing relevant tenders filed under vague or generic service headings. The extra terms help capture variations in tender titles."
+ },
+ {
+  "topic_key": "ca7d7d7eb0ec6953",
+  "text": "Banking Consultancy: Specialized consultancy services focused on banking operations, risk management, and regulatory compliance.; Banking Consultancy; Bank Consultancy; Banking Advisory; Banking Management Services",
+  "terms": [
+   "Banking Consultancy",
+   "Bank Consultancy",
+   "Banking Advisory",
+   "Banking Management Services",
+   "Bank Advisory",
+   "Bank Management Services"
+  ],
+  "published_from": "2026-11-02T00:00:00",
+  "published_to": "2026-11-16T16:01:47.898846",
+  "closing_from": "2026-11-16T16:01:47.898846",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [
+   "Ministry of Finance"
+  ],
+  "prefer_departments": [
+   "REGIONAL RURAL BANKS"
+  ],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "The Ministry of Finance oversees public sector banks and is the most relevant ministry for banking-related tenders. Regional Rural Banks are a specific type of bank buyer, fitting the user's request for 'banks'. No specific GeM category perfectly captures 'management consultancy' for banks without being too broad or irrelevant, so categories are left empty to rely on the semantic search of the title. The extra terms help capture variations in how banks phrase these consultancy requests."
+ }
+]

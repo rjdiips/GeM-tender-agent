@@ -1,0 +1,77 @@
+{
+ "run_id": "03432d1c6205",
+ "user": "raj",
+ "title": "fraud detection tender last 2 weeks",
+ "request_text": "fraud detection tender last 2 weeks",
+ "created": "2026-11-17T14:09:08.435022",
+ "status": "complete",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "fraud detection tender last 2 weeks",
+  "topics": [
+   {
+    "user_text": "fraud detection tender last 2 weeks",
+    "meaning": "Fraud Detection and Prevention Systems: Tenders for AI-driven fraud detection platforms, transaction monitoring systems, and behavioral analytics tools used by banks and financial institutions to identify suspicious activities.",
+    "domain": "Banking/Finance",
+    "match_terms": [
+     "fraud detection",
+     "fraud prevention",
+     "fraud management system",
+     "transaction monitoring",
+     "suspicious activity detection",
+     "AML fraud",
+     "payment fraud",
+     "identity theft detection",
+     "anomaly detection",
+     "fraud analytics"
+    ],
+    "acronyms": {
+     "FDS": "Fraud Detection System",
+     "FMS": "Fraud Management System"
+    },
+    "related_but_not_enough": [
+     "Cybersecurity",
+     "Network Security",
+     "Data Privacy",
+     "General IT Infrastructure"
+    ],
+    "not_this": [
+     "Fraud Investigation Services",
+     "Legal Compliance",
+     "Physical Security"
+    ],
+    "buyers": [],
+    "chosen_because": "This meaning has a high plausibility score (0.95) and matches 10 open tenders, whereas the alternative meaning has negligible plausibility (0.05) and only 1 match.",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-11-03T00:00:00",
+   "published_to": "2026-11-17T14:09:02.510197",
+   "closing_from": "2026-11-17T14:09:02.510197",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": 10
+ },
+ "probes": [
+  {
+   "meaning": "Fraud Detection and Prevention Systems: Tenders for AI-driven fraud detection platforms, transaction monitoring systems, and behavioral analytics tools used by banks and financial institutions to identify suspicious activities.",
+   "window_count": 30236,
+   "strong": 10,
+   "top_titles": [
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Custom Bid for Services - Request for Proposal for Facility Management  Services (FMS) for IT Infra",
+    "Custom Bid for Services - FMS FOR AV SYSTEM FOR 19TH FLOOR SBB",
+    "Custom Bid for Services - CHANGING REPAIR AND MAINTENANCE OF FDS DUCT AND HOPPER ID FAN FLOW STRAIG"
+   ]
+  }
+ ],
+ "error": ""
+}

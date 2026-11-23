@@ -1,0 +1,37 @@
+[
+ {
+  "topic_key": "ee54a3901c38ae27",
+  "text": "Management Consultancy: Professional services for strategic planning, organizational restructuring, and operational efficiency improvement.; Management Consultancy; Management Consulting; Strategic Consulting; Business Process Reengineering; Organizational Development; Management Advisory Services",
+  "terms": [
+   "Management Consultancy",
+   "Management Consulting",
+   "Strategic Consulting",
+   "Business Process Reengineering",
+   "Organizational Development",
+   "Management Advisory Services",
+   "Banking",
+   "Financial Institution",
+   "SBI",
+   "PNB",
+   "BOB",
+   "Canara Bank",
+   "Union Bank",
+   "Indian Bank"
+  ],
+  "published_from": "2026-11-02T00:00:00",
+  "published_to": "2026-11-16T20:29:34.936525",
+  "closing_from": "2026-11-16T20:29:34.936525",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [
+   "Ministry of Finance"
+  ],
+  "prefer_departments": [
+   "REGIONAL RURAL BANKS"
+  ],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "The Ministry of Finance oversees public sector banks, and Regional Rural Banks are explicitly mentioned as the target buyer hint. No specific GeM category perfectly captures general management consultancy for banks, so categories are left empty to avoid missing relevant tenders filed under vague or generic service categories. Extra terms include major bank names and 'Banking' to ensure the search captures tenders from various public and private sector banks that may not explicitly state 'Management Consultancy' in the main title but are clearly from the banking domain."
+ }
+]

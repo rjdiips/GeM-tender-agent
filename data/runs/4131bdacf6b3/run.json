@@ -1,0 +1,76 @@
+{
+ "run_id": "4131bdacf6b3",
+ "user": "raj",
+ "title": "central bank tenders in the last 2 weeks",
+ "request_text": "central bank tenders in the last 2 weeks",
+ "created": "2026-11-16T17:00:52.924434",
+ "status": "complete",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "central bank tenders in the last 2 weeks",
+  "topics": [
+   {
+    "user_text": "central bank tenders in the last 2 weeks",
+    "meaning": "Reserve Bank of India (RBI) Tenders: Tenders issued by the Reserve Bank of India, the central bank of India, for goods, services, or works.",
+    "domain": "Banking/Finance",
+    "match_terms": [
+     "Reserve Bank of India",
+     "RBI",
+     "Central Bank of India",
+     "Central Bank Tenders"
+    ],
+    "acronyms": {
+     "RBI": "Reserve Bank of India"
+    },
+    "related_but_not_enough": [
+     "State Bank of India",
+     "Public Sector Banks",
+     "Ministry of Finance"
+    ],
+    "not_this": [
+     "Central Bank of India (a specific commercial bank)",
+     "Central Government Tenders (general)",
+     "NABARD",
+     "SIDBI"
+    ],
+    "buyers": [
+     "Reserve Bank of India",
+     "Central Bank"
+    ],
+    "chosen_because": "The user explicitly requested 'central bank' tenders, which refers to the Reserve Bank of India (RBI), whereas Central Bank of India is a commercial bank, and although the current search window has no direct RBI matches, the semantic intent is clearly for the central bank.",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-11-02T00:00:00",
+   "published_to": "2026-11-16T17:00:49.129307",
+   "closing_from": "2026-11-16T17:00:49.129307",
+   "closing_to": null
+  },
+  "buyer_hints": [
+   "Reserve Bank of India",
+   "Central Bank"
+  ],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "Reserve Bank of India (RBI) Tenders: Tenders issued by the Reserve Bank of India, the central bank of India, for goods, services, or works.",
+   "window_count": 29448,
+   "strong": 0,
+   "top_titles": [
+    "Custom Bid for Services - Tender for Providing agency services to DCILs Dredgers and other Vessels ",
+    "Custom Bid for Services - ----",
+    "Custom Bid for Services - ----",
+    "Custom Bid for Services - Tender for Appointment of Media Agency for releasing advertisements Tende",
+    "Custom Bid for Services - Request for Proposal (RFP) for Selection of Service Provider for Conducti",
+    "Custom Bid for Services - ----",
+    "Custom Bid for Services - ----",
+    "Custom Bid for Services - RFP for Empanelment & Selection of Vendor for  Third-Party Risk Assessmen"
+   ]
+  }
+ ],
+ "error": ""
+}

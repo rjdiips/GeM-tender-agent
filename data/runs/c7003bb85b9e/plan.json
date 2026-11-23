@@ -1,0 +1,33 @@
+[
+ {
+  "topic_key": "6163cad4839870b4",
+  "text": "Fraud Detection and Prevention Systems: AI-driven fraud detection platforms, transaction monitoring systems, and behavioral analytics tools used by banks and financial institutions to identify suspicious activities; fraud detection; fraud prevention; transaction monitoring; suspicious activity detection; fraud management system; FMS; real-time fraud detection; behavioral analytics; anomaly detection; payment fraud; account takeover; identity fraud",
+  "terms": [
+   "fraud detection",
+   "fraud prevention",
+   "transaction monitoring",
+   "suspicious activity detection",
+   "fraud management system",
+   "FMS",
+   "real-time fraud detection",
+   "behavioral analytics",
+   "anomaly detection",
+   "payment fraud",
+   "account takeover",
+   "identity fraud",
+   "AI fraud",
+   "payment security"
+  ],
+  "published_from": "2026-10-29T00:00:00",
+  "published_to": "2026-11-19T13:24:08.010357",
+  "closing_from": "2026-11-19T13:24:08.010357",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "GeM lacks a specific 'Fraud Detection' category; these systems are typically filed under generic IT hardware/software or Security Services categories, so leaving it empty avoids missing relevant bids in broader classifications."
+ }
+]

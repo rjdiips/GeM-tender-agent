@@ -28,11 +28,17 @@ web/dist/
 # --- Runtime data (indexes, caches, checkpoints, logs: ~GBs) ---
 data/*
 !data/.gitkeep
+# Run history is tracked so another app host can read the conversations and results;
+# caches, the checkpoint db and lock files stay out.
+!data/runs/
+!data/runs/**
 *.log
 *.sqlite
 *.sqlite-shm
 *.sqlite-wal
 *.db
+*.lock
+*.tmp
 
 # # Per-user / generated knowledge
 # knowledge/users/*

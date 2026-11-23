@@ -1,0 +1,74 @@
+{
+ "run_id": "2b27c23ef711",
+ "user": "raj",
+ "title": "central bank tenders in the last 2 weeks",
+ "request_text": "central bank tenders in the last 2 weeks",
+ "created": "2026-11-16T16:55:22.746133",
+ "status": "failed",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "central bank tenders in the last 2 weeks",
+  "topics": [
+   {
+    "user_text": "central bank tenders in the last 2 weeks",
+    "meaning": "Reserve Bank of India (RBI) Tenders: Procurement notices, IT services, and infrastructure projects issued by the Reserve Bank of India.",
+    "domain": "Banking/Finance",
+    "match_terms": [
+     "Reserve Bank of India",
+     "RBI",
+     "Central Bank of India",
+     "Central Bank Tenders"
+    ],
+    "acronyms": {
+     "RBI": "Reserve Bank of India",
+     "CBI": "Central Bank of India"
+    },
+    "related_but_not_enough": [
+     "State Bank of India",
+     "Public Sector Banks"
+    ],
+    "not_this": [
+     "Ministry of Finance",
+     "NITI Aayog"
+    ],
+    "buyers": [
+     "Reserve Bank of India",
+     "Central Bank of India"
+    ],
+    "chosen_because": "The user's phrase 'central bank' is a generic reference to the Reserve Bank of India (the country's central bank) rather than the specific public sector bank named 'Central Bank of India', which is confirmed by the higher plausibility score and the context of the matching tender titles.",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-11-02T00:00:00",
+   "published_to": "2026-11-16T16:55:18.690279",
+   "closing_from": "2026-11-16T16:55:18.690279",
+   "closing_to": null
+  },
+  "buyer_hints": [
+   "Reserve Bank of India",
+   "Central Bank of India"
+  ],
+  "buyer_only": false,
+  "limit": 10
+ },
+ "probes": [
+  {
+   "meaning": "Reserve Bank of India (RBI) Tenders: Procurement notices, IT services, and infrastructure projects issued by the Reserve Bank of India.",
+   "window_count": 29999,
+   "strong": 1,
+   "top_titles": [
+    "Manpower Outsourcing Services - Man-days based - Cleaning and sanitation of CBI office and its prem",
+    "Custom Bid for Services - Request for Proposal (RFP) for Selection of Service Provider for Conducti",
+    "Custom Bid for Services - As per Tender",
+    "Custom Bid for Services - As per Tender",
+    "Custom Bid for Services - RFP for Empanelment & Selection of Vendor for  Third-Party Risk Assessmen",
+    "Custom Bid for Services - ----",
+    "Custom Bid for Services - Request for Proposal for Facility Management  Services (FMS) for IT Infra",
+    "Toner Cartridges / Ink Cartridges / Consumables for Printers,Toner Cartridges / Ink Cartridges / Co"
+   ]
+  }
+ ],
+ "error": "Model token limit (400) exceeded while generating structured output, resulting in incomplete JSON. Increase the `max_tokens` model setting, or simplify the prompt to result in a shorter response that will fit within the limit."
+}

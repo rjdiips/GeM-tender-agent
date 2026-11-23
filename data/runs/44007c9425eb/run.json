@@ -1,0 +1,76 @@
+{
+ "run_id": "44007c9425eb",
+ "user": "cli",
+ "title": "M&A advisory tenders",
+ "request_text": "M&A advisory tenders",
+ "created": "2026-11-19T07:07:49.762454",
+ "status": "complete",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "M&A advisory tenders",
+  "topics": [
+   {
+    "user_text": "M&A advisory tenders",
+    "meaning": "M&A Advisory Services: professional consulting services for mergers, acquisitions, and corporate restructuring",
+    "domain": "financial_services",
+    "match_terms": [
+     "M&A advisory",
+     "merger and acquisition advisory",
+     "corporate advisory",
+     "deal advisory",
+     "transaction advisory",
+     "M&A consultant",
+     "merger advisory services",
+     "acquisition advisory",
+     "corporate restructuring advisory"
+    ],
+    "acronyms": {
+     "M&A": "Mergers and Acquisitions"
+    },
+    "related_but_not_enough": [
+     "investment banking",
+     "financial advisory",
+     "corporate finance",
+     "due diligence services"
+    ],
+    "not_this": [
+     "M&A software",
+     "M&A database",
+     "M&A platform",
+     "M&A analytics"
+    ],
+    "buyers": [],
+    "chosen_because": "The first meaning has high plausibility and matches 19 open tenders, while the second meaning has negligible plausibility and zero matches.",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": null,
+   "published_to": null,
+   "closing_from": "2026-11-19T07:07:41.040992",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "M&A Advisory Services: professional consulting services for mergers, acquisitions, and corporate restructuring",
+   "window_count": 44657,
+   "strong": 19,
+   "top_titles": [
+    "DTH/CABLE SERVICE",
+    "Manpower Outsourcing Services - Minimum wage - Skilled; Graduate; Admin,Manpower Outsourcing Servic",
+    "Custom Bid for Services - Microsoft Software Assurance",
+    "Catering service (Duration Based) - Lot -1 Providing Pre-cooked Catering Services at BPCL Corporate",
+    "Custom Bid for Services - TENDER FOR THE PROPOSED INTERIOR REFURBISHING WORK FOR MUMBAI CORPORATE B",
+    "Manpower Outsourcing Services - Minimum wage - Skilled; Graduate; Admin",
+    "Tentage Service Lumpsum Based - Corporate Functions; LIGHT DECORATION",
+    "Custom Bid for Services - Implementation of customized ERP Solution for Membership, Studies, Examin"
+   ]
+  }
+ ],
+ "error": ""
+}

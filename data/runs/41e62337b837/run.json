@@ -1,0 +1,77 @@
+{
+ "run_id": "41e62337b837",
+ "user": "raj",
+ "title": "ai platform tenders this month",
+ "request_text": "ai platform tenders this month",
+ "created": "2026-11-17T14:47:41.825466",
+ "status": "stopped",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "ai platform tenders this month",
+  "topics": [
+   {
+    "user_text": "ai platform tenders this month",
+    "meaning": "AI Platform: Tenders for Artificial Intelligence platforms, including machine learning operations (MLOps) tools, generative AI frameworks, and enterprise AI integration services.",
+    "domain": "Technology",
+    "match_terms": [
+     "AI platform",
+     "artificial intelligence platform",
+     "machine learning platform",
+     "MLOps",
+     "generative AI",
+     "AI solution",
+     "AI software",
+     "AI services"
+    ],
+    "acronyms": {
+     "AI": "Artificial Intelligence"
+    },
+    "related_but_not_enough": [
+     "AI hardware",
+     "GPU servers",
+     "AI cameras",
+     "robotics",
+     "lab equipment"
+    ],
+    "not_this": [
+     "AI hardware",
+     "GPU servers",
+     "AI cameras",
+     "robotics",
+     "lab equipment"
+    ],
+    "buyers": [],
+    "chosen_because": "The user specifically requested 'AI platform' tenders, and Meaning 0 directly matches this intent with high plausibility (0.95) and a significant number of relevant open tenders, whereas the other meanings are broader or less specific to the 'platform' keyword.",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-10-18T00:00:00",
+   "published_to": "2026-11-17T14:47:32.031212",
+   "closing_from": "2026-11-17T14:47:32.031212",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": 50
+ },
+ "probes": [
+  {
+   "meaning": "AI Platform: Tenders for Artificial Intelligence platforms, including machine learning operations (MLOps) tools, generative AI frameworks, and enterprise AI integration services.",
+   "window_count": 39147,
+   "strong": 144,
+   "top_titles": [
+    "Generative AI Platform,AI Video Generation Platform,AI Text to video Creation Platform,Creative Rea",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "AI Server for Makers Lab",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "ARTIFICIAL INTELLIGENCE (AI) ASSISTED SOFTWARE DEVELOPMENT LIFE CYCLE (SDLC) MANAGEMENT PLATFORM"
+   ]
+  }
+ ],
+ "error": ""
+}

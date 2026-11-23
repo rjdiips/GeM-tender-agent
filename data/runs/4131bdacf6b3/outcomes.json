@@ -1,0 +1,4989 @@
+{
+ "10127918": {
+  "b_id": 10127918,
+  "group": "Reserve Bank of India (RBI) Tenders",
+  "bid": {
+   "b_id": 10127918,
+   "bid_number": "GEM/2026/B/8241149",
+   "title": "Custom Bid for Services - ----",
+   "category_id": "services_home_cust",
+   "ministry": "Ministry of Heavy Industries and Public Enterprises",
+   "department": "Department of Heavy Industry",
+   "published": "2026-11-05T19:21:43",
+   "closing": "2026-11-16T20:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10127918",
+    "b_id": [
+     10127918
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8241149"
+    ],
+    "b_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-05T19:21:43Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-16T20:00:00Z"
+    ],
+    "bd_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cust"
+    ],
+    "b.b_created_by": [
+     "TALBUYNITISH"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Heavy Industries and Public Enterprises"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Heavy Industry"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10127918",
+    "filename": "GeM-Bidding-10127918.pdf",
+    "size": 106014,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "7c886013397e85ae6b3e36cbb45883a53fb090940cece5955fd85b8441f53782",
+    "path": "docs/10127918/files/7c886013397e85ae6b3e36cbb45883a53fb090940cece5955fd85b8441f53782.pdf",
+    "text_path": "docs/10127918/files/7c886013397e85ae6b3e36cbb45883a53fb090940cece5955fd85b8441f53782.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/downloadOmppdfile/",
+    "filename": "downloadOmppdfile",
+    "size": 0,
+    "kind": "empty",
+    "status": "empty",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": null,
+    "path": null,
+    "text_path": null,
+    "pages": 0,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10127918/1793885141.pdf",
+    "filename": "1793885141.pdf",
+    "size": 10040170,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440",
+    "path": "docs/10127918/files/bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440.pdf",
+    "text_path": "docs/10127918/files/bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440.pdf.text.json",
+    "pages": 376,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10127918/1793885157.pdf",
+    "filename": "1793885157.pdf",
+    "size": 10040170,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440",
+    "path": "docs/10127918/files/bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440.pdf",
+    "text_path": "docs/10127918/files/bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440.pdf.text.json",
+    "pages": 376,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10127918/1793885164.pdf",
+    "filename": "1793885164.pdf",
+    "size": 10040170,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440",
+    "path": "docs/10127918/files/bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440.pdf",
+    "text_path": "docs/10127918/files/bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440.pdf.text.json",
+    "pages": 376,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10127918/1793885173.pdf",
+    "filename": "1793885173.pdf",
+    "size": 10040170,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440",
+    "path": "docs/10127918/files/bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440.pdf",
+    "text_path": "docs/10127918/files/bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440.pdf.text.json",
+    "pages": 376,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10127918/1793885183.pdf",
+    "filename": "1793885183.pdf",
+    "size": 10040170,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440",
+    "path": "docs/10127918/files/bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440.pdf",
+    "text_path": "docs/10127918/files/bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440.pdf.text.json",
+    "pages": 376,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10127918/1793885191.pdf",
+    "filename": "1793885191.pdf",
+    "size": 10040170,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440",
+    "path": "docs/10127918/files/bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440.pdf",
+    "text_path": "docs/10127918/files/bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440.pdf.text.json",
+    "pages": 376,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10127918/1793885197.pdf",
+    "filename": "1793885197.pdf",
+    "size": 10040170,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440",
+    "path": "docs/10127918/files/bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440.pdf",
+    "text_path": "docs/10127918/files/bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440.pdf.text.json",
+    "pages": 376,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10127918/1793885202.pdf",
+    "filename": "1793885202.pdf",
+    "size": 10040170,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440",
+    "path": "docs/10127918/files/bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440.pdf",
+    "text_path": "docs/10127918/files/bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440.pdf.text.json",
+    "pages": 376,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10127918/1793885213.pdf",
+    "filename": "1793885213.pdf",
+    "size": 36604,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "22d21ca4f7282fc8dec1f5b07fc985fa4cd3e33c4921588caf369c74ce120b1f",
+    "path": "docs/10127918/files/22d21ca4f7282fc8dec1f5b07fc985fa4cd3e33c4921588caf369c74ce120b1f.pdf",
+    "text_path": "docs/10127918/files/22d21ca4f7282fc8dec1f5b07fc985fa4cd3e33c4921588caf369c74ce120b1f.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10127918/1793885243.pdf",
+    "filename": "1793885243.pdf",
+    "size": 358165,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "7c2af3462ab2cbe3eab2cc5e365f8f0ce710a7109cca5de4b18417340867e34c",
+    "path": "docs/10127918/files/7c2af3462ab2cbe3eab2cc5e365f8f0ce710a7109cca5de4b18417340867e34c.pdf",
+    "text_path": "docs/10127918/files/7c2af3462ab2cbe3eab2cc5e365f8f0ce710a7109cca5de4b18417340867e34c.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8241149/CLM0010/ATC_64ff0e32-8a0a-4937-90a71793886083081_TALBUYNITISH.pdf",
+    "filename": "ATC_64ff0e32-8a0a-4937-90a71793886083081_TALBUYNITISH.pdf",
+    "size": 10040170,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440",
+    "path": "docs/10127918/files/bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440.pdf",
+    "text_path": "docs/10127918/files/bb943eb395bf10fa887fb54b7c8005650ec98cd387cfa744af25d5eb03318440.pdf.text.json",
+    "pages": 376,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261105",
+    "filename": "gtc-20261105.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261105.pdf",
+    "text_path": "gtc/20261105.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/102574723014724",
+    "filename": "102574723014724",
+    "size": 104933,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "document",
+    "sha256": "e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a",
+    "path": "docs/10127918/files/e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a.html",
+    "text_path": "docs/10127918/files/e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10127918,
+   "bid_number": "GEM/2026/B/8241149",
+   "topic_key": "fc67a56cd5712fe5",
+   "doc_hash": "f362baf48c04588b",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is issued by the Ministry of Heavy Industries and Bharat Heavy Electricals Limited, not the Reserve Bank of India.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:01:30.342683"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10100993": {
+  "b_id": 10100993,
+  "group": "Reserve Bank of India (RBI) Tenders",
+  "bid": {
+   "b_id": 10100993,
+   "bid_number": "GEM/2026/B/8217798",
+   "title": "Custom Bid for Services - ----",
+   "category_id": "services_home_cust",
+   "ministry": "Ministry of Heavy Industries and Public Enterprises",
+   "department": "Department of Heavy Industry",
+   "published": "2026-11-10T08:41:50",
+   "closing": "2026-11-20T09:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10100993",
+    "b_id": [
+     10100993
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8217798"
+    ],
+    "b_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-10T08:41:50Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-20T09:00:00Z"
+    ],
+    "bd_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cust"
+    ],
+    "b.b_created_by": [
+     "idrisi.bhel"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Heavy Industries and Public Enterprises"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Heavy Industry"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10100993",
+    "filename": "GeM-Bidding-10100993.pdf",
+    "size": 144697,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "e3b52c38be045e3871cc5cb78384782dd46d206866ca30503761a9269c834200",
+    "path": "docs/10100993/files/e3b52c38be045e3871cc5cb78384782dd46d206866ca30503761a9269c834200.pdf",
+    "text_path": "docs/10100993/files/e3b52c38be045e3871cc5cb78384782dd46d206866ca30503761a9269c834200.pdf.text.json",
+    "pages": 12,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/downloadOmppdfile/",
+    "filename": "downloadOmppdfile",
+    "size": 0,
+    "kind": "empty",
+    "status": "empty",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": null,
+    "path": null,
+    "text_path": null,
+    "pages": 0,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/OctQ426/bidding/biddoc/bid-10100993/1794201538.pdf",
+    "filename": "1794201538.pdf",
+    "size": 774877,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "d6eec16154e638d7bfff6917a54582b5f1f9b97b5e49406d31306eaede53e0d8",
+    "path": "docs/10100993/files/d6eec16154e638d7bfff6917a54582b5f1f9b97b5e49406d31306eaede53e0d8.pdf",
+    "text_path": "docs/10100993/files/d6eec16154e638d7bfff6917a54582b5f1f9b97b5e49406d31306eaede53e0d8.pdf.text.json",
+    "pages": 42,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/OctQ426/bidding/biddoc/bid-10100993/1794201542.pdf",
+    "filename": "1794201542.pdf",
+    "size": 774877,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "d6eec16154e638d7bfff6917a54582b5f1f9b97b5e49406d31306eaede53e0d8",
+    "path": "docs/10100993/files/d6eec16154e638d7bfff6917a54582b5f1f9b97b5e49406d31306eaede53e0d8.pdf",
+    "text_path": "docs/10100993/files/d6eec16154e638d7bfff6917a54582b5f1f9b97b5e49406d31306eaede53e0d8.pdf.text.json",
+    "pages": 42,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/OctQ426/bidding/biddoc/bid-10100993/1794201550.pdf",
+    "filename": "1794201550.pdf",
+    "size": 1279630,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "ef215a989c0790c9348d585f1db92c3b79891afa3934f5bf762eded14172eb4e",
+    "path": "docs/10100993/files/ef215a989c0790c9348d585f1db92c3b79891afa3934f5bf762eded14172eb4e.pdf",
+    "text_path": "docs/10100993/files/ef215a989c0790c9348d585f1db92c3b79891afa3934f5bf762eded14172eb4e.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/OctQ426/bidding/biddoc/bid-10100993/1794201558.pdf",
+    "filename": "1794201558.pdf",
+    "size": 45395,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "3fdaa0c11ae7720b07715361b9499ceadc43c550f4bf2af5e558c9239c41d1d8",
+    "path": "docs/10100993/files/3fdaa0c11ae7720b07715361b9499ceadc43c550f4bf2af5e558c9239c41d1d8.pdf",
+    "text_path": "docs/10100993/files/3fdaa0c11ae7720b07715361b9499ceadc43c550f4bf2af5e558c9239c41d1d8.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261110",
+    "filename": "gtc-20261110.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 11,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261110.pdf",
+    "text_path": "gtc/20261110.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/102030059586049",
+    "filename": "102030059586049",
+    "size": 104933,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 11,
+    "link_kind": "document",
+    "sha256": "e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a",
+    "path": "docs/10100993/files/e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a.html",
+    "text_path": "docs/10100993/files/e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10100993,
+   "bid_number": "GEM/2026/B/8217798",
+   "topic_key": "fc67a56cd5712fe5",
+   "doc_hash": "1980afd37c5d1a6e",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is issued by the Ministry of Heavy Industries and Bharat Heavy Electricals Limited, not the Reserve Bank of India.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:01:57.863141"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10135525": {
+  "b_id": 10135525,
+  "group": "Reserve Bank of India (RBI) Tenders",
+  "bid": {
+   "b_id": 10135525,
+   "bid_number": "GEM/2026/B/8247876",
+   "title": "Custom Bid for Services - ----",
+   "category_id": "services_home_cust",
+   "ministry": "Ministry of Heavy Industries and Public Enterprises",
+   "department": "Department of Heavy Industry",
+   "published": "2026-11-06T10:21:55",
+   "closing": "2026-11-20T11:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10135525",
+    "b_id": [
+     10135525
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8247876"
+    ],
+    "b_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-06T10:21:55Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-20T11:00:00Z"
+    ],
+    "bd_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cust"
+    ],
+    "b.b_created_by": [
+     "bncrjo"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Heavy Industries and Public Enterprises"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Heavy Industry"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10135525",
+    "filename": "GeM-Bidding-10135525.pdf",
+    "size": 146671,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "b48651d9d72e710af579a82ba3473fed9cdb7aad2f5bf9f070ec12e1a92c19aa",
+    "path": "docs/10135525/files/b48651d9d72e710af579a82ba3473fed9cdb7aad2f5bf9f070ec12e1a92c19aa.pdf",
+    "text_path": "docs/10135525/files/b48651d9d72e710af579a82ba3473fed9cdb7aad2f5bf9f070ec12e1a92c19aa.pdf.text.json",
+    "pages": 16,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10135525/1793940234.pdf",
+    "filename": "1793940234.pdf",
+    "size": 972439,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "4a34967fc324b7ad72506d3a93ad2e78d1392a0e4a66f30139494f6cb2ea4a65",
+    "path": "docs/10135525/files/4a34967fc324b7ad72506d3a93ad2e78d1392a0e4a66f30139494f6cb2ea4a65.pdf",
+    "text_path": "docs/10135525/files/4a34967fc324b7ad72506d3a93ad2e78d1392a0e4a66f30139494f6cb2ea4a65.pdf.text.json",
+    "pages": 13,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10135525/1793940240.pdf",
+    "filename": "1793940240.pdf",
+    "size": 972439,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "4a34967fc324b7ad72506d3a93ad2e78d1392a0e4a66f30139494f6cb2ea4a65",
+    "path": "docs/10135525/files/4a34967fc324b7ad72506d3a93ad2e78d1392a0e4a66f30139494f6cb2ea4a65.pdf",
+    "text_path": "docs/10135525/files/4a34967fc324b7ad72506d3a93ad2e78d1392a0e4a66f30139494f6cb2ea4a65.pdf.text.json",
+    "pages": 13,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10135525/1793940253.pdf",
+    "filename": "1793940253.pdf",
+    "size": 972439,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "4a34967fc324b7ad72506d3a93ad2e78d1392a0e4a66f30139494f6cb2ea4a65",
+    "path": "docs/10135525/files/4a34967fc324b7ad72506d3a93ad2e78d1392a0e4a66f30139494f6cb2ea4a65.pdf",
+    "text_path": "docs/10135525/files/4a34967fc324b7ad72506d3a93ad2e78d1392a0e4a66f30139494f6cb2ea4a65.pdf.text.json",
+    "pages": 13,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10135525/1793940258.pdf",
+    "filename": "1793940258.pdf",
+    "size": 972439,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "4a34967fc324b7ad72506d3a93ad2e78d1392a0e4a66f30139494f6cb2ea4a65",
+    "path": "docs/10135525/files/4a34967fc324b7ad72506d3a93ad2e78d1392a0e4a66f30139494f6cb2ea4a65.pdf",
+    "text_path": "docs/10135525/files/4a34967fc324b7ad72506d3a93ad2e78d1392a0e4a66f30139494f6cb2ea4a65.pdf.text.json",
+    "pages": 13,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10135525/1793940270.pdf",
+    "filename": "1793940270.pdf",
+    "size": 6358496,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "3bd2d24b60de2749db688ded8ce33fd55eeb6145b8f43c7cb48b7adb5eb6bc16",
+    "path": "docs/10135525/files/3bd2d24b60de2749db688ded8ce33fd55eeb6145b8f43c7cb48b7adb5eb6bc16.pdf",
+    "text_path": "docs/10135525/files/3bd2d24b60de2749db688ded8ce33fd55eeb6145b8f43c7cb48b7adb5eb6bc16.pdf.text.json",
+    "pages": 28,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10135525/1793940275.pdf",
+    "filename": "1793940275.pdf",
+    "size": 115876,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "eb31c1212c8b2de1dc85832286bc894962c163dfb3ac7046537ff65ce0b38cc3",
+    "path": "docs/10135525/files/eb31c1212c8b2de1dc85832286bc894962c163dfb3ac7046537ff65ce0b38cc3.pdf",
+    "text_path": "docs/10135525/files/eb31c1212c8b2de1dc85832286bc894962c163dfb3ac7046537ff65ce0b38cc3.pdf.text.json",
+    "pages": 4,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10135525/1793940429.pdf",
+    "filename": "1793940429.pdf",
+    "size": 972439,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "4a34967fc324b7ad72506d3a93ad2e78d1392a0e4a66f30139494f6cb2ea4a65",
+    "path": "docs/10135525/files/4a34967fc324b7ad72506d3a93ad2e78d1392a0e4a66f30139494f6cb2ea4a65.pdf",
+    "text_path": "docs/10135525/files/4a34967fc324b7ad72506d3a93ad2e78d1392a0e4a66f30139494f6cb2ea4a65.pdf.text.json",
+    "pages": 13,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261106",
+    "filename": "gtc-20261106.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 16,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261106.pdf",
+    "text_path": "gtc/20261106.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/102728867025625",
+    "filename": "102728867025625",
+    "size": 104933,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 16,
+    "link_kind": "document",
+    "sha256": "e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a",
+    "path": "docs/10135525/files/e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a.html",
+    "text_path": "docs/10135525/files/e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10135525,
+   "bid_number": "GEM/2026/B/8247876",
+   "topic_key": "fc67a56cd5712fe5",
+   "doc_hash": "ee313fbbb6586274",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is issued by the Ministry of Heavy Industries and Cement Corporation of India, not the Reserve Bank of India.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:02:18.272520"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10120293": {
+  "b_id": 10120293,
+  "group": "Reserve Bank of India (RBI) Tenders",
+  "bid": {
+   "b_id": 10120293,
+   "bid_number": "GEM/2026/B/8234301",
+   "title": "Custom Bid for Services - ----",
+   "category_id": "services_home_cust",
+   "ministry": "Ministry of Defence",
+   "department": "Department of Defence Production",
+   "published": "2026-11-04T14:22:48",
+   "closing": "2026-11-18T14:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10120293",
+    "b_id": [
+     10120293
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8234301"
+    ],
+    "b_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-04T14:22:48Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-18T14:00:00Z"
+    ],
+    "bd_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cust"
+    ],
+    "b.b_created_by": [
+     "HALAIRCRAFTESP2"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Defence"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Defence Production"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10120293",
+    "filename": "GeM-Bidding-10120293.pdf",
+    "size": 114591,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "4d03978a3e0469e9b9c943c95d2a505d1ccb37b917d5be22e3cbdf926acb1927",
+    "path": "docs/10120293/files/4d03978a3e0469e9b9c943c95d2a505d1ccb37b917d5be22e3cbdf926acb1927.pdf",
+    "text_path": "docs/10120293/files/4d03978a3e0469e9b9c943c95d2a505d1ccb37b917d5be22e3cbdf926acb1927.pdf.text.json",
+    "pages": 8,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/excel/bid-10120293/1793759108.xlsx",
+    "filename": "1793759108.xlsx",
+    "size": 136096,
+    "kind": "office",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "d195cd19ad26bf5a71cc6f8141b00bc945fad4d0a806fadd50806c030e7c4d57",
+    "path": "docs/10120293/files/d195cd19ad26bf5a71cc6f8141b00bc945fad4d0a806fadd50806c030e7c4d57.xlsx",
+    "text_path": "docs/10120293/files/d195cd19ad26bf5a71cc6f8141b00bc945fad4d0a806fadd50806c030e7c4d57.xlsx.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10120293/1793759455.pdf",
+    "filename": "1793759455.pdf",
+    "size": 144530,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "2d1c07225e63ebf651e0e7912e486d077e63fa4cea44155ea5ea6c26354c9e63",
+    "path": "docs/10120293/files/2d1c07225e63ebf651e0e7912e486d077e63fa4cea44155ea5ea6c26354c9e63.pdf",
+    "text_path": "docs/10120293/files/2d1c07225e63ebf651e0e7912e486d077e63fa4cea44155ea5ea6c26354c9e63.pdf.text.json",
+    "pages": 3,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10120293/1793759638.pdf",
+    "filename": "1793759638.pdf",
+    "size": 173404,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "d1f1206c5c1ea64c54e4e2510dc9a97c0beaef2839da65d2d596e1f7128875c6",
+    "path": "docs/10120293/files/d1f1206c5c1ea64c54e4e2510dc9a97c0beaef2839da65d2d596e1f7128875c6.pdf",
+    "text_path": "docs/10120293/files/d1f1206c5c1ea64c54e4e2510dc9a97c0beaef2839da65d2d596e1f7128875c6.pdf.text.json",
+    "pages": 4,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10120293/1793759645.pdf",
+    "filename": "1793759645.pdf",
+    "size": 212325,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "3fdf0795986d840ad1c918d470ff37dd28271d8adcdf16a3c54d1aef70713021",
+    "path": "docs/10120293/files/3fdf0795986d840ad1c918d470ff37dd28271d8adcdf16a3c54d1aef70713021.pdf",
+    "text_path": "docs/10120293/files/3fdf0795986d840ad1c918d470ff37dd28271d8adcdf16a3c54d1aef70713021.pdf.text.json",
+    "pages": 5,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10120293/1793759653.pdf",
+    "filename": "1793759653.pdf",
+    "size": 127189,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "6317bc37cae714c8866ee31be588aa4842e53551ef03890d774c64f1b03b28f9",
+    "path": "docs/10120293/files/6317bc37cae714c8866ee31be588aa4842e53551ef03890d774c64f1b03b28f9.pdf",
+    "text_path": "docs/10120293/files/6317bc37cae714c8866ee31be588aa4842e53551ef03890d774c64f1b03b28f9.pdf.text.json",
+    "pages": 2,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10120293/1793759660.pdf",
+    "filename": "1793759660.pdf",
+    "size": 117191,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "63f06afaee67c7930a2fa3c54d1b051783b62a747cc102edb2a6bae1661e014d",
+    "path": "docs/10120293/files/63f06afaee67c7930a2fa3c54d1b051783b62a747cc102edb2a6bae1661e014d.pdf",
+    "text_path": "docs/10120293/files/63f06afaee67c7930a2fa3c54d1b051783b62a747cc102edb2a6bae1661e014d.pdf.text.json",
+    "pages": 3,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10120293/1793759686.pdf",
+    "filename": "1793759686.pdf",
+    "size": 41840,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "f0507f3e54cc83e2d4983900fd5bee837cf0533ff3dbad85f7f073dccfb24b10",
+    "path": "docs/10120293/files/f0507f3e54cc83e2d4983900fd5bee837cf0533ff3dbad85f7f073dccfb24b10.pdf",
+    "text_path": "docs/10120293/files/f0507f3e54cc83e2d4983900fd5bee837cf0533ff3dbad85f7f073dccfb24b10.pdf.text.json",
+    "pages": 2,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10120293/1793759694.pdf",
+    "filename": "1793759694.pdf",
+    "size": 284591,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "58372348fb981b6dcb7960e16647a11ea5cf4988f4e34b3f825dfd04155bf0bd",
+    "path": "docs/10120293/files/58372348fb981b6dcb7960e16647a11ea5cf4988f4e34b3f825dfd04155bf0bd.pdf",
+    "text_path": "docs/10120293/files/58372348fb981b6dcb7960e16647a11ea5cf4988f4e34b3f825dfd04155bf0bd.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10120293/1793762764.pdf",
+    "filename": "1793762764.pdf",
+    "size": 960205,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "61fc7fa7ffe4ee6e8907f42f7362d514c2c6984d21757c47203969b354ba2027",
+    "path": "docs/10120293/files/61fc7fa7ffe4ee6e8907f42f7362d514c2c6984d21757c47203969b354ba2027.pdf",
+    "text_path": "docs/10120293/files/61fc7fa7ffe4ee6e8907f42f7362d514c2c6984d21757c47203969b354ba2027.pdf.text.json",
+    "pages": 13,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8234301/CL10360/Formats_c9b38bc5-ebac-4e7e-8a351793762681192_HALAIRCRAFTESP2.pdf",
+    "filename": "Formats_c9b38bc5-ebac-4e7e-8a351793762681192_HALAIRCRAFTESP2.pdf",
+    "size": 960205,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "document",
+    "sha256": "61fc7fa7ffe4ee6e8907f42f7362d514c2c6984d21757c47203969b354ba2027",
+    "path": "docs/10120293/files/61fc7fa7ffe4ee6e8907f42f7362d514c2c6984d21757c47203969b354ba2027.pdf",
+    "text_path": "docs/10120293/files/61fc7fa7ffe4ee6e8907f42f7362d514c2c6984d21757c47203969b354ba2027.pdf.text.json",
+    "pages": 13,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261104",
+    "filename": "gtc-20261104.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 8,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261104.pdf",
+    "text_path": "gtc/20261104.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/102420330405849",
+    "filename": "102420330405849",
+    "size": 104933,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 8,
+    "link_kind": "document",
+    "sha256": "e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a",
+    "path": "docs/10120293/files/e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a.html",
+    "text_path": "docs/10120293/files/e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10120293,
+   "bid_number": "GEM/2026/B/8234301",
+   "topic_key": "fc67a56cd5712fe5",
+   "doc_hash": "fe4443dbdf55df5d",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is issued by the Ministry of Defence/Hindustan Aeronautics Limited, not the Reserve Bank of India.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-11-11T09:00:00",
+    "source": "gem_pre_bid",
+    "kind": "queries_deadline",
+    "quote": "Pre-Bid Date and Time 11-11-2026 09:00:00",
+    "file": "GeM-Bidding-10120293.pdf",
+    "page": 5,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:02:57.187746"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10100570": {
+  "b_id": 10100570,
+  "group": "Reserve Bank of India (RBI) Tenders",
+  "bid": {
+   "b_id": 10100570,
+   "bid_number": "GEM/2026/B/8217443",
+   "title": "Custom Bid for Services - ----",
+   "category_id": "services_home_cust",
+   "ministry": "Ministry of Railways",
+   "department": "Railways Public Sector Undertakings",
+   "published": "2026-11-02T12:43:24",
+   "closing": "2026-11-19T13:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10100570",
+    "b_id": [
+     10100570
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8217443"
+    ],
+    "b_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-02T12:43:24Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-19T13:00:00Z"
+    ],
+    "bd_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cust"
+    ],
+    "b.b_created_by": [
+     "vnshukla4737@irctc.com"
+    ],
+    "ba_is_single_packet": [
+     1
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Railways"
+    ],
+    "ba_official_details_deptName": [
+     "Railways Public Sector Undertakings"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10100570",
+    "filename": "GeM-Bidding-10100570.pdf",
+    "size": 111711,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "79dd6a422cd643ebaeb7f7fff3b26731212fee01015e38b5921fcc330a73c3a4",
+    "path": "docs/10100570/files/79dd6a422cd643ebaeb7f7fff3b26731212fee01015e38b5921fcc330a73c3a4.pdf",
+    "text_path": "docs/10100570/files/79dd6a422cd643ebaeb7f7fff3b26731212fee01015e38b5921fcc330a73c3a4.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/downloadOmppdfile/",
+    "filename": "downloadOmppdfile",
+    "size": 0,
+    "kind": "empty",
+    "status": "empty",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": null,
+    "path": null,
+    "text_path": null,
+    "pages": 0,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/OctQ426/bidding/biddoc/bid-10100570/1793344577.pdf",
+    "filename": "1793344577.pdf",
+    "size": 2085506,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f",
+    "path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf",
+    "text_path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf.text.json",
+    "pages": 25,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/OctQ426/bidding/biddoc/bid-10100570/1793344584.pdf",
+    "filename": "1793344584.pdf",
+    "size": 2085506,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f",
+    "path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf",
+    "text_path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf.text.json",
+    "pages": 25,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/OctQ426/bidding/biddoc/bid-10100570/1793344589.pdf",
+    "filename": "1793344589.pdf",
+    "size": 2085506,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f",
+    "path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf",
+    "text_path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf.text.json",
+    "pages": 25,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/OctQ426/bidding/biddoc/bid-10100570/1793344596.pdf",
+    "filename": "1793344596.pdf",
+    "size": 2085506,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f",
+    "path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf",
+    "text_path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf.text.json",
+    "pages": 25,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/OctQ426/bidding/biddoc/bid-10100570/1793344602.pdf",
+    "filename": "1793344602.pdf",
+    "size": 2085506,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f",
+    "path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf",
+    "text_path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf.text.json",
+    "pages": 25,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/OctQ426/bidding/biddoc/bid-10100570/1793344607.pdf",
+    "filename": "1793344607.pdf",
+    "size": 2085506,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f",
+    "path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf",
+    "text_path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf.text.json",
+    "pages": 25,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/OctQ426/bidding/biddoc/bid-10100570/1793344616.pdf",
+    "filename": "1793344616.pdf",
+    "size": 2085506,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f",
+    "path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf",
+    "text_path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf.text.json",
+    "pages": 25,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/OctQ426/bidding/biddoc/bid-10100570/1793344628.pdf",
+    "filename": "1793344628.pdf",
+    "size": 2085506,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f",
+    "path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf",
+    "text_path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf.text.json",
+    "pages": 25,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/OctQ426/bidding/biddoc/bid-10100570/1793344646.pdf",
+    "filename": "1793344646.pdf",
+    "size": 2085506,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f",
+    "path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf",
+    "text_path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf.text.json",
+    "pages": 25,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/OctQ426/bidding/biddoc/bid-10100570/1793344652.pdf",
+    "filename": "1793344652.pdf",
+    "size": 2085506,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f",
+    "path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf",
+    "text_path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf.text.json",
+    "pages": 25,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/OctQ426/bidding/biddoc/bid-10100570/1793344661.pdf",
+    "filename": "1793344661.pdf",
+    "size": 2085506,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f",
+    "path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf",
+    "text_path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf.text.json",
+    "pages": 25,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/OctQ426/bidding/biddoc/bid-10100570/1793344810.pdf",
+    "filename": "1793344810.pdf",
+    "size": 2085506,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f",
+    "path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf",
+    "text_path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf.text.json",
+    "pages": 25,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/OctQ426/bidding/biddoc/bid-10100570/1793344814.pdf",
+    "filename": "1793344814.pdf",
+    "size": 2085506,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f",
+    "path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf",
+    "text_path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf.text.json",
+    "pages": 25,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8217443/CLM0010/bag1_c38853d8-f9c1-46f5-98d21793603454697_vnshukla4737@irctc.com.pdf",
+    "filename": "bag1_c38853d8-f9c1-46f5-98d21793603454697_vnshukla4737@irctc.com.pdf",
+    "size": 2085506,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "document",
+    "sha256": "e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f",
+    "path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf",
+    "text_path": "docs/10100570/files/e00b69d8f3ace4cd2cd4d5226aa37020aab16d501889c749aa99292c668e544f.pdf.text.json",
+    "pages": 25,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261102",
+    "filename": "gtc-20261102.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261102.pdf",
+    "text_path": "gtc/20261102.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/102021514324900",
+    "filename": "102021514324900",
+    "size": 104933,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "document",
+    "sha256": "e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a",
+    "path": "docs/10100570/files/e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a.html",
+    "text_path": "docs/10100570/files/e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10100570,
+   "bid_number": "GEM/2026/B/8217443",
+   "topic_key": "fc67a56cd5712fe5",
+   "doc_hash": "13be0eba141a45f2",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is issued by the Ministry of Railways/IRCTC, not the Reserve Bank of India.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:04:33.306057"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10150283": {
+  "b_id": 10150283,
+  "group": "Reserve Bank of India (RBI) Tenders",
+  "bid": {
+   "b_id": 10150283,
+   "bid_number": "GEM/2026/B/8260511",
+   "title": "Custom Bid for Services - ----",
+   "category_id": "services_home_cust",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-11-10T16:48:29",
+   "closing": "2026-11-20T17:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10150283",
+    "b_id": [
+     10150283
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8260511"
+    ],
+    "b_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-10T16:48:29Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-20T17:00:00Z"
+    ],
+    "bd_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cust"
+    ],
+    "b.b_created_by": [
+     "SBIAO20832.BUY_CON1"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10150283",
+    "filename": "GeM-Bidding-10150283.pdf",
+    "size": 110816,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "a8e9517e93f0901369a3cd81d01ec92cc4c98fdb13eb55a918147a8af3931462",
+    "path": "docs/10150283/files/a8e9517e93f0901369a3cd81d01ec92cc4c98fdb13eb55a918147a8af3931462.pdf",
+    "text_path": "docs/10150283/files/a8e9517e93f0901369a3cd81d01ec92cc4c98fdb13eb55a918147a8af3931462.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/downloadOmppdfile/",
+    "filename": "downloadOmppdfile",
+    "size": 0,
+    "kind": "empty",
+    "status": "empty",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": null,
+    "path": null,
+    "text_path": null,
+    "pages": 0,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/excel/bid-10150283/1794308355.xlsx",
+    "filename": "1794308355.xlsx",
+    "size": 14349,
+    "kind": "office",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "d12cf687b47c96d71f2c0d18a91ace9e9391e743762d562b36020302b13b9cb8",
+    "path": "docs/10150283/files/d12cf687b47c96d71f2c0d18a91ace9e9391e743762d562b36020302b13b9cb8.xlsx",
+    "text_path": "docs/10150283/files/d12cf687b47c96d71f2c0d18a91ace9e9391e743762d562b36020302b13b9cb8.xlsx.text.json",
+    "pages": 3,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10150283/1794308798.pdf",
+    "filename": "1794308798.pdf",
+    "size": 527224,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525",
+    "path": "docs/10150283/files/fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525.pdf",
+    "text_path": "docs/10150283/files/fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525.pdf.text.json",
+    "pages": 23,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10150283/1794308804.pdf",
+    "filename": "1794308804.pdf",
+    "size": 527224,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525",
+    "path": "docs/10150283/files/fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525.pdf",
+    "text_path": "docs/10150283/files/fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525.pdf.text.json",
+    "pages": 23,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10150283/1794308816.pdf",
+    "filename": "1794308816.pdf",
+    "size": 527224,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525",
+    "path": "docs/10150283/files/fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525.pdf",
+    "text_path": "docs/10150283/files/fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525.pdf.text.json",
+    "pages": 23,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10150283/1794308823.pdf",
+    "filename": "1794308823.pdf",
+    "size": 527224,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525",
+    "path": "docs/10150283/files/fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525.pdf",
+    "text_path": "docs/10150283/files/fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525.pdf.text.json",
+    "pages": 23,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10150283/1794308828.pdf",
+    "filename": "1794308828.pdf",
+    "size": 527224,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525",
+    "path": "docs/10150283/files/fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525.pdf",
+    "text_path": "docs/10150283/files/fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525.pdf.text.json",
+    "pages": 23,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10150283/1794308833.pdf",
+    "filename": "1794308833.pdf",
+    "size": 527224,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525",
+    "path": "docs/10150283/files/fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525.pdf",
+    "text_path": "docs/10150283/files/fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525.pdf.text.json",
+    "pages": 23,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10150283/1794308839.pdf",
+    "filename": "1794308839.pdf",
+    "size": 527224,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525",
+    "path": "docs/10150283/files/fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525.pdf",
+    "text_path": "docs/10150283/files/fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525.pdf.text.json",
+    "pages": 23,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10150283/1794308844.pdf",
+    "filename": "1794308844.pdf",
+    "size": 527224,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525",
+    "path": "docs/10150283/files/fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525.pdf",
+    "text_path": "docs/10150283/files/fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525.pdf.text.json",
+    "pages": 23,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10150283/1794308854.pdf",
+    "filename": "1794308854.pdf",
+    "size": 527224,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525",
+    "path": "docs/10150283/files/fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525.pdf",
+    "text_path": "docs/10150283/files/fdc28d1ca0bc37454c73914c9e94e27f8b1b59df79bc0be45c4008219e3d7525.pdf.text.json",
+    "pages": 23,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10150283/1794308884.pdf",
+    "filename": "1794308884.pdf",
+    "size": 362458,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "5ebbe71b7d2b8a57420da6b4a1ce4e8b3d4ffeff70206e9b519388905c968218",
+    "path": "docs/10150283/files/5ebbe71b7d2b8a57420da6b4a1ce4e8b3d4ffeff70206e9b519388905c968218.pdf",
+    "text_path": "docs/10150283/files/5ebbe71b7d2b8a57420da6b4a1ce4e8b3d4ffeff70206e9b519388905c968218.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10150283/1794308914.pdf",
+    "filename": "1794308914.pdf",
+    "size": 37193,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "45643ec92db44b238cc65eb9a276439cc5cd3a9b1bdc67d45d264de002832b50",
+    "path": "docs/10150283/files/45643ec92db44b238cc65eb9a276439cc5cd3a9b1bdc67d45d264de002832b50.pdf",
+    "text_path": "docs/10150283/files/45643ec92db44b238cc65eb9a276439cc5cd3a9b1bdc67d45d264de002832b50.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261110",
+    "filename": "gtc-20261110.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261110.pdf",
+    "text_path": "gtc/20261110.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/103028244980089",
+    "filename": "103028244980089",
+    "size": 104933,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "document",
+    "sha256": "e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a",
+    "path": "docs/10150283/files/e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a.html",
+    "text_path": "docs/10150283/files/e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10150283,
+   "bid_number": "GEM/2026/B/8260511",
+   "topic_key": "fc67a56cd5712fe5",
+   "doc_hash": "4c0b05646b690bfb",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The buyer is explicitly identified as the State Bank of India, which is a commercial bank and not the Reserve Bank of India.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:04:44.216867"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10152168": {
+  "b_id": 10152168,
+  "group": "Reserve Bank of India (RBI) Tenders",
+  "bid": {
+   "b_id": 10152168,
+   "bid_number": "GEM/2026/B/8262148",
+   "title": "Custom Bid for Services - ----",
+   "category_id": "services_home_cust",
+   "ministry": "Ministry of Consumer Affairs Food and Public Distribution",
+   "department": "Department of Food and Public Distribution",
+   "published": "2026-11-11T11:45:00",
+   "closing": "2026-11-21T12:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10152168",
+    "b_id": [
+     10152168
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8262148"
+    ],
+    "b_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-11T11:45:00Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-21T12:00:00Z"
+    ],
+    "bd_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cust"
+    ],
+    "b.b_created_by": [
+     "mgrhk1"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Consumer Affairs Food and Public Distribution"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Food and Public Distribution"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10152168",
+    "filename": "GeM-Bidding-10152168.pdf",
+    "size": 103700,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "7921f5e0b2626008d3f8b7daf09efef590ad0f5b061bdcf10deb6419c5f157e4",
+    "path": "docs/10152168/files/7921f5e0b2626008d3f8b7daf09efef590ad0f5b061bdcf10deb6419c5f157e4.pdf",
+    "text_path": "docs/10152168/files/7921f5e0b2626008d3f8b7daf09efef590ad0f5b061bdcf10deb6419c5f157e4.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/downloadOmppdfile/",
+    "filename": "downloadOmppdfile",
+    "size": 0,
+    "kind": "empty",
+    "status": "empty",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": null,
+    "path": null,
+    "text_path": null,
+    "pages": 0,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10152168/1794375422.pdf",
+    "filename": "1794375422.pdf",
+    "size": 41878,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "8a2a6aa983e99d8500aebfcca20640e913e31cfa0c1a0daf89cb071f4c315bec",
+    "path": "docs/10152168/files/8a2a6aa983e99d8500aebfcca20640e913e31cfa0c1a0daf89cb071f4c315bec.pdf",
+    "text_path": "docs/10152168/files/8a2a6aa983e99d8500aebfcca20640e913e31cfa0c1a0daf89cb071f4c315bec.pdf.text.json",
+    "pages": 2,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10152168/1794375450.pdf",
+    "filename": "1794375450.pdf",
+    "size": 279668,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "71866abe8240396500f227a810a0e3ad91df48bd7e1eba7cde5eff0907e8adfd",
+    "path": "docs/10152168/files/71866abe8240396500f227a810a0e3ad91df48bd7e1eba7cde5eff0907e8adfd.pdf",
+    "text_path": "docs/10152168/files/71866abe8240396500f227a810a0e3ad91df48bd7e1eba7cde5eff0907e8adfd.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10152168/1794375456.pdf",
+    "filename": "1794375456.pdf",
+    "size": 279668,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "71866abe8240396500f227a810a0e3ad91df48bd7e1eba7cde5eff0907e8adfd",
+    "path": "docs/10152168/files/71866abe8240396500f227a810a0e3ad91df48bd7e1eba7cde5eff0907e8adfd.pdf",
+    "text_path": "docs/10152168/files/71866abe8240396500f227a810a0e3ad91df48bd7e1eba7cde5eff0907e8adfd.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10152168/1794376445.pdf",
+    "filename": "1794376445.pdf",
+    "size": 279668,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "71866abe8240396500f227a810a0e3ad91df48bd7e1eba7cde5eff0907e8adfd",
+    "path": "docs/10152168/files/71866abe8240396500f227a810a0e3ad91df48bd7e1eba7cde5eff0907e8adfd.pdf",
+    "text_path": "docs/10152168/files/71866abe8240396500f227a810a0e3ad91df48bd7e1eba7cde5eff0907e8adfd.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10152168/1794376490.pdf",
+    "filename": "1794376490.pdf",
+    "size": 279668,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "71866abe8240396500f227a810a0e3ad91df48bd7e1eba7cde5eff0907e8adfd",
+    "path": "docs/10152168/files/71866abe8240396500f227a810a0e3ad91df48bd7e1eba7cde5eff0907e8adfd.pdf",
+    "text_path": "docs/10152168/files/71866abe8240396500f227a810a0e3ad91df48bd7e1eba7cde5eff0907e8adfd.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8262148/CLM0010/ATC_dd14212c-393e-400c-81ac1794377234111_mgrhk1.pdf",
+    "filename": "ATC_dd14212c-393e-400c-81ac1794377234111_mgrhk1.pdf",
+    "size": 279668,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "71866abe8240396500f227a810a0e3ad91df48bd7e1eba7cde5eff0907e8adfd",
+    "path": "docs/10152168/files/71866abe8240396500f227a810a0e3ad91df48bd7e1eba7cde5eff0907e8adfd.pdf",
+    "text_path": "docs/10152168/files/71866abe8240396500f227a810a0e3ad91df48bd7e1eba7cde5eff0907e8adfd.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261111",
+    "filename": "gtc-20261111.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261111.pdf",
+    "text_path": "gtc/20261111.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/103066515100224",
+    "filename": "103066515100224",
+    "size": 104933,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "document",
+    "sha256": "e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a",
+    "path": "docs/10152168/files/e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a.html",
+    "text_path": "docs/10152168/files/e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10152168,
+   "bid_number": "GEM/2026/B/8262148",
+   "topic_key": "fc67a56cd5712fe5",
+   "doc_hash": "0e44fc499cafdd87",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is issued by the Ministry of Consumer Affairs and Food Corporation of India, not the Reserve Bank of India.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:04:56.641506"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10162308": {
+  "b_id": 10162308,
+  "group": "Reserve Bank of India (RBI) Tenders",
+  "bid": {
+   "b_id": 10162308,
+   "bid_number": "GEM/2026/B/8271027",
+   "title": "Custom Bid for Services - ----",
+   "category_id": "services_home_cust",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-11-13T12:23:43",
+   "closing": "2026-11-23T13:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10162308",
+    "b_id": [
+     10162308
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8271027"
+    ],
+    "b_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-13T12:23:43Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T13:00:00Z"
+    ],
+    "bd_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cust"
+    ],
+    "b.b_created_by": [
+     "buycon1.ssl.mh@gembuyer.in"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10162308",
+    "filename": "GeM-Bidding-10162308.pdf",
+    "size": 105601,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "55d475282501a51404f6687c569055918e73eb980ddcdc16ef62affb10c92352",
+    "path": "docs/10162308/files/55d475282501a51404f6687c569055918e73eb980ddcdc16ef62affb10c92352.pdf",
+    "text_path": "docs/10162308/files/55d475282501a51404f6687c569055918e73eb980ddcdc16ef62affb10c92352.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/downloadOmppdfile/",
+    "filename": "downloadOmppdfile",
+    "size": 0,
+    "kind": "empty",
+    "status": "empty",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": null,
+    "path": null,
+    "text_path": null,
+    "pages": 0,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10162308/1794551202.pdf",
+    "filename": "1794551202.pdf",
+    "size": 650336,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "c25dc80848eb1a51b014aea94250431131810d2d0c5cc7a2dd0c0651629a9bec",
+    "path": "docs/10162308/files/c25dc80848eb1a51b014aea94250431131810d2d0c5cc7a2dd0c0651629a9bec.pdf",
+    "text_path": "docs/10162308/files/c25dc80848eb1a51b014aea94250431131810d2d0c5cc7a2dd0c0651629a9bec.pdf.text.json",
+    "pages": 15,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10162308/1794551251.pdf",
+    "filename": "1794551251.pdf",
+    "size": 306390,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "fecdb1ee66fdd11c577a3062da9e19983d323169569a957031f4f51c34b36431",
+    "path": "docs/10162308/files/fecdb1ee66fdd11c577a3062da9e19983d323169569a957031f4f51c34b36431.pdf",
+    "text_path": "docs/10162308/files/fecdb1ee66fdd11c577a3062da9e19983d323169569a957031f4f51c34b36431.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10162308/1794551353.pdf",
+    "filename": "1794551353.pdf",
+    "size": 42019,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "4eeb07929b7f03bacf2a4d23d63121b8e1a16a9bf60ff8e01f564ec19cd2df08",
+    "path": "docs/10162308/files/4eeb07929b7f03bacf2a4d23d63121b8e1a16a9bf60ff8e01f564ec19cd2df08.pdf",
+    "text_path": "docs/10162308/files/4eeb07929b7f03bacf2a4d23d63121b8e1a16a9bf60ff8e01f564ec19cd2df08.pdf.text.json",
+    "pages": 2,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10162308/1794551406.pdf",
+    "filename": "1794551406.pdf",
+    "size": 709782,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "1bb90bfff8a273733793c88fed6412b9c2465b1e5bf2993446a8196983909aae",
+    "path": "docs/10162308/files/1bb90bfff8a273733793c88fed6412b9c2465b1e5bf2993446a8196983909aae.pdf",
+    "text_path": "docs/10162308/files/1bb90bfff8a273733793c88fed6412b9c2465b1e5bf2993446a8196983909aae.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8271027/CL10360/Integrity_39835d7e-5629-4727-bada1794551753963_buycon1.ssl.mh@gembuyer.in.pdf",
+    "filename": "Integrity_39835d7e-5629-4727-bada1794551753963_buycon1.ssl.mh@gembuyer.in.pdf",
+    "size": 280469,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "c1f4a226ed55569352b552e06219558e5a3df14beea20ec7dc47f2e02dd09091",
+    "path": "docs/10162308/files/c1f4a226ed55569352b552e06219558e5a3df14beea20ec7dc47f2e02dd09091.pdf",
+    "text_path": "docs/10162308/files/c1f4a226ed55569352b552e06219558e5a3df14beea20ec7dc47f2e02dd09091.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8271027/CLM0010/RFPW_2b92c136-2f88-4ae4-94691794551811317_buycon1.ssl.mh@gembuyer.in.pdf",
+    "filename": "RFPW_2b92c136-2f88-4ae4-94691794551811317_buycon1.ssl.mh@gembuyer.in.pdf",
+    "size": 650336,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "c25dc80848eb1a51b014aea94250431131810d2d0c5cc7a2dd0c0651629a9bec",
+    "path": "docs/10162308/files/c25dc80848eb1a51b014aea94250431131810d2d0c5cc7a2dd0c0651629a9bec.pdf",
+    "text_path": "docs/10162308/files/c25dc80848eb1a51b014aea94250431131810d2d0c5cc7a2dd0c0651629a9bec.pdf.text.json",
+    "pages": 15,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261113",
+    "filename": "gtc-20261113.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261113.pdf",
+    "text_path": "gtc/20261113.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/103272503886864",
+    "filename": "103272503886864",
+    "size": 104933,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "document",
+    "sha256": "e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a",
+    "path": "docs/10162308/files/e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a.html",
+    "text_path": "docs/10162308/files/e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10162308,
+   "bid_number": "GEM/2026/B/8271027",
+   "topic_key": "fc67a56cd5712fe5",
+   "doc_hash": "83184de224f66039",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The buyer is the Ministry of Finance/Department of Financial Services, not the Reserve Bank of India (RBI).",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-11-16T14:30:00",
+    "source": "documents",
+    "kind": "queries_deadline",
+    "quote": "Last date for written queries 16th November 2026 2.30 P.M.",
+    "file": "1794551202.pdf",
+    "page": 2,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:05:41.171866"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10158529": {
+  "b_id": 10158529,
+  "group": "Reserve Bank of India (RBI) Tenders",
+  "bid": {
+   "b_id": 10158529,
+   "bid_number": "GEM/2026/B/8267733",
+   "title": "Custom Bid for Services - ----",
+   "category_id": "services_home_cust",
+   "ministry": "Ministry of Commerce and Industry",
+   "department": "Department of Commerce",
+   "published": "2026-11-12T16:10:59",
+   "closing": "2026-11-23T17:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10158529",
+    "b_id": [
+     10158529
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8267733"
+    ],
+    "b_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-12T16:10:59Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T17:00:00Z"
+    ],
+    "bd_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cust"
+    ],
+    "b.b_created_by": [
+     "gem.eo1.jalandhar.pb"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Commerce and Industry"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Commerce"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10158529",
+    "filename": "GeM-Bidding-10158529.pdf",
+    "size": 101676,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "df245ef43e1571451ffbf6e0792d1cfaf394470ae91cd9df59c98639668c1100",
+    "path": "docs/10158529/files/df245ef43e1571451ffbf6e0792d1cfaf394470ae91cd9df59c98639668c1100.pdf",
+    "text_path": "docs/10158529/files/df245ef43e1571451ffbf6e0792d1cfaf394470ae91cd9df59c98639668c1100.pdf.text.json",
+    "pages": 6,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/downloadOmppdfile/",
+    "filename": "downloadOmppdfile",
+    "size": 0,
+    "kind": "empty",
+    "status": "empty",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": null,
+    "path": null,
+    "text_path": null,
+    "pages": 0,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/excel/bid-10158529/1794476056.xlsx",
+    "filename": "1794476056.xlsx",
+    "size": 9061,
+    "kind": "office",
+    "status": "placeholder",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "f736339c31c2847d9b8bf1c58281f6432cf81d8ccf4628c9e393d480b3bbca2e",
+    "path": "docs/10158529/files/f736339c31c2847d9b8bf1c58281f6432cf81d8ccf4628c9e393d480b3bbca2e.xlsx",
+    "text_path": "docs/10158529/files/f736339c31c2847d9b8bf1c58281f6432cf81d8ccf4628c9e393d480b3bbca2e.xlsx.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10158529/1794476351.pdf",
+    "filename": "1794476351.pdf",
+    "size": 51304,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "68246505d46bfe34d3c024868ac2da24e6cc2dc9a720f0f0663b1f73b72eb97c",
+    "path": "docs/10158529/files/68246505d46bfe34d3c024868ac2da24e6cc2dc9a720f0f0663b1f73b72eb97c.pdf",
+    "text_path": "docs/10158529/files/68246505d46bfe34d3c024868ac2da24e6cc2dc9a720f0f0663b1f73b72eb97c.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10158529/1794476359.pdf",
+    "filename": "1794476359.pdf",
+    "size": 51304,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "68246505d46bfe34d3c024868ac2da24e6cc2dc9a720f0f0663b1f73b72eb97c",
+    "path": "docs/10158529/files/68246505d46bfe34d3c024868ac2da24e6cc2dc9a720f0f0663b1f73b72eb97c.pdf",
+    "text_path": "docs/10158529/files/68246505d46bfe34d3c024868ac2da24e6cc2dc9a720f0f0663b1f73b72eb97c.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10158529/1794476367.pdf",
+    "filename": "1794476367.pdf",
+    "size": 51304,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "68246505d46bfe34d3c024868ac2da24e6cc2dc9a720f0f0663b1f73b72eb97c",
+    "path": "docs/10158529/files/68246505d46bfe34d3c024868ac2da24e6cc2dc9a720f0f0663b1f73b72eb97c.pdf",
+    "text_path": "docs/10158529/files/68246505d46bfe34d3c024868ac2da24e6cc2dc9a720f0f0663b1f73b72eb97c.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10158529/1794476383.pdf",
+    "filename": "1794476383.pdf",
+    "size": 51304,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "68246505d46bfe34d3c024868ac2da24e6cc2dc9a720f0f0663b1f73b72eb97c",
+    "path": "docs/10158529/files/68246505d46bfe34d3c024868ac2da24e6cc2dc9a720f0f0663b1f73b72eb97c.pdf",
+    "text_path": "docs/10158529/files/68246505d46bfe34d3c024868ac2da24e6cc2dc9a720f0f0663b1f73b72eb97c.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8267733/CLM0010/ECGCJaland_58d2048a-1726-4a75-9ab31794476616444_gem.eo1.jalandhar.pb.pdf",
+    "filename": "ECGCJaland_58d2048a-1726-4a75-9ab31794476616444_gem.eo1.jalandhar.pb.pdf",
+    "size": 51304,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "68246505d46bfe34d3c024868ac2da24e6cc2dc9a720f0f0663b1f73b72eb97c",
+    "path": "docs/10158529/files/68246505d46bfe34d3c024868ac2da24e6cc2dc9a720f0f0663b1f73b72eb97c.pdf",
+    "text_path": "docs/10158529/files/68246505d46bfe34d3c024868ac2da24e6cc2dc9a720f0f0663b1f73b72eb97c.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261112",
+    "filename": "gtc-20261112.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261112.pdf",
+    "text_path": "gtc/20261112.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/103195711443841",
+    "filename": "103195711443841",
+    "size": 104933,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "document",
+    "sha256": "e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a",
+    "path": "docs/10158529/files/e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a.html",
+    "text_path": "docs/10158529/files/e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10158529,
+   "bid_number": "GEM/2026/B/8267733",
+   "topic_key": "fc67a56cd5712fe5",
+   "doc_hash": "6ba7bda4b7d8e496",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is issued by the Ministry of Commerce and Industry (specifically ECGC), not the Reserve Bank of India.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:05:56.985829"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10155079": {
+  "b_id": 10155079,
+  "group": "Reserve Bank of India (RBI) Tenders",
+  "bid": {
+   "b_id": 10155079,
+   "bid_number": "GEM/2026/B/8264721",
+   "title": "Custom Bid for Services - Request for Proposal (RFP) for Selection of Service Provider for Conducti",
+   "category_id": "services_home_cust",
+   "ministry": "Ministry of Finance",
+   "department": "BANKING SECTOR",
+   "published": "2026-11-11T18:08:09",
+   "closing": "2026-11-21T20:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10155079",
+    "b_id": [
+     10155079
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8264721"
+    ],
+    "b_category_name": [
+     "Custom Bid for Services - Request for Proposal (RFP) for Selection of Service Provider for Conducti"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-11T18:08:09Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-21T20:00:00Z"
+    ],
+    "bd_category_name": [
+     "Custom Bid for Services - Request for Proposal (RFP) for Selection of Service Provider for Conducting FTE Employee Engagement Survey"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cust"
+    ],
+    "b.b_created_by": [
+     "DivyaniK"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "BANKING SECTOR"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10155079",
+    "filename": "GeM-Bidding-10155079.pdf",
+    "size": 105285,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "9e43df96f6bf8b599b6a0a117a629fbfb18fe51912164c4fa75dd2fc394386f9",
+    "path": "docs/10155079/files/9e43df96f6bf8b599b6a0a117a629fbfb18fe51912164c4fa75dd2fc394386f9.pdf",
+    "text_path": "docs/10155079/files/9e43df96f6bf8b599b6a0a117a629fbfb18fe51912164c4fa75dd2fc394386f9.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10155079,
+   "bid_number": "GEM/2026/B/8264721",
+   "topic_key": "fc67a56cd5712fe5",
+   "doc_hash": "754edac88db04371",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The buyer is explicitly identified as Bank of Baroda, which is a public sector commercial bank, not the Reserve Bank of India.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:06:01.767515"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10134647": {
+  "b_id": 10134647,
+  "group": "Reserve Bank of India (RBI) Tenders",
+  "bid": {
+   "b_id": 10134647,
+   "bid_number": "GEM/2026/B/8247143",
+   "title": "Custom Bid for Services - Request for Proposal for Empanelment and Selection of Technical Manpower ",
+   "category_id": "services_home_cust",
+   "ministry": "Ministry of Finance",
+   "department": "BANKING SECTOR",
+   "published": "2026-11-05T18:51:29",
+   "closing": "2026-11-20T15:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "10134647",
+    "b_id": [
+     10134647
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8247143"
+    ],
+    "b_category_name": [
+     "Custom Bid for Services - Request for Proposal for Empanelment and Selection of Technical Manpower "
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-05T18:51:29Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-20T15:00:00Z"
+    ],
+    "bd_category_name": [
+     "Custom Bid for Services - Request for Proposal for Empanelment and Selection of Technical Manpower Agencies for Development, Maintenance, and Support of BOBCARD Digital Channels"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cust"
+    ],
+    "b.b_created_by": [
+     "DivyaniK"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "BANKING SECTOR"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10134647",
+    "filename": "GeM-Bidding-10134647.pdf",
+    "size": 110758,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "c081b0c6303aa2b0605e63325b82cf15c3255a26cb77573d04038cab8c5eb59f",
+    "path": "docs/10134647/files/c081b0c6303aa2b0605e63325b82cf15c3255a26cb77573d04038cab8c5eb59f.pdf",
+    "text_path": "docs/10134647/files/c081b0c6303aa2b0605e63325b82cf15c3255a26cb77573d04038cab8c5eb59f.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10134647,
+   "bid_number": "GEM/2026/B/8247143",
+   "topic_key": "fc67a56cd5712fe5",
+   "doc_hash": "6dfd64c2f6d61cc0",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The buyer is explicitly identified as Bank of Baroda, which is a public sector commercial bank, not the Reserve Bank of India.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:06:05.559450"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10164318": {
+  "b_id": 10164318,
+  "group": "Reserve Bank of India (RBI) Tenders",
+  "bid": {
+   "b_id": 10164318,
+   "bid_number": "GEM/2026/B/8272808",
+   "title": "Custom Bid for Services - ----",
+   "category_id": "services_home_cust",
+   "ministry": "Ministry of Petroleum and Natural Gas",
+   "department": "INDIAN OIL CORPORATION LIMITED",
+   "published": "2026-11-16T11:08:48",
+   "closing": "2026-11-24T11:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10164318",
+    "b_id": [
+     10164318
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8272808"
+    ],
+    "b_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-16T11:08:48Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-24T11:00:00Z"
+    ],
+    "bd_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cust"
+    ],
+    "b.b_created_by": [
+     "mungedias@indianoil.in"
+    ],
+    "ba_is_single_packet": [
+     1
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     2
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Petroleum and Natural Gas"
+    ],
+    "ba_official_details_deptName": [
+     "INDIAN OIL CORPORATION LIMITED"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10164318",
+    "filename": "GeM-Bidding-10164318.pdf",
+    "size": 101819,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "876f4d9f79cf659feb9788009c460f990c78fd92e0b9ce7fcdfe2214eaafc91c",
+    "path": "docs/10164318/files/876f4d9f79cf659feb9788009c460f990c78fd92e0b9ce7fcdfe2214eaafc91c.pdf",
+    "text_path": "docs/10164318/files/876f4d9f79cf659feb9788009c460f990c78fd92e0b9ce7fcdfe2214eaafc91c.pdf.text.json",
+    "pages": 6,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/downloadOmppdfile/",
+    "filename": "downloadOmppdfile",
+    "size": 0,
+    "kind": "empty",
+    "status": "empty",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": null,
+    "path": null,
+    "text_path": null,
+    "pages": 0,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/excel/bid-10164318/1794565075.xlsx",
+    "filename": "1794565075.xlsx",
+    "size": 13353,
+    "kind": "office",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "2110843dffb74c3de2612b62d6441b0fdadb74281292c866bbe616de4bfbb9bb",
+    "path": "docs/10164318/files/2110843dffb74c3de2612b62d6441b0fdadb74281292c866bbe616de4bfbb9bb.xlsx",
+    "text_path": "docs/10164318/files/2110843dffb74c3de2612b62d6441b0fdadb74281292c866bbe616de4bfbb9bb.xlsx.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10164318/1794565262.pdf",
+    "filename": "1794565262.pdf",
+    "size": 1102386,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "d403326ae9b0b3686b40178621f8b192ab8a3a1a65ce83861e9e2874a0149ceb",
+    "path": "docs/10164318/files/d403326ae9b0b3686b40178621f8b192ab8a3a1a65ce83861e9e2874a0149ceb.pdf",
+    "text_path": "docs/10164318/files/d403326ae9b0b3686b40178621f8b192ab8a3a1a65ce83861e9e2874a0149ceb.pdf.text.json",
+    "pages": 73,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10164318/1794565266.pdf",
+    "filename": "1794565266.pdf",
+    "size": 285760,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "df3a483db7a9da142f65a780ab8a8b52efc71bb8b5567c8a8704a3f27741ac50",
+    "path": "docs/10164318/files/df3a483db7a9da142f65a780ab8a8b52efc71bb8b5567c8a8704a3f27741ac50.pdf",
+    "text_path": "docs/10164318/files/df3a483db7a9da142f65a780ab8a8b52efc71bb8b5567c8a8704a3f27741ac50.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10164318/1794565273.pdf",
+    "filename": "1794565273.pdf",
+    "size": 1893415,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "6be9c4d169aa5df4e3d96033682bdd7d4f027835dd1affbcf480e5825a2035d2",
+    "path": "docs/10164318/files/6be9c4d169aa5df4e3d96033682bdd7d4f027835dd1affbcf480e5825a2035d2.pdf",
+    "text_path": "docs/10164318/files/6be9c4d169aa5df4e3d96033682bdd7d4f027835dd1affbcf480e5825a2035d2.pdf.text.json",
+    "pages": 78,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10164318/1794565279.pdf",
+    "filename": "1794565279.pdf",
+    "size": 1893415,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "6be9c4d169aa5df4e3d96033682bdd7d4f027835dd1affbcf480e5825a2035d2",
+    "path": "docs/10164318/files/6be9c4d169aa5df4e3d96033682bdd7d4f027835dd1affbcf480e5825a2035d2.pdf",
+    "text_path": "docs/10164318/files/6be9c4d169aa5df4e3d96033682bdd7d4f027835dd1affbcf480e5825a2035d2.pdf.text.json",
+    "pages": 78,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10164318/1794565293.pdf",
+    "filename": "1794565293.pdf",
+    "size": 41595,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "87e0f05a7901a38b3c7000c0e8c8caa4209e4dc31738d89ff2d958545cace068",
+    "path": "docs/10164318/files/87e0f05a7901a38b3c7000c0e8c8caa4209e4dc31738d89ff2d958545cace068.pdf",
+    "text_path": "docs/10164318/files/87e0f05a7901a38b3c7000c0e8c8caa4209e4dc31738d89ff2d958545cace068.pdf.text.json",
+    "pages": 2,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10164318/1794565298.pdf",
+    "filename": "1794565298.pdf",
+    "size": 1893415,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "6be9c4d169aa5df4e3d96033682bdd7d4f027835dd1affbcf480e5825a2035d2",
+    "path": "docs/10164318/files/6be9c4d169aa5df4e3d96033682bdd7d4f027835dd1affbcf480e5825a2035d2.pdf",
+    "text_path": "docs/10164318/files/6be9c4d169aa5df4e3d96033682bdd7d4f027835dd1affbcf480e5825a2035d2.pdf.text.json",
+    "pages": 78,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10164318/1794565308.pdf",
+    "filename": "1794565308.pdf",
+    "size": 406249,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "d37eb2cfe72061b146d098827147a8e6df219e807460197f3d7096e81261b7dd",
+    "path": "docs/10164318/files/d37eb2cfe72061b146d098827147a8e6df219e807460197f3d7096e81261b7dd.pdf",
+    "text_path": "docs/10164318/files/d37eb2cfe72061b146d098827147a8e6df219e807460197f3d7096e81261b7dd.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8272808/CLM0012/SCC_f065a293-7669-4c88-aafb1794632236148_mungedias@indianoil.in.pdf",
+    "filename": "SCC_f065a293-7669-4c88-aafb1794632236148_mungedias@indianoil.in.pdf",
+    "size": 285760,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "df3a483db7a9da142f65a780ab8a8b52efc71bb8b5567c8a8704a3f27741ac50",
+    "path": "docs/10164318/files/df3a483db7a9da142f65a780ab8a8b52efc71bb8b5567c8a8704a3f27741ac50.pdf",
+    "text_path": "docs/10164318/files/df3a483db7a9da142f65a780ab8a8b52efc71bb8b5567c8a8704a3f27741ac50.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261116",
+    "filename": "gtc-20261116.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261116.pdf",
+    "text_path": "gtc/20261116.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/103313360405124",
+    "filename": "103313360405124",
+    "size": 104933,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "document",
+    "sha256": "e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a",
+    "path": "docs/10164318/files/e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a.html",
+    "text_path": "docs/10164318/files/e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10164318,
+   "bid_number": "GEM/2026/B/8272808",
+   "topic_key": "fc67a56cd5712fe5",
+   "doc_hash": "c46b07271a970444",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is issued by Indian Oil Corporation Limited under the Ministry of Petroleum, not the Reserve Bank of India.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:06:08.707363"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10127591": {
+  "b_id": 10127591,
+  "group": "Reserve Bank of India (RBI) Tenders",
+  "bid": {
+   "b_id": 10127591,
+   "bid_number": "GEM/2026/B/8240853",
+   "title": "Custom Bid for Services - ----",
+   "category_id": "services_home_cust",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Revenue",
+   "published": "2026-11-04T16:54:15",
+   "closing": "2026-11-25T17:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10127591",
+    "b_id": [
+     10127591
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8240853"
+    ],
+    "b_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-04T16:54:15Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-25T17:00:00Z"
+    ],
+    "bd_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cust"
+    ],
+    "b.b_created_by": [
+     "tojo.davis"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Revenue"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10127591",
+    "filename": "GeM-Bidding-10127591.pdf",
+    "size": 108000,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "98e164ac9284ee7a02061e1c852a6e5cba56e0dd6af3722cdd6f51806e770e5e",
+    "path": "docs/10127591/files/98e164ac9284ee7a02061e1c852a6e5cba56e0dd6af3722cdd6f51806e770e5e.pdf",
+    "text_path": "docs/10127591/files/98e164ac9284ee7a02061e1c852a6e5cba56e0dd6af3722cdd6f51806e770e5e.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/downloadOmppdfile/",
+    "filename": "downloadOmppdfile",
+    "size": 0,
+    "kind": "empty",
+    "status": "empty",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": null,
+    "path": null,
+    "text_path": null,
+    "pages": 0,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10127591/1793790895.pdf",
+    "filename": "1793790895.pdf",
+    "size": 480671,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "98b58c7647344192aa4d238cbec64df4bd5bed0da06293e3233aaee70150dbf0",
+    "path": "docs/10127591/files/98b58c7647344192aa4d238cbec64df4bd5bed0da06293e3233aaee70150dbf0.pdf",
+    "text_path": "docs/10127591/files/98b58c7647344192aa4d238cbec64df4bd5bed0da06293e3233aaee70150dbf0.pdf.text.json",
+    "pages": 5,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10127591/1793790905.pdf",
+    "filename": "1793790905.pdf",
+    "size": 9217,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "2773c604d028c7c80e085350ac4bf3b16ae5d8abc297c9cfe24d5b14d8d3a16d",
+    "path": "docs/10127591/files/2773c604d028c7c80e085350ac4bf3b16ae5d8abc297c9cfe24d5b14d8d3a16d.pdf",
+    "text_path": "docs/10127591/files/2773c604d028c7c80e085350ac4bf3b16ae5d8abc297c9cfe24d5b14d8d3a16d.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10127591/1793790914.pdf",
+    "filename": "1793790914.pdf",
+    "size": 35352,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "ba43982c6700a6d445f5b10f364172d1795fd46dbf000ddc53e54423ea0a30be",
+    "path": "docs/10127591/files/ba43982c6700a6d445f5b10f364172d1795fd46dbf000ddc53e54423ea0a30be.pdf",
+    "text_path": "docs/10127591/files/ba43982c6700a6d445f5b10f364172d1795fd46dbf000ddc53e54423ea0a30be.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10127591/1793791002.pdf",
+    "filename": "1793791002.pdf",
+    "size": 480671,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "98b58c7647344192aa4d238cbec64df4bd5bed0da06293e3233aaee70150dbf0",
+    "path": "docs/10127591/files/98b58c7647344192aa4d238cbec64df4bd5bed0da06293e3233aaee70150dbf0.pdf",
+    "text_path": "docs/10127591/files/98b58c7647344192aa4d238cbec64df4bd5bed0da06293e3233aaee70150dbf0.pdf.text.json",
+    "pages": 5,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10127591/1793791357.pdf",
+    "filename": "1793791357.pdf",
+    "size": 480671,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "98b58c7647344192aa4d238cbec64df4bd5bed0da06293e3233aaee70150dbf0",
+    "path": "docs/10127591/files/98b58c7647344192aa4d238cbec64df4bd5bed0da06293e3233aaee70150dbf0.pdf",
+    "text_path": "docs/10127591/files/98b58c7647344192aa4d238cbec64df4bd5bed0da06293e3233aaee70150dbf0.pdf.text.json",
+    "pages": 5,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8240853/CL10360/document_1_155fc0a7-876e-4f9a-91431793791183844_tojo.davis.pdf",
+    "filename": "document_1_155fc0a7-876e-4f9a-91431793791183844_tojo.davis.pdf",
+    "size": 480671,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "98b58c7647344192aa4d238cbec64df4bd5bed0da06293e3233aaee70150dbf0",
+    "path": "docs/10127591/files/98b58c7647344192aa4d238cbec64df4bd5bed0da06293e3233aaee70150dbf0.pdf",
+    "text_path": "docs/10127591/files/98b58c7647344192aa4d238cbec64df4bd5bed0da06293e3233aaee70150dbf0.pdf.text.json",
+    "pages": 5,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8240853/CLM0012/document_1_7e473ac5-b2a2-4af9-bc541793791286141_tojo.davis.pdf",
+    "filename": "document_1_7e473ac5-b2a2-4af9-bc541793791286141_tojo.davis.pdf",
+    "size": 480671,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "document",
+    "sha256": "98b58c7647344192aa4d238cbec64df4bd5bed0da06293e3233aaee70150dbf0",
+    "path": "docs/10127591/files/98b58c7647344192aa4d238cbec64df4bd5bed0da06293e3233aaee70150dbf0.pdf",
+    "text_path": "docs/10127591/files/98b58c7647344192aa4d238cbec64df4bd5bed0da06293e3233aaee70150dbf0.pdf.text.json",
+    "pages": 5,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261104",
+    "filename": "gtc-20261104.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261104.pdf",
+    "text_path": "gtc/20261104.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/102568099463281",
+    "filename": "102568099463281",
+    "size": 104933,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "document",
+    "sha256": "e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a",
+    "path": "docs/10127591/files/e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a.html",
+    "text_path": "docs/10127591/files/e3d3652d4776945c8c280aea7defba948da062f6525aa8048cb8c92ed752846a.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10127591,
+   "bid_number": "GEM/2026/B/8240853",
+   "topic_key": "fc67a56cd5712fe5",
+   "doc_hash": "15f9e3c57b02585f",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is issued by the Ministry of Finance/Department of Revenue, not the Reserve Bank of India.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-11-10T16:00:00",
+    "source": "gem_pre_bid",
+    "kind": "queries_deadline",
+    "quote": "Pre-Bid Date and Time 10-11-2026 16:00:00",
+    "file": "GeM-Bidding-10127591.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:06:16.759602"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10123989": {
+  "b_id": 10123989,
+  "group": "Reserve Bank of India (RBI) Tenders",
+  "bid": {
+   "b_id": 10123989,
+   "bid_number": "GEM/2026/B/8237602",
+   "title": "Custom Bid for Services - RFP for Empanelment & Selection of Vendor for  Third-Party Risk Assessmen",
+   "category_id": "services_home_cust",
+   "ministry": "Ministry of Finance",
+   "department": "BANKING SECTOR",
+   "published": "2026-11-04T18:14:49",
+   "closing": "2026-11-25T15:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10123989",
+    "b_id": [
+     10123989
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8237602"
+    ],
+    "b_category_name": [
+     "Custom Bid for Services - RFP for Empanelment & Selection of Vendor for  Third-Party Risk Assessmen"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-04T18:14:49Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-25T15:00:00Z"
+    ],
+    "bd_category_name": [
+     "Custom Bid for Services - RFP for Empanelment & Selection of Vendor for  Third-Party Risk Assessment"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cust"
+    ],
+    "b.b_created_by": [
+     "procurement.bobcard"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "BANKING SECTOR"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10123989",
+    "filename": "GeM-Bidding-10123989.pdf",
+    "size": 110696,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "40f801a680044fed834efbf02df29d209bc3c97c41f07cd2c1c9ad6bfd4dfc62",
+    "path": "docs/10123989/files/40f801a680044fed834efbf02df29d209bc3c97c41f07cd2c1c9ad6bfd4dfc62.pdf",
+    "text_path": "docs/10123989/files/40f801a680044fed834efbf02df29d209bc3c97c41f07cd2c1c9ad6bfd4dfc62.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10123989,
+   "bid_number": "GEM/2026/B/8237602",
+   "topic_key": "fc67a56cd5712fe5",
+   "doc_hash": "8d096e8e8754023c",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is issued by Bank of Baroda, a public sector bank, not the Reserve Bank of India.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:06:30.099325"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10173240": {
+  "b_id": 10173240,
+  "group": "Reserve Bank of India (RBI) Tenders",
+  "bid": {
+   "b_id": 10173240,
+   "bid_number": "GEM/2026/B/8280330",
+   "title": "Custom Bid for Services - RFP for Empanelment and Selection of Offset Printers for Printing and Pro",
+   "category_id": "services_home_cust",
+   "ministry": "Ministry of Finance",
+   "department": "BANKING SECTOR",
+   "published": "2026-11-16T16:37:51",
+   "closing": "2026-11-26T17:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "10173240",
+    "b_id": [
+     10173240
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8280330"
+    ],
+    "b_category_name": [
+     "Custom Bid for Services - RFP for Empanelment and Selection of Offset Printers for Printing and Pro"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-16T16:37:51Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-26T17:00:00Z"
+    ],
+    "bd_category_name": [
+     "Custom Bid for Services - RFP for Empanelment and Selection of Offset Printers for Printing and Production of Marketing Collaterals and Allied Services (Rate Contract)"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cust"
+    ],
+    "b.b_created_by": [
+     "DivyaniK"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "BANKING SECTOR"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10173240",
+    "filename": "GeM-Bidding-10173240.pdf",
+    "size": 110420,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "6746e76bcd0a4dc67a139a41b556796f2402fdb9d5602b64bf122369fb8b435e",
+    "path": "docs/10173240/files/6746e76bcd0a4dc67a139a41b556796f2402fdb9d5602b64bf122369fb8b435e.pdf",
+    "text_path": "docs/10173240/files/6746e76bcd0a4dc67a139a41b556796f2402fdb9d5602b64bf122369fb8b435e.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10173240,
+   "bid_number": "GEM/2026/B/8280330",
+   "topic_key": "fc67a56cd5712fe5",
+   "doc_hash": "4f75ac7bcccc1611",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The buyer is explicitly identified as Bank of Baroda, a public sector bank, not the Reserve Bank of India.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:06:37.517100"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10148287": {
+  "b_id": 10148287,
+  "group": "Reserve Bank of India (RBI) Tenders",
+  "bid": {
+   "b_id": 10148287,
+   "bid_number": "GEM/2026/B/8258727",
+   "title": "Custom Bid for Services - ----",
+   "category_id": "services_home_cust",
+   "ministry": "Ministry of Tribal Affairs",
+   "department": "Ministry of Tribal Affairs",
+   "published": "2026-11-10T16:13:38",
+   "closing": "2026-12-01T17:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "10148287",
+    "b_id": [
+     10148287
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8258727"
+    ],
+    "b_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-10T16:13:38Z"
+    ],
+    "final_end_date_sort": [
+     "2026-12-01T17:00:00Z"
+    ],
+    "bd_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cust"
+    ],
+    "b.b_created_by": [
+     "rahul.kumar1987"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Tribal Affairs"
+    ],
+    "ba_official_details_deptName": [
+     "Ministry of Tribal Affairs"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10148287",
+    "filename": "GeM-Bidding-10148287.pdf",
+    "size": 128550,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "5118b98104f4389010ca029ce31e4a1d3599aa15c2bc7723a9844e2006776489",
+    "path": "docs/10148287/files/5118b98104f4389010ca029ce31e4a1d3599aa15c2bc7723a9844e2006776489.pdf",
+    "text_path": "docs/10148287/files/5118b98104f4389010ca029ce31e4a1d3599aa15c2bc7723a9844e2006776489.pdf.text.json",
+    "pages": 11,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10148287,
+   "bid_number": "GEM/2026/B/8258727",
+   "topic_key": "fc67a56cd5712fe5",
+   "doc_hash": "e403992a54bf1fbb",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The buyer is explicitly identified as the Ministry of Tribal Affairs, not the Reserve Bank of India.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-11-11T12:00:00",
+    "source": "gem_pre_bid",
+    "kind": "queries_deadline",
+    "quote": "Pre-Bid Date and Time 11-11-2026 12:00:00",
+    "file": "GeM-Bidding-10148287.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:06:41.884452"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10152588": {
+  "b_id": 10152588,
+  "group": "Reserve Bank of India (RBI) Tenders",
+  "bid": {
+   "b_id": 10152588,
+   "bid_number": "GEM/2026/B/8262512",
+   "title": "Custom Bid for Services - ----",
+   "category_id": "services_home_cust",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Revenue",
+   "published": "2026-11-11T12:12:11",
+   "closing": "2026-12-02T13:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10152588",
+    "b_id": [
+     10152588
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8262512"
+    ],
+    "b_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-11T12:12:11Z"
+    ],
+    "final_end_date_sort": [
+     "2026-12-02T13:00:00Z"
+    ],
+    "bd_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cust"
+    ],
+    "b.b_created_by": [
+     "balamuralik.g060301@gov.in"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Revenue"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10152588",
+    "filename": "GeM-Bidding-10152588.pdf",
+    "size": 107779,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "dab054fcc368e02ee77a8b53c190a4d256249ac685b3b8cd1420cca9fca4f6df",
+    "path": "docs/10152588/files/dab054fcc368e02ee77a8b53c190a4d256249ac685b3b8cd1420cca9fca4f6df.pdf",
+    "text_path": "docs/10152588/files/dab054fcc368e02ee77a8b53c190a4d256249ac685b3b8cd1420cca9fca4f6df.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10152588,
+   "bid_number": "GEM/2026/B/8262512",
+   "topic_key": "fc67a56cd5712fe5",
+   "doc_hash": "ae89c59f618a8a52",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is issued by the Ministry of Finance/Department of Revenue, not the Reserve Bank of India.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:06:49.487870"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10155014": {
+  "b_id": 10155014,
+  "group": "Reserve Bank of India (RBI) Tenders",
+  "bid": {
+   "b_id": 10155014,
+   "bid_number": "GEM/2026/B/8264661",
+   "title": "Custom Bid for Services - ----",
+   "category_id": "services_home_cust",
+   "ministry": "Ministry of Electronics and Information Technology",
+   "department": "Department of Electronics and Information Technology",
+   "published": "2026-11-11T17:58:32",
+   "closing": "2026-12-02T18:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10155014",
+    "b_id": [
+     10155014
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8264661"
+    ],
+    "b_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-11T17:58:32Z"
+    ],
+    "final_end_date_sort": [
+     "2026-12-02T18:00:00Z"
+    ],
+    "bd_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cust"
+    ],
+    "b.b_created_by": [
+     "firoz@negp.gov.in"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Electronics and Information Technology"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Electronics and Information Technology"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10155014",
+    "filename": "GeM-Bidding-10155014.pdf",
+    "size": 108493,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "fa95521ee73be0c9551c2e163b066e992db159f7dd96083376be0487a956744a",
+    "path": "docs/10155014/files/fa95521ee73be0c9551c2e163b066e992db159f7dd96083376be0487a956744a.pdf",
+    "text_path": "docs/10155014/files/fa95521ee73be0c9551c2e163b066e992db159f7dd96083376be0487a956744a.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10155014,
+   "bid_number": "GEM/2026/B/8264661",
+   "topic_key": "fc67a56cd5712fe5",
+   "doc_hash": "e85d4da2867fdd1d",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is issued by the Ministry of Electronics and Information Technology, not the Reserve Bank of India.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-11-23T17:00:00",
+    "source": "gem_pre_bid",
+    "kind": "queries_deadline",
+    "quote": "Pre-Bid Date and Time 23-11-2026 17:00:00",
+    "file": "GeM-Bidding-10155014.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:07:41.674755"
+  },
+  "error": "",
+  "restored": false
+ }
+}

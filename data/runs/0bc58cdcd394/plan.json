@@ -1,0 +1,37 @@
+[
+ {
+  "topic_key": "738edc1459c5cd78",
+  "text": "Management Consultancy: Professional services for strategic planning, organizational restructuring, and operational efficiency improvement.; Management Consultancy; Management Consulting; Strategic Consulting; Business Process Reengineering; Organizational Development; Change Management; Operational Excellence; Strategy Consulting",
+  "terms": [
+   "Management Consultancy",
+   "Management Consulting",
+   "Strategic Consulting",
+   "Business Process Reengineering",
+   "Organizational Development",
+   "Change Management",
+   "Operational Excellence",
+   "Strategy Consulting",
+   "Banking",
+   "SBI",
+   "PNB",
+   "HDFC",
+   "Axis Bank",
+   "ICICI"
+  ],
+  "published_from": "2026-11-02T00:00:00",
+  "published_to": "2026-11-16T20:37:41.179083",
+  "closing_from": "2026-11-16T20:37:41.179083",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [
+   "Ministry of Finance"
+  ],
+  "prefer_departments": [
+   "REGIONAL RURAL BANKS"
+  ],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "Filtering by Ministry of Finance and Regional Rural Banks helps prioritize government-owned or regulated banking entities, while extra terms target specific major banks likely to issue such tenders."
+ }
+]

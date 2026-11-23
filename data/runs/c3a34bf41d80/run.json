@@ -1,0 +1,72 @@
+{
+ "run_id": "c3a34bf41d80",
+ "user": "raj",
+ "title": "aml tenders",
+ "request_text": "aml tenders",
+ "created": "2026-11-19T12:52:53.054389",
+ "status": "stopped",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "aml tenders",
+  "topics": [
+   {
+    "user_text": "aml tenders",
+    "meaning": "AML Software: Anti-Money Laundering software solutions, including transaction monitoring, sanctions screening, and customer risk assessment tools.",
+    "domain": "Banking & Finance",
+    "match_terms": [
+     "AML",
+     "Anti-Money Laundering",
+     "AML Software",
+     "Transaction Monitoring",
+     "Sanctions Screening",
+     "Customer Risk Assessment",
+     "KYC/AML",
+     "Financial Crime Prevention"
+    ],
+    "acronyms": {
+     "AML": "Anti-Money Laundering"
+    },
+    "related_but_not_enough": [
+     "Fraud Detection",
+     "Compliance Management",
+     "RegTech"
+    ],
+    "not_this": [
+     "AML (Additive Manufacturing Layer)",
+     "AML (Advanced Mobile Location)"
+    ],
+    "buyers": [],
+    "chosen_because": "AML Software is the standard and most likely meaning for financial context, supported by 92 relevant tenders, whereas the other meanings are either unrelated to the user's financial focus or have lower relevance.",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": null,
+   "published_to": null,
+   "closing_from": "2026-11-19T12:52:39.410386",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "AML Software: Anti-Money Laundering software solutions, including transaction monitoring, sanctions screening, and customer risk assessment tools.",
+   "window_count": 44659,
+   "strong": 92,
+   "top_titles": [
+    "PIPE, SS, SEAMLESS, 193.6MM, 5.6MM, 71301000801043",
+    "Item-1,Item-2,Item-3,Item-4,Item-5,Item-6,Item-7,Item-8,Item-9,Item-10,Item-11,Item-12,Item-13,Item",
+    "ACALABRUTINIB 100 MG CAP,ACEBROPHYLLIN 100MG plus ACETYCSTINE 600MG PULMOCLEAR TAB,ACEBROPHYLLINE 1",
+    "CALCIUM TAB,GLIMEPRIDE 2MG,GLIMEPRIDE G1,TELMISARTAN TAB,WHITEFIELD OINT,SEAMLENE 1 NS 843,TT AMP,I",
+    "Handling ,Transport and Other Mining Services - Percentage quote based - Handling Service, Transpor",
+    "Tab Aceclofenac100 mg plus Paracetamol 500 mg,Ibuprofen 400 mg Tab,Indomethacin 75 mg SR Tab,Tramad",
+    "Refillable Seamless Steel Gas Cylinders Conforming to IS 7285",
+    "Ibuprofen 400 mg Tab,Cetirizine Dihydrochloride 10 mg Tab,Albendazole Syp each 5 ml containing 200 "
+   ]
+  }
+ ],
+ "error": ""
+}

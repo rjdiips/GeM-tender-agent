@@ -1,0 +1,31 @@
+[
+ {
+  "topic_key": "b40875d32999d0d6",
+  "text": "Fraud Detection and Prevention Systems: Tenders for AI-driven fraud detection platforms, transaction monitoring systems, and behavioral analytics tools used by banks and financial institutions to identify suspicious activities.; fraud detection; fraud prevention; transaction monitoring; fraud management system; FMS; suspicious activity detection; real-time fraud monitoring",
+  "terms": [
+   "fraud detection",
+   "fraud prevention",
+   "transaction monitoring",
+   "fraud management system",
+   "FMS",
+   "suspicious activity detection",
+   "real-time fraud monitoring",
+   "AI",
+   "machine learning",
+   "behavioral analytics",
+   "real-time monitoring",
+   "suspicious transaction"
+  ],
+  "published_from": "2026-11-10T00:00:00",
+  "published_to": "2026-11-17T10:48:01.431167",
+  "closing_from": "2026-11-17T10:48:01.431167",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "GeM does not have a specific 'Fraud Detection' category; these software solutions are typically filed under vague IT/Software categories like 'Computer Software' or 'IT Services'. Adding specific categories might exclude relevant tenders filed under generic IT headings, so leaving it empty ensures broader coverage via the meaning-based title search."
+ }
+]

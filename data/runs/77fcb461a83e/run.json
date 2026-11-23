@@ -1,0 +1,72 @@
+{
+ "run_id": "77fcb461a83e",
+ "user": "probe2",
+ "title": "AML software tenders published in the last 2 weeks",
+ "request_text": "AML software tenders published in the last 2 weeks",
+ "created": "2026-11-16T17:17:49.684013",
+ "status": "failed",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "AML software tenders published in the last 2 weeks",
+  "topics": [
+   {
+    "user_text": "AML software tenders published in the last 2 weeks",
+    "meaning": "AML Software: Software solutions for Anti-Money Laundering compliance, including transaction monitoring, KYC, and sanctions screening.",
+    "domain": "FinTech / Compliance",
+    "match_terms": [
+     "AML",
+     "Anti-Money Laundering",
+     "AML Software",
+     "Transaction Monitoring",
+     "KYC",
+     "Know Your Customer",
+     "Sanctions Screening",
+     "Compliance Software"
+    ],
+    "acronyms": {
+     "AML": "Anti-Money Laundering"
+    },
+    "related_but_not_enough": [
+     "Fraud Detection",
+     "Risk Management",
+     "RegTech"
+    ],
+    "not_this": [
+     "Accounting Software",
+     "Audit Software"
+    ],
+    "buyers": [],
+    "chosen_because": "Meaning [0] is the direct interpretation of 'AML software' and has the highest plausibility, whereas Meaning [1] is a broader category with no better match and lower plausibility.",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-11-02T00:00:00",
+   "published_to": "2026-11-16T17:17:45.240166",
+   "closing_from": "2026-11-16T17:17:45.240166",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "AML Software: Software solutions for Anti-Money Laundering compliance, including transaction monitoring, KYC, and sanctions screening.",
+   "window_count": 29538,
+   "strong": 0,
+   "top_titles": [
+    "AMC of Integrated Security and Surveillance System - Monitor Operations, Health Monitoring Solution",
+    "AMC of Integrated Security and Surveillance System - CCTV; Comprehensive; Hardware, Software, Netwo",
+    "Custom Bid for Services - RFP for Asset Liability Management (ALM) Solution",
+    "AMC of Integrated Security and Surveillance System - Theft Prevention, Remote Video Monitoring, Fac",
+    "SOFTWARES",
+    "Software,Software add on,Software Support 1,Software Support 2,Hardware HPC",
+    "AMC of Integrated Security and Surveillance System - Monitor Operations; Comprehensive; Hardware, S",
+    "Web Application Vulnerability Scanner Software"
+   ]
+  }
+ ],
+ "error": "Client error '422 Unprocessable Entity' for url 'https://bidplus.gem.gov.in/search-bids'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/422"
+}

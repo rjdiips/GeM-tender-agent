@@ -1,0 +1,255 @@
+{
+ "10020346": {
+  "b_id": 10020346,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10020346,
+   "bid_number": "GEM/2026/B/8147718",
+   "title": "SIEM and SOAR Software",
+   "category_id": "home_info_soft_ne74724043_se80767584",
+   "ministry": "Ministry of Electronics and Information Technology",
+   "department": "Department of Electronics and Information Technology",
+   "published": "2026-11-04T16:40:55",
+   "closing": "2026-12-04T18:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10020346",
+    "b_id": [
+     10020346
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8147718"
+    ],
+    "b_category_name": [
+     "SIEM and SOAR Software"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-04T16:40:55Z"
+    ],
+    "final_end_date_sort": [
+     "2026-12-04T18:00:00Z"
+    ],
+    "bd_category_name": [
+     "SIEM and SOAR Software"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_info_soft_ne74724043_se80767584"
+    ],
+    "b.b_created_by": [
+     "navneet@infra"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Electronics and Information Technology"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Electronics and Information Technology"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10020346",
+    "filename": "GeM-Bidding-10020346.pdf",
+    "size": 122901,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "196298cdf3c1c462d3a36f769be9e55dc49b519ca744360532be7d8d2e22b04c",
+    "path": "docs/10020346/files/196298cdf3c1c462d3a36f769be9e55dc49b519ca744360532be7d8d2e22b04c.pdf",
+    "text_path": "docs/10020346/files/196298cdf3c1c462d3a36f769be9e55dc49b519ca744360532be7d8d2e22b04c.pdf.text.json",
+    "pages": 9,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/downloadOmppdfile/",
+    "filename": "downloadOmppdfile",
+    "size": 0,
+    "kind": "empty",
+    "status": "empty",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": null,
+    "path": null,
+    "text_path": null,
+    "pages": 0,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/showCatalogue/9L8u5fn7P8VsA7YamyO610xNjD9GLN4sdf0dSRBbLEU",
+    "filename": "9L8u5fn7P8VsA7YamyO610xNjD9GLN4sdf0dSRBbLEU",
+    "size": 103297,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "c356ec0c69c60ef81c439e6e26f52df7b3152b57bb6bedf556ed935bda9ea1fa",
+    "path": "docs/10020346/files/c356ec0c69c60ef81c439e6e26f52df7b3152b57bb6bedf556ed935bda9ea1fa.html",
+    "text_path": "docs/10020346/files/c356ec0c69c60ef81c439e6e26f52df7b3152b57bb6bedf556ed935bda9ea1fa.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Oct/GEM_2026_B_8147718/CLM0010/TNDR_SIEM_497022fd-1c72-4560-b4991791978354140_navneet@infra.pdf",
+    "filename": "TNDR_SIEM_497022fd-1c72-4560-b4991791978354140_navneet@infra.pdf",
+    "size": 322372,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 8,
+    "link_kind": "document",
+    "sha256": "80738eb0df6f9a1d6aa735211fd3f0fd5c33394813cf9b993902f944a71eb8cb",
+    "path": "docs/10020346/files/80738eb0df6f9a1d6aa735211fd3f0fd5c33394813cf9b993902f944a71eb8cb.pdf",
+    "text_path": "docs/10020346/files/80738eb0df6f9a1d6aa735211fd3f0fd5c33394813cf9b993902f944a71eb8cb.pdf.text.json",
+    "pages": 17,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261104",
+    "filename": "gtc-20261104.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 9,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261104.pdf",
+    "text_path": "gtc/20261104.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10020346,
+   "bid_number": "GEM/2026/B/8147718",
+   "topic_key": "d91359691bcee12a",
+   "doc_hash": "52a5f3e2818418b9",
+   "relevant": false,
+   "confidence": 0.95,
+   "stage": "judge",
+   "triage": "maybe",
+   "reason": "This tender is for Cyber Security Incident Response software (SIEM/SOAR) to detect network threats and automate security responses, not for financial crime prevention or Anti-Money Laundering compliance.",
+   "evidence": [
+    {
+     "quote": "CERT-In has been set up to enhance the Cyber Security of the Country. It mainly serves as a central point for responding to Cyber Security Incidents as and when they occur",
+     "file": "TNDR_SIEM_497022fd-1c72-4560-b4991791978354140_navneet@infra.pdf",
+     "page": 2,
+     "verified": true
+    },
+    {
+     "quote": "Item Description: Next-Generation SIEM solutions. Threat Detection – Behaviour-based detection, Detection of zero-day, insider threats, and lateral movement",
+     "file": "TNDR_SIEM_497022fd-1c72-4560-b4991791978354140_navneet@infra.pdf",
+     "page": 12,
+     "verified": true
+    },
+    {
+     "quote": "Usage – Centralized platform for log management, threat detection, investigation, and automated response",
+     "file": "TNDR_SIEM_497022fd-1c72-4560-b4991791978354140_navneet@infra.pdf",
+     "page": 13,
+     "verified": true
+    }
+   ],
+   "key_facts": {
+    "emd": "",
+    "min_turnover": "50 Lakh",
+    "contract_period": "120 days delivery + 3 years warranty",
+    "estimated_value": "11800000",
+    "scope_summary": "Next-Generation SIEM and SOAR software with hardware for CERT-In cyber incident response."
+   },
+   "queries": {
+    "when": "2026-11-16T15:00:00",
+    "source": "gem_pre_bid",
+    "quote": "Pre-Bid Date and Time 16-11-2026 15:00:00",
+    "file": "GeM-Bidding-10020346.pdf",
+    "page": 5,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-17T09:32:09.682175"
+  },
+  "error": "",
+  "restored": false
+ }
+}

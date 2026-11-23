@@ -1,0 +1,32 @@
+[
+ {
+  "topic_key": "0f79da95bde5ef81",
+  "text": "Management Consultancy Services: Professional advisory services provided by consulting firms to banks for strategic, operational, or financial improvement.; Management Consultancy; Consultancy Services; Management Consulting; Advisory Services; Banking Consultancy",
+  "terms": [
+   "Management Consultancy",
+   "Consultancy Services",
+   "Management Consulting",
+   "Advisory Services",
+   "Banking Consultancy",
+   "Strategic Advisory",
+   "Operational Improvement"
+  ],
+  "published_from": "2026-11-02T00:00:00",
+  "published_to": "2026-11-16T20:40:04.490837",
+  "closing_from": "2026-11-16T20:40:04.490837",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [
+   "Ministry of Finance"
+  ],
+  "prefer_departments": [
+   "REGIONAL RURAL BANKS"
+  ],
+  "bid_types": [],
+  "categories": [
+   "services_home_fina_fi44514430"
+  ],
+  "reasons": "The Ministry of Finance oversees public sector banks and financial institutions, making it the most relevant ministry for tenders issued by banks. The 'Financial Advisory Services' category is the only clear fit for management consultancy provided to financial entities, whereas the other candidate categories relate to infrastructure project management or specific redevelopment projects which are not the primary focus of general management consultancy for banks."
+ }
+]

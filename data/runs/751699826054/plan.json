@@ -1,0 +1,30 @@
+[
+ {
+  "topic_key": "d359dcc61adbee9c",
+  "text": "Management Consultancy Services: Professional advisory services for strategic planning, operational efficiency, and organizational restructuring.; Management Consultancy; Management Consulting; Strategic Advisory; Business Process Reengineering; Organizational Development; Mgmt Consultancy",
+  "terms": [
+   "Management Consultancy",
+   "Management Consulting",
+   "Strategic Advisory",
+   "Business Process Reengineering",
+   "Organizational Development",
+   "Mgmt Consultancy",
+   "MCS"
+  ],
+  "published_from": "2026-11-02T00:00:00",
+  "published_to": "2026-11-16T15:43:37.044019",
+  "closing_from": "2026-11-16T15:43:37.044019",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [
+   "Ministry of Finance"
+  ],
+  "prefer_departments": [
+   "REGIONAL RURAL BANKS"
+  ],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "The Ministry of Finance oversees public sector banks, making it the primary ministry for bank-related tenders. 'REGIONAL RURAL BANKS' is the only department explicitly linked to the user's 'banks' hint. No specific GeM category perfectly fits general management consultancy for banks (as they often fall under vague or service-specific categories), so categories are left empty to avoid missing relevant tenders. Extra terms are added to capture variations in tender titles that might not use the exact phrase 'Management Consultancy'. Bid types are left empty to include all procurement methods."
+ }
+]

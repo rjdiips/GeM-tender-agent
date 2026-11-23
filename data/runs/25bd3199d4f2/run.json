@@ -1,0 +1,73 @@
+{
+ "run_id": "25bd3199d4f2",
+ "user": "raj",
+ "title": "aml tenders last 2 weeks",
+ "request_text": "aml tenders last 2 weeks",
+ "created": "2026-11-17T17:39:14.828936",
+ "status": "complete",
+ "parent_run_id": null,
+ "request": {
+  "intent": "refine",
+  "user_text": "aml tenders last 2 weeks",
+  "topics": [
+   {
+    "user_text": "aml tenders last 2 weeks",
+    "meaning": "AML Software: Anti-Money Laundering software solutions, including transaction monitoring, sanctions screening, and customer risk assessment tools.",
+    "domain": "fintech",
+    "match_terms": [
+     "AML",
+     "Anti-Money Laundering",
+     "AML Software",
+     "Transaction Monitoring",
+     "Sanctions Screening",
+     "Customer Risk Assessment",
+     "KYC",
+     "CDD",
+     "EDD"
+    ],
+    "acronyms": {
+     "AML": "Anti-Money Laundering"
+    },
+    "related_but_not_enough": [
+     "Compliance Software",
+     "RegTech",
+     "Fraud Detection"
+    ],
+    "not_this": [
+     "AML (Additive Manufacturing Laboratory)",
+     "AML (Automated Material Handling)"
+    ],
+    "buyers": [],
+    "chosen_because": "the only plausible meaning",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-11-03T00:00:00",
+   "published_to": "2026-11-17T17:39:12.076238",
+   "closing_from": "2026-11-17T17:39:12.076238",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "AML Software: Anti-Money Laundering software solutions, including transaction monitoring, sanctions screening, and customer risk assessment tools.",
+   "window_count": 31145,
+   "strong": 5,
+   "top_titles": [
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Custom Bid for Services - ----",
+    "AMC of Integrated Security and Surveillance System - Monitor Operations, Health Monitoring Solution",
+    "AMC of Integrated Security and Surveillance System - CCTV; Comprehensive; Hardware, Software, Netwo",
+    "Hiring of Agency for IT Projects- Milestone basis"
+   ]
+  }
+ ],
+ "error": ""
+}

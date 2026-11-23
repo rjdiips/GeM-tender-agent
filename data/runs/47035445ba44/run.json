@@ -1,0 +1,77 @@
+{
+ "run_id": "47035445ba44",
+ "user": "cli",
+ "title": "AML tenders published in the last 2 weeks",
+ "request_text": "AML tenders published in the last 2 weeks",
+ "created": "2026-11-19T06:44:59.111016",
+ "status": "complete",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "AML tenders published in the last 2 weeks",
+  "topics": [
+   {
+    "user_text": "AML tenders published in the last 2 weeks",
+    "meaning": "Anti-Money Laundering (AML) Solutions: software and services for detecting, preventing, and reporting financial crimes and suspicious transactions",
+    "domain": "Financial Technology / Compliance",
+    "match_terms": [
+     "AML",
+     "Anti-Money Laundering",
+     "Anti Money Laundering",
+     "KYC",
+     "Know Your Customer",
+     "CFT",
+     "Counter Terrorism Financing",
+     "Suspicious Transaction Reporting",
+     "Sanctions Screening",
+     "Customer Due Diligence",
+     "EDD",
+     "Enhanced Due Diligence"
+    ],
+    "acronyms": {
+     "AML": "Anti-Money Laundering"
+    },
+    "related_but_not_enough": [
+     "Fraud Detection",
+     "Compliance Management System",
+     "Risk Management Software"
+    ],
+    "not_this": [
+     "Asset Management",
+     "Account Management",
+     "Application Management"
+    ],
+    "buyers": [],
+    "chosen_because": "Meaning [0] has a high plausibility score (0.95) and matches 320 relevant open tenders, whereas Meaning [1] has low plausibility (0.05) and only 1 match.",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-11-05T00:00:00",
+   "published_to": "2026-11-19T06:44:51.301607",
+   "closing_from": "2026-11-19T06:44:51.301607",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "Anti-Money Laundering (AML) Solutions: software and services for detecting, preventing, and reporting financial crimes and suspicious transactions",
+   "window_count": 44652,
+   "strong": 320,
+   "top_titles": [
+    "CALCIUM TAB,GLIMEPRIDE 2MG,GLIMEPRIDE G1,TELMISARTAN TAB,WHITEFIELD OINT,SEAMLENE 1 NS 843,TT AMP,I",
+    "Handling ,Transport and Other Mining Services - Percentage quote based - Handling Service, Transpor",
+    "Tab Aceclofenac100 mg plus Paracetamol 500 mg,Ibuprofen 400 mg Tab,Indomethacin 75 mg SR Tab,Tramad",
+    "Refillable Seamless Steel Gas Cylinders Conforming to IS 7285",
+    "Ibuprofen 400 mg Tab,Cetirizine Dihydrochloride 10 mg Tab,Albendazole Syp each 5 ml containing 200 ",
+    "PG Bhauji ko Prannam,Sangharsh,Anant Ki Aur,Buddhiman Murkh,Aaj Ki Taswir,Cutpish,Panchtantra Ki Sr",
+    "Polycab Cable 10 MM Aluminum,Change Over 100 Amp,Paper Cutter Blade,Drawing Sheet Ivory,Stapling Pi",
+    "Tramadol HCL 50mgml Inj 1 ml Amp,Dexamethasone 0.5 mg Tab,Dexamethasone Sodium Phosphate 4.4 mg Equ"
+   ]
+  }
+ ],
+ "error": ""
+}

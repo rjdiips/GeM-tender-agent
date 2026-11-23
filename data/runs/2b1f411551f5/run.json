@@ -1,0 +1,73 @@
+{
+ "run_id": "2b1f411551f5",
+ "user": "raj",
+ "title": "fraud tenders this week",
+ "request_text": "fraud tenders this week",
+ "created": "2026-11-17T10:48:05.642175",
+ "status": "complete",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "fraud tenders this week",
+  "topics": [
+   {
+    "user_text": "fraud tenders this week",
+    "meaning": "Fraud Detection and Prevention Systems: Tenders for AI-driven fraud detection platforms, transaction monitoring systems, and behavioral analytics tools used by banks and financial institutions to identify suspicious activities.",
+    "domain": "Banking/Finance",
+    "match_terms": [
+     "fraud detection",
+     "fraud prevention",
+     "transaction monitoring",
+     "fraud management system",
+     "FMS",
+     "suspicious activity detection",
+     "real-time fraud monitoring"
+    ],
+    "acronyms": {
+     "FMS": "Fraud Management System"
+    },
+    "related_but_not_enough": [
+     "AML software",
+     "KYC verification",
+     "compliance management",
+     "risk assessment tools"
+    ],
+    "not_this": [
+     "physical security fraud",
+     "identity theft investigation services",
+     "forensic accounting"
+    ],
+    "buyers": [],
+    "chosen_because": "Meaning [0] has the highest plausibility (0.95) and matches 4 open tenders, whereas Meaning [1] has lower plausibility and Meaning [2] has zero matches.",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-11-10T00:00:00",
+   "published_to": "2026-11-17T10:48:01.431167",
+   "closing_from": "2026-11-17T10:48:01.431167",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": 10
+ },
+ "probes": [
+  {
+   "meaning": "Fraud Detection and Prevention Systems: Tenders for AI-driven fraud detection platforms, transaction monitoring systems, and behavioral analytics tools used by banks and financial institutions to identify suspicious activities.",
+   "window_count": 16921,
+   "strong": 4,
+   "top_titles": [
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Custom Bid for Services - Request for Proposal for Facility Management  Services (FMS) for IT Infra",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "WORK BENCH AS PER DRG. SK 1127 WORK BENCH TO CARRY OUT DEBURRING OPERATIONS IN FMS SHOP",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "repair of tactical vest,repair of tactical field stove FMS 102,eye piece for PNS AK 47,battery for ",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis"
+   ]
+  }
+ ],
+ "error": ""
+}

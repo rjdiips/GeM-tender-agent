@@ -1,0 +1,72 @@
+{
+ "run_id": "e8f57817908d",
+ "user": "raj",
+ "title": "aml tenders",
+ "request_text": "aml tenders",
+ "created": "2026-11-19T10:38:29.003333",
+ "status": "complete",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "aml tenders",
+  "topics": [
+   {
+    "user_text": "aml tenders",
+    "meaning": "AML Software: Anti-Money Laundering software solutions, including transaction monitoring, sanctions screening, and customer risk assessment tools.",
+    "domain": "Fintech/Compliance",
+    "match_terms": [
+     "AML",
+     "Anti-Money Laundering",
+     "AML software",
+     "transaction monitoring",
+     "sanctions screening",
+     "customer risk assessment",
+     "KYC/AML",
+     "financial crime compliance"
+    ],
+    "acronyms": {
+     "AML": "Anti-Money Laundering"
+    },
+    "related_but_not_enough": [
+     "KYC",
+     "CFT",
+     "Compliance Management System"
+    ],
+    "not_this": [
+     "AML (Additive Manufacturing Layer)",
+     "AML (Automated Material Handling)"
+    ],
+    "buyers": [],
+    "chosen_because": "The high plausibility score (0.95) and significant number of relevant tender titles (91) confirm that 'AML Software' is the primary and most likely intent, whereas the 'AML Services' meaning has negligible relevance with only 1 match.",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": null,
+   "published_to": null,
+   "closing_from": "2026-11-19T10:37:26.359403",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "AML Software: Anti-Money Laundering software solutions, including transaction monitoring, sanctions screening, and customer risk assessment tools.",
+   "window_count": 44547,
+   "strong": 91,
+   "top_titles": [
+    "PIPE, SS, SEAMLESS, 193.6MM, 5.6MM, 71301000801043",
+    "CALCIUM TAB,GLIMEPRIDE 2MG,GLIMEPRIDE G1,TELMISARTAN TAB,WHITEFIELD OINT,SEAMLENE 1 NS 843,TT AMP,I",
+    "Handling ,Transport and Other Mining Services - Percentage quote based - Handling Service, Transpor",
+    "Tab Aceclofenac100 mg plus Paracetamol 500 mg,Ibuprofen 400 mg Tab,Indomethacin 75 mg SR Tab,Tramad",
+    "Refillable Seamless Steel Gas Cylinders Conforming to IS 7285",
+    "Ibuprofen 400 mg Tab,Cetirizine Dihydrochloride 10 mg Tab,Albendazole Syp each 5 ml containing 200 ",
+    "PG Bhauji ko Prannam,Sangharsh,Anant Ki Aur,Buddhiman Murkh,Aaj Ki Taswir,Cutpish,Panchtantra Ki Sr",
+    "Polycab Cable 10 MM Aluminum,Change Over 100 Amp,Paper Cutter Blade,Drawing Sheet Ivory,Stapling Pi"
+   ]
+  }
+ ],
+ "error": ""
+}

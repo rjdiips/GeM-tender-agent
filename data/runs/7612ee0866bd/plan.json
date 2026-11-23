@@ -1,0 +1,36 @@
+[
+ {
+  "topic_key": "c038477dbb1a2618",
+  "text": "AI Platform: Software platforms for building, training, and deploying artificial intelligence models.; AI Platform; Artificial Intelligence Platform; Machine Learning Platform; ML Platform; AI Development Platform; AI Infrastructure; AI Software; Deep Learning Platform",
+  "terms": [
+   "AI Platform",
+   "Artificial Intelligence Platform",
+   "Machine Learning Platform",
+   "ML Platform",
+   "AI Development Platform",
+   "AI Infrastructure",
+   "AI Software",
+   "Deep Learning Platform",
+   "AI",
+   "MLOps",
+   "Model Training",
+   "Inference Engine",
+   "Neural Network",
+   "Jupyter",
+   "TensorFlow",
+   "PyTorch",
+   "Kubernetes"
+  ],
+  "published_from": null,
+  "published_to": null,
+  "closing_from": "2026-11-16T17:31:38.989745",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "AI platform tenders are typically classified under broad 'IT Software' or 'Computer Hardware & Peripherals' categories on GeM, or sometimes under 'Research & Development' if tied to specific projects. Since there is no dedicated 'AI Software' category and relevant tenders are often filed under generic IT services or hardware bundles, leaving categories empty ensures we do not miss tenders filed in vague or parent categories. The extra terms capture technical keywords often found in titles of platforms that build/train/deploy models, distinguishing them from simple chatbots or consulting services."
+ }
+]

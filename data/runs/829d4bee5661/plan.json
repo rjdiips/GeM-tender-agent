@@ -1,0 +1,32 @@
+[
+ {
+  "topic_key": "e9d2142eb25bced2",
+  "text": "Ministry of Finance: Tenders issued by the Ministry of Finance, Government of India, including its departments like Department of Financial Services, Department of Revenue, and Department of Economic Affairs.; Ministry of Finance; MoF; Department of Financial Services; Department of Revenue; Department of Economic Affairs; Ministry of Finance India",
+  "terms": [
+   "Ministry of Finance",
+   "MoF",
+   "Department of Financial Services",
+   "Department of Revenue",
+   "Department of Economic Affairs",
+   "Ministry of Finance India",
+   "DFS",
+   "RBI",
+   "SEBI",
+   "IRDAI",
+   "PFRDA"
+  ],
+  "published_from": "2026-11-02T00:00:00",
+  "published_to": "2026-11-16T17:13:02.283397",
+  "closing_from": "2026-11-16T17:13:02.283397",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [
+   "Ministry of Finance"
+  ],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "The Ministry of Finance in India comprises several key departments (DFS, Revenue, Economic Affairs) and autonomous bodies (RBI, SEBI, IRDAI, PFRDA) that issue tenders. Including these specific departmental names and acronym-based entities in extra_terms ensures that tenders filed under these specific wings are captured, as they may not always explicitly state 'Ministry of Finance' in the title but are under its administrative umbrella."
+ }
+]

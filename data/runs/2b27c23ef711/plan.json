@@ -1,0 +1,29 @@
+[
+ {
+  "topic_key": "a0ebb6312477dd27",
+  "text": "Reserve Bank of India (RBI) Tenders: Procurement notices, IT services, and infrastructure projects issued by the Reserve Bank of India.; Reserve Bank of India; RBI; Central Bank of India; Central Bank Tenders",
+  "terms": [
+   "Reserve Bank of India",
+   "RBI",
+   "Central Bank of India",
+   "Central Bank Tenders",
+   "CBI",
+   "procurement",
+   "services",
+   "infrastructure"
+  ],
+  "published_from": "2026-11-02T00:00:00",
+  "published_to": "2026-11-16T16:55:18.690279",
+  "closing_from": "2026-11-16T16:55:18.690279",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [
+   "Ministry of Finance"
+  ],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "The user specifically requested tenders from the Reserve Bank of India (RBI) and Central Bank of India. While the Ministry of Finance oversees the RBI, the RBI is an autonomous body and often lists tenders under its own name or specific banking categories which are not clearly mapped in the provided list; however, Ministry of Finance is the closest administrative parent. No specific GeM categories perfectly capture 'central bank' operations exclusively, so leaving categories empty avoids filtering out relevant IT or infrastructure tenders filed under generic heads. The extra terms help capture the nature of the work (procurement/services) often found in these titles."
+ }
+]

@@ -1,0 +1,78 @@
+{
+ "run_id": "2837e58f2ad5",
+ "user": "raj",
+ "title": "AI platform tenders",
+ "request_text": "AI platform tenders",
+ "created": "2026-11-17T15:02:06.698047",
+ "status": "complete",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "AI platform tenders",
+  "topics": [
+   {
+    "user_text": "AI platform tenders",
+    "meaning": "AI Platform: Tenders for Artificial Intelligence platforms, including machine learning operations (MLOps) tools, generative AI frameworks, and enterprise AI integration services.",
+    "domain": "AI/ML Software",
+    "match_terms": [
+     "AI platform",
+     "artificial intelligence platform",
+     "AI software",
+     "machine learning platform",
+     "MLOps",
+     "generative AI",
+     "AI framework",
+     "AI solution",
+     "AI services"
+    ],
+    "acronyms": {
+     "AI": "Artificial Intelligence"
+    },
+    "related_but_not_enough": [
+     "AI hardware",
+     "GPU servers",
+     "AI cameras",
+     "robotics",
+     "lab equipment"
+    ],
+    "not_this": [
+     "AML software",
+     "Fraud detection",
+     "KYC services",
+     "IT infrastructure",
+     "Cybersecurity"
+    ],
+    "buyers": [],
+    "chosen_because": "the only plausible meaning",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": null,
+   "published_to": null,
+   "closing_from": "2026-11-17T15:02:01.632533",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "AI Platform: Tenders for Artificial Intelligence platforms, including machine learning operations (MLOps) tools, generative AI frameworks, and enterprise AI integration services.",
+   "window_count": 41593,
+   "strong": 158,
+   "top_titles": [
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Generative AI Platform,AI Video Generation Platform,AI Text to video Creation Platform,Creative Rea",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "AI Framework and Classification Tool",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis"
+   ]
+  }
+ ],
+ "error": ""
+}

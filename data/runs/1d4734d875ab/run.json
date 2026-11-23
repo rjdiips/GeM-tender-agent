@@ -1,0 +1,76 @@
+{
+ "run_id": "1d4734d875ab",
+ "user": "raj",
+ "title": "AI platform tenders last 2 weeks",
+ "request_text": "AI platform tenders last 2 weeks",
+ "created": "2026-11-17T15:21:55.038368",
+ "status": "complete",
+ "parent_run_id": null,
+ "request": {
+  "intent": "refine",
+  "user_text": "AI platform tenders last 2 weeks",
+  "topics": [
+   {
+    "user_text": "AI platform tenders last 2 weeks",
+    "meaning": "AI Platform: software platforms for artificial intelligence, including machine learning operations (MLOps) tools, generative AI frameworks, and enterprise AI integration services",
+    "domain": "IT & Software",
+    "match_terms": [
+     "AI platform",
+     "artificial intelligence platform",
+     "machine learning platform",
+     "MLOps",
+     "generative AI",
+     "AI framework",
+     "enterprise AI",
+     "AI software",
+     "AI solution"
+    ],
+    "acronyms": {
+     "AI": "Artificial Intelligence"
+    },
+    "related_but_not_enough": [
+     "AI hardware",
+     "GPU servers",
+     "AI cameras",
+     "robotics",
+     "lab equipment"
+    ],
+    "not_this": [
+     "AI hardware procurement",
+     "GPU server tenders",
+     "workstation procurement"
+    ],
+    "buyers": [],
+    "chosen_because": "the only plausible meaning",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-11-03T00:00:00",
+   "published_to": "2026-11-17T15:21:52.527422",
+   "closing_from": "2026-11-17T15:21:52.527422",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "AI Platform: software platforms for artificial intelligence, including machine learning operations (MLOps) tools, generative AI frameworks, and enterprise AI integration services",
+   "window_count": 30441,
+   "strong": 112,
+   "top_titles": [
+    "AI Framework and Classification Tool",
+    "AI Productivity Assistant Software",
+    "AI Server for Makers Lab",
+    "AI DEVELOPMENT KIT",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "HIGGSFIELD AI"
+   ]
+  }
+ ],
+ "error": ""
+}

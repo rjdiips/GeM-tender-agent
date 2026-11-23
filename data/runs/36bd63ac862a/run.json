@@ -1,0 +1,74 @@
+{
+ "run_id": "36bd63ac862a",
+ "user": "probe",
+ "title": "tenders for moon dust regolith simulant",
+ "request_text": "tenders for moon dust regolith simulant",
+ "created": "2026-11-16T17:10:46.027379",
+ "status": "complete",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "tenders for moon dust regolith simulant",
+  "topics": [
+   {
+    "user_text": "tenders for moon dust regolith simulant",
+    "meaning": "Moon Dust Regolith Simulant: Synthetic materials designed to mimic the physical and chemical properties of lunar soil for testing and research.",
+    "domain": "Space Research & Materials Science",
+    "match_terms": [
+     "Moon dust",
+     "regolith simulant",
+     "lunar soil simulant",
+     "JSC-1A",
+     "MS-1",
+     "lunar regolith",
+     "simulated moon soil"
+    ],
+    "acronyms": {
+     "JSC-1A": "Johnson Space Center-1A",
+     "MS-1": "Moon Simulant-1"
+    },
+    "related_but_not_enough": [
+     "Martian regolith simulant",
+     "Volcanic ash",
+     "Silica sand",
+     "Spacecraft material testing"
+    ],
+    "not_this": [
+     "Moon rock",
+     "Asteroid mining",
+     "Lunar lander contracts"
+    ],
+    "buyers": [],
+    "chosen_because": "the only plausible meaning",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": null,
+   "published_to": null,
+   "closing_from": "2026-11-16T17:10:37.468960",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "Moon Dust Regolith Simulant: Synthetic materials designed to mimic the physical and chemical properties of lunar soil for testing and research.",
+   "window_count": 39915,
+   "strong": 0,
+   "top_titles": [
+    "Software Suite with modules for carrying out multiphysics modelling and simulation.",
+    "Simulation Software for Drone Simulator",
+    "Scientific Simulation Software",
+    "SIMULATION HARDWARE FOR DRONE SIMULATOR",
+    "SOLIDCast, FLOWCast, and OPTICast Simulation Software",
+    "Solar Simulator Equipment",
+    "Solar Simulator",
+    "Drone Training Simulator Module,Computer Desk,Splite Air Conditioner,Backlite Acrylic Information B"
+   ]
+  }
+ ],
+ "error": ""
+}

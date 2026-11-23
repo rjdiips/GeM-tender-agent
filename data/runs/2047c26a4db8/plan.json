@@ -1,0 +1,29 @@
+[
+ {
+  "topic_key": "60c3bd6f2728612f",
+  "text": "Moon Dust Regolith Simulant: Synthetic materials designed to mimic the physical and chemical properties of lunar soil for research, testing, and training purposes.; Moon dust; regolith simulant; lunar soil simulant; JSC-1A; MS-1; lunar regolith; space simulation material",
+  "terms": [
+   "Moon dust",
+   "regolith simulant",
+   "lunar soil simulant",
+   "JSC-1A",
+   "MS-1",
+   "lunar regolith",
+   "space simulation material",
+   "lunar soil",
+   "space simulation",
+   "synthetic lunar regolith"
+  ],
+  "published_from": null,
+  "published_to": null,
+  "closing_from": "2026-11-16T17:13:24.449526",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "GeM categories are too broad and vague (e.g., 'Chemicals', 'Laboratory Equipment') to reliably filter for this highly specialized niche; searching by meaning and extra terms is more effective than forcing a category fit."
+ }
+]

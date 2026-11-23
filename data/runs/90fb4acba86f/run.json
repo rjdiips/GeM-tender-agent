@@ -1,0 +1,70 @@
+{
+ "run_id": "90fb4acba86f",
+ "user": "raj",
+ "title": "kyc tenders in the last 1 week",
+ "request_text": "kyc tenders in the last 1 week",
+ "created": "2026-11-16T21:25:32.471709",
+ "status": "complete",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "kyc tenders in the last 1 week",
+  "topics": [
+   {
+    "user_text": "kyc tenders in the last 1 week",
+    "meaning": "KYC (Know Your Customer) Services: Tenders for Know Your Customer verification services, including digital KYC, Aadhaar-based verification, and customer onboarding solutions.",
+    "domain": "Government Procurement",
+    "match_terms": [
+     "KYC",
+     "Know Your Customer",
+     "e-KYC",
+     "Aadhaar Verification",
+     "Customer Onboarding",
+     "Identity Verification"
+    ],
+    "acronyms": {
+     "KYC": "Know Your Customer"
+    },
+    "related_but_not_enough": [
+     "AML",
+     "Due Diligence",
+     "Customer Identification Program"
+    ],
+    "not_this": [
+     "Kyc (not a standard acronym in this context)",
+     "KYC (in other unrelated fields if any)"
+    ],
+    "buyers": [],
+    "chosen_because": "The term 'KYC' overwhelmingly refers to Know Your Customer services in a business context, and there is at least one relevant tender found, whereas the Kerala Youth Commission interpretation is highly unlikely and lacks strong title matches.",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-11-09T00:00:00",
+   "published_to": "2026-11-16T21:25:26.715155",
+   "closing_from": "2026-11-16T21:25:26.715155",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "KYC (Know Your Customer) Services: Tenders for Know Your Customer verification services, including digital KYC, Aadhaar-based verification, and customer onboarding solutions.",
+   "window_count": 18320,
+   "strong": 1,
+   "top_titles": [
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Custom Bid for Services - ----",
+    "Custom Bid for Services - ----",
+    "Custom Bid for Services - ----",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Custom Bid for Services - ----",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Custom Bid for Services - ----"
+   ]
+  }
+ ],
+ "error": ""
+}

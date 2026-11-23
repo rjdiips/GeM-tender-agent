@@ -1,0 +1,78 @@
+{
+ "run_id": "d1d632533c85",
+ "user": "raj",
+ "title": "AI transformation tenders this week",
+ "request_text": "AI transformation tenders this week",
+ "created": "2026-11-17T10:34:39.333271",
+ "status": "stopped",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "AI transformation tenders this week",
+  "topics": [
+   {
+    "user_text": "AI transformation tenders this week",
+    "meaning": "AI Transformation: Tenders for Artificial Intelligence solutions, including machine learning platforms, generative AI tools, and enterprise AI integration services.",
+    "domain": "Technology/AI",
+    "match_terms": [
+     "AI transformation",
+     "Artificial Intelligence",
+     "AI solutions",
+     "Machine Learning",
+     "Generative AI",
+     "AI platform",
+     "AI integration",
+     "Neural Network",
+     "Deep Learning"
+    ],
+    "acronyms": {
+     "AI": "Artificial Intelligence"
+    },
+    "related_but_not_enough": [
+     "IT Infrastructure",
+     "Cloud Computing",
+     "Data Analytics",
+     "Cybersecurity",
+     "Software Development"
+    ],
+    "not_this": [
+     "Hardware-only purchases",
+     "GPU servers",
+     "Workstations",
+     "Robots",
+     "Lab equipment"
+    ],
+    "buyers": [],
+    "chosen_because": "the only plausible meaning",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-11-10T00:00:00",
+   "published_to": "2026-11-17T10:32:46.627707",
+   "closing_from": "2026-11-17T10:32:46.627707",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": 50
+ },
+ "probes": [
+  {
+   "meaning": "AI Transformation: Tenders for Artificial Intelligence solutions, including machine learning platforms, generative AI tools, and enterprise AI integration services.",
+   "window_count": 16922,
+   "strong": 68,
+   "top_titles": [
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "AI Productivity Assistant Software",
+    "AI Server for Makers Lab",
+    "ARTIFICIAL INTELLIGENCE AAMTS,SELF SUPPORTING TOWER,NETWORK CONSOLE,POWER SUPPLY SYSTEM,NETWORK CON",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Ultra High Performance AI Workstation,High End Workstation,Mid End Workstation,Entry Level Workstat",
+    "Custom Bid for Services - External Examination, Hydraulic Testing, Certification and Issuance of Fo",
+    "E READER FOR AI TUTOR ASSISTANT APPLICATION"
+   ]
+  }
+ ],
+ "error": ""
+}

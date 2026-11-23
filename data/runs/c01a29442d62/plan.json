@@ -1,0 +1,32 @@
+[
+ {
+  "topic_key": "5af3f1374a31510f",
+  "text": "Anti-Money Laundering (AML) Software: Software solutions for detecting and preventing money laundering, including transaction monitoring, customer due diligence, and sanctions screening.; Anti-Money Laundering; AML; AML Software; Transaction Monitoring; KYC; Know Your Customer; Sanctions Screening; Financial Crime Prevention; Compliance Software",
+  "terms": [
+   "Anti-Money Laundering",
+   "AML",
+   "AML Software",
+   "Transaction Monitoring",
+   "KYC",
+   "Know Your Customer",
+   "Sanctions Screening",
+   "Financial Crime Prevention",
+   "Compliance Software",
+   "Financial Crime",
+   "Sanctions"
+  ],
+  "published_from": "2026-11-02T00:00:00",
+  "published_to": "2026-11-16T17:45:29.104397",
+  "closing_from": "2026-11-16T17:45:29.104397",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [
+   "home_info_soft_soft_audi"
+  ],
+  "reasons": "The 'Audit And Compliance Software' category is the most relevant GeM category for AML solutions, as these systems are primarily used for regulatory compliance and audit trails. No specific ministries were selected as AML software is procured by a wide variety of financial institutions (banks, NBFCs) and government bodies, so filtering by ministry might exclude relevant tenders from entities like RBI, SBI, or other financial regulators. The extra terms 'Financial Crime', 'Sanctions', and 'KYC' are included to capture tenders that may use these specific functional descriptions in their titles alongside or instead of 'AML'."
+ }
+]

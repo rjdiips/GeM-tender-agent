@@ -1,0 +1,2469 @@
+{
+ "10123530": {
+  "b_id": 10123530,
+  "group": "AML Software",
+  "bid": {
+   "b_id": 10123530,
+   "bid_number": "GEM/2026/B/8237193",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": "Ministry of Defence",
+   "department": "Department of Military Affairs",
+   "published": "2026-11-04T11:57:10",
+   "closing": "2026-11-25T11:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "10123530",
+    "b_id": [
+     10123530
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8237193"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-04T11:57:10Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-25T11:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "budgetofficer-dit@navy.gov.in"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Defence"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Military Affairs"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10123530",
+    "filename": "GeM-Bidding-10123530.pdf",
+    "size": 106978,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "bbc60fa34c274b06d568794253565ed76400688c36788080f2e1618c52e2f4fb",
+    "path": "docs/10123530/files/bbc60fa34c274b06d568794253565ed76400688c36788080f2e1618c52e2f4fb.pdf",
+    "text_path": "docs/10123530/files/bbc60fa34c274b06d568794253565ed76400688c36788080f2e1618c52e2f4fb.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "b26dad204da19ddd"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/downloadOmppdfile/",
+    "filename": "downloadOmppdfile",
+    "size": 0,
+    "kind": "empty",
+    "status": "empty",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": null,
+    "path": null,
+    "text_path": null,
+    "pages": 0,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10123530/1793769140.pdf",
+    "filename": "1793769140.pdf",
+    "size": 4869243,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "757fcb7dd983fc38563ee5283e116aa139a9983be20c9f9882039b8161b3eb1c",
+    "path": "docs/10123530/files/757fcb7dd983fc38563ee5283e116aa139a9983be20c9f9882039b8161b3eb1c.pdf",
+    "text_path": "docs/10123530/files/757fcb7dd983fc38563ee5283e116aa139a9983be20c9f9882039b8161b3eb1c.pdf.text.json",
+    "pages": 19,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Scope of Work",
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10123530/1793769148.pdf",
+    "filename": "1793769148.pdf",
+    "size": 471573,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "60040c7f2e016231924ebb8f47af6f372b613473b2c3325a5ec57797a4b6893a",
+    "path": "docs/10123530/files/60040c7f2e016231924ebb8f47af6f372b613473b2c3325a5ec57797a4b6893a.pdf",
+    "text_path": "docs/10123530/files/60040c7f2e016231924ebb8f47af6f372b613473b2c3325a5ec57797a4b6893a.pdf.text.json",
+    "pages": 3,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Payment Terms",
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10123530/1793769310.pdf",
+    "filename": "1793769310.pdf",
+    "size": 10346617,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "bc146df543a0d64f4a6eb4c973049e28613cc734a3671dbea49a19e6e8ca952e",
+    "path": "docs/10123530/files/bc146df543a0d64f4a6eb4c973049e28613cc734a3671dbea49a19e6e8ca952e.pdf",
+    "text_path": "docs/10123530/files/bc146df543a0d64f4a6eb4c973049e28613cc734a3671dbea49a19e6e8ca952e.pdf.text.json",
+    "pages": 60,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Instructions to Bidder",
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261104",
+    "filename": "gtc-20261104.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261104.pdf",
+    "text_path": "gtc/20261104.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/102485859660900",
+    "filename": "102485859660900",
+    "size": 108414,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "document",
+    "sha256": "3f1a43faa0b161322c59a9760df63329192f94e6672d4cc4f1e4c95b960aeca9",
+    "path": "docs/10123530/files/3f1a43faa0b161322c59a9760df63329192f94e6672d4cc4f1e4c95b960aeca9.html",
+    "text_path": "docs/10123530/files/3f1a43faa0b161322c59a9760df63329192f94e6672d4cc4f1e4c95b960aeca9.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Service level agreement (GeM)",
+    "text_key": "3f1745a4d182258e"
+   }
+  ],
+  "buyer_org": "Indian Navy",
+  "verdict": {
+   "b_id": 10123530,
+   "bid_number": "GEM/2026/B/8237193",
+   "topic_key": "4c5d7b6c12428b64",
+   "doc_hash": "0639b065b803dd6c",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for general IT project agency hiring by the Indian Navy and contains no specific mention of Anti-Money Laundering, transaction monitoring, or related FinTech compliance software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-11-13T12:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 13-11-2026 12:00:00",
+    "file": "GeM-Bidding-10123530.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-17T17:55:08.667278"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10125390": {
+  "b_id": 10125390,
+  "group": "AML Software",
+  "bid": {
+   "b_id": 10125390,
+   "bid_number": "GEM/2026/B/8238866",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-11-04T14:22:08",
+   "closing": "2026-11-18T16:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "10125390",
+    "b_id": [
+     10125390
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8238866"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-04T14:22:08Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-18T16:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "MONIKAP_UCO"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10125390",
+    "filename": "GeM-Bidding-10125390.pdf",
+    "size": 105340,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "6e57a577cd5c27aefda33d717f2485ac4ddaf8d003ec83a13c5ec623a593ded9",
+    "path": "docs/10125390/files/6e57a577cd5c27aefda33d717f2485ac4ddaf8d003ec83a13c5ec623a593ded9.pdf",
+    "text_path": "docs/10125390/files/6e57a577cd5c27aefda33d717f2485ac4ddaf8d003ec83a13c5ec623a593ded9.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "b5c27e86d65812cb"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/downloadOmppdfile/",
+    "filename": "downloadOmppdfile",
+    "size": 0,
+    "kind": "empty",
+    "status": "empty",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": null,
+    "path": null,
+    "text_path": null,
+    "pages": 0,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10125390/1793778141.pdf",
+    "filename": "1793778141.pdf",
+    "size": 65073,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "4cc715a428350b45f1bfc8cc033cd4bf4ab6a6d7186272be9df4dba610879a18",
+    "path": "docs/10125390/files/4cc715a428350b45f1bfc8cc033cd4bf4ab6a6d7186272be9df4dba610879a18.pdf",
+    "text_path": "docs/10125390/files/4cc715a428350b45f1bfc8cc033cd4bf4ab6a6d7186272be9df4dba610879a18.pdf.text.json",
+    "pages": 3,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Scope of Work",
+    "title": "Broad Scope of Work",
+    "text_key": "423b0f5a3a898ee6"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10125390/1793778154.pdf",
+    "filename": "1793778154.pdf",
+    "size": 207427,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "0d088a1c174ebb9770c7aab26edad05d2b719714e93337ef7aa83ddd300e5360",
+    "path": "docs/10125390/files/0d088a1c174ebb9770c7aab26edad05d2b719714e93337ef7aa83ddd300e5360.pdf",
+    "text_path": "docs/10125390/files/0d088a1c174ebb9770c7aab26edad05d2b719714e93337ef7aa83ddd300e5360.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Payment Terms",
+    "title": "1. Payment Terms",
+    "text_key": "2d8780698a8536ea"
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8238866/CL10360/IP_a97ee987-f391-418e-84401793778847087_MONIKAP_UCO.pdf",
+    "filename": "IP_a97ee987-f391-418e-84401793778847087_MONIKAP_UCO.pdf",
+    "size": 85103,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "12ae0c17f6afcc160275a81dd477795eb1700798e32246fcf350c49d0271b84d",
+    "path": "docs/10125390/files/12ae0c17f6afcc160275a81dd477795eb1700798e32246fcf350c49d0271b84d.pdf",
+    "text_path": "docs/10125390/files/12ae0c17f6afcc160275a81dd477795eb1700798e32246fcf350c49d0271b84d.pdf.text.json",
+    "pages": 6,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Annexure-X INTEGRITY PACT",
+    "text_key": "52880b8713516bd6"
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8238866/CLM0010/ATC_af652420-a2e5-4479-9dd81793781644254_MONIKAP_UCO.pdf",
+    "filename": "ATC_af652420-a2e5-4479-9dd81793781644254_MONIKAP_UCO.pdf",
+    "size": 926150,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "9ec3182d2d495047f73e9b82efc144fcb581b2a4b082b1bde5f0be1c816742f9",
+    "path": "docs/10125390/files/9ec3182d2d495047f73e9b82efc144fcb581b2a4b082b1bde5f0be1c816742f9.pdf",
+    "text_path": "docs/10125390/files/9ec3182d2d495047f73e9b82efc144fcb581b2a4b082b1bde5f0be1c816742f9.pdf.text.json",
+    "pages": 103,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "ADDITIONAL TERMS AND CONDITION (ATC)",
+    "text_key": "3f3cd94f98c43aa5"
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261104",
+    "filename": "gtc-20261104.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261104.pdf",
+    "text_path": "gtc/20261104.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/102523522652100",
+    "filename": "102523522652100",
+    "size": 108414,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "document",
+    "sha256": "3f1a43faa0b161322c59a9760df63329192f94e6672d4cc4f1e4c95b960aeca9",
+    "path": "docs/10125390/files/3f1a43faa0b161322c59a9760df63329192f94e6672d4cc4f1e4c95b960aeca9.html",
+    "text_path": "docs/10125390/files/3f1a43faa0b161322c59a9760df63329192f94e6672d4cc4f1e4c95b960aeca9.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Service level agreement (GeM)",
+    "text_key": "3f1745a4d182258e"
+   }
+  ],
+  "buyer_org": "Uco Bank",
+  "verdict": {
+   "b_id": 10125390,
+   "bid_number": "GEM/2026/B/8238866",
+   "topic_key": "4c5d7b6c12428b64",
+   "doc_hash": "4a7ff866de9f6e97",
+   "relevant": false,
+   "confidence": 0.95,
+   "stage": "judge",
+   "triage": "maybe",
+   "reason": "The tender is for the renewal of IBM MQ software licenses and associated technical support services, not Anti-Money Laundering software.",
+   "evidence": [
+    {
+     "quote": "The Bank intends to on-board a vendor for support of IBM MQ Advanced PVU Based licenses and on-call onsite ATS Support.",
+     "file": "ATC_af652420-a2e5-4479-9dd81793781644254_MONIKAP_UCO.pdf",
+     "page": 4,
+     "verified": true
+    },
+    {
+     "quote": "Scope of Work: Renewal of IBM MQ Advanced PVU Based licenses and on-call onsite ATS Support",
+     "file": "GeM-Bidding-10125390.pdf",
+     "page": 4,
+     "verified": true
+    },
+    {
+     "quote": "The Bank is utilizing IBM MQ Processor Value Unit (PVU) Based licenses for its NEFT/RTGS and Treasury applications.",
+     "file": "1793778141.pdf",
+     "page": 1,
+     "verified": true
+    }
+   ],
+   "key_facts": {
+    "emd": "1000000",
+    "min_turnover": "",
+    "contract_period": "3 Year(s)",
+    "estimated_value": "",
+    "scope_summary": "Renewal of IBM MQ Advanced PVU Based licenses and on-call onsite ATS Support"
+   },
+   "queries": {
+    "when": "2026-11-10T13:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 10-11-2026 13:00:00",
+    "file": "GeM-Bidding-10125390.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-17T17:55:14.793595"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10143892": {
+  "b_id": 10143892,
+  "group": "AML Software",
+  "bid": {
+   "b_id": 10143892,
+   "bid_number": "GEM/2026/B/8255061",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-11-09T11:39:10",
+   "closing": "2026-11-30T12:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "10143892",
+    "b_id": [
+     10143892
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8255061"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-09T11:39:10Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-30T12:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "bhasya.kr"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10143892",
+    "filename": "GeM-Bidding-10143892.pdf",
+    "size": 109429,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "47c3856173adf37e4afa71381c8ca306133e4cfacde0c7144179f330182e2c9f",
+    "path": "docs/10143892/files/47c3856173adf37e4afa71381c8ca306133e4cfacde0c7144179f330182e2c9f.pdf",
+    "text_path": "docs/10143892/files/47c3856173adf37e4afa71381c8ca306133e4cfacde0c7144179f330182e2c9f.pdf.text.json",
+    "pages": 8,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "44232ff3b4748af1"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/excel/bid-10143892/1794202324.xlsx",
+    "filename": "1794202324.xlsx",
+    "size": 24796,
+    "kind": "office",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "d36be5f68c14de90c0d8c8cdb5181b1c519a15f66789023d62d825a25c552395",
+    "path": "docs/10143892/files/d36be5f68c14de90c0d8c8cdb5181b1c519a15f66789023d62d825a25c552395.xlsx",
+    "text_path": "docs/10143892/files/d36be5f68c14de90c0d8c8cdb5181b1c519a15f66789023d62d825a25c552395.xlsx.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Commercial Format",
+    "title": "BOM and Commercials Format",
+    "text_key": "f796ad1410392aeb"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10143892/1794202410.pdf",
+    "filename": "1794202410.pdf",
+    "size": 562638,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "3266ad714802c35f867da7c82569475a150d82dab5e8f3b35328f7efc5bd8799",
+    "path": "docs/10143892/files/3266ad714802c35f867da7c82569475a150d82dab5e8f3b35328f7efc5bd8799.pdf",
+    "text_path": "docs/10143892/files/3266ad714802c35f867da7c82569475a150d82dab5e8f3b35328f7efc5bd8799.pdf.text.json",
+    "pages": 27,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Scope of Work",
+    "title": "Scope of Work",
+    "text_key": "ba52583926b23264"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10143892/1794202504.pdf",
+    "filename": "1794202504.pdf",
+    "size": 1140060,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "23379a1bfcf6181ec5e4a70794df5e9837a377fb8671dda780c833fe192f4345",
+    "path": "docs/10143892/files/23379a1bfcf6181ec5e4a70794df5e9837a377fb8671dda780c833fe192f4345.pdf",
+    "text_path": "docs/10143892/files/23379a1bfcf6181ec5e4a70794df5e9837a377fb8671dda780c833fe192f4345.pdf.text.json",
+    "pages": 107,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Payment Terms",
+    "title": "Annexure List",
+    "text_key": "febd9abaee9f6150"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10143892/1794202577.pdf",
+    "filename": "1794202577.pdf",
+    "size": 704609,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "170de4054d0fa9309488f8dd3081e9cd7bb30f97e285f3aaaf890f9564ba39a8",
+    "path": "docs/10143892/files/170de4054d0fa9309488f8dd3081e9cd7bb30f97e285f3aaaf890f9564ba39a8.pdf",
+    "text_path": "docs/10143892/files/170de4054d0fa9309488f8dd3081e9cd7bb30f97e285f3aaaf890f9564ba39a8.pdf.text.json",
+    "pages": 17,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Pre-Qualification Criteria",
+    "title": "Minimum Eligibility Criteria",
+    "text_key": "ab73da946cea3f6e"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10143892/1794202721.pdf",
+    "filename": "1794202721.pdf",
+    "size": 1140060,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "23379a1bfcf6181ec5e4a70794df5e9837a377fb8671dda780c833fe192f4345",
+    "path": "docs/10143892/files/23379a1bfcf6181ec5e4a70794df5e9837a377fb8671dda780c833fe192f4345.pdf",
+    "text_path": "docs/10143892/files/23379a1bfcf6181ec5e4a70794df5e9837a377fb8671dda780c833fe192f4345.pdf.text.json",
+    "pages": 107,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Additional Document 1",
+    "title": "Annexure List",
+    "text_key": "febd9abaee9f6150"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10143892/1794203784.pdf",
+    "filename": "1794203784.pdf",
+    "size": 315108,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "4cbadd507eab29f80c992070bbf29fbf2652e7ac5b1e262fdda25c78daaa1ee1",
+    "path": "docs/10143892/files/4cbadd507eab29f80c992070bbf29fbf2652e7ac5b1e262fdda25c78daaa1ee1.pdf",
+    "text_path": "docs/10143892/files/4cbadd507eab29f80c992070bbf29fbf2652e7ac5b1e262fdda25c78daaa1ee1.pdf.text.json",
+    "pages": 5,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Instructions to Bidder",
+    "title": "Detailed information regarding the functions of NABARD is provided on the website –",
+    "text_key": "4a2331af33361ec4"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadBuyerDoc/10143892/17942030634155.pdf",
+    "filename": "17942030634155.pdf",
+    "size": 417304,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "8e85ac98c00c223b460e12d283f7ca86358aac4d1277b7cf04aeba6301ff0733",
+    "path": "docs/10143892/files/8e85ac98c00c223b460e12d283f7ca86358aac4d1277b7cf04aeba6301ff0733.pdf",
+    "text_path": "docs/10143892/files/8e85ac98c00c223b460e12d283f7ca86358aac4d1277b7cf04aeba6301ff0733.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Commercial Bid",
+    "text_key": "f9dba610aaba3452"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadBuyerDoc/10143892/1794203063432.pdf",
+    "filename": "1794203063432.pdf",
+    "size": 417304,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "8e85ac98c00c223b460e12d283f7ca86358aac4d1277b7cf04aeba6301ff0733",
+    "path": "docs/10143892/files/8e85ac98c00c223b460e12d283f7ca86358aac4d1277b7cf04aeba6301ff0733.pdf",
+    "text_path": "docs/10143892/files/8e85ac98c00c223b460e12d283f7ca86358aac4d1277b7cf04aeba6301ff0733.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Commercial Bid",
+    "text_key": "f9dba610aaba3452"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadBuyerDoc/10143892/17942030634468.pdf",
+    "filename": "17942030634468.pdf",
+    "size": 417304,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "8e85ac98c00c223b460e12d283f7ca86358aac4d1277b7cf04aeba6301ff0733",
+    "path": "docs/10143892/files/8e85ac98c00c223b460e12d283f7ca86358aac4d1277b7cf04aeba6301ff0733.pdf",
+    "text_path": "docs/10143892/files/8e85ac98c00c223b460e12d283f7ca86358aac4d1277b7cf04aeba6301ff0733.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Commercial Bid",
+    "text_key": "f9dba610aaba3452"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadBuyerDoc/10143892/17942030634615.pdf",
+    "filename": "17942030634615.pdf",
+    "size": 417304,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "8e85ac98c00c223b460e12d283f7ca86358aac4d1277b7cf04aeba6301ff0733",
+    "path": "docs/10143892/files/8e85ac98c00c223b460e12d283f7ca86358aac4d1277b7cf04aeba6301ff0733.pdf",
+    "text_path": "docs/10143892/files/8e85ac98c00c223b460e12d283f7ca86358aac4d1277b7cf04aeba6301ff0733.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Commercial Bid",
+    "text_key": "f9dba610aaba3452"
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8255061/CL10360/ATC_02ab55c0-3962-4d2f-a9941794204126828_bhasya.kr.pdf",
+    "filename": "ATC_02ab55c0-3962-4d2f-a9941794204126828_bhasya.kr.pdf",
+    "size": 1140060,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "document",
+    "sha256": "23379a1bfcf6181ec5e4a70794df5e9837a377fb8671dda780c833fe192f4345",
+    "path": "docs/10143892/files/23379a1bfcf6181ec5e4a70794df5e9837a377fb8671dda780c833fe192f4345.pdf",
+    "text_path": "docs/10143892/files/23379a1bfcf6181ec5e4a70794df5e9837a377fb8671dda780c833fe192f4345.pdf.text.json",
+    "pages": 107,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Annexure List",
+    "text_key": "febd9abaee9f6150"
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8255061/CLM0010/ATC_451d6dfd-6a36-45f4-9ca91794204105401_bhasya.kr.pdf",
+    "filename": "ATC_451d6dfd-6a36-45f4-9ca91794204105401_bhasya.kr.pdf",
+    "size": 1140060,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "document",
+    "sha256": "23379a1bfcf6181ec5e4a70794df5e9837a377fb8671dda780c833fe192f4345",
+    "path": "docs/10143892/files/23379a1bfcf6181ec5e4a70794df5e9837a377fb8671dda780c833fe192f4345.pdf",
+    "text_path": "docs/10143892/files/23379a1bfcf6181ec5e4a70794df5e9837a377fb8671dda780c833fe192f4345.pdf.text.json",
+    "pages": 107,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Annexure List",
+    "text_key": "febd9abaee9f6150"
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261109",
+    "filename": "gtc-20261109.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261109.pdf",
+    "text_path": "gtc/20261109.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/102898544907664",
+    "filename": "102898544907664",
+    "size": 108414,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "document",
+    "sha256": "3f1a43faa0b161322c59a9760df63329192f94e6672d4cc4f1e4c95b960aeca9",
+    "path": "docs/10143892/files/3f1a43faa0b161322c59a9760df63329192f94e6672d4cc4f1e4c95b960aeca9.html",
+    "text_path": "docs/10143892/files/3f1a43faa0b161322c59a9760df63329192f94e6672d4cc4f1e4c95b960aeca9.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Service level agreement (GeM)",
+    "text_key": "3f1745a4d182258e"
+   }
+  ],
+  "buyer_org": "National Bank For Agriculture And Ruraldevelopment",
+  "verdict": {
+   "b_id": 10143892,
+   "bid_number": "GEM/2026/B/8255061",
+   "topic_key": "4c5d7b6c12428b64",
+   "doc_hash": "100149755139751d",
+   "relevant": true,
+   "confidence": 1.0,
+   "stage": "judge",
+   "triage": "maybe",
+   "reason": "The tender explicitly requires the development and implementation of an Enterprise AML Solution including transaction monitoring, sanctions screening, and case management workflows for NABARD.",
+   "evidence": [
+    {
+     "quote": "NABARD seeks an Enterprise KYC, KYB, CKYC & AML Solution for development, implementation, integration and roll-out across NABARD applications and systems.",
+     "file": "1794202410.pdf",
+     "page": 1,
+     "verified": true
+    },
+    {
+     "quote": "The transaction monitoring system shall support rule-based, threshold-based, and behavioral pattern detection with alert generation and integration into AML case management workflows.",
+     "file": "1794202410.pdf",
+     "page": 14,
+     "verified": true
+    },
+    {
+     "quote": "AML/CFT: Sanctions, PEP and watchlist screening; transaction monitoring; alert generation; investigation and case management; ongoing monitoring; risk integration; and applicable regulatory reporting workflows.",
+     "file": "1794202410.pdf",
+     "page": 2,
+     "verified": true
+    }
+   ],
+   "key_facts": {
+    "emd": "1000000",
+    "min_turnover": "500 Lakh",
+    "contract_period": "6 Year(s) 4 Month(s) 2 Day(s)",
+    "estimated_value": "",
+    "scope_summary": "Enterprise KYC, KYB, CKYC and AML Solution including transaction monitoring, sanctions screening, and regulatory reporting."
+   },
+   "queries": {
+    "when": "2026-11-18T15:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 18-11-2026 15:00:00",
+    "file": "GeM-Bidding-10143892.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-17T17:55:24.822619"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10042172": {
+  "b_id": 10042172,
+  "group": "AML Software",
+  "bid": {
+   "b_id": 10042172,
+   "bid_number": "GEM/2026/B/8167068",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-11-04T15:48:56",
+   "closing": "2026-11-26T16:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "10042172",
+    "b_id": [
+     10042172
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8167068"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-04T15:48:56Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-26T16:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "divchennai2"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10042172",
+    "filename": "GeM-Bidding-10042172.pdf",
+    "size": 108839,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "dabb6b3dc48649a7f16e745fd9a19fbeda69b65c7f03340c66355d8d399eb207",
+    "path": "docs/10042172/files/dabb6b3dc48649a7f16e745fd9a19fbeda69b65c7f03340c66355d8d399eb207.pdf",
+    "text_path": "docs/10042172/files/dabb6b3dc48649a7f16e745fd9a19fbeda69b65c7f03340c66355d8d399eb207.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "c1c82a1efd7c1cec"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/downloadOmppdfile/",
+    "filename": "downloadOmppdfile",
+    "size": 0,
+    "kind": "empty",
+    "status": "empty",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": null,
+    "path": null,
+    "text_path": null,
+    "pages": 0,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/OctQ426/bidding/excel/bid-10042172/1793785879.xlsx",
+    "filename": "1793785879.xlsx",
+    "size": 20201,
+    "kind": "office",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "81a408f5bda1ae3537b323f95d70e25d33dec34d666fa0f78ac6d6156a24a42e",
+    "path": "docs/10042172/files/81a408f5bda1ae3537b323f95d70e25d33dec34d666fa0f78ac6d6156a24a42e.xlsx",
+    "text_path": "docs/10042172/files/81a408f5bda1ae3537b323f95d70e25d33dec34d666fa0f78ac6d6156a24a42e.xlsx.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Commercial Bid",
+    "title": "Commercial bid (Cost in Rupees)",
+    "text_key": "cbb433b433796315"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/OctQ426/bidding/biddoc/bid-10042172/1792068403.pdf",
+    "filename": "1792068403.pdf",
+    "size": 229247,
+    "kind": "pdf",
+    "status": "placeholder",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "42da6ea1954048dd735f26e245cbdf64bb747d1f05e7ce695191b6b2ef5d3986",
+    "path": "docs/10042172/files/42da6ea1954048dd735f26e245cbdf64bb747d1f05e7ce695191b6b2ef5d3986.pdf",
+    "text_path": "docs/10042172/files/42da6ea1954048dd735f26e245cbdf64bb747d1f05e7ce695191b6b2ef5d3986.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Scope of Work",
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/OctQ426/bidding/biddoc/bid-10042172/1792068418.pdf",
+    "filename": "1792068418.pdf",
+    "size": 229247,
+    "kind": "pdf",
+    "status": "placeholder",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "42da6ea1954048dd735f26e245cbdf64bb747d1f05e7ce695191b6b2ef5d3986",
+    "path": "docs/10042172/files/42da6ea1954048dd735f26e245cbdf64bb747d1f05e7ce695191b6b2ef5d3986.pdf",
+    "text_path": "docs/10042172/files/42da6ea1954048dd735f26e245cbdf64bb747d1f05e7ce695191b6b2ef5d3986.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Payment Terms",
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8167068/CLM0010/RfPSecSol7_d15d5cd2-6b6b-4f6d-94a51793786857067_divchennai2.docx",
+    "filename": "RfPSecSol7_d15d5cd2-6b6b-4f6d-94a51793786857067_divchennai2.docx",
+    "size": 292162,
+    "kind": "office",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "document",
+    "sha256": "cb2b03ad8878d93474f076015d60d2d4cb83ecc93b68cb8811f12032b32d0f8b",
+    "path": "docs/10042172/files/cb2b03ad8878d93474f076015d60d2d4cb83ecc93b68cb8811f12032b32d0f8b.docx",
+    "text_path": "docs/10042172/files/cb2b03ad8878d93474f076015d60d2d4cb83ecc93b68cb8811f12032b32d0f8b.docx.text.json",
+    "pages": 91,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Request for Proposal for Technology refresh of Security Solutions Issued by: Small Industries Development Bank of India (SIDBI)",
+    "text_key": "11ad76b619c94eab"
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261104",
+    "filename": "gtc-20261104.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261104.pdf",
+    "text_path": "gtc/20261104.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/100845218477584",
+    "filename": "100845218477584",
+    "size": 108414,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "document",
+    "sha256": "5345f2c29202ef2ffaf5336db23855801bdb7f727d9376d96ff6901f390eb182",
+    "path": "docs/10042172/files/5345f2c29202ef2ffaf5336db23855801bdb7f727d9376d96ff6901f390eb182.html",
+    "text_path": "docs/10042172/files/5345f2c29202ef2ffaf5336db23855801bdb7f727d9376d96ff6901f390eb182.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Service level agreement (GeM)",
+    "text_key": "3f1745a4d182258e"
+   }
+  ],
+  "buyer_org": "Small Industries Development Bank Of India (sidbi)",
+  "verdict": {
+   "b_id": 10042172,
+   "bid_number": "GEM/2026/B/8167068",
+   "topic_key": "4c5d7b6c12428b64",
+   "doc_hash": "47a09970cf40ad9d",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "judge",
+   "triage": "maybe",
+   "reason": "The tender is for the technology refresh and maintenance of IT security infrastructure (HCI, database monitoring, endpoint encryption) and general IT project agency services, not for Anti-Money Laundering software solutions.",
+   "evidence": [
+    {
+     "quote": "The Bank has deployed multiple solutions for securing the Bank’s infrastructure. These solutions are deployed on Nutanix Hyperconverged Infrastructure (HCI).",
+     "file": "RfPSecSol7_d15d5cd2-6b6b-4f6d-94a51793786857067_divchennai2.docx",
+     "page": 16,
+     "verified": true
+    },
+    {
+     "quote": "Ref: | RfP for Technology refresh of Security Solutions",
+     "file": "RfPSecSol7_d15d5cd2-6b6b-4f6d-94a51793786857067_divchennai2.docx",
+     "page": 79,
+     "verified": true
+    },
+    {
+     "quote": "Hiring of Agency for IT Projects- Milestone basis",
+     "file": "GeM-Bidding-10042172.pdf",
+     "page": 4,
+     "verified": true
+    }
+   ],
+   "key_facts": {
+    "emd": "3520000",
+    "min_turnover": "14000 Lakh",
+    "contract_period": "5 Year(s) 1 Day(s)",
+    "estimated_value": "",
+    "scope_summary": "Technology refresh of security solutions including Nutanix HCI, Thales DAM, Checkpoint Harmony, and general IT project agency services."
+   },
+   "queries": {
+    "when": "2026-11-10T11:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 10-11-2026 11:00:00",
+    "file": "GeM-Bidding-10042172.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-17T17:56:03.089034"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10154798": {
+  "b_id": 10154798,
+  "group": "AML Software",
+  "bid": {
+   "b_id": 10154798,
+   "bid_number": "GEM/2026/B/8264466",
+   "title": "Financial Audit Services - Concurrent Audit of Digital Banking Operations; CA Firm",
+   "category_id": "services_home_fina_fina",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-11-16T12:01:10",
+   "closing": "2026-12-07T17:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10154798",
+    "b_id": [
+     10154798
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8264466"
+    ],
+    "b_category_name": [
+     "Financial Audit Services - Concurrent Audit of Digital Banking Operations; CA Firm"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-16T12:01:10Z"
+    ],
+    "final_end_date_sort": [
+     "2026-12-07T17:00:00Z"
+    ],
+    "bd_category_name": [
+     "Financial Audit Services - Concurrent Audit of Digital Banking Operations; CA Firm"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_fina_fina"
+    ],
+    "b.b_created_by": [
+     "shantanu.gupta"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10154798",
+    "filename": "GeM-Bidding-10154798.pdf",
+    "size": 104533,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "b3bfe0e2324b0f1807bc6e94c74c167dc4790edb4c7b0f6ac7de04bedd2f03be",
+    "path": "docs/10154798/files/b3bfe0e2324b0f1807bc6e94c74c167dc4790edb4c7b0f6ac7de04bedd2f03be.pdf",
+    "text_path": "docs/10154798/files/b3bfe0e2324b0f1807bc6e94c74c167dc4790edb4c7b0f6ac7de04bedd2f03be.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "c499c9101f1d4ee7"
+   }
+  ],
+  "buyer_org": "Bank Of Baroda",
+  "verdict": {
+   "b_id": 10154798,
+   "bid_number": "GEM/2026/B/8264466",
+   "topic_key": "4c5d7b6c12428b64",
+   "doc_hash": "6452c59eea8d6764",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for financial audit services of digital banking operations, not for Anti-Money Laundering (AML) software solutions.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-17T17:56:04.665711"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10142481": {
+  "b_id": 10142481,
+  "group": "AML Software",
+  "bid": {
+   "b_id": 10142481,
+   "bid_number": "GEM/2026/B/8253937",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": null,
+   "department": "Finance Department Madhya Pradesh",
+   "published": "2026-11-07T15:55:44",
+   "closing": "2026-11-30T17:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "10142481",
+    "b_id": [
+     10142481
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8253937"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-07T15:55:44Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-30T17:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "MPGBHOIT"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_deptName": [
+     "Finance Department Madhya Pradesh"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10142481",
+    "filename": "GeM-Bidding-10142481.pdf",
+    "size": 110287,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "22dfbe20fae1097fd930d9b24f6ed84d7a428f0a82f279011d2f60d2c10a8ad2",
+    "path": "docs/10142481/files/22dfbe20fae1097fd930d9b24f6ed84d7a428f0a82f279011d2f60d2c10a8ad2.pdf",
+    "text_path": "docs/10142481/files/22dfbe20fae1097fd930d9b24f6ed84d7a428f0a82f279011d2f60d2c10a8ad2.pdf.text.json",
+    "pages": 8,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "2a2a827a9b64d390"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10142481/1794046391.pdf",
+    "filename": "1794046391.pdf",
+    "size": 5024644,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "823e464f57556253ec20308d87f5acf11851d660c2976f2dbeec3b6eeb43019e",
+    "path": "docs/10142481/files/823e464f57556253ec20308d87f5acf11851d660c2976f2dbeec3b6eeb43019e.pdf",
+    "text_path": "docs/10142481/files/823e464f57556253ec20308d87f5acf11851d660c2976f2dbeec3b6eeb43019e.pdf.text.json",
+    "pages": 379,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Scope of Work",
+    "title": "RFP for end-to-end implementation of Comprehensive Financial Risk and Compliance Solutions Software in MPGB Page 1 of 379",
+    "text_key": "2698bef8d252c3ac"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10142481/1794046398.pdf",
+    "filename": "1794046398.pdf",
+    "size": 5024644,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "823e464f57556253ec20308d87f5acf11851d660c2976f2dbeec3b6eeb43019e",
+    "path": "docs/10142481/files/823e464f57556253ec20308d87f5acf11851d660c2976f2dbeec3b6eeb43019e.pdf",
+    "text_path": "docs/10142481/files/823e464f57556253ec20308d87f5acf11851d660c2976f2dbeec3b6eeb43019e.pdf.text.json",
+    "pages": 379,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Payment Terms",
+    "title": "RFP for end-to-end implementation of Comprehensive Financial Risk and Compliance Solutions Software in MPGB Page 1 of 379",
+    "text_key": "2698bef8d252c3ac"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10142481/1794046401.pdf",
+    "filename": "1794046401.pdf",
+    "size": 5024644,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "823e464f57556253ec20308d87f5acf11851d660c2976f2dbeec3b6eeb43019e",
+    "path": "docs/10142481/files/823e464f57556253ec20308d87f5acf11851d660c2976f2dbeec3b6eeb43019e.pdf",
+    "text_path": "docs/10142481/files/823e464f57556253ec20308d87f5acf11851d660c2976f2dbeec3b6eeb43019e.pdf.text.json",
+    "pages": 379,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Pre-Qualification Criteria",
+    "title": "RFP for end-to-end implementation of Comprehensive Financial Risk and Compliance Solutions Software in MPGB Page 1 of 379",
+    "text_key": "2698bef8d252c3ac"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10142481/1794046405.pdf",
+    "filename": "1794046405.pdf",
+    "size": 5024644,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "823e464f57556253ec20308d87f5acf11851d660c2976f2dbeec3b6eeb43019e",
+    "path": "docs/10142481/files/823e464f57556253ec20308d87f5acf11851d660c2976f2dbeec3b6eeb43019e.pdf",
+    "text_path": "docs/10142481/files/823e464f57556253ec20308d87f5acf11851d660c2976f2dbeec3b6eeb43019e.pdf.text.json",
+    "pages": 379,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Instructions to Bidder",
+    "title": "RFP for end-to-end implementation of Comprehensive Financial Risk and Compliance Solutions Software in MPGB Page 1 of 379",
+    "text_key": "2698bef8d252c3ac"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10142481/1794046408.pdf",
+    "filename": "1794046408.pdf",
+    "size": 5024644,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "823e464f57556253ec20308d87f5acf11851d660c2976f2dbeec3b6eeb43019e",
+    "path": "docs/10142481/files/823e464f57556253ec20308d87f5acf11851d660c2976f2dbeec3b6eeb43019e.pdf",
+    "text_path": "docs/10142481/files/823e464f57556253ec20308d87f5acf11851d660c2976f2dbeec3b6eeb43019e.pdf.text.json",
+    "pages": 379,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Additional Document 1",
+    "title": "RFP for end-to-end implementation of Comprehensive Financial Risk and Compliance Solutions Software in MPGB Page 1 of 379",
+    "text_key": "2698bef8d252c3ac"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10142481/1794046412.pdf",
+    "filename": "1794046412.pdf",
+    "size": 5024644,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "823e464f57556253ec20308d87f5acf11851d660c2976f2dbeec3b6eeb43019e",
+    "path": "docs/10142481/files/823e464f57556253ec20308d87f5acf11851d660c2976f2dbeec3b6eeb43019e.pdf",
+    "text_path": "docs/10142481/files/823e464f57556253ec20308d87f5acf11851d660c2976f2dbeec3b6eeb43019e.pdf.text.json",
+    "pages": 379,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Additional Document 2",
+    "title": "RFP for end-to-end implementation of Comprehensive Financial Risk and Compliance Solutions Software in MPGB Page 1 of 379",
+    "text_key": "2698bef8d252c3ac"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10142481/1794046415.pdf",
+    "filename": "1794046415.pdf",
+    "size": 5024644,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "823e464f57556253ec20308d87f5acf11851d660c2976f2dbeec3b6eeb43019e",
+    "path": "docs/10142481/files/823e464f57556253ec20308d87f5acf11851d660c2976f2dbeec3b6eeb43019e.pdf",
+    "text_path": "docs/10142481/files/823e464f57556253ec20308d87f5acf11851d660c2976f2dbeec3b6eeb43019e.pdf.text.json",
+    "pages": 379,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Additional Document 3",
+    "title": "RFP for end-to-end implementation of Comprehensive Financial Risk and Compliance Solutions Software in MPGB Page 1 of 379",
+    "text_key": "2698bef8d252c3ac"
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8253937/CLM0010/AMLEFRMRFP_e66b9c01-dea6-4589-9ff31794047058519_MPGBHOIT.pdf",
+    "filename": "AMLEFRMRFP_e66b9c01-dea6-4589-9ff31794047058519_MPGBHOIT.pdf",
+    "size": 5024644,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "document",
+    "sha256": "823e464f57556253ec20308d87f5acf11851d660c2976f2dbeec3b6eeb43019e",
+    "path": "docs/10142481/files/823e464f57556253ec20308d87f5acf11851d660c2976f2dbeec3b6eeb43019e.pdf",
+    "text_path": "docs/10142481/files/823e464f57556253ec20308d87f5acf11851d660c2976f2dbeec3b6eeb43019e.pdf.text.json",
+    "pages": 379,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "RFP for end-to-end implementation of Comprehensive Financial Risk and Compliance Solutions Software in MPGB Page 1 of 379",
+    "text_key": "2698bef8d252c3ac"
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261107",
+    "filename": "gtc-20261107.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 8,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261107.pdf",
+    "text_path": "gtc/20261107.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/102869920835361",
+    "filename": "102869920835361",
+    "size": 108414,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 8,
+    "link_kind": "document",
+    "sha256": "3f1a43faa0b161322c59a9760df63329192f94e6672d4cc4f1e4c95b960aeca9",
+    "path": "docs/10142481/files/3f1a43faa0b161322c59a9760df63329192f94e6672d4cc4f1e4c95b960aeca9.html",
+    "text_path": "docs/10142481/files/3f1a43faa0b161322c59a9760df63329192f94e6672d4cc4f1e4c95b960aeca9.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Service level agreement (GeM)",
+    "text_key": "3f1745a4d182258e"
+   }
+  ],
+  "buyer_org": "N/a",
+  "verdict": {
+   "b_id": 10142481,
+   "bid_number": "GEM/2026/B/8253937",
+   "topic_key": "4c5d7b6c12428b64",
+   "doc_hash": "4125240b7af9a0ec",
+   "relevant": true,
+   "confidence": 1.0,
+   "stage": "judge",
+   "triage": "maybe",
+   "reason": "The tender explicitly requires the procurement and implementation of software with specific Anti-Money Laundering (AML) capabilities, including transaction monitoring, sanctions screening, and customer risk assessment.",
+   "evidence": [
+    {
+     "quote": "Solution should be able to churn both financial and non-financial transactional data... and detect AML pattern.",
+     "file": "1794046391.pdf",
+     "page": 254,
+     "verified": true
+    },
+    {
+     "quote": "Solution should be able to monitor AML patterns for non-customer transactions also (like Non-bank beneficiary for outward remittances, walk-in customer transactions, Incoming/Outgoing IMPS, UPI, NEFT, RTGS, etc.)",
+     "file": "1794046391.pdf",
+     "page": 254,
+     "verified": true
+    },
+    {
+     "quote": "Solution must be able to identify and prevent financial transactions involving individuals, entities, or groups that are sanctioned by regulatory authorities or suspected of terrorist activities...",
+     "file": "1794046391.pdf",
+     "page": 254,
+     "verified": true
+    }
+   ],
+   "key_facts": {
+    "emd": "",
+    "min_turnover": "8000 Lakh",
+    "contract_period": "3 Year(s)",
+    "estimated_value": "200000000",
+    "scope_summary": "End-to-end procurement, implementation, management, and support of Comprehensive Financial Risk and Compliance Solutions Software, including AML detection and sanctions screening."
+   },
+   "queries": {
+    "when": "2026-11-21T12:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 21-11-2026 12:00:00",
+    "file": "GeM-Bidding-10142481.pdf",
+    "page": 5,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-17T17:56:06.642220"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10176024": {
+  "b_id": 10176024,
+  "group": "AML Software",
+  "bid": {
+   "b_id": 10176024,
+   "bid_number": "GEM/2026/B/8282690",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-11-17T12:28:31",
+   "closing": "2026-12-08T15:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10176024",
+    "b_id": [
+     10176024
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8282690"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-17T12:28:31Z"
+    ],
+    "final_end_date_sort": [
+     "2026-12-08T15:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "kanchana.g"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     1
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10176024",
+    "filename": "GeM-Bidding-10176024.pdf",
+    "size": 103530,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "e6e5b41063066e3e0c3daef58c0f6204d5d5648540d78c739834ab6a0af6fa1a",
+    "path": "docs/10176024/files/e6e5b41063066e3e0c3daef58c0f6204d5d5648540d78c739834ab6a0af6fa1a.pdf",
+    "text_path": "docs/10176024/files/e6e5b41063066e3e0c3daef58c0f6204d5d5648540d78c739834ab6a0af6fa1a.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [
+     7
+    ],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "19b89dd8836fa09d"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/downloadOmppdfile/",
+    "filename": "downloadOmppdfile",
+    "size": 0,
+    "kind": "empty",
+    "status": "empty",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": null,
+    "path": null,
+    "text_path": null,
+    "pages": 0,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/excel/bid-10176024/1794897140.xlsx",
+    "filename": "1794897140.xlsx",
+    "size": 39232,
+    "kind": "office",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "e11e2136104a2395916b86a0d1f15c24cbc0f165dc3dfaf03c5d9d6676c3b266",
+    "path": "docs/10176024/files/e11e2136104a2395916b86a0d1f15c24cbc0f165dc3dfaf03c5d9d6676c3b266.xlsx",
+    "text_path": "docs/10176024/files/e11e2136104a2395916b86a0d1f15c24cbc0f165dc3dfaf03c5d9d6676c3b266.xlsx.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Commercial",
+    "title": "[Commercial Bid] Commercial Bid Format Name of Work | RFP for Selection of Service Provider for conducting Performance and Load Testing for BoB UPI application…",
+    "text_key": "51994a7cf7f67bb7"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10176024/1794897155.pdf",
+    "filename": "1794897155.pdf",
+    "size": 74359,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "76261bdea9c825eb9ac58b45639c91b79ccc86b26ba13d8e5608a7d4ac1496e0",
+    "path": "docs/10176024/files/76261bdea9c825eb9ac58b45639c91b79ccc86b26ba13d8e5608a7d4ac1496e0.pdf",
+    "text_path": "docs/10176024/files/76261bdea9c825eb9ac58b45639c91b79ccc86b26ba13d8e5608a7d4ac1496e0.pdf.text.json",
+    "pages": 3,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Scope of Work",
+    "title": "Tender for Selection Service Provider for conducting Performance and Load Testing for BoB UPI application Annexure 01 Project Details (Scope of Work) Project…",
+    "text_key": "a679c812c9ea3733"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10176024/1794897165.pdf",
+    "filename": "1794897165.pdf",
+    "size": 63223,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "6bce6a9abd2eeec4a677ddfbe2ac55b82ee1de189e2f06079fcc4ec6938ba2fe",
+    "path": "docs/10176024/files/6bce6a9abd2eeec4a677ddfbe2ac55b82ee1de189e2f06079fcc4ec6938ba2fe.pdf",
+    "text_path": "docs/10176024/files/6bce6a9abd2eeec4a677ddfbe2ac55b82ee1de189e2f06079fcc4ec6938ba2fe.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Payment Terms",
+    "title": "Tender for Selection Service Provider for conducting Performance and Load Testing for BoB UPI application liability in such an event could be limited to the…",
+    "text_key": "2485342cfd23f78e"
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8282690/CLM0010/ATC_e14f40cc-0ada-4719-91461794898373183_kanchana.g.pdf",
+    "filename": "ATC_e14f40cc-0ada-4719-91461794898373183_kanchana.g.pdf",
+    "size": 383575,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "a523438f30340c977c8cb6bc20fe8090b17814c0bb5ea4d5b1f5cb1d8ec38867",
+    "path": "docs/10176024/files/a523438f30340c977c8cb6bc20fe8090b17814c0bb5ea4d5b1f5cb1d8ec38867.pdf",
+    "text_path": "docs/10176024/files/a523438f30340c977c8cb6bc20fe8090b17814c0bb5ea4d5b1f5cb1d8ec38867.pdf.text.json",
+    "pages": 13,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Tender for Selection of Service Provider for conducting Performance and Load Testing for BoB UPI application",
+    "text_key": "fcebe32c9524f5c6"
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261117",
+    "filename": "gtc-20261117.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261117.pdf",
+    "text_path": "gtc/20261117.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/103551464448576",
+    "filename": "103551464448576",
+    "size": 108414,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "document",
+    "sha256": "f841c0996d90ca3cc77ddda775f201e5a5f8815cab69a4a779990211a4ed59ad",
+    "path": "docs/10176024/files/f841c0996d90ca3cc77ddda775f201e5a5f8815cab69a4a779990211a4ed59ad.html",
+    "text_path": "docs/10176024/files/f841c0996d90ca3cc77ddda775f201e5a5f8815cab69a4a779990211a4ed59ad.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Service level agreement (GeM)",
+    "text_key": "3f1745a4d182258e"
+   }
+  ],
+  "buyer_org": "Bank Of Baroda",
+  "verdict": {
+   "b_id": 10176024,
+   "bid_number": "GEM/2026/B/8282690",
+   "topic_key": "4c5d7b6c12428b64",
+   "doc_hash": "fd9a04a3033ed5a5",
+   "relevant": false,
+   "confidence": 0.95,
+   "stage": "judge",
+   "triage": "maybe",
+   "reason": "The tender is for performance and load testing of a UPI application, not for Anti-Money Laundering software.",
+   "evidence": [
+    {
+     "quote": "Tender for Selection of Service Provider for conducting Performance and Load Testing for BoB UPI application",
+     "file": "ATC_e14f40cc-0ada-4719-91461794898373183_kanchana.g.pdf",
+     "page": 1,
+     "verified": true
+    },
+    {
+     "quote": "Bank aims to conduct a conduct comprehensive End-to-End Performance and Load Testing for UPI transactions initiated from NPCI and consumed by the UPI application",
+     "file": "ATC_e14f40cc-0ada-4719-91461794898373183_kanchana.g.pdf",
+     "page": 1,
+     "verified": true
+    },
+    {
+     "quote": "Scope includes UPI application testing for end-to-end processing of transactions initiated from NPCI and received by the UPI application server",
+     "file": "1794897155.pdf",
+     "page": 1,
+     "verified": true
+    }
+   ],
+   "key_facts": {
+    "emd": "",
+    "min_turnover": "",
+    "contract_period": "1 Year(s)",
+    "estimated_value": "",
+    "scope_summary": "Performance and Load Testing for BoB UPI application"
+   },
+   "queries": {
+    "when": "2026-11-23T15:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 23-11-2026 15:00:00",
+    "file": "GeM-Bidding-10176024.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-17T17:56:16.391392"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10118747": {
+  "b_id": 10118747,
+  "group": "AML Software",
+  "bid": {
+   "b_id": 10118747,
+   "bid_number": "GEM/2026/B/8232915",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-11-03T17:50:36",
+   "closing": "2026-11-24T15:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10118747",
+    "b_id": [
+     10118747
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8232915"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-03T17:50:36Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-24T15:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "GEM905445"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10118747",
+    "filename": "GeM-Bidding-10118747.pdf",
+    "size": 107723,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "06ebb179fc2e58c04497f368b9f17b327c8f473431809cf7a0a8835818a6d40a",
+    "path": "docs/10118747/files/06ebb179fc2e58c04497f368b9f17b327c8f473431809cf7a0a8835818a6d40a.pdf",
+    "text_path": "docs/10118747/files/06ebb179fc2e58c04497f368b9f17b327c8f473431809cf7a0a8835818a6d40a.pdf.text.json",
+    "pages": 8,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Department Of Information Technology",
+    "text_key": "b4c46d0562342707"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10118747/1793699147.pdf",
+    "filename": "1793699147.pdf",
+    "size": 417619,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "dfc5dab98675dd38ffb1b63b421381cc91d66779136e62fb07697495d3e7fb9f",
+    "path": "docs/10118747/files/dfc5dab98675dd38ffb1b63b421381cc91d66779136e62fb07697495d3e7fb9f.pdf",
+    "text_path": "docs/10118747/files/dfc5dab98675dd38ffb1b63b421381cc91d66779136e62fb07697495d3e7fb9f.pdf.text.json",
+    "pages": 6,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Scope of Work",
+    "title": "Annexure-9 Scope of Work",
+    "text_key": "7722e4d134e87151"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10118747/1793699618.pdf",
+    "filename": "1793699618.pdf",
+    "size": 381518,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "e9472ec9901c128a68a6c7f7f0d89f22118a2b5080502a71deff3da39136709d",
+    "path": "docs/10118747/files/e9472ec9901c128a68a6c7f7f0d89f22118a2b5080502a71deff3da39136709d.pdf",
+    "text_path": "docs/10118747/files/e9472ec9901c128a68a6c7f7f0d89f22118a2b5080502a71deff3da39136709d.pdf.text.json",
+    "pages": 2,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Payment Terms",
+    "title": "Payment Terms",
+    "text_key": "83ad6383b96224dc"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10118747/1793699630.pdf",
+    "filename": "1793699630.pdf",
+    "size": 434808,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "681189c4045689b7ba7e209f47ae53fe2ead545bcfa82ef5b5a4f58dddf1a9b7",
+    "path": "docs/10118747/files/681189c4045689b7ba7e209f47ae53fe2ead545bcfa82ef5b5a4f58dddf1a9b7.pdf",
+    "text_path": "docs/10118747/files/681189c4045689b7ba7e209f47ae53fe2ead545bcfa82ef5b5a4f58dddf1a9b7.pdf.text.json",
+    "pages": 5,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Pre-Qualification Criteria",
+    "title": "Annexure-2 Pre-Qualification Criteria [On Firm’s / Company’s letter head]",
+    "text_key": "d3a36f9a74f26e70"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadBuyerDoc/10118747/17936997809395.pdf",
+    "filename": "17936997809395.pdf",
+    "size": 513680,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "49135f9fe8686bd76ea437ca4a232bfe2e511511b6b7e8d25c27c91c6d087a8d",
+    "path": "docs/10118747/files/49135f9fe8686bd76ea437ca4a232bfe2e511511b6b7e8d25c27c91c6d087a8d.pdf",
+    "text_path": "docs/10118747/files/49135f9fe8686bd76ea437ca4a232bfe2e511511b6b7e8d25c27c91c6d087a8d.pdf.text.json",
+    "pages": 5,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Annexure-10 Technical Evaluation Criteria",
+    "text_key": "ec0430eb0557ade0"
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8232915/CLM0010/ATC_12571b98-47d0-4a81-9c461793708004905_GEM905445.docx",
+    "filename": "ATC_12571b98-47d0-4a81-9c461793708004905_GEM905445.docx",
+    "size": 382253,
+    "kind": "office",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "document",
+    "sha256": "a00211751e98e4357990282b1a84c07eeae315a12a86141853f372526ff907d9",
+    "path": "docs/10118747/files/a00211751e98e4357990282b1a84c07eeae315a12a86141853f372526ff907d9.docx",
+    "text_path": "docs/10118747/files/a00211751e98e4357990282b1a84c07eeae315a12a86141853f372526ff907d9.docx.text.json",
+    "pages": 125,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "REQUEST FOR PROPOSAL [RFP]",
+    "text_key": "688e6c80fe93912f"
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261103",
+    "filename": "gtc-20261103.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261103.pdf",
+    "text_path": "gtc/20261103.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/102389040850009",
+    "filename": "102389040850009",
+    "size": 108414,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "document",
+    "sha256": "5345f2c29202ef2ffaf5336db23855801bdb7f727d9376d96ff6901f390eb182",
+    "path": "docs/10118747/files/5345f2c29202ef2ffaf5336db23855801bdb7f727d9376d96ff6901f390eb182.html",
+    "text_path": "docs/10118747/files/5345f2c29202ef2ffaf5336db23855801bdb7f727d9376d96ff6901f390eb182.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Service level agreement (GeM)",
+    "text_key": "3f1745a4d182258e"
+   }
+  ],
+  "buyer_org": "Canara Bank",
+  "verdict": {
+   "b_id": 10118747,
+   "bid_number": "GEM/2026/B/8232915",
+   "topic_key": "4c5d7b6c12428b64",
+   "doc_hash": "6b693d9279e9e62d",
+   "relevant": false,
+   "confidence": 0.95,
+   "stage": "judge",
+   "triage": "maybe",
+   "reason": "The tender is for implementing RBI capital charge directions in a SAS-based Integrated Risk Management Solution, not for Anti-Money Laundering software.",
+   "evidence": [
+    {
+     "quote": "Bank intends to engage suitable Vendor for implementation of RBI directions, 2026 in the Bank’s SAS Based Integrated Risk Management Solution (IRMS)",
+     "file": "ATC_12571b98-47d0-4a81-9c461793708004905_GEM905445.docx",
+     "page": 11,
+     "verified": true
+    },
+    {
+     "quote": "SUB: Selection of Vendor for implementation of RBI (Commercial Banks-Capital Charge for Credit Risk- Standardised Approach) directions, 2026 in the Bank’s SAS Based Integrated Risk Management Solution (IRMS)",
+     "file": "ATC_12571b98-47d0-4a81-9c461793708004905_GEM905445.docx",
+     "page": 70,
+     "verified": true
+    },
+    {
+     "quote": "The SAS Credit Risk solution for the Standardised Approach is already developed and deployed in the Bank’s IRMS. The scope of work covers the enhancement of the Existing Solution for all changes arising out of the Directions",
+     "file": "ATC_12571b98-47d0-4a81-9c461793708004905_GEM905445.docx",
+     "page": 70,
+     "verified": true
+    }
+   ],
+   "key_facts": {
+    "emd": "160000",
+    "min_turnover": "",
+    "contract_period": "3 Month(s)",
+    "estimated_value": "",
+    "scope_summary": "Implementation of RBI 2026 directions in SAS-based Integrated Risk Management Solution (IRMS) for credit risk capital charge."
+   },
+   "queries": {
+    "when": "2026-11-13T16:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 13-11-2026 16:00:00",
+    "file": "GeM-Bidding-10118747.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-17T17:56:16.838622"
+  },
+  "error": "",
+  "restored": false
+ }
+}

@@ -1,0 +1,121 @@
+{
+ "run_id": "ecaddc4c6733",
+ "user": "e2e",
+ "title": "management consultancy tenders from banks published in the last 2 weeks",
+ "request_text": "management consultancy tenders from banks published in the last 2 weeks",
+ "created": "2026-11-16T16:01:59.990103",
+ "status": "failed",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "management consultancy tenders from banks published in the last 2 weeks",
+  "topics": [
+   {
+    "user_text": "management consultancy tenders from banks published in the last 2 weeks",
+    "meaning": "Management Consultancy Services: Professional advisory services for strategic planning, operational efficiency, and organizational restructuring.",
+    "domain": "Consulting",
+    "match_terms": [
+     "Management Consultancy",
+     "Management Consulting",
+     "Consultancy Services",
+     "Strategic Advisory",
+     "Management Advisory",
+     "Mgmt Consultancy"
+    ],
+    "acronyms": {
+     "MCS": "Management Consultancy Services"
+    },
+    "related_but_not_enough": [
+     "IT Consultancy",
+     "Financial Advisory",
+     "Legal Services",
+     "HR Consultancy"
+    ],
+    "not_this": [
+     "Management Information System",
+     "Management Science",
+     "Consultant"
+    ],
+    "buyers": [
+     "banks"
+    ],
+    "chosen_because": "Meaning 0 is the primary interpretation due to high plausibility and 32 matching tenders, while Meaning 1 is retained as a plausible secondary option specifically targeting banking operations, despite having 0 direct matches in the current window.",
+    "other_meanings_searched": [
+     "Banking Consultancy: Specialized consultancy services focused on banking operations, risk management, and regulatory compliance."
+    ]
+   },
+   {
+    "user_text": "management consultancy tenders from banks published in the last 2 weeks",
+    "meaning": "Banking Consultancy: Specialized consultancy services focused on banking operations, risk management, and regulatory compliance.",
+    "domain": "Banking",
+    "match_terms": [
+     "Banking Consultancy",
+     "Bank Consultancy",
+     "Banking Advisory",
+     "Banking Management Services"
+    ],
+    "acronyms": {},
+    "related_but_not_enough": [
+     "Financial Consultancy",
+     "Investment Banking",
+     "Banking IT Solutions"
+    ],
+    "not_this": [
+     "Banking Management",
+     "Bank Manager"
+    ],
+    "buyers": [
+     "banks"
+    ],
+    "chosen_because": "Meaning 0 is the primary interpretation due to high plausibility and 32 matching tenders, while Meaning 1 is retained as a plausible secondary option specifically targeting banking operations, despite having 0 direct matches in the current window.",
+    "other_meanings_searched": [
+     "Management Consultancy Services: Professional advisory services for strategic planning, operational efficiency, and organizational restructuring."
+    ]
+   }
+  ],
+  "window": {
+   "published_from": "2026-11-02T00:00:00",
+   "published_to": "2026-11-16T16:01:47.898846",
+   "closing_from": "2026-11-16T16:01:47.898846",
+   "closing_to": null
+  },
+  "buyer_hints": [
+   "banks"
+  ],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "Management Consultancy Services: Professional advisory services for strategic planning, operational efficiency, and organizational restructuring.",
+   "window_count": 29547,
+   "strong": 32,
+   "top_titles": [
+    "Custom Bid for Services - Consultancy services for Praparation of Structural Designs and Structural",
+    "Hiring of Consultants - Milestone/Deliverable Based - Engagement of a Leading Management Consulting",
+    "Hiring of Consultants - Milestone/Deliverable Based - Balance work of consultancy services for Arch",
+    "Custom Bid for Services - Consultancy Services for Preparation of Structural Design and Structural ",
+    "Custom Bid for Services - Consultancy Services for Preparation of Structural Design and Structural ",
+    "Hiring of Consultancy Services - Percentage based - Technology Consultants; Engineering Design; Yes",
+    "Hiring of Consultancy Services - Percentage based - Functional Consultants; Building and Constructi",
+    "Facility Management Services - LumpSum Based - Office; Providing non consultancy services for Mater"
+   ]
+  },
+  {
+   "meaning": "Banking Consultancy: Specialized consultancy services focused on banking operations, risk management, and regulatory compliance.",
+   "window_count": 29547,
+   "strong": 0,
+   "top_titles": [
+    "Hiring of Consultants - Milestone/Deliverable Based - Tax consultants; Finance& Accounts; Yes; Hybr",
+    "Hiring of Consultants - Milestone/Deliverable Based - Management Consultants, Functional Consultant",
+    "Hiring of Consultants - Milestone/Deliverable Based - Technology Consultants, Engagement of Consult",
+    "Financial Advisory Services - Offsite; GST Consultancy and other related services",
+    "Financial Audit Services - Concurrent Audit of Digital Banking Operations; CA Firm",
+    "Consultancy Landscaping and other items,Landscape design working and other work,Species Specific bi",
+    "Hiring of Consultants - Milestone/Deliverable Based - Functional Consultants, as per scope; Buildin",
+    "Hiring of Consultants - Milestone/Deliverable Based - Hiring of Monitoring, Evaluation, and Learnin"
+   ]
+  }
+ ],
+ "error": "Model token limit (400) exceeded while generating structured output, resulting in incomplete JSON. Increase the `max_tokens` model setting, or simplify the prompt to result in a shorter response that will fit within the limit."
+}

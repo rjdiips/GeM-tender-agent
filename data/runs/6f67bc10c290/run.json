@@ -1,0 +1,75 @@
+{
+ "run_id": "6f67bc10c290",
+ "user": "e2e",
+ "title": "management consultancy tenders from banks published in the last 2 weeks",
+ "request_text": "management consultancy tenders from banks published in the last 2 weeks",
+ "created": "2026-11-16T20:29:44.101156",
+ "status": "complete",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "management consultancy tenders from banks published in the last 2 weeks",
+  "topics": [
+   {
+    "user_text": "management consultancy tenders from banks published in the last 2 weeks",
+    "meaning": "Management Consultancy: Professional services for strategic planning, organizational restructuring, and operational efficiency improvement.",
+    "domain": "Consulting",
+    "match_terms": [
+     "Management Consultancy",
+     "Management Consulting",
+     "Strategic Consulting",
+     "Business Process Reengineering",
+     "Organizational Development",
+     "Management Advisory Services"
+    ],
+    "acronyms": {},
+    "related_but_not_enough": [
+     "IT Consultancy",
+     "Financial Advisory",
+     "Legal Services",
+     "Audit Services"
+    ],
+    "not_this": [
+     "IT Consultancy",
+     "Financial Advisory",
+     "Legal Services",
+     "Audit Services"
+    ],
+    "buyers": [
+     "Banks"
+    ],
+    "chosen_because": "The user explicitly requested 'management consultancy' tenders, which aligns with Meaning 0 (plausibility 0.95) and has 2 relevant open tenders, whereas Meaning 1 (BPO) has 0 matches and a low plausibility score.",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-11-02T00:00:00",
+   "published_to": "2026-11-16T20:29:34.936525",
+   "closing_from": "2026-11-16T20:29:34.936525",
+   "closing_to": null
+  },
+  "buyer_hints": [
+   "Banks"
+  ],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "Management Consultancy: Professional services for strategic planning, organizational restructuring, and operational efficiency improvement.",
+   "window_count": 29179,
+   "strong": 2,
+   "top_titles": [
+    "Hiring of Consultants - Milestone/Deliverable Based - Engagement of a Leading Management Consulting",
+    "Project Management Consultancy (PMC) Service for NHAI - Detailed Project Report (DPR), Supervision ",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Consultants - Milestone/Deliverable Based - Management Consultants, Functional Consultant",
+    "Custom Bid for Services - ----",
+    "Hiring of Consultants - Milestone/Deliverable Based - Functional Consultants, as per scope; Buildin",
+    "Hiring of Consultants - Milestone/Deliverable Based - Management Consultants; Capacity Building, Su",
+    "Custom Bid for Services - Consultancy services for Praparation of Structural Designs and Structural"
+   ]
+  }
+ ],
+ "error": ""
+}

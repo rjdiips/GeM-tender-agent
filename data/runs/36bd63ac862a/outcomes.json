@@ -1,0 +1,876 @@
+{
+ "10084932": {
+  "b_id": 10084932,
+  "group": "Moon Dust Regolith Simulant",
+  "bid": {
+   "b_id": 10084932,
+   "bid_number": "GEM/2026/B/8203767",
+   "title": "Moisture measuring instrument",
+   "category_id": "home_univ_univ_univ_univ",
+   "ministry": "Department of Space",
+   "department": "Department of Space",
+   "published": "2026-10-28T13:17:24",
+   "closing": "2026-11-18T14:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10084932",
+    "b_id": [
+     10084932
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8203767"
+    ],
+    "b_category_name": [
+     "Moisture measuring instrument"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-10-28T13:17:24Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-18T14:00:00Z"
+    ],
+    "bd_category_name": [
+     "Moisture measuring instrument"
+    ],
+    "b_is_custom_item": [
+     1
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_univ_univ_univ_univ"
+    ],
+    "b.b_created_by": [
+     "BuyerAssistant13"
+    ],
+    "ba_is_single_packet": [
+     1
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Department of Space"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Space"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10084932",
+    "filename": "GeM-Bidding-10084932.pdf",
+    "size": 105416,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "7f471ae732eb70e75b3d6912789a7c97411acb41ccb4b4d24743d6c3b8e5cd4b",
+    "path": "docs/10084932/files/7f471ae732eb70e75b3d6912789a7c97411acb41ccb4b4d24743d6c3b8e5cd4b.pdf",
+    "text_path": "docs/10084932/files/7f471ae732eb70e75b3d6912789a7c97411acb41ccb4b4d24743d6c3b8e5cd4b.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10084932,
+   "bid_number": "GEM/2026/B/8203767",
+   "topic_key": "f49afe842bb7f987",
+   "doc_hash": "a613f99cf3ec3028",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for a general moisture measuring instrument, not specifically for moon dust regolith simulant.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:11:34.987829"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10124816": {
+  "b_id": 10124816,
+  "group": "Moon Dust Regolith Simulant",
+  "bid": {
+   "b_id": 10124816,
+   "bid_number": "GEM/2026/B/8238354",
+   "title": "Soil Moisture Analyzer (Probe based)",
+   "category_id": "home_univ_univ_univ_univ",
+   "ministry": null,
+   "department": "Higher Education Department Jammu and Kashmir",
+   "published": "2026-11-09T15:36:48",
+   "closing": "2026-11-24T16:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10124816",
+    "b_id": [
+     10124816
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8238354"
+    ],
+    "b_category_name": [
+     "Soil Moisture Analyzer (Probe based)"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-09T15:36:48Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-24T16:00:00Z"
+    ],
+    "bd_category_name": [
+     "Soil Moisture Analyzer (Probe based)"
+    ],
+    "b_is_custom_item": [
+     1
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_univ_univ_univ_univ"
+    ],
+    "b.b_created_by": [
+     "gemheadagron_skuast"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_deptName": [
+     "Higher Education Department Jammu and Kashmir"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10124816",
+    "filename": "GeM-Bidding-10124816.pdf",
+    "size": 104632,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "d3ef73d5bf7a01097a4c9e1fb66f342b4806efc742b57ccd9d5384268afd256f",
+    "path": "docs/10124816/files/d3ef73d5bf7a01097a4c9e1fb66f342b4806efc742b57ccd9d5384268afd256f.pdf",
+    "text_path": "docs/10124816/files/d3ef73d5bf7a01097a4c9e1fb66f342b4806efc742b57ccd9d5384268afd256f.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10124816,
+   "bid_number": "GEM/2026/B/8238354",
+   "topic_key": "f49afe842bb7f987",
+   "doc_hash": "970bbf425451f294",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for a soil moisture analyzer for agricultural use, which is unrelated to lunar regolith simulants.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:11:41.952768"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10129605": {
+  "b_id": 10129605,
+  "group": "Moon Dust Regolith Simulant",
+  "bid": {
+   "b_id": 10129605,
+   "bid_number": "GEM/2026/B/8242618",
+   "title": "ELEMENTAL ANALYSER CONSUMABLES",
+   "category_id": "home_univ_univ_univ_univ",
+   "ministry": "Department of Space",
+   "department": "Department of Space",
+   "published": "2026-11-05T12:21:46",
+   "closing": "2026-11-26T15:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10129605",
+    "b_id": [
+     10129605
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8242618"
+    ],
+    "b_category_name": [
+     "ELEMENTAL ANALYSER CONSUMABLES"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-05T12:21:46Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-26T15:00:00Z"
+    ],
+    "bd_category_name": [
+     "ELEMENTAL ANALYSER CONSUMABLES"
+    ],
+    "b_is_custom_item": [
+     1
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_univ_univ_univ_univ"
+    ],
+    "b.b_created_by": [
+     "sunildh@prl.res.in"
+    ],
+    "ba_is_single_packet": [
+     1
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Department of Space"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Space"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10129605",
+    "filename": "GeM-Bidding-10129605.pdf",
+    "size": 98651,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "17c69b53eb43c60a31881ec3162fac47b118064cc166aa3e0937437b1572ab27",
+    "path": "docs/10129605/files/17c69b53eb43c60a31881ec3162fac47b118064cc166aa3e0937437b1572ab27.pdf",
+    "text_path": "docs/10129605/files/17c69b53eb43c60a31881ec3162fac47b118064cc166aa3e0937437b1572ab27.pdf.text.json",
+    "pages": 6,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10129605,
+   "bid_number": "GEM/2026/B/8242618",
+   "topic_key": "f49afe842bb7f987",
+   "doc_hash": "6fed74347dcf3127",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for general laboratory consumables for elemental analyzers, not specifically for lunar regolith simulants.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:12:02.406441"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10072844": {
+  "b_id": 10072844,
+  "group": "Moon Dust Regolith Simulant",
+  "bid": {
+   "b_id": 10072844,
+   "bid_number": "GEM/2026/B/8193530",
+   "title": "Temperature, Humidity & Dust Count Measurment System,Central Monitoring Console with Data & Alarm L",
+   "category_id": "home_univ_univ_univ_univ",
+   "ministry": "Ministry of Defence",
+   "department": "Department of Defence Production",
+   "published": "2026-10-23T15:15:48",
+   "closing": "2026-11-18T16:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 3,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10072844",
+    "b_id": [
+     10072844
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8193530"
+    ],
+    "b_category_name": [
+     "Temperature, Humidity & Dust Count Measurment System,Central Monitoring Console with Data & Alarm L"
+    ],
+    "b_total_quantity": [
+     3
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     3
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-10-23T15:15:48Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-18T16:00:00Z"
+    ],
+    "bd_category_name": [
+     "Temperature, Humidity & Dust Count Measurment System,Central Monitoring Console with Data & Alarm Logging System,Installation, Commissioning & Engineering"
+    ],
+    "b_is_custom_item": [
+     1
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_univ_univ_univ_univ"
+    ],
+    "b.b_created_by": [
+     "amritanshu.chaturvedi"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Defence"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Defence Production"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10072844",
+    "filename": "GeM-Bidding-10072844.pdf",
+    "size": 130394,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "3c5daaa406e141f65bb0788657a3efd72b6ece7b5c88041ed6b199d79d195a8c",
+    "path": "docs/10072844/files/3c5daaa406e141f65bb0788657a3efd72b6ece7b5c88041ed6b199d79d195a8c.pdf",
+    "text_path": "docs/10072844/files/3c5daaa406e141f65bb0788657a3efd72b6ece7b5c88041ed6b199d79d195a8c.pdf.text.json",
+    "pages": 10,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10072844,
+   "bid_number": "GEM/2026/B/8193530",
+   "topic_key": "f49afe842bb7f987",
+   "doc_hash": "8ee195a7521bf3a7",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for a general environmental monitoring system (temperature, humidity, and dust count) for industrial or facility use, not for specialized lunar regolith simulants used in space research.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:12:50.686368"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10153643": {
+  "b_id": 10153643,
+  "group": "Moon Dust Regolith Simulant",
+  "bid": {
+   "b_id": 10153643,
+   "bid_number": "GEM/2026/B/8263444",
+   "title": "Ground Enhancement Material",
+   "category_id": "home_el34134111_elec_circ_gr73667442",
+   "ministry": "Ministry of Defence",
+   "department": "Department of Military Affairs",
+   "published": "2026-11-11T14:25:17",
+   "closing": "2026-12-02T15:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 40,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10153643",
+    "b_id": [
+     10153643
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8263444"
+    ],
+    "b_category_name": [
+     "Ground Enhancement Material"
+    ],
+    "b_total_quantity": [
+     40
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-11T14:25:17Z"
+    ],
+    "final_end_date_sort": [
+     "2026-12-02T15:00:00Z"
+    ],
+    "bd_category_name": [
+     "Ground Enhancement Material"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_el34134111_elec_circ_gr73667442"
+    ],
+    "b.b_created_by": [
+     "lpoffr1"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Defence"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Military Affairs"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10153643",
+    "filename": "GeM-Bidding-10153643.pdf",
+    "size": 110066,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "fd9514b635026aacb868e3aabd2fcf887e088b9021856b4f917798c5e73e8fe7",
+    "path": "docs/10153643/files/fd9514b635026aacb868e3aabd2fcf887e088b9021856b4f917798c5e73e8fe7.pdf",
+    "text_path": "docs/10153643/files/fd9514b635026aacb868e3aabd2fcf887e088b9021856b4f917798c5e73e8fe7.pdf.text.json",
+    "pages": 8,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10153643,
+   "bid_number": "GEM/2026/B/8263444",
+   "topic_key": "f49afe842bb7f987",
+   "doc_hash": "b8d1bc7921cc4c03",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for 'Ground Enhancement Material' purchased by the Indian Air Force, which refers to runway or pavement stabilization materials, not lunar regolith simulants for space research.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:13:02.061847"
+  },
+  "error": "",
+  "restored": false
+ },
+ "9422754": {
+  "b_id": 9422754,
+  "group": "Moon Dust Regolith Simulant",
+  "bid": {
+   "b_id": 9422754,
+   "bid_number": "GEM/2026/B/7623707",
+   "title": "Real Time Air borne dust measuring equipment",
+   "category_id": "home_univ_univ_univ_univ",
+   "ministry": "Ministry of Health and Family Welfare",
+   "department": "Department of Health and Family Welfare",
+   "published": "2026-08-03T16:46:52",
+   "closing": "2026-12-05T15:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 2,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "9422754",
+    "b_id": [
+     9422754
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/7623707"
+    ],
+    "b_category_name": [
+     "Real Time Air borne dust measuring equipment"
+    ],
+    "b_total_quantity": [
+     2
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-08-03T16:46:52Z"
+    ],
+    "final_end_date_sort": [
+     "2026-12-05T15:00:00Z"
+    ],
+    "bd_category_name": [
+     "Real Time Air borne dust measuring equipment"
+    ],
+    "b_is_custom_item": [
+     1
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_univ_univ_univ_univ"
+    ],
+    "b.b_created_by": [
+     "buyer131.aiimsa.rj@gembuyer.in"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Health and Family Welfare"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Health and Family Welfare"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/9422754",
+    "filename": "GeM-Bidding-9422754.pdf",
+    "size": 141838,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "214fe917a84c983d5b7d4128b613ad588642f49be028ba0f4d2917e86cba4dc6",
+    "path": "docs/9422754/files/214fe917a84c983d5b7d4128b613ad588642f49be028ba0f4d2917e86cba4dc6.pdf",
+    "text_path": "docs/9422754/files/214fe917a84c983d5b7d4128b613ad588642f49be028ba0f4d2917e86cba4dc6.pdf.text.json",
+    "pages": 13,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 9422754,
+   "bid_number": "GEM/2026/B/7623707",
+   "topic_key": "f49afe842bb7f987",
+   "doc_hash": "ebc8b79b92c859f4",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for airborne dust measuring equipment for health purposes, not for lunar regolith simulants.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-08-14T15:00:00",
+    "source": "gem_pre_bid",
+    "quote": "Pre-Bid Date and Time 14-08-2026 15:00:00",
+    "file": "GeM-Bidding-9422754.pdf",
+    "page": 5,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:13:10.178286"
+  },
+  "error": "",
+  "restored": false
+ }
+}

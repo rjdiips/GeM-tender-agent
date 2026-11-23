@@ -1,0 +1,31 @@
+[
+ {
+  "topic_key": "751b30ed9aca1fb4",
+  "text": "Anti-Money Laundering (AML) Software: Software solutions for detecting and preventing financial crimes, including transaction monitoring, customer due diligence, and sanctions screening.; Anti-Money Laundering; AML; AML Software; Transaction Monitoring; KYC; Know Your Customer; Financial Crime Prevention; Sanctions Screening; Suspicious Activity Reporting",
+  "terms": [
+   "Anti-Money Laundering",
+   "AML",
+   "AML Software",
+   "Transaction Monitoring",
+   "KYC",
+   "Know Your Customer",
+   "Financial Crime Prevention",
+   "Sanctions Screening",
+   "Suspicious Activity Reporting",
+   "Financial Crime",
+   "RegTech",
+   "Compliance Software"
+  ],
+  "published_from": "2026-11-02T00:00:00",
+  "published_to": "2026-11-16T17:24:13.466725",
+  "closing_from": "2026-11-16T17:24:13.466725",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "GeM does not have a specific 'AML Software' category; these solutions are typically classified under broad IT services like 'Software Development' or 'IT Hardware/Software' which are too vague to filter effectively without excluding relevant results. Therefore, categories are left empty to rely on the semantic search of the title and extra terms."
+ }
+]

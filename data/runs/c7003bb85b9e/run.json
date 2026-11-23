@@ -1,0 +1,69 @@
+{
+ "run_id": "c7003bb85b9e",
+ "user": "raj",
+ "title": "fraud detection tenders the last 3 weeks",
+ "request_text": "fraud detection tenders the last 3 weeks",
+ "created": "2026-11-19T13:24:28.171822",
+ "status": "stopped",
+ "parent_run_id": null,
+ "request": {
+  "intent": "refine",
+  "user_text": "fraud detection tenders the last 3 weeks",
+  "topics": [
+   {
+    "user_text": "fraud detection tenders the last 3 weeks",
+    "meaning": "Fraud Detection and Prevention Systems: AI-driven fraud detection platforms, transaction monitoring systems, and behavioral analytics tools used by banks and financial institutions to identify suspicious activities",
+    "domain": "Banking & Finance",
+    "match_terms": [
+     "fraud detection",
+     "fraud prevention",
+     "transaction monitoring",
+     "suspicious activity detection",
+     "fraud management system",
+     "FMS",
+     "real-time fraud detection",
+     "behavioral analytics",
+     "anomaly detection",
+     "payment fraud",
+     "account takeover",
+     "identity fraud"
+    ],
+    "acronyms": {
+     "FMS": "Fraud Management System"
+    },
+    "related_but_not_enough": [
+     "AML software",
+     "KYC verification",
+     "compliance monitoring",
+     "risk assessment tools"
+    ],
+    "not_this": [
+     "Fraud Investigation Services",
+     "Forensic Accounting",
+     "Legal Fraud Litigation Support"
+    ],
+    "buyers": [],
+    "chosen_because": "the only plausible meaning",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-10-29T00:00:00",
+   "published_to": "2026-11-19T13:24:08.010357",
+   "closing_from": "2026-11-19T13:24:08.010357",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "Fraud Detection and Prevention Systems: AI-driven fraud detection platforms, transaction monitoring systems, and behavioral analytics tools used by banks and financial institutions to identify suspicious activities",
+   "window_count": 44427,
+   "strong": 2,
+   "top_titles": []
+  }
+ ],
+ "error": ""
+}

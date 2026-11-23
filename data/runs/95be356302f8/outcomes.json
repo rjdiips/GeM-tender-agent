@@ -1,0 +1,6593 @@
+{
+ "10110741": {
+  "b_id": 10110741,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10110741,
+   "bid_number": "GEM/2026/B/8226208",
+   "title": "Software,Software add on,Software Support 1,Software Support 2,Hardware HPC",
+   "category_id": "home_boq_boql_boql_boq",
+   "ministry": null,
+   "department": "Water Resources Department Karnataka",
+   "published": "2026-11-02T17:44:02",
+   "closing": "2026-11-17T18:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 5,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "10110741",
+    "b_id": [
+     10110741
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8226208"
+    ],
+    "b_category_name": [
+     "Software,Software add on,Software Support 1,Software Support 2,Hardware HPC"
+    ],
+    "b_total_quantity": [
+     5
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     5
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-02T17:44:02Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-17T18:00:00Z"
+    ],
+    "bd_category_name": [
+     "Software,Software add on,Software Support 1,Software Support 2,Hardware HPC"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "bbt_title": [
+     "Meshfree CFD Software with HPC Computer"
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_boq_boql_boql_boq"
+    ],
+    "b.b_created_by": [
+     "rocesdkrs.kers"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_deptName": [
+     "Water Resources Department Karnataka"
+    ],
+    "bd_details_is_boq": [
+     true
+    ],
+    "bd_details_new_boq": [
+     true
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10110741",
+    "filename": "GeM-Bidding-10110741.pdf",
+    "size": 120601,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "d4480f469e7aa90ba35f9e6a938e0d9403d2c02d102aab69d61271c449af1bb4",
+    "path": "docs/10110741/files/d4480f469e7aa90ba35f9e6a938e0d9403d2c02d102aab69d61271c449af1bb4.pdf",
+    "text_path": "docs/10110741/files/d4480f469e7aa90ba35f9e6a938e0d9403d2c02d102aab69d61271c449af1bb4.pdf.text.json",
+    "pages": 9,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10110741,
+   "bid_number": "GEM/2026/B/8226208",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "15efa7120970839b",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for hydraulic simulation software and high-performance computing hardware for water resources, which is unrelated to anti-money laundering.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:25:18.960750"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10146514": {
+  "b_id": 10146514,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10146514,
+   "bid_number": "GEM/2026/B/8257302",
+   "title": "AMC / CMC of Fire Detection, Fire Alarm, Fire Hydrant and Sprinkler System",
+   "category_id": "services_home_amcc_am23243684",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-11-09T17:46:18",
+   "closing": "2026-11-18T18:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 12,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10146514",
+    "b_id": [
+     10146514
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8257302"
+    ],
+    "b_category_name": [
+     "AMC / CMC of Fire Detection, Fire Alarm, Fire Hydrant and Sprinkler System"
+    ],
+    "b_total_quantity": [
+     12
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-09T17:46:18Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-18T18:00:00Z"
+    ],
+    "bd_category_name": [
+     "AMC / CMC of Fire Detection, Fire Alarm, Fire Hydrant and Sprinkler System"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_amcc_am23243684"
+    ],
+    "b.b_created_by": [
+     "buycon29.dfs.dl@gembuyer.in"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10146514",
+    "filename": "GeM-Bidding-10146514.pdf",
+    "size": 103361,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "72aecc6f9e5079a8652dac84f7c182b7b1d93da51014a07ace1c14bd84b0d16e",
+    "path": "docs/10146514/files/72aecc6f9e5079a8652dac84f7c182b7b1d93da51014a07ace1c14bd84b0d16e.pdf",
+    "text_path": "docs/10146514/files/72aecc6f9e5079a8652dac84f7c182b7b1d93da51014a07ace1c14bd84b0d16e.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10146514,
+   "bid_number": "GEM/2026/B/8257302",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "d9a51720e330ba98",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for the maintenance of fire detection and alarm systems, which is unrelated to Anti-Money Laundering software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-11-16T14:00:00",
+    "source": "gem_pre_bid",
+    "quote": "Pre-Bid Date and Time 16-11-2026 14:00:00",
+    "file": "GeM-Bidding-10146514.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:25:22.989885"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10170445": {
+  "b_id": 10170445,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10170445,
+   "bid_number": "GEM/2026/B/8277961",
+   "title": "Recruitment and Examination Management Software",
+   "category_id": "home_info_soft_busi_recr",
+   "ministry": "Ministry of Defence",
+   "department": "Department of Defence",
+   "published": "2026-11-16T11:21:30",
+   "closing": "2026-11-19T12:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10170445",
+    "b_id": [
+     10170445
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8277961"
+    ],
+    "b_category_name": [
+     "Recruitment and Examination Management Software"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-16T11:21:30Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-19T12:00:00Z"
+    ],
+    "bd_category_name": [
+     "Recruitment and Examination Management Software"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_info_soft_busi_recr"
+    ],
+    "b.b_created_by": [
+     "Sundar@26"
+    ],
+    "ba_is_single_packet": [
+     1
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Defence"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Defence"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10170445",
+    "filename": "GeM-Bidding-10170445.pdf",
+    "size": 99775,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "b30834be3a95cbd492052539528131407f943618b345c05b9a494785cfa693a8",
+    "path": "docs/10170445/files/b30834be3a95cbd492052539528131407f943618b345c05b9a494785cfa693a8.pdf",
+    "text_path": "docs/10170445/files/b30834be3a95cbd492052539528131407f943618b345c05b9a494785cfa693a8.pdf.text.json",
+    "pages": 6,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10170445,
+   "bid_number": "GEM/2026/B/8277961",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "818861e837165917",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for Recruitment and Examination Management Software for the National Cadet Corps, which is unrelated to Anti-Money Laundering or financial crime compliance.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:25:27.229126"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10102472": {
+  "b_id": 10102472,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10102472,
+   "bid_number": "GEM/2026/B/8219038",
+   "title": "Identity and Access Management (IAM) Software,Trend Micro Licenses ( Deep Security, Web security, E",
+   "category_id": "home_info_soft_ne44572311_iden,home_univ_univ_univ_univ",
+   "ministry": "Ministry of Communications",
+   "department": "Department of Posts",
+   "published": "2026-11-03T17:32:43",
+   "closing": "2026-11-17T15:00:00",
+   "bid_type": 1,
+   "eval_type": 1,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 4085,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "10102472",
+    "b_id": [
+     10102472
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8219038"
+    ],
+    "b_category_name": [
+     "Identity and Access Management (IAM) Software,Trend Micro Licenses ( Deep Security, Web security, E"
+    ],
+    "b_total_quantity": [
+     4085
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     2
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     1
+    ],
+    "final_start_date_sort": [
+     "2026-11-03T17:32:43Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-17T15:00:00Z"
+    ],
+    "bd_category_name": [
+     "Identity and Access Management (IAM) Software,Identity and Access Management (IAM) Software,Trend Micro Licenses ( Deep Security, Web security, End point protection, XDR),Trend Micro Licenses ( Deep Security, Web security, End point protection, XDR)"
+    ],
+    "b_is_custom_item": [
+     1
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_info_soft_ne44572311_iden,home_univ_univ_univ_univ"
+    ],
+    "b.b_created_by": [
+     "tushar.g"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Communications"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Posts"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10102472",
+    "filename": "GeM-Bidding-10102472.pdf",
+    "size": 115515,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "09e671bb8028d1aa6cedc3a8c52de735e775eba808d7928620bbf68721ece7cb",
+    "path": "docs/10102472/files/09e671bb8028d1aa6cedc3a8c52de735e775eba808d7928620bbf68721ece7cb.pdf",
+    "text_path": "docs/10102472/files/09e671bb8028d1aa6cedc3a8c52de735e775eba808d7928620bbf68721ece7cb.pdf.text.json",
+    "pages": 8,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10102472,
+   "bid_number": "GEM/2026/B/8219038",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "79119417a86119f6",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for Identity and Access Management (IAM) and cybersecurity licenses (Trend Micro), which are distinct from Anti-Money Laundering (AML) software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:25:58.689707"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10170754": {
+  "b_id": 10170754,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10170754,
+   "bid_number": "GEM/2026/B/8278203",
+   "title": "AMC of Integrated Security and Surveillance System - Monitor Operations, Health Monitoring Solution",
+   "category_id": "services_home_amco",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Revenue",
+   "published": "2026-11-16T12:08:53",
+   "closing": "2026-11-19T13:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10170754",
+    "b_id": [
+     10170754
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8278203"
+    ],
+    "b_category_name": [
+     "AMC of Integrated Security and Surveillance System - Monitor Operations, Health Monitoring Solution"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-16T12:08:53Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-19T13:00:00Z"
+    ],
+    "bd_category_name": [
+     "AMC of Integrated Security and Surveillance System - Monitor Operations, Health Monitoring Solution for CCTV System; Non-Comprehensive; Software, License; Cost of Consumables to be provided to Service Provider based on actuals"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_amco"
+    ],
+    "b.b_created_by": [
+     "chetanpawar"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Revenue"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10170754",
+    "filename": "GeM-Bidding-10170754.pdf",
+    "size": 102857,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "313de9f90d766550e585e9f0ca0bc1f87a77f399f3287f1f5722b29edc3450e3",
+    "path": "docs/10170754/files/313de9f90d766550e585e9f0ca0bc1f87a77f399f3287f1f5722b29edc3450e3.pdf",
+    "text_path": "docs/10170754/files/313de9f90d766550e585e9f0ca0bc1f87a77f399f3287f1f5722b29edc3450e3.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10170754,
+   "bid_number": "GEM/2026/B/8278203",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "f1207a466c2e6615",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for the maintenance of a physical security and surveillance system (CCTV), not for Anti-Money Laundering financial compliance software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:26:38.485003"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10131629": {
+  "b_id": 10131629,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10131629,
+   "bid_number": "GEM/2026/B/8244403",
+   "title": "AMC of Integrated Security and Surveillance System - Theft Prevention, Remote Video Monitoring, Fac",
+   "category_id": "services_home_amco",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Revenue",
+   "published": "2026-11-05T16:10:19",
+   "closing": "2026-11-19T16:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10131629",
+    "b_id": [
+     10131629
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8244403"
+    ],
+    "b_category_name": [
+     "AMC of Integrated Security and Surveillance System - Theft Prevention, Remote Video Monitoring, Fac"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-05T16:10:19Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-19T16:00:00Z"
+    ],
+    "bd_category_name": [
+     "AMC of Integrated Security and Surveillance System - Theft Prevention, Remote Video Monitoring, Facility/Asset Protection, Monitor Operations, Vandalism Deterrence, Employee Safety, Traffic Monitoring, Outdoor Perimeter Security, Visitor Management, .."
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_amco"
+    ],
+    "b.b_created_by": [
+     "ccpsystem"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Revenue"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10131629",
+    "filename": "GeM-Bidding-10131629.pdf",
+    "size": 154590,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "ca12a191b21e4d6bbef6e508abb9fc17939977e24ce587d0e96ee15b999a1249",
+    "path": "docs/10131629/files/ca12a191b21e4d6bbef6e508abb9fc17939977e24ce587d0e96ee15b999a1249.pdf",
+    "text_path": "docs/10131629/files/ca12a191b21e4d6bbef6e508abb9fc17939977e24ce587d0e96ee15b999a1249.pdf.text.json",
+    "pages": 17,
+    "ocr_pages": [
+     14
+    ],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10131629,
+   "bid_number": "GEM/2026/B/8244403",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "02a07defa18aa805",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for an Integrated Security and Surveillance System (physical security, video monitoring, theft prevention), which is distinct from Anti-Money Laundering financial compliance software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-11-09T11:00:00",
+    "source": "gem_pre_bid",
+    "quote": "Pre-Bid Date and Time 09-11-2026 11:00:00",
+    "file": "GeM-Bidding-10131629.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:29:46.574915"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10148646": {
+  "b_id": 10148646,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10148646,
+   "bid_number": "GEM/2026/B/8259053",
+   "title": "Financial Audit Services - Review of Financial Statements, Financial Reporting Framework, Audit rep",
+   "category_id": "services_home_fina_fina",
+   "ministry": "Ministry of Electronics and Information Technology",
+   "department": "Department of Electronics and Information Technology",
+   "published": "2026-11-10T13:11:56",
+   "closing": "2026-11-20T14:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10148646",
+    "b_id": [
+     10148646
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8259053"
+    ],
+    "b_category_name": [
+     "Financial Audit Services - Review of Financial Statements, Financial Reporting Framework, Audit rep"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-10T13:11:56Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-20T14:00:00Z"
+    ],
+    "bd_category_name": [
+     "Financial Audit Services - Review of Financial Statements, Financial Reporting Framework, Audit report; CA Firm"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_fina_fina"
+    ],
+    "b.b_created_by": [
+     "brkrishna"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Electronics and Information Technology"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Electronics and Information Technology"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10148646",
+    "filename": "GeM-Bidding-10148646.pdf",
+    "size": 109657,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "49355244eb746856418f1caa4d35b7ead40ca3827f6bbbdd82d049967e3d328c",
+    "path": "docs/10148646/files/49355244eb746856418f1caa4d35b7ead40ca3827f6bbbdd82d049967e3d328c.pdf",
+    "text_path": "docs/10148646/files/49355244eb746856418f1caa4d35b7ead40ca3827f6bbbdd82d049967e3d328c.pdf.text.json",
+    "pages": 8,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10148646,
+   "bid_number": "GEM/2026/B/8259053",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "27d5134653c05d16",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for external financial audit services conducted by a Chartered Accountant firm, not for Anti-Money Laundering software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:30:26.532868"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10135632": {
+  "b_id": 10135632,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10135632,
+   "bid_number": "GEM/2026/B/8247964",
+   "title": "Cyber Security Audit - Security and Compliance Audit",
+   "category_id": "services_home_cybe_cybe",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-11-06T10:41:14",
+   "closing": "2026-11-19T15:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10135632",
+    "b_id": [
+     10135632
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8247964"
+    ],
+    "b_category_name": [
+     "Cyber Security Audit - Security and Compliance Audit"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-06T10:41:14Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-19T15:00:00Z"
+    ],
+    "bd_category_name": [
+     "Cyber Security Audit - Security and Compliance Audit"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cybe_cybe"
+    ],
+    "b.b_created_by": [
+     "buycon12.sdmsl.mh@gembuyer.in"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10135632",
+    "filename": "GeM-Bidding-10135632.pdf",
+    "size": 106076,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "6888b3f639cd7584fdb31032b31949f0383a2b12ed774c4138c0b1e0d8c5391e",
+    "path": "docs/10135632/files/6888b3f639cd7584fdb31032b31949f0383a2b12ed774c4138c0b1e0d8c5391e.pdf",
+    "text_path": "docs/10135632/files/6888b3f639cd7584fdb31032b31949f0383a2b12ed774c4138c0b1e0d8c5391e.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/downloadOmppdfile/",
+    "filename": "downloadOmppdfile",
+    "size": 0,
+    "kind": "empty",
+    "status": "empty",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": null,
+    "path": null,
+    "text_path": null,
+    "pages": 0,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10135632/1793941070.pdf",
+    "filename": "1793941070.pdf",
+    "size": 1057537,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "3cc33a1b6a3c7cdacfe20d0fc89d60c6e88b70dc57e1de0f0d7acc7e239a3e48",
+    "path": "docs/10135632/files/3cc33a1b6a3c7cdacfe20d0fc89d60c6e88b70dc57e1de0f0d7acc7e239a3e48.pdf",
+    "text_path": "docs/10135632/files/3cc33a1b6a3c7cdacfe20d0fc89d60c6e88b70dc57e1de0f0d7acc7e239a3e48.pdf.text.json",
+    "pages": 21,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8247964/CLM0010/ATC_580edee8-0a23-4c62-ac591793941834963_buycon12.sdmsl.mh@gembuyer.in.pdf",
+    "filename": "ATC_580edee8-0a23-4c62-ac591793941834963_buycon12.sdmsl.mh@gembuyer.in.pdf",
+    "size": 1057537,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "3cc33a1b6a3c7cdacfe20d0fc89d60c6e88b70dc57e1de0f0d7acc7e239a3e48",
+    "path": "docs/10135632/files/3cc33a1b6a3c7cdacfe20d0fc89d60c6e88b70dc57e1de0f0d7acc7e239a3e48.pdf",
+    "text_path": "docs/10135632/files/3cc33a1b6a3c7cdacfe20d0fc89d60c6e88b70dc57e1de0f0d7acc7e239a3e48.pdf.text.json",
+    "pages": 21,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261106",
+    "filename": "gtc-20261106.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261106.pdf",
+    "text_path": "gtc/20261106.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/102731036039424",
+    "filename": "102731036039424",
+    "size": 113461,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "document",
+    "sha256": "c28c636312ce6054eacf8030178c5a2915141e07a6f17376e465f29801a3a06e",
+    "path": "docs/10135632/files/c28c636312ce6054eacf8030178c5a2915141e07a6f17376e465f29801a3a06e.html",
+    "text_path": "docs/10135632/files/c28c636312ce6054eacf8030178c5a2915141e07a6f17376e465f29801a3a06e.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10135632,
+   "bid_number": "GEM/2026/B/8247964",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "5fb31af0c2c05b43",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is explicitly for a 'Cyber Security Audit' and 'Security and Compliance Audit', which falls under general IT security rather than the specific Anti-Money Laundering (AML) software domain.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-11-13T10:00:00",
+    "source": "gem_pre_bid",
+    "quote": "Pre-Bid Date and Time 13-11-2026 10:00:00",
+    "file": "GeM-Bidding-10135632.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-17T09:31:49.194281"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10138243": {
+  "b_id": 10138243,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10138243,
+   "bid_number": "GEM/2026/B/8250279",
+   "title": "Cyber Security Audit - Security and Compliance Audit",
+   "category_id": "services_home_cybe_cybe",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-11-06T14:53:25",
+   "closing": "2026-11-19T17:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10138243",
+    "b_id": [
+     10138243
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8250279"
+    ],
+    "b_category_name": [
+     "Cyber Security Audit - Security and Compliance Audit"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-06T14:53:25Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-19T17:00:00Z"
+    ],
+    "bd_category_name": [
+     "Cyber Security Audit - Security and Compliance Audit"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cybe_cybe"
+    ],
+    "b.b_created_by": [
+     "buycon12.sdmsl.mh@gembuyer.in"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10138243",
+    "filename": "GeM-Bidding-10138243.pdf",
+    "size": 108276,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "19e78c50eaf9d66e720f6db80782b2e6143f5ea7910559ad41291c8c350a5f2d",
+    "path": "docs/10138243/files/19e78c50eaf9d66e720f6db80782b2e6143f5ea7910559ad41291c8c350a5f2d.pdf",
+    "text_path": "docs/10138243/files/19e78c50eaf9d66e720f6db80782b2e6143f5ea7910559ad41291c8c350a5f2d.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/downloadOmppdfile/",
+    "filename": "downloadOmppdfile",
+    "size": 0,
+    "kind": "empty",
+    "status": "empty",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": null,
+    "path": null,
+    "text_path": null,
+    "pages": 0,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10138243/1793956740.pdf",
+    "filename": "1793956740.pdf",
+    "size": 948282,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "0a599b14d07b6d216a9bc5d266f894c7b34de2945c5ad6e1a111015278feabc6",
+    "path": "docs/10138243/files/0a599b14d07b6d216a9bc5d266f894c7b34de2945c5ad6e1a111015278feabc6.pdf",
+    "text_path": "docs/10138243/files/0a599b14d07b6d216a9bc5d266f894c7b34de2945c5ad6e1a111015278feabc6.pdf.text.json",
+    "pages": 18,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8250279/CLM0010/ATC_453c2d7b-fec5-4ea3-997e1793956967741_buycon12.sdmsl.mh@gembuyer.in.pdf",
+    "filename": "ATC_453c2d7b-fec5-4ea3-997e1793956967741_buycon12.sdmsl.mh@gembuyer.in.pdf",
+    "size": 948282,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "document",
+    "sha256": "0a599b14d07b6d216a9bc5d266f894c7b34de2945c5ad6e1a111015278feabc6",
+    "path": "docs/10138243/files/0a599b14d07b6d216a9bc5d266f894c7b34de2945c5ad6e1a111015278feabc6.pdf",
+    "text_path": "docs/10138243/files/0a599b14d07b6d216a9bc5d266f894c7b34de2945c5ad6e1a111015278feabc6.pdf.text.json",
+    "pages": 18,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261106",
+    "filename": "gtc-20261106.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261106.pdf",
+    "text_path": "gtc/20261106.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/102783971127049",
+    "filename": "102783971127049",
+    "size": 113461,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "document",
+    "sha256": "c28c636312ce6054eacf8030178c5a2915141e07a6f17376e465f29801a3a06e",
+    "path": "docs/10138243/files/c28c636312ce6054eacf8030178c5a2915141e07a6f17376e465f29801a3a06e.html",
+    "text_path": "docs/10138243/files/c28c636312ce6054eacf8030178c5a2915141e07a6f17376e465f29801a3a06e.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10138243,
+   "bid_number": "GEM/2026/B/8250279",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "49973b8b91e7ce65",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is explicitly for a 'Cyber Security Audit' and 'Security and Compliance Audit', which falls under IT security services rather than Anti-Money Laundering (AML) software solutions.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-11-10T11:00:00",
+    "source": "gem_pre_bid",
+    "quote": "Pre-Bid Date and Time 10-11-2026 11:00:00",
+    "file": "GeM-Bidding-10138243.pdf",
+    "page": 5,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-17T09:31:50.215760"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10149172": {
+  "b_id": 10149172,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10149172,
+   "bid_number": "GEM/2026/B/8259505",
+   "title": "operating software",
+   "category_id": "home_univ_univ_univ_univ",
+   "ministry": "Ministry of Defence",
+   "department": "Department of Military Affairs",
+   "published": "2026-11-10T14:02:25",
+   "closing": "2026-11-20T16:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 12,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10149172",
+    "b_id": [
+     10149172
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8259505"
+    ],
+    "b_category_name": [
+     "operating software"
+    ],
+    "b_total_quantity": [
+     12
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-10T14:02:25Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-20T16:00:00Z"
+    ],
+    "bd_category_name": [
+     "operating software"
+    ],
+    "b_is_custom_item": [
+     1
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_univ_univ_univ_univ"
+    ],
+    "b.b_created_by": [
+     "Provost18"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Defence"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Military Affairs"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10149172",
+    "filename": "GeM-Bidding-10149172.pdf",
+    "size": 97642,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "e0d8c99066172f5567eac6c84b2683901e3a509851b2321a46df624bbf614607",
+    "path": "docs/10149172/files/e0d8c99066172f5567eac6c84b2683901e3a509851b2321a46df624bbf614607.pdf",
+    "text_path": "docs/10149172/files/e0d8c99066172f5567eac6c84b2683901e3a509851b2321a46df624bbf614607.pdf.text.json",
+    "pages": 6,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10149172,
+   "bid_number": "GEM/2026/B/8259505",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "753b0babf907cf2d",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for operating software and medical equipment for the Ministry of Defence, which is unrelated to Anti-Money Laundering financial compliance.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-11-11T13:00:00",
+    "source": "gem_pre_bid",
+    "quote": "Pre-Bid Date and Time 11-11-2026 13:00:00",
+    "file": "GeM-Bidding-10149172.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:32:19.668101"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10138496": {
+  "b_id": 10138496,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10138496,
+   "bid_number": "GEM/2026/B/8250492",
+   "title": "Cyber Security Audit - Security and Compliance Audit",
+   "category_id": "services_home_cybe_cybe",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-11-06T15:16:40",
+   "closing": "2026-11-19T17:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10138496",
+    "b_id": [
+     10138496
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8250492"
+    ],
+    "b_category_name": [
+     "Cyber Security Audit - Security and Compliance Audit"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-06T15:16:40Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-19T17:00:00Z"
+    ],
+    "bd_category_name": [
+     "Cyber Security Audit - Security and Compliance Audit"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cybe_cybe"
+    ],
+    "b.b_created_by": [
+     "buycon12.sdmsl.mh@gembuyer.in"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10138496",
+    "filename": "GeM-Bidding-10138496.pdf",
+    "size": 108261,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "a32e669cdff701de54308e212648bc0932a481317309b0aa391cfe3033adbd00",
+    "path": "docs/10138496/files/a32e669cdff701de54308e212648bc0932a481317309b0aa391cfe3033adbd00.pdf",
+    "text_path": "docs/10138496/files/a32e669cdff701de54308e212648bc0932a481317309b0aa391cfe3033adbd00.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/downloadOmppdfile/",
+    "filename": "downloadOmppdfile",
+    "size": 0,
+    "kind": "empty",
+    "status": "empty",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": null,
+    "path": null,
+    "text_path": null,
+    "pages": 0,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10138496/1793958232.pdf",
+    "filename": "1793958232.pdf",
+    "size": 944605,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "1a7163a8855f80e5633064e0a745f018a67969fbeaa5d07b993eecc58a884e02",
+    "path": "docs/10138496/files/1a7163a8855f80e5633064e0a745f018a67969fbeaa5d07b993eecc58a884e02.pdf",
+    "text_path": "docs/10138496/files/1a7163a8855f80e5633064e0a745f018a67969fbeaa5d07b993eecc58a884e02.pdf.text.json",
+    "pages": 18,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8250492/CLM0010/ATC_9ec2291e-2821-41b8-855f1793958356751_buycon12.sdmsl.mh@gembuyer.in.pdf",
+    "filename": "ATC_9ec2291e-2821-41b8-855f1793958356751_buycon12.sdmsl.mh@gembuyer.in.pdf",
+    "size": 944605,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "1a7163a8855f80e5633064e0a745f018a67969fbeaa5d07b993eecc58a884e02",
+    "path": "docs/10138496/files/1a7163a8855f80e5633064e0a745f018a67969fbeaa5d07b993eecc58a884e02.pdf",
+    "text_path": "docs/10138496/files/1a7163a8855f80e5633064e0a745f018a67969fbeaa5d07b993eecc58a884e02.pdf.text.json",
+    "pages": 18,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261106",
+    "filename": "gtc-20261106.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261106.pdf",
+    "text_path": "gtc/20261106.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/102789101142016",
+    "filename": "102789101142016",
+    "size": 113461,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "document",
+    "sha256": "c28c636312ce6054eacf8030178c5a2915141e07a6f17376e465f29801a3a06e",
+    "path": "docs/10138496/files/c28c636312ce6054eacf8030178c5a2915141e07a6f17376e465f29801a3a06e.html",
+    "text_path": "docs/10138496/files/c28c636312ce6054eacf8030178c5a2915141e07a6f17376e465f29801a3a06e.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10138496,
+   "bid_number": "GEM/2026/B/8250492",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "d2daa9d1ff1caed8",
+   "relevant": false,
+   "confidence": 0.95,
+   "stage": "judge",
+   "triage": "maybe",
+   "reason": "The tender is for a SIEM (Security Information and Event Management) solution focused on IT infrastructure security and threat detection, not Anti-Money Laundering financial crime software.",
+   "evidence": [
+    {
+     "quote": "RFP for Procurement, Implementation and Support of SIEM Solution Subscription for 1 Year.",
+     "file": "1793958232.pdf",
+     "page": 16,
+     "verified": true
+    },
+    {
+     "quote": "The successful bidder shall deploy, configure, and fine tune a minimum of fifty (50) security monitoring and correlation use cases covering but not limited to. Privileged Account Monitoring, Brute Force Attack Detection, Malware Detection, Ransomware Detection, Insider Threat Monitoring, Data Exfiltration Detection",
+     "file": "1793958232.pdf",
+     "page": 7,
+     "verified": true
+    },
+    {
+     "quote": "The SIEM solution shall support compliance monitoring, reporting, and audit requirements aligned with ISO 27001:2022, CERT-In Directions 2022, Digital Personal Data Protection Act (DPDP) 2023, and other applicable regulatory and industry standards",
+     "file": "1793958232.pdf",
+     "page": 5,
+     "verified": true
+    }
+   ],
+   "key_facts": {
+    "emd": "",
+    "min_turnover": "7 Lakh (s)",
+    "contract_period": "1 Year(s) 18 Day(s)",
+    "estimated_value": "1500000",
+    "scope_summary": "Procurement, implementation, and support of a SIEM solution subscription for 1 year, including threat detection, log management, and compliance reporting."
+   },
+   "queries": {
+    "when": "2026-11-12T15:00:00",
+    "source": "gem_pre_bid",
+    "quote": "Pre-Bid Date and Time 12-11-2026 15:00:00",
+    "file": "GeM-Bidding-10138496.pdf",
+    "page": 5,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-17T09:31:59.508135"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10117810": {
+  "b_id": 10117810,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10117810,
+   "bid_number": "GEM/2026/B/8232107",
+   "title": "Annual Maintenance Service - Desktops,  Laptops and Peripherals - Desktop, Laptop, Printer, Scanner",
+   "category_id": "services_home_an53158604_an00015311",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-11-03T11:37:06",
+   "closing": "2026-11-21T12:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1101,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "10117810",
+    "b_id": [
+     10117810
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8232107"
+    ],
+    "b_category_name": [
+     "Annual Maintenance Service - Desktops,  Laptops and Peripherals - Desktop, Laptop, Printer, Scanner"
+    ],
+    "b_total_quantity": [
+     1101
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-03T11:37:06Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-21T12:00:00Z"
+    ],
+    "bd_category_name": [
+     "Annual Maintenance Service - Desktops,  Laptops and Peripherals - Desktop, Laptop, Printer, Scanner etc as per ATC document; As per ATC document"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_an53158604_an00015311"
+    ],
+    "b.b_created_by": [
+     "CMITD"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10117810",
+    "filename": "GeM-Bidding-10117810.pdf",
+    "size": 112977,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "80b9ffbbbd73e53b9e6ee0ff189411aecc96ae5c50c259c72b60c01df5477cfb",
+    "path": "docs/10117810/files/80b9ffbbbd73e53b9e6ee0ff189411aecc96ae5c50c259c72b60c01df5477cfb.pdf",
+    "text_path": "docs/10117810/files/80b9ffbbbd73e53b9e6ee0ff189411aecc96ae5c50c259c72b60c01df5477cfb.pdf.text.json",
+    "pages": 8,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10117810,
+   "bid_number": "GEM/2026/B/8232107",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "6e4066af678f6782",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for the annual maintenance of hardware (desktops, laptops, printers), not for Anti-Money Laundering software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-11-11T12:00:00",
+    "source": "gem_pre_bid",
+    "quote": "Pre-Bid Date and Time 11-11-2026 12:00:00",
+    "file": "GeM-Bidding-10117810.pdf",
+    "page": 5,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:32:48.476255"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10152728": {
+  "b_id": 10152728,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10152728,
+   "bid_number": "GEM/2026/B/8262639",
+   "title": "Customized AMC/CMC for Pre-owned Products - AMC of Call Center; Neox Call Center with Software Lice",
+   "category_id": "services_home_cu15054518",
+   "ministry": "Ministry of Communications",
+   "department": "Department of Telecommunications (DOT)",
+   "published": "2026-11-11T13:23:56",
+   "closing": "2026-11-21T14:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10152728",
+    "b_id": [
+     10152728
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8262639"
+    ],
+    "b_category_name": [
+     "Customized AMC/CMC for Pre-owned Products - AMC of Call Center; Neox Call Center with Software Lice"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-11T13:23:56Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-21T14:00:00Z"
+    ],
+    "bd_category_name": [
+     "Customized AMC/CMC for Pre-owned Products - AMC of Call Center; Neox Call Center with Software License; Annual Maintenance Contract (AMC); Regular Monitoring & time to time Maintenance Service; Yes"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cu15054518"
+    ],
+    "b.b_created_by": [
+     "ebcobuyer"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     1
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Communications"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Telecommunications (DOT)"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10152728",
+    "filename": "GeM-Bidding-10152728.pdf",
+    "size": 110115,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "a7b4e948a73281bab99e4e395bd615d3cf5157321be989cadce833972aedf672",
+    "path": "docs/10152728/files/a7b4e948a73281bab99e4e395bd615d3cf5157321be989cadce833972aedf672.pdf",
+    "text_path": "docs/10152728/files/a7b4e948a73281bab99e4e395bd615d3cf5157321be989cadce833972aedf672.pdf.text.json",
+    "pages": 8,
+    "ocr_pages": [
+     8
+    ],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10152728,
+   "bid_number": "GEM/2026/B/8262639",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "59612f6729ee1bec",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for the Annual Maintenance Contract (AMC) and software license of a call center system, which is unrelated to Anti-Money Laundering (AML) or financial crime compliance software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:33:00.601736"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10149848": {
+  "b_id": 10149848,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10149848,
+   "bid_number": "GEM/2026/B/8260108",
+   "title": "Financial Audit Services - Review of Financial Statements, Audit report, Audit should be conducted ",
+   "category_id": "services_home_fina_fina",
+   "ministry": "Ministry of Commerce and Industry",
+   "department": "Department of Commerce",
+   "published": "2026-11-10T15:42:17",
+   "closing": "2026-11-21T16:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10149848",
+    "b_id": [
+     10149848
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8260108"
+    ],
+    "b_category_name": [
+     "Financial Audit Services - Review of Financial Statements, Audit report, Audit should be conducted "
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-10T15:42:17Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-21T16:00:00Z"
+    ],
+    "bd_category_name": [
+     "Financial Audit Services - Review of Financial Statements, Audit report, Audit should be conducted on site at HO-Delhi.; CA Firm, CAG Empaneled Audit or CA Firm"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_fina_fina"
+    ],
+    "b.b_created_by": [
+     "eia-delhi-tech-4@eicindia.gov.in"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Commerce and Industry"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Commerce"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10149848",
+    "filename": "GeM-Bidding-10149848.pdf",
+    "size": 102377,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "758d7ba6811e9bbae2920f4decd1b159ecb25628290603573859edb4a53f37ec",
+    "path": "docs/10149848/files/758d7ba6811e9bbae2920f4decd1b159ecb25628290603573859edb4a53f37ec.pdf",
+    "text_path": "docs/10149848/files/758d7ba6811e9bbae2920f4decd1b159ecb25628290603573859edb4a53f37ec.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10149848,
+   "bid_number": "GEM/2026/B/8260108",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "20079ccdc4e05a5c",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for external financial audit services by a Chartered Accountant firm, not for Anti-Money Laundering software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:33:36.309392"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10156952": {
+  "b_id": 10156952,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10156952,
+   "bid_number": "GEM/2026/B/8266342",
+   "title": "Software Support Services 2.0 - Microsoft; Operating System Software; Proactive Services; Software ",
+   "category_id": "services_home_so51117603",
+   "ministry": "Ministry of Defence",
+   "department": "Department of Defence",
+   "published": "2026-11-13T11:28:28",
+   "closing": "2026-11-23T12:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 3,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10156952",
+    "b_id": [
+     10156952
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8266342"
+    ],
+    "b_category_name": [
+     "Software Support Services 2.0 - Microsoft; Operating System Software; Proactive Services; Software "
+    ],
+    "b_total_quantity": [
+     3
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-13T11:28:28Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T12:00:00Z"
+    ],
+    "bd_category_name": [
+     "Software Support Services 2.0 - Microsoft; Operating System Software; Proactive Services; Software Enhancements, Ongoing Support; OEM approved service provider"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_so51117603"
+    ],
+    "b.b_created_by": [
+     "Mumancc@buyer"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Defence"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Defence"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10156952",
+    "filename": "GeM-Bidding-10156952.pdf",
+    "size": 95858,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "53350b2d8995a99e580ce3e6e50c58c51073a0cb8851c9ae73a0302e6436a739",
+    "path": "docs/10156952/files/53350b2d8995a99e580ce3e6e50c58c51073a0cb8851c9ae73a0302e6436a739.pdf",
+    "text_path": "docs/10156952/files/53350b2d8995a99e580ce3e6e50c58c51073a0cb8851c9ae73a0302e6436a739.pdf.text.json",
+    "pages": 6,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10156952,
+   "bid_number": "GEM/2026/B/8266342",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "a8c379971598c548",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for Microsoft operating system support and software enhancements for the National Cadet Corps, which is unrelated to Anti-Money Laundering or financial compliance.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:33:58.331799"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10162856": {
+  "b_id": 10162856,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10162856,
+   "bid_number": "GEM/2026/B/8271508",
+   "title": "Customized AMC/CMC for Pre-owned Products - CAMC FOR CONTROL FLOW ANALYZER (CFA); CAMC FOR CONTROL ",
+   "category_id": "services_home_cu15054518",
+   "ministry": "Ministry of Science and Technology",
+   "department": "Department of Scientific and Industrial Research (DSIR)",
+   "published": "2026-11-13T12:44:55",
+   "closing": "2026-11-23T13:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10162856",
+    "b_id": [
+     10162856
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8271508"
+    ],
+    "b_category_name": [
+     "Customized AMC/CMC for Pre-owned Products - CAMC FOR CONTROL FLOW ANALYZER (CFA); CAMC FOR CONTROL "
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-13T12:44:55Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T13:00:00Z"
+    ],
+    "bd_category_name": [
+     "Customized AMC/CMC for Pre-owned Products - CAMC FOR CONTROL FLOW ANALYZER (CFA); CAMC FOR CONTROL FLOW ANALYZER (CFA); Annual Maintenance Contract (AMC); Six-Monthly; No"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cu15054518"
+    ],
+    "b.b_created_by": [
+     "arulprakash@niist.res.in"
+    ],
+    "ba_is_single_packet": [
+     1
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Science and Technology"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Scientific and Industrial Research (DSIR)"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10162856",
+    "filename": "GeM-Bidding-10162856.pdf",
+    "size": 100299,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "62c085f790611ff22ec60235bb0661c1f05a3d1d28dab0c2b33af3ab17acd98c",
+    "path": "docs/10162856/files/62c085f790611ff22ec60235bb0661c1f05a3d1d28dab0c2b33af3ab17acd98c.pdf",
+    "text_path": "docs/10162856/files/62c085f790611ff22ec60235bb0661c1f05a3d1d28dab0c2b33af3ab17acd98c.pdf.text.json",
+    "pages": 6,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10162856,
+   "bid_number": "GEM/2026/B/8271508",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "662398237a161416",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for the maintenance of a Control Flow Analyzer (scientific hardware), not Anti-Money Laundering software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:34:06.253876"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10071212": {
+  "b_id": 10071212,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10071212,
+   "bid_number": "GEM/2026/B/8192091",
+   "title": "AMC of Integrated Security and Surveillance System - Theft Prevention, Employee Safety, Parking Lot",
+   "category_id": "services_home_amco",
+   "ministry": "Ministry of Defence",
+   "department": "Department of Military Affairs",
+   "published": "2026-11-11T16:48:35",
+   "closing": "2026-11-23T17:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10071212",
+    "b_id": [
+     10071212
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8192091"
+    ],
+    "b_category_name": [
+     "AMC of Integrated Security and Surveillance System - Theft Prevention, Employee Safety, Parking Lot"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-11T16:48:35Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T17:00:00Z"
+    ],
+    "bd_category_name": [
+     "AMC of Integrated Security and Surveillance System - Theft Prevention, Employee Safety, Parking Lots; Comprehensive; Hardware, Software, Networking System; Consumables to be provided by Service Provider (included in the contract cost)"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_amco"
+    ],
+    "b.b_created_by": [
+     "security@30wg"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Defence"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Military Affairs"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10071212",
+    "filename": "GeM-Bidding-10071212.pdf",
+    "size": 110304,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "3e2b07bdfb1800ae5fe82ca757560afd56830081d26faeb63f94383a4cb81887",
+    "path": "docs/10071212/files/3e2b07bdfb1800ae5fe82ca757560afd56830081d26faeb63f94383a4cb81887.pdf",
+    "text_path": "docs/10071212/files/3e2b07bdfb1800ae5fe82ca757560afd56830081d26faeb63f94383a4cb81887.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10071212,
+   "bid_number": "GEM/2026/B/8192091",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "5562984c918fbbf9",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for physical security and surveillance systems (theft prevention, employee safety) rather than financial crime or anti-money laundering software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-11-19T10:00:00",
+    "source": "gem_pre_bid",
+    "quote": "Pre-Bid Date and Time 19-11-2026 10:00:00",
+    "file": "GeM-Bidding-10071212.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:34:38.401181"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10138312": {
+  "b_id": 10138312,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10138312,
+   "bid_number": "GEM/2026/B/8250336",
+   "title": "Software Development contract for Data and Imagery Software for Analytics",
+   "category_id": "home_univ_univ_univ_univ",
+   "ministry": "Ministry of Defence",
+   "department": "Department of Defence Research & Development",
+   "published": "2026-11-13T16:59:49",
+   "closing": "2026-11-23T17:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10138312",
+    "b_id": [
+     10138312
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8250336"
+    ],
+    "b_category_name": [
+     "Software Development contract for Data and Imagery Software for Analytics"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-13T16:59:49Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T17:00:00Z"
+    ],
+    "bd_category_name": [
+     "Software Development contract for Data and Imagery Software for Analytics"
+    ],
+    "b_is_custom_item": [
+     1
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_univ_univ_univ_univ"
+    ],
+    "b.b_created_by": [
+     "SABISAM"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Defence"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Defence Research & Development"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10138312",
+    "filename": "GeM-Bidding-10138312.pdf",
+    "size": 109784,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "999574ffed9002d201686e7ff8d56d51fb606d5c946e18009ef823f429eacf2f",
+    "path": "docs/10138312/files/999574ffed9002d201686e7ff8d56d51fb606d5c946e18009ef823f429eacf2f.pdf",
+    "text_path": "docs/10138312/files/999574ffed9002d201686e7ff8d56d51fb606d5c946e18009ef823f429eacf2f.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10138312,
+   "bid_number": "GEM/2026/B/8250336",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "b5327fda22dee8aa",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for data and imagery analytics software for the Ministry of Defence, which is unrelated to Anti-Money Laundering financial compliance.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:34:42.448402"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10147689": {
+  "b_id": 10147689,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10147689,
+   "bid_number": "GEM/2026/B/8258224",
+   "title": "AI Productivity Assistant Software",
+   "category_id": "home_info_soft_busi_aipr",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-11-10T11:18:27",
+   "closing": "2026-11-24T15:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 27,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10147689",
+    "b_id": [
+     10147689
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8258224"
+    ],
+    "b_category_name": [
+     "AI Productivity Assistant Software"
+    ],
+    "b_total_quantity": [
+     27
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-10T11:18:27Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-24T15:00:00Z"
+    ],
+    "bd_category_name": [
+     "AI Productivity Assistant Software"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_info_soft_busi_aipr"
+    ],
+    "b.b_created_by": [
+     "dgm@it"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10147689",
+    "filename": "GeM-Bidding-10147689.pdf",
+    "size": 121305,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "1522276773cf62228ce0fdcfdeb920fd486d6d37c1dd8e23f197e24ff8f806e8",
+    "path": "docs/10147689/files/1522276773cf62228ce0fdcfdeb920fd486d6d37c1dd8e23f197e24ff8f806e8.pdf",
+    "text_path": "docs/10147689/files/1522276773cf62228ce0fdcfdeb920fd486d6d37c1dd8e23f197e24ff8f806e8.pdf.text.json",
+    "pages": 9,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10147689,
+   "bid_number": "GEM/2026/B/8258224",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "d487544c7c2dd5fd",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is explicitly for 'AI Productivity Assistant Software', which is unrelated to Anti-Money Laundering (AML) or financial crime compliance.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-11-17T15:00:00",
+    "source": "gem_pre_bid",
+    "quote": "Pre-Bid Date and Time 17-11-2026 15:00:00",
+    "file": "GeM-Bidding-10147689.pdf",
+    "page": 5,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:34:54.517436"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10149217": {
+  "b_id": 10149217,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10149217,
+   "bid_number": "GEM/2026/B/8259544",
+   "title": "AMC of Integrated Security and Surveillance System - Theft Prevention, Remote Video Monitoring, Fac",
+   "category_id": "services_home_amco",
+   "ministry": null,
+   "department": "Urban Development & Housing Department Bihar",
+   "published": "2026-11-10T14:49:28",
+   "closing": "2026-11-24T19:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10149217",
+    "b_id": [
+     10149217
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8259544"
+    ],
+    "b_category_name": [
+     "AMC of Integrated Security and Surveillance System - Theft Prevention, Remote Video Monitoring, Fac"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-10T14:49:28Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-24T19:00:00Z"
+    ],
+    "bd_category_name": [
+     "AMC of Integrated Security and Surveillance System - Theft Prevention, Remote Video Monitoring, Facility/Asset Protection, Vehicle Management, Traffic Monitoring, Public Safety, Parking Lots, Monitor Operations; Comprehensive; Hardware; Consumables t.."
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_amco"
+    ],
+    "b.b_created_by": [
+     "Buyer.npbgh"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_deptName": [
+     "Urban Development & Housing Department Bihar"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10149217",
+    "filename": "GeM-Bidding-10149217.pdf",
+    "size": 105180,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "bdd5e1507a775fa4532923cb79e719f1386a3febc6b76334d43daa782426e9e2",
+    "path": "docs/10149217/files/bdd5e1507a775fa4532923cb79e719f1386a3febc6b76334d43daa782426e9e2.pdf",
+    "text_path": "docs/10149217/files/bdd5e1507a775fa4532923cb79e719f1386a3febc6b76334d43daa782426e9e2.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10149217,
+   "bid_number": "GEM/2026/B/8259544",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "d4ae76d449423168",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for an Integrated Security and Surveillance System (CCTV, theft prevention, etc.), which is physical security hardware, not Anti-Money Laundering financial compliance software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:36:04.807432"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10087697": {
+  "b_id": 10087697,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10087697,
+   "bid_number": "GEM/2026/B/8206156",
+   "title": "Web Application Vulnerability Scanner Software",
+   "category_id": "home_univ_univ_univ_univ",
+   "ministry": "Department of Space",
+   "department": "Department of Space",
+   "published": "2026-11-04T10:59:36",
+   "closing": "2026-11-25T17:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10087697",
+    "b_id": [
+     10087697
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8206156"
+    ],
+    "b_category_name": [
+     "Web Application Vulnerability Scanner Software"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-04T10:59:36Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-25T17:00:00Z"
+    ],
+    "bd_category_name": [
+     "Web Application Vulnerability Scanner Software"
+    ],
+    "b_is_custom_item": [
+     1
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_univ_univ_univ_univ"
+    ],
+    "b.b_created_by": [
+     "kalpana@iirs.gov.in"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Department of Space"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Space"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10087697",
+    "filename": "GeM-Bidding-10087697.pdf",
+    "size": 110095,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "925b2996abf36ef0edfceefa8dbc17971f711146f06782ff29fad3bc1d660b11",
+    "path": "docs/10087697/files/925b2996abf36ef0edfceefa8dbc17971f711146f06782ff29fad3bc1d660b11.pdf",
+    "text_path": "docs/10087697/files/925b2996abf36ef0edfceefa8dbc17971f711146f06782ff29fad3bc1d660b11.pdf.text.json",
+    "pages": 8,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10087697,
+   "bid_number": "GEM/2026/B/8206156",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "5c84dbeb313333b2",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for Web Application Vulnerability Scanner Software, which is a cybersecurity tool, not Anti-Money Laundering (AML) software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:36:21.337902"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10164102": {
+  "b_id": 10164102,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10164102,
+   "bid_number": "GEM/2026/B/8272608",
+   "title": "Data Analytics Service (Version 2) - Operations; Buyer Premise (On Shore); Tools & Softwares, User ",
+   "category_id": "services_home_itop_data",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Revenue",
+   "published": "2026-11-13T15:42:32",
+   "closing": "2026-11-23T16:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10164102",
+    "b_id": [
+     10164102
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8272608"
+    ],
+    "b_category_name": [
+     "Data Analytics Service (Version 2) - Operations; Buyer Premise (On Shore); Tools & Softwares, User "
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-13T15:42:32Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T16:00:00Z"
+    ],
+    "bd_category_name": [
+     "Data Analytics Service (Version 2) - Operations; Buyer Premise (On Shore); Tools & Softwares, User Interface, dATA EXTRACTION AND ANALYSIS; Assisted BI"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itop_data"
+    ],
+    "b.b_created_by": [
+     "yadav1993"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Revenue"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10164102",
+    "filename": "GeM-Bidding-10164102.pdf",
+    "size": 106306,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "85fae95eca2c69dd0c2dc56e601969082199a0ad9af52fef6a7f46caec83e683",
+    "path": "docs/10164102/files/85fae95eca2c69dd0c2dc56e601969082199a0ad9af52fef6a7f46caec83e683.pdf",
+    "text_path": "docs/10164102/files/85fae95eca2c69dd0c2dc56e601969082199a0ad9af52fef6a7f46caec83e683.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/downloadOmppdfile/",
+    "filename": "downloadOmppdfile",
+    "size": 0,
+    "kind": "empty",
+    "status": "empty",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": null,
+    "path": null,
+    "text_path": null,
+    "pages": 0,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10164102/1794563938.pdf",
+    "filename": "1794563938.pdf",
+    "size": 5632854,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "42a825791ee6233de9f19eaea9a4aec2479a0753281550ded45cc2fa94e50101",
+    "path": "docs/10164102/files/42a825791ee6233de9f19eaea9a4aec2479a0753281550ded45cc2fa94e50101.pdf",
+    "text_path": "docs/10164102/files/42a825791ee6233de9f19eaea9a4aec2479a0753281550ded45cc2fa94e50101.pdf.text.json",
+    "pages": 46,
+    "ocr_pages": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46
+    ],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10164102/1794563943.pdf",
+    "filename": "1794563943.pdf",
+    "size": 5632854,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "42a825791ee6233de9f19eaea9a4aec2479a0753281550ded45cc2fa94e50101",
+    "path": "docs/10164102/files/42a825791ee6233de9f19eaea9a4aec2479a0753281550ded45cc2fa94e50101.pdf",
+    "text_path": "docs/10164102/files/42a825791ee6233de9f19eaea9a4aec2479a0753281550ded45cc2fa94e50101.pdf.text.json",
+    "pages": 46,
+    "ocr_pages": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46
+    ],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://assets-bg.gem.gov.in/resources/upload/shared_doc/world-bank-stc_1704778647.pdf",
+    "filename": "world-bank-stc_1704778647.pdf",
+    "size": 537541,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "e7203beb47b2fef0490c0851bcb66a03a6e1495b7e513bb288993a65a3811b5a",
+    "path": "docs/10164102/files/e7203beb47b2fef0490c0851bcb66a03a6e1495b7e513bb288993a65a3811b5a.pdf",
+    "text_path": "docs/10164102/files/e7203beb47b2fef0490c0851bcb66a03a6e1495b7e513bb288993a65a3811b5a.pdf.text.json",
+    "pages": 3,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261113",
+    "filename": "gtc-20261113.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261113.pdf",
+    "text_path": "gtc/20261113.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/103308969466404",
+    "filename": "103308969466404",
+    "size": 192035,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "document",
+    "sha256": "03ab129c2d2bcdfc7ef2ee51f2ff3ca797209f9e0c06d15948e7ce56921ffd15",
+    "path": "docs/10164102/files/03ab129c2d2bcdfc7ef2ee51f2ff3ca797209f9e0c06d15948e7ce56921ffd15.html",
+    "text_path": "docs/10164102/files/03ab129c2d2bcdfc7ef2ee51f2ff3ca797209f9e0c06d15948e7ce56921ffd15.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10164102,
+   "bid_number": "GEM/2026/B/8272608",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "246455506025eef9",
+   "relevant": false,
+   "confidence": 0.95,
+   "stage": "judge",
+   "triage": "maybe",
+   "reason": "The tender is for digital forensic and data analysis services to support income tax investigations, not for Anti-Money Laundering compliance software.",
+   "evidence": [
+    {
+     "quote": "For Empanelment of Digital Forensic and Data Analysis Service providers for all offices under the administrative control of the Director General of Income Tax (Investigation), Rajasthan, Jaipur",
+     "file": "1794563938.pdf",
+     "page": 3,
+     "verified": true
+    },
+    {
+     "quote": "Recovery of deleted data from PCs, Mobiles, HDD-and all other electronic devices, Metadata Analysis of extracted/recovered data, Analysis: of electronic data/electronic evidence assigned to it by the Income tax Department",
+     "file": "1794563938.pdf",
+     "page": 7,
+     "verified": true
+    },
+    {
+     "quote": "The vendor should have the capability to detect, handle and recover Virtual Digital Assets (including cryptocurrency wallets, exchange accounts, secd phrases and recovery keys) and to analyse information pertaining to VDAs, in a forensically sound manner",
+     "file": "1794563938.pdf",
+     "page": 9,
+     "verified": true
+    }
+   ],
+   "key_facts": {
+    "emd": "",
+    "min_turnover": "150 Lakh",
+    "contract_period": "2 Year(s)",
+    "estimated_value": "5000000",
+    "scope_summary": "Digital forensic and data analysis services for income tax investigations, including data recovery, mobile analysis, and cryptocurrency investigation."
+   },
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-17T09:32:00.583603"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10124280": {
+  "b_id": 10124280,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10124280,
+   "bid_number": "GEM/2026/B/8237850",
+   "title": "Forensic Triage Software",
+   "category_id": "home_univ_univ_univ_univ",
+   "ministry": "Ministry of Home Affairs",
+   "department": "Women Safety Division",
+   "published": "2026-11-04T17:19:26",
+   "closing": "2026-11-25T18:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10124280",
+    "b_id": [
+     10124280
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8237850"
+    ],
+    "b_category_name": [
+     "Forensic Triage Software"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-04T17:19:26Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-25T18:00:00Z"
+    ],
+    "bd_category_name": [
+     "Forensic Triage Software"
+    ],
+    "b_is_custom_item": [
+     1
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_univ_univ_univ_univ"
+    ],
+    "b.b_created_by": [
+     "ar_adm_che"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Home Affairs"
+    ],
+    "ba_official_details_deptName": [
+     "Women Safety Division"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10124280",
+    "filename": "GeM-Bidding-10124280.pdf",
+    "size": 130320,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "8a1234b6a277e3b74cdb08a9e90b3bf29dc0d186ae847dd07f869ff0f1511712",
+    "path": "docs/10124280/files/8a1234b6a277e3b74cdb08a9e90b3bf29dc0d186ae847dd07f869ff0f1511712.pdf",
+    "text_path": "docs/10124280/files/8a1234b6a277e3b74cdb08a9e90b3bf29dc0d186ae847dd07f869ff0f1511712.pdf.text.json",
+    "pages": 11,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10124280,
+   "bid_number": "GEM/2026/B/8237850",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "abefe83f53f2465b",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for Forensic Triage Software for the Women Safety Division, which is unrelated to Anti-Money Laundering financial compliance.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:36:55.101174"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10122411": {
+  "b_id": 10122411,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10122411,
+   "bid_number": "GEM/2026/B/8236231",
+   "title": "IT Software",
+   "category_id": "home_univ_univ_univ_univ",
+   "ministry": "Ministry of Defence",
+   "department": "Department of Military Affairs",
+   "published": "2026-11-05T18:10:59",
+   "closing": "2026-11-25T20:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 10,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10122411",
+    "b_id": [
+     10122411
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8236231"
+    ],
+    "b_category_name": [
+     "IT Software"
+    ],
+    "b_total_quantity": [
+     10
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-05T18:10:59Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-25T20:00:00Z"
+    ],
+    "bd_category_name": [
+     "IT Software"
+    ],
+    "b_is_custom_item": [
+     1
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_univ_univ_univ_univ"
+    ],
+    "b.b_created_by": [
+     "652TEO"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Defence"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Military Affairs"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10122411",
+    "filename": "GeM-Bidding-10122411.pdf",
+    "size": 115974,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "1f4d7902a3edb8605d0ad5427f55777be18fddff0fbb9c7e02e76abed6cfb1e7",
+    "path": "docs/10122411/files/1f4d7902a3edb8605d0ad5427f55777be18fddff0fbb9c7e02e76abed6cfb1e7.pdf",
+    "text_path": "docs/10122411/files/1f4d7902a3edb8605d0ad5427f55777be18fddff0fbb9c7e02e76abed6cfb1e7.pdf.text.json",
+    "pages": 9,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10122411,
+   "bid_number": "GEM/2026/B/8236231",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "3dbf51c82e018b59",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for general IT software (specifically Windows 11 Professional) and hardware items for the Ministry of Defence, with no mention of Anti-Money Laundering or financial compliance.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:37:43.503870"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10106155": {
+  "b_id": 10106155,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10106155,
+   "bid_number": "GEM/2026/B/8222293",
+   "title": "Facility Management Services - LumpSum Based - Industrial; O&M for Electronics Work; Consumables to",
+   "category_id": "services_home_fa85086605_fa43870134",
+   "ministry": "Ministry of Civil Aviation",
+   "department": "Airports Authority of India (AAI)",
+   "published": "2026-11-04T19:29:08",
+   "closing": "2026-11-25T20:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10106155",
+    "b_id": [
+     10106155
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8222293"
+    ],
+    "b_category_name": [
+     "Facility Management Services - LumpSum Based - Industrial; O&M for Electronics Work; Consumables to"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-04T19:29:08Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-25T20:00:00Z"
+    ],
+    "bd_category_name": [
+     "Facility Management Services - LumpSum Based - Industrial; O&M for Electronics Work; Consumables to be provided by service provider (inclusive in contract cost)"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_fa85086605_fa43870134"
+    ],
+    "b.b_created_by": [
+     "ananthasubramanian"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Civil Aviation"
+    ],
+    "ba_official_details_deptName": [
+     "Airports Authority of India (AAI)"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10106155",
+    "filename": "GeM-Bidding-10106155.pdf",
+    "size": 104515,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "e6af9238ea4888b698f7b9d8a139984c7b82d0a8359cb661ed8dc280a5bf6b38",
+    "path": "docs/10106155/files/e6af9238ea4888b698f7b9d8a139984c7b82d0a8359cb661ed8dc280a5bf6b38.pdf",
+    "text_path": "docs/10106155/files/e6af9238ea4888b698f7b9d8a139984c7b82d0a8359cb661ed8dc280a5bf6b38.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10106155,
+   "bid_number": "GEM/2026/B/8222293",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "704f5b2d20916b82",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for facility management and industrial O&M services, which is unrelated to Anti-Money Laundering software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:37:50.134862"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10091481": {
+  "b_id": 10091481,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10091481,
+   "bid_number": "GEM/2026/B/8209481",
+   "title": "Annual Maintenance Contract (AMC) for Online effluent monitoring system (OEMS)",
+   "category_id": "home_univ_univ_univ_univ",
+   "ministry": "PMO",
+   "department": "Department of Atomic Energy",
+   "published": "2026-11-05T13:59:36",
+   "closing": "2026-11-26T09:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10091481",
+    "b_id": [
+     10091481
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8209481"
+    ],
+    "b_category_name": [
+     "Annual Maintenance Contract (AMC) for Online effluent monitoring system (OEMS)"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-05T13:59:36Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-26T09:00:00Z"
+    ],
+    "bd_category_name": [
+     "Annual Maintenance Contract (AMC) for Online effluent monitoring system (OEMS)"
+    ],
+    "b_is_custom_item": [
+     1
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_univ_univ_univ_univ"
+    ],
+    "b.b_created_by": [
+     "Assistnat28"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "PMO"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Atomic Energy"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10091481",
+    "filename": "GeM-Bidding-10091481.pdf",
+    "size": 138681,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "ad576a33874e71ef3aeba81e098d8005e88d9047f6baae254a6e602bce9542b5",
+    "path": "docs/10091481/files/ad576a33874e71ef3aeba81e098d8005e88d9047f6baae254a6e602bce9542b5.pdf",
+    "text_path": "docs/10091481/files/ad576a33874e71ef3aeba81e098d8005e88d9047f6baae254a6e602bce9542b5.pdf.text.json",
+    "pages": 10,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10091481,
+   "bid_number": "GEM/2026/B/8209481",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "778c2b44eee47380",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for an environmental effluent monitoring system for nuclear facilities, which is unrelated to financial crime or AML software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:37:53.213220"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10129970": {
+  "b_id": 10129970,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10129970,
+   "bid_number": "GEM/2026/B/8242943",
+   "title": "Custom Bid for Services - RFP for Asset Liability Management (ALM) Solution",
+   "category_id": "services_home_cust",
+   "ministry": "Ministry of Finance",
+   "department": "BANKING SECTOR",
+   "published": "2026-11-05T16:47:09",
+   "closing": "2026-11-26T15:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10129970",
+    "b_id": [
+     10129970
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8242943"
+    ],
+    "b_category_name": [
+     "Custom Bid for Services - RFP for Asset Liability Management (ALM) Solution"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-05T16:47:09Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-26T15:00:00Z"
+    ],
+    "bd_category_name": [
+     "Custom Bid for Services - RFP for Asset Liability Management (ALM) Solution"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cust"
+    ],
+    "b.b_created_by": [
+     "procurement.bobcard"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "BANKING SECTOR"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10129970",
+    "filename": "GeM-Bidding-10129970.pdf",
+    "size": 110461,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "ddc1d61c377ecbdc6ef7a7e82cbf56605b444a0e7ad57b994b2bd466656809ab",
+    "path": "docs/10129970/files/ddc1d61c377ecbdc6ef7a7e82cbf56605b444a0e7ad57b994b2bd466656809ab.pdf",
+    "text_path": "docs/10129970/files/ddc1d61c377ecbdc6ef7a7e82cbf56605b444a0e7ad57b994b2bd466656809ab.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10129970,
+   "bid_number": "GEM/2026/B/8242943",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "7e3d9841bc54ab66",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is explicitly for Asset Liability Management (ALM) software, which is a distinct financial domain from Anti-Money Laundering (AML) and is listed as a look-alike exclusion.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:38:08.264220"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10153309": {
+  "b_id": 10153309,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10153309,
+   "bid_number": "GEM/2026/B/8263161",
+   "title": "AMC of Integrated Security and Surveillance System - Remote Video Monitoring, Vandalism Deterrence,",
+   "category_id": "services_home_amco",
+   "ministry": "Ministry of Defence",
+   "department": "Department of Military Affairs",
+   "published": "2026-11-16T14:29:47",
+   "closing": "2026-11-26T15:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10153309",
+    "b_id": [
+     10153309
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8263161"
+    ],
+    "b_category_name": [
+     "AMC of Integrated Security and Surveillance System - Remote Video Monitoring, Vandalism Deterrence,"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-16T14:29:47Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-26T15:00:00Z"
+    ],
+    "bd_category_name": [
+     "AMC of Integrated Security and Surveillance System - Remote Video Monitoring, Vandalism Deterrence, Monitor Operations, Facility/Asset Protection, Theft Prevention; Comprehensive; Hardware, Networking System; Consumables to be provided by Service Pro.."
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_amco"
+    ],
+    "b.b_created_by": [
+     "buycon4.mod.mp"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Defence"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Military Affairs"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10153309",
+    "filename": "GeM-Bidding-10153309.pdf",
+    "size": 121906,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "2ddb7822acfd1286a6ff4268a5acdcaf5c58828f454e6827b2152f3b7ce452bd",
+    "path": "docs/10153309/files/2ddb7822acfd1286a6ff4268a5acdcaf5c58828f454e6827b2152f3b7ce452bd.pdf",
+    "text_path": "docs/10153309/files/2ddb7822acfd1286a6ff4268a5acdcaf5c58828f454e6827b2152f3b7ce452bd.pdf.text.json",
+    "pages": 10,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10153309,
+   "bid_number": "GEM/2026/B/8263161",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "35a7b111679ebf2b",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for an Integrated Security and Surveillance System (video monitoring, vandalism deterrence) for the Ministry of Defence, which is unrelated to Anti-Money Laundering financial compliance software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:38:39.834267"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10119341": {
+  "b_id": 10119341,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10119341,
+   "bid_number": "GEM/2026/B/8233456",
+   "title": "AMC of Integrated Security and Surveillance System - Monitor Operations; Comprehensive; Hardware, S",
+   "category_id": "services_home_amco",
+   "ministry": "Ministry of Civil Aviation",
+   "department": "Airports Authority of India (AAI)",
+   "published": "2026-11-05T17:16:32",
+   "closing": "2026-11-26T18:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10119341",
+    "b_id": [
+     10119341
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8233456"
+    ],
+    "b_category_name": [
+     "AMC of Integrated Security and Surveillance System - Monitor Operations; Comprehensive; Hardware, S"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-05T17:16:32Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-26T18:00:00Z"
+    ],
+    "bd_category_name": [
+     "AMC of Integrated Security and Surveillance System - Monitor Operations; Comprehensive; Hardware, Software, Networking System; Consumables to be provided by Service Provider (included in the contract cost)"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_amco"
+    ],
+    "b.b_created_by": [
+     "ELEC@VAJM"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Civil Aviation"
+    ],
+    "ba_official_details_deptName": [
+     "Airports Authority of India (AAI)"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10119341",
+    "filename": "GeM-Bidding-10119341.pdf",
+    "size": 111857,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "55b8dc22ed93f0d6338ed95b9fa4e19b32ee360adf4d97431094d3fadbaf99ea",
+    "path": "docs/10119341/files/55b8dc22ed93f0d6338ed95b9fa4e19b32ee360adf4d97431094d3fadbaf99ea.pdf",
+    "text_path": "docs/10119341/files/55b8dc22ed93f0d6338ed95b9fa4e19b32ee360adf4d97431094d3fadbaf99ea.pdf.text.json",
+    "pages": 8,
+    "ocr_pages": [
+     8
+    ],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10119341,
+   "bid_number": "GEM/2026/B/8233456",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "636b8fad4032172b",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for an Integrated Security and Surveillance System (physical security) for airports, not Anti-Money Laundering financial compliance software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:38:42.304924"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10165694": {
+  "b_id": 10165694,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10165694,
+   "bid_number": "GEM/2026/B/8274059",
+   "title": "Annual Maintenance Service - Desktops,  Laptops and Peripherals - Annual Maintenance Service - Desk",
+   "category_id": "services_home_an53158604_an00015311",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-11-13T22:29:09",
+   "closing": "2026-11-27T18:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 932,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10165694",
+    "b_id": [
+     10165694
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8274059"
+    ],
+    "b_category_name": [
+     "Annual Maintenance Service - Desktops,  Laptops and Peripherals - Annual Maintenance Service - Desk"
+    ],
+    "b_total_quantity": [
+     932
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-13T22:29:09Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-27T18:00:00Z"
+    ],
+    "bd_category_name": [
+     "Annual Maintenance Service - Desktops,  Laptops and Peripherals - Annual Maintenance Service - Desktops, Laptops and Peripherals - Desktop, Laptop, Scanner etc as per ATC document; as per ATC document"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_an53158604_an00015311"
+    ],
+    "b.b_created_by": [
+     "ashajoshi"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10165694",
+    "filename": "GeM-Bidding-10165694.pdf",
+    "size": 107684,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "d5e80ed8f890b01606505bc06d3ee4974e590f0e97c6537e21b482730faeace0",
+    "path": "docs/10165694/files/d5e80ed8f890b01606505bc06d3ee4974e590f0e97c6537e21b482730faeace0.pdf",
+    "text_path": "docs/10165694/files/d5e80ed8f890b01606505bc06d3ee4974e590f0e97c6537e21b482730faeace0.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10165694,
+   "bid_number": "GEM/2026/B/8274059",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "78907765c68f5a96",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for the annual maintenance of hardware (desktops, laptops, and peripherals), not for Anti-Money Laundering software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:38:44.157070"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10115039": {
+  "b_id": 10115039,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10115039,
+   "bid_number": "GEM/2026/B/8229769",
+   "title": "AMC of Integrated Security and Surveillance System - Theft Prevention, Remote Video Monitoring, Fac",
+   "category_id": "services_home_amco",
+   "ministry": "Ministry of Railways",
+   "department": "Indian Railways",
+   "published": "2026-11-09T16:17:36",
+   "closing": "2026-11-30T17:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10115039",
+    "b_id": [
+     10115039
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8229769"
+    ],
+    "b_category_name": [
+     "AMC of Integrated Security and Surveillance System - Theft Prevention, Remote Video Monitoring, Fac"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-09T16:17:36Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-30T17:00:00Z"
+    ],
+    "bd_category_name": [
+     "AMC of Integrated Security and Surveillance System - Theft Prevention, Remote Video Monitoring, Facility/Asset Protection, Vandalism Deterrence, Parking Lots, Event Video Surveillance, Outdoor Perimeter Security, Visitor Management; Comprehensive; Ha.."
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_amco"
+    ],
+    "b.b_created_by": [
+     "srdsterny"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Railways"
+    ],
+    "ba_official_details_deptName": [
+     "Indian Railways"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10115039",
+    "filename": "GeM-Bidding-10115039.pdf",
+    "size": 109231,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "aca25d8366d8ac759962192757d328c72d3e418478db26c91e6ff1c40021563e",
+    "path": "docs/10115039/files/aca25d8366d8ac759962192757d328c72d3e418478db26c91e6ff1c40021563e.pdf",
+    "text_path": "docs/10115039/files/aca25d8366d8ac759962192757d328c72d3e418478db26c91e6ff1c40021563e.pdf.text.json",
+    "pages": 8,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10115039,
+   "bid_number": "GEM/2026/B/8229769",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "98e38e6ae3d35e6c",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for physical security and surveillance systems (video monitoring, theft prevention) for Indian Railways, not financial Anti-Money Laundering software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:38:48.897545"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10171674": {
+  "b_id": 10171674,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10171674,
+   "bid_number": "GEM/2026/B/8278973",
+   "title": "Financial Audit Services - Review of Financial Statements, Audit report; CAG Empaneled Audit or CA ",
+   "category_id": "services_home_fina_fina",
+   "ministry": null,
+   "department": "Science and Technology Department Jammu and Kashmir",
+   "published": "2026-11-16T14:07:57",
+   "closing": "2026-11-30T17:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10171674",
+    "b_id": [
+     10171674
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8278973"
+    ],
+    "b_category_name": [
+     "Financial Audit Services - Review of Financial Statements, Audit report; CAG Empaneled Audit or CA "
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-16T14:07:57Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-30T17:00:00Z"
+    ],
+    "bd_category_name": [
+     "Financial Audit Services - Review of Financial Statements, Audit report; CAG Empaneled Audit or CA Firm"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_fina_fina"
+    ],
+    "b.b_created_by": [
+     "MANSOOR.AHMAD"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_deptName": [
+     "Science and Technology Department Jammu and Kashmir"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10171674",
+    "filename": "GeM-Bidding-10171674.pdf",
+    "size": 103134,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "3721e3b01392ac91274d3c3c7ea5bb60724d5e2b15cc1b31e528238ced2ae781",
+    "path": "docs/10171674/files/3721e3b01392ac91274d3c3c7ea5bb60724d5e2b15cc1b31e528238ced2ae781.pdf",
+    "text_path": "docs/10171674/files/3721e3b01392ac91274d3c3c7ea5bb60724d5e2b15cc1b31e528238ced2ae781.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10171674,
+   "bid_number": "GEM/2026/B/8278973",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "e3d2b30ec43c7cb1",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for financial audit services by a Chartered Accountant, not for Anti-Money Laundering software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:39:30.751408"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10164605": {
+  "b_id": 10164605,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10164605,
+   "bid_number": "GEM/2026/B/8273078",
+   "title": "AMC of Integrated Security and Surveillance System - CCTV; Comprehensive; Hardware, Software, Netwo",
+   "category_id": "services_home_amco",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-11-13T17:22:57",
+   "closing": "2026-11-30T18:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10164605",
+    "b_id": [
+     10164605
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8273078"
+    ],
+    "b_category_name": [
+     "AMC of Integrated Security and Surveillance System - CCTV; Comprehensive; Hardware, Software, Netwo"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-13T17:22:57Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-30T18:00:00Z"
+    ],
+    "bd_category_name": [
+     "AMC of Integrated Security and Surveillance System - CCTV; Comprehensive; Hardware, Software, Networking System; Consumables to be provided by Service Provider (included in the contract cost)"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_amco"
+    ],
+    "b.b_created_by": [
+     "buyer_Kishor"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10164605",
+    "filename": "GeM-Bidding-10164605.pdf",
+    "size": 111534,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "bf3ecf2041f78313b27839dc708c2a072a0ee7e8dbef1be7709323fa43c735a4",
+    "path": "docs/10164605/files/bf3ecf2041f78313b27839dc708c2a072a0ee7e8dbef1be7709323fa43c735a4.pdf",
+    "text_path": "docs/10164605/files/bf3ecf2041f78313b27839dc708c2a072a0ee7e8dbef1be7709323fa43c735a4.pdf.text.json",
+    "pages": 8,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10164605,
+   "bid_number": "GEM/2026/B/8273078",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "476f7f07361dff63",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for the maintenance of physical security and surveillance systems (CCTV), which is unrelated to Anti-Money Laundering software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-11-20T11:00:00",
+    "source": "gem_pre_bid",
+    "quote": "Pre-Bid Date and Time 20-11-2026 11:00:00",
+    "file": "GeM-Bidding-10164605.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:39:34.769918"
+  },
+  "error": "",
+  "restored": false
+ },
+ "9879241": {
+  "b_id": 9879241,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 9879241,
+   "bid_number": "GEM/2026/B/8024742",
+   "title": "SOFTWARES",
+   "category_id": "home_univ_univ_univ_univ",
+   "ministry": "Ministry of Defence",
+   "department": "Department of Military Affairs",
+   "published": "2026-11-09T17:35:23",
+   "closing": "2026-11-30T18:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 4,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "9879241",
+    "b_id": [
+     9879241
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8024742"
+    ],
+    "b_category_name": [
+     "SOFTWARES"
+    ],
+    "b_total_quantity": [
+     4
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-09T17:35:23Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-30T18:00:00Z"
+    ],
+    "bd_category_name": [
+     "SOFTWARES"
+    ],
+    "b_is_custom_item": [
+     1
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_univ_univ_univ_univ"
+    ],
+    "b.b_created_by": [
+     "SOESTBWEST2"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Defence"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Military Affairs"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/9879241",
+    "filename": "GeM-Bidding-9879241.pdf",
+    "size": 109527,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "c274e0cb5792254bed3a01bb917485ae83d47fabdef33175e8bf2403d4b3959e",
+    "path": "docs/9879241/files/c274e0cb5792254bed3a01bb917485ae83d47fabdef33175e8bf2403d4b3959e.pdf",
+    "text_path": "docs/9879241/files/c274e0cb5792254bed3a01bb917485ae83d47fabdef33175e8bf2403d4b3959e.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 9879241,
+   "bid_number": "GEM/2026/B/8024742",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "3358421d6a072bce",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for general software categories like antivirus and remote access for the Indian Navy, with no mention of Anti-Money Laundering or financial compliance functions.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:39:37.587209"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10139441": {
+  "b_id": 10139441,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10139441,
+   "bid_number": "GEM/2026/B/8251318",
+   "title": "Authentication, Authorization and Accounting (AAA) Software",
+   "category_id": "home_info_soft_secu_auth",
+   "ministry": null,
+   "department": "Home Department Bihar",
+   "published": "2026-11-10T13:40:00",
+   "closing": "2026-12-01T14:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10139441",
+    "b_id": [
+     10139441
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8251318"
+    ],
+    "b_category_name": [
+     "Authentication, Authorization and Accounting (AAA) Software"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-10T13:40:00Z"
+    ],
+    "final_end_date_sort": [
+     "2026-12-01T14:00:00Z"
+    ],
+    "bd_category_name": [
+     "Authentication, Authorization and Accounting (AAA) Software"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_info_soft_secu_auth"
+    ],
+    "b.b_created_by": [
+     "aigqphq"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_deptName": [
+     "Home Department Bihar"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10139441",
+    "filename": "GeM-Bidding-10139441.pdf",
+    "size": 108658,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "33fbebfe1d8a81b5474ba2fa79c8ec86f8a1027fa2e6841cdc3531d82513bbc7",
+    "path": "docs/10139441/files/33fbebfe1d8a81b5474ba2fa79c8ec86f8a1027fa2e6841cdc3531d82513bbc7.pdf",
+    "text_path": "docs/10139441/files/33fbebfe1d8a81b5474ba2fa79c8ec86f8a1027fa2e6841cdc3531d82513bbc7.pdf.text.json",
+    "pages": 8,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10139441,
+   "bid_number": "GEM/2026/B/8251318",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "297ea934ae6b6e75",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for AAA (Authentication, Authorization, and Accounting) software, which is a network access control system, not Anti-Money Laundering software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:39:43.079230"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10149476": {
+  "b_id": 10149476,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10149476,
+   "bid_number": "GEM/2026/B/8259769",
+   "title": "Web Application Firewall and Web Application & API Protection (WAAP) Software",
+   "category_id": "home_info_soft_secu_weba",
+   "ministry": "Ministry of Electronics and Information Technology",
+   "department": "Department of Electronics and Information Technology",
+   "published": "2026-11-12T15:22:29",
+   "closing": "2026-12-01T15:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10149476",
+    "b_id": [
+     10149476
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8259769"
+    ],
+    "b_category_name": [
+     "Web Application Firewall and Web Application & API Protection (WAAP) Software"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-12T15:22:29Z"
+    ],
+    "final_end_date_sort": [
+     "2026-12-01T15:00:00Z"
+    ],
+    "bd_category_name": [
+     "Web Application Firewall and Web Application & API Protection (WAAP) Software"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_info_soft_secu_weba"
+    ],
+    "b.b_created_by": [
+     "aocdacm"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Electronics and Information Technology"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Electronics and Information Technology"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10149476",
+    "filename": "GeM-Bidding-10149476.pdf",
+    "size": 121444,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "59e0974d697b07f98bd1683dea75a125fd1f9d2030c088569914171bb825f139",
+    "path": "docs/10149476/files/59e0974d697b07f98bd1683dea75a125fd1f9d2030c088569914171bb825f139.pdf",
+    "text_path": "docs/10149476/files/59e0974d697b07f98bd1683dea75a125fd1f9d2030c088569914171bb825f139.pdf.text.json",
+    "pages": 9,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10149476,
+   "bid_number": "GEM/2026/B/8259769",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "48ac027f91954448",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for Web Application Firewall and API Protection (WAAP) software, which is a cybersecurity product, not Anti-Money Laundering (AML) software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:39:55.078013"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10161125": {
+  "b_id": 10161125,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10161125,
+   "bid_number": "GEM/2026/B/8270011",
+   "title": "SOFTWARE FOR SCAL",
+   "category_id": "home_univ_univ_univ_univ",
+   "ministry": "Ministry of Petroleum and Natural Gas",
+   "department": "OIL INDIA Limited",
+   "published": "2026-11-13T13:50:12",
+   "closing": "2026-12-04T10:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10161125",
+    "b_id": [
+     10161125
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8270011"
+    ],
+    "b_category_name": [
+     "SOFTWARE FOR SCAL"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-13T13:50:12Z"
+    ],
+    "final_end_date_sort": [
+     "2026-12-04T10:00:00Z"
+    ],
+    "bd_category_name": [
+     "SOFTWARE FOR SCAL"
+    ],
+    "b_is_custom_item": [
+     1
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_univ_univ_univ_univ"
+    ],
+    "b.b_created_by": [
+     "oil.digboi.buycon1.c_p"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Petroleum and Natural Gas"
+    ],
+    "ba_official_details_deptName": [
+     "OIL INDIA Limited"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10161125",
+    "filename": "GeM-Bidding-10161125.pdf",
+    "size": 116509,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "0f6f12b8de42d069c9d5adc23fc7615a3e2f9370831d66e33152e8146d45ba76",
+    "path": "docs/10161125/files/0f6f12b8de42d069c9d5adc23fc7615a3e2f9370831d66e33152e8146d45ba76.pdf",
+    "text_path": "docs/10161125/files/0f6f12b8de42d069c9d5adc23fc7615a3e2f9370831d66e33152e8146d45ba76.pdf.text.json",
+    "pages": 9,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10161125,
+   "bid_number": "GEM/2026/B/8270011",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "28c52df7ba3f4623",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for 'SOFTWARE FOR SCAL' (likely Scalability or similar technical infrastructure) under the Ministry of Petroleum, with no mention of Anti-Money Laundering, financial crime, or compliance functions.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:40:00.924382"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10020509": {
+  "b_id": 10020509,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10020509,
+   "bid_number": "GEM/2026/B/8147851",
+   "title": "Endpoint Detection and Response (EDR) Software",
+   "category_id": "home_info_soft_secu_en81468152",
+   "ministry": "Ministry of Electronics and Information Technology",
+   "department": "Department of Electronics and Information Technology",
+   "published": "2026-11-04T15:43:26",
+   "closing": "2026-12-04T16:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10020509",
+    "b_id": [
+     10020509
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8147851"
+    ],
+    "b_category_name": [
+     "Endpoint Detection and Response (EDR) Software"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-04T15:43:26Z"
+    ],
+    "final_end_date_sort": [
+     "2026-12-04T16:00:00Z"
+    ],
+    "bd_category_name": [
+     "Endpoint Detection and Response (EDR) Software"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_info_soft_secu_en81468152"
+    ],
+    "b.b_created_by": [
+     "navneet@infra"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Electronics and Information Technology"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Electronics and Information Technology"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10020509",
+    "filename": "GeM-Bidding-10020509.pdf",
+    "size": 122141,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "279416cff4b16705520ce53832595777baee4b63f2f1f08e558a7612df3dc5bf",
+    "path": "docs/10020509/files/279416cff4b16705520ce53832595777baee4b63f2f1f08e558a7612df3dc5bf.pdf",
+    "text_path": "docs/10020509/files/279416cff4b16705520ce53832595777baee4b63f2f1f08e558a7612df3dc5bf.pdf.text.json",
+    "pages": 9,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10020509,
+   "bid_number": "GEM/2026/B/8147851",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "33948424e05cf007",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for Endpoint Detection and Response (EDR) software, which is a cybersecurity tool for threat detection, not Anti-Money Laundering (AML) software for financial crime prevention.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-11-16T15:00:00",
+    "source": "gem_pre_bid",
+    "quote": "Pre-Bid Date and Time 16-11-2026 15:00:00",
+    "file": "GeM-Bidding-10020509.pdf",
+    "page": 5,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:40:01.603997"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10170111": {
+  "b_id": 10170111,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10170111,
+   "bid_number": "GEM/2026/B/8277706",
+   "title": "Modular Jewel Safe,LOCK,Time Lock,Duress Alarm System,AMC",
+   "category_id": "home_boq_boql_boql_boq",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-11-16T11:44:57",
+   "closing": "2026-12-07T12:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 10,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10170111",
+    "b_id": [
+     10170111
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8277706"
+    ],
+    "b_category_name": [
+     "Modular Jewel Safe,LOCK,Time Lock,Duress Alarm System,AMC"
+    ],
+    "b_total_quantity": [
+     10
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     5
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-16T11:44:57Z"
+    ],
+    "final_end_date_sort": [
+     "2026-12-07T12:00:00Z"
+    ],
+    "bd_category_name": [
+     "Modular Jewel Safe,LOCK,Time Lock,Duress Alarm System,AMC"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "bbt_title": [
+     "Modular Jewel Safe 1900Ltrs"
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_boq_boql_boql_boq"
+    ],
+    "b.b_created_by": [
+     "GAD@VIJARO"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ],
+    "bd_details_is_boq": [
+     true
+    ],
+    "bd_details_new_boq": [
+     true
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10170111",
+    "filename": "GeM-Bidding-10170111.pdf",
+    "size": 159802,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "b2644cfa65c6e5fe750a4494d84b5b2d6d016a1157ec18eb837169e904b7776b",
+    "path": "docs/10170111/files/b2644cfa65c6e5fe750a4494d84b5b2d6d016a1157ec18eb837169e904b7776b.pdf",
+    "text_path": "docs/10170111/files/b2644cfa65c6e5fe750a4494d84b5b2d6d016a1157ec18eb837169e904b7776b.pdf.text.json",
+    "pages": 12,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10170111,
+   "bid_number": "GEM/2026/B/8277706",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "5e0e7fe8cb77f575",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for physical security equipment (jewel safes and alarms), not financial crime prevention software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-11-25T11:00:00",
+    "source": "gem_pre_bid",
+    "quote": "Pre-Bid Date and Time 25-11-2026 11:00:00",
+    "file": "GeM-Bidding-10170111.pdf",
+    "page": 6,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:40:06.666613"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10154798": {
+  "b_id": 10154798,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10154798,
+   "bid_number": "GEM/2026/B/8264466",
+   "title": "Financial Audit Services - Concurrent Audit of Digital Banking Operations; CA Firm",
+   "category_id": "services_home_fina_fina",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-11-16T12:01:10",
+   "closing": "2026-12-07T17:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10154798",
+    "b_id": [
+     10154798
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8264466"
+    ],
+    "b_category_name": [
+     "Financial Audit Services - Concurrent Audit of Digital Banking Operations; CA Firm"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-16T12:01:10Z"
+    ],
+    "final_end_date_sort": [
+     "2026-12-07T17:00:00Z"
+    ],
+    "bd_category_name": [
+     "Financial Audit Services - Concurrent Audit of Digital Banking Operations; CA Firm"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_fina_fina"
+    ],
+    "b.b_created_by": [
+     "shantanu.gupta"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10154798",
+    "filename": "GeM-Bidding-10154798.pdf",
+    "size": 104533,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "b3bfe0e2324b0f1807bc6e94c74c167dc4790edb4c7b0f6ac7de04bedd2f03be",
+    "path": "docs/10154798/files/b3bfe0e2324b0f1807bc6e94c74c167dc4790edb4c7b0f6ac7de04bedd2f03be.pdf",
+    "text_path": "docs/10154798/files/b3bfe0e2324b0f1807bc6e94c74c167dc4790edb4c7b0f6ac7de04bedd2f03be.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10154798,
+   "bid_number": "GEM/2026/B/8264466",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "6452c59eea8d6764",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for concurrent financial audit services of digital banking operations, not for Anti-Money Laundering software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:40:17.009071"
+  },
+  "error": "",
+  "restored": false
+ },
+ "10172956": {
+  "b_id": 10172956,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10172956,
+   "bid_number": "GEM/2026/B/8280072",
+   "title": "Identity and Access Management software",
+   "category_id": "home_univ_univ_univ_univ",
+   "ministry": "Ministry of Health and Family Welfare",
+   "department": "Department of Health and Family Welfare",
+   "published": "2026-11-16T16:22:46",
+   "closing": "2026-12-07T17:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10172956",
+    "b_id": [
+     10172956
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8280072"
+    ],
+    "b_category_name": [
+     "Identity and Access Management software"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-16T16:22:46Z"
+    ],
+    "final_end_date_sort": [
+     "2026-12-07T17:00:00Z"
+    ],
+    "bd_category_name": [
+     "Identity and Access Management software"
+    ],
+    "b_is_custom_item": [
+     1
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_univ_univ_univ_univ"
+    ],
+    "b.b_created_by": [
+     "san0540@nimhans.ac.in"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Health and Family Welfare"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Health and Family Welfare"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10172956",
+    "filename": "GeM-Bidding-10172956.pdf",
+    "size": 120666,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "46acc6cbf167814fa2a8b6819e9c54ada040527b46ce41de52b3123e483a66b4",
+    "path": "docs/10172956/files/46acc6cbf167814fa2a8b6819e9c54ada040527b46ce41de52b3123e483a66b4.pdf",
+    "text_path": "docs/10172956/files/46acc6cbf167814fa2a8b6819e9c54ada040527b46ce41de52b3123e483a66b4.pdf.text.json",
+    "pages": 9,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   }
+  ],
+  "buyer_org": null,
+  "verdict": {
+   "b_id": 10172956,
+   "bid_number": "GEM/2026/B/8280072",
+   "topic_key": "751b30ed9aca1fb4",
+   "doc_hash": "ad9a1d3391f5e8b9",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for Identity and Access Management (IAM) software, which is a cybersecurity product, not Anti-Money Laundering (AML) financial compliance software.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-12-02T11:00:00",
+    "source": "gem_pre_bid",
+    "quote": "Pre-Bid Date and Time 02-12-2026 11:00:00",
+    "file": "GeM-Bidding-10172956.pdf",
+    "page": 5,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:40:30.459330"
+  },
+  "error": "",
+  "restored": false
+ }
+}

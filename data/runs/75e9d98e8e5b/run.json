@@ -1,0 +1,74 @@
+{
+ "run_id": "75e9d98e8e5b",
+ "user": "raj",
+ "title": "central bank tenders in the last 1 week",
+ "request_text": "central bank tenders in the last 1 week",
+ "created": "2026-11-16T22:18:07.816930",
+ "status": "complete",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "central bank tenders in the last 1 week",
+  "topics": [
+   {
+    "user_text": "central bank tenders in the last 1 week",
+    "meaning": "Reserve Bank of India (RBI) Tenders: Tenders issued by the Reserve Bank of India for IT infrastructure, security systems, and administrative services.",
+    "domain": "Banking",
+    "match_terms": [
+     "Reserve Bank of India",
+     "RBI",
+     "Central Bank",
+     "RBI tender",
+     "RBI e-procurement"
+    ],
+    "acronyms": {
+     "RBI": "Reserve Bank of India"
+    },
+    "related_but_not_enough": [
+     "State Bank of India",
+     "Public Sector Banks",
+     "NABARD"
+    ],
+    "not_this": [
+     "Ministry of Finance",
+     "Department of Financial Services",
+     "SEBI"
+    ],
+    "buyers": [
+     "central bank"
+    ],
+    "chosen_because": "Although the specific tender count is zero, the Reserve Bank of India is the primary entity referred to by 'central bank' in an Indian context, making it the most plausible interpretation despite the lack of immediate matches.",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-11-09T00:00:00",
+   "published_to": "2026-11-16T22:18:03.976834",
+   "closing_from": "2026-11-16T22:18:03.976834",
+   "closing_to": null
+  },
+  "buyer_hints": [
+   "central bank"
+  ],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "Reserve Bank of India (RBI) Tenders: Tenders issued by the Reserve Bank of India for IT infrastructure, security systems, and administrative services.",
+   "window_count": 18347,
+   "strong": 0,
+   "top_titles": [
+    "Custom Bid for Services - ----",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Custom Bid for Services - As per Tender",
+    "Custom Bid for Services - As per Tender",
+    "Custom Bid for Services - Request for Proposal (RFP) for Selection of Service Provider for Conducti",
+    "Custom Bid for Services - Request for Proposal for Facility Management  Services (FMS) for IT Infra",
+    "Hiring of Agency for IT Projects- Milestone basis"
+   ]
+  }
+ ],
+ "error": ""
+}

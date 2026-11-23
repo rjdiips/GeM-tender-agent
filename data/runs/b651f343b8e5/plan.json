@@ -1,0 +1,33 @@
+[
+ {
+  "topic_key": "40eed8c7306b6772",
+  "text": "Fintech Solutions: software platforms and digital tools for financial services, including payment gateways, digital lending, blockchain-based settlement systems, and open banking APIs used by banks and NBFCs; fintech; financial technology; digital payment; payment gateway; digital lending; blockchain settlement; open banking; neobank platform; financial software",
+  "terms": [
+   "fintech",
+   "financial technology",
+   "digital payment",
+   "payment gateway",
+   "digital lending",
+   "blockchain settlement",
+   "open banking",
+   "neobank platform",
+   "financial software",
+   "Fintech",
+   "neobank"
+  ],
+  "published_from": "2026-11-10T00:00:00",
+  "published_to": "2026-11-17T16:32:07.462511",
+  "closing_from": "2026-11-17T16:32:07.462511",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [
+   "home_st84346378_star_emer_bloc",
+   "services_home_paym"
+  ],
+  "reasons": "The Blockchain & Fintech category is a direct fit for the domain. Payment Gateway Services is included as it is a core fintech solution mentioned in the meaning, though specific UPI commission categories are excluded as they are too narrow for a general 'solutions' search. No specific ministries are targeted as the request is broad. Bid types are left open to capture all procurement modes. Extra terms help capture tenders that may not use the exact word 'fintech' but describe the specific software tools requested."
+ }
+]

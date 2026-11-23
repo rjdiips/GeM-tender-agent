@@ -1,0 +1,69 @@
+{
+ "run_id": "95d6af224c14",
+ "user": "raj",
+ "title": "fraud detection tenders the last 3 weeks",
+ "request_text": "fraud detection tenders the last 3 weeks",
+ "created": "2026-11-19T12:22:02.875122",
+ "status": "complete",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "fraud detection tenders the last 3 weeks",
+  "topics": [
+   {
+    "user_text": "fraud detection tenders the last 3 weeks",
+    "meaning": "Fraud Detection and Prevention Systems: AI-driven fraud detection platforms, transaction monitoring systems, and behavioral analytics tools used by banks and financial institutions to identify suspicious activities.",
+    "domain": "Fintech/Security",
+    "match_terms": [
+     "fraud detection",
+     "fraud prevention",
+     "transaction monitoring",
+     "suspicious activity detection",
+     "fraud management system",
+     "FMS",
+     "anti-fraud",
+     "behavioral analytics",
+     "real-time fraud detection",
+     "payment fraud",
+     "credit card fraud",
+     "identity fraud"
+    ],
+    "acronyms": {
+     "FMS": "Fraud Management System"
+    },
+    "related_but_not_enough": [
+     "AML software",
+     "KYC verification",
+     "compliance monitoring",
+     "risk assessment tools"
+    ],
+    "not_this": [
+     "Fraud investigation services",
+     "Legal fraud consultancy",
+     "Physical security cameras"
+    ],
+    "buyers": [],
+    "chosen_because": "the only plausible meaning",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-10-29T00:00:00",
+   "published_to": "2026-11-19T12:21:56.103777",
+   "closing_from": "2026-11-19T12:21:56.103777",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "Fraud Detection and Prevention Systems: AI-driven fraud detection platforms, transaction monitoring systems, and behavioral analytics tools used by banks and financial institutions to identify suspicious activities.",
+   "window_count": 44382,
+   "strong": 2,
+   "top_titles": []
+  }
+ ],
+ "error": ""
+}

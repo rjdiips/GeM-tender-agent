@@ -1,0 +1,74 @@
+{
+ "run_id": "c01a29442d62",
+ "user": "probe5",
+ "title": "AML software tenders published in the last 2 weeks",
+ "request_text": "AML software tenders published in the last 2 weeks",
+ "created": "2026-11-16T17:45:33.849407",
+ "status": "stopped",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "AML software tenders published in the last 2 weeks",
+  "topics": [
+   {
+    "user_text": "AML software tenders published in the last 2 weeks",
+    "meaning": "Anti-Money Laundering (AML) Software: Software solutions for detecting and preventing money laundering, including transaction monitoring, customer due diligence, and sanctions screening.",
+    "domain": "Financial Technology / Compliance",
+    "match_terms": [
+     "Anti-Money Laundering",
+     "AML",
+     "AML Software",
+     "Transaction Monitoring",
+     "KYC",
+     "Know Your Customer",
+     "Sanctions Screening",
+     "Financial Crime Prevention",
+     "Compliance Software"
+    ],
+    "acronyms": {
+     "AML": "Anti-Money Laundering"
+    },
+    "related_but_not_enough": [
+     "Fraud Detection Software",
+     "Risk Management Software",
+     "RegTech Solutions"
+    ],
+    "not_this": [
+     "Accounting Software",
+     "Audit Management Software",
+     "General IT Security Software"
+    ],
+    "buyers": [],
+    "chosen_because": "The user explicitly requested 'software' tenders, and while no direct matches were found, Meaning 0 is the only semantically relevant option for software procurement, whereas Meaning 1 refers to services.",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-11-02T00:00:00",
+   "published_to": "2026-11-16T17:45:29.104397",
+   "closing_from": "2026-11-16T17:45:29.104397",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "Anti-Money Laundering (AML) Software: Software solutions for detecting and preventing money laundering, including transaction monitoring, customer due diligence, and sanctions screening.",
+   "window_count": 29704,
+   "strong": 0,
+   "top_titles": [
+    "AMC of Integrated Security and Surveillance System - CCTV; Comprehensive; Hardware, Software, Netwo",
+    "AMC of Integrated Security and Surveillance System - Monitor Operations, Health Monitoring Solution",
+    "Custom Bid for Services - RFP for Asset Liability Management (ALM) Solution",
+    "SOFTWARES",
+    "AMC of Integrated Security and Surveillance System - Theft Prevention, Remote Video Monitoring, Fac",
+    "Web Application Firewall and Web Application & API Protection (WAAP) Software",
+    "Web Application Vulnerability Scanner Software",
+    "Annual Maintenance Service - Desktops,  Laptops and Peripherals - Desktop, Laptop, Printer, Scanner"
+   ]
+  }
+ ],
+ "error": ""
+}

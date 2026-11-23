@@ -1,0 +1,30 @@
+[
+ {
+  "topic_key": "ee807d3f20563de3",
+  "text": "M&A Advisory Services: professional consulting services for mergers, acquisitions, and corporate restructuring; M&A advisory; merger and acquisition advisory; corporate advisory; deal advisory; transaction advisory; M&A consultant; merger advisory services; acquisition advisory; corporate restructuring advisory",
+  "terms": [
+   "M&A advisory",
+   "merger and acquisition advisory",
+   "corporate advisory",
+   "deal advisory",
+   "transaction advisory",
+   "M&A consultant",
+   "merger advisory services",
+   "acquisition advisory",
+   "corporate restructuring advisory",
+   "M&A",
+   "corporate restructuring"
+  ],
+  "published_from": null,
+  "published_to": null,
+  "closing_from": "2026-11-19T07:07:41.040992",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "GeM categories are product-focused (e.g., IT, construction) and rarely contain specific professional consulting services like M&A advisory; these bids are typically issued via separate RFPs or specialized consultancy portals rather than standard GeM product categories."
+ }
+]

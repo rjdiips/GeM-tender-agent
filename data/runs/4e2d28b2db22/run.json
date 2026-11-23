@@ -1,0 +1,70 @@
+{
+ "run_id": "4e2d28b2db22",
+ "user": "raj",
+ "title": "AML software tenders published in the last 1 weeks",
+ "request_text": "AML software tenders published in the last 1 weeks",
+ "created": "2026-11-16T21:44:51.031957",
+ "status": "complete",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "AML software tenders published in the last 1 weeks",
+  "topics": [
+   {
+    "user_text": "AML software tenders published in the last 1 weeks",
+    "meaning": "AML Software: Tenders for Anti-Money Laundering software solutions, including transaction monitoring, sanctions screening, and customer risk assessment tools.",
+    "domain": "Banking & Financial Services",
+    "match_terms": [
+     "AML software",
+     "Anti-Money Laundering",
+     "AML solution",
+     "Transaction Monitoring System",
+     "Sanctions Screening",
+     "Financial Crime Prevention"
+    ],
+    "acronyms": {
+     "AML": "Anti-Money Laundering"
+    },
+    "related_but_not_enough": [
+     "KYC software",
+     "Compliance Management System",
+     "Fraud Detection Software"
+    ],
+    "not_this": [
+     "AML (Additive Manufacturing Layer)",
+     "AML (Asymmetric Multi-Layer)"
+    ],
+    "buyers": [],
+    "chosen_because": "The user's request for 'AML software' aligns with the high plausibility of software solutions, and while the current search window yields only generic IT titles, this meaning is the only one that directly addresses the user's intent for software rather than hardware.",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-11-09T00:00:00",
+   "published_to": "2026-11-16T21:44:48.236718",
+   "closing_from": "2026-11-16T21:44:48.236718",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "AML Software: Tenders for Anti-Money Laundering software solutions, including transaction monitoring, sanctions screening, and customer risk assessment tools.",
+   "window_count": 18327,
+   "strong": 1,
+   "top_titles": [
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "AMC of Integrated Security and Surveillance System - CCTV; Comprehensive; Hardware, Software, Netwo",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "AMC of Integrated Security and Surveillance System - Monitor Operations, Health Monitoring Solution",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "SOFTWARES",
+    "Hiring of Agency for IT Projects- Milestone basis"
+   ]
+  }
+ ],
+ "error": ""
+}

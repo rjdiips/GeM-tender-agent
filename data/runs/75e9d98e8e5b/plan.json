@@ -1,0 +1,30 @@
+[
+ {
+  "topic_key": "1432312108ad8920",
+  "text": "Reserve Bank of India (RBI) Tenders: Tenders issued by the Reserve Bank of India for IT infrastructure, security systems, and administrative services.; Reserve Bank of India; RBI; Central Bank; RBI tender; RBI e-procurement",
+  "terms": [
+   "Reserve Bank of India",
+   "RBI",
+   "Central Bank",
+   "RBI tender",
+   "RBI e-procurement",
+   "e-procurement",
+   "IT infrastructure",
+   "security systems",
+   "administrative services"
+  ],
+  "published_from": "2026-11-09T00:00:00",
+  "published_to": "2026-11-16T22:18:03.976834",
+  "closing_from": "2026-11-16T22:18:03.976834",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [
+   "Autonomous Body"
+  ],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "The Reserve Bank of India (RBI) is an autonomous body, not a standard ministry or department, so 'Autonomous Body' is the most appropriate ministry filter to rank results. No specific GeM category perfectly captures 'central bank' operations, so categories are left empty to avoid missing relevant tenders filed under vague or generic IT/Admin categories. Extra terms include 'RBI' and 'e-procurement' to capture specific tender titles, and 'IT infrastructure/security/administrative services' to broaden the semantic search for the types of services mentioned in the meaning."
+ }
+]

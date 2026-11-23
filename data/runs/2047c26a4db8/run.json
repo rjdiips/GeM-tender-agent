@@ -1,0 +1,76 @@
+{
+ "run_id": "2047c26a4db8",
+ "user": "probe",
+ "title": "tenders for moon dust regolith simulant",
+ "request_text": "tenders for moon dust regolith simulant",
+ "created": "2026-11-16T17:13:32.530596",
+ "status": "complete",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "tenders for moon dust regolith simulant",
+  "topics": [
+   {
+    "user_text": "tenders for moon dust regolith simulant",
+    "meaning": "Moon Dust Regolith Simulant: Synthetic materials designed to mimic the physical and chemical properties of lunar soil for research, testing, and training purposes.",
+    "domain": "Space Research & Materials Science",
+    "match_terms": [
+     "Moon dust",
+     "regolith simulant",
+     "lunar soil simulant",
+     "JSC-1A",
+     "MS-1",
+     "lunar regolith",
+     "space simulation material"
+    ],
+    "acronyms": {
+     "JSC-1A": "Johnson Space Center-1A",
+     "MS-1": "Moon Simulant-1"
+    },
+    "related_but_not_enough": [
+     "Martian regolith simulant",
+     "Volcanic ash",
+     "Silica sand",
+     "Space suit testing",
+     "Lunar exploration technology"
+    ],
+    "not_this": [
+     "Moon rock",
+     "Asteroid mining",
+     "Lunar lander contracts",
+     "Satellite imagery"
+    ],
+    "buyers": [],
+    "chosen_because": "Meaning [0] is the most plausible interpretation of the user's request for 'moon dust regolith simulant' and is listed first, while meanings [1] and [2] have no matching tenders and are less specific or relevant.",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": null,
+   "published_to": null,
+   "closing_from": "2026-11-16T17:13:24.449526",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": 50
+ },
+ "probes": [
+  {
+   "meaning": "Moon Dust Regolith Simulant: Synthetic materials designed to mimic the physical and chemical properties of lunar soil for research, testing, and training purposes.",
+   "window_count": 39973,
+   "strong": 0,
+   "top_titles": [
+    "Software Suite with modules for carrying out multiphysics modelling and simulation.",
+    "Simulation Software for Drone Simulator",
+    "SIMULATION HARDWARE FOR DRONE SIMULATOR",
+    "Scientific Simulation Software",
+    "Drone Training Simulator Module,Computer Desk,Splite Air Conditioner,Backlite Acrylic Information B",
+    "Solar Simulator Equipment",
+    "SOLIDCast, FLOWCast, and OPTICast Simulation Software",
+    "Solar Simulator"
+   ]
+  }
+ ],
+ "error": ""
+}

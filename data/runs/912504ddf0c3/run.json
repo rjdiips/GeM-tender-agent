@@ -1,0 +1,71 @@
+{
+ "run_id": "912504ddf0c3",
+ "user": "raj",
+ "title": "fraud detection tenders this week",
+ "request_text": "fraud detection tenders this week",
+ "created": "2026-11-17T15:42:12.313157",
+ "status": "complete",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "fraud detection tenders this week",
+  "topics": [
+   {
+    "user_text": "fraud detection tenders this week",
+    "meaning": "Fraud Detection and Prevention Systems: AI-driven fraud detection platforms, transaction monitoring systems, and behavioral analytics tools used by banks and financial institutions to identify suspicious activities.",
+    "domain": "FinTech",
+    "match_terms": [
+     "fraud detection",
+     "fraud prevention",
+     "transaction monitoring",
+     "suspicious activity detection",
+     "AML fraud",
+     "financial crime detection",
+     "behavioral analytics",
+     "fraud management system"
+    ],
+    "acronyms": {},
+    "related_but_not_enough": [
+     "KYC",
+     "AML",
+     "Cybersecurity",
+     "Identity Verification"
+    ],
+    "not_this": [
+     "Fraudulent Tenders",
+     "Procurement Fraud"
+    ],
+    "buyers": [],
+    "chosen_because": "the only plausible meaning",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-11-10T00:00:00",
+   "published_to": "2026-11-17T15:41:42.068984",
+   "closing_from": "2026-11-17T15:41:42.068984",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "Fraud Detection and Prevention Systems: AI-driven fraud detection platforms, transaction monitoring systems, and behavioral analytics tools used by banks and financial institutions to identify suspicious activities.",
+   "window_count": 19027,
+   "strong": 2,
+   "top_titles": [
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "AI based safety monitoring systems",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis"
+   ]
+  }
+ ],
+ "error": ""
+}

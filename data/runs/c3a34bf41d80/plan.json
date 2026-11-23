@@ -1,0 +1,31 @@
+[
+ {
+  "topic_key": "e968153a2f7b6c33",
+  "text": "AML Software: Anti-Money Laundering software solutions, including transaction monitoring, sanctions screening, and customer risk assessment tools.; AML; Anti-Money Laundering; AML Software; Transaction Monitoring; Sanctions Screening; Customer Risk Assessment; KYC/AML; Financial Crime Prevention",
+  "terms": [
+   "AML",
+   "Anti-Money Laundering",
+   "AML Software",
+   "Transaction Monitoring",
+   "Sanctions Screening",
+   "Customer Risk Assessment",
+   "KYC/AML",
+   "Financial Crime Prevention",
+   "Transaction Monitoring System",
+   "KYC",
+   "Financial Crime",
+   "RegTech"
+  ],
+  "published_from": null,
+  "published_to": null,
+  "closing_from": "2026-11-19T12:52:39.410386",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "GeM search is heavily weighted toward the first word; 'AML' alone is too broad and matches unrelated acronyms like Additive Manufacturing Layer. Adding specific functional terms like 'Transaction Monitoring' and 'Sanctions Screening' ensures the search captures relevant banking IT and consultancy bids while filtering out noise."
+ }
+]

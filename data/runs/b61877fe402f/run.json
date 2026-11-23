@@ -1,0 +1,75 @@
+{
+ "run_id": "b61877fe402f",
+ "user": "raj",
+ "title": "AI platform tenders",
+ "request_text": "AI platform tenders",
+ "created": "2026-11-17T15:20:48.299958",
+ "status": "stopped",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "AI platform tenders",
+  "topics": [
+   {
+    "user_text": "AI platform tenders",
+    "meaning": "AI Platform: software platforms for artificial intelligence, including machine learning operations (MLOps) tools, generative AI frameworks, and enterprise AI integration services",
+    "domain": "technology",
+    "match_terms": [
+     "AI platform",
+     "artificial intelligence platform",
+     "machine learning platform",
+     "MLOps",
+     "generative AI",
+     "AI framework",
+     "AI integration",
+     "AI software",
+     "AI services"
+    ],
+    "acronyms": {},
+    "related_but_not_enough": [
+     "AI hardware",
+     "GPU servers",
+     "AI cameras",
+     "robotics",
+     "lab equipment"
+    ],
+    "not_this": [
+     "AML software",
+     "fraud detection",
+     "KYC services",
+     "AI transformation"
+    ],
+    "buyers": [],
+    "chosen_because": "the only plausible meaning",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": null,
+   "published_to": null,
+   "closing_from": "2026-11-17T15:20:44.588304",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "AI Platform: software platforms for artificial intelligence, including machine learning operations (MLOps) tools, generative AI frameworks, and enterprise AI integration services",
+   "window_count": 41671,
+   "strong": 5,
+   "top_titles": [
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Generative AI Platform,AI Video Generation Platform,AI Text to video Creation Platform,Creative Rea",
+    "AI Framework and Classification Tool",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis"
+   ]
+  }
+ ],
+ "error": ""
+}

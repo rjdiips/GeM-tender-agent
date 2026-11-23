@@ -1,0 +1,34 @@
+[
+ {
+  "topic_key": "40b2db0c3451aa91",
+  "text": "Fraud Detection and Prevention Systems: AI-driven fraud detection platforms, transaction monitoring systems, and behavioral analytics tools used by banks and financial institutions to identify suspicious activities.; fraud detection; fraud prevention; transaction monitoring; suspicious activity detection; fraud management system; FMS; anti-fraud; behavioral analytics; real-time fraud detection; payment fraud; credit card fraud; identity fraud",
+  "terms": [
+   "fraud detection",
+   "fraud prevention",
+   "transaction monitoring",
+   "suspicious activity detection",
+   "fraud management system",
+   "FMS",
+   "anti-fraud",
+   "behavioral analytics",
+   "real-time fraud detection",
+   "payment fraud",
+   "credit card fraud",
+   "identity fraud",
+   "Anti-Fraud",
+   "Transaction Monitoring",
+   "Suspicious Activity"
+  ],
+  "published_from": "2026-10-29T00:00:00",
+  "published_to": "2026-11-19T12:21:56.103777",
+  "closing_from": "2026-11-19T12:21:56.103777",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "GeM search relies heavily on the first word of the query; using 'Fraud' as the primary term captures the core intent, while 'Anti-Fraud' and 'FMS' are common specific aliases in tender titles for fraud management systems."
+ }
+]

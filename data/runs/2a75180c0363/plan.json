@@ -1,0 +1,30 @@
+[
+ {
+  "topic_key": "2b1f796be378a22c",
+  "text": "AI Platform: software platforms for artificial intelligence, including machine learning operations (MLOps) tools, generative AI frameworks, and enterprise AI integration services; AI platform; artificial intelligence platform; AI software; machine learning platform; MLOps; generative AI; AI framework; AI solution; AI services",
+  "terms": [
+   "AI platform",
+   "artificial intelligence platform",
+   "AI software",
+   "machine learning platform",
+   "MLOps",
+   "generative AI",
+   "AI framework",
+   "AI solution",
+   "AI services",
+   "AI",
+   "machine learning"
+  ],
+  "published_from": "2026-11-03T00:00:00",
+  "published_to": "2026-11-17T15:29:09.048122",
+  "closing_from": "2026-11-17T15:29:09.048122",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "GeM categories for AI software are often vague (e.g., 'Computer Software' or 'IT Services'); specific AI platform tenders are best found via semantic search on titles rather than rigid category filters, so leaving categories empty ensures no relevant tenders are missed due to misclassification."
+ }
+]

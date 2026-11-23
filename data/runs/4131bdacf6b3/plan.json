@@ -1,0 +1,25 @@
+[
+ {
+  "topic_key": "fc67a56cd5712fe5",
+  "text": "Reserve Bank of India (RBI) Tenders: Tenders issued by the Reserve Bank of India, the central bank of India, for goods, services, or works.; Reserve Bank of India; RBI; Central Bank of India; Central Bank Tenders",
+  "terms": [
+   "Reserve Bank of India",
+   "RBI",
+   "Central Bank of India",
+   "Central Bank Tenders"
+  ],
+  "published_from": "2026-11-02T00:00:00",
+  "published_to": "2026-11-16T17:00:49.129307",
+  "closing_from": "2026-11-16T17:00:49.129307",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [
+   "Ministry of Finance"
+  ],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "The user specifically wants tenders from the Reserve Bank of India (RBI). While the Ministry of Finance is the parent ministry, RBI is an autonomous body; however, filtering by Ministry of Finance helps rank results where the buyer might be listed under the broader ministry umbrella or if the search engine links them. No specific GeM category fits 'Central Bank' perfectly, and 'Central Bank of India' is a commercial bank (excluded), so categories are left empty to avoid false positives. Extra terms 'Reserve Bank of India' and 'RBI' are added to ensure the title search captures the specific buyer."
+ }
+]

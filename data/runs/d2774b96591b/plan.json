@@ -1,0 +1,30 @@
+[
+ {
+  "topic_key": "90e775695d1603c4",
+  "text": "AML Software: Tenders for Anti-Money Laundering software solutions, including transaction monitoring, sanctions screening, and customer risk assessment tools.; AML; Anti-Money Laundering; AML software; AML platform; transaction monitoring; sanctions screening; money laundering prevention",
+  "terms": [
+   "AML",
+   "Anti-Money Laundering",
+   "AML software",
+   "AML platform",
+   "transaction monitoring",
+   "sanctions screening",
+   "money laundering prevention",
+   "compliance",
+   "financial crime",
+   "regulatory",
+   "risk management"
+  ],
+  "published_from": "2026-11-10T00:00:00",
+  "published_to": "2026-11-17T14:40:55.439998",
+  "closing_from": "2026-11-17T14:40:55.439998",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "GeM does not have a specific 'AML Software' category; relevant tenders are typically filed under broad IT services or software categories like 'Computer Software' or 'IT Services', so leaving categories empty ensures we capture tenders in these vague but relevant buckets without excluding them due to strict category filtering."
+ }
+]

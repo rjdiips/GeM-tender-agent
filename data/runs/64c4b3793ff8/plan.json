@@ -1,0 +1,31 @@
+[
+ {
+  "topic_key": "23a71138ab8867b6",
+  "text": "AML Software: Anti-Money Laundering software solutions, including transaction monitoring, sanctions screening, and customer risk assessment tools.; AML; Anti-Money Laundering; AML Software; Transaction Monitoring; Sanctions Screening; Customer Risk Assessment; KYC; CDD; EDD",
+  "terms": [
+   "AML",
+   "Anti-Money Laundering",
+   "AML Software",
+   "Transaction Monitoring",
+   "Sanctions Screening",
+   "Customer Risk Assessment",
+   "KYC",
+   "CDD",
+   "EDD",
+   "Sanctions",
+   "Financial Crime",
+   "RegTech"
+  ],
+  "published_from": "2026-11-03T00:00:00",
+  "published_to": "2026-11-17T17:49:43.054742",
+  "closing_from": "2026-11-17T17:49:43.054742",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "GeM does not have a specific 'AML Software' category; relevant tenders are often filed under vague IT services or general software categories, so leaving categories empty ensures we capture all potential matches. Extra terms like 'KYC' and 'Sanctions' are added because AML solutions frequently bundle these functions, and using them helps catch tenders that might not explicitly use the full 'Anti-Money Laundering' phrase in the title."
+ }
+]

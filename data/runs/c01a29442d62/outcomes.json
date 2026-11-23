@@ -1,0 +1,142 @@
+{
+ "10129970": {
+  "b_id": 10129970,
+  "group": "Anti-Money Laundering (AML) Software",
+  "bid": {
+   "b_id": 10129970,
+   "bid_number": "GEM/2026/B/8242943",
+   "title": "Custom Bid for Services - RFP for Asset Liability Management (ALM) Solution",
+   "category_id": "services_home_cust",
+   "ministry": "Ministry of Finance",
+   "department": "BANKING SECTOR",
+   "published": "2026-11-05T16:47:09",
+   "closing": "2026-11-26T15:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10129970",
+    "b_id": [
+     10129970
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8242943"
+    ],
+    "b_category_name": [
+     "Custom Bid for Services - RFP for Asset Liability Management (ALM) Solution"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-05T16:47:09Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-26T15:00:00Z"
+    ],
+    "bd_category_name": [
+     "Custom Bid for Services - RFP for Asset Liability Management (ALM) Solution"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cust"
+    ],
+    "b.b_created_by": [
+     "procurement.bobcard"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "BANKING SECTOR"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10129970",
+    "filename": "GeM-Bidding-10129970.pdf",
+    "size": 110461,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "ddc1d61c377ecbdc6ef7a7e82cbf56605b444a0e7ad57b994b2bd466656809ab",
+    "path": "docs/10129970/files/ddc1d61c377ecbdc6ef7a7e82cbf56605b444a0e7ad57b994b2bd466656809ab.pdf",
+    "text_path": "docs/10129970/files/ddc1d61c377ecbdc6ef7a7e82cbf56605b444a0e7ad57b994b2bd466656809ab.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null
+   }
+  ],
+  "verdict": {
+   "b_id": 10129970,
+   "bid_number": "GEM/2026/B/8242943",
+   "topic_key": "5af3f1374a31510f",
+   "doc_hash": "7e3d9841bc54ab66",
+   "relevant": false,
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is explicitly for Asset Liability Management (ALM) software, which is a distinct financial domain from Anti-Money Laundering (AML).",
+   "evidence": [],
+   "key_facts": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-16T17:47:29.475099"
+  },
+  "error": "",
+  "restored": false
+ }
+}

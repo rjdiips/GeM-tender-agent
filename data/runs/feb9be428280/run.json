@@ -1,0 +1,78 @@
+{
+ "run_id": "feb9be428280",
+ "user": "raj",
+ "title": "ai platform tenders in the last 2 weeks",
+ "request_text": "ai platform tenders in the last 2 weeks",
+ "created": "2026-11-17T15:00:57.581492",
+ "status": "stopped",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "ai platform tenders in the last 2 weeks",
+  "topics": [
+   {
+    "user_text": "ai platform tenders in the last 2 weeks",
+    "meaning": "AI Platform: Tenders for Artificial Intelligence platforms, including machine learning operations (MLOps) tools, generative AI frameworks, and enterprise AI integration services.",
+    "domain": "AI/ML Software",
+    "match_terms": [
+     "AI platform",
+     "artificial intelligence platform",
+     "machine learning platform",
+     "MLOps",
+     "generative AI",
+     "AI framework",
+     "AI integration services",
+     "AI software",
+     "AI solution"
+    ],
+    "acronyms": {
+     "AI": "Artificial Intelligence"
+    },
+    "related_but_not_enough": [
+     "AI hardware",
+     "GPU servers",
+     "AI cameras",
+     "robotics",
+     "lab equipment"
+    ],
+    "not_this": [
+     "AI hardware",
+     "GPU servers",
+     "AI cameras",
+     "robotics",
+     "lab equipment"
+    ],
+    "buyers": [],
+    "chosen_because": "the only plausible meaning",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-11-03T00:00:00",
+   "published_to": "2026-11-17T15:00:54.568108",
+   "closing_from": "2026-11-17T15:00:54.568108",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": 50
+ },
+ "probes": [
+  {
+   "meaning": "AI Platform: Tenders for Artificial Intelligence platforms, including machine learning operations (MLOps) tools, generative AI frameworks, and enterprise AI integration services.",
+   "window_count": 30298,
+   "strong": 112,
+   "top_titles": [
+    "AI Framework and Classification Tool",
+    "AI Server for Makers Lab",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "AI DEVELOPMENT KIT",
+    "AI Productivity Assistant Software",
+    "Custom Bid for Services - Supply installation testing & commissioning of AI based enabled human & o"
+   ]
+  }
+ ],
+ "error": ""
+}

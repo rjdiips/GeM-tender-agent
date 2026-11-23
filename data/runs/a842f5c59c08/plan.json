@@ -1,0 +1,31 @@
+[
+ {
+  "topic_key": "5c13d59d6fc85644",
+  "text": "KYC Services: Tenders for Know Your Customer verification services, including digital KYC, Aadhaar-based verification, and customer onboarding solutions.; KYC; Know Your Customer; KYC Services; Customer Verification; Aadhaar Verification; Digital KYC; Onboarding Services",
+  "terms": [
+   "KYC",
+   "Know Your Customer",
+   "KYC Services",
+   "Customer Verification",
+   "Aadhaar Verification",
+   "Digital KYC",
+   "Onboarding Services",
+   "Aadhaar",
+   "Digital Verification",
+   "Onboarding",
+   "PAN",
+   "Voter ID"
+  ],
+  "published_from": "2026-11-09T00:00:00",
+  "published_to": "2026-11-16T21:44:00.323256",
+  "closing_from": "2026-11-16T21:44:00.323256",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "GeM does not have a specific 'KYC Services' category; these tenders are often filed under vague IT/Software or Professional Services categories, so leaving categories empty ensures we capture all relevant results. The extra terms help capture specific verification methods (Aadhaar, PAN) and processes (Onboarding) that might not be in the main title but are central to the meaning of KYC services."
+ }
+]

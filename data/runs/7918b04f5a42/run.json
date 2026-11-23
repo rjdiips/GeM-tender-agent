@@ -1,0 +1,75 @@
+{
+ "run_id": "7918b04f5a42",
+ "user": "raj",
+ "title": "aml tenders this week",
+ "request_text": "aml tenders this week",
+ "created": "2026-11-19T09:26:12.051930",
+ "status": "complete",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "aml tenders this week",
+  "topics": [
+   {
+    "user_text": "aml tenders this week",
+    "meaning": "AML Software: Anti-Money Laundering software solutions, including transaction monitoring, sanctions screening, and customer risk assessment tools.",
+    "domain": "FinTech/Compliance",
+    "match_terms": [
+     "AML",
+     "Anti-Money Laundering",
+     "AML Software",
+     "Transaction Monitoring",
+     "Sanctions Screening",
+     "KYC",
+     "CDD",
+     "EDD",
+     "Suspicious Activity Report",
+     "FATF"
+    ],
+    "acronyms": {
+     "AML": "Anti-Money Laundering"
+    },
+    "related_but_not_enough": [
+     "Compliance Management Systems",
+     "RegTech",
+     "Risk Management Software"
+    ],
+    "not_this": [
+     "AML (Additive Manufacturing Layer)",
+     "AML (Automated Material Handling)",
+     "AML (Advanced Mobile Location)"
+    ],
+    "buyers": [],
+    "chosen_because": "the only plausible meaning",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-11-12T00:00:00",
+   "published_to": "2026-11-19T09:19:22.467890",
+   "closing_from": "2026-11-19T09:19:22.467890",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "AML Software: Anti-Money Laundering software solutions, including transaction monitoring, sanctions screening, and customer risk assessment tools.",
+   "window_count": 17625,
+   "strong": 1,
+   "top_titles": [
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "AMC of Integrated Security and Surveillance System - Monitor Operations, Health Monitoring Solution",
+    "AMC of Integrated Security and Surveillance System - CCTV; Comprehensive; Hardware, Software, Netwo",
+    "Hiring of Agency for IT Projects- Milestone basis",
+    "Data Analytics Service (Version 2) - Operations; Buyer Premise (On Shore); Tools & Softwares, User ",
+    "antivirus software",
+    "Software Support Services 2.0 - Microsoft; Operating System Software; Proactive Services; Software ",
+    "Recruitment and Examination Management Software"
+   ]
+  }
+ ],
+ "error": ""
+}
