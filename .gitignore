@@ -61,3 +61,7 @@ Thumbs.db
 
 # Live-search run output (raw listings, bid texts, labels, stats; regenerate with the scripts)
 eval/live_search/results/
+# Retrieval A/B output (vectors, logs, per-case rows; regenerate with eval/retrieval_ab/run_ab.sh)
+eval/retrieval_ab/cache/
+eval/retrieval_ab/logs/
+eval/retrieval_ab/*.jsonl

@@ -216,10 +216,45 @@ Survey of the 199 files (10,541 pages) downloaded earlier:
 | Server | vLLM, running on this same machine (10.0.10.11 is this host; checked 16 Nov: `vllm serve … --max-model-len 32768 --max-num-seqs 6 --gpu-memory-utilization 0.95`). Only the served model name is ever requested. |
 | Prompt limit | About 32k tokens |
 | Speed | 1–8 s per agent turn in the Monty tests below |
-| Local machine | One RTX 4090 (24 GB), driver 595.99, CUDA 13.2; the project installs the CUDA build of torch (2.15.0+cu132, GPU visible, checked 16 Nov). vLLM reserves 95% of GPU memory, leaving ≈0.8 GB, which is less than bge-m3 (≈1.1 GB fp16) needs. Embeddings and reranking use the GPU when there is room and fall back to CPU otherwise. At 95% even a CUDA context can't be created (out of memory, checked 16 Nov), so free memory is read from `nvidia-smi`, never by opening CUDA; the GPU is used only with ≥3 GB free. On CPU (32 cores): bge-m3 embeds ~49 titles/s (first load of ~44k titles ≈ 15 min, a day's new bids ≈ 1 min); reranking 200 candidates takes ~6 s. Running them on the GPU all the time means lowering vLLM's `--gpu-memory-utilization` (e.g. to 0.88, freeing ≈1.7 GB), which shrinks its KV cache. **Ruled out by the user on 17 Nov: the model on the GPU and vLLM's settings are never touched**, so everything else runs on the CPU while vLLM holds the GPU. |
+| Local machine | One RTX 4090 (24 GB), driver 595.99, CUDA 13.2; the project installs the CUDA build of torch (2.15.0+cu132, GPU visible, checked 16 Nov). vLLM reserves 95% of GPU memory, leaving ≈0.8 GB, which is less than bge-m3 (≈1.1 GB fp16) needs, and at 95% even a CUDA context cannot be created (out of memory, checked 16 Nov). **Ruled out by the user on 17 Nov: the model on the GPU and vLLM's settings are never touched.** The Judge therefore ranks pages with **all-MiniLM-L6-v2 on the CPU** (`judge_cpu_embed_model`), or a remote embedder when `EMBED_BASE_URL` is set; the 20 Nov A/B that settled this is in 3.5.1. Running embeddings on the GPU would mean lowering vLLM's `--gpu-memory-utilization` (e.g. to 0.88, freeing ≈1.7 GB) and shrinking its KV cache. |
 | Chat template | Qwen's template accepts one system message, and only as the first message. pydantic-ai's retries used to add a second system message mid-conversation, and the server rejected every retry (HTTP 400). The model profile sets `supports_inline_system_prompts=False` and `default_framing_announcement="never"` (`agents/models.py`). |
 
 Tool calling works. On 13 Nov, "AML software for banks, ending within 2 weeks" gave the right dates but an invented category, so the Planner may only use categories returned by `find_categories`.
+
+#### 3.5.1 Embedding and reranker A/B (20 Nov)
+
+**Question.** Which page-ranker configuration puts the page a verdict quotes into the Judge's top 8, per second of CPU?
+
+**Harness.** `eval/retrieval_ab.py` calls the real `find_passages` (BM25 + dense + RRF, optional rerank) over chunks already in `data/cache`: no crawling, no LLM calls, no verdict cache. Cases are the labelled set's quoted pages — 247 usable `(file, page)` pairs over 156 bids (38 labelled relevant, 29 unsure, 28 traps, 137 live-only negatives). Target is the quoted page; metrics are hit@8 (the 5.4 metric), hit@24 and MRR, with a 95% CI from a bootstrap clustered by bid. `eval/retrieval_ab/README.md` documents the protocol and the pitfalls (the verdict cache does not include the model; the chat model has no sampling settings).
+
+**Runs** (model host, 20 Nov; TEI `cpu-1.9`, 6 CPUs per container):
+
+| Configuration | relevant hit@8 | relevant hit@24 | MRR@24 | full hit@8 | full hit@24 | p50 / bid |
+|---|---|---|---|---|---|---|
+| words only | 36.8% | 42.1% | 0.204 | 9.3% (23/247) | 10.9% | 0.1 s |
+| **MiniLM, in-process** | **47.4%** | **65.8%** | **0.297** | — | — | **1.9 s** |
+| bge-small over TEI | 47.4% | 60.5% | 0.218 | 19.0% (47/247) | 38.5% | 4.3 s |
+| bge-small + bge-reranker-base | 39.5% | 60.5% | 0.261 | 17.0% (42/247) | 38.5% | +4.0 s |
+| bge-small + bge-reranker-v2-m3 | 39.5% | 60.5% | 0.261 | — | — | +16 s |
+
+**Paired tests** (same cases, bid-clustered bootstrap): MiniLM − words = +10.5 pp [−2.9, +24.4]; bge-small+reranker − words = +10.5 pp [+2.4, +21.6]; MiniLM − bge-small ≈ 0.0 pp (2 cases each way). Reranker against fused order, full set = −2.0 pp [−6.5, +2.2] — 13 targets promoted into the top 8, **18 demoted**, including pages fused had at rank 1, 3, 4, 5 and 7 pushed to 9–20; on the relevant cases, −7.9 pp [−21.6, +5.6].
+
+**Decisions.**
+
+- The Judge's default page ranker is **all-MiniLM-L6-v2, in-process**: the same hit@8 as bge-small and bge-m3, a better hit@24 and MRR, and about twice the speed. The app no longer loads bge-m3; the GPU stays with vLLM.
+- **The reranker stays off.** It cannot add candidates (it only reorders the fused 24), loses top-8 recall on both slices, and costs 4 s (base) to 16 s (v2-m3) per bid on top of the embedding step.
+- Latency, not quality, is the open issue: p95 is 13.5 s (MiniLM) and 27.7 s (bge-small) on bids with 1 300+ chunks. The next thing to try is a BM25 prefilter — embed only the top ~200 chunks — which keeps hit@8 and bounds the dense cost.
+- The CPU TEI pair in `deploy/tei/` remains available for moving embedding work off the app host; it does not improve hit@8 over local MiniLM, so it is an operational choice, not a quality one.
+
+**Deployment.** `deploy/tei/` runs the embedder in TEI. `up.sh` picks the GPU when at least
+`TEI_GPU_MIN_FREE_MB` (default 2 048) is free beside vLLM and the CPU otherwise — with vLLM
+at 0.95 the card has had 0.25–0.9 GB free, so auto has always chosen CPU. TEI serves the same
+all-MiniLM-L6-v2 with the same 256-token window as the in-process path, so the quality above
+applies unchanged; it measured 103 chunks/s on 6 CPUs (≈1.6 s for a p50 bid), against ~21
+chunks/s for the in-process path during the A/B. The choice between local and remote is
+therefore operational (where the CPU is spent), not a quality one.
+
+**Caveats.** 38 relevant cases; the metric is a page hit, not a verdict; an end-to-end verdict A/B would need repeated runs. Rerun with `bash eval/retrieval_ab/run_ab.sh` (finished configs are skipped and the embedding vectors are cached).
 
 ### 3.6 Can Qwen write skills in Monty? (16 Nov experiment)
 
@@ -391,7 +426,7 @@ Retrieval runs within each bid; there is no shared RAG store. A 112-page RFP doe
 Per bid:
 1. **Text.** Placeholder files are skipped, and pages with almost no text get OCR.
 2. **Triage (cheap).** The model sees the title, buyer, category and bid PDF pages 1–2 (≈1.5k tokens) and answers *clearly no / maybe / clearly yes*. Clear negatives stop here.
-3. **Find passages.** Chunks are about one page each. A word search (BM25, rules as in 5.3) and a semantic search (bge-m3, GPU or CPU per 3.5) run over them, and the two rankings are merged with reciprocal rank fusion. The top ~8 chunks are then reranked locally with bge-reranker.
+3. **Find passages.** Chunks are about one page each. A word search (BM25, rules as in 5.3) and a semantic search (all-MiniLM-L6-v2 in-process, or a remote embedder, per 3.5.1) run over them, and the two rankings are merged with reciprocal rank fusion. The top ~8 chunks reach the verdict prompt. A reranker is wired but off by default: it only reorders the fused 24 and lost top-8 recall in the 20 Nov A/B (3.5.1).
 4. **Judge.** The model decides on ≈10k tokens: the top chunks plus bid PDF pages 1–2 plus the RFP's scope-of-work / eligibility section. The decision is three-way (18 Nov): `relevant`, `borderline` or `not_relevant`.
    - **Borderline** means the documents show something close to the topic, and whether it counts depends on the buyer's purpose or the user's line of business, not on missing evidence. The Judge must then state the one question the user has to answer, naming the specific thing in doubt (at most 200 characters; empty for the other two decisions). If the passages simply do not settle the matter, the low-confidence path below still applies.
    - `Verdict.relevant` is true only for "relevant". `Verdict.borderline` and `Verdict.question` are stored beside it; older verdicts have neither and load as plain yes/no verdicts.
@@ -404,7 +439,7 @@ Chunks and embeddings are saved with the cached documents (6.3), so a store acro
 
 **As built (17 Nov), while vLLM holds the GPU:**
 - On CPU, bge-m3 embeds page-sized chunks at ~2.5 pages/s (a 112-page RFP ≈ 45 s), and the reranker takes ~9 s per 24 pages. Both break the 3–10 s per bid budget.
-- So on CPU the Judge's meaning search uses **all-MiniLM-L6-v2** (`judge_cpu_embed_model`, max 256 tokens per chunk), merged with BM25 word search (5.3 rules, over the topic's expanded terms and acronyms). bge-m3 is used only when the GPU has room.
+- So on CPU the Judge's meaning search uses **all-MiniLM-L6-v2** (`judge_cpu_embed_model`, max 256 tokens per chunk), merged with BM25 word search (5.3 rules, over the topic's expanded terms and acronyms). bge-m3 is not loaded by the app; the 20 Nov A/B (3.5.1) made MiniLM the default for both the local and the remote-off path.
 - Measured on 18 judged bids, counting how often the quoted page lands in the Judge's top 8:
 
   | Ranking | Found | Time |
@@ -924,7 +959,7 @@ These are further ways to cut model use and latency, on top of sections 8 and 9.
 | # | Idea | What it saves | How to test | Risk |
 |---|---|---|---|---|
 | M1 ★ | **Bid card.** When a bid is first downloaded, the model writes a ~300-token summary: buyer, scope, key requirements, eligibility, value. It's stored with the documents (6.3). Every later triage, for any topic or user, reads the card instead of page text. | The triage cost is paid once per bid, not once per question: ~1.5k → ~0.3k tokens per triage, shared across users and topics | Triage on cards vs on pages over the labelled set: no relevant bid lost, same Judge results | A card can miss a detail that matters for an unusual topic. The full Judge still reads the documents, so only triage depends on the card. |
-| M2 ★ | **Reranker instead of model triage.** bge-reranker-v2-m3 (already in the local cache) scores each bid's card or first page against the topic `meaning`. Bids below a threshold are dropped without a model call. | Triage needs no LLM calls at all; runs on the local GPU or CPU | Tune the threshold on the labelled set so recall is 100% (no relevant bid below it), then measure how many bids it drops | Thresholds may differ by topic. Start with a per-topic threshold set conservatively low, plus model triage for the scores near the threshold. |
+| M2 ★ | **Reranker instead of model triage.** bge-reranker-v2-m3 (already in the local cache) scores each bid's card or first page against the topic `meaning`. Bids below a threshold are dropped without a model call. | Triage needs no LLM calls at all; runs on the local GPU or CPU | Tune the threshold on the labelled set so recall is 100% (no relevant bid below it), then measure how many bids it drops | Thresholds may differ by topic. Start with a per-topic threshold set conservatively low, plus model triage for the scores near the threshold. Note: reranking the *passage pool* lost top-8 recall on 20 Nov (3.5.1) — this idea is a different use (triage), but measure before wiring it. |
 | M3 | **Batch triage.** About 10 bids per prompt, each with its own id, answered as a JSON list. | The instructions and topic definition are sent once per 10 bids instead of every time: fewer calls, fewer tokens | Same bids triaged singly and in batches: answers must match, and shuffling the batch order must not change any answer | One bid's text may influence another's answer. Keep batches small and shuffle them. |
 | M4 (adopted 16 Nov: vLLM enforces `response_format` JSON schemas; all agents use NativeOutput) | **Typed JSON output.** Use the server's structured-output option (`response_format` with a JSON schema) for every agent answer. | Shorter answers, and no retries for malformed replies | Count retries and output tokens before and after over a day of runs | The server is vLLM (3.5); check that it honours the schema for this model. |
 | M5 (checked 16 Nov: no hidden reasoning, completion tokens = visible answer) | **No hidden reasoning.** Measure whether Qwen spends tokens on reasoning that never shows in the answer (tokens billed vs visible answer length). If so, turn it off for triage and judging. | Possibly most of the output tokens per call | Compare `completion_tokens` with the visible answer on 20 calls; if reasoning is on, rerun the labelled set without it | Judging quality may drop without reasoning. Keep it on for the Judge if the labelled set says so. |
@@ -939,4 +974,4 @@ These are further ways to cut model use and latency, on top of sections 8 and 9.
 | L2 | **Speculative downloads.** Downloading the top-ranked bids starts while the Planner is still finishing. | Overlaps the downloads with planning (~10–20 s) | Measure time to first result with and without | A few downloads may turn out unneeded. They're cheap, and cleaned up by retention (11.1). |
 | L3 | **Parallel text extraction and OCR.** Text and OCR run in a pool of worker processes, one PDF per core (32 cores). | OCR of scanned RFPs no longer holds up the queue | Time a scanned 38-page RFP, serial vs pooled | Memory use with many OCR jobs. Cap the pool size. |
 | L4 | **Cached results first.** The reply opens with bids already judged for this topic ("6 you've already seen"), while new ones are still being checked. | The user sees answers in seconds | Time to first visible result | Cached verdicts may be stale if a corrigendum changed a bid. Check the corrigendum flag (one cheap request) before showing them. |
-| L5 | **Faster embeddings.** A quantised ONNX build of bge-m3 for the CPU fallback path, when the GPU has no room (3.5). | Faster index updates and chunk embedding | Embedding speed, and retrieval recall on the labelled set, must stay within 1% | Small accuracy loss from quantisation. |
+| L5 | **Faster embeddings.** A quantised ONNX build of all-MiniLM-L6-v2 for the page ranker (3.5.1), or a BM25 prefilter that embeds only the top ~200 chunks. | Bounds the dense cost on 1 300+ chunk bids (p95 is 13.5 s) | Embedding speed, and retrieval recall on the labelled set, must stay within 1% | Small accuracy loss from quantisation or truncation. |

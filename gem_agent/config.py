@@ -31,11 +31,10 @@ class Settings(BaseSettings):
     user_agent: str = "Mozilla/5.0"
     daily_request_budget: int = 20000
 
-    # Local models (spec 3.5): GPU only when enough is free beside vLLM, else CPU
-    embed_device: str = "auto"
-    embed_min_free_gpu_mb: int = 3000
-    embed_model: str = "BAAI/bge-m3"
-    judge_cpu_embed_model: str = "sentence-transformers/all-MiniLM-L6-v2"  # page ranking when the GPU is full
+    # Local models (spec 3.5.1): the Judge ranks pages with all-MiniLM-L6-v2 unless a remote
+    # embedder URL is set. bge-m3 is kept for the eval harness only; the GPU belongs to vLLM.
+    embed_model: str = "sentence-transformers/all-MiniLM-L6-v2"  # the id a remote embedder serves
+    judge_cpu_embed_model: str = "sentence-transformers/all-MiniLM-L6-v2"  # the local default
     rerank_model: str = "BAAI/bge-reranker-v2-m3"
 
     # Remote models: run embeddings and/or the reranker on another machine instead of this one.

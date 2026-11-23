@@ -38,13 +38,16 @@ The LLM already lives behind `LLM_BASE_URL`. Embeddings and reranking can also r
 | Setting | Meaning |
 |---|---|
 | `EMBED_BASE_URL` | OpenAI-compatible base, including the version, e.g. `http://10.0.10.11:8080/v1` |
-| `EMBED_MODEL` | Model id the server serves, `BAAI/bge-m3` |
+| `EMBED_MODEL` | Model id the server serves, `sentence-transformers/all-MiniLM-L6-v2` |
 | `RERANK_BASE_URL` | Base of the reranker; the client posts to `<base>/rerank` |
 | `RERANK_MODEL` | Model id the reranker serves, `BAAI/bge-reranker-v2-m3` |
 | `RERANK_STYLE` | `tei` (`{query, texts}`) or `cohere` (`{model, query, documents, top_n}`) |
 
-Leave either URL empty to keep the local model. A server that is down does not fail a bid: the Judge falls
-back to word search, and to the fused order when reranking fails. See `.env.example` for the timeouts.
+Leave either URL empty to keep the local model. Without `EMBED_BASE_URL` the Judge ranks pages with
+all-MiniLM-L6-v2 in-process, and without `RERANK_BASE_URL` there is no reranker — the setup measured
+better than bge-small/bge-m3 and both rerankers on 20 Nov (spec 3.5.1, `eval/retrieval_ab/`). A server that
+is down does not fail a bid: the Judge falls back to word search, and to the fused order when reranking
+fails. See `.env.example` for the timeouts.
 
 On Windows, install Tesseract (UB Mannheim build), add it to `PATH` or set `TESSERACT_CMD`, and keep the
 repository out of OneDrive. The file locks and UTF-8 reads/writes are cross-platform.

@@ -37,5 +37,20 @@ def test_remote_urls_select_the_remote_clients():
     assert isinstance(judge_reranker(settings), RemoteReranker)
 
 
+def test_without_an_embed_url_the_judge_uses_minilm(monkeypatch):
+    """Spec 3.5.1: MiniLM is the measured default; the GPU is left to vLLM."""
+    from gem_agent.app import factory
+
+    class FakeMiniLM:
+        def __init__(self, model_name):
+            self.model_name = model_name
+            self.seen = model_name
+
+    monkeypatch.setattr(factory, "SmallEmbedder", FakeMiniLM)
+    embedder = factory.judge_embedder(Settings(embed_base_url=""))
+    assert isinstance(embedder, FakeMiniLM)
+    assert embedder.model_name == Settings().judge_cpu_embed_model
+
+
 def test_without_a_rerank_url_reranking_stays_off():
     assert judge_reranker(Settings(rerank_base_url="")) is None

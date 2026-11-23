@@ -1,9 +1,10 @@
 # Embedding + rerank services for the GeM tender agent, to be reached over the LAN by
 # an app running on another machine.
 #
-# CPU only, on purpose: this host's RTX 4090 is fully claimed by vLLM
-# (--gpu-memory-utilization 0.95, ~0.9 GB free), so a GPU TEI container cannot start
-# and lowering vLLM is off the table. See docs/SPEC-GEM_TENDER_AGENT.md 3.5.
+# The embedder runs on the CPU whenever vLLM holds the GPU (--gpu-memory-utilization 0.95
+# leaves well under a gigabyte, and lowering it is off the table). `./up.sh` decides: it
+# starts `embed-gpu` when the card has TEI_GPU_MIN_FREE_MB free, else `embed` on the CPU.
+# Both serve all-MiniLM-L6-v2, the measured default (spec 3.5.1).
 name: gem-tei
 
 x-tei: &tei
@@ -13,25 +14,42 @@ x-tei: &tei
     - tei-models:/data
   environment:
     HF_HOME: /data
-  # Leave the rest of the 32 cores to vLLM's tokenizer and its 1 GB CPU offload.
-  cpus: 6
   security_opt:
     - no-new-privileges:true
 
+x-embed: &embed
+  command:
+    - --model-id=${EMBED_MODEL_ID:-sentence-transformers/all-MiniLM-L6-v2}
+    - --port=80
+    - --auto-truncate
+    - --max-batch-tokens=4096
+    - --max-client-batch-size=64
+    - --max-concurrent-requests=128
+    - --tokenization-workers=4
+  ports:
+    - "${TEI_HOST:-0.0.0.0}:8080:80"
+
 services:
   embed:
-    <<: *tei
-    command:
-      - --model-id=${EMBED_MODEL_ID:-BAAI/bge-small-en-v1.5}
-      - --port=80
-      - --auto-truncate
-      - --max-batch-tokens=4096
-      - --max-client-batch-size=64
-      - --max-concurrent-requests=128
-      - --tokenization-workers=4
-    ports:
-      - "${TEI_HOST:-0.0.0.0}:8080:80"
+    <<: [*tei, *embed]
+    # Leave the rest of the 32 cores to vLLM's tokenizer and its 1 GB CPU offload.
+    cpus: 6
     mem_limit: 3g
+
+  # Started by ./up.sh when the GPU has room. Same model and port as `embed`, so the app's
+  # EMBED_BASE_URL never changes; only one of the two may run at a time.
+  embed-gpu:
+    <<: [*tei, *embed]
+    image: ghcr.io/huggingface/text-embeddings-inference:1.9
+    profiles: [gpu]
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    mem_limit: 8g
 
   rerank:
     <<: *tei
@@ -45,6 +63,7 @@ services:
       - --tokenization-workers=4
     ports:
       - "${TEI_HOST:-0.0.0.0}:8081:80"
+    cpus: 6
     mem_limit: 4g
 
 volumes:
