@@ -56,8 +56,11 @@ services:
               capabilities: [gpu]
     mem_limit: 8g
 
+  # Opt-in for A/B only; the app leaves RERANK_BASE_URL empty (spec 3.5.1).
+  #   docker compose --profile ab up -d rerank
   rerank:
     <<: *tei
+    profiles: [ab]
     command:
       - --model-id=${RERANK_MODEL_ID:-BAAI/bge-reranker-base}
       - --port=80

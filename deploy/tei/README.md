@@ -5,7 +5,7 @@ The app runs on another machine and, when pointed here, calls these services ove
 | Service | Container | URL the app uses | Model |
 |---|---|---|---|
 | embeddings | `gem-tei-embed-1` (or `gem-tei-embed-gpu-1`) | `http://10.0.10.11:8080/v1/embeddings` | `sentence-transformers/all-MiniLM-L6-v2` (384 dims, 256-token window) |
-| rerank | `gem-tei-rerank-1` | `http://10.0.10.11:8081/rerank` | `BAAI/bge-reranker-base` |
+| rerank | `gem-tei-rerank-1` | `http://10.0.10.11:8081/rerank` | `BAAI/bge-reranker-base` (opt-in, profile `ab`) |
 
 The embedder is **the same model the app loads locally**, with the same 256-token window,
 so remote and local are quality-identical (spec 3.5.1). What changes is where the CPU time is
@@ -16,7 +16,7 @@ slices for +4 s a bid.
 
 ```bash
 cd deploy/tei
-docker compose up -d          # MiniLM on 6 CPUs (8080) and the optional reranker (8081)
+docker compose up -d          # MiniLM on 6 CPUs (8080); the reranker is not started
 docker compose ps
 docker compose logs -f embed
 ```
@@ -27,6 +27,13 @@ GPU instead (when vLLM is stopped or leaves room for it):
 docker compose stop embed            # both bind 8080
 docker compose --profile gpu up -d embed-gpu
 docker compose stop embed-gpu && docker compose up -d embed   # back to the CPU
+```
+
+The reranker exists for A/B only and is behind the `ab` profile, so `up -d` never starts it:
+
+```bash
+docker compose --profile ab up -d rerank
+docker compose stop rerank
 ```
 
 There is **no auto mode**, and there can't be one in this stack: TEI ships separate CPU and
@@ -50,7 +57,7 @@ curl -s localhost:8080/info; echo
 curl -s localhost:8080/v1/embeddings -H 'Content-Type: application/json' \
   -d '{"model":"sentence-transformers/all-MiniLM-L6-v2","input":["bank IT tender"]}' | head -c 300; echo
 
-curl -s localhost:8081/rerank -H 'Content-Type: application/json' \
+curl -s localhost:8081/rerank -H 'Content-Type: application/json' \   # reranker profile only
   -d '{"query":"bank IT tender","texts":["supply of pens","core banking solution"]}'; echo
 ```
 

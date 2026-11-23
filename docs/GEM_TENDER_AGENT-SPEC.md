@@ -251,8 +251,9 @@ the CPU; the GPU variant is behind the `gpu` profile and needs `docker compose s
 docker compose --profile gpu up -d embed-gpu`, because TEI builds separate CPU and CUDA images
 (no `--device` flag) and Compose cannot choose from live VRAM — there is no auto mode. With vLLM
 at 0.95 the card has had 0.25–0.9 GB free, so the CPU path is the only one usable in practice.
-TEI serves the same all-MiniLM-L6-v2 with the same 256-token window as the in-process path, so
-the quality above applies unchanged; it measured 103 chunks/s on 6 CPUs (≈1.6 s for a p50 bid),
+TEI serves the same all-MiniLM-L6-v2 with the same 256-token window as the in-process path
+(the reranker container is behind the `ab` profile and not started by `docker compose up -d`),
+so the quality above applies unchanged; it measured 103 chunks/s on 6 CPUs (≈1.6 s for a p50 bid),
 against ~21 chunks/s for the in-process path during the A/B. The choice between local and
 remote is therefore operational (where the CPU is spent), not a quality one.
 
