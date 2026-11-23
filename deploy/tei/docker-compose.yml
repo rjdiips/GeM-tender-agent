@@ -2,9 +2,12 @@
 # an app running on another machine.
 #
 # The embedder runs on the CPU whenever vLLM holds the GPU (--gpu-memory-utilization 0.95
-# leaves well under a gigabyte, and lowering it is off the table). `./up.sh` decides: it
-# starts `embed-gpu` when the card has TEI_GPU_MIN_FREE_MB free, else `embed` on the CPU.
-# Both serve all-MiniLM-L6-v2, the measured default (spec 3.5.1).
+# leaves well under a gigabyte, and lowering it is off the table). `docker compose up -d`
+# starts that CPU container and the optional reranker; the GPU variant is behind the `gpu`
+# profile and is started explicitly after stopping the CPU one, because both bind 8080.
+# Neither TEI nor Compose can choose between them at run time: TEI is built per backend
+# (cpu-1.9 vs 1.9) and Compose cannot pick an image from live VRAM. Both serve
+# all-MiniLM-L6-v2, the measured default (spec 3.5.1).
 name: gem-tei
 
 x-tei: &tei
@@ -36,8 +39,10 @@ services:
     cpus: 6
     mem_limit: 3g
 
-  # Started by ./up.sh when the GPU has room. Same model and port as `embed`, so the app's
-  # EMBED_BASE_URL never changes; only one of the two may run at a time.
+  # Started explicitly, after `docker compose stop embed`, when the GPU has room:
+  #   docker compose stop embed && docker compose --profile gpu up -d embed-gpu
+  # Same model and port as `embed`, so the app's EMBED_BASE_URL never changes; only one of
+  # the two may run at a time.
   embed-gpu:
     <<: [*tei, *embed]
     image: ghcr.io/huggingface/text-embeddings-inference:1.9

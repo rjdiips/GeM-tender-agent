@@ -12,21 +12,30 @@ so remote and local are quality-identical (spec 3.5.1). What changes is where th
 spent. The reranker is kept for A/B only and should stay unused: it lost top-8 recall on both
 slices for +4 s a bid.
 
-## Start / stop (auto: GPU if free, else CPU)
+## Start / stop
 
 ```bash
 cd deploy/tei
-./up.sh            # GPU when TEI_GPU_MIN_FREE_MB is free beside vLLM, else CPU
-./up.sh cpu        # force CPU
-./up.sh gpu        # force GPU; exits if the card has no room
-./up.sh status     # docker compose ps
+docker compose up -d          # MiniLM on 6 CPUs (8080) and the optional reranker (8081)
+docker compose ps
+docker compose logs -f embed
 ```
 
-`up.sh` starts exactly one embedder: `embed-gpu` (TEI `1.9`, nvidia runtime, 8080) when the
-GPU has at least `TEI_GPU_MIN_FREE_MB` free (default 2048), otherwise `embed` (`cpu-1.9`,
-6 CPUs, 8080). Both serve the same model on the same port, so `EMBED_BASE_URL` never
-changes. On 20 Nov the card had ~0.25–0.9 GB free (vLLM at `--gpu-memory-utilization 0.95`),
-so auto picked CPU; the GPU path has not been exercised on this host yet.
+GPU instead (when vLLM is stopped or leaves room for it):
+
+```bash
+docker compose stop embed            # both bind 8080
+docker compose --profile gpu up -d embed-gpu
+docker compose stop embed-gpu && docker compose up -d embed   # back to the CPU
+```
+
+There is **no auto mode**, and there can't be one in this stack: TEI ships separate CPU and
+CUDA images (`cpu-1.9` / `1.9`) and its router has no `--device` flag — the backend is fixed
+at build time. Compose likewise cannot pick an image or a GPU reservation from live VRAM.
+Choosing automatically would need a wrapper script, a scheduler that supports device
+constraints, or a decision in the app; none is in place, so the command you run is the choice.
+On 20 Nov the card had ~0.25–0.9 GB free (vLLM at `--gpu-memory-utilization 0.95`), so the
+CPU path has been the only usable one.
 
 The first start downloads the ONNX weights into the `gem-tei_tei-models` volume.
 
@@ -102,7 +111,7 @@ PyTorch path measured during the A/B (21 chunks/s on a busy 32-core host).
 
 ## Swapping models
 
-Set in `deploy/tei/.env`, then re-run `./up.sh`:
+Set in `deploy/tei/.env`, then `docker compose up -d embed` (it recreates the container):
 
 ```bash
 EMBED_MODEL_ID=BAAI/bge-small-en-v1.5       # ties MiniLM at hit@8, loses at hit@24, 3x slower

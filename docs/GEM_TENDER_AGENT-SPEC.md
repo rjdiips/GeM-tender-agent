@@ -246,13 +246,15 @@ Tool calling works. On 13 Nov, "AML software for banks, ending within 2 weeks" g
 - Latency, not quality, is the open issue: p95 is 13.5 s (MiniLM) and 27.7 s (bge-small) on bids with 1 300+ chunks. The next thing to try is a BM25 prefilter — embed only the top ~200 chunks — which keeps hit@8 and bounds the dense cost.
 - The CPU TEI pair in `deploy/tei/` remains available for moving embedding work off the app host; it does not improve hit@8 over local MiniLM, so it is an operational choice, not a quality one.
 
-**Deployment.** `deploy/tei/` runs the embedder in TEI. `up.sh` picks the GPU when at least
-`TEI_GPU_MIN_FREE_MB` (default 2 048) is free beside vLLM and the CPU otherwise — with vLLM
-at 0.95 the card has had 0.25–0.9 GB free, so auto has always chosen CPU. TEI serves the same
-all-MiniLM-L6-v2 with the same 256-token window as the in-process path, so the quality above
-applies unchanged; it measured 103 chunks/s on 6 CPUs (≈1.6 s for a p50 bid), against ~21
-chunks/s for the in-process path during the A/B. The choice between local and remote is
-therefore operational (where the CPU is spent), not a quality one.
+**Deployment.** `deploy/tei/` runs the embedder in TEI. `docker compose up -d` starts it on
+the CPU; the GPU variant is behind the `gpu` profile and needs `docker compose stop embed &&
+docker compose --profile gpu up -d embed-gpu`, because TEI builds separate CPU and CUDA images
+(no `--device` flag) and Compose cannot choose from live VRAM — there is no auto mode. With vLLM
+at 0.95 the card has had 0.25–0.9 GB free, so the CPU path is the only one usable in practice.
+TEI serves the same all-MiniLM-L6-v2 with the same 256-token window as the in-process path, so
+the quality above applies unchanged; it measured 103 chunks/s on 6 CPUs (≈1.6 s for a p50 bid),
+against ~21 chunks/s for the in-process path during the A/B. The choice between local and
+remote is therefore operational (where the CPU is spent), not a quality one.
 
 **Caveats.** 38 relevant cases; the metric is a page hit, not a verdict; an end-to-end verdict A/B would need repeated runs. Rerun with `bash eval/retrieval_ab/run_ab.sh` (finished configs are skipped and the embedding vectors are cached).
 
