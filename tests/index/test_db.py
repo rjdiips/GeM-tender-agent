@@ -2,13 +2,16 @@ from datetime import datetime, timedelta
 
 import pytest
 
-from gem_agent.index.db import BidIndex
+from gem_agent.index.db import BidIndex, Description
 from gem_agent.tools.gem.models import Bid
 from tests.index.helpers import row
 
 
 def NOV(d, h=12):
     return datetime(2026, 11, d, h)
+
+
+NOW = NOV(24)
 
 
 @pytest.fixture
@@ -20,6 +23,14 @@ def index():
 
 def bid(b_id, published=None, closing=None, **kw):
     return Bid.from_listing(row(b_id, published or NOV(10), closing or NOV(25), **kw))
+
+
+def description(b_id, **kw):
+    values = {"b_id": b_id, "doc_hash": f"hash-{b_id}", "subject": f"Subject {b_id}", "terms": ["AML", f"Term {b_id}"],
+              "sources": ["GeM-Bidding.pdf"], "has_scope": True, "buyer_org": "NABARD", "model": "m",
+              "prompt_version": "1", "written_at": NOW}
+    values.update(kw)
+    return Description(**values)
 
 
 def test_upsert_counts_new_and_round_trips(index):
@@ -72,6 +83,95 @@ def test_bids_needing_a_card_are_open_vague_titles_without_one(index):
     assert [b.b_id for b in index.needing_cards()] == [1]
 
 
+def test_a_description_round_trips(tmp_path):
+    path = tmp_path / "bids.sqlite"
+    index = BidIndex(path)
+    d = Description(b_id=1, doc_hash="h", subject="Enterprise KYC and AML for NABARD", terms=["AML", "CKYC"],
+                    sources=["GeM-Bidding.pdf"], has_scope=True, buyer_org="NABARD", model="m", prompt_version="1",
+                    written_at=NOW)
+    index.put_description(d)
+    assert index.description(d.b_id) == d
+    assert index.descriptions([d.b_id, 999]) == {d.b_id: d}
+
+    replacement = d.model_copy(update={"doc_hash": "h2", "subject": "Updated KYC", "terms": ["KYC"],
+                                       "sources": ["RFP.pdf"], "has_scope": False, "buyer_org": None,
+                                       "model": "m2", "prompt_version": "2", "written_at": NOW + timedelta(hours=1)})
+    index.put_description(replacement)
+    assert index.description(d.b_id) == replacement
+    index.close()
+
+    reopened = BidIndex(path)
+    assert reopened.description(d.b_id) == replacement
+    assert reopened.descriptions(iter(())) == {}
+    reopened.close()
+
+
+def test_description_text_usable_and_current():
+    d = Description(b_id=1, doc_hash="h", subject="Enterprise KYC and AML for NABARD", terms=["AML", "CKYC"],
+                    sources=["GeM-Bidding.pdf"], has_scope=True, buyer_org="NABARD", model="m", prompt_version="1",
+                    written_at=NOW)
+    assert d.text() == "Enterprise KYC and AML for NABARD; AML; CKYC" and d.usable() and d.current("m")
+    assert not d.current("other") and not d.model_copy(update={"prompt_version": "card"}).current("m")
+    assert d.model_copy(update={"subject": ""}).text() == "" and not d.model_copy(update={"subject": ""}).usable()
+
+
+def test_cards_are_copied_in_as_stale_descriptions_once(tmp_path):
+    path = tmp_path / "bids.sqlite"
+    index = BidIndex(path)
+    index.upsert([bid(1), bid(2)], seen_at=NOV(16))
+    index.set_card(1, "AML suite; AML")
+    index.set_card(2, "")
+    index._conn.execute("DROP TABLE descriptions")  # an index created before the descriptions table existed
+    index.close()
+
+    index = BidIndex(path)
+    copied = index.description(1)
+    assert copied is not None
+    assert (copied.subject, copied.terms, copied.prompt_version, copied.doc_hash, copied.has_scope) == (
+        "AML suite", ["AML"], "card", "", False)
+    assert index.description(2) is None
+    index.close()
+
+    index = BidIndex(path)
+    assert index.description(1) == copied
+    fresh = copied.model_copy(update={"doc_hash": "fresh", "subject": "Fresh AML suite", "terms": ["AML", "CKYC"],
+                                      "sources": ["RFP.pdf"], "has_scope": True, "buyer_org": "NABARD", "model": "m",
+                                      "prompt_version": "1", "written_at": NOW})
+    index.put_description(fresh)
+    index.close()
+
+    index = BidIndex(path)
+    assert index.description(1) == fresh
+    index.close()
+
+
+def test_pruning_a_bid_deletes_its_description(index):
+    old = {"published": NOV(1) - timedelta(days=40), "closing": NOV(1) - timedelta(days=31)}
+    index.upsert([bid(1, **old), bid(2, **old)], seen_at=NOV(1))
+    doomed = description(1)
+    kept = description(2)
+    index.put_description(doomed)
+    index.put_description(kept)
+    index.set_card(2, "Kept AML suite")
+
+    assert index.prune(closed_before=NOV(1) - timedelta(days=30), keep={2}) == 1
+    assert index.get(1) is None and index.description(1) is None
+    assert index.get(2) is not None and index.description(2) == kept
+
+
+def test_descriptions_to_refresh_lists_open_bids_on_another_model_or_prompt(index):
+    index.upsert([bid(1, closing=NOV(25)), bid(2, closing=NOV(23)), bid(3, closing=NOV(24)),
+                  bid(4, closing=NOV(22)), bid(5, closing=NOV(21))], seen_at=NOV(16))
+    index.put_description(description(2, model="old"))
+    index.put_description(description(3, prompt_version="0"))
+    index.put_description(description(4))
+    index.put_description(description(5, model="old"))
+    index._conn.execute("UPDATE bids SET state = 'closed' WHERE b_id = 5")
+
+    assert [b.b_id for b in index.descriptions_to_refresh("m", "1", 10)] == [2, 3, 1]
+    assert [b.b_id for b in index.descriptions_to_refresh("m", "1", 2)] == [2, 3]
+
+
 def test_an_unchanged_bid_is_not_written_again(index):
     index.upsert([bid(1)], seen_at=NOV(16))
     before = index._conn.total_changes
@@ -99,7 +199,7 @@ def test_buyer_names_from_listings_are_kept_once(index):
 
 
 def test_prune_keeps_the_bids_it_is_told_to(index):
-    old = dict(published=NOV(1) - timedelta(days=40), closing=NOV(1) - timedelta(days=31))
+    old = {"published": NOV(1) - timedelta(days=40), "closing": NOV(1) - timedelta(days=31)}
     index.upsert([bid(1, **old), bid(2, **old)], seen_at=NOV(1))
     assert index.prune(closed_before=NOV(1) - timedelta(days=30), keep={2}) == 1
     assert index.get(1) is None and index.get(2) is not None

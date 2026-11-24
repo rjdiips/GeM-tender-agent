@@ -10,6 +10,8 @@ from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
 
+from pydantic import BaseModel
+
 from gem_agent.tools.gem.models import Bid
 
 SCHEMA = """
@@ -39,6 +41,18 @@ CREATE TABLE IF NOT EXISTS bids (
 CREATE INDEX IF NOT EXISTS bids_state_published ON bids(state, published);
 CREATE INDEX IF NOT EXISTS bids_state_closing ON bids(state, closing);
 CREATE INDEX IF NOT EXISTS bids_ministry ON bids(ministry);
+CREATE TABLE IF NOT EXISTS descriptions (
+    b_id INTEGER PRIMARY KEY,
+    doc_hash TEXT NOT NULL,
+    subject TEXT NOT NULL,
+    terms TEXT NOT NULL,                               -- JSON list
+    sources TEXT NOT NULL,                             -- JSON list of file names
+    has_scope INTEGER NOT NULL,
+    buyer_org TEXT,
+    model TEXT NOT NULL,
+    prompt_version TEXT NOT NULL,
+    written_at TEXT NOT NULL
+);
 CREATE TABLE IF NOT EXISTS embeddings (
     b_id INTEGER NOT NULL,
     model TEXT NOT NULL,
@@ -89,17 +103,72 @@ class UpsertCounts:
     unchanged: int = 0
 
 
+class Description(BaseModel):
+    """What a bid's documents say it buys, with the provenance needed to refresh it."""
+
+    b_id: int
+    doc_hash: str
+    subject: str
+    terms: list[str]
+    sources: list[str]
+    has_scope: bool
+    buyer_org: str | None
+    model: str
+    prompt_version: str
+    written_at: datetime
+
+    def text(self) -> str:
+        return "; ".join([self.subject, *self.terms]) if self.subject else ""
+
+    def usable(self) -> bool:
+        return self.subject != ""
+
+    def current(self, model: str) -> bool:
+        return self.prompt_version != "card" and self.model == model
+
+
+_DESCRIPTION_FIELDS = ("b_id", "doc_hash", "subject", "terms", "sources", "has_scope", "buyer_org", "model",
+                       "prompt_version", "written_at")
+_DESCRIPTION_COLUMNS = ", ".join(_DESCRIPTION_FIELDS)
+
+
+def _description_values(d: Description) -> tuple:
+    return (d.b_id, d.doc_hash, d.subject, json.dumps(d.terms), json.dumps(d.sources), int(d.has_scope), d.buyer_org,
+            d.model, d.prompt_version, d.written_at.isoformat())
+
+
+def _description(row: tuple) -> Description:
+    return Description(b_id=row[0], doc_hash=row[1], subject=row[2], terms=json.loads(row[3]), sources=json.loads(row[4]),
+                       has_scope=bool(row[5]), buyer_org=row[6], model=row[7], prompt_version=row[8],
+                       written_at=datetime.fromisoformat(row[9]))
+
+
 class BidIndex:
     def __init__(self, path: Path | str) -> None:
         Path(path).parent.mkdir(parents=True, exist_ok=True)
         self._conn = sqlite3.connect(str(path), check_same_thread=False, timeout=30)
         self._conn.execute("PRAGMA journal_mode=WAL")
         self._conn.execute("PRAGMA synchronous=NORMAL")  # safe with WAL; a crash loses at most the last commit
+        self._lock = threading.Lock()
+        had_descriptions = self._conn.execute(
+            "SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = 'descriptions'").fetchone() is not None
         self._conn.executescript(SCHEMA)
         columns = {r[1] for r in self._conn.execute("PRAGMA table_info(bids)")}
         if "card" not in columns:  # indexes built before cards existed
             self._conn.execute("ALTER TABLE bids ADD COLUMN card TEXT")
-        self._lock = threading.Lock()
+        if not had_descriptions:
+            cards = self._conn.execute("SELECT b_id, card FROM bids WHERE card IS NOT NULL AND card != ''").fetchall()
+            written_at = datetime.now()
+            copied = []
+            for b_id, card in cards:
+                subject, *terms = card.split("; ")
+                copied.append(_description_values(Description(
+                    b_id=b_id, doc_hash="", subject=subject, terms=terms, sources=[], has_scope=False, buyer_org=None,
+                    model="", prompt_version="card", written_at=written_at)))
+            with self._conn:
+                self._conn.executemany(
+                    f"INSERT OR IGNORE INTO descriptions ({_DESCRIPTION_COLUMNS}) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                    copied)
 
     def close(self) -> None:
         self._conn.close()
@@ -181,6 +250,34 @@ class BidIndex:
         return [tuple(r) for r in self._conn.execute(
             "SELECT b_id, title, card FROM bids WHERE card IS NOT NULL AND card != ''")]
 
+    def description(self, b_id: int) -> Description | None:
+        row = self._conn.execute(f"SELECT {_DESCRIPTION_COLUMNS} FROM descriptions WHERE b_id = ?", (b_id,)).fetchone()
+        return _description(row) if row else None
+
+    def descriptions(self, b_ids: Iterable[int]) -> dict[int, Description]:
+        ids = tuple(dict.fromkeys(b_ids))
+        if not ids:
+            return {}
+        placeholders = ", ".join("?" for _ in ids)
+        rows = self._conn.execute(
+            f"SELECT {_DESCRIPTION_COLUMNS} FROM descriptions WHERE b_id IN ({placeholders})", ids).fetchall()
+        return {row[0]: _description(row) for row in rows}
+
+    def put_description(self, d: Description) -> None:
+        """Store one description per bid, replacing any previous row."""
+        with self._lock, self._conn:
+            self._conn.execute(
+                f"INSERT OR REPLACE INTO descriptions ({_DESCRIPTION_COLUMNS}) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                _description_values(d))
+
+    def descriptions_to_refresh(self, model: str, prompt_version: str, limit: int) -> list[Bid]:
+        """Open bids with no description or one from another model or prompt, closing soonest first."""
+        rows = self._conn.execute(
+            "SELECT b.raw FROM bids AS b LEFT JOIN descriptions AS d ON d.b_id = b.b_id "
+            "WHERE b.state = 'open' AND (d.b_id IS NULL OR d.model != ? OR d.prompt_version != ?) "
+            "ORDER BY b.closing LIMIT ?", (model, prompt_version, limit)).fetchall()
+        return [Bid.from_listing(json.loads(raw)) for (raw,) in rows]
+
     def needing_cards(self, limit: int | None = None) -> list[Bid]:
         """Open bids whose title says nothing about the subject and that have no card yet, closing soonest first."""
         from gem_agent.tools.gem.titles import is_vague_title
@@ -200,6 +297,7 @@ class BidIndex:
             self._conn.execute("DELETE FROM prune_keep")
             self._conn.executemany("INSERT OR IGNORE INTO prune_keep VALUES (?)", ((int(b),) for b in keep))
             doomed = "SELECT b_id FROM bids WHERE closing < ? AND b_id NOT IN (SELECT b_id FROM prune_keep)"
+            self._conn.execute(f"DELETE FROM descriptions WHERE b_id IN ({doomed})", (cutoff,))
             self._conn.execute(f"DELETE FROM embeddings WHERE b_id IN ({doomed})", (cutoff,))
             return self._conn.execute(f"DELETE FROM bids WHERE b_id IN ({doomed})", (cutoff,)).rowcount
 
