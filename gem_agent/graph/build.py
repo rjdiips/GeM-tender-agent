@@ -254,6 +254,7 @@ def build_graph(s: Services) -> StateGraph:
         slots = asyncio.Semaphore(s.workers)
         done = list(state.done_ids)
         total = len(state.candidates)
+        outcomes = s.store.outcomes(state.run_id)
 
         async def one(c: Candidate) -> None:
             async with slots:
@@ -270,6 +271,7 @@ def build_graph(s: Services) -> StateGraph:
                 except Exception as exc:  # noqa: BLE001 - one bid failing never stops the run
                     log.warning("bid %s failed: %s", c.bid.bid_number, exc)
                     outcome.error = str(exc)[:300]
+                outcomes[outcome.b_id] = outcome
                 s.store.save_outcome(state.run_id, outcome)
                 done.append(c.bid.b_id)
                 emit(s, state.run_id, {"type": "result", "bid": bid_result(state.run_id, outcome)})
@@ -277,7 +279,6 @@ def build_graph(s: Services) -> StateGraph:
 
         def count_line(read: int) -> None:
             """After every bid, the last one included: the chat shows only the newest count, so lines don't pile up."""
-            outcomes = s.store.outcomes(state.run_id)
             progress(s, state.run_id, running_count(read, total, (outcomes[b] for b in done if b in outcomes)), "count",
                      phase="read")
 

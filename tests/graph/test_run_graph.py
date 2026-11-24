@@ -283,6 +283,31 @@ async def test_reading_reports_a_running_count_from_the_start_to_the_last_bid(tm
                           "Done: 16 relevant, 3 quarantined, 1 could not be read."]
 
 
+async def test_process_reads_outcomes_once(tmp_path):
+    """The running count is counted from what process holds, not re-read from disk after every bid."""
+    bids = [bid(i, closing_day=18 + i % 5) for i in range(1, 11)]
+    collector = FakeCollector()
+    s = services(tmp_path, searcher=FakeSearcher([bids], more_pages=False), collector=collector)
+    read_outcomes = s.store.outcomes
+    reads = 0
+
+    def counted(run_id):
+        nonlocal reads
+        reads += 1
+        return read_outcomes(run_id)
+
+    s.store.outcomes = counted
+    collect, seen = collector.collect, []
+
+    async def spied(b, **kwargs):
+        seen.append(reads)
+        return await collect(b, **kwargs)
+
+    collector.collect = spied
+    await ask(RunManager(s), "LOS tenders")
+    assert len(seen) == 20 and len(set(seen)) == 1  # every bid's collect saw the same number of reads
+
+
 def test_every_bid_read_is_in_the_running_count():
     from gem_agent.graph.build import running_count
     from gem_agent.graph.store import Outcome
