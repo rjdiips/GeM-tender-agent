@@ -3,6 +3,7 @@ import json
 
 import pytest
 
+from gem_agent.agents.collector import DocumentUnavailable
 from gem_agent.agents.rulings import RulingMatch
 from gem_agent.tools.gem.live import SearchProgress
 from gem_agent.graph.events import EventBus
@@ -246,6 +247,21 @@ async def test_stop_is_refused_for_another_users_run(tmp_path):
         await manager.stop("ravi", run_id)
     await manager.stop("asha", run_id)
     await asyncio.wait_for(task, timeout=5)
+
+
+class UnreadableCollector(FakeCollector):
+    async def collect(self, bid, **kw):
+        if bid.b_id in self.fail:
+            raise DocumentUnavailable("GeM returned 503 three times")
+        return await super().collect(bid, **kw)
+
+
+async def test_unreadable_bid_shows_as_error_not_triage(tmp_path):
+    s = services(tmp_path, collector=UnreadableCollector(fail={2}))
+    events = await ask(RunManager(s), "LOS tenders")
+    run_id = events[0]["run"]["run_id"]
+    outcome = s.store.outcomes(run_id)[2]
+    assert outcome.error.startswith("bid document could not be downloaded") and outcome.verdict is None
 
 
 async def test_reading_reports_a_running_count_from_the_start_to_the_last_bid(tmp_path):

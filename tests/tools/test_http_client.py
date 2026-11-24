@@ -7,6 +7,7 @@ from gem_agent.tools.http_client import (
     GemHttpError,
     HostNotAllowed,
     is_no_data,
+    is_real_error,
 )
 
 BIDPLUS = "https://bidplus.gem.gov.in"
@@ -23,6 +24,15 @@ def test_no_data_404_is_an_empty_result_not_an_error():
 
 def test_plain_404_is_not_no_data():
     assert not is_no_data(httpx.Response(404, text="<html>Not Found</html>"))
+
+
+@pytest.mark.parametrize("code", [400, 401, 410, 422])
+def test_client_errors_are_real_errors(code):
+    assert is_real_error(httpx.Response(code, text="x"))
+
+
+def test_no_data_404_is_not_an_error():
+    assert not is_real_error(httpx.Response(404, text="No data found"))
 
 
 async def test_pool_refuses_hosts_outside_allowlist(gem, clock):

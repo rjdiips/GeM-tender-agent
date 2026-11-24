@@ -52,6 +52,10 @@ class BidFiles(BaseModel):
     def main_ok(self) -> bool:
         return bool(self.files) and self.files[0].status == "ok"
 
+    @property
+    def complete_ok(self) -> bool:
+        return not any(f.status == "failed" for f in self.files if f.role != "gtc")
+
     def readable(self) -> list[FileRecord]:
         """Files with real text: placeholders, empty and failed files are left out."""
         return [f for f in self.files if f.status == "ok" and f.text_path]

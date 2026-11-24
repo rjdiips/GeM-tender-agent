@@ -47,7 +47,7 @@ def is_no_data(resp: httpx.Response) -> bool:
 
 def is_real_error(resp: httpx.Response) -> bool:
     s = resp.status_code
-    return s >= 500 or s in (403, 429) or (s == 404 and not is_no_data(resp))
+    return s >= 500 or s in (400, 401, 403, 410, 422, 429) or (s == 404 and not is_no_data(resp))
 
 
 class HostClient:

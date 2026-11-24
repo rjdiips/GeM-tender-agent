@@ -3,7 +3,7 @@ import json
 import httpx
 import pytest
 
-from gem_agent.agents.collector import Collector
+from gem_agent.agents.collector import Collector, DocumentUnavailable
 from gem_agent.cache.docs import DocCache
 from gem_agent.tools.gem.models import Bid
 from gem_agent.tools.http_client import BidplusSession, ClientPool
@@ -12,6 +12,7 @@ from tests.conftest import doc_bytes, fixture_bytes, make_pdf, make_pdf_with_lin
 B = "https://bidplus.gem.gov.in"
 UPLOAD = f"{B}/resources/upload_nas/OctQ426/bidding/biddoc/bid-10037444"
 GTC = "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/"
+SLAFDS = "https://fulfilment.gem.gov.in/contract/slafds"
 TERMS = make_pdf("General terms and conditions of GeM applicable to every bid on this date. " * 3)
 
 
@@ -33,7 +34,7 @@ def site(gem):
     gem.add("GET", f"{UPLOAD}/1791988256.pdf", ok(doc_bytes("placeholder_refer_rfp.pdf")))
     gem.add("GET", f"{UPLOAD}/1791988264.pdf", ok(doc_bytes("rfp_firewall.pdf")))
     gem.add("GET", f"{B}/bidding/bid/downloadBuyerDoc/10037444/17919884556139.pdf", ok(doc_bytes("terms.docx")))
-    gem.add("GET", "https://fulfilment.gem.gov.in/contract/slafds", lambda r: httpx.Response(503))
+    gem.add("GET", SLAFDS, lambda r: httpx.Response(503))
     gem.add("GET", GTC, ok(TERMS))
     gem.add("GET", f"{B}/bidding/bid/bidsla/100750282053136", ok(fixture_bytes("att_bidsla.html.gz")))
     return gem
@@ -87,6 +88,7 @@ async def test_manifest_survives_a_restart(collector, tmp_path):
 
 
 async def test_cached_bid_without_new_corrigendum_is_not_downloaded_again(collector, site):
+    site.add("GET", SLAFDS, ok(fixture_bytes("att_bidsla.html.gz")))
     await collector.collect(BID)
     site.requests.clear()
     await collector.collect(BID)
@@ -95,6 +97,7 @@ async def test_cached_bid_without_new_corrigendum_is_not_downloaded_again(collec
 
 async def test_cached_bid_without_any_corrigendum_costs_one_request(site, clock, tmp_path):
     site.add("POST", f"{B}/public-bid-other-details/10037444", flags(False))
+    site.add("GET", SLAFDS, ok(fixture_bytes("att_bidsla.html.gz")))
     session = BidplusSession(ClientPool(transport=site.transport(), clock=clock, sleep=clock.sleep))
     collector = Collector(session, DocCache(tmp_path), ocr=lambda pdf, i: "")
     first = await collector.collect(BID)
@@ -227,7 +230,26 @@ async def test_failed_corrigendum_check_still_reads_the_bid(site, clock, tmp_pat
     assert files.main_ok and files.corrigendum is None and not files.corrigendum_flag
 
 
+async def test_failed_bid_document_raises(collector, site):
+    site.add("GET", f"{B}/showbidDocument/10037444", lambda r: httpx.Response(503))
+    with pytest.raises(DocumentUnavailable):
+        await collector.collect(BID, attachments=False)
+    assert collector.cache.load(BID.b_id) is None
+
+
+async def test_cached_set_with_failed_attachment_is_refetched(collector, site):
+    await collector.collect(BID)  # the fixture's slafds download fails
+    site.add("GET", SLAFDS, ok(fixture_bytes("att_bidsla.html.gz")))
+    site.requests.clear()
+    files = await collector.collect(BID)
+    fetched = [r.url.path for r in site.requests if "/public-bid-other-details" not in r.url.path
+               and "viewCorrigendum" not in r.url.path]
+    assert fetched == ["/contract/slafds"]
+    assert by_url(files, "slafds").status == "ok" and files.complete_ok
+
+
 async def test_failed_corrigendum_check_serves_the_cache(collector, site):
+    site.add("GET", SLAFDS, ok(fixture_bytes("att_bidsla.html.gz")))
     first = await collector.collect(BID)
     site.add("POST", f"{B}/public-bid-other-details/10037444", lambda r: httpx.Response(403))
     site.requests.clear()

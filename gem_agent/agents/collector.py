@@ -36,6 +36,13 @@ def _same_corrigendum(a: Corrigendum | None, b: Corrigendum | None) -> bool:
     return (a.entries if a else None) == (b.entries if b else None)
 
 
+class DocumentUnavailable(RuntimeError):
+    """The bid document itself could not be downloaded, so the bid cannot be read."""
+
+    def __init__(self, reason: str) -> None:
+        super().__init__(f"bid document could not be downloaded: {reason}")
+
+
 class Collector:
     def __init__(self, session: BidplusSession, cache: DocCache, ocr: OcrFn | None = ocr_page) -> None:
         self.session, self.cache, self.ocr = session, cache, ocr
@@ -55,8 +62,9 @@ class Collector:
             log.warning("corrigendum check failed for %s, reading the bid without it: %s", bid.bid_number, exc)
             has_corrigendum = cached.corrigendum_flag if cached else False
             corrigendum = cached.corrigendum if cached else None
-        fresh = bool(cached and not force and cached.main_ok and cached.corrigendum_flag == has_corrigendum
-                     and _same_corrigendum(cached.corrigendum, corrigendum))
+        current = bool(cached and not force and cached.main_ok and cached.corrigendum_flag == has_corrigendum
+                       and _same_corrigendum(cached.corrigendum, corrigendum))
+        fresh = current and (not attachments or cached.complete_ok)
         if fresh and cached and (not cached.partial or not attachments):
             changed = False
             if cached.buyer_org is None:  # manifests written before the field existed
@@ -66,7 +74,7 @@ class Collector:
             if changed:
                 self.cache.save(cached)
             return cached
-        reuse = cached if fresh else None
+        reuse = cached if current else None
         records = await self._fetch_all(bid, attachments=attachments, reuse=reuse)
         files = BidFiles(b_id=bid.b_id, bid_number=bid.bid_number, fetched_at=site_now(),
                          corrigendum_flag=has_corrigendum, corrigendum=corrigendum, files=records,
@@ -88,6 +96,8 @@ class Collector:
         to_scan: list[tuple[FileRecord, bytes]] = []
         if reuse is not None:  # complete a partial fetch: keep its documents, scan them for links
             for record in reuse.files:
+                if record.status == "failed":  # fetched again below, when its link is found
+                    continue
                 records.append(record)
                 seen.add(record.url)
                 if record.kind == "pdf" and record.path:
@@ -102,9 +112,11 @@ class Collector:
 
         if reuse is None:
             await fetch_document(self.session.url(document_path(bid)), "bid_document")
-            parent = parent_document_path(bid)
-            if parent:
-                await fetch_document(self.session.url(parent), "parent_document")
+            if records[0].status == "failed":
+                raise DocumentUnavailable(records[0].error or "unknown error")
+        parent = parent_document_path(bid)
+        if parent and self.session.url(parent) not in seen:
+            await fetch_document(self.session.url(parent), "parent_document")
         if not attachments:
             return records
 
