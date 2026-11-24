@@ -1040,6 +1040,43 @@ async def test_a_run_stopped_after_judging_resumes_with_its_read_count_and_witho
     assert s.store.load(run_id).status == "complete"
 
 
+async def test_a_post_save_presentation_failure_keeps_the_verdict_recoverable(tmp_path, monkeypatch):
+    from gem_agent.graph import build
+
+    judge = FakeJudge()
+    s = services(tmp_path, searcher=FakeSearcher([[bid(1)]], more_pages=False), judge=judge,
+                 describer=FakeDescriber(), matcher=FakeMatcher(), checkpoint=tmp_path / "checkpoints.sqlite",
+                 workers=1)
+    render, failed = build.bid_result, False
+
+    def fail_once(run_id, outcome):
+        nonlocal failed
+        if outcome.b_id == 1 and outcome.verdict is not None and not failed:
+            failed = True
+            raise RuntimeError("result rendering failed")
+        return render(run_id, outcome)
+
+    monkeypatch.setattr(build, "bid_result", fail_once)
+    manager = RunManager(s)
+    events = await ask(manager, "LOS tenders")
+    run_id = events[0]["run"]["run_id"]
+
+    assert failed
+    outcome = s.store.outcomes(run_id)[1]
+    assert outcome.verdict is not None and outcome.verdict.relevant and outcome.error == ""
+    assert events[-1] == {"type": "done", "status": "failed"}
+    assert set(s.store.process_progress(run_id).pending_reads) == {1}
+
+    monkeypatch.undo()
+    await manager.resume(run_id)
+
+    outcome = s.store.outcomes(run_id)[1]
+    assert judge.judged == [1]
+    assert outcome.verdict is not None and outcome.verdict.relevant and outcome.error == ""
+    assert s.store.process_progress(run_id).pending_reads == {}
+    assert s.store.load(run_id).status == "complete"
+
+
 # --- progress lines in plain words: the copy in the table of the Task 9 brief -----------------------------------------
 
 

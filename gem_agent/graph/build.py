@@ -519,21 +519,25 @@ def build_graph(s: Services) -> StateGraph:
                         if refreshed is not None:
                             known[c.bid.b_id] = refreshed
                     verdict = await s.judge.judge(topic, c.bid, files, triage=triage_by_id.get(c.bid.b_id))
-                    chosen = routes[c.bid.b_id]
-                    outcome = Outcome(b_id=c.bid.b_id, group=c.group, bid=c.bid, files=files.files,
-                                      buyer_org=files.buyer_org, verdict=verdict,
-                                      read_because=None if chosen == "today" else chosen)
-                    reads[c.group] = reads.get(c.group, 0) + 1
-                    pending_reads[c.bid.b_id] = outcome
-                    mark_done(c)  # atomically persist the finished read, its verdict, and its consumed cap slot
-                    outcome.ruling = await settle(s, state.user, topic, verdict)
-                    save(c, outcome)
-                    del pending_reads[c.bid.b_id]
-                    persist()
-                except Exception as exc:  # noqa: BLE001 - one bid failing never stops the run
+                except Exception as exc:  # noqa: BLE001 - collection or judging failed, before a verdict existed
                     log.warning("bid %s failed while being read: %s", c.bid.bid_number, exc)
-                    outcome = Outcome(b_id=c.bid.b_id, group=c.group, bid=c.bid, error=str(exc)[:300])
+                    save(c, Outcome(b_id=c.bid.b_id, group=c.group, bid=c.bid, error=str(exc)[:300]))
+                    return
+
+                chosen = routes[c.bid.b_id]
+                outcome = Outcome(b_id=c.bid.b_id, group=c.group, bid=c.bid, files=files.files,
+                                  buyer_org=files.buyer_org, verdict=verdict,
+                                  read_because=None if chosen == "today" else chosen)
+                reads[c.group] = reads.get(c.group, 0) + 1
+                pending_reads[c.bid.b_id] = outcome
+                mark_done(c)  # atomically persist the finished read, its verdict, and its consumed cap slot
+                try:
+                    outcome.ruling = await settle(s, state.user, topic, verdict)
+                except Exception as exc:  # noqa: BLE001 - a settlement failure leaves the completed verdict borderline
+                    log.warning("bid %s could not be settled: %s", c.bid.bid_number, exc)
                 save(c, outcome)
+                del pending_reads[c.bid.b_id]
+                persist()
 
         await asyncio.gather(*(read(c) for c in selected))
         if cut:
