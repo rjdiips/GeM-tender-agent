@@ -91,6 +91,14 @@ def failed_line(failed: int, total: int) -> str:
     return f"{failed} of {total} GeM searches could not be read; results may be incomplete."
 
 
+def skipped_line(terms: list[str]) -> str:
+    """GeM answers a full-text search over 20,000 hits with no bids: the search was not read at all."""
+    quoted = ", ".join(f"“{t}”" for t in terms)
+    if len(terms) == 1:
+        return f"Skipped {quoted}: it matches over 20,000 open bids, too broad to read."
+    return f"Skipped {quoted}: they match over 20,000 open bids, too broad to read."
+
+
 def failed_searches(after: Progress, before: Progress | None = None) -> tuple[int, int]:
     """(failed, read) over distinct searches, all topics. Stage 1 (no `before`): every search. Stage 2: the searches
     that still had pages, and those of them that failed now."""
@@ -149,6 +157,7 @@ def build_graph(s: Services) -> StateGraph:
         pool, over_cap, cut = 0, False, 0
         search_progress: dict[str, Any] = {}
         first_counts: dict[str, int] = {}
+        skipped: list[str] = []
         for topic, plan_ in zip(state.request.topics, state.plans, strict=True):
             result = await s.searcher.search(topic, plan_, stage="first")
             pool += result.pool
@@ -156,6 +165,7 @@ def build_graph(s: Services) -> StateGraph:
             cut += result.cut
             search_progress[topic.key()] = result.progress
             first_counts[topic.key()] = len(result.candidates)
+            skipped += [key.partition("|")[2] for key, p in result.progress.items() if p.skipped]
             for c in result.candidates:
                 merged.setdefault(c.bid.b_id, c)
         candidates = by_closing(merged.values())
@@ -167,6 +177,8 @@ def build_graph(s: Services) -> StateGraph:
         failed, read = failed_searches(search_progress)
         if failed:
             progress(s, state.run_id, failed_line(failed, read), phase="search")
+        if skipped:
+            progress(s, state.run_id, skipped_line(list(dict.fromkeys(skipped))), phase="search")
         if cut and not wants_retry(stage=state.stage, retries=state.retries, candidates=candidates, over_cap=over_cap,
                                    search_progress=search_progress, sizes=sizes):
             progress(s, state.run_id, cut_line(cut), phase="search")  # a narrowing retry comes next otherwise

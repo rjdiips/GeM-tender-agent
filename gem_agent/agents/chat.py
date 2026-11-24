@@ -211,6 +211,6 @@ class ChatAgent:
         if len(topics) == 1:
             p = probes[0]
             return (f"Looking for {_noun(short_name(topics[0]))} {window.describe()} "
-                    f"({p.window_count:,} open bids in that window; {p.strong} look relevant from their titles).")
+                    f"({p.strong} matching titles).")
         groups = " · ".join(f"{short_name(t)} ({p.strong})" for t, p in zip(topics, probes, strict=True))
         return f"Searching two meanings: {groups}, {window.describe()}; results grouped, likeliest first."

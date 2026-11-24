@@ -25,14 +25,14 @@ def understood_view(record: RunRecord) -> dict[str, Any] | None:
     req = record.request
     if req is None or not req.topics:
         return None
-    topic, probe = req.topics[0], record.probes[0] if record.probes else None
+    topic = req.topics[0]
     name = " · ".join(short_name(t) for t in req.topics)
     window = req.window.describe()
     summary = (f"Looking for {_plain(topic.meaning)}, {window}." if len(req.topics) == 1
                else f"Looking for two meanings, {window}: {name}; results grouped, likeliest first.")
     return {"name": name, "meaning": topic.meaning.partition(": ")[2] or topic.meaning, "summary": summary,
             "buyers": list(req.buyer_hints), "window": window,
-            "window_count": probe.window_count if probe else 0, "likely": sum(p.strong for p in record.probes),
+            "likely": sum(p.strong for p in record.probes),
             "not_this": topic.not_this}  # what the Judge rules out (the Planner and Searcher use it too)
 
 

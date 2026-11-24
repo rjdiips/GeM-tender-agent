@@ -25,8 +25,8 @@ describe('web chat', () => {
     expect(screen.getByText('Looking for consultants advising banks, published 2–16 Nov.')).toBeInTheDocument()
     expect(screen.getByText('Management consultancy · banks')).toBeInTheDocument()
     expect(screen.getByText('Published 2–16 Nov')).toBeInTheDocument()
-    expect(screen.getByText('36,104 open bids')).toBeInTheDocument()
-    expect(screen.getByText('9 likely from titles')).toBeInTheDocument()
+    expect(screen.getByText('9 matching titles')).toBeInTheDocument()
+    expect(screen.queryByText(/open bids/)).toBeNull()
     expect(screen.getByText('not: engineering consultancy')).toBeInTheDocument()
     expect(screen.getByText('13:40:09')).toBeInTheDocument()
   })
@@ -201,7 +201,7 @@ describe('web chat', () => {
     const fresh = run({ run_id: 'r2', title: 'LOS tenders', request: 'LOS tenders', status: 'running', understood: null, progress: [], results: [] })
     api.script = [
       { type: 'started', run: fresh },
-      { type: 'understood', understood: { name: 'Loan Origination System', meaning: 'LOS software', window: 'published 2–16 Nov', summary: 'Looking for LOS software, published 2–16 Nov.', buyers: [], window_count: 36104, likely: 4, not_this: ['Line of Sight'] } },
+      { type: 'understood', understood: { name: 'Loan Origination System', meaning: 'LOS software', window: 'published 2–16 Nov', summary: 'Looking for LOS software, published 2–16 Nov.', buyers: [], likely: 4, not_this: ['Line of Sight'] } },
       { type: 'progress', event: { at: '2026-11-16T13:50:01', text: 'Shortlist: 4 bids.' } },
       { type: 'result', bid: bid({ b_id: 9, bid_number: 'GEM/2026/B/9', title: 'LOS for RRBs' }) },
       { type: 'done', status: 'complete' },

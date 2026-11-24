@@ -90,8 +90,7 @@ export interface Understood {
   summary: string // one sentence, e.g. "Looking for management consultancy for banks, published 2–16 Nov."
   buyers: string[] // buyers the request named, e.g. ["banks"]
   window: string // e.g. "published 2–16 Nov"
-  window_count: number // open bids in the window
-  likely: number // titles that look relevant
+  likely: number // distinct bids in the window whose search matched
   not_this: string[] // what the Judge rules out
 }
 

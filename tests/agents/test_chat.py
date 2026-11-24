@@ -38,7 +38,7 @@ class FakeProbe:
     async def __call__(self, topic, window):
         self.calls.append(topic.meaning)
         strong = self.counts.get(topic.meaning, 0)
-        return ProbeResult(meaning=topic.meaning, window_count=36104, strong=strong,
+        return ProbeResult(meaning=topic.meaning, strong=strong,
                            top_titles=[f"{topic.domain} title {i}" for i in range(3)])
 
 
@@ -60,7 +60,7 @@ async def test_single_meaning_needs_one_call(stores):
     assert llm.count(CHOOSE_INSTRUCTIONS) == 0
     assert result.request.window.published_from == datetime(2026, 11, 2)
     assert result.progress_line == ("Looking for Loan Origination System tenders published 2–16 Nov "
-                                    "(36,104 open bids in that window; 48 look relevant from their titles).")
+                                    "(48 matching titles).")
 
 
 async def test_prompt_carries_today_memory_and_saved_meanings(stores):

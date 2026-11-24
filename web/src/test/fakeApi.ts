@@ -26,7 +26,7 @@ export function run(over: Partial<RunView> = {}): RunView {
     status: 'complete',
     understood: { name: 'Management consultancy', meaning: 'Consultants advising banks', window: 'published 2–16 Nov',
                   summary: 'Looking for consultants advising banks, published 2–16 Nov.', buyers: ['banks'],
-                  window_count: 36104, likely: 9, not_this: ['engineering consultancy'] },
+                  likely: 9, not_this: ['engineering consultancy'] },
     progress: [{ at: '2026-11-16T13:40:09', text: 'Shortlist: 9 bids.' }, { at: '2026-11-16T13:42:05', text: 'Done: 1 relevant, 1 quarantined.' }],
     results: [bid(), bid({ b_id: 2, bid_number: 'GEM/2026/B/8264466', title: 'Concurrent Audit of Digital Banking', relevant: false, state: 'quarantined',
                            reason: 'Audit, not consultancy.', closing: '2026-12-07T17:00:00', evidence: [], stage: 'triage' })],

@@ -41,8 +41,7 @@ export function Thread({ run, notes, pending, now, theme, onToggleTheme, onAsk, 
                   <div className="gt-tags">
                     <span className="gt-tag acc">{[run.understood.name, ...run.understood.buyers].join(' · ')}</span>
                     <span className="gt-tag">{capitalise(run.understood.window)}</span>
-                    <span className="gt-tag">{run.understood.window_count.toLocaleString('en-IN')} open bids</span>
-                    <span className="gt-tag">{run.understood.likely} likely from titles</span>
+                    <span className="gt-tag">{run.understood.likely} matching titles</span>
                     {run.understood.not_this.slice(0, 3).map(n => <span key={n} className="gt-tag">not: {n}</span>)}
                   </div>
                 </> : <div className="gt-eyebrow">Working out what you mean…</div>}

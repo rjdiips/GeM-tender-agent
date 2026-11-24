@@ -42,7 +42,7 @@ const RUN: RunView = {
   status: 'complete',
   understood: { name: 'Management consultancy', meaning: 'Hiring consultants to advise a bank on strategy, operations or transformation.',
                 summary: 'Looking for management consultancy for banks / financial institutions (strategy, operations, transformation), published 2–16 Nov.',
-                buyers: ['banks'], window: 'published 2–16 Nov', window_count: 36104, likely: 9, not_this: ['engineering design consultancy'] },
+                buyers: ['banks'], window: 'published 2–16 Nov', likely: 9, not_this: ['engineering design consultancy'] },
   progress: [
     { at: '2026-11-16T13:40:09', text: 'Shortlist: 9 bids from 27 titles looked at (closing soonest first). Reading documents…' },
     { at: '2026-11-16T13:42:03', text: 'Read 9 of 9 bids: 31 files downloaded, 4 placeholders skipped, triage dropped 4, 3 quarantined after reading, 2 relevant so far…', kind: 'count' },

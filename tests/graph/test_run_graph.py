@@ -6,6 +6,7 @@ import pytest
 from gem_agent.agents.collector import DocumentUnavailable
 from gem_agent.agents.rulings import RulingMatch
 from gem_agent.tools.gem.live import SearchProgress
+from gem_agent.graph.build import skipped_line
 from gem_agent.graph.events import EventBus
 from gem_agent.graph.manager import RunManager
 from gem_agent.graph.services import Services
@@ -160,6 +161,7 @@ async def test_run_view_has_what_the_web_chat_needs(tmp_path):
     run_id = (await ask(manager, "LOS tenders"))[0]["run"]["run_id"]
     view = manager.view("asha", run_id)
     assert view["understood"]["name"] == "Loan Origination System" and view["understood"]["window"] == "published 2–16 Nov"
+    assert "window_count" not in view["understood"] and view["understood"]["likely"] == 3
     assert view["status"] == "complete" and view["zip_url"] == f"/api/runs/{run_id}/zip"
     result = next(b for b in view["results"] if b["b_id"] == 1)
     assert result["buyer"] == "Ministry of Finance / Department of Financial Services"
@@ -435,6 +437,21 @@ async def test_an_empty_first_page_shortlist_searches_deeper_before_widening(tmp
 
 
 FAILED = SearchProgress(num_found=0, pages_read=0, page_count=0, failed=True)
+SKIPPED = SearchProgress(num_found=25000, pages_read=1, page_count=2500, skipped=True)
+
+
+def test_skipped_line():
+    assert skipped_line(["software"]) == "Skipped “software”: it matches over 20,000 open bids, too broad to read."
+    assert skipped_line(["software", "systems"]) == (
+        "Skipped “software”, “systems”: they match over 20,000 open bids, too broad to read.")
+
+
+async def test_skipped_search_is_reported(tmp_path):
+    searcher = FakeSearcher([[bid(1)]], searches={"first": {"fullText|software": SKIPPED}})
+    s = services(tmp_path, searcher=searcher)
+    events = await ask(RunManager(s), "LOS tenders")
+    progress = [e["event"]["text"] for e in events if e["type"] == "progress"]
+    assert "Skipped “software”: it matches over 20,000 open bids, too broad to read." in progress
 
 
 async def test_searches_gem_could_not_read_are_reported_for_each_stage(tmp_path):

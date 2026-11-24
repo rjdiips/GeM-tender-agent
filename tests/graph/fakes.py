@@ -39,8 +39,8 @@ class FakeChat:
     async def understand(self, user, message, history, *, run_id):
         self.calls.append((user, message, list(history)))
         request = TenderRequest(intent=self.intent, user_text=message, topics=self.topics, window=WINDOW)
-        probes = [ProbeResult(meaning=t.meaning, window_count=36104, strong=3) for t in self.topics]
-        line = "Looking for Loan Origination System tenders published 2–16 Nov (36,104 open bids in that window; 3 look relevant from their titles)."
+        probes = [ProbeResult(meaning=t.meaning, strong=3) for t in self.topics]
+        line = "Looking for Loan Origination System tenders published 2–16 Nov (3 matching titles)."
         return Understanding(request=request, probes=probes, progress_line=line if self.topics else "")
 
 

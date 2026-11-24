@@ -65,7 +65,7 @@ def render_event(event: dict) -> str | None:
         return f"run {event['run']['run_id']}"
     if kind == "understood":
         u = event["understood"]
-        return f"{u['summary']} ({u['window_count']:,} open bids in that window; {u['likely']} look relevant from their titles)"
+        return f"{u['summary']} ({u['likely']} matching titles)"
     if kind == "progress":
         return f"{event['event']['at'][11:19]}  {event['event']['text']}"
     if kind == "result":

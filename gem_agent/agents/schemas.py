@@ -236,8 +236,7 @@ class ProbeResult(BaseModel):
     """How a meaning fares against the local index of open-bid titles."""
 
     meaning: str
-    window_count: int  # open bids in the date window
-    strong: int  # titles that match the meaning's terms (word rules of 5.3)
+    strong: int  # distinct page-1 bids in the date window whose search matched the meaning's terms (word rules of 5.3)
     top_titles: list[str] = []
 
 
