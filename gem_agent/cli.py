@@ -140,7 +140,7 @@ def main(argv: list[str] | None = None) -> int:
     ev.add_argument("--out", help="write each bid's label and verdict here (JSON)")
     desc = sub.add_parser("describe", help="refresh bid descriptions from cached documents")
     desc.add_argument("--refresh", action="store_true", required=True, help="refresh stale descriptions (no GeM requests)")
-    desc.add_argument("--limit", type=_non_negative_int, help="maximum bids to refresh (default 200)")
+    desc.add_argument("--limit", type=_non_negative_int, default=200, help="maximum bids to refresh (default 200)")
     bf = sub.add_parser("backfill-queries", help="add the last date for queries to older results")
     bf.add_argument("--dry-run", action="store_true", help="report what would be filled, write nothing")
     bf.add_argument("--redo-documents", action="store_true",

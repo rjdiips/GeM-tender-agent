@@ -50,6 +50,22 @@ def test_the_index_command_is_gone():
         main(["index", "sync"])
 
 
+def test_describe_refresh_defaults_to_200_bids(tmp_path, monkeypatch):
+    settings = Settings(data_dir=tmp_path / "data")
+    monkeypatch.setattr("gem_agent.cli.get_settings", lambda: settings)
+    limits = []
+
+    async def describe_refresh(given_settings, limit):
+        assert given_settings is settings
+        limits.append(limit)
+        return 0
+
+    monkeypatch.setattr("gem_agent.cli._describe_refresh", describe_refresh)
+
+    assert main(["describe", "--refresh"]) == 0
+    assert limits == [200]
+
+
 def test_describe_refresh_rejects_a_negative_limit(tmp_path, monkeypatch, capsys):
     settings = Settings(data_dir=tmp_path / "data")
     monkeypatch.setattr("gem_agent.cli.get_settings", lambda: settings)
