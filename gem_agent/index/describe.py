@@ -32,6 +32,8 @@ If the text does not say what is being bought, answer with an empty subject and 
 
 class Describer:
     def __init__(self, model: Model, cache: DocCache, index: BidIndex, *, model_name: str, parallel: int = 3) -> None:
+        if parallel < 1:
+            raise ValueError("parallel must be at least 1")
         self.cache, self.index, self.model_name = cache, index, model_name
         self._agent = Agent(model, output_type=NativeOutput(CardOutput), instructions=DESCRIBE_INSTRUCTIONS, retries=2)
         self._slots = asyncio.Semaphore(min(parallel, 3))
@@ -86,7 +88,12 @@ async def refresh_descriptions(describer: Describer, index: BidIndex, cache: Doc
     report = RefreshReport()
 
     async def one(bid: Bid) -> None:
-        files = cache.load(bid.b_id)
+        try:
+            files = cache.load(bid.b_id)
+        except Exception as exc:  # noqa: BLE001 - one unreadable manifest never stops the refresh
+            log.warning("description refresh for %s failed: %s", bid.bid_number, str(exc)[:200])
+            report.failed += 1
+            return
         if files is None:
             report.no_documents += 1
             return
@@ -96,5 +103,12 @@ async def refresh_descriptions(describer: Describer, index: BidIndex, cache: Doc
             report.described += 1
 
     todo = index.descriptions_to_refresh(describer.model_name, DESCRIBE_PROMPT_VERSION, limit)
-    await asyncio.gather(*(one(bid) for bid in todo))
+    tasks = [asyncio.create_task(one(bid)) for bid in todo]
+    try:
+        await asyncio.gather(*tasks)
+    except (Exception, asyncio.CancelledError):
+        for task in tasks:
+            task.cancel()
+        await asyncio.gather(*tasks, return_exceptions=True)
+        raise
     return report

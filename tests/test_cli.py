@@ -50,6 +50,18 @@ def test_the_index_command_is_gone():
         main(["index", "sync"])
 
 
+def test_describe_refresh_rejects_a_negative_limit(tmp_path, monkeypatch, capsys):
+    settings = Settings(data_dir=tmp_path / "data")
+    monkeypatch.setattr("gem_agent.cli.get_settings", lambda: settings)
+
+    with pytest.raises(SystemExit) as exc:
+        main(["describe", "--refresh", "--limit", "-1"])
+
+    assert exc.value.code == 2
+    assert "non-negative" in capsys.readouterr().err
+    assert not settings.bid_cache_path.exists()
+
+
 @pytest.fixture
 def clean_root_logger():
     root = logging.getLogger()
