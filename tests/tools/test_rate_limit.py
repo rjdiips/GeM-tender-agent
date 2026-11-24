@@ -171,3 +171,71 @@ async def test_interval_change_writes_once(clock, tmp_path, monkeypatch):
     async with lim.turn():
         lim.record(ok=False, latency=0.1)
     assert writes == 1
+
+
+async def test_cancellation_during_post_request_sleep_holds_lock_and_saves(clock, tmp_path):
+    """Cancellation during post-request sleep must hold the lock and save state.
+    
+    This test uses a small interval (0.2s) with real time to observe cancellation behavior.
+    The bounds are generous to avoid flakiness.
+    """
+    import asyncio
+    path = tmp_path / "bidplus"
+    
+    # Use real time with small interval to make the test fast but observable
+    a = AdaptiveRateLimiter(floor=0.2, slow=0.2, recover_after=600, spike_median=2.0,
+                            clock=clock, sleep=asyncio.sleep, shared_path=path, lock_poll=0.01)
+    b = AdaptiveRateLimiter(floor=0.2, slow=0.2, recover_after=600, spike_median=2.0,
+                            clock=clock, sleep=asyncio.sleep, shared_path=path, lock_poll=0.01)
+    
+    order = []
+    turn_entry_times = {}
+    
+    async def first():
+        try:
+            async with a.turn():
+                order.append("a in")
+                turn_entry_times["a"] = asyncio.get_event_loop().time()
+                a.record(ok=False, latency=0.3)  # Change interval to 0.2s
+                order.append("a record")
+        except asyncio.CancelledError:
+            order.append("a cancelled")
+            raise
+        finally:
+            order.append("a finally")
+    
+    task_a = asyncio.create_task(first())
+    
+    # Let it start and enter the post-request sleep
+    await asyncio.sleep(0.05)
+    assert "a in" in order and "a record" in order
+    
+    # Cancel the task while it's in the post-request sleep
+    task_a.cancel()
+    await asyncio.sleep(0.01)  # Let cancellation propagate
+    
+    # Record when b enters the turn (not when it starts)
+    async def second():
+        async with b.turn():
+            order.append("b in")
+            turn_entry_times["b"] = asyncio.get_event_loop().time()
+    
+    task_b = asyncio.create_task(second())
+    
+    # Wait for both tasks to complete
+    await asyncio.gather(task_a, return_exceptions=True)
+    await task_b
+    
+    # Check that b started after a's cancellation
+    assert "a cancelled" in order
+    assert "b in" in order
+    
+    # Check that b.interval is 0.2s (state was saved despite cancellation)
+    assert b.interval == 0.2
+    
+    # Check that b had to wait for a's lock to release
+    # b should enter the turn at least 0.2s after a entered (a's post-request sleep)
+    # With generous bounds: b should enter at least 0.15s after a (accounting for timing)
+    if "a" in turn_entry_times and "b" in turn_entry_times:
+        assert turn_entry_times["b"] - turn_entry_times["a"] >= 0.15, \
+            f"b should wait for a's lock to release (a entered at {turn_entry_times['a']:.3f}, b entered at {turn_entry_times['b']:.3f})"

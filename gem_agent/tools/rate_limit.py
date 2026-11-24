@@ -72,12 +72,32 @@ class AdaptiveRateLimiter:
             try:
                 yield
             finally:
-                if self._shared is not None:
-                    remaining = s.last_start + s.interval - self._clock()
-                    if remaining > 0:
-                        await self._sleep(remaining)
-                if s.interval != interval_before or s.last_trouble != trouble_before:
-                    self._save()
+                try:
+                    if self._shared is not None:
+                        remaining = s.last_start + s.interval - self._clock()
+                        if remaining > 0:
+                            await self._sleep(remaining)
+                    if s.interval != interval_before or s.last_trouble != trouble_before:
+                        self._save()
+                except asyncio.CancelledError:
+                    # Create a task for the cleanup that will run even if we're cancelled
+                    async def cleanup():
+                        if self._shared is not None:
+                            remaining = s.last_start + s.interval - self._clock()
+                            if remaining > 0:
+                                await self._sleep(remaining)
+                        if s.interval != interval_before or s.last_trouble != trouble_before:
+                            self._save()
+                    
+                    cleanup_task = asyncio.create_task(cleanup())
+                    # Wait for the cleanup task to complete, catching CancelledError
+                    # The cleanup task is not linked to our cancellation
+                    while not cleanup_task.done():
+                        try:
+                            await asyncio.sleep(0.01)
+                        except asyncio.CancelledError:
+                            pass  # Continue waiting for cleanup
+                    raise
 
     async def wait(self) -> None:
         async with self.turn():
