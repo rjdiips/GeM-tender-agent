@@ -44,6 +44,13 @@ def _non_negative_int(value: str) -> int:
     return number
 
 
+def _positive_int(value: str) -> int:
+    number = _non_negative_int(value)
+    if number < 1:
+        raise argparse.ArgumentTypeError("must be at least 1")
+    return number
+
+
 def cmd_bids_migrate(args: argparse.Namespace, settings: Settings) -> int:
     from gem_agent.eval.labelled import LabelledSet
 
@@ -133,11 +140,14 @@ def main(argv: list[str] | None = None) -> int:
     bids.add_argument("action", choices=["migrate"], help="migrate: copy cards and labelled bids from the old index")
     bids.add_argument("--from", dest="source", help="the old index file (default: the configured index path)")
     bids.add_argument("--labelled", help=f"labelled set whose bids are kept (default {LABELLED_SET})")
-    ev = sub.add_parser("eval", help="score the Judge against the labelled set")
+    ev = sub.add_parser("eval", help="score the Judge or description matching against the labelled set")
+    ev.add_argument("what", nargs="?", choices=["judge", "match"], default="judge",
+                    help="judge (default) or the cached-only match harness")
     ev.add_argument("--set", default=LABELLED_SET, help="labelled set file")
     ev.add_argument("--topic", help="only this topic")
     ev.add_argument("--parallel", type=int, default=3)
-    ev.add_argument("--out", help="write each bid's label and verdict here (JSON)")
+    ev.add_argument("--repeats", type=_positive_int, default=3, help="match evaluation runs (default 3)")
+    ev.add_argument("--out", help="write each bid's label and verdict, or the match report, here (JSON)")
     desc = sub.add_parser("describe", help="refresh bid descriptions from cached documents")
     desc.add_argument("--refresh", action="store_true", required=True, help="refresh stale descriptions (no GeM requests)")
     desc.add_argument("--limit", type=_non_negative_int, default=200, help="maximum bids to refresh (default 200)")
@@ -196,6 +206,9 @@ async def _describe_refresh(settings: Settings, limit: int) -> int:
 
 
 async def _eval(settings: Settings, args: argparse.Namespace) -> int:
+    if args.what == "match":
+        return await _eval_match(settings, args)
+
     from gem_agent.app.factory import build_services
     from gem_agent.eval.labelled import LabelledSet, report, rows_json
     from gem_agent.eval.run import judge_set
@@ -207,6 +220,43 @@ async def _eval(settings: Settings, args: argparse.Namespace) -> int:
     print(report(rows))
     if args.out:
         Path(args.out).write_text(rows_json(rows), encoding="utf-8")
+    return 0
+
+
+async def _eval_match(settings: Settings, args: argparse.Namespace) -> int:
+    import tempfile
+
+    from gem_agent.agents.judge import Judge
+    from gem_agent.agents.matcher import Matcher
+    from gem_agent.agents.models import chat_model
+    from gem_agent.agents.searcher import Searcher
+    from gem_agent.cache.docs import DocCache
+    from gem_agent.cache.verdicts import VerdictCache
+    from gem_agent.eval.labelled import LabelledSet
+    from gem_agent.eval.match import evaluate, report_text
+    from gem_agent.index.describe import Describer
+
+    model = chat_model(settings)
+    index = BidIndex(settings.bid_cache_path)
+    try:
+        cache = DocCache(settings.cache_dir)
+        judge = Judge(model, cache, VerdictCache(Path(tempfile.mkdtemp(prefix="gem-eval-match-"))))
+        report = await evaluate(
+            LabelledSet.load(Path(args.set)),
+            describer=Describer(model, cache, index, model_name=settings.llm_model),
+            matcher=Matcher(model),
+            searcher=Searcher(model, index, live=None),  # type: ignore[arg-type]
+            judge=judge,
+            index=index,
+            cache=cache,
+            repeats=args.repeats,
+            topic=args.topic,
+        )
+    finally:
+        index.close()
+    print(report_text(report))
+    if args.out:
+        Path(args.out).write_text(report.model_dump_json(indent=1) + "\n", encoding="utf-8")
     return 0
 
 
