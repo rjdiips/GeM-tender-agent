@@ -6,8 +6,9 @@
    and hard buyer filters locally.
 3. Title screen: one batched model call keeps every plausible title.
 4. Vague titles (a bare service category such as "Hiring of Agency for IT Projects- Milestone basis") say nothing
-   about the subject. Once the bid cache holds the bid's card (what it buys, written from its bid document) the screen
-   sees the card; until then the bid is never dropped: only its documents can tell.
+   about the subject. For those titles only, a usable cached description (what the bid document says it buys) is shown
+   to the screen; without one the bid is never dropped by the title screen. Screen drops and cap cuts return separately
+   in rest_pool for the description check.
 5. Closing soonest first, after the bids the topic's own terms found (a base search alone fills the cap with banking
    IT bids for any topic); preferred buyers first within a day.
 """
@@ -83,6 +84,7 @@ class Candidate(BaseModel):
 
 class SearchResult(BaseModel):
     candidates: list[Candidate]
+    rest_pool: list[Candidate] = []  # in-window bids outside candidates: title-screen drops and cap cuts
     pool: int  # titles looked at
     over_cap: bool = False
     cut: int = 0  # kept titles left out by the cap: never read, so the user is told
@@ -129,27 +131,36 @@ class Searcher:
             return SearchResult(candidates=[], pool=0, progress=new_progress)
 
         bids = [b for b, _ in pool.values()]
-        cards = {b.b_id: c for b in bids if is_vague_title(b.title) and (c := self.bid_cache.card(b.b_id))}
-        vague = {b.b_id for b in bids if is_vague_title(b.title) and b.b_id not in cards}
-        kept, unscreened = await self._screen_titles(topic, [b for b in bids if b.b_id not in vague], cards)
+        vague = {b.b_id for b in bids if is_vague_title(b.title)}
+        descriptions = {}
+        for b_id in vague:
+            if (description := self.bid_cache.description(b_id)) is not None and description.usable():
+                descriptions[b_id] = description.text()
+        vague -= descriptions.keys()
+        kept, unscreened = await self._screen_titles(topic, [b for b in bids if b.b_id not in vague], descriptions)
         preferred = set(plan.prefer_ministries) | set(plan.prefer_departments)
-        out = []
+        group = short_name(topic)
+        out: list[Candidate] = []
+        rest_pool: list[Candidate] = []
         for bid, why in pool.values():
             if bid.b_id in vague:
                 why = ["vague title: only its documents can tell", *why]
             elif bid.b_id in unscreened:
                 why = ["screen failed: title kept for triage", *why]
             elif bid.b_id not in kept:
+                rest_pool.append(Candidate(bid=bid, group=group, why=["title screen: no", *why]))
                 continue
             if preferred & {bid.ministry, bid.department}:
                 why = [*why, "preferred buyer"]
-            out.append(Candidate(bid=bid, group=short_name(topic), why=why))
-        self.bid_cache.upsert([c.bid for c in out], seen_at=site_now())
+            out.append(Candidate(bid=bid, group=group, why=why))
+        self.bid_cache.upsert(bids, seen_at=site_now())
         out.sort(key=lambda c: ("0" if from_own_search(c) else "1") +  # the topic's own hits get the cap's places first
                  (c.bid.closing or datetime.max).date().isoformat() +
                  ("0" if "preferred buyer" in c.why else "1") + (c.bid.closing or datetime.max).isoformat())
         cut = max(0, len(out) - cap)
-        return SearchResult(candidates=out[:cap], pool=len(pool), over_cap=cut > 0, cut=cut, progress=new_progress)
+        rest_pool.extend(Candidate(bid=c.bid, group=c.group, why=["over the cap", *c.why]) for c in out[cap:])
+        return SearchResult(candidates=out[:cap], rest_pool=rest_pool, pool=len(pool), over_cap=cut > 0, cut=cut,
+                            progress=new_progress)
 
     @staticmethod
     def _in_scope(bid: Bid, plan: SearchPlan) -> bool:
@@ -172,32 +183,32 @@ class Searcher:
         return not plan.bid_types or int(bid.bid_type) in plan.bid_types
 
     async def _screen_titles(self, topic: TopicDefinition, bids: list[Bid],
-                             cards: dict[int, str] | None = None) -> tuple[set[int], set[int]]:
+                             descriptions: dict[int, str] | None = None) -> tuple[set[int], set[int]]:
         """The titles to keep, and those left unscreened: a batch the model fails on is split in two and each half
         tried once; only a half that fails again goes to triage (one bad answer must not fail the run)."""
         kept: set[int] = set()
         unscreened: set[int] = set()
         for start in range(0, len(bids), self.settings.screen_batch):
             batch = bids[start : start + self.settings.screen_batch]
-            if (found := await self._screen_batch(topic, batch, cards)) is not None:
+            if (found := await self._screen_batch(topic, batch, descriptions)) is not None:
                 kept |= found
                 continue
             half = (len(batch) + 1) // 2
             for part in (batch[:half], batch[half:]):
                 if not part:
                     continue
-                if (found := await self._screen_batch(topic, part, cards)) is not None:
+                if (found := await self._screen_batch(topic, part, descriptions)) is not None:
                     kept |= found
                 else:
                     unscreened |= {b.b_id for b in part}
         return kept, unscreened
 
     async def _screen_batch(self, topic: TopicDefinition, batch: list[Bid],
-                            cards: dict[int, str] | None) -> set[int] | None:
+                            descriptions: dict[int, str] | None) -> set[int] | None:
         """The b_ids the model keeps from one batch, or None if it could not answer."""
-        cards = cards or {}
+        descriptions = descriptions or {}
         listing = "\n".join(
-            f"[{i}] {b.title[:200]}{f' — what it buys: {cards[b.b_id][:300]}' if b.b_id in cards else ''}"
+            f"[{i}] {b.title[:200]}{f' — what it buys: {descriptions[b.b_id][:300]}' if b.b_id in descriptions else ''}"
             f" | {b.ministry or ''} / {b.department or ''}" for i, b in enumerate(batch))
         try:
             out: ScreenOutput = (await self._screen.run(

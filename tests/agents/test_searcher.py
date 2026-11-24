@@ -5,7 +5,7 @@ import pytest
 
 from gem_agent.agents.schemas import SearchPlan
 from gem_agent.agents.searcher import BASE_SPECS, SCREEN_INSTRUCTIONS, Searcher, SearchSettings, search_specs
-from gem_agent.index.db import BidIndex
+from gem_agent.index.db import BidIndex, Description
 from gem_agent.tools.gem.live import LiveSearcher
 from gem_agent.tools.gem.models import Bid
 from gem_agent.tools.http_client import BidplusSession, ClientPool
@@ -51,6 +51,12 @@ def screened(llm):
 
 def keep_all():
     return ScriptedLLM({SCREEN_INSTRUCTIONS: lambda p: {"keep": list(range(40))}})
+
+
+def put_description(bid_cache, b_id, subject, terms=()):
+    bid_cache.put_description(Description(
+        b_id=b_id, doc_hash=f"hash-{b_id}", subject=subject, terms=list(terms), sources=["GeM-Bidding.pdf"],
+        has_scope=True, buyer_org=None, model="scripted", prompt_version="1", written_at=T))
 
 
 def ids(found):
@@ -112,23 +118,48 @@ async def test_the_second_stage_returns_only_bids_the_first_did_not(gem, clock, 
     assert second.progress["fullText|loan origination"].pages_read == 3
 
 
-async def test_vague_titles_without_a_card_are_never_dropped(gem, clock, bid_cache):
+async def test_vague_titles_without_a_usable_description_are_never_dropped(gem, clock, bid_cache):
+    bid_cache.upsert([Bid.from_listing(ROWS[5])], seen_at=T)
+    bid_cache.set_card(5, "Loan origination system for RRBs; LOS")  # a legacy card must not decide the title screen
+    put_description(bid_cache, 5, "")
     llm = ScriptedLLM({SCREEN_INSTRUCTIONS: [{"keep": []}]})
-    searcher, _ = build(gem, clock, bid_cache, llm, the_site(3, 5))
+    searcher, _ = build(gem, clock, bid_cache, llm, the_site(5))
     found = await searcher.search(LOS, plan())
     assert ids(found) == {5}
     assert "vague title" in found.candidates[0].why[0]
+    assert found.rest_pool == [] and llm.calls == []
 
 
-async def test_a_vague_title_with_a_card_is_screened_by_its_card(gem, clock, bid_cache):
-    bid_cache.upsert([Bid.from_listing(ROWS[5])], seen_at=T)
-    bid_cache.set_card(5, "Loan origination system for RRBs; LOS")
-    llm = ScriptedLLM({SCREEN_INSTRUCTIONS: lambda p: {"keep": [int(n) for n, t in re.findall(r"^\[(\d+)\] (.*)$", p, re.MULTILINE)
-                                                                if "Loan origination system" in t]}})
+async def test_a_vague_title_with_a_description_is_screened_by_it(gem, clock, bid_cache):
+    put_description(bid_cache, 3, "Loan origination system")  # a clear title must not get description context
+    put_description(bid_cache, 5, "Lockers for branches")
+    llm = ScriptedLLM({SCREEN_INSTRUCTIONS: lambda p: {"keep": [
+        int(n) for n, t in re.findall(r"^\[(\d+)\] (.*)$", p, re.MULTILINE)
+        if "what it buys: Lockers for branches" in t]}})
     searcher, _ = build(gem, clock, bid_cache, llm, the_site(3, 5))
     found = await searcher.search(LOS, plan())
-    assert "what it buys: Loan origination system for RRBs" in screened(llm)
+    assert "what it buys: Lockers for branches" in screened(llm)
+    assert "what it buys: Loan origination system" not in screened(llm)
     assert ids(found) == {5} and "vague title" not in " ".join(found.candidates[0].why)
+
+
+async def test_titles_the_screen_drops_come_back_in_the_rest_pool(gem, clock, bid_cache):
+    llm = ScriptedLLM({SCREEN_INSTRUCTIONS: [{"keep": [0]}]})
+    searcher, _ = build(gem, clock, bid_cache, llm, the_site(1, 2, 3))
+    found = await searcher.search(LOS, plan())
+    assert ids(found) == {1}
+    assert [c.bid.b_id for c in found.rest_pool] == [2, 3]
+    assert all(c.why[0] == "title screen: no" for c in found.rest_pool)
+    assert found.pool == 3 and found.cut == 0 and not found.over_cap
+
+
+async def test_titles_the_cap_cuts_come_back_in_the_rest_pool(gem, clock, bid_cache):
+    searcher, _ = build(gem, clock, bid_cache, keep_all(), the_site(1, 2), cap=1)
+    found = await searcher.search(LOS, plan())
+    assert ids(found) == {2}
+    assert found.cut == 1 and found.over_cap
+    assert [c.bid.b_id for c in found.rest_pool] == [1]
+    assert found.rest_pool[0].why[0] == "over the cap"
 
 
 async def test_the_window_is_applied_locally(gem, clock, bid_cache):
@@ -177,10 +208,13 @@ async def test_the_second_stage_keeps_only_the_cap_the_first_left(gem, clock, bi
     assert (more.pages_read, more.page_count) == (2, 3)
 
 
-async def test_kept_candidates_are_stored_in_the_bid_cache(gem, clock, bid_cache):
-    searcher, _ = build(gem, clock, bid_cache, keep_all(), the_site(1, 4))
+async def test_every_in_window_bid_is_stored_in_the_bid_cache(gem, clock, bid_cache):
+    llm = ScriptedLLM({SCREEN_INSTRUCTIONS: [{"keep": [1, 2]}]})
+    searcher, _ = build(gem, clock, bid_cache, llm, the_site(1, 2, 3), cap=1)
     found = await searcher.search(LOS, plan())
-    assert found.candidates and all(bid_cache.get(c.bid.b_id) is not None for c in found.candidates)
+    assert ids(found) == {3}
+    assert {c.bid.b_id for c in found.rest_pool} == {1, 2}
+    assert found.pool == 3 and all(bid_cache.get(b_id) is not None for b_id in (1, 2, 3))
 
 
 async def test_an_empty_pool_gives_nothing_and_skips_the_screen(gem, clock, bid_cache):

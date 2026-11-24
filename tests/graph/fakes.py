@@ -55,13 +55,16 @@ class FakePlanner:
 
 class FakeSearcher:
     """`results`: the first stage's bids, one list per call (the last repeats). `rest`: the second stage's, likewise.
+    `dropped`: likewise, stage-1 bids the title screen rejected; they go to rest_pool, as do bids cut by the cap.
     Like the real Searcher, the second stage needs the progress the first returned and leaves out `exclude`, and a
     result is cut to the cap (`cap` overrides the settings' one) with the number cut reported. `more_pages`: stage 1
     leaves pages for stage 2 (False: every search was read whole on page 1). `searches`: per stage, more search
     progress to report (it may replace "fake"), e.g. failed searches."""
 
-    def __init__(self, results, rest=((),), *, ignore_exclude=False, cap=150, more_pages=True, searches=None):
-        self.results, self.rest, self.calls, self.rest_calls = list(results), [list(r) for r in rest], 0, 0
+    def __init__(self, results, rest=((),), *, dropped=((),), ignore_exclude=False, cap=150,
+                 more_pages=True, searches=None):
+        self.results, self.rest, self.dropped = list(results), [list(r) for r in rest], [list(d) for d in dropped]
+        self.calls, self.rest_calls = 0, 0
         self.stages, self.excluded, self.ignore_exclude, self.caps = [], [], ignore_exclude, []
         self.settings, self.more_pages, self.searches = SearchSettings(cap=cap), more_pages, dict(searches or {})
 
@@ -71,25 +74,30 @@ class FakeSearcher:
         self.caps.append(cap)
         if stage == "first":
             bids = self.results[min(self.calls, len(self.results) - 1)]
+            dropped = self.dropped[min(self.calls, len(self.dropped) - 1)]
             self.calls += 1
         else:
             if not progress or "fake" not in progress:
                 raise KeyError("fake")  # live.rest without the first stage's progress
             bids = self.rest[min(self.rest_calls, len(self.rest) - 1)]
+            dropped = ()
             self.rest_calls += 1
             self.excluded.append(set(exclude))
             if on_page is not None and bids:  # like live.rest: the live count climbs with the pages
                 on_page(len(bids), (cap or 0) * 3)
         bids = [b for b in bids if self.ignore_exclude or b.b_id not in exclude]
+        dropped = [b for b in dropped if self.ignore_exclude or b.b_id not in exclude]
         limit = self.settings.cap if cap is None else max(0, cap)
         cut = max(0, len(bids) - limit)
         pages = 2 if self.more_pages else 1
         done = SearchProgress(num_found=len(bids), pages_read=1 if stage == "first" else pages, page_count=pages)
         if stage == "rest" and not progress["fake"].pending:
             done = progress["fake"]  # like live.rest: a search with nothing left keeps its progress (failed, say)
-        return SearchResult(candidates=[Candidate(bid=b, group=topic.meaning.split(":")[0], why=["title words"])
-                                        for b in bids[:limit]],
-                            pool=len(bids) * 3, over_cap=cut > 0, cut=cut,
+        group = topic.meaning.split(":")[0]
+        rest_pool = [Candidate(bid=b, group=group, why=["title screen: no", "fake"]) for b in dropped]
+        rest_pool += [Candidate(bid=b, group=group, why=["over the cap", "title words"]) for b in bids[limit:]]
+        return SearchResult(candidates=[Candidate(bid=b, group=group, why=["title words"]) for b in bids[:limit]],
+                            rest_pool=rest_pool, pool=(len(bids) + len(dropped)) * 3, over_cap=cut > 0, cut=cut,
                             progress={**(progress or {}), "fake": done, **self.searches.get(stage, {})})
 
 
