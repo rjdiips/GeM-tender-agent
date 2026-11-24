@@ -247,8 +247,8 @@ def build_graph(s: Services) -> StateGraph:
 
     async def retry(state: RunState) -> dict[str, Any]:
         adjust = "narrow" if state.candidates else "widen"
-        progress(s, state.run_id, "Nothing matched by title; widening the search…" if adjust == "widen"
-                 else "Too many matches; narrowing the search…", phase="retry")
+        progress(s, state.run_id, "Nothing matched by title; widening the search." if adjust == "widen"
+                 else "Too many matches; narrowing the search.", phase="retry")
         return {"adjust": adjust, "retries": state.retries + 1}
 
     async def process(state: RunState) -> dict[str, Any]:

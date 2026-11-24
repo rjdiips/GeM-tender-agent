@@ -734,3 +734,17 @@ async def test_failed_run_gets_a_closing_line(tmp_path):
     events = await ask(RunManager(s), "LOS tenders")
     assert texts_of(events)[-1] == "Stopped by an error after reading 0 of 0 bids. Try again; bids already read are kept."
     assert events[-1] == {"type": "done", "status": "failed"}
+
+
+async def test_retry_lines_are_finished_steps_in_plain_words(tmp_path):
+    widen = await ask(RunManager(services(tmp_path / "widen", searcher=FakeSearcher([[]], more_pages=False))),
+                      "LOS tenders")
+    narrow = await ask(RunManager(services(tmp_path / "narrow",
+                                           searcher=FakeSearcher([[bid(1), bid(2), bid(3)]], rest=[[bid(4)]], cap=2))),
+                       "LOS tenders")
+    def retry_lines(events):
+        return [e["event"]["text"] for e in events if e["type"] == "progress" and e["event"].get("phase") == "retry"]
+    assert retry_lines(widen) == ["Nothing matched by title; widening the search."] * 2  # two widening rounds
+    assert retry_lines(narrow) == ["Too many matches; narrowing the search."]
+    for line in retry_lines(widen) + retry_lines(narrow):
+        assert not line.endswith("…") and "triage" not in line and "placeholder" not in line
