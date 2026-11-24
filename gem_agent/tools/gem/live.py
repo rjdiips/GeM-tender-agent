@@ -4,6 +4,7 @@ from __future__ import annotations
 import logging
 from collections.abc import Callable
 from dataclasses import dataclass
+from datetime import datetime
 from typing import Literal
 
 import httpx
@@ -135,16 +136,22 @@ class LiveSearcher:
 
     async def rest(self, specs: list[SearchSpec], progress: dict[str, SearchProgress], *,
                    budget: int | None = None,
-                   on_page: Callable[[int, int], None] | None = None) -> list[SearchOutcome]:
+                   on_page: Callable[[int, int], None] | None = None,
+                   window_start: datetime | None = None,
+                   keep: Callable[[Bid], bool] | None = None) -> list[SearchOutcome]:
         """One outcome per spec, in order; a spec with nothing left to read comes back with no bids and its progress.
         A base search another topic (or run) completed within the hour comes from the cache: its bids minus this
         search's page 1, which stage 1 already returned.
 
-        `budget`: stop once this many distinct bids are gathered. Stage 2 only tops up a shortlist, so every page of
-        every search is not worth it: GeM allows about one page a second and a search can run to hundreds of pages.
+        `budget`: stop once this many distinct kept bids are gathered. Pending searches share what remains, at least
+        one bid each; unused shares roll forward. Stage 2 only tops up a shortlist, so every page of every search is
+        not worth it: GeM allows about one page a second and a search can run to hundreds of pages.
+        `window_start`: an all-bids search stops after a page entirely published before it (those searches are newest
+        first). `keep`: only distinct bids for which it is true consume the budget; None keeps every bid.
         `on_page(bids, budget)`: after each page, for a live count."""
         outcomes: list[SearchOutcome] = []
         got: set[int] = set()
+        pending_left = sum(progress[spec.key].pending for spec in specs)
 
         def report(bids: int) -> None:
             if on_page is not None:
@@ -152,28 +159,34 @@ class LiveSearcher:
 
         for spec in specs:
             current = progress[spec.key]
-            left = None if budget is None else max(0, budget - len(got))
-            if not current.pending or left == 0:
+            if not current.pending:
                 outcomes.append(SearchOutcome(spec, current, []))
                 continue
+            left = None if budget is None else max(0, budget - len(got))
+            share = None if budget is None else max(1, left // pending_left)
+            pending_left -= 1
             if (hit := self._cached(spec)) is not None:
                 num_found, bids = hit
                 self._first_bids.pop((spec.key, tuple(current.first_ids)), None)
                 first = set(current.first_ids)
                 more = [b for b in bids if b.b_id not in first]
-                got.update(b.b_id for b in more)
+                got.update(b.b_id for b in more if keep is None or keep(b))
                 report(0)
                 outcomes.append(SearchOutcome(spec, self._complete(num_found, current.first_ids), more))
                 continue
-            outcome = await self._rest(spec, current, budget=left, on_page=report)
-            got.update(b.b_id for b in outcome.bids)
+            outcome = await self._rest(spec, current, budget=share, on_page=report, seen=got,
+                                       window_start=window_start, keep=keep)
+            got.update(b.b_id for b in outcome.bids if keep is None or keep(b))
             outcomes.append(outcome)
         return outcomes
 
     async def _rest(self, spec: SearchSpec, current: SearchProgress, *, budget: int | None = None,
-                    on_page: Callable[[int], None] | None = None) -> SearchOutcome:
+                    on_page: Callable[[int], None] | None = None, seen: set[int] | None = None,
+                    window_start: datetime | None = None, keep: Callable[[Bid], bool] | None = None) -> SearchOutcome:
         new = current.model_copy()
         bids: list[Bid] = []
+        counted: set[int] = set()
+        seen = seen or set()
         for n in range(current.pages_read + 1, current.page_count + 1):
             try:
                 page = await self._page(spec, n)
@@ -185,9 +198,14 @@ class LiveSearcher:
                 break
             bids.extend(page.bids)
             new.pages_read = n
+            page_ids = {b.b_id for b in page.bids if keep is None or keep(b)}
+            added = page_ids - seen - counted
+            counted.update(added)
             if on_page is not None:
-                on_page(len({b.b_id for b in bids}))
-            if budget is not None and len({b.b_id for b in bids}) >= budget:  # the places left are filled
+                on_page(len(added))
+            past_window = (window_start is not None and spec.kind in ("exact", "fullText") and page.bids
+                           and all(b.published is not None and b.published < window_start for b in page.bids))
+            if past_window or (budget is not None and len(counted) >= budget):
                 break
         bids = _dedupe(bids)
         first = self._first_bids.pop((spec.key, tuple(current.first_ids)), None)

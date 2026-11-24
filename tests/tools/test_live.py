@@ -267,3 +267,117 @@ async def test_concurrent_runs_store_their_own_first_page(gem, clock, tmp_path):
     (x_rest,) = await live.rest([spec], {key: x.progress})
     stored = {d["b_id"][0] if isinstance(d["b_id"], list) else d["b_id"] for d in cache.get(key)[1]}
     assert stored == {b.b_id for b in x.bids} | {b.b_id for b in x_rest.bids}
+
+
+def dated_rows(prefix: int, n: int, published: datetime) -> list[dict]:
+    return [row(prefix + i, published, T0 + timedelta(days=5), f"Bid {prefix + i}") for i in range(n)]
+
+
+@pytest.mark.parametrize("kind", ["exact", "fullText"])
+async def test_an_all_bids_search_stops_after_a_page_older_than_the_window(gem, clock, kind):
+    key = f"{kind}|aml"
+    spec = SearchSpec(kind=kind, value="aml")
+    listing = dated_rows(20000, 10, T0) + dated_rows(20010, 20, T0 - timedelta(days=30))
+    live, site = make_live(gem, clock, {key: listing})
+    (first,) = await live.first_pages([spec])
+
+    (more,) = await live.rest([spec], {key: first.progress}, window_start=T0 - timedelta(days=1))
+
+    assert site.served == [(key, 1), (key, 2)]
+    assert more.progress.pages_read == 2 and more.progress.pending
+    assert len(more.bids) == 10
+
+
+async def test_a_category_search_is_not_stopped_by_dates(gem, clock):
+    key = f"category|{CATEGORY}"
+    spec = SearchSpec(kind="category", value=CATEGORY)
+    listing = dated_rows(20100, 10, T0) + dated_rows(20110, 20, T0 - timedelta(days=30))
+    live, site = make_live(gem, clock, {key: listing})
+    (first,) = await live.first_pages([spec])
+
+    (more,) = await live.rest([spec], {key: first.progress}, window_start=T0 - timedelta(days=1))
+
+    assert site.served == [(key, 1), (key, 2), (key, 3)]
+    assert more.progress.pages_read == 3 and not more.progress.pending
+    assert len(first.bids) + len(more.bids) == 30
+
+
+async def test_the_budget_counts_only_bids_in_the_window(gem, clock):
+    key = "fullText|aml"
+    spec = SearchSpec(kind="fullText", value="aml")
+    listing = (dated_rows(20200, 10, T0) + dated_rows(20210, 10, T0 - timedelta(days=30))
+               + dated_rows(20220, 10, T0))
+    live, site = make_live(gem, clock, {key: listing})
+    (first,) = await live.first_pages([spec])
+
+    (more,) = await live.rest([spec], {key: first.progress}, budget=10, keep=lambda b: b.published >= T0)
+
+    assert site.served == [(key, 1), (key, 2), (key, 3)]
+    assert more.progress.pages_read == 3
+    assert sum(b.published >= T0 for b in more.bids) == 10
+
+
+async def test_each_search_gets_an_equal_share_of_the_budget(gem, clock):
+    aml, kyc = SearchSpec(kind="fullText", value="aml"), SearchSpec(kind="fullText", value="kyc")
+    live, site = make_live(gem, clock, {aml.key: rows(20300, 30), kyc.key: rows(20400, 30)})
+    first = await live.first_pages([aml, kyc])
+
+    more = await live.rest([aml, kyc], {o.spec.key: o.progress for o in first}, budget=20)
+
+    assert site.served == [(aml.key, 1), (kyc.key, 1), (aml.key, 2), (kyc.key, 2)]
+    assert all(o.progress.pages_read == 2 and o.progress.pending for o in more)
+
+
+async def test_unused_budget_rolls_forward_to_the_next_pending_search(gem, clock):
+    aml, kyc = SearchSpec(kind="fullText", value="aml"), SearchSpec(kind="fullText", value="kyc")
+    old = T0 - timedelta(days=30)
+    listing = {aml.key: dated_rows(20500, 10, T0) + dated_rows(20510, 20, old),
+               kyc.key: rows(20600, 30)}
+    live, site = make_live(gem, clock, listing)
+    first = await live.first_pages([aml, kyc])
+
+    more = await live.rest([aml, kyc], {o.spec.key: o.progress for o in first}, budget=20,
+                           window_start=T0 - timedelta(days=1), keep=lambda b: b.published >= T0)
+
+    assert site.served == [(aml.key, 1), (kyc.key, 1), (aml.key, 2), (kyc.key, 2), (kyc.key, 3)]
+    assert more[0].progress.pages_read == 2 and more[0].progress.pending
+    assert more[1].progress.pages_read == 3 and not more[1].progress.pending
+
+
+async def test_the_shared_budget_counts_duplicate_bids_once(gem, clock):
+    aml, kyc = SearchSpec(kind="fullText", value="aml"), SearchSpec(kind="fullText", value="kyc")
+    shared_deeper = rows(20710, 10)
+    listing = {aml.key: rows(20700, 30), kyc.key: rows(20800, 10) + shared_deeper + rows(20810, 10)}
+    live, site = make_live(gem, clock, listing)
+    first = await live.first_pages([aml, kyc])
+
+    more = await live.rest([aml, kyc], {o.spec.key: o.progress for o in first}, budget=20)
+
+    assert site.served == [(aml.key, 1), (kyc.key, 1), (aml.key, 2), (kyc.key, 2), (kyc.key, 3)]
+    assert more[1].progress.pages_read == 3 and not more[1].progress.pending
+
+
+async def test_each_pending_search_gets_at_least_one_bid_of_budget(gem, clock):
+    aml, kyc = SearchSpec(kind="fullText", value="aml"), SearchSpec(kind="fullText", value="kyc")
+    live, site = make_live(gem, clock, {aml.key: rows(20900, 30), kyc.key: rows(21000, 30)})
+    first = await live.first_pages([aml, kyc])
+
+    more = await live.rest([aml, kyc], {o.spec.key: o.progress for o in first}, budget=1)
+
+    assert site.served == [(aml.key, 1), (kyc.key, 1), (aml.key, 2), (kyc.key, 2)]
+    assert all(o.progress.pages_read == 2 and o.progress.pending for o in more)
+
+
+async def test_a_search_stopped_at_the_window_is_pending_and_not_cached(gem, clock, tmp_path):
+    key = "exact|Department of Financial Services"
+    spec = SearchSpec(kind="exact", value="Department of Financial Services")
+    listing = dated_rows(21100, 10, T0) + dated_rows(21110, 20, T0 - timedelta(days=30))
+    cache = SearchCache(tmp_path, now=lambda: T0)
+    live, site = make_live(gem, clock, {key: listing}, cache=cache, cached_keys=frozenset({key}))
+    (first,) = await live.first_pages([spec])
+
+    (more,) = await live.rest([spec], {key: first.progress}, window_start=T0 - timedelta(days=1))
+
+    assert site.served == [(key, 1), (key, 2)]
+    assert more.progress.pages_read == 2 and more.progress.pending
+    assert cache.get(key) is None

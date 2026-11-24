@@ -116,7 +116,9 @@ class Searcher:
             outcomes = await self.live.first_pages(specs)
         else:
             # stage 2 only tops up a shortlist: three times the places left is enough, and every page costs a second
-            outcomes = await self.live.rest(specs, progress or {}, budget=cap * 3, on_page=on_page)
+            outcomes = await self.live.rest(
+                specs, progress or {}, budget=cap * 3, on_page=on_page,
+                window_start=plan.published_from, keep=lambda b: self._in_scope(b, plan))
         new_progress = {**(progress or {}), **{o.spec.key: o.progress for o in outcomes}}
 
         pool: dict[int, tuple[Bid, list[str]]] = {}
