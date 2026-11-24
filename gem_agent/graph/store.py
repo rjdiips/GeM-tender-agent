@@ -12,6 +12,7 @@ from typing import Any, Literal
 
 from pydantic import BaseModel, TypeAdapter
 
+from gem_agent.agents.matcher import Call
 from gem_agent.agents.schemas import ProbeResult, SearchPlan, TenderRequest, Verdict
 from gem_agent.agents.searcher import Candidate
 from gem_agent.cache.docs import FileRecord
@@ -43,6 +44,16 @@ class Ruling(BaseModel):
     fact: str
     created_fact: bool = False
     at: datetime
+
+
+class ProcessProgress(BaseModel):
+    """Durable in-node progress for the describe/match/read pipeline, restored alongside the graph checkpoint."""
+
+    done_ids: list[int] = []
+    described: int = 0
+    reads: dict[str, int] = {}
+    calls: dict[int, Call] = {}
+    cut: int = 0
 
 
 class Outcome(BaseModel):
@@ -115,6 +126,20 @@ class RunStore:
             return len(json.loads(path.read_text(encoding="utf-8")))
         except (OSError, ValueError):
             return 0
+
+    def process_progress(self, run_id: str) -> ProcessProgress:
+        """The pipeline's last durable in-node progress; older runs simply have none."""
+        path = self._dir(run_id) / "process.json"
+        if not path.exists():
+            return ProcessProgress()
+        try:
+            return ProcessProgress.model_validate_json(path.read_bytes())
+        except (OSError, ValueError) as exc:
+            log.warning("run %s: process progress unreadable, rebuilding what can be rebuilt: %s", run_id, exc)
+            return ProcessProgress()
+
+    def save_process_progress(self, run_id: str, progress: ProcessProgress) -> None:
+        self._write(self._dir(run_id) / "process.json", progress.model_dump_json(indent=1))
 
     def outcomes(self, run_id: str) -> dict[int, Outcome]:
         """outcomes.json as written by older runs, then the lines appended to outcomes.jsonl (last one wins)."""

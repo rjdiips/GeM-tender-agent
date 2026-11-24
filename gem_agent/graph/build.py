@@ -24,7 +24,7 @@ from gem_agent.graph.deciding import describe_order, not_read_reason, route, tit
 from gem_agent.graph.rulings import settle, topic_for
 from gem_agent.graph.services import Services
 from gem_agent.graph.state import RunState
-from gem_agent.graph.store import Outcome
+from gem_agent.graph.store import Outcome, ProcessProgress
 from gem_agent.graph.views import bid_result, bid_state
 from gem_agent.tools.gem.live import SearchProgress
 
@@ -318,17 +318,27 @@ def build_graph(s: Services) -> StateGraph:
     async def process_matching(state: RunState) -> dict[str, Any]:
         """Describe the whole pool, match per topic, route, keep the safety net, then read in priority order."""
         slots = asyncio.Semaphore(s.workers)
-        done = list(state.done_ids)
-        done_set = set(done)
         outcomes = s.store.outcomes(state.run_id)
         all_bids = {c.bid.b_id: c for c in [*state.candidates, *state.pool_rest]}
+        stored = s.store.process_progress(state.run_id)
+        done = list(dict.fromkeys([*state.done_ids, *stored.done_ids, *outcomes]))
+        done_set = set(done)
         todo = [c for b_id, c in all_bids.items() if b_id not in done_set]
         total = len(all_bids)
-        described, reads, cut = state.described, dict(state.reads), 0
+        described = max(state.described, stored.described)
+        reads = dict(stored.reads)
+        for group, count in state.reads.items():
+            reads[group] = max(reads.get(group, 0), count)
+        base_cut = max(state.cut, stored.cut)
+        cut = 0
         files_by_id: dict[int, Any] = {}
         triage_by_id: dict[int, Any] = {}
         routes: dict[int, str] = {}
-        calls: dict[int, Any] = {}
+        calls = {b_id: call for b_id, call in stored.calls.items() if b_id in all_bids and b_id not in done_set}
+
+        def persist() -> None:
+            s.store.save_process_progress(state.run_id, ProcessProgress(
+                done_ids=done, described=described, reads=reads, calls=calls, cut=base_cut + cut))
 
         def count_line() -> None:
             seen = [outcomes[b_id] for b_id in done if b_id in outcomes]
@@ -338,6 +348,7 @@ def build_graph(s: Services) -> StateGraph:
             if c.bid.b_id not in done_set:
                 done.append(c.bid.b_id)
                 done_set.add(c.bid.b_id)
+                persist()
 
         def save(c: Candidate, outcome: Outcome) -> None:
             outcomes[c.bid.b_id] = outcome
@@ -347,8 +358,10 @@ def build_graph(s: Services) -> StateGraph:
             count_line()
 
         if not todo:
-            return {"done_ids": done, "described": described, "reads": reads, "cut": state.cut,
+            return {"done_ids": done, "described": described, "reads": reads, "cut": base_cut,
                     **({"stage": "done"} if state.stage == "rest" else {})}
+        if base_cut > state.cut:
+            progress(s, state.run_id, cut_line(base_cut - state.cut), phase="read")
         count_line()
 
         known_all = s.describer.known(all_bids)
@@ -372,7 +385,7 @@ def build_graph(s: Services) -> StateGraph:
 
         for c in todo:  # descriptions already in the cache lead every group's first batch
             description = known.get(c.bid.b_id)
-            if description is not None and description.usable():
+            if c.bid.b_id not in calls and description is not None and description.usable():
                 ready.setdefault(c.group, []).append(item(c, description))
 
         async def flush(group: str) -> None:
@@ -381,6 +394,7 @@ def build_graph(s: Services) -> StateGraph:
                 batch = items[:40]
                 del items[:40]
                 calls.update(await s.matcher.match(topic_for(state.request, group), batch))
+                persist()
 
         for group in list(ready):
             await flush(group)
@@ -400,6 +414,7 @@ def build_graph(s: Services) -> StateGraph:
             known[c.bid.b_id] = description
             described += 1
             new += 1
+            persist()
             if description.usable():
                 ready.setdefault(c.group, []).append(item(c, description))
                 if len(ready[c.group]) >= 40:
@@ -466,11 +481,12 @@ def build_graph(s: Services) -> StateGraph:
         ordered = by_closing([c for c in todo if routes.get(c.bid.b_id) in ("net", "today")
                               and c.bid.b_id not in done_set])
         selected: list[Candidate] = []
+        planned_reads = dict(reads)
         for c in unread("match") + unread("unsure") + ordered:
-            used = reads.get(c.group, 0)
+            used = planned_reads.get(c.group, 0)
             if used < s.searcher.settings.cap:
                 selected.append(c)
-                reads[c.group] = used + 1
+                planned_reads[c.group] = used + 1
             else:
                 cut += 1
                 mark_done(c)  # already described and matched; later stages must not repeat that work
@@ -486,6 +502,8 @@ def build_graph(s: Services) -> StateGraph:
                         if refreshed is not None:
                             known[c.bid.b_id] = refreshed
                     verdict = await s.judge.judge(topic, c.bid, files, triage=triage_by_id.get(c.bid.b_id))
+                    reads[c.group] = reads.get(c.group, 0) + 1
+                    persist()  # the full read finished even if settling or saving is interrupted next
                     chosen = routes[c.bid.b_id]
                     outcome = Outcome(b_id=c.bid.b_id, group=c.group, bid=c.bid, files=files.files,
                                       buyer_org=files.buyer_org, verdict=verdict,
@@ -499,7 +517,7 @@ def build_graph(s: Services) -> StateGraph:
         await asyncio.gather(*(read(c) for c in selected))
         if cut:
             progress(s, state.run_id, cut_line(cut), phase="read")
-        return {"done_ids": done, "described": described, "reads": reads, "cut": state.cut + cut,
+        return {"done_ids": done, "described": described, "reads": reads, "cut": base_cut + cut,
                 **({"stage": "done"} if state.stage == "rest" else {})}
 
     async def process(state: RunState) -> dict[str, Any]:
