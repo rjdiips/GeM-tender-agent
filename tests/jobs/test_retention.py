@@ -37,6 +37,12 @@ def add_run(cfg: Settings, run_id: str, outcomes: list[Outcome], status: str = "
         store.save_outcome(run_id, o)
 
 
+def add_shortlist(cfg: Settings, run_id: str, b_ids: list[int]) -> None:
+    run_dir = cfg.runs_dir / run_id
+    run_dir.mkdir(parents=True, exist_ok=True)
+    (run_dir / "shortlist.json").write_text(json.dumps([{"b_id": b} for b in b_ids]), encoding="utf-8")
+
+
 def add_cache(cfg: Settings, b_id: int) -> tuple:
     docs = cfg.cache_dir / "docs" / str(b_id)
     (docs / "files").mkdir(parents=True)
@@ -95,6 +101,30 @@ def test_bid_in_running_run_is_kept(tmp_path):
     prune_caches(cfg, NOW, dry_run=False)
 
     assert docs.exists() and verdicts.exists()
+
+
+def test_shortlisted_bid_in_running_run_is_kept_with_no_outcome(tmp_path):
+    cfg = settings(tmp_path)
+    add_run(cfg, "finished", [outcome(1, NOW - timedelta(days=31), relevant=False)])
+    add_run(cfg, "running", [], status="running")
+    add_shortlist(cfg, "running", [1])  # shortlisted there, not yet judged there
+    docs, verdicts = add_cache(cfg, 1)
+
+    prune_caches(cfg, NOW, dry_run=False)
+
+    assert docs.exists() and verdicts.exists()
+
+
+def test_unreadable_shortlist_does_not_stop_the_pass(tmp_path):
+    cfg = settings(tmp_path)
+    add_run(cfg, "finished", [outcome(1, NOW - timedelta(days=31), relevant=False)])
+    add_run(cfg, "running", [], status="running")
+    (cfg.runs_dir / "running" / "shortlist.json").write_text("{not json", encoding="utf-8")
+    docs, _ = add_cache(cfg, 1)
+
+    prune_caches(cfg, NOW, dry_run=False)
+
+    assert not docs.exists()  # no ids could be read, so only the finished run's bid counts
 
 
 def test_labelled_set_bid_is_kept(tmp_path):

@@ -1,4 +1,4 @@
-from datetime import date, datetime
+from datetime import date, datetime, time
 
 from gem_agent.agents.schemas import DateWindow
 
@@ -65,6 +65,20 @@ def test_last_days_win_when_request_names_no_dates():
 
 def test_last_days_zero_is_today():
     assert DateWindow(kind="published", last_days=0).resolve(LATER).published_from == datetime(2026, 11, 23)
+
+
+def test_open_kind_with_zero_last_days_is_today():
+    r = DateWindow(kind="open", last_days=0).resolve(LATER)
+    assert r.published_from == datetime.combine(LATER.date(), time())  # not the 14-day default
+    assert r.published_to == LATER
+    assert DateWindow(kind="open", last_days=14).resolve(LATER).published_from == datetime(2026, 11, 9)
+
+
+def test_to_date_only_published_window_keeps_the_named_end_and_names_it_in_the_card():
+    w = DateWindow(kind="published", last_days=14, to_date=date(2026, 10, 31))
+    r = w.resolve(NOW, explicit_dates=True)
+    assert (r.published_from, r.published_to) == (None, datetime(2026, 10, 31, 23, 59, 59))
+    assert r.describe() == "published until 31 Oct"  # not "open now": the user named an end date
 
 
 def test_closing_after_a_date_stays_open_ended():

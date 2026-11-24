@@ -168,6 +168,8 @@ class ResolvedWindow(BaseModel):
 
         if self.published_from and self.published_to:
             return f"published {span(self.published_from, self.published_to)}"
+        if self.published_to:  # a named end date with no named start date is still a bounded window
+            return f"published until {self.published_to:%d %b}"
         if self.closing_from and self.closing_to:
             return f"closing {span(self.closing_from, self.closing_to)}"
         return "open now"
@@ -185,7 +187,7 @@ class DateWindow(BaseModel):
     def resolve(self, now: datetime, *, explicit_dates: bool = False) -> ResolvedWindow:
         kind = self.kind
         if kind == "open":  # the model sometimes leaves kind at "open" while filling the numbers
-            if self.last_days:
+            if self.last_days is not None:
                 kind = "published"
             elif self.next_days or self.to_date:
                 kind = "closing"
@@ -193,7 +195,10 @@ class DateWindow(BaseModel):
         end = lambda d: datetime.combine(d, time(23, 59, 59))
         start = lambda d: datetime.combine(d, time())
         if kind == "published":
-            if self.from_date and (explicit_dates or self.last_days is None):  # dates the user named win over last_days
+            if explicit_dates and (self.from_date or self.to_date):  # dates the user named win over last_days
+                return ResolvedWindow(published_from=start(self.from_date) if self.from_date else None,
+                                      published_to=end(self.to_date) if self.to_date else now, closing_from=now)
+            if self.from_date and self.last_days is None:  # the user's own number wins over dates the model added
                 return ResolvedWindow(published_from=start(self.from_date),
                                       published_to=end(self.to_date) if self.to_date else now, closing_from=now)
             days = 14 if self.last_days is None else self.last_days

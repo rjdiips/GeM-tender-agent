@@ -5,12 +5,12 @@ import argparse
 import asyncio
 import logging
 import sys
-from datetime import datetime
 from pathlib import Path
 
 from gem_agent.config import Settings, get_settings
 from gem_agent.index.db import BidIndex
 from gem_agent.index.migrate import migrate_bids
+from gem_agent.tools.gem.models import site_now
 
 log = logging.getLogger("gem_agent")
 
@@ -158,7 +158,7 @@ def main(argv: list[str] | None = None) -> int:
 def cmd_retention(settings: Settings, dry_run: bool, max_bids: int) -> int:
     from gem_agent.jobs.retention import prune_caches
 
-    report = prune_caches(settings, datetime.now(), dry_run=dry_run, max_bids=max_bids)
+    report = prune_caches(settings, site_now(), dry_run=dry_run, max_bids=max_bids)
     verb = "would be removed" if dry_run else "removed"
     print(f"{report.bids} bids, {report.files} files, {report.bytes / 1_000_000:.1f} MB {verb}")
     return 0

@@ -39,15 +39,27 @@ def _status(run_json: Path) -> str:
         return "running"
 
 
+def _shortlisted(store: RunStore, run_id: str) -> set[int]:
+    """Ids on a run's shortlist. A running run has none early on, and a half-written file is not fatal."""
+    path = store.root / run_id / "shortlist.json"
+    try:
+        return {row["b_id"] for row in json.loads(path.read_text(encoding="utf-8"))}
+    except (OSError, ValueError, TypeError, KeyError):
+        return set()
+
+
 def _read_runs(settings: Settings) -> dict[int, _Bid]:
     """Each bid of the finished runs with its closing date and whether any run found it relevant. A bid that appears
-    in any running run is left out altogether."""
+    in any running run — as an outcome or on its shortlist, before it has been read — is left out altogether."""
     store = RunStore(settings.runs_dir)
     running: set[int] = set()
     bids: dict[int, _Bid] = {}
     for run_json in sorted(settings.runs_dir.glob("*/run.json")):
+        run_id = run_json.parent.name
         is_running = _status(run_json) == "running"
-        for b_id, o in store.outcomes(run_json.parent.name).items():
+        if is_running:
+            running |= _shortlisted(store, run_id)
+        for b_id, o in store.outcomes(run_id).items():
             if is_running:
                 running.add(b_id)
             else:
