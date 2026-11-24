@@ -199,7 +199,7 @@ class DateWindow(BaseModel):
             days = 14 if self.last_days is None else self.last_days
             return ResolvedWindow(published_from=day - timedelta(days=days), published_to=now, closing_from=now)
         if kind == "closing":
-            if (self.to_date or (explicit_dates and self.from_date)) and not self.next_days:
+            if (explicit_dates and (self.from_date or self.to_date)) or (self.to_date and not self.next_days):
                 return ResolvedWindow(closing_from=max(now, start(self.from_date)) if self.from_date else now,
                                       closing_to=end(self.to_date) if self.to_date else None)
             return ResolvedWindow(closing_from=now, closing_to=end(now.date() + timedelta(days=self.next_days or 7)))

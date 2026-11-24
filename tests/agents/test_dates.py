@@ -70,3 +70,9 @@ def test_last_days_zero_is_today():
 def test_closing_after_a_date_stays_open_ended():
     r = DateWindow(kind="closing", from_date=date(2026, 12, 1)).resolve(NOW, explicit_dates=True)
     assert r.closing_from == datetime(2026, 12, 1) and r.closing_to is None
+
+
+def test_closing_dates_the_user_named_win_over_model_next_days():
+    w = DateWindow(kind="closing", next_days=10, from_date=date(2026, 12, 1), to_date=date(2026, 12, 10))
+    r = w.resolve(NOW, explicit_dates=True)
+    assert (r.closing_from, r.closing_to) == (datetime(2026, 12, 1), datetime(2026, 12, 10, 23, 59, 59))
