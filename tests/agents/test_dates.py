@@ -1,8 +1,9 @@
-from datetime import datetime
+from datetime import date, datetime
 
 from gem_agent.agents.schemas import DateWindow
 
 NOW = datetime(2026, 11, 16, 13, 40)
+LATER = datetime(2026, 11, 23, 13, 0)
 
 
 def test_published_within_two_weeks():
@@ -49,3 +50,23 @@ def test_relative_numbers_win_over_conflicting_dates():
     assert w.closing_to == datetime(2026, 11, 26, 23, 59, 59)
     w = DateWindow(kind="published", last_days=14, from_date="2026-11-15").resolve(NOW)
     assert w.published_from == datetime(2026, 11, 2)
+
+
+def test_explicit_dates_win_over_last_days():
+    w = DateWindow(kind="published", last_days=30, from_date=date(2026, 10, 1), to_date=date(2026, 10, 31))
+    r = w.resolve(NOW, explicit_dates=True)
+    assert r.published_from == datetime(2026, 10, 1) and r.published_to == datetime(2026, 10, 31, 23, 59, 59)
+
+
+def test_last_days_win_when_request_names_no_dates():
+    w = DateWindow(kind="published", last_days=14, from_date=date(2026, 10, 1))
+    assert w.resolve(LATER).published_from == datetime(2026, 11, 9)
+
+
+def test_last_days_zero_is_today():
+    assert DateWindow(kind="published", last_days=0).resolve(LATER).published_from == datetime(2026, 11, 23)
+
+
+def test_closing_after_a_date_stays_open_ended():
+    r = DateWindow(kind="closing", from_date=date(2026, 12, 1)).resolve(NOW, explicit_dates=True)
+    assert r.closing_from == datetime(2026, 12, 1) and r.closing_to is None

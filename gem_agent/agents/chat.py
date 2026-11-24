@@ -100,7 +100,6 @@ class UnderstandOutput(BaseModel):
     buyer_hints: list[ShortText] = Field(max_length=5)
     buyer_only: bool = Field(description='true only if the user wrote "only" or "exclusively" about the buyers; '
                                          '"from cooperative banks" alone is false')
-    limit: int | None = Field(description="how many results the user asked for, if they said")
     stated_facts: list[ShortText] = Field(max_length=5)
 
 
@@ -122,6 +121,22 @@ def short_name(topic: TopicDefinition) -> str:
 def _noun(name: str) -> str:
     """'… Tenders' already says tenders; otherwise add the word."""
     return name if re.search(r"tenders?$", name, re.IGNORECASE) else f"{name} tenders"
+
+
+_MONTHS = ("january|february|march|april|june|july|august|september|october|november|december|"
+           "jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec")
+_DATE_RE = re.compile(rf"\b(?:{_MONTHS})\b|\b\d{{4}}-\d{{2}}-\d{{2}}\b|\b\d{{1,2}}/\d{{1,2}}(?:/\d{{2,4}})?\b",
+                      re.IGNORECASE)
+_ONLY_RE = re.compile(r"\b(only|exclusively)\b", re.IGNORECASE)
+
+
+def mentions_dates(text: str) -> bool:
+    """The user wrote a date (a month name, ISO or slashed date), not just a number or a year."""
+    return _DATE_RE.search(text) is not None
+
+
+def says_only(text: str) -> bool:
+    return _ONLY_RE.search(text) is not None
 
 
 SAVED_MEANINGS_IN_PROMPT = 20  # most recent requests; older ones still load when the same text is asked again
@@ -155,9 +170,9 @@ class ChatAgent:
         now = self.now()
         for fact in out.stated_facts:
             self.memory.add_stated(user, fact, run_id=run_id, today=now.date())
-        window = DateWindow(**out.window.model_dump()).resolve(now)
+        window = DateWindow(**out.window.model_dump()).resolve(now, explicit_dates=mentions_dates(message))
         request = TenderRequest(intent=out.intent, user_text=message, window=window, buyer_hints=out.buyer_hints,
-                                buyer_only=out.buyer_only and bool(out.buyer_hints), limit=out.limit)
+                                buyer_only=out.buyer_only and bool(out.buyer_hints) and says_only(message))
         if not out.candidates:
             return Understanding(request=request, probes=[], progress_line="")
 

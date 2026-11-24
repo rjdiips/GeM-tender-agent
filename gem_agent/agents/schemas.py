@@ -182,7 +182,7 @@ class DateWindow(BaseModel):
     from_date: date | None = None
     to_date: date | None = None
 
-    def resolve(self, now: datetime) -> ResolvedWindow:
+    def resolve(self, now: datetime, *, explicit_dates: bool = False) -> ResolvedWindow:
         kind = self.kind
         if kind == "open":  # the model sometimes leaves kind at "open" while filling the numbers
             if self.last_days:
@@ -193,15 +193,15 @@ class DateWindow(BaseModel):
         end = lambda d: datetime.combine(d, time(23, 59, 59))
         start = lambda d: datetime.combine(d, time())
         if kind == "published":
-            if self.from_date and not self.last_days:  # the user's own number wins over dates the model added
+            if self.from_date and (explicit_dates or self.last_days is None):  # dates the user named win over last_days
                 return ResolvedWindow(published_from=start(self.from_date),
                                       published_to=end(self.to_date) if self.to_date else now, closing_from=now)
-            return ResolvedWindow(published_from=day - timedelta(days=self.last_days or 14), published_to=now,
-                                  closing_from=now)
+            days = 14 if self.last_days is None else self.last_days
+            return ResolvedWindow(published_from=day - timedelta(days=days), published_to=now, closing_from=now)
         if kind == "closing":
-            if self.to_date and not self.next_days:
+            if (self.to_date or (explicit_dates and self.from_date)) and not self.next_days:
                 return ResolvedWindow(closing_from=max(now, start(self.from_date)) if self.from_date else now,
-                                      closing_to=end(self.to_date))
+                                      closing_to=end(self.to_date) if self.to_date else None)
             return ResolvedWindow(closing_from=now, closing_to=end(now.date() + timedelta(days=self.next_days or 7)))
         return ResolvedWindow(closing_from=now)
 
@@ -248,7 +248,6 @@ class TenderRequest(BaseModel):
     window: ResolvedWindow = Field(default_factory=ResolvedWindow)
     buyer_hints: list[str] = []
     buyer_only: bool = False  # "only …": buyer hints become hard filters
-    limit: int | None = None
 
 
 class SearchPlan(BaseModel):

@@ -2,8 +2,14 @@ from datetime import date, datetime
 
 import pytest
 
-from gem_agent.agents.chat import CHOOSE_INSTRUCTIONS, UNDERSTAND_INSTRUCTIONS, ChatAgent
-from gem_agent.agents.schemas import ProbeResult
+from gem_agent.agents.chat import (
+    CHOOSE_INSTRUCTIONS,
+    UNDERSTAND_INSTRUCTIONS,
+    ChatAgent,
+    mentions_dates,
+    says_only,
+)
+from gem_agent.agents.schemas import ProbeResult, TenderRequest
 from gem_agent.memory.topics import TopicStore
 from gem_agent.memory.user_memory import MemoryStore
 from tests.agents.helpers import LOS, ScriptedLLM
@@ -22,7 +28,7 @@ def topic_out(t):
 def candidates(*topics, **extra):
     return {"intent": "search", "candidates": [{"topic": topic_out(t), "plausibility": p} for t, p in topics],
             "window": {"kind": "published", "last_days": 14, "next_days": None, "from_date": None, "to_date": None},
-            "buyer_hints": [], "buyer_only": False, "limit": None, "stated_facts": [], **extra}
+            "buyer_hints": [], "buyer_only": False, "stated_facts": [], **extra}
 
 
 class FakeProbe:
@@ -131,6 +137,15 @@ async def test_buyers_the_user_asked_for_become_part_of_the_topic(stores):
     assert topic.key() != LOS.key()
 
 
+async def test_buyer_only_needs_the_word_only(stores):
+    llm = ScriptedLLM({UNDERSTAND_INSTRUCTIONS: [candidates((LOS, 0.9), buyer_hints=["cooperative banks"],
+                                                            buyer_only=True)]})
+    result = await agent(llm, FakeProbe({}), stores).understand("asha", "LOS tenders from cooperative banks", [],
+                                                                run_id="r1")
+    assert result.request.buyer_only is False
+    assert result.request.buyer_hints == ["cooperative banks"]
+
+
 async def test_progress_line_does_not_repeat_the_word_tenders(stores):
     rbi = LOS.model_copy(update={"meaning": "Reserve Bank of India (RBI) Tenders: procurement notices by the RBI"})
     llm = ScriptedLLM({UNDERSTAND_INSTRUCTIONS: [candidates((rbi, 0.9))]})
@@ -147,3 +162,22 @@ async def test_chosen_meanings_are_saved_for_next_time(stores):
     llm2 = ScriptedLLM({UNDERSTAND_INSTRUCTIONS: [candidates((LOS, 0.9))]})
     await agent(llm2, FakeProbe({}), stores).understand("asha", "LOS tenders", [], run_id="r2")
     assert "los tenders → Loan Origination System" in llm2.calls[0][1]
+
+
+@pytest.mark.parametrize("text,expected", [
+    ("CBS tenders published in October", True), ("since 1 November", True), ("from 2026-11-01", True),
+    ("published after 01/11/2026", True), ("ISO 27001 audit tenders", False), ("AML tenders FY 2026-27", False),
+    ("top 10 bank tenders", False), ("AML tenders last 2 weeks", False)])
+def test_mentions_dates(text, expected):
+    assert mentions_dates(text) is expected
+
+
+@pytest.mark.parametrize("text,expected", [
+    ("only cooperative banks", True), ("Exclusively from PSU banks", True), ("from cooperative banks", False),
+    ("the only LOS tenders", True), ("lonely tenders", False)])
+def test_says_only(text, expected):
+    assert says_only(text) is expected
+
+
+def test_old_run_json_with_limit_still_loads():
+    assert TenderRequest.model_validate({"intent": "search", "user_text": "x", "limit": 10}).intent == "search"
