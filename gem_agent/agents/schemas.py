@@ -159,6 +159,9 @@ class ResolvedWindow(BaseModel):
     published_to: datetime | None = None
     closing_from: datetime | None = None
     closing_to: datetime | None = None
+    # Record what the user named, so an ordinary "open now" window is not described as a named lower bound.
+    closing_after: bool = False  # the user named a closing start still in the future
+    closing_until: bool = False  # the user named a closing end and no start
 
     def describe(self) -> str:
         def span(a: datetime, b: datetime) -> str:
@@ -169,12 +172,12 @@ class ResolvedWindow(BaseModel):
         if self.published_from and self.published_to:
             return f"published {span(self.published_from, self.published_to)}"
         if self.published_to:  # a named end date with no named start date is still a bounded window
-            return f"published until {self.published_to:%d %b}"
-        if self.closing_from and self.closing_to:
+            return f"published until {self.published_to.day} {self.published_to:%b}"
+        if self.closing_from and self.closing_to and not self.closing_until:
             return f"closing {span(self.closing_from, self.closing_to)}"
-        if self.closing_from:
+        if self.closing_after:
             return f"closing after {self.closing_from.day} {self.closing_from:%b}"
-        if self.closing_to:
+        if self.closing_until:
             return f"closing until {self.closing_to.day} {self.closing_to:%b}"
         return "open now"
 
@@ -209,8 +212,11 @@ class DateWindow(BaseModel):
             return ResolvedWindow(published_from=day - timedelta(days=days), published_to=now, closing_from=now)
         if kind == "closing":
             if (explicit_dates and (self.from_date or self.to_date)) or (self.to_date and not self.next_days):
-                return ResolvedWindow(closing_from=max(now, start(self.from_date)) if self.from_date else now,
-                                      closing_to=end(self.to_date) if self.to_date else None)
+                named_from = start(self.from_date) if self.from_date else None
+                return ResolvedWindow(closing_from=max(now, named_from) if named_from else now,
+                                      closing_to=end(self.to_date) if self.to_date else None,
+                                      closing_after=bool(explicit_dates and named_from and named_from > now),
+                                      closing_until=bool(explicit_dates and self.from_date is None and self.to_date))
             return ResolvedWindow(closing_from=now, closing_to=end(now.date() + timedelta(days=self.next_days or 7)))
         return ResolvedWindow(closing_from=now)
 

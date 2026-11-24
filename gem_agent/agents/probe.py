@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 from gem_agent.agents.schemas import ProbeResult, ResolvedWindow, SearchPlan, TopicDefinition
-from gem_agent.agents.searcher import Searcher
+from gem_agent.agents.searcher import in_scope
 from gem_agent.tools.gem.live import LiveSearcher, SearchSpec
 from gem_agent.tools.gem.models import Bid
 
@@ -18,7 +18,7 @@ async def probe_live(live: LiveSearcher, topic: TopicDefinition, window: Resolve
     bids: dict[int, Bid] = {}  # distinct page-1 bids in the window that a search matched; a bid two terms return counts once
     for o in counted:
         for bid in o.bids:
-            if not Searcher._in_scope(bid, plan):
+            if not in_scope(bid, plan):
                 continue
             bids.setdefault(bid.b_id, bid)
     return ProbeResult(meaning=topic.meaning, strong=len(bids),
