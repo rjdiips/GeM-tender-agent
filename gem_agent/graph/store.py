@@ -114,9 +114,11 @@ class RunStore:
         all_: dict[int, Outcome] = _OUTCOMES.validate_json(path.read_bytes()) if path.exists() else {}
         log_path = run / "outcomes.jsonl"
         if log_path.exists():
-            for number, line in enumerate(log_path.read_text(encoding="utf-8").splitlines(), 1):
+            for number, line in enumerate(log_path.read_bytes().split(b"\n"), 1):
+                if not line:
+                    continue
                 try:
-                    outcome = Outcome.model_validate_json(line)
+                    outcome = Outcome.model_validate_json(line)  # bytes: a cut UTF-8 character is a ValueError too
                 except ValueError:
                     log.warning("run %s: skipping unreadable line %d of outcomes.jsonl", run_id, number)
                     continue

@@ -68,6 +68,26 @@ def test_truncated_last_line_is_skipped(tmp_path, caplog):
     with (tmp_path / "r" / "outcomes.jsonl").open("a") as f:
         f.write('{"b_id": 7, "gro')  # a crash part-way through a write
     assert list(store.outcomes("r")) == [1]
-    assert "r" in caplog.text
+    assert "run r: skipping unreadable line 2 of outcomes.jsonl" in caplog.text
     store.save_outcome("r", outcome(2))  # a save after the crash keeps its own line
     assert set(store.outcomes("r")) == {1, 2}
+
+
+def test_line_cut_inside_a_multibyte_character_is_skipped(tmp_path, caplog):
+    store = RunStore(tmp_path)
+    store.save_outcome("r", outcome(1))
+    cut = '{"b_id": 7, "group": "g", "title": "टेंडर'.encode()
+    with (tmp_path / "r" / "outcomes.jsonl").open("ab") as f:
+        f.write(cut + "ं".encode()[:-1])  # the crash lands inside the last character's bytes
+    assert list(store.outcomes("r")) == [1]
+    assert "run r: skipping unreadable line 2 of outcomes.jsonl" in caplog.text
+    store.save_outcome("r", outcome(2))
+    assert set(store.outcomes("r")) == {1, 2}
+
+
+def test_a_record_with_a_line_separator_in_its_text_is_read_whole(tmp_path, caplog):
+    store = RunStore(tmp_path)
+    store.save_outcome("r", outcome(1))
+    store.save_outcome("r", Outcome(b_id=2, group="g", bid=bid(2, "Lot one\u2028Lot two\u2029end\x85")))
+    assert store.outcomes("r")[2].bid.title == "Lot one\u2028Lot two\u2029end\x85"
+    assert caplog.text == ""
