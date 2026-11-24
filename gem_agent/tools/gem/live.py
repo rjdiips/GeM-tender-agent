@@ -191,7 +191,7 @@ class LiveSearcher:
                 break
         bids = _dedupe(bids)
         first = self._first_bids.pop((spec.key, tuple(current.first_ids)), None)
-        if self._cacheable(spec) and first is not None and not new.failed:
+        if self._cacheable(spec) and first is not None and not new.failed and new.pages_read == new.page_count:
             whole = _dedupe([*first, *bids])
             self.cache.put(spec.key, new.num_found, [b.raw for b in whole])
         return SearchOutcome(spec, new, bids)

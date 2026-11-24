@@ -1,3 +1,4 @@
+import threading
 from datetime import datetime
 
 from gem_agent.cache.docs import BidFiles, DocCache, FileRecord
@@ -27,6 +28,28 @@ def test_gtc_shared_by_date(tmp_path):
     assert cache.gtc("20261014") is None
     path = cache.store_gtc("20261014", b"%PDF terms")
     assert path == "gtc/20261014.pdf" and cache.gtc("20261014") == path
+
+
+def test_concurrent_writes_of_one_file_do_not_collide(tmp_path):
+    cache = DocCache(tmp_path)
+    errors: list[OSError] = []
+    start = threading.Barrier(2)
+
+    def writer() -> None:
+        start.wait()
+        try:
+            for _ in range(50):
+                cache.store_gtc("20261014", b"%PDF terms")
+        except OSError as exc:
+            errors.append(exc)
+
+    threads = [threading.Thread(target=writer) for _ in range(2)]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+    assert errors == []
+    assert (tmp_path / "gtc/20261014.pdf").read_bytes() == b"%PDF terms"
 
 
 def test_manifest_round_trip(tmp_path):

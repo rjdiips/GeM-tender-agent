@@ -43,6 +43,8 @@ from gem_agent.retrieval.rerank import Reranker
 from gem_agent.tools.gem.models import Bid, site_now
 from gem_agent.tools.gem.prebid import parse_pre_bid
 
+JUDGE_PROMPT_VERSION = "1"  # bump whenever the triage or judge instructions change: it keys the verdict cache
+
 TRIAGE_INSTRUCTIONS = """You screen Indian government (GeM) tenders for one topic.
 Read the topic definition, then the tender's title, buyer and first pages.
 Answer clearly_no only when the tender is plainly about something else.
@@ -125,6 +127,10 @@ def proof(evidence: list[Evidence], roles: dict[str, str]) -> Proof:
            for e in verified):
         return "documents"
     return "title" if verified else "none"
+
+
+def verdict_version(model: str) -> str:
+    return hashlib.sha256(f"{model}|{JUDGE_PROMPT_VERSION}".encode()).hexdigest()[:8]
 
 
 def doc_hash(files: BidFiles) -> str:

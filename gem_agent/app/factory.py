@@ -11,7 +11,7 @@ from pathlib import Path
 
 from gem_agent.agents.chat import ChatAgent
 from gem_agent.agents.collector import Collector
-from gem_agent.agents.judge import Judge
+from gem_agent.agents.judge import Judge, verdict_version
 from gem_agent.agents.models import chat_model
 from gem_agent.agents.planner import Planner
 from gem_agent.agents.probe import probe_live
@@ -99,7 +99,8 @@ def build_services(settings: Settings) -> tuple[Services, DocCache, list[Callabl
         # remote embedder when EMBED_BASE_URL is set. It more than doubles the
         # chance the quoted page reaches the Judge's top 8 and costs seconds,
         # not the ~45 s a 112-page RFP takes with bge-m3 on the CPU.
-        judge=Judge(model, cache, VerdictCache(settings.cache_dir), embedder=judge_embedder(settings),
+        judge=Judge(model, cache, VerdictCache(settings.cache_dir, verdict_version(settings.llm_model)),
+                    embedder=judge_embedder(settings),
                     reranker=judge_reranker(settings)),
         store=RunStore(settings.runs_dir), bus=EventBus(), memory=memory, now=site_now, rulings=RulingsAgent(model),
         checkpoint_path=settings.runs_dir / "checkpoints.sqlite",

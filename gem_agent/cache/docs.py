@@ -3,6 +3,7 @@ GeM's general terms, identical for every bid on a date, live once in cache/gtc/<
 from __future__ import annotations
 
 import hashlib
+import uuid
 from datetime import datetime
 from pathlib import Path
 from typing import Literal
@@ -68,7 +69,7 @@ class DocCache:
     def _write(self, rel: str, data: bytes) -> None:
         target = self.root / rel
         target.parent.mkdir(parents=True, exist_ok=True)
-        tmp = target.with_name(target.name + ".tmp")
+        tmp = target.with_name(f"{target.name}.{uuid.uuid4().hex}.tmp")
         tmp.write_bytes(data)
         tmp.replace(target)
 

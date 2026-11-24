@@ -169,7 +169,7 @@ if __name__ == "__main__":
 
 
 async def _backfill_queries(settings: Settings, dry_run: bool, redo_documents: bool) -> int:
-    from gem_agent.agents.judge import Judge
+    from gem_agent.agents.judge import Judge, verdict_version
     from gem_agent.agents.models import chat_model
     from gem_agent.app.factory import judge_embedder
     from gem_agent.cache.docs import DocCache
@@ -177,7 +177,8 @@ async def _backfill_queries(settings: Settings, dry_run: bool, redo_documents: b
     from gem_agent.graph.store import RunStore
     from gem_agent.jobs.backfill_queries import backfill_queries
 
-    cache, verdicts = DocCache(settings.cache_dir), VerdictCache(settings.cache_dir)
+    cache = DocCache(settings.cache_dir)
+    verdicts = VerdictCache(settings.cache_dir, verdict_version(settings.llm_model))
     judge = Judge(chat_model(settings), cache, verdicts, embedder=judge_embedder(settings))
     report = await backfill_queries(judge, cache, verdicts, RunStore(settings.runs_dir), dry_run=dry_run,
                                     redo_documents=redo_documents)

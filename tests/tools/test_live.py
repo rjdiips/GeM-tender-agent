@@ -105,6 +105,28 @@ async def test_a_cached_base_search_is_reused_within_an_hour(gem, clock, tmp_pat
     assert not outcome.progress.pending
 
 
+async def test_base_search_cut_by_budget_is_not_cached(gem, clock, tmp_path):
+    key = f"category|{CATEGORY}"
+    spec = SearchSpec(kind="category", value=CATEGORY)
+    cache = SearchCache(tmp_path, now=lambda: T0)
+    live, _ = make_live(gem, clock, {key: rows(19000, 500)}, cache=cache, cached_keys=frozenset({key}))
+    (first,) = await live.first_pages([spec])
+    assert first.progress.page_count == 50
+    (more,) = await live.rest([spec], {key: first.progress}, budget=20)
+    assert more.progress.pages_read < more.progress.page_count
+    assert cache.get(key) is None
+
+
+async def test_complete_base_search_is_cached(gem, clock, tmp_path):
+    key = f"category|{CATEGORY}"
+    spec = SearchSpec(kind="category", value=CATEGORY)
+    cache = SearchCache(tmp_path, now=lambda: T0)
+    live, _ = make_live(gem, clock, {key: rows(19500, 25)}, cache=cache, cached_keys=frozenset({key}))
+    (first,) = await live.first_pages([spec])
+    await live.rest([spec], {key: first.progress})
+    assert cache.get(key) is not None
+
+
 async def test_an_old_or_unreadable_cache_file_is_ignored(tmp_path):
     docs = rows(7000, 3)
     cache = SearchCache(tmp_path, now=lambda: T0)
