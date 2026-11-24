@@ -25,8 +25,8 @@ from gem_agent.config import Settings
 from gem_agent.graph.events import EventBus
 from gem_agent.graph.services import Services
 from gem_agent.graph.store import RunStore
-from gem_agent.index.cards import write_cards
 from gem_agent.index.db import BidIndex
+from gem_agent.index.describe import Describer
 from gem_agent.memory.topics import TopicStore
 from gem_agent.memory.user_memory import MemoryStore
 from gem_agent.retrieval.embed import RemoteEmbedder, SmallEmbedder
@@ -108,7 +108,7 @@ def build_services(settings: Settings) -> tuple[Services, DocCache, list[Callabl
                     reranker=judge_reranker(settings)),
         store=RunStore(settings.runs_dir), bus=EventBus(), memory=memory, now=site_now, rulings=RulingsAgent(model),
         checkpoint_path=settings.runs_dir / "checkpoints.sqlite",
-        cards=lambda found: write_cards(bid_cache, collector, model, bids=found),
+        describer=Describer(model, cache, bid_cache, model_name=settings.llm_model),
     )
     settings.runs_dir.mkdir(parents=True, exist_ok=True)
 

@@ -28,7 +28,6 @@ from gem_agent.graph.state import RunState
 from gem_agent.graph.store import Outcome
 from gem_agent.graph.views import bid_result, bid_state
 from gem_agent.tools.gem.live import SearchProgress
-from gem_agent.tools.gem.titles import is_vague_title
 
 log = logging.getLogger(__name__)
 MAX_RETRIES = 2
@@ -308,17 +307,7 @@ def build_graph(s: Services) -> StateGraph:
             if state.cut:
                 text += " " + cut_line(state.cut)
         progress(s, state.run_id, text, phase="report")
-        await write_cards(state.run_id, [o.bid for o in outcomes if o.files and is_vague_title(o.bid.title)])
         return {}
-
-    async def write_cards(run_id: str, bids: list[Any]) -> None:
-        """Cards for the vague-title bids this run collected. A failure is logged; the run is still done."""
-        if s.cards is None or not bids:
-            return
-        try:
-            await s.cards(bids)
-        except Exception:  # cards help later searches; they never fail the run
-            log.warning("run %s: writing cards for %d bids failed", run_id, len(bids), exc_info=True)
 
     graph = StateGraph(RunState)
     for name, fn in (("plan", plan), ("search", search), ("retry", retry), ("process", process),

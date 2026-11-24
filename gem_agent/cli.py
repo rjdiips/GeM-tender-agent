@@ -1,4 +1,4 @@
-"""Command-line entry points: chat, bids migrate, eval, jobs."""
+"""Command-line entry points: chat, bids migrate, describe refresh, eval, jobs."""
 from __future__ import annotations
 
 import argparse
@@ -128,6 +128,9 @@ def main(argv: list[str] | None = None) -> int:
     ev.add_argument("--topic", help="only this topic")
     ev.add_argument("--parallel", type=int, default=3)
     ev.add_argument("--out", help="write each bid's label and verdict here (JSON)")
+    desc = sub.add_parser("describe", help="refresh bid descriptions from cached documents")
+    desc.add_argument("--refresh", action="store_true", required=True, help="refresh stale descriptions (no GeM requests)")
+    desc.add_argument("--limit", type=int, default=200, help="maximum bids to refresh (default 200)")
     bf = sub.add_parser("backfill-queries", help="add the last date for queries to older results")
     bf.add_argument("--dry-run", action="store_true", help="report what would be filled, write nothing")
     bf.add_argument("--redo-documents", action="store_true",
@@ -148,6 +151,8 @@ def main(argv: list[str] | None = None) -> int:
         return 0
     if args.command == "eval":
         return asyncio.run(_eval(settings, args))
+    if args.command == "describe":
+        return asyncio.run(_describe_refresh(settings, args.limit))
     if args.command == "backfill-queries":
         return asyncio.run(_backfill_queries(settings, args.dry_run, args.redo_documents))
     if args.command == "retention":
@@ -161,6 +166,22 @@ def cmd_retention(settings: Settings, dry_run: bool, max_bids: int) -> int:
     report = prune_caches(settings, site_now(), dry_run=dry_run, max_bids=max_bids)
     verb = "would be removed" if dry_run else "removed"
     print(f"{report.bids} bids, {report.files} files, {report.bytes / 1_000_000:.1f} MB {verb}")
+    return 0
+
+
+async def _describe_refresh(settings: Settings, limit: int) -> int:
+    from gem_agent.agents.models import chat_model
+    from gem_agent.cache.docs import DocCache
+    from gem_agent.index.describe import Describer, refresh_descriptions
+
+    index = BidIndex(settings.bid_cache_path)
+    try:
+        cache = DocCache(settings.cache_dir)
+        describer = Describer(chat_model(settings), cache, index, model_name=settings.llm_model)
+        report = await refresh_descriptions(describer, index, cache, limit=limit)
+    finally:
+        index.close()
+    print(f"described {report.described}, {report.no_documents} without cached documents, {report.failed} failed")
     return 0
 
 

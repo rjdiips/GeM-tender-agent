@@ -5,13 +5,13 @@ import pytest
 
 from gem_agent.agents.collector import DocumentUnavailable
 from gem_agent.agents.rulings import RulingMatch
-from gem_agent.tools.gem.live import SearchProgress
 from gem_agent.graph.build import skipped_line
 from gem_agent.graph.events import EventBus
 from gem_agent.graph.manager import RunManager
 from gem_agent.graph.services import Services
 from gem_agent.graph.store import RunStore
 from gem_agent.memory.user_memory import MemoryStore
+from gem_agent.tools.gem.live import SearchProgress
 from tests.agents.helpers import LOS
 from tests.graph.fakes import (
     NOW,
@@ -29,12 +29,12 @@ SIGHT = LOS.model_copy(update={"meaning": "Line of Sight: radio survey for telec
 
 
 def services(tmp_path, *, chat=None, searcher=None, collector=None, judge=None, planner=None, rulings=None,
-             checkpoint=":memory:", cards=None):
+             checkpoint=":memory:"):
     return Services(chat=chat or FakeChat(), planner=planner or FakePlanner(),
                     searcher=searcher or FakeSearcher([[bid(1), bid(2, "Lockers", 18)]]),
                     collector=collector or FakeCollector(), judge=judge or FakeJudge(),
                     store=RunStore(tmp_path / "runs"), bus=EventBus(), memory=MemoryStore(tmp_path), now=lambda: NOW,
-                    checkpoint_path=checkpoint, rulings=rulings, cards=cards)
+                    checkpoint_path=checkpoint, rulings=rulings)
 
 
 async def ask(manager, text, run_id=None, user="asha"):
@@ -350,7 +350,7 @@ def test_count_lines_sent_without_a_kind_are_marked_as_counts():
 
 
 Q = "Does bid 2 count for you?"
-TWO = lambda: [[bid(1), bid(2, "Lockers", 18)]]  # noqa: E731
+TWO = lambda: [[bid(1), bid(2, "Lockers", 18)]]
 
 
 def rule(s, topic="Loan Origination System"):
@@ -592,47 +592,6 @@ async def test_a_resumed_run_continues_with_the_second_stage(tmp_path):
     assert judged_before == [1, 2] and judge.judged[len(judged_before):] == [3]
     assert s.store.load(run_id).status == "complete"
     assert sorted(manager.view("asha", run_id)["results"], key=lambda b: b["b_id"])[2]["b_id"] == 3
-
-
-# --- cards after the run ---------------------------------------------------------------------------------------------
-
-VAGUE = "Hiring of Agency for IT Projects- Milestone basis"
-
-
-class Cards:
-    def __init__(self, fail=False):
-        self.calls, self.fail = [], fail
-
-    async def __call__(self, bids):
-        self.calls.append(list(bids))
-        if self.fail:
-            raise RuntimeError("model down")
-
-
-async def test_cards_are_written_for_vague_bids_collected_in_the_run(tmp_path):
-    vague_bid, failed_vague = bid(2, VAGUE, 18), bid(4, VAGUE, 19)
-    cards = Cards()
-    s = services(tmp_path, searcher=FakeSearcher([[bid(1), vague_bid, failed_vague]]),
-                 collector=FakeCollector(fail={4}), cards=cards)
-    events = await ask(RunManager(s), "LOS tenders")
-    assert cards.calls == [[vague_bid]]  # bid 1 has a plain title; bid 4 collected nothing
-    assert events[-1] == {"type": "done", "status": "complete"}
-
-
-async def test_no_cards_are_asked_for_when_no_vague_bid_was_collected(tmp_path):
-    cards = Cards()
-    s = services(tmp_path, cards=cards)
-    await ask(RunManager(s), "LOS tenders")
-    assert cards.calls == []
-
-
-async def test_a_card_failure_does_not_fail_the_run(tmp_path):
-    cards = Cards(fail=True)
-    s = services(tmp_path, searcher=FakeSearcher([[bid(2, VAGUE)]]), cards=cards)
-    events = await ask(RunManager(s), "LOS tenders")
-    final_message = [e["event"]["text"] for e in events if e["type"] == "progress"][-1]
-    assert cards.calls and final_message.startswith("Done:")
-    assert events[-1] == {"type": "done", "status": "complete"}
 
 
 # --- progress lines in plain words: the copy in the table of the Task 9 brief -----------------------------------------
