@@ -13,7 +13,7 @@ Companies that sell to the Indian government have to watch GeM (Government e-Mar
 The user types a plain-language request into a chat, for example *"tender documents for anti money laundering published in the last 2 weeks"*. The agent then:
 
 1. Works out what the user means, without asking them to confirm, and says which meaning it used.
-2. Searches GeM live: page 1 of every search first, then further pages until a per-topic cap of candidates is met, and judges the bids it reads, closing soonest first.
+2. Searches GeM live: page 1 of every search first, then further pages while the topic is under its cap, stopping early once enough bids are read. It screens the titles it has read, then judges the bids that pass, closing soonest first.
 3. Downloads each candidate's bid PDF, attachments and corrigenda, using OCR where needed.
 4. Reads the documents and gives a **verdict** for each bid, with quotes giving the file and page.
 5. Shows the relevant bids with buyer, dates, value and a reason, plus downloads and a zip. Bids that don't match go to **quarantine** for 30 days, where the user can restore them.
