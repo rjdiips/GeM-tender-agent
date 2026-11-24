@@ -77,7 +77,7 @@ def _size(path: Path) -> tuple[int, int]:
 def prune_caches(settings: Settings, now: datetime, *, dry_run: bool, max_bids: int = 2000) -> RetentionReport:
     """Delete the expired documents and verdicts of up to `max_bids` bids, one bid at a time, in bid-number order."""
     bids = _read_runs(settings)
-    labelled = labelled_b_ids(labelled_path(None))
+    labelled = labelled_b_ids(labelled_path(None), strict=True)  # a set that exists but cannot be read stops the pass
     report = RetentionReport()
     for b_id in sorted(bids):
         if report.bids >= max_bids:

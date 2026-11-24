@@ -142,3 +142,15 @@ def test_gtc_cache_untouched(tmp_path):
     prune_caches(cfg, NOW, dry_run=False)
 
     assert gtc.read_bytes() == b"%PDF terms"
+
+
+def test_unreadable_labelled_set_stops_the_pass_before_any_deletion(tmp_path):
+    cfg = settings(tmp_path)
+    (tmp_path / "eval" / "labelled_set.json").write_text("{not json", encoding="utf-8")
+    add_run(cfg, "r1", [outcome(1, NOW - timedelta(days=60), relevant=False)])
+    docs, _ = add_cache(cfg, 1)
+
+    with pytest.raises(ValueError):
+        prune_caches(cfg, NOW, dry_run=False)
+
+    assert docs.exists()

@@ -61,14 +61,18 @@ def judge_reranker(settings: Settings):
                           api_key=settings.rerank_api_key, timeout_s=settings.rerank_timeout_s)
 
 
-def labelled_b_ids(path: Path) -> set[int]:
+def labelled_b_ids(path: Path, *, strict: bool = False) -> set[int]:
     """The labelled set's b_ids, by a plain JSON read: validating the whole set here would fail on label fields this
-    code does not know yet, and the prune only needs the ids. No file (or an unreadable one): none."""
+    code does not know yet, and the prune only needs the ids. No file (or an unreadable one): none.
+    strict: an existing file that cannot be read or parsed raises instead, for callers that must never act without it."""
+    if not Path(path).exists():
+        return set()
     try:
         return {int(item["b_id"]) for item in json.loads(Path(path).read_text(encoding="utf-8"))["items"]}
     except (OSError, ValueError, KeyError, TypeError) as exc:
-        if Path(path).exists():
-            log.warning("labelled set %s unreadable, pruning without it: %s", path, exc)
+        if strict:
+            raise
+        log.warning("labelled set %s unreadable, pruning without it: %s", path, exc)
         return set()
 
 
