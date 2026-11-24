@@ -21,7 +21,7 @@ from gem_agent.graph.rulings import settle, topic_for
 from gem_agent.graph.services import Services
 from gem_agent.graph.state import RunState
 from gem_agent.graph.store import Outcome, Ruling, RunRecord
-from gem_agent.graph.views import bid_result, run_list_item, run_view, understood_view, with_names
+from gem_agent.graph.views import bid_result, run_list_item, run_view, status_view, understood_view, with_names
 
 log = logging.getLogger(__name__)
 
@@ -192,6 +192,10 @@ class RunManager:
         record = self._own(user, run_id)
         outcomes = with_names(self.s.store.outcomes(run_id), getattr(self.s.collector, "cache", None))
         return run_view(record, outcomes, self.s.store.events(run_id))
+
+    def status(self, user: str, run_id: str) -> dict[str, Any]:
+        record = self._own(user, run_id)
+        return status_view(record, self.s.store.outcomes(run_id), self.s.store.events(run_id))
 
     def list_runs(self, user: str) -> list[dict[str, Any]]:
         return [run_list_item(r, self.s.store.outcomes(r.run_id)) for r in self.s.store.list_runs(user)]

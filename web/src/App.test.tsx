@@ -1,4 +1,4 @@
-import { act, render, screen, within } from '@testing-library/react'
+import { act, render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import App from './App'
@@ -363,6 +363,57 @@ describe('stopping a run', () => {
     setup()
     await screen.findByText('Management consultancy · banks')
     expect(screen.queryByRole('button', { name: 'Stop run' })).not.toBeInTheDocument()
+  })
+})
+
+describe('status dot and menu', () => {
+  it('colours the dot by run status: running pulses, stopped is muted, failed is red', async () => {
+    const dot = (status: 'running' | 'stopped' | 'failed') => {
+      const api = new FakeApi()
+      api.current = run({ status, results: [], progress: [], understood: null })
+      const { unmount } = render(<App api={api} now={() => NOW} initialRunId="r1" pollMs={10_000} />)
+      return { unmount, el: () => document.querySelector('.gt-live') }
+    }
+    const running = dot('running')
+    await waitFor(() => expect(running.el()).toHaveClass('run'))
+    running.unmount()
+    const stopped = dot('stopped')
+    await waitFor(() => expect(stopped.el()).toHaveClass('stopped'))
+    stopped.unmount()
+    const failed = dot('failed')
+    await waitFor(() => expect(failed.el()).toHaveClass('fail'))
+    failed.unmount()
+  })
+
+  it('a Runs menu button toggles the sidebar drawer', async () => {
+    const { user } = setup()
+    const menu = await screen.findByRole('button', { name: 'Runs' })
+    const side = screen.getByRole('navigation', { name: 'Runs' }).closest('aside')!
+    expect(menu).toHaveAttribute('aria-expanded', 'false')
+    expect(side).toHaveAttribute('data-open', 'false')
+    await user.click(menu)
+    expect(menu).toHaveAttribute('aria-expanded', 'true')
+    expect(side).toHaveAttribute('data-open', 'true')
+    await user.click(menu)
+    expect(menu).toHaveAttribute('aria-expanded', 'false')
+    expect(side).toHaveAttribute('data-open', 'false')
+  })
+})
+
+describe('light polling', () => {
+  it('while running, polls the status and fetches the run only when it changed', async () => {
+    const api = new FakeApi()
+    api.current = run({ run_id: 'r9', status: 'running', results: [], progress: [], understood: null })
+    setup(api, 20)
+    await screen.findByRole('heading', { level: 1, name: 'Management consultancy from banks' })
+    const getRuns = () => api.calls.filter(c => c.startsWith('getRun')).length
+    const before = getRuns()
+    await new Promise(r => setTimeout(r, 80))
+    expect(api.calls.filter(c => c.startsWith('getStatus r9')).length).toBeGreaterThan(0)
+    expect(getRuns()).toBe(before)  // nothing changed, so the whole run is not fetched
+    api.current = run({ run_id: 'r9', status: 'running', results: [bid()], progress: [], understood: null })
+    expect(await screen.findByText('Hires management consultants for a bank.')).toBeInTheDocument()
+    expect(getRuns()).toBeGreaterThan(before)
   })
 })
 

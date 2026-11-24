@@ -7,12 +7,12 @@ function initials(name: string) {
   return name.split(/\s+/).map(w => w[0]).join('').slice(0, 2).toUpperCase()
 }
 
-export function Sidebar({ runs, currentId, user, memoryCount, now, onOpen, onNew }: {
-  runs: RunListItem[]; currentId: string | null; user: UserView | null; memoryCount: number; now: string
+export function Sidebar({ runs, currentId, user, memoryCount, now, open, onOpen, onNew }: {
+  runs: RunListItem[]; currentId: string | null; user: UserView | null; memoryCount: number; now: string; open: boolean
   onOpen: (runId: string) => void; onNew: () => void
 }) {
   return (
-    <aside className="gt-side">
+    <aside className="gt-side" id="gt-side" data-open={open ? 'true' : 'false'}>
       <div className="gt-brand"><span className="gt-logo" />Tender Agent <span className="gt-mono" style={{ color: 'var(--mute)', marginLeft: 'auto' }}>GeM</span></div>
       <button className="gt-new" onClick={onNew}><IconPlus />New search</button>
       <nav aria-label="Runs" style={{ display: 'flex', flexDirection: 'column', minHeight: 0, flex: 1 }}>

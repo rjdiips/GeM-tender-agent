@@ -25,6 +25,14 @@ def get_run(run_id: str, request: Request, user: str = Depends(current_user)) ->
         raise HTTPException(status_code=404, detail="no such run") from exc
 
 
+@router.get("/api/runs/{run_id}/status")
+def get_status(run_id: str, request: Request, user: str = Depends(current_user)) -> dict[str, Any]:
+    try:
+        return request.app.state.manager.status(user, run_id)
+    except (KeyError, PermissionError) as exc:
+        raise HTTPException(status_code=404, detail="no such run") from exc
+
+
 @router.post("/api/runs/{run_id}/stop", status_code=204)
 async def stop(run_id: str, request: Request, user: str = Depends(current_user)) -> Response:
     try:

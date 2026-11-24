@@ -6,9 +6,9 @@ import { Urgency } from './Urgency'
 import type { Theme } from '../theme/useTheme'
 import './Thread.css'
 
-export function Thread({ run, notes, pending, now, theme, onToggleTheme, onAsk, onStop, onShowResults }: {
+export function Thread({ run, notes, pending, now, theme, onToggleTheme, onAsk, onStop, onShowResults, menuOpen, onMenu }: {
   run: RunView | null; notes: { q: string; a: string }[]; pending: string | null; now: string; theme: Theme; onToggleTheme: () => void
-  onAsk: (text: string) => void; onStop: () => void; onShowResults: () => void
+  onAsk: (text: string) => void; onStop: () => void; onShowResults: () => void; menuOpen: boolean; onMenu: () => void
 }) {
   const running = run?.status === 'running'
   const all = run?.progress ?? []
@@ -20,8 +20,9 @@ export function Thread({ run, notes, pending, now, theme, onToggleTheme, onAsk, 
   return (
     <main className="gt-main">
       <header className="gt-head">
+        <button className="gt-run-menu" aria-label="Runs" aria-expanded={menuOpen} aria-controls="gt-side" onClick={onMenu}>Runs</button>
         <h1>{run?.title ?? 'New search'}</h1>
-        {run && <span className="gt-status"><span className={`gt-live ${running ? 'run' : run.status === 'failed' ? 'fail' : ''}`} />{run.status}</span>}
+        {run && <span className="gt-status"><span className={`gt-live ${dotClass(run.status)}`} />{run.status}</span>}
         <span style={{ flex: 1 }} />
         <button className="gt-icon-btn" aria-label={`Switch to ${other} mode`} title={`Switch to ${other} mode`} onClick={onToggleTheme}>
           {theme === 'dark' ? <IconSun /> : <IconMoon />}
@@ -97,6 +98,9 @@ export function Thread({ run, notes, pending, now, theme, onToggleTheme, onAsk, 
 }
 
 const capitalise = (s: string) => s.charAt(0).toUpperCase() + s.slice(1)
+
+const DOT: Partial<Record<RunView['status'], string>> = { running: 'run', failed: 'fail', stopped: 'stopped' }
+const dotClass = (status: RunView['status']) => DOT[status] ?? ''
 
 /** While a run works, the send button becomes its Stop button (results judged so far are kept). */
 function Composer({ onAsk, running, waiting, onStop }: { onAsk: (text: string) => void; running: boolean; waiting: boolean; onStop: () => void }) {

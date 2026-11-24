@@ -1,5 +1,5 @@
 // Test-only TenderApi: answers at once and records calls.
-import { SignInRequired, type BidResult, type MemoryFactView, type RunEvent, type RunView, type TenderApi } from '../api/types'
+import { SignInRequired, type BidResult, type MemoryFactView, type RunEvent, type RunStatusSummary, type RunView, type TenderApi } from '../api/types'
 
 export const NOW = '2026-11-16T13:42:00'
 
@@ -55,6 +55,10 @@ export class FakeApi implements TenderApi {
             { run_id: 'r0', title: 'AML software for banks', when: '2026-11-16T08:00:00', found: 5, new_count: 2, saved_search: true }]
   }
   async getRun(runId: string) { this.calls.push(`getRun ${runId}`); return this.current }
+  async getStatus(runId: string): Promise<RunStatusSummary> {
+    this.calls.push(`getStatus ${runId}`)
+    return { status: this.current.status, results: this.current.results.length, progress: this.current.progress.length }
+  }
   ask(text: string, onEvent: (e: RunEvent) => void, runId?: string) {
     this.calls.push(`ask ${text}${runId ? ` (${runId})` : ''}`)
     this.live = onEvent

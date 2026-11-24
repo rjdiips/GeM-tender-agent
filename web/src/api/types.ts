@@ -119,6 +119,13 @@ export interface RunView {
   parent_run_id: string | null
 }
 
+/** What the chat polls while a run works: its status, and how many bids and progress lines it has so far. */
+export interface RunStatusSummary {
+  status: RunView['status']
+  results: number
+  progress: number
+}
+
 export interface RunListItem {
   run_id: string
   title: string
@@ -165,6 +172,7 @@ export interface TenderApi {
   login(name: string): Promise<UserView>
   listRuns(): Promise<RunListItem[]>
   getRun(runId: string): Promise<RunView>
+  getStatus(runId: string): Promise<RunStatusSummary>
   /** Starts a run (or refines the current one) and streams its events. Returns a function that stops listening. */
   ask(text: string, onEvent: (e: RunEvent) => void, runId?: string): () => void
   /** Stops a running run; results judged so far are kept. */

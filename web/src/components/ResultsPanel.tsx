@@ -37,8 +37,8 @@ export function ResultsPanel({ run, busy = false, tab, onTab, now, memory, pendi
       </div>
       <div className="gt-body" role="tabpanel" id="results-panel" aria-labelledby={`tab-${tab}`}>
         {tab === 'memory' ? <MemoryList facts={memory} onForget={onForget} onEdit={onEdit} /> : <>
-          {rows.length === 0 && busy && tab === 'relevant' && <Searching />}
-          {rows.length === 0 && !(busy && tab === 'relevant') && <div className="gt-none">{tab === 'relevant' ? 'No relevant tenders yet.' : 'Nothing quarantined. Bids ruled out land here with the reason, and can be restored.'}</div>}
+          {rows.length === 0 && busy && tab === 'relevant' && (results.length === 0 ? <Searching /> : <div className="gt-none">None relevant yet: {results.length} read so far, see Quarantine.</div>)}
+          {rows.length === 0 && !(busy && tab === 'relevant') && <div className="gt-none">{emptyText(tab, results.length)}</div>}
           {tab === 'relevant' && borderline.length > 0 && <h3 className="gt-section">Borderline: your call</h3>}
           {tab === 'relevant' && borderline.map(b => <ResultRow key={b.b_id} bid={b} now={now} grouped={grouped} quarantined={false} pending={pendingBids?.has(b.b_id) ?? false} error={rowErrors?.[b.b_id]} onRestore={onRestore} onRule={onRule} onUnrule={onUnrule} />)}
           {tab === 'relevant' && borderline.length > 0 && relevant.length > 0 && <h3 className="gt-section">Relevant</h3>}
@@ -47,6 +47,11 @@ export function ResultsPanel({ run, busy = false, tab, onTab, now, memory, pendi
       </div>
     </section>
   )
+}
+
+function emptyText(tab: Tab, read: number): string {
+  if (tab !== 'relevant') return 'Nothing quarantined. Bids ruled out land here with the reason, and can be restored.'
+  return read > 0 ? `No relevant tenders in the ${read} bids read.` : 'No relevant tenders yet.'
 }
 
 /** Placeholder cards while a search runs and nothing relevant has been judged yet. */

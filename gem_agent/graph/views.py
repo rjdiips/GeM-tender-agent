@@ -123,15 +123,24 @@ def _progress(events: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return lines
 
 
+def _judged(o: Outcome) -> bool:
+    return bool(o.verdict or o.error)
+
+
 def run_view(record: RunRecord, outcomes: dict[int, Outcome], events: list[dict[str, Any]]) -> dict[str, Any]:
     return {
         "run_id": record.run_id, "title": record.title, "request": record.request_text, "status": record.status,
         "created": record.created.isoformat(), "parent_run_id": record.parent_run_id,
         "understood": understood_view(record),
         "progress": _progress(events),
-        "results": [bid_result(record.run_id, o) for o in outcomes.values() if o.verdict or o.error],
+        "results": [bid_result(record.run_id, o) for o in outcomes.values() if _judged(o)],
         "zip_url": f"/api/runs/{record.run_id}/zip",
     }
+
+
+def status_view(record: RunRecord, outcomes: dict[int, Outcome], events: list[dict[str, Any]]) -> dict[str, Any]:
+    """The counts the chat polls for: the same results and progress lines run_view gives, without the bids."""
+    return {"status": record.status, "results": sum(_judged(o) for o in outcomes.values()), "progress": len(_progress(events))}
 
 
 def run_list_item(record: RunRecord, outcomes: dict[int, Outcome]) -> dict[str, Any]:

@@ -1,7 +1,7 @@
 // Demo TenderApi with sample data, used until the backend's chat API exists (build step 6).
 // Bid numbers, titles, buyers and dates are real; GEM/2026/B/8162911's verdict is the
 // real Judge output; the other verdicts are illustrative.
-import type { BidResult, MemoryFactView, RunEvent, RunListItem, RunView, TenderApi } from './types'
+import type { BidResult, MemoryFactView, RunEvent, RunListItem, RunStatusSummary, RunView, TenderApi } from './types'
 
 const gem = (bId: number) => `https://bidplus.gem.gov.in/showbidDocument/${bId}`
 // [shown name, pages, status, file name on GeM, identical copies]
@@ -70,6 +70,10 @@ export class MockApi implements TenderApi {
   async login(name: string) { return { name, org: 'demo data' } }
   async listRuns() { return RUNS }
   async getRun(runId: string) { return { ...RUN, run_id: runId, title: RUNS.find(r => r.run_id === runId)?.title ?? RUN.title } }
+  async getStatus(runId: string): Promise<RunStatusSummary> {
+    const run = await this.getRun(runId)
+    return { status: run.status, results: run.results.length, progress: run.progress.length }
+  }
 
   /** Replays the sample run as a stream, so the streaming layout can be seen working. */
   ask(text: string, onEvent: (e: RunEvent) => void) {

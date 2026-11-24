@@ -11,7 +11,7 @@ from gem_agent.agents.rulings import RulingMatch
 from gem_agent.app.main import create_app
 from gem_agent.cache.docs import DocCache
 from gem_agent.graph.manager import RunManager
-from gem_agent.graph.store import Ruling
+from gem_agent.graph.store import Outcome, Ruling, RunRecord
 from tests.graph.fakes import (
     BlockingCollector,
     FakeChat,
@@ -99,6 +99,19 @@ async def test_events_replay_a_finished_run(client):
     run_id = (await ask(client, "LOS tenders"))[0]["run"]["run_id"]
     replay = sse((await client.get(f"/api/runs/{run_id}/events")).text)
     assert [e["type"] for e in replay][:2] == ["started", "understood"] and replay[-1]["type"] == "done"
+
+
+async def test_status_route_counts(app_parts, client):
+    s, _ = app_parts
+    await login(client)
+    s.store.create(RunRecord(run_id="r9", user="asha", title="LOS tenders", request_text="LOS tenders", created=s.now()))
+    for b_id in (1, 2):
+        s.store.save_outcome("r9", Outcome(b_id=b_id, group="g", bid=bid(b_id), error="403"))
+    for i in range(3):
+        s.store.append_event("r9", {"type": "progress", "event": {"at": "2026-11-16T13:40:00", "text": f"step {i}"}})
+    assert (await client.get("/api/runs/r9/status")).json() == {"status": "running", "results": 2, "progress": 3}
+    await login(client, "ravi")
+    assert (await client.get("/api/runs/r9/status")).status_code == 404
 
 
 async def test_restore(client):

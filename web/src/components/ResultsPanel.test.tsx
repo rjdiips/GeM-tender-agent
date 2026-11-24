@@ -48,6 +48,30 @@ describe('result details', () => {
   })
 })
 
+describe('relevant tab when nothing is relevant yet', () => {
+  const quarantined = () => [1, 2, 3].map(i => bid({ b_id: i, bid_number: `GEM/2026/B/${i}`, relevant: false, state: 'quarantined' }))
+  const tab = (results: BidResult[], busy: boolean) => (
+    <ResultsPanel run={run({ results, status: busy ? 'running' : 'complete' })} busy={busy} tab="relevant" onTab={() => {}} now={NOW} memory={[]}
+                  onRestore={() => {}} onRule={() => {}} onUnrule={() => {}} onForget={() => {}} onEdit={() => {}} />)
+
+  it('says how many were read while the search runs, with no skeleton rows', () => {
+    const { container } = render(tab(quarantined(), true))
+    expect(screen.getByText('None relevant yet: 3 read so far, see Quarantine.')).toBeInTheDocument()
+    expect(container.querySelectorAll('.gt-skel')).toHaveLength(0)
+  })
+
+  it('keeps the skeleton while nothing has been read yet', () => {
+    const { container } = render(tab([], true))
+    expect(screen.getByRole('status', { name: 'Searching' })).toBeInTheDocument()
+    expect(container.querySelectorAll('.gt-skel').length).toBeGreaterThan(0)
+  })
+
+  it('says how many bids were read once the search is over', () => {
+    render(tab(quarantined(), false))
+    expect(screen.getByText('No relevant tenders in the 3 bids read.')).toBeInTheDocument()
+  })
+})
+
 describe('borderline section', () => {
   const border = () => bid({ b_id: 5, bid_number: 'GEM/2026/B/5555', state: 'borderline', relevant: false,
     question: 'Does AI-enabled analytics count as AI software?', reason: 'Analytics with some ML.' })

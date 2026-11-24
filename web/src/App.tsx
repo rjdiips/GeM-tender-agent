@@ -35,6 +35,9 @@ export default function App({ api, now, initialRunId, pollMs = 3000 }: {
   // the request just sent, shown at once while the model reads it (nothing comes back until it has)
   const [pending, setPending] = useState<string | null>(null)
   const stop = useRef<(() => void) | null>(null)
+  const [menuOpen, setMenuOpen] = useState(false)  // the sidebar as a drawer, below the phone breakpoint
+  const latest = useRef(run)
+  useEffect(() => { latest.current = run }, [run])
 
   const open = useCallback(async (runId: string) => {
     stop.current?.()
@@ -60,14 +63,19 @@ export default function App({ api, now, initialRunId, pollMs = 3000 }: {
     return () => { live = false; stop.current?.() }
   }, [api, initialRunId, open, loaded])
 
-  // Safety net: while a run is running, fetch its stored state now and then. If the event stream drops (proxy
-  // hiccup, laptop asleep, page left open), the panel still catches up without a refresh.
+  // Safety net: while a run is running, check its counts now and then. If the event stream drops (proxy hiccup,
+  // laptop asleep, page left open), the panel still catches up without a refresh. The whole run is fetched only
+  // when a count or the status has moved on from what is shown.
   useEffect(() => {
     if (!run || run.status !== 'running') return
     const id = run.run_id
     const timer = setInterval(() => {
-      api.getRun(id).then(fresh => setRun(cur => (cur && cur.run_id === id && cur.status === 'running' ? fresh : cur)))
-        .catch(() => undefined)
+      api.getStatus(id).then(s => {
+        const cur = latest.current
+        if (!cur || cur.run_id !== id) return
+        if (s.status === cur.status && s.results === cur.results.length && s.progress === cur.progress.length) return
+        return api.getRun(id).then(fresh => setRun(c => (c && c.run_id === id && c.status === 'running' ? fresh : c)))
+      }).catch(() => undefined)
     }, pollMs)
     return () => clearInterval(timer)
   }, [api, pollMs, run?.run_id, run?.status])  // eslint-disable-line react-hooks/exhaustive-deps
@@ -140,10 +148,10 @@ export default function App({ api, now, initialRunId, pollMs = 3000 }: {
   const sidebarRuns = runs.map(x => (x.run_id === run?.run_id ? { ...x, found } : x))
   return (
     <div className="gt" data-theme={theme} data-testid="app">
-      <Sidebar runs={sidebarRuns} currentId={run?.run_id ?? null} user={user} memoryCount={memory.length} now={nowIso}
-               onOpen={id => void open(id)} onNew={() => { stop.current?.(); setPending(null); setRun(null) }} />
+      <Sidebar runs={sidebarRuns} currentId={run?.run_id ?? null} user={user} memoryCount={memory.length} now={nowIso} open={menuOpen}
+               onOpen={id => { setMenuOpen(false); void open(id) }} onNew={() => { setMenuOpen(false); stop.current?.(); setPending(null); setRun(null) }} />
       <Thread run={run} notes={notes} pending={pending} now={nowIso} theme={theme} onToggleTheme={toggle} onAsk={ask}
-              onStop={() => void stopRun()} onShowResults={() => setTab('relevant')} />
+              onStop={() => void stopRun()} onShowResults={() => setTab('relevant')} menuOpen={menuOpen} onMenu={() => setMenuOpen(o => !o)} />
       <ResultsPanel run={run} busy={pending !== null || run?.status === 'running'} tab={tab} onTab={setTab} now={nowIso} memory={memory}
                     pendingBids={pendingBids} rowErrors={rowErrors}
                     onRestore={b => void restore(b)} onRule={(b, d) => void rule(b, d)} onUnrule={b => void unrule(b)} onForget={f => void forget(f)} onEdit={(f, t) => void edit(f, t)} />
