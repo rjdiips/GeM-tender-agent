@@ -5,7 +5,8 @@ import logging
 from typing import Literal
 
 from pydantic import BaseModel
-from pydantic_ai import Agent, NativeOutput
+from pydantic_ai import Agent, ModelRequestContext, ModelResponse, NativeOutput, RunContext
+from pydantic_ai.capabilities import Hooks, WrapModelRequestHandler
 from pydantic_ai.models import Model
 
 from gem_agent.agents.schemas import TopicDefinition
@@ -45,10 +46,19 @@ def buyer_line(bid: Bid, buyer_org: str | None) -> str:
 
 class Matcher:
     def __init__(self, model: Model, *, batch: int = 40, max_tokens: int = 600) -> None:
+        if not 1 <= batch <= 40:
+            raise ValueError("batch must be between 1 and 40")
         self.calls = 0
         self._batch = batch
         self._max_tokens = max_tokens
-        self._agent = Agent(model, output_type=NativeOutput(MatchOut), instructions=MATCH_INSTRUCTIONS, retries=2)
+        self._agent = Agent(model, output_type=NativeOutput(MatchOut), instructions=MATCH_INSTRUCTIONS, retries=2,
+                            capabilities=[Hooks(model_request=self._count_request)])
+
+    async def _count_request(self, ctx: RunContext[None], *, request_context: ModelRequestContext,
+                             handler: WrapModelRequestHandler) -> ModelResponse:
+        """Count every model request, including output-validation retries and failed attempts."""
+        self.calls += 1
+        return await handler(request_context)
 
     async def match(self, topic: TopicDefinition, items: list[MatchItem]) -> dict[int, Call]:
         """One decision per bid: a failed batch is halved once, then an unanswered half is unsure."""
@@ -72,7 +82,6 @@ class Matcher:
 
     async def _match_batch(self, topic: TopicDefinition, batch: list[MatchItem]) -> MatchOut | None:
         listing = "\n".join(f"[{i}] {item.description} | buyer: {item.buyer}" for i, item in enumerate(batch))
-        self.calls += 1
         try:
             out: MatchOut = (await self._agent.run(
                 f"{topic.render()}\n\nTenders:\n{listing}",
