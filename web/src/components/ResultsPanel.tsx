@@ -89,6 +89,9 @@ const PROOF_TIP: Record<string, string> = {
   title: "The quotes only repeat the tender's title and listing details; nothing beyond them was found",
   none: 'None of the quotes could be found in the documents',
 }
+const READ_BECAUSE: Record<NonNullable<BidResult['read_because']>, string> = {
+  match: 'matches', unsure: 'might match', net: 'kept by the title check',
+}
 
 function plural(n: number, word: string) {
   return `${n} ${word}${n === 1 ? '' : 's'}`
@@ -121,6 +124,7 @@ function ResultRow({ bid, now, grouped, quarantined, pending, error, onRestore, 
         <div className="gt-title" title={bid.title}>{bid.title}</div>
         <div className="gt-buyer" title={bid.buyer}>{bid.buyer_org ?? bid.buyer.split(' / ').pop()}</div>
         <div className="gt-why">{bid.reason}</div>
+        {bid.read_because && <div className="gt-why">Read because: {READ_BECAUSE[bid.read_because]}</div>}
         {bid.state === 'borderline' && (
           <div className="gt-ask">
             <div className="gt-question">{bid.question}</div>

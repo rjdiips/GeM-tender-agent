@@ -70,6 +70,8 @@ export interface BidResult {
   restored: boolean // the user moved it back from quarantine
   confidence: number
   reason: string
+  /** Why a fully read bid was read; null when no read route was recorded. */
+  read_because: 'match' | 'unsure' | 'net' | null
   evidence: Evidence[]
   key_facts: KeyFacts | null
   queries?: QueriesDeadline | null // none when the documents don't state one, or the verdict predates it

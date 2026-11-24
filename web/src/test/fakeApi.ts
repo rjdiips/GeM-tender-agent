@@ -16,7 +16,7 @@ export function bid(over: Partial<BidResult> = {}): BidResult {
               download_name: 'GEM-2026-B-8162911 - RFP for Project Muskaan.pdf', url: '/api/files/1' },
             { name: '1791988256.pdf', title: null, also: [], copies: 1, filename: '1791988256.pdf', pages: 1,
               status: 'placeholder', download_name: 'GEM-2026-B-8162911 - 1791988256.pdf', url: '/api/files/2' }],
-    proof: 'documents', needs_review: false, gem_url: 'https://bidplus.gem.gov.in/showbidDocument/10037444', group: 'Management consultancy', error: '', ...over,
+    proof: 'documents', read_because: 'match', needs_review: false, gem_url: 'https://bidplus.gem.gov.in/showbidDocument/10037444', group: 'Management consultancy', error: '', ...over,
   }
 }
 
@@ -29,7 +29,7 @@ export function run(over: Partial<RunView> = {}): RunView {
                   likely: 9, not_this: ['engineering consultancy'] },
     progress: [{ at: '2026-11-16T13:40:09', text: 'Shortlist: 9 bids.' }, { at: '2026-11-16T13:42:05', text: 'Done: 1 relevant, 1 quarantined.' }],
     results: [bid(), bid({ b_id: 2, bid_number: 'GEM/2026/B/8264466', title: 'Concurrent Audit of Digital Banking', relevant: false, state: 'quarantined',
-                           reason: 'Audit, not consultancy.', closing: '2026-12-07T17:00:00', evidence: [], stage: 'triage' })],
+                           reason: 'Audit, not consultancy.', closing: '2026-12-07T17:00:00', evidence: [], stage: 'triage', read_because: null })],
     zip_url: '/api/runs/r1/zip', parent_run_id: null, ...over,
   }
 }

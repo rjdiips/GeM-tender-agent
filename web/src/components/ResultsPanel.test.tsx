@@ -72,6 +72,34 @@ describe('relevant tab when nothing is relevant yet', () => {
   })
 })
 
+describe('why a bid was read', () => {
+  const panel = (results: BidResult[], tab: 'relevant' | 'quarantine' = 'relevant') => (
+    <ResultsPanel run={run({ results })} tab={tab} onTab={() => {}} now={NOW} memory={[]}
+                  onRestore={() => {}} onRule={() => {}} onUnrule={() => {}} onForget={() => {}} onEdit={() => {}} />)
+
+  it.each([
+    ['match', 'Read because: matches'],
+    ['unsure', 'Read because: might match'],
+    ['net', 'Read because: kept by the title check'],
+  ] as const)('says why a bid was read through the %s route', (read_because, text) => {
+    render(panel([bid({ b_id: 7, read_because })]))
+    expect(screen.getByText(text)).toBeInTheDocument()
+  })
+
+  it('says nothing when the bid took the old path', () => {
+    render(panel([bid({ read_because: null })]))
+    expect(screen.queryByText(/^Read because:/)).not.toBeInTheDocument()
+    expect(screen.getByText('Hires management consultants for a bank.')).toBeInTheDocument()
+  })
+
+  it("keeps a quarantined read bid's reason", () => {
+    const q = bid({ state: 'quarantined', relevant: false, reason: 'Audit, not consultancy.', read_because: 'net' })
+    render(panel([q], 'quarantine'))
+    expect(screen.getByText('Audit, not consultancy.')).toBeInTheDocument()
+    expect(screen.getByText('Read because: kept by the title check')).toBeInTheDocument()
+  })
+})
+
 describe('borderline section', () => {
   const border = () => bid({ b_id: 5, bid_number: 'GEM/2026/B/5555', state: 'borderline', relevant: false,
     question: 'Does AI-enabled analytics count as AI software?', reason: 'Analytics with some ML.' })
