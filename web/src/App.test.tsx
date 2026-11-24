@@ -238,8 +238,8 @@ describe('web chat', () => {
     const api = new FakeApi()
     api.script = [
       { type: 'started', run: run({ run_id: 'r4', title: 'LOS tenders', request: 'LOS tenders', status: 'running', understood: null, progress: [], results: [] }) },
-      { type: 'progress', event: { at: '2026-11-16T13:50:10', text: 'Read 3 of 4 bids: 8 files downloaded…', kind: 'count', phase: 'read' } },
-      { type: 'progress', event: { at: '2026-11-16T13:50:20', text: 'Read 4 of 4 bids: 10 files downloaded…', kind: 'count', phase: 'read' } },
+      { type: 'progress', event: { at: '2026-11-16T13:50:10', text: 'Read 3 of 4 bids: 2 relevant, 1 not a match.', kind: 'count', phase: 'read' } },
+      { type: 'progress', event: { at: '2026-11-16T13:50:20', text: 'Read 4 of 4 bids: 1 relevant, 3 not a match.', kind: 'count', phase: 'read' } },
       { type: 'progress', event: { at: '2026-11-16T13:51:00', text: 'Done: 1 relevant, 3 quarantined.', phase: 'report' } },
       { type: 'done', status: 'complete' },
     ]
@@ -249,8 +249,25 @@ describe('web chat', () => {
     const log = await screen.findByRole('list', { name: 'Progress' })
     const rows = within(log).getAllByRole('listitem').map(li => li.textContent)
     expect(rows).toHaveLength(2)  // the newest count, then Done
-    expect(rows[0]).toContain('Read 4 of 4 bids: 10 files downloaded…')
+    expect(rows[0]).toContain('Read 4 of 4 bids: 1 relevant, 3 not a match')
     expect(rows[1]).toContain('Done: 1 relevant, 3 quarantined.')
+  })
+
+  it('shows a finished progress line without the trailing dots, and keeps the live one as sent', async () => {
+    const api = new FakeApi()
+    api.current = run({ status: 'complete', results: [], progress: [{ at: '2026-11-16T13:40:01', text: 'Planned 17 GeM searches…', phase: 'plan' }, { at: '2026-11-16T13:42:05', text: 'Done: 1 relevant, 1 quarantined.', phase: 'report' }] })
+    setup(api)
+    expect(await screen.findByText('Planned 17 GeM searches.')).toBeInTheDocument()
+    expect(screen.queryByText('Planned 17 GeM searches…')).not.toBeInTheDocument()
+  })
+
+  it('keeps the spinner and the dots on the live last line of a running run', async () => {
+    const api = new FakeApi()
+    api.current = run({ status: 'running', results: [], understood: null, progress: [{ at: '2026-11-16T13:40:01', text: 'Planned 17 GeM searches…', phase: 'plan' }, { at: '2026-11-16T13:42:05', text: 'Read 2 of 4 bids: 1 relevant, 1 not a match…', kind: 'count', phase: 'read' }] })
+    setup(api, 10_000)
+    expect(await screen.findByText('Read 2 of 4 bids: 1 relevant, 1 not a match…')).toBeInTheDocument()
+    expect(screen.getByText('Planned 17 GeM searches.')).toBeInTheDocument()
+    expect(screen.getAllByLabelText('in progress')).toHaveLength(1)
   })
 
   it('shows the request at once and a waiting turn until the server answers, then placeholder cards', async () => {

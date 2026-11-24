@@ -107,6 +107,13 @@ class RunStore:
                 for c in candidates]
         self._write(self._dir(run_id) / "shortlist.json", json.dumps(rows, indent=1))
 
+    def shortlist_size(self, run_id: str) -> int:
+        path = self._dir(run_id) / "shortlist.json"
+        try:
+            return len(json.loads(path.read_text(encoding="utf-8")))
+        except (OSError, ValueError):
+            return 0
+
     def outcomes(self, run_id: str) -> dict[int, Outcome]:
         """outcomes.json as written by older runs, then the lines appended to outcomes.jsonl (last one wins)."""
         run = self._dir(run_id)

@@ -15,7 +15,7 @@ from collections.abc import AsyncIterator
 from typing import Any, Literal
 
 from gem_agent.agents.chat import short_name
-from gem_agent.graph.build import build_graph, emit
+from gem_agent.graph.build import build_graph, emit, error_line, progress, stopped_line
 from gem_agent.graph.checkpoint import checkpointer
 from gem_agent.graph.rulings import settle, topic_for
 from gem_agent.graph.services import Services
@@ -103,14 +103,46 @@ class RunManager:
             # Stopped from the web chat: bids already judged stay in the run; the checkpoint stays usable.
             status = "stopped"
             log.info("run %s stopped by the user", record.run_id)
+            await self._closing_line(record, status)
         except Exception as exc:
             log.exception("run %s failed", record.run_id)
             status = "failed"
             record.error = str(exc)[:500]
+            await self._closing_line(record, status)
         finally:
             record.status = status  # type: ignore[assignment]
             self.s.store.save(record)
             emit(self.s, record.run_id, {"type": "done", "status": status})
+
+    async def _closing_line(self, record: RunRecord, status: str) -> None:
+        """The last line of a stopped or failed run: what was read, and what was not. Never raises: the run still ends."""
+        run_id = record.run_id
+        try:
+            outcomes = self.s.store.outcomes(run_id)
+            read, total = len(outcomes), self.s.store.shortlist_size(run_id)
+            if status == "failed":
+                text = error_line(read, total)
+            else:
+                relevant = sum(1 for o in outcomes.values() if o.verdict and o.verdict.relevant)
+                text = stopped_line(read, total, relevant, deeper_ran=await self._deeper_ran(run_id))
+        except Exception:  # noqa: BLE001 - the line is lost; the run still ends with its done event
+            log.warning("run %s: the closing line could not be written", run_id, exc_info=True)
+            return
+        progress(self.s, run_id, text, phase="read")
+
+    async def _deeper_ran(self, run_id: str) -> bool:
+        """Whether the deeper search started: a search_rest line in the log, or the checkpoint's stage past "first"."""
+        if any(e.get("type") == "progress" and e["event"].get("phase") == "search_rest"
+               for e in self.s.store.events(run_id)):
+            return True
+        try:
+            async with checkpointer(self.s.checkpoint_path) as saver:
+                snap = await build_graph(self.s).compile(checkpointer=saver).aget_state(
+                    {"configurable": {"thread_id": run_id}})
+        except Exception:  # noqa: BLE001 - without the checkpoint the log decides
+            log.warning("run %s: the checkpoint could not be read", run_id, exc_info=True)
+            return False
+        return snap.values.get("stage", "first") != "first"
 
     async def stop(self, user: str, run_id: str) -> None:
         """Stop a running run now. Whatever was collected and judged so far stays in the run."""

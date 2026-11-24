@@ -56,10 +56,8 @@ def progress(s: Services, run_id: str, text: str, kind: str | None = None, phase
 
 def running_count(read: int, total: int, outcomes: Iterable[Outcome]) -> str:
     """What reading has done so far, counted from the stored outcomes (nothing is estimated)."""
-    files = placeholders = dropped = rejected = relevant = failed = 0
+    dropped = rejected = relevant = failed = 0
     for o in outcomes:
-        files += sum(1 for f in o.files if f.status == "ok")
-        placeholders += sum(1 for f in o.files if f.status == "placeholder")
         if o.error:
             failed += 1
         elif o.verdict and o.verdict.relevant:
@@ -68,20 +66,23 @@ def running_count(read: int, total: int, outcomes: Iterable[Outcome]) -> str:
             dropped += 1
         elif o.verdict:
             rejected += 1  # documents read in full, then quarantined
-    parts = [f"{files} file{'s' if files != 1 else ''} downloaded"]
-    if placeholders:
-        parts.append(f"{placeholders} placeholder{'s' if placeholders != 1 else ''} skipped")
-    parts.append(f"triage dropped {dropped}")
-    if rejected:
-        parts.append(f"{rejected} quarantined after reading")
-    parts.append(f"{relevant} relevant so far")
+    parts = [f"{relevant} relevant", f"{dropped + rejected} not a match"]
     if failed:
         parts.append(f"{failed} could not be read")
-    return f"Read {read} of {total} bids: {', '.join(parts)}…"
+    return f"Read {read} of {total} bids: {', '.join(parts)}."
 
 
 def cut_line(n: int) -> str:
-    return (f"{n} more matching bid{' was' if n == 1 else 's were'} not read; narrow the request to see them.")
+    return f"{n} more matching bid{'s' if n != 1 else ''} not read; narrow the request to see them."
+
+
+def stopped_line(read: int, total: int, relevant: int, deeper_ran: bool) -> str:
+    text = f"Stopped: read {read} of {total} bids, {relevant} relevant."
+    return text if deeper_ran else f"{text} The deeper search did not run."
+
+
+def error_line(read: int, total: int) -> str:
+    return f"Stopped by an error after reading {read} of {total} bids. Try again; bids already read are kept."
 
 
 Progress = dict[str, dict[str, SearchProgress]]  # topic.key() -> search key -> progress
@@ -148,7 +149,7 @@ def build_graph(s: Services) -> StateGraph:
         plans = [await s.planner.plan(state.request, topic, note=note) for topic in state.request.topics]
         s.store.save_plans(state.run_id, plans)
         searches = sum(len(search_specs(p)) for p in plans)  # one plan runs several GeM searches, not one
-        progress(s, state.run_id, f"Planned {searches} GeM search{'es' if searches != 1 else ''}…", phase="plan")
+        progress(s, state.run_id, f"Searching GeM {searches} ways.", phase="plan")
         return {"plans": plans}
 
     async def search(state: RunState) -> dict[str, Any]:
@@ -172,8 +173,8 @@ def build_graph(s: Services) -> StateGraph:
         sizes = [*state.sizes, len(candidates)]  # this round's shortlist size: over-cap retries are judged on it
         s.store.save_shortlist(state.run_id, candidates)
         if candidates:
-            progress(s, state.run_id, f"Shortlist: {len(candidates)} bids from {pool:,} titles looked at "
-                                      "(closing soonest first). Reading documents…", phase="search")
+            progress(s, state.run_id, f"Shortlist: {len(candidates)} bid{'s' if len(candidates) != 1 else ''} to read "
+                                      f"from {pool:,} titles checked, closing soonest first.", phase="search")
         failed, read = failed_searches(search_progress)
         if failed:
             progress(s, state.run_id, failed_line(failed, read), phase="search")
@@ -211,11 +212,11 @@ def build_graph(s: Services) -> StateGraph:
                 searchable.append((topic, plan_, taken))
         if any(p.pending for t, _, _ in searchable for p in search_progress[t.key()].values()):
             # silent otherwise: page reads take minutes, and the chat shows a spinner meanwhile
-            progress(s, state.run_id, "Checking more GeM pages for a wider shortlist…", phase="search_rest")
+            progress(s, state.run_id, "Looking through more GeM pages for older matches.", phase="search_rest")
 
         def more_found(bids: int, target: int) -> None:
             """One line, updated in place: the deeper pages cost a second each, so the count must move."""
-            progress(s, state.run_id, f"More bids found: {bids} of {target}…", "count", phase="search_rest")
+            progress(s, state.run_id, f"More GeM pages checked: {bids} titles so far.", "count", phase="search_rest")
 
         for topic, plan_, taken in searchable:
             key = topic.key()
@@ -232,7 +233,7 @@ def build_graph(s: Services) -> StateGraph:
         candidates = [*state.candidates, *by_closing(new)]
         if new:
             s.store.save_shortlist(state.run_id, candidates)
-            progress(s, state.run_id, f"Searching deeper: {len(new)} more bids to read…", phase="search_rest")
+            progress(s, state.run_id, f"Found {len(new)} more bid{'s' if len(new) != 1 else ''} to read.", phase="search_rest")
         if cut:
             progress(s, state.run_id, cut_line(cut), phase="search_rest")
         failed, read = failed_searches(search_progress, before=state.search_progress)

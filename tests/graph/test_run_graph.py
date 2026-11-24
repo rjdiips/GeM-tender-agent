@@ -273,13 +273,13 @@ async def test_reading_reports_a_running_count_from_the_start_to_the_last_bid(tm
     progress = [e["event"] for e in events if e["type"] == "progress"]
     texts = [p["text"] for p in progress]
     counts = [p["text"] for p in progress if p.get("kind") == "count"]
-    assert texts[0].startswith("Planned 5 GeM searches")  # 4 base searches + the plan's one term
+    assert texts[0] == "Searching GeM 5 ways."  # 4 base searches + the plan's one term
     assert texts[1].startswith("Shortlist: 20 bids")
-    assert texts[2] == counts[0] == "Read 0 of 20 bids: 0 files downloaded, triage dropped 0, 0 relevant so far…"  # at once
+    assert texts[2] == counts[0] == "Read 0 of 20 bids: 0 relevant, 0 not a match."  # at once
     assert len(counts) == 21  # then after every bid; the chat shows only the newest
     # 16 judged bids x 2 files + 3 triage rejections x 1 (bid document only); bid 7 failed
-    assert counts[-1] == "Read 20 of 20 bids: 35 files downloaded, triage dropped 3, 16 relevant so far, 1 could not be read…"
-    assert texts[-3:] == [counts[-1], "Checking more GeM pages for a wider shortlist…",  # stage 2 is not silent
+    assert counts[-1] == "Read 20 of 20 bids: 16 relevant, 3 not a match, 1 could not be read."
+    assert texts[-3:] == [counts[-1], "Looking through more GeM pages for older matches.",  # stage 2 is not silent
                           "Done: 16 relevant, 3 quarantined, 1 could not be read."]
 
 
@@ -318,8 +318,7 @@ def test_every_bid_read_is_in_the_running_count():
         return Outcome(b_id=b_id, group="LOS", bid=bid(b_id), verdict=None if error else v, error=error)
     line = running_count(4, 9, [outcome(1, True, "judge"), outcome(2, False, "triage"), outcome(3, False, "judge"),
                                 outcome(4, False, "judge", error="503")])
-    assert line == ("Read 4 of 9 bids: 0 files downloaded, triage dropped 1, 1 quarantined after reading, "
-                    "1 relevant so far, 1 could not be read…")
+    assert line == "Read 4 of 9 bids: 1 relevant, 2 not a match, 1 could not be read."
 
 
 def test_runs_from_before_the_card_do_not_repeat_the_meaning_line():
@@ -338,7 +337,7 @@ async def test_the_shortlist_line_right_after_the_card_is_kept(tmp_path):
     run_id = events[0]["run"]["run_id"]
     view = run_view(s.store.load(run_id), s.store.outcomes(run_id), s.store.events(run_id))
     texts = [p["text"] for p in view["progress"]]
-    assert texts[0].startswith("Planned 5 GeM searches")
+    assert texts[0] == "Searching GeM 5 ways."
     assert texts[1].startswith("Shortlist: 2 bids")  # kept, not swallowed by the meaning card
 
 
@@ -418,10 +417,10 @@ async def test_a_run_judges_page_one_bids_then_searches_deeper_and_judges_the_ne
     assert searcher.excluded == [{1, 2}]  # every bid already in the run
     assert [e["bid"]["b_id"] for e in events if e["type"] == "result"] == [1, 2, 3]
     progress = [e["event"]["text"] for e in events if e["type"] == "progress"]
-    assert "Searching deeper: 1 more bids to read…" in progress
+    assert "Found 1 more bid to read." in progress
     live = [e["event"]["text"] for e in events if e["type"] == "progress" and e["event"].get("phase") == "search_rest"
             and e["event"].get("kind") == "count"]
-    assert live == ["More bids found: 2 of 444…"]  # the deeper pages' live count: 3 x the 148 places left
+    assert live == ["More GeM pages checked: 2 titles so far."]  # the deeper pages' live count: 3 x the 148 places left
     assert progress[-1] == "Done: 3 relevant, 0 quarantined."
     run_id = events[0]["run"]["run_id"]
     shortlist = json.loads((s.store.root / run_id / "shortlist.json").read_text())
@@ -435,13 +434,13 @@ async def test_a_bid_the_second_stage_returns_again_is_judged_once(tmp_path):
     events = await ask(RunManager(s), "LOS tenders")
     assert sorted(judge.judged) == [1, 2, 3] and len(judge.judged) == 3
     assert sorted(e["bid"]["b_id"] for e in events if e["type"] == "result") == [1, 2, 3]
-    assert "Searching deeper: 1 more bids to read…" in [e["event"]["text"] for e in events if e["type"] == "progress"]
+    assert "Found 1 more bid to read." in [e["event"]["text"] for e in events if e["type"] == "progress"]
 
 
 async def test_no_deeper_line_when_the_second_stage_finds_nothing_new(tmp_path):
     s = services(tmp_path, searcher=FakeSearcher([[bid(1)]], rest=[[bid(1)]]))
     events = await ask(RunManager(s), "LOS tenders")
-    assert not any(e["event"]["text"].startswith("Searching deeper") for e in events if e["type"] == "progress")
+    assert not any(e["event"]["text"].startswith("Found ") for e in events if e["type"] == "progress")
     assert events[-1] == {"type": "done", "status": "complete"}
 
 
@@ -537,8 +536,8 @@ async def test_the_cap_is_per_topic_across_both_stages_and_what_it_cuts_is_repor
     assert searcher.caps == [None, 1]  # stage 2 gets what stage 1 left of the topic's cap
     assert sorted(judge.judged) == [1, 2, 3]
     progress = [e["event"]["text"] for e in events if e["type"] == "progress"]
-    assert "2 more matching bids were not read; narrow the request to see them." in progress
-    assert progress[-1] == ("Done: 3 relevant, 0 quarantined. 2 more matching bids were not read; "
+    assert "2 more matching bids not read; narrow the request to see them." in progress
+    assert progress[-1] == ("Done: 3 relevant, 0 quarantined. 2 more matching bids not read; "
                             "narrow the request to see them.")
 
 
@@ -550,8 +549,8 @@ async def test_an_over_cap_retry_that_shrinks_nothing_is_not_repeated(tmp_path):
     assert len(planner.notes) == 2 and "more specific" in planner.notes[1]  # narrowed once, then read
     assert searcher.stages == ["first", "first"]  # stage 1 used the cap up: stage 2 has no pages to read
     progress = [e["event"]["text"] for e in events if e["type"] == "progress"]
-    assert progress.count("1 more matching bid was not read; narrow the request to see them.") == 1  # stage 1's cut
-    assert progress[-1].endswith(" 1 more matching bid was not read; narrow the request to see them.")
+    assert progress.count("1 more matching bid not read; narrow the request to see them.") == 1  # stage 1's cut
+    assert progress[-1].endswith(" 1 more matching bid not read; narrow the request to see them.")
 
 
 class CrashInRest(FakeSearcher):
@@ -634,3 +633,104 @@ async def test_a_card_failure_does_not_fail_the_run(tmp_path):
     final_message = [e["event"]["text"] for e in events if e["type"] == "progress"][-1]
     assert cards.calls and final_message.startswith("Done:")
     assert events[-1] == {"type": "done", "status": "complete"}
+
+
+# --- progress lines in plain words: the copy in the table of the Task 9 brief -----------------------------------------
+
+
+def texts_of(events):
+    return [e["event"]["text"] for e in events if e["type"] == "progress"]
+
+
+class HoldAllButFirst(FakeCollector):
+    """The first bid is read; the others never finish, so a run can be stopped after one bid."""
+
+    async def collect(self, bid, **kw):
+        if bid.b_id != 1:
+            await asyncio.Event().wait()
+        return await super().collect(bid, **kw)
+
+
+async def test_plan_line(tmp_path):
+    s = services(tmp_path)
+    assert texts_of(await ask(RunManager(s), "LOS tenders"))[0] == "Searching GeM 5 ways."
+
+
+async def test_shortlist_line_singular_and_plural(tmp_path):
+    one = await ask(RunManager(services(tmp_path / "one", searcher=FakeSearcher([[bid(1)]]))), "LOS tenders")
+    assert "Shortlist: 1 bid to read from 3 titles checked, closing soonest first." in texts_of(one)
+    two = await ask(RunManager(services(tmp_path / "two")), "LOS tenders")
+    assert "Shortlist: 2 bids to read from 6 titles checked, closing soonest first." in texts_of(two)
+
+
+async def test_search_rest_start_line(tmp_path):
+    s = services(tmp_path)
+    assert "Looking through more GeM pages for older matches." in texts_of(await ask(RunManager(s), "LOS tenders"))
+
+
+async def test_search_rest_count_line(tmp_path):
+    s = services(tmp_path, searcher=FakeSearcher([[bid(1)]], rest=[[bid(3), bid(4)]]))
+    events = await ask(RunManager(s), "LOS tenders")
+    counts = [e["event"] for e in events if e["type"] == "progress" and e["event"].get("kind") == "count"
+              and e["event"].get("phase") == "search_rest"]
+    assert counts[-1]["text"] == "More GeM pages checked: 2 titles so far."
+
+
+async def test_search_rest_new_line_singular_and_plural(tmp_path):
+    one = await ask(RunManager(services(tmp_path / "one", searcher=FakeSearcher([[bid(1)]], rest=[[bid(3)]]))), "LOS tenders")
+    assert "Found 1 more bid to read." in texts_of(one)
+    two = await ask(RunManager(services(tmp_path / "two", searcher=FakeSearcher([[bid(1)]], rest=[[bid(3), bid(4)]]))),
+                    "LOS tenders")
+    assert "Found 2 more bids to read." in texts_of(two)
+
+
+def test_read_count_line_singular_and_plural():
+    from gem_agent.graph.build import running_count
+    from gem_agent.graph.store import Outcome
+    judge = FakeJudge()
+
+    def outcome(b_id, relevant, stage):
+        return Outcome(b_id=b_id, group="LOS", bid=bid(b_id), verdict=judge._verdict(LOS, bid(b_id), relevant, stage))
+    assert running_count(1, 1, [outcome(1, True, "judge")]) == "Read 1 of 1 bids: 1 relevant, 0 not a match."
+    assert running_count(1, 1, [outcome(1, False, "triage")]) == "Read 1 of 1 bids: 0 relevant, 1 not a match."
+
+
+def test_cut_line_singular_and_plural():
+    from gem_agent.graph.build import cut_line
+    assert cut_line(1) == "1 more matching bid not read; narrow the request to see them."
+    assert cut_line(2) == "2 more matching bids not read; narrow the request to see them."
+
+
+async def test_no_progress_line_ends_with_dots(tmp_path):
+    bids = [bid(i, closing_day=18 + i % 5) for i in range(1, 6)]
+    s = services(tmp_path, searcher=FakeSearcher([bids], rest=[[bid(9)]]), judge=FakeJudge(no={3}))
+    texts = texts_of(await ask(RunManager(s), "LOS tenders"))
+    assert texts and not any(t.endswith("…") for t in texts)
+
+
+async def test_stopped_run_gets_a_closing_line(tmp_path):
+    s = services(tmp_path, collector=HoldAllButFirst())
+    manager = RunManager(s)
+    events = []
+
+    async def follow():
+        async for e in manager.ask("asha", "LOS tenders"):
+            events.append(e)
+
+    task = asyncio.create_task(follow())
+    while not any(e["type"] == "result" for e in events):
+        await asyncio.sleep(0.01)
+    run_id = events[0]["run"]["run_id"]
+    await manager.stop("asha", run_id)
+    await asyncio.wait_for(task, timeout=5)
+    last = texts_of(events)[-1]
+    assert last.startswith("Stopped: read 1 of")
+    assert last == "Stopped: read 1 of 2 bids, 1 relevant. The deeper search did not run."
+    assert events[-1] == {"type": "done", "status": "stopped"}
+
+
+async def test_failed_run_gets_a_closing_line(tmp_path):
+    s = services(tmp_path, searcher=CrashOnce([[bid(1)]]))
+    events = await ask(RunManager(s), "LOS tenders")
+    assert texts_of(events)[-1] == "Stopped by an error after reading 0 of 0 bids. Try again; bids already read are kept."
+    assert events[-1] == {"type": "done", "status": "failed"}

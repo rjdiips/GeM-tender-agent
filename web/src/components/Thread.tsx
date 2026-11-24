@@ -53,7 +53,7 @@ export function Thread({ run, notes, pending, now, theme, onToggleTheme, onAsk, 
                         <li key={`${p.at}-${i}`}>
                           <span className="ts">{clockTime(p.at)}</span>
                           {live ? <span className="gt-spin" aria-label="in progress" /> : <IconCheck width={12} height={12} style={{ color: 'var(--acc)', flex: 'none', marginTop: 3 }} />}
-                          <span>{p.text}</span>
+                          <span>{live ? p.text : p.text.replace(/…$/, '.')}</span>
                         </li>
                       )
                     })}
