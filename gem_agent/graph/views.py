@@ -77,7 +77,7 @@ def bid_result(run_id: str, o: Outcome) -> dict[str, Any]:
         "question": v.question if v else "", "ruling": {"decision": ruling.decision, "by": ruling.by, "fact": ruling.fact}
         if ruling else None, "restored": o.restored, "confidence": v.confidence if v else 0.0,
         "reason": f"Your ruling: {ruling.fact}" if ruling and ruling.decision == "not"
-        else v.reason if v else (error_text(o.error) if o.error else ""),
+        else o.not_read or (v.reason if v else (error_text(o.error) if o.error else "")),
         # an unverified quote is either too short to count (it may well be there) or not found in the documents
         "evidence": [{**e.model_dump(), "file_name": names.get(e.file, e.file),
                       "check": "verified" if e.verified else "short" if too_short(e.quote) else "not_found"}
@@ -90,6 +90,7 @@ def bid_result(run_id: str, o: Outcome) -> dict[str, Any]:
                    "filename": g.record.filename, "pages": g.record.pages, "status": g.record.status,
                    "download_name": download_name(b.bid_number, g),
                    "url": f"/api/runs/{run_id}/files/{b.b_id}/{g.record.sha256}"} for g in groups],
+        "read_because": o.read_because,
         "stage": v.stage if v else None,  # triage = ruled out from the title and first pages, without quotes
         "proof": proof(v.evidence, {r.filename: r.role for r in o.files}) if v and v.stage != "triage" else None,
         "needs_review": bool(v and v.needs_review), "gem_url": GEM_DOC.format(b.b_id), "error": o.error,
@@ -124,7 +125,7 @@ def _progress(events: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 
 def _judged(o: Outcome) -> bool:
-    return bool(o.verdict or o.error)
+    return bool(o.verdict or o.error or o.not_read)
 
 
 def run_view(record: RunRecord, outcomes: dict[int, Outcome], events: list[dict[str, Any]]) -> dict[str, Any]:

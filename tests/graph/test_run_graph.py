@@ -321,6 +321,31 @@ def test_every_bid_read_is_in_the_running_count():
     assert line == "Read 4 of 9 bids: 1 relevant, 2 not a match, 1 could not be read."
 
 
+def test_running_count_counts_bids_not_read_as_not_a_match():
+    from gem_agent.graph.build import running_count
+    from gem_agent.graph.store import Outcome
+
+    o = Outcome(b_id=1, group="LOS", bid=bid(1), not_read="Not a match: buys Lockers.")
+    assert running_count(1, 1, [o]) == "Read 1 of 1 bids: 0 relevant, 1 not a match."
+
+
+async def test_report_counts_a_bid_that_was_not_read(tmp_path):
+    from gem_agent.agents.schemas import TenderRequest
+    from gem_agent.agents.searcher import Candidate
+    from gem_agent.graph.build import build_graph
+    from gem_agent.graph.state import RunState
+    from gem_agent.graph.store import Outcome
+    from tests.graph.fakes import WINDOW
+
+    s = services(tmp_path)
+    s.store.save_outcome("r", Outcome(b_id=1, group="LOS", bid=bid(1), not_read="Not a match: buys Lockers."))
+    state = RunState(run_id="r", user="asha", request=TenderRequest(intent="search", user_text="LOS tenders",
+                                                                   topics=[LOS], window=WINDOW),
+                     candidates=[Candidate(bid=bid(1), group="LOS", why=["title words"])])
+    await build_graph(s).nodes["report"].runnable.ainvoke(state)
+    assert s.store.events("r")[-1]["event"]["text"] == "Done: 0 relevant, 1 quarantined."
+
+
 def test_runs_from_before_the_card_do_not_repeat_the_meaning_line():
     from gem_agent.graph.views import _progress
     line = {"at": "2026-11-16T13:40:00", "text": "Looking for LOS tenders published 2–16 Nov (…)."}

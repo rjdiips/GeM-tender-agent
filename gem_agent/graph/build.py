@@ -57,7 +57,9 @@ def running_count(read: int, total: int, outcomes: Iterable[Outcome]) -> str:
     """What reading has done so far, counted from the stored outcomes (nothing is estimated)."""
     dropped = rejected = relevant = failed = 0
     for o in outcomes:
-        if o.error:
+        if o.not_read:
+            dropped += 1
+        elif o.error:
             failed += 1
         elif o.verdict and o.verdict.relevant:
             relevant += 1
@@ -290,7 +292,7 @@ def build_graph(s: Services) -> StateGraph:
 
     async def report(state: RunState) -> dict[str, Any]:
         outcomes = list(s.store.outcomes(state.run_id).values())
-        states = [bid_state(o) for o in outcomes if o.verdict]
+        states = [bid_state(o) for o in outcomes if o.verdict or o.not_read]
         relevant, quarantined, borderline = (states.count(k) for k in ("relevant", "quarantined", "borderline"))
         failed = sum(1 for o in outcomes if o.error)
         searches = [p for t in state.search_progress.values() for p in t.values()]

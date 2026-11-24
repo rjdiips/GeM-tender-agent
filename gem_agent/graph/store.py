@@ -52,6 +52,8 @@ class Outcome(BaseModel):
     files: list[FileRecord] = []
     buyer_org: str | None = None
     verdict: Verdict | None = None
+    read_because: Literal["match", "unsure", "net"] | None = None  # why a fully read bid was read
+    not_read: str = ""  # why it was ruled out without a full read
     error: str = ""
     restored: bool = False
     ruling: Ruling | None = None

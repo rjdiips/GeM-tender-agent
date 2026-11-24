@@ -37,6 +37,27 @@ def test_old_outcomes_load_without_ruling_or_undone(tmp_path):
     assert o.ruling is None and o.undone is False
 
 
+def test_outcomes_stored_before_these_fields_still_load(tmp_path):
+    store = RunStore(tmp_path)
+    path = tmp_path / "r" / "outcomes.jsonl"
+    path.parent.mkdir()
+    row = outcome(1).model_dump(mode="json")
+    row.pop("read_because", None)
+    row.pop("not_read", None)
+    path.write_text(json.dumps(row) + "\n")
+    o = store.outcomes("r")[1]
+    assert o.read_because is None and o.not_read == ""
+
+
+def test_read_because_and_not_read_survive_a_round_trip(tmp_path):
+    store = RunStore(tmp_path)
+    store.save_outcome("r", Outcome(b_id=1, group="g", bid=bid(1), read_because="match"))
+    store.save_outcome("r", Outcome(b_id=2, group="g", bid=bid(2), not_read="Not a match."))
+    outcomes = store.outcomes("r")
+    assert outcomes[1].read_because == "match" and outcomes[1].not_read == ""
+    assert outcomes[2].read_because is None and outcomes[2].not_read == "Not a match."
+
+
 def test_save_outcome_appends_one_line(tmp_path):
     store = RunStore(tmp_path)
     store.save_outcome("r", outcome(1))
