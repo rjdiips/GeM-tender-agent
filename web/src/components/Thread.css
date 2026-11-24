@@ -6,6 +6,7 @@
 .gt-live.run { animation: gtpulse 1s ease-in-out infinite }
 .gt-live.fail { background: var(--bad); box-shadow: none }
 .gt-live.stopped { background: var(--mute); box-shadow: none }
+.gt .gt-scrim { display: none }
 .gt .gt-run-menu { display: none; border: 1px solid var(--line); background: var(--raise); color: var(--ink2); border-radius: 8px; padding: 4px 10px; font-size: 12.5px }
 @keyframes gtpulse { 50% { opacity: .3 } }
 .gt-thread { flex: 1; overflow: auto; padding: 28px }

@@ -400,6 +400,21 @@ describe('status dot and menu', () => {
   })
 })
 
+describe('phone drawer dismissal', () => {
+  it('the drawer closes from the Runs button or a tap on the backdrop', async () => {
+    const { user } = setup()
+    const menu = await screen.findByRole('button', { name: 'Runs' })
+    const side = screen.getByRole('navigation', { name: 'Runs' }).closest('aside')!
+    await user.click(menu)
+    expect(menu).toHaveAttribute('aria-expanded', 'true')
+    expect(side).toHaveAttribute('data-open', 'true')
+    await user.click(screen.getByRole('button', { name: 'Close runs' }))
+    expect(menu).toHaveAttribute('aria-expanded', 'false')
+    expect(side).toHaveAttribute('data-open', 'false')
+    expect(screen.queryByRole('button', { name: 'Close runs' })).not.toBeInTheDocument()
+  })
+})
+
 describe('light polling', () => {
   it('while running, polls the status and fetches the run only when it changed', async () => {
     const api = new FakeApi()

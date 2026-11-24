@@ -19,6 +19,7 @@ export function Thread({ run, notes, pending, now, theme, onToggleTheme, onAsk, 
   const other = theme === 'dark' ? 'light' : 'dark'
   return (
     <main className="gt-main">
+      {menuOpen && <button className="gt-scrim" aria-label="Close runs" onClick={onMenu} />}
       <header className="gt-head">
         <button className="gt-run-menu" aria-label="Runs" aria-expanded={menuOpen} aria-controls="gt-side" onClick={onMenu}>Runs</button>
         <h1>{run?.title ?? 'New search'}</h1>
