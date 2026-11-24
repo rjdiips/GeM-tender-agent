@@ -60,8 +60,8 @@ flowchart TD
             TODAY -->|"title drop"| SKIP
             SKIP --> AP
         end
-        AP{"More pages and<br/>topic has cap left?"}
-        SR["search_rest<br/>pages 2 onward of each search"]
+        AP{"More pages and<br/>stage-1 shortlist<br/>below cap?"}
+        SR["search_rest: pages 2 onward<br/>page budget from<br/>150 - stage-1 shortlist"]
         REP["report: relevant, quarantined,<br/>errors, borderline and cap cuts"]
         PL --> SE --> AS
         AS -->|yes| RT --> PL
@@ -94,14 +94,14 @@ flowchart TD
     READ -->|"result events"| SSE["Event store + bus<br/>SSE /api/runs/id/events"]
     QUAR -->|"result events"| SSE
     REP --> SSE
-    SSE --> UI["Web UI: results panel,<br/>quarantine (restore), downloads / zip"]
+    SSE --> UI["Web UI: results panel,<br/>quarantine (restore → Relevant), downloads / zip"]
     UI -.->|"restore, refine"| RM
     UI -.->|"view / forget facts"| MEM
 ```
 
 ## Steps
 
-1. **Live search and caches**: no bids are loaded in the background. Each topic's plan runs fixed base searches plus its category, buyer and term searches. Stage 1 reads page 1 of every search; stage 2 reads remaining pages while the topic still has room under its read cap. Complete base searches are cached for an hour in `data/cache/searches/`, so another run within the hour can reuse them. Listing data for every in-window search hit goes to the bid cache, `data/bids/bids.sqlite`, whether the title screen keeps it or not.
+1. **Live search and caches**: no bids are loaded in the background. Each topic's plan runs fixed base searches plus its category, buyer and term searches. Stage 1 reads page 1 of every search. Stage 2 runs only for topics whose stage-1 shortlist is below the 150 cap; its remaining shortlist allowance is `150 - stage-1 shortlist count`, and its deeper-page budget is based on that allowance. Complete base searches are cached for an hour in `data/cache/searches/`, so another run within the hour can reuse them. Listing data for every in-window search hit goes to the bid cache, `data/bids/bids.sqlite`, whether the title screen keeps it or not.
 2. **Understand** (`agents/chat.py`): the message becomes an intent and 1–3 candidate meanings. Each meaning is probed live on GeM (page 1 of up to three of its terms), and a second call chooses between them only if two or more remain. Stated facts go straight into user memory.
 3. **Run or reply** (`graph/manager.py`): a search or refinement creates a run that executes as a background task. Anything else, such as "show rejected" or a memory question, gets a reply on the current stream and starts no run.
 4. **Run graph** (`graph/build.py`): plan → search → optional widen/narrow (at most two retries) → process → search_rest → process only new bids → report. The first process gets the **whole in-window pool**: title-screen keeps, title-screen drops and cap cuts. The checkpoint and durable process sidecar preserve the stage, completed bids, descriptions written and per-topic reads, so a resumed run does not repeat work or exceed a limit.
@@ -110,10 +110,10 @@ flowchart TD
 7. **Safety net** (`graph/deciding.py`): `MATCH_SAFETY_NET=true` by default and only a person changes it. When the net applies, a description **no** is checked against the old title-screen result and, if the title was kept, gets first-pages triage. Triage's clear no is final; maybe or yes earns a full read. With the net off, a description no drops a bid only when the description has a scope section; otherwise it still takes the old path. Undescribed bids always take the old title path, then triage if the title was kept, regardless of the setting.
 8. **Full read**: bids are selected for full reading in the order **match → unsure → net/today**, closing soonest first within each group. The **150-full-read cap is per topic and shared across both stages and all three groups**. A few selected bids are then read in parallel. The Collector supplies attachments, corrigenda and OCR text; the Judge selects passages, writes the verdict and checks its quotes. The UI records why the bid was read: matches, might match or kept by the title check. Bids beyond the cap are reported, not quarantined.
 9. **Borderline bids**: a bid the Judge cannot call without the user comes back as borderline with a question. The user rules "counts" or "doesn't count" in the web UI; the ruling becomes a per-topic memory fact, settles the run's other bids that raise the same question, and decides similar bids in later runs. Undo removes a fact the click created and un-settles what it settled. The run never waits.
-10. **Quarantine**: a bid ruled out without a full read carries a reason such as `Not a match: buys <subject>. Ruled out by the description check and the title check.` When the safety net's first-pages check also says no, the reason names **the description check and the first-pages check** instead. A clear-no triage on the old path carries the Judge's reason. Quarantined bids are kept for 30 days and can be restored.
+10. **Quarantine**: a bid ruled out without a full read carries a reason such as `Not a match: buys <subject>. Ruled out by the description check and the title check.` When the safety net's first-pages check also says no, the reason names **the description check and the first-pages check** instead. A clear-no triage on the old path carries the Judge's reason. Quarantined bids are kept for 30 days. Restoring one moves it to **Relevant** while retaining its original reason; a not-read bid keeps its description/check reason.
 11. **Stream** (`graph/events.py`, `graph/views.py`): each outcome goes to the web UI over SSE as soon as it is saved. `/api/runs/{id}/events` replays a run and then follows it live, so the page can be rejoined.
-12. **After the run**: the user restores quarantined bids, downloads files or a zip, refines the request (a follow-on run that reuses the descriptions, documents and verdicts), and views or forgets memory facts.
+12. **After the run**: the user restores quarantined bids into **Relevant** without erasing their original reasons, downloads files or a zip, refines the request (a follow-on run that reuses the descriptions, documents and verdicts), and views or forgets memory facts.
 13. **Refresh and evaluate**:
     - `gem-agent describe --refresh` re-describes selected cached bids without GeM requests. `--limit N` defaults to 200.
-    - `gem-agent eval match` replays the current matcher, today's title/first-pages path, and their union on the labelled set using cached documents only. It repeats three times by default and reports checked-label misses, all misses, non-matches read, model calls and the missed tenders; buyer topics are scored separately.
-    - The safety net may be retired only after the **current matcher prompt** misses **no human-checked label in three runs in a row** on subject topics. The harness prints whether that evidence holds. It never changes `MATCH_SAFETY_NET`; a person decides and flips the setting. Labels still awaiting human review are not retirement evidence.
+    - `gem-agent eval match` replays the current matcher, today's title/first-pages path, and their union on the labelled set using cached documents only. It repeats three times by default and reports checked-label misses, all misses, non-matches read, model calls and the missed tenders; buyer topics are scored separately. `--repeats 1` and `--repeats 2` remain available for exploratory scoring, but those shorter runs never recommend retirement.
+    - The safety net may be retired only after the **current matcher prompt** misses **no human-checked label in at least three runs in a row** on subject topics. The harness enforces that three-run minimum and prints whether the evidence holds. It never changes `MATCH_SAFETY_NET`; a person decides and flips the setting. Labels still awaiting human review are not retirement evidence.

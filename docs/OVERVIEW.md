@@ -17,7 +17,7 @@ The user types a plain-language request into a chat, for example *"tender docume
 3. **Describes each bid once** from its documents into `data/bids/bids.sqlite`: at most **300 new descriptions per request**, shared across all topics and both stages, then reused by every later run and user.
 4. Matches descriptions to each topic in batches of **up to 40**: match / unsure / no. The old title screen and first-pages triage remain a **safety net** for description misses. `MATCH_SAFETY_NET=true` by default, and only a person turns it off.
 5. Selects full reads in the order **match → unsure → net/today**, closing soonest first within each group, with a **150-read cap per topic across both stages**. It downloads attachments and corrigenda, uses OCR where needed, and gives each read bid a **verdict** with quotes giving the file and page.
-6. Shows relevant bids with buyer, dates, value and a reason, plus downloads and a zip. Bids ruled out without a full read go to **quarantine** for 30 days with the available description and the checks that said no, so the user can inspect and restore them.
+6. Shows relevant bids with buyer, dates, value and a reason, plus downloads and a zip. Bids ruled out without a full read go to **quarantine** for 30 days with the available description and the checks that said no. Restoring one moves it to **Relevant** while retaining its original reason, including that not-read description/check reason.
 
 It learns each user's preferences (user memory). Results start streaming within minutes.
 
@@ -42,7 +42,7 @@ It learns each user's preferences (user memory). Results start streaming within 
 ```
 gem_agent/
 ├── gem_agent/
-│   ├── cli.py            # gem-agent CLI: chat, serve, bids, describe, eval, jobs
+│   ├── cli.py            # gem-agent CLI: chat, serve, bids, describe, eval, backfill-queries, retention
 │   ├── config.py         # settings from .env
 │   ├── app/              # FastAPI backend: ask, SSE events, runs, downloads, memory
 │   ├── graph/            # langgraph run graph, RunState, checkpointer, event store, RunManager
@@ -123,8 +123,8 @@ flowchart TD
             TODAY -->|"title drop"| SKIP
             SKIP --> AP
         end
-        AP{"More pages and<br/>topic has cap left?"}
-        SR["search_rest<br/>pages 2 onward of each search"]
+        AP{"More pages and<br/>stage-1 shortlist<br/>below cap?"}
+        SR["search_rest: pages 2 onward<br/>page budget from<br/>150 - stage-1 shortlist"]
         REP["report: relevant, quarantined,<br/>errors, borderline and cap cuts"]
         PL --> SE --> AS
         AS -->|yes| RT --> PL
@@ -157,14 +157,14 @@ flowchart TD
     READ -->|"result events"| SSE["Event store + bus<br/>SSE /api/runs/id/events"]
     QUAR -->|"result events"| SSE
     REP --> SSE
-    SSE --> UI["Web UI: results panel,<br/>quarantine (restore), downloads / zip"]
+    SSE --> UI["Web UI: results panel,<br/>quarantine (restore → Relevant), downloads / zip"]
     UI -.->|"restore, refine"| RM
     UI -.->|"view / forget facts"| MEM
 ```
 
 **Steps**
 
-- **Live search and the pool.** No bids are loaded in the background. Stage 1 reads page 1 of every planned search; stage 2 reads remaining pages while each topic has room under its cap. Complete base searches are cached for an hour, so another run within the hour can reuse them. Every in-window search hit is stored in `data/bids/bids.sqlite` and enters the pool, including title-screen drops and cap cuts.
+- **Live search and the pool.** No bids are loaded in the background. Stage 1 reads page 1 of every planned search. Stage 2 runs only for topics whose stage-1 shortlist is below the 150 cap; its remaining shortlist allowance is `150 - stage-1 shortlist count`, and its deeper-page budget is based on that allowance. Complete base searches are cached for an hour, so another run within the hour can reuse them. Every in-window search hit is stored in `data/bids/bids.sqlite` and enters the pool, including title-screen drops and cap cuts.
 - **Understand.** `agents/chat.py` turns the message into an intent and 1–3 possible meanings, and checks each meaning live on GeM (page 1 of up to 3 of its terms). A second model call picks between them only if two or more are left. Facts the user states go straight into user memory.
 - **Run or reply.** A search or refinement creates a background run (`graph/manager.py`). Anything else, such as "show rejected" or a question about memory, gets a reply and starts no run.
 - **Run graph.** plan → search → widen or narrow (at most 2 retries) → process the whole stage-1 pool → search_rest → process only new bids → report (`graph/build.py`). The checkpoint and durable process sidecar preserve the stage, completed bids, descriptions written and per-topic reads across a restart.
@@ -172,16 +172,16 @@ flowchart TD
 - **Match per topic.** `agents/matcher.py` sends current descriptions and their buyers in batches of **up to 40**, returning match / unsure / no. A failed batch is split once; a half that still fails becomes unsure. Similarity only orders description work and never drops a bid.
 - **Safety net.** `MATCH_SAFETY_NET=true` by default, and only a person changes it. When the net applies, a description **no** is checked against the old title-screen result and, if the title was kept, gets first-pages triage. Maybe or yes earns a full read; clear no goes to quarantine. With the net off, a description no drops a bid only when the description has a scope section; otherwise it still takes the old path. Undescribed bids always take the old title path, then triage if the title was kept, regardless of the setting.
 - **Full read.** Bids are selected in the order **match → unsure → net/today**, closing soonest first within each group. The **150-full-read cap is per topic and shared across both stages and all three groups**; a few selected bids are then read in parallel. The Judge selects passages, gives a verdict and checks its quotes (see [How the Judge decides](#how-the-judge-decides)). Documents and verdicts are cached across runs and users. The UI says whether a read bid matched, might match or was kept by the title check; cap cuts are reported rather than quarantined.
-- **Quarantine and stream.** A bid ruled out without a full read carries a reason such as `Not a match: buys <subject>. Ruled out by the description check and the title check.` If the safety net's first-pages check also says no, the reason names **the description check and the first-pages check**. Quarantine keeps bids for 30 days and allows restoration. Each outcome streams over SSE as soon as it is saved; `/api/runs/{id}/events` replays a run and then follows it live.
-- **After the run.** The user restores quarantined bids, downloads files or a zip, refines the request (a follow-on run that reuses descriptions, documents and verdicts), and views or forgets memory facts.
+- **Quarantine and stream.** A bid ruled out without a full read carries a reason such as `Not a match: buys <subject>. Ruled out by the description check and the title check.` If the safety net's first-pages check also says no, the reason names **the description check and the first-pages check**. Quarantine keeps bids for 30 days. Restoring one moves it to **Relevant** while retaining its original reason; a not-read bid keeps its description/check reason. Each outcome streams over SSE as soon as it is saved; `/api/runs/{id}/events` replays a run and then follows it live.
+- **After the run.** The user restores quarantined bids into **Relevant** without erasing their original reasons, downloads files or a zip, refines the request (a follow-on run that reuses descriptions, documents and verdicts), and views or forgets memory facts.
 
 ### Refreshing descriptions and retiring the safety net
 
 `gem-agent describe --refresh` re-describes selected cached bids without GeM requests. `--limit N` defaults to 200.
 
-`gem-agent eval match` replays the description matcher alone (safety net off), today's title/first-pages path, and their union on the labelled set, using cached documents only. It repeats three times by default and reports checked-label misses, all misses, non-matches read, model calls and the missed tenders. Buyer topics are scored separately.
+`gem-agent eval match` replays the description matcher alone (safety net off), today's title/first-pages path, and their union on the labelled set, using cached documents only. It repeats three times by default and reports checked-label misses, all misses, non-matches read, model calls and the missed tenders. Buyer topics are scored separately. `--repeats 1` and `--repeats 2` remain available for exploratory scoring, but those shorter runs never recommend retirement.
 
-The safety net may be retired only when the **current matcher prompt** misses **no human-checked label in three runs in a row** on subject topics. The harness prints whether that evidence holds; it never changes `MATCH_SAFETY_NET`. A person decides and flips the setting. Labels still awaiting human review are not retirement evidence.
+The safety net may be retired only when the **current matcher prompt** misses **no human-checked label in at least three runs in a row** on subject topics. The harness enforces that three-run minimum and prints whether the evidence holds; it never changes `MATCH_SAFETY_NET`. A person decides and flips the setting. Labels still awaiting human review are not retirement evidence.
 
 ## How the Judge decides
 
