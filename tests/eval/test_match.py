@@ -191,6 +191,29 @@ async def test_retire_only_when_a_misses_no_checked_label_in_every_run(tmp_path,
     assert len(set(judge.cache_roots)) == 3  # every repeat starts with a fresh verdict cache
 
 
+@pytest.mark.parametrize(("repeats", "retire", "ending"), [
+    (1, False, "Keep the safety net: A alone missed checked labels in 0 of 1 runs."),
+    (2, False, "Keep the safety net: A alone missed checked labels in 0 of 2 runs."),
+    (3, True,
+     ("A alone missed no checked label in 3 of 3 runs: the safety net can be retired "
+      "(MATCH_SAFETY_NET=false). A person decides.")),
+])
+async def test_retirement_requires_three_zero_miss_subject_runs(tmp_path, repeats, retire, ending):
+    matcher = FakeMatcher(lambda topic, run, b_id: "match")
+    parts = evaluation_parts(tmp_path, [label(1)], matcher)
+    labelled, index, cache, describer, matcher, judge, searcher = parts
+    try:
+        report = await evaluate(labelled, describer=describer, matcher=matcher, searcher=searcher, judge=judge,
+                                index=index, cache=cache, repeats=repeats)
+    finally:
+        index.close()
+
+    a_subject = [score for score in report.scores if score.way == "A" and score.topics == "subject"]
+    assert len(a_subject) == repeats and all(score.checked_missed == 0 for score in a_subject)
+    assert report.retire is retire
+    assert report_text(report).endswith(ending)
+
+
 async def test_describe_labelled_reads_only_cached_documents(tmp_path, monkeypatch):
     index = BidIndex(tmp_path / "bids.sqlite")
     cache = DocCache(tmp_path / "docs")

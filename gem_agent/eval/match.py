@@ -201,7 +201,7 @@ def _route_reads(way: Way, items: list[Label], bids: dict[int, Bid], description
 
 def _retirement(scores: list[WayScore]) -> bool:
     subject_a = [score for score in scores if score.way == "A" and score.topics == "subject"]
-    return bool(subject_a) and all(score.checked_missed == 0 for score in subject_a)
+    return len(subject_a) >= 3 and all(score.checked_missed == 0 for score in subject_a)
 
 
 async def evaluate(labelled: LabelledSet, *, describer: Describer, matcher: Matcher, searcher: Searcher, judge: Judge,
