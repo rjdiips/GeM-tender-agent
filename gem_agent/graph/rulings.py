@@ -11,8 +11,12 @@ from gem_agent.graph.store import Ruling
 log = logging.getLogger(__name__)
 
 
-def topic_for(request: TenderRequest, group: str) -> TopicDefinition:
-    """The topic whose short name is the bid's group, else the first topic."""
+def topic_for(request: TenderRequest, group: str, *, topic_key: str | None = None) -> TopicDefinition:
+    """Resolve the stable topic identity first; display names are only a legacy fallback."""
+    if topic_key:
+        found = next((t for t in request.topics if t.key() == topic_key), None)
+        if found is not None:
+            return found
     return next((t for t in request.topics if short_name(t) == group), request.topics[0])
 
 

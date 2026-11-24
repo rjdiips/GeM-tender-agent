@@ -98,7 +98,7 @@ def build_services(settings: Settings) -> tuple[Services, DocCache, list[Callabl
     services = Services(
         chat=ChatAgent(model, probe=functools.partial(probe_live, live), memory=memory, topics=topics),
         planner=Planner(model, catalog),
-        searcher=Searcher(model, bid_cache, live),
+        searcher=Searcher(model, bid_cache, live, description_model=settings.llm_model),
         collector=collector,
         # Pages are ranked by meaning too: all-MiniLM-L6-v2 on the CPU by default, or a
         # remote embedder when EMBED_BASE_URL is set. It more than doubles the

@@ -6,9 +6,9 @@
    and hard buyer filters locally.
 3. Title screen: one batched model call keeps every plausible title.
 4. Vague titles (a bare service category such as "Hiring of Agency for IT Projects- Milestone basis") say nothing
-   about the subject. For those titles only, a usable cached description (what the bid document says it buys) is shown
-   to the screen; without one the bid is never dropped by the title screen. Screen drops and cap cuts return separately
-   in rest_pool for the description check.
+   about the subject. For those titles only, a usable description from the running model and prompt (what the bid
+   document says it buys) is shown to the screen; without one the bid is never dropped by the title screen. Screen
+   drops and cap cuts return separately in rest_pool for the description check.
 5. Closing soonest first, after the bids the topic's own terms found (a base search alone fills the cap with banking
    IT bids for any topic); preferred buyers first within a day.
 """
@@ -26,6 +26,7 @@ from pydantic_ai.models import Model
 from gem_agent.agents.chat import short_name
 from gem_agent.agents.schemas import SearchPlan, TopicDefinition
 from gem_agent.index.db import BidIndex, buyer_name
+from gem_agent.index.describe import DESCRIBE_PROMPT_VERSION
 from gem_agent.tools.gem.live import LiveSearcher, SearchProgress, SearchSpec
 from gem_agent.tools.gem.models import Bid, site_now
 from gem_agent.tools.gem.titles import is_vague_title
@@ -78,8 +79,13 @@ class SearchSettings(BaseModel):
 
 class Candidate(BaseModel):
     bid: Bid
-    group: str  # the topic it was found for
+    group: str  # display short name; not a unique topic identity
     why: list[str]
+    topic_key: str | None = None  # TopicDefinition.key(); None keeps old checkpoints readable
+
+    @property
+    def identity(self) -> str:
+        return self.topic_key or self.group
 
 
 class SearchResult(BaseModel):
@@ -97,9 +103,12 @@ class ScreenOutput(BaseModel):
 
 
 class Searcher:
-    def __init__(self, model: Model, bid_cache: BidIndex, live: LiveSearcher, *,
+    def __init__(self, model: Model, bid_cache: BidIndex, live: LiveSearcher, *, description_model: str,
+                 description_prompt_version: str = DESCRIBE_PROMPT_VERSION,
                  settings: SearchSettings | None = None) -> None:
         self.bid_cache, self.live = bid_cache, live
+        self.description_model = description_model
+        self.description_prompt_version = description_prompt_version
         self.settings = settings or SearchSettings()
         self._screen = Agent(model, output_type=NativeOutput(ScreenOutput), instructions=SCREEN_INSTRUCTIONS)
 
@@ -136,7 +145,8 @@ class Searcher:
         vague = {b.b_id for b in bids if is_vague_title(b.title)}
         descriptions = {}
         for b_id in vague:
-            if (description := self.bid_cache.description(b_id)) is not None and description.usable():
+            if ((description := self.bid_cache.description(b_id)) is not None and description.usable()
+                    and description.current(self.description_model, self.description_prompt_version)):
                 descriptions[b_id] = description.text()
         vague -= descriptions.keys()
         kept, unscreened = await self._screen_titles(topic, [b for b in bids if b.b_id not in vague], descriptions)
@@ -150,17 +160,19 @@ class Searcher:
             elif bid.b_id in unscreened:
                 why = ["screen failed: title kept for triage", *why]
             elif bid.b_id not in kept:
-                rest_pool.append(Candidate(bid=bid, group=group, why=["title screen: no", *why]))
+                rest_pool.append(Candidate(bid=bid, group=group, topic_key=topic.key(),
+                                           why=["title screen: no", *why]))
                 continue
             if preferred & {bid.ministry, bid.department}:
                 why = [*why, "preferred buyer"]
-            out.append(Candidate(bid=bid, group=group, why=why))
+            out.append(Candidate(bid=bid, group=group, topic_key=topic.key(), why=why))
         self.bid_cache.upsert(bids, seen_at=site_now())
         out.sort(key=lambda c: ("0" if from_own_search(c) else "1") +  # the topic's own hits get the cap's places first
                  (c.bid.closing or datetime.max).date().isoformat() +
                  ("0" if "preferred buyer" in c.why else "1") + (c.bid.closing or datetime.max).isoformat())
         cut = max(0, len(out) - cap)
-        rest_pool.extend(Candidate(bid=c.bid, group=c.group, why=["over the cap", *c.why]) for c in out[cap:])
+        rest_pool.extend(Candidate(bid=c.bid, group=c.group, topic_key=c.topic_key,
+                                   why=["over the cap", *c.why]) for c in out[cap:])
         return SearchResult(candidates=out[:cap], rest_pool=rest_pool, pool=len(pool), over_cap=cut > 0, cut=cut,
                             progress=new_progress)
 
@@ -170,9 +182,8 @@ class Searcher:
         half-open end-date range with 422)."""
         lo, hi = plan.published_from, plan.published_to
         clo, chi = plan.closing_from, plan.closing_to
-        if lo or hi:
-            if not bid.published or (lo and bid.published < lo) or (hi and bid.published > hi):
-                return False
+        if (lo or hi) and (not bid.published or (lo and bid.published < lo) or (hi and bid.published > hi)):
+            return False
         if (clo or chi) and not bid.closing:
             return False
         if (clo and bid.closing < clo) or (chi and bid.closing > chi):

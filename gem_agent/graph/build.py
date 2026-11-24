@@ -18,7 +18,7 @@ from typing import Any
 from langgraph.graph import END, START, StateGraph
 
 from gem_agent.agents.chat import short_name
-from gem_agent.agents.matcher import MatchItem, buyer_line
+from gem_agent.agents.matcher import Call, MatchItem, buyer_line
 from gem_agent.agents.searcher import Candidate, search_specs
 from gem_agent.graph.deciding import describe_order, not_read_reason, route, title_similarity
 from gem_agent.graph.rulings import settle, topic_for
@@ -155,6 +155,17 @@ def by_closing(candidates: Iterable[Candidate]) -> list[Candidate]:
     return sorted(candidates, key=lambda c: c.bid.closing.isoformat() if c.bid.closing else "9")
 
 
+def unique_bids(candidates: Iterable[Candidate]) -> list[Candidate]:
+    """One representative per bid, keeping the first topic's candidate (request order is relevance order)."""
+    seen: set[int] = set()
+    out: list[Candidate] = []
+    for c in candidates:
+        if c.bid.b_id not in seen:
+            seen.add(c.bid.b_id)
+            out.append(c)
+    return out
+
+
 def build_graph(s: Services) -> StateGraph:
     async def plan(state: RunState) -> dict[str, Any]:
         note = WIDEN if state.adjust == "widen" else NARROW if state.adjust == "narrow" else ""
@@ -166,8 +177,8 @@ def build_graph(s: Services) -> StateGraph:
 
     async def search(state: RunState) -> dict[str, Any]:
         """Stage 1: page 1 of every search, plus the in-window bids outside the shortlist."""
-        merged: dict[int, Candidate] = {}
-        rest: dict[int, Candidate] = {}
+        merged: dict[tuple[str, int], Candidate] = {}
+        rest: dict[tuple[str, int], Candidate] = {}
         pool, over_cap, cut = 0, False, 0
         integrated = s.describer is not None and s.matcher is not None
         search_progress: dict[str, Any] = {}
@@ -182,15 +193,16 @@ def build_graph(s: Services) -> StateGraph:
             first_counts[topic.key()] = len(result.candidates)
             skipped += [key.partition("|")[2] for key, p in result.progress.items() if p.skipped]
             for c in result.candidates:
-                merged.setdefault(c.bid.b_id, c)
+                merged.setdefault((c.identity, c.bid.b_id), c)
             for c in result.rest_pool:
-                rest.setdefault(c.bid.b_id, c)
+                rest.setdefault((c.identity, c.bid.b_id), c)
         candidates = by_closing(merged.values())
-        pool_rest = by_closing(c for b_id, c in rest.items() if b_id not in merged)
+        pool_rest = by_closing(c for key, c in rest.items() if key not in merged)
         sizes = [*state.sizes, len(candidates)]  # this round's shortlist size: over-cap retries are judged on it
         s.store.save_shortlist(state.run_id, candidates)
+        shortlist_count = len({c.bid.b_id for c in candidates})
         if candidates:
-            progress(s, state.run_id, f"Shortlist: {len(candidates)} bid{'s' if len(candidates) != 1 else ''} to read "
+            progress(s, state.run_id, f"Shortlist: {shortlist_count} bid{'s' if shortlist_count != 1 else ''} to read "
                                       f"from {pool:,} titles checked, closing soonest first.", phase="search")
         failed, read = failed_searches(search_progress)
         if failed:
@@ -211,13 +223,14 @@ def build_graph(s: Services) -> StateGraph:
         return "process"
 
     async def search_rest(state: RunState) -> dict[str, Any]:
-        """Stage 2: the remaining pages of every search. Only bids not already in the run are added (and judged).
-        The cap is per topic across both stages, so each topic's stage 2 gets what its stage 1 left of it."""
+        """Stage 2: remaining pages, with exclusions and cap slots scoped to each topic."""
         integrated = s.describer is not None and s.matcher is not None
-        seen = {c.bid.b_id for c in state.candidates}
-        if integrated:
-            seen.update(c.bid.b_id for c in state.pool_rest)
-        pool_rest = {c.bid.b_id: c for c in state.pool_rest}
+        pool_rest = {(c.identity, c.bid.b_id): c for c in state.pool_rest}
+        seen_pairs = {(c.identity, c.bid.b_id) for c in [*state.candidates, *state.pool_rest]}
+        seen_by_topic: dict[str, set[int]] = {}
+        for c in [*state.candidates, *state.pool_rest]:
+            seen_by_topic.setdefault(c.identity, set()).add(c.bid.b_id)
+        seen_ids = {c.bid.b_id for c in [*state.candidates, *state.pool_rest]}
         new: list[Candidate] = []
         pool, cut = state.pool, 0
         search_progress = dict(state.search_progress)
@@ -228,8 +241,9 @@ def build_graph(s: Services) -> StateGraph:
                 log.warning("run %s: no stage-1 progress for %s; not searching deeper", state.run_id, key)
                 continue
             taken = state.first_counts.get(key)
-            if taken is None:  # a checkpoint from before first_counts: its stage-1 bids, by group
-                taken = sum(1 for c in state.candidates if c.group == short_name(topic))
+            if taken is None:  # a checkpoint from before first_counts: its stage-1 bids, by identity/name
+                taken = sum(1 for c in state.candidates
+                            if c.identity == key or (c.topic_key is None and c.group == short_name(topic)))
             if taken < s.searcher.settings.cap:  # stage 1 filled the cap: no places left, so no pages to read
                 searchable.append((topic, plan_, taken))
         if any(p.pending for t, _, _ in searchable for p in search_progress[t.key()].values()):
@@ -240,26 +254,37 @@ def build_graph(s: Services) -> StateGraph:
             """One line, updated in place: the deeper pages cost a second each, so the count must move."""
             progress(s, state.run_id, f"More GeM pages checked: {bids} titles so far.", "count", phase="search_rest")
 
+        def is_new(c: Candidate) -> bool:
+            return (c.identity, c.bid.b_id) not in seen_pairs if integrated else c.bid.b_id not in seen_ids
+
         for topic, plan_, taken in searchable:
             key = topic.key()
+            exclude = seen_by_topic.get(key, set()) if integrated else seen_ids
             result = await s.searcher.search(topic, plan_, stage="rest", progress=search_progress[key],
-                                             exclude=set(seen), cap=s.searcher.settings.cap - taken,
+                                             exclude=set(exclude), cap=s.searcher.settings.cap - taken,
                                              on_page=more_found)
             pool += result.pool
             cut += result.cut
             search_progress[key] = result.progress
             for c in result.candidates:
-                if c.bid.b_id not in seen:  # the searcher may return a stage-1 bid again; it is judged once
-                    seen.add(c.bid.b_id)
+                pair = (c.identity, c.bid.b_id)
+                if is_new(c):
+                    seen_pairs.add(pair)
+                    seen_ids.add(c.bid.b_id)
+                    seen_by_topic.setdefault(c.identity, set()).add(c.bid.b_id)
                     new.append(c)
             for c in result.rest_pool:
-                if c.bid.b_id not in seen:
-                    seen.add(c.bid.b_id)
-                    pool_rest[c.bid.b_id] = c
+                pair = (c.identity, c.bid.b_id)
+                if is_new(c):
+                    seen_pairs.add(pair)
+                    seen_ids.add(c.bid.b_id)
+                    seen_by_topic.setdefault(c.identity, set()).add(c.bid.b_id)
+                    pool_rest[pair] = c
         candidates = [*state.candidates, *by_closing(new)]
         if new:
             s.store.save_shortlist(state.run_id, candidates)
-            progress(s, state.run_id, f"Found {len(new)} more bid{'s' if len(new) != 1 else ''} to read.", phase="search_rest")
+            count = len({c.bid.b_id for c in new})
+            progress(s, state.run_id, f"Found {count} more bid{'s' if count != 1 else ''} to read.", phase="search_rest")
         if cut and not integrated:
             progress(s, state.run_id, cut_line(cut), phase="search_rest")
         failed, read = failed_searches(search_progress, before=state.search_progress)
@@ -279,14 +304,14 @@ def build_graph(s: Services) -> StateGraph:
 
     async def process_today(state: RunState) -> dict[str, Any]:
         slots = asyncio.Semaphore(s.workers)
-        done = list(state.done_ids)
-        total = len(state.candidates)
+        done = list(dict.fromkeys(state.done_ids))
+        total = len({c.bid.b_id for c in state.candidates})
         outcomes = s.store.outcomes(state.run_id)
 
         async def one(c: Candidate) -> None:
             async with slots:
-                topic = topic_for(state.request, c.group)
-                outcome = Outcome(b_id=c.bid.b_id, group=c.group, bid=c.bid)
+                topic = topic_for(state.request, c.group, topic_key=c.topic_key)
+                outcome = Outcome(b_id=c.bid.b_id, group=c.group, topic_key=c.topic_key, bid=c.bid)
                 try:
                     files = await s.collector.collect(c.bid, attachments=False)
                     verdict, triage = await s.judge.screen(topic, c.bid, files)
@@ -309,7 +334,7 @@ def build_graph(s: Services) -> StateGraph:
             progress(s, state.run_id, running_count(read, total, (outcomes[b] for b in done if b in outcomes)), "count",
                      phase="read")
 
-        todo = [c for c in state.candidates if c.bid.b_id not in state.done_ids]
+        todo = unique_bids(c for c in state.candidates if c.bid.b_id not in state.done_ids)
         if todo:
             count_line(len(done))  # at once, before the first bid finishes
         await asyncio.gather(*(one(c) for c in todo))
@@ -319,28 +344,55 @@ def build_graph(s: Services) -> StateGraph:
         """Describe the whole pool, match per topic, route, keep the safety net, then read in priority order."""
         slots = asyncio.Semaphore(s.workers)
         outcomes = s.store.outcomes(state.run_id)
-        all_bids = {c.bid.b_id: c for c in [*state.candidates, *state.pool_rest]}
+        pairs: dict[tuple[str, int], Candidate] = {}
+        for c in [*state.candidates, *state.pool_rest]:
+            pairs.setdefault((c.identity, c.bid.b_id), c)
+        all_bids = unique_bids(pairs.values())
+        bids_by_id = {c.bid.b_id: c for c in all_bids}
+        pairs_by_id: dict[int, list[Candidate]] = {}
+        for c in pairs.values():
+            pairs_by_id.setdefault(c.bid.b_id, []).append(c)
+        topics = {topic.key(): topic for topic in state.request.topics}
         stored = s.store.process_progress(state.run_id)
         pending_reads = dict(stored.pending_reads)
+        pair_routes = {(key, b_id): chosen for key, topic_routes in stored.routes.items()
+                       for b_id, chosen in topic_routes.items() if (key, b_id) in pairs}
         done = list(dict.fromkeys([*state.done_ids, *stored.done_ids, *outcomes, *pending_reads]))
         done_set = set(done)
-        todo = [c for b_id, c in all_bids.items() if b_id not in done_set]
+        reopened = {b_id for b_id in done_set if stored.routes and any(
+            (c.identity, b_id) not in pair_routes for c in pairs_by_id[b_id])}
+        if reopened:
+            done = [b_id for b_id in done if b_id not in reopened]
+            done_set = set(done)
+        todo = [c for c in pairs.values() if c.bid.b_id not in done_set]
         total = len(all_bids)
         described = max(state.described, stored.described)
-        reads = dict(stored.reads)
-        for group, count in state.reads.items():
-            reads[group] = max(reads.get(group, 0), count)
+        reads: dict[str, int] = {}
+        for source in (stored.reads, state.reads):
+            for key, count in source.items():
+                targets = [key] if key in topics else [t.key() for t in state.request.topics
+                                                       if short_name(t) == key] or [key]
+                for target in targets:
+                    reads[target] = max(reads.get(target, 0), count)
         base_cut = max(state.cut, stored.cut)
         cut = 0
         files_by_id: dict[int, Any] = {}
         triage_by_id: dict[int, Any] = {}
         routes: dict[int, str] = {}
-        calls = {b_id: call for b_id, call in stored.calls.items() if b_id in all_bids and b_id not in done_set}
+        calls = {key: {b_id: call for b_id, call in topic_calls.items() if (key, b_id) in pairs}
+                 for key, topic_calls in stored.calls.items() if key in topics}
+        if stored.legacy_calls and len(state.request.topics) == 1:
+            key = state.request.topics[0].key()
+            calls.setdefault(key, {}).update({b_id: call for b_id, call in stored.legacy_calls.items()
+                                              if (key, b_id) in pairs})
 
         def persist() -> None:
+            saved_routes: dict[str, dict[int, str]] = {}
+            for (topic_key, b_id), chosen in pair_routes.items():
+                saved_routes.setdefault(topic_key, {})[b_id] = chosen
             s.store.save_process_progress(state.run_id, ProcessProgress(
-                done_ids=done, described=described, reads=reads, calls=calls, cut=base_cut + cut,
-                pending_reads=pending_reads))
+                done_ids=done, described=described, reads=reads, calls=calls, routes=saved_routes,
+                cut=base_cut + cut, pending_reads=pending_reads))
 
         def count_line() -> None:
             seen = [outcomes[b_id] for b_id in done if b_id in outcomes]
@@ -353,11 +405,24 @@ def build_graph(s: Services) -> StateGraph:
                 persist()
 
         def save(c: Candidate, outcome: Outcome) -> None:
+            if outcome.topic_key is None:
+                outcome.topic_key = c.topic_key
             outcomes[c.bid.b_id] = outcome
             s.store.save_outcome(state.run_id, outcome)
             mark_done(c)
             emit(s, state.run_id, {"type": "result", "bid": bid_result(state.run_id, outcome)})
             count_line()
+
+        def hide_previous_outcome(c: Candidate) -> None:
+            """A later topic can turn an old displayed result into an unseen/cut bid; last-line-wins hides it."""
+            if c.bid.b_id in outcomes:
+                blank = Outcome(b_id=c.bid.b_id, group=c.group, topic_key=c.topic_key, bid=c.bid)
+                outcomes[c.bid.b_id] = blank
+                s.store.save_outcome(state.run_id, blank)
+
+        def already_read(c: Candidate) -> bool:
+            previous = outcomes.get(c.bid.b_id)
+            return bool(previous and previous.verdict and previous.verdict.stage != "triage")
 
         async def finish_pending_reads() -> None:
             """Attach rulings to verdicts saved before an interruption, without judging or collecting again."""
@@ -366,9 +431,10 @@ def build_graph(s: Services) -> StateGraph:
                     del pending_reads[b_id]
                     persist()
                     continue
-                topic = topic_for(state.request, outcome.group)
+                topic_key = outcome.topic_key or (outcome.verdict.topic_key if outcome.verdict else None)
+                topic = topic_for(state.request, outcome.group, topic_key=topic_key)
                 outcome.ruling = await settle(s, state.user, topic, outcome.verdict)
-                save(all_bids[b_id], outcome)
+                save(bids_by_id[b_id], outcome)
                 del pending_reads[b_id]
                 persist()
 
@@ -381,18 +447,20 @@ def build_graph(s: Services) -> StateGraph:
             progress(s, state.run_id, cut_line(base_cut - state.cut), phase="read")
         count_line()
 
-        known_all = s.describer.known(all_bids)
-        known = {b_id: row for b_id, row in known_all.items() if row.current(s.describer.model_name)}
+        known_all = s.describer.known(bids_by_id)
+        known = {b_id: row for b_id, row in known_all.items()
+                 if row.current(s.describer.model_name, s.describer.prompt_version)}
         known_count = len(known)
         missing = [c for c in todo if c.bid.b_id not in known]
         similarity: dict[int, float] = {}
         for topic in state.request.topics:
-            group = short_name(topic)
-            group_missing = [c for c in missing if c.group == group]
-            if group_missing:
-                scores = await title_similarity(s.similarity_embedder, topic, [c.bid.title for c in group_missing])
-                similarity.update((c.bid.b_id, score) for c, score in zip(group_missing, scores, strict=True))
-        queue = describe_order(missing, similarity)[:max(0, s.describe_cap - described)]
+            topic_missing = [c for c in missing if c.identity == topic.key()]
+            if topic_missing:
+                scores = await title_similarity(s.similarity_embedder, topic,
+                                                [c.bid.title for c in topic_missing])
+                for c, score in zip(topic_missing, scores, strict=True):
+                    similarity[c.bid.b_id] = max(similarity.get(c.bid.b_id, 0.0), score)
+        queue = unique_bids(describe_order(missing, similarity))[:max(0, s.describe_cap - described)]
 
         ready: dict[str, list[MatchItem]] = {}
 
@@ -400,21 +468,22 @@ def build_graph(s: Services) -> StateGraph:
             return MatchItem(b_id=c.bid.b_id, description=description.text(),
                              buyer=buyer_line(c.bid, description.buyer_org))
 
-        for c in todo:  # descriptions already in the cache lead every group's first batch
+        for c in todo:  # cached descriptions lead every topic's first batch
             description = known.get(c.bid.b_id)
-            if c.bid.b_id not in calls and description is not None and description.usable():
-                ready.setdefault(c.group, []).append(item(c, description))
+            if c.bid.b_id not in calls.get(c.identity, {}) and description is not None and description.usable():
+                ready.setdefault(c.identity, []).append(item(c, description))
 
-        async def flush(group: str) -> None:
-            items = ready[group]
+        async def flush(topic_key: str) -> None:
+            items = ready[topic_key]
             while items:
                 batch = items[:40]
                 del items[:40]
-                calls.update(await s.matcher.match(topic_for(state.request, group), batch))
+                decided = await s.matcher.match(topics[topic_key], batch)
+                calls.setdefault(topic_key, {}).update(decided)
                 persist()
 
-        for group in list(ready):
-            await flush(group)
+        for topic_key in list(ready):
+            await flush(topic_key)
 
         new = 0
         for c in queue:  # serial GeM reads: describing adds no traffic parallelism
@@ -422,7 +491,8 @@ def build_graph(s: Services) -> StateGraph:
                 files = await s.collector.collect(c.bid, attachments=True)
             except Exception as exc:  # noqa: BLE001 - a document failure is this bid's error outcome
                 log.warning("bid %s failed while describing: %s", c.bid.bid_number, exc)
-                save(c, Outcome(b_id=c.bid.b_id, group=c.group, bid=c.bid, error=str(exc)[:300]))
+                save(c, Outcome(b_id=c.bid.b_id, group=c.group, topic_key=c.topic_key, bid=c.bid,
+                                error=str(exc)[:300]))
                 continue
             files_by_id[c.bid.b_id] = files
             description = await s.describer.describe(c.bid, files)
@@ -433,36 +503,62 @@ def build_graph(s: Services) -> StateGraph:
             new += 1
             persist()
             if description.usable():
-                ready.setdefault(c.group, []).append(item(c, description))
-                if len(ready[c.group]) >= 40:
-                    await flush(c.group)
+                affected = {pair.identity for pair in pairs_by_id[c.bid.b_id]}
+                for pair in pairs_by_id[c.bid.b_id]:
+                    ready.setdefault(pair.identity, []).append(item(pair, description))
+                for topic_key in affected:
+                    if len(ready[topic_key]) >= 40:
+                        await flush(topic_key)
 
         progress(s, state.run_id, described_line(new, known_count), phase="read")
-        undescribed = sum(1 for c in todo if c.bid.b_id not in known)
+        undescribed = sum(1 for c in unique_bids(todo) if c.bid.b_id not in known)
         if undescribed:
             progress(s, state.run_id, undescribed_line(undescribed), phase="read")
-        for group in list(ready):
-            await flush(group)
-        if calls:
-            progress(s, state.run_id, matched_line(len(calls), sum(v == "match" for v in calls.values()),
-                                                   sum(v == "unsure" for v in calls.values())), phase="read")
+        for topic_key in list(ready):
+            await flush(topic_key)
+        calls_by_bid: dict[int, list[Call]] = {}
+        for topic_calls in calls.values():
+            for b_id, call in topic_calls.items():
+                calls_by_bid.setdefault(b_id, []).append(call)
+        if calls_by_bid:
+            matches = sum("match" in values for values in calls_by_bid.values())
+            might = sum("match" not in values and "unsure" in values for values in calls_by_bid.values())
+            progress(s, state.run_id, matched_line(len(calls_by_bid), matches, might), phase="read")
 
-        to_screen: list[Candidate] = []
+        priority = {"match": 0, "unsure": 1, "net": 2, "today": 3, "drop": 4, "unseen": 5}
+        winners: dict[int, Candidate] = {}
         for c in todo:
             if c.bid.b_id in done_set:
                 continue  # its documents failed while describing
             description = known.get(c.bid.b_id)
-            chosen = route(c, description, calls.get(c.bid.b_id), safety_net=s.safety_net)
-            routes[c.bid.b_id] = chosen
+            chosen = route(c, description, calls.get(c.identity, {}).get(c.bid.b_id), safety_net=s.safety_net)
+            pair_routes[(c.identity, c.bid.b_id)] = chosen
+            current = winners.get(c.bid.b_id)
+            if current is None or priority[chosen] < priority[routes[c.bid.b_id]]:
+                winners[c.bid.b_id] = c
+                routes[c.bid.b_id] = chosen
+        persist()  # stage 2 can now distinguish a newly discovered topic pair from work already routed
+
+        to_screen: list[Candidate] = []
+        for representative in unique_bids(todo):
+            c = winners.get(representative.bid.b_id)
+            if c is None or c.bid.b_id in done_set:
+                continue
+            chosen = routes[c.bid.b_id]
+            description = known.get(c.bid.b_id)
+            if chosen in ("match", "unsure", "net", "today") and already_read(c):
+                mark_done(c)  # the union still asks for a read, and this bid already has its one full read
+                continue
             if chosen == "drop":
                 files = files_by_id.get(c.bid.b_id)
                 checks = ["the description check", "the title check"] if s.safety_net else ["the description check"]
-                outcome = Outcome(b_id=c.bid.b_id, group=c.group, bid=c.bid,
+                outcome = Outcome(b_id=c.bid.b_id, group=c.group, topic_key=c.topic_key, bid=c.bid,
                                   files=files.files if files else [],
                                   buyer_org=files.buyer_org if files else description.buyer_org,
                                   not_read=not_read_reason(description, checks))
                 save(c, outcome)
             elif chosen == "unseen":
+                hide_previous_outcome(c)
                 mark_done(c)  # nothing to show, but this request must not try to describe it again in stage 2
             elif chosen in ("net", "today"):
                 to_screen.append(c)
@@ -471,7 +567,7 @@ def build_graph(s: Services) -> StateGraph:
 
         async def screen(c: Candidate) -> None:
             async with slots:
-                topic = topic_for(state.request, c.group)
+                topic = topic_for(state.request, c.group, topic_key=c.topic_key)
                 try:
                     files = await s.collector.collect(c.bid, attachments=False)
                     verdict, triage = await s.judge.screen(topic, c.bid, files)
@@ -479,38 +575,41 @@ def build_graph(s: Services) -> StateGraph:
                     if verdict is None:
                         triage_by_id[c.bid.b_id] = triage
                         return
-                    outcome = Outcome(b_id=c.bid.b_id, group=c.group, bid=c.bid, files=files.files,
-                                      buyer_org=files.buyer_org, verdict=verdict)
+                    outcome = Outcome(b_id=c.bid.b_id, group=c.group, topic_key=c.topic_key, bid=c.bid,
+                                      files=files.files, buyer_org=files.buyer_org, verdict=verdict)
                     if routes[c.bid.b_id] == "net":
                         outcome.not_read = not_read_reason(
                             known.get(c.bid.b_id), ["the description check", "the first-pages check"])
                     outcome.ruling = await settle(s, state.user, topic, verdict)
                 except Exception as exc:  # noqa: BLE001 - one bid failing never stops the run
                     log.warning("bid %s failed at the first-pages check: %s", c.bid.bid_number, exc)
-                    outcome = Outcome(b_id=c.bid.b_id, group=c.group, bid=c.bid, error=str(exc)[:300])
+                    outcome = Outcome(b_id=c.bid.b_id, group=c.group, topic_key=c.topic_key, bid=c.bid,
+                                      error=str(exc)[:300])
                 save(c, outcome)
 
         await asyncio.gather(*(screen(c) for c in to_screen))
 
         def unread(chosen: str) -> list[Candidate]:
-            return by_closing(c for c in todo if routes.get(c.bid.b_id) == chosen and c.bid.b_id not in done_set)
+            return by_closing(winners[b_id] for b_id in routes
+                              if routes[b_id] == chosen and b_id not in done_set)
 
-        ordered = by_closing([c for c in todo if routes.get(c.bid.b_id) in ("net", "today")
-                              and c.bid.b_id not in done_set])
+        ordered = by_closing(winners[b_id] for b_id in routes
+                             if routes[b_id] in ("net", "today") and b_id not in done_set)
         selected: list[Candidate] = []
         planned_reads = dict(reads)
         for c in unread("match") + unread("unsure") + ordered:
-            used = planned_reads.get(c.group, 0)
+            used = planned_reads.get(c.identity, 0)
             if used < s.searcher.settings.cap:
                 selected.append(c)
-                planned_reads[c.group] = used + 1
+                planned_reads[c.identity] = used + 1
             else:
                 cut += 1
+                hide_previous_outcome(c)
                 mark_done(c)  # already described and matched; later stages must not repeat that work
 
         async def read(c: Candidate) -> None:
             async with slots:
-                topic = topic_for(state.request, c.group)
+                topic = topic_for(state.request, c.group, topic_key=c.topic_key)
                 try:
                     files = await s.collector.collect(c.bid)
                     files_by_id[c.bid.b_id] = files
@@ -521,14 +620,15 @@ def build_graph(s: Services) -> StateGraph:
                     verdict = await s.judge.judge(topic, c.bid, files, triage=triage_by_id.get(c.bid.b_id))
                 except Exception as exc:  # noqa: BLE001 - collection or judging failed, before a verdict existed
                     log.warning("bid %s failed while being read: %s", c.bid.bid_number, exc)
-                    save(c, Outcome(b_id=c.bid.b_id, group=c.group, bid=c.bid, error=str(exc)[:300]))
+                    save(c, Outcome(b_id=c.bid.b_id, group=c.group, topic_key=c.topic_key, bid=c.bid,
+                                    error=str(exc)[:300]))
                     return
 
                 chosen = routes[c.bid.b_id]
-                outcome = Outcome(b_id=c.bid.b_id, group=c.group, bid=c.bid, files=files.files,
-                                  buyer_org=files.buyer_org, verdict=verdict,
+                outcome = Outcome(b_id=c.bid.b_id, group=c.group, topic_key=c.topic_key, bid=c.bid,
+                                  files=files.files, buyer_org=files.buyer_org, verdict=verdict,
                                   read_because=None if chosen == "today" else chosen)
-                reads[c.group] = reads.get(c.group, 0) + 1
+                reads[c.identity] = reads.get(c.identity, 0) + 1
                 pending_reads[c.bid.b_id] = outcome
                 mark_done(c)  # atomically persist the finished read, its verdict, and its consumed cap slot
                 try:

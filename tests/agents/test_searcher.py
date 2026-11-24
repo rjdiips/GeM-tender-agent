@@ -22,7 +22,9 @@ def at(day, hour=12):
     return datetime(2026, 11, day, hour)
 
 
-def mk(b_id, title, department="Department of Revenue", closing=at(20), published=at(10), **kw):
+def mk(b_id, title, department="Department of Revenue", closing=None, published=None, **kw):
+    closing = at(20) if closing is None else closing
+    published = at(10) if published is None else published
     return row(b_id, published, closing, title, department=department, **kw)
 
 
@@ -53,10 +55,12 @@ def keep_all():
     return ScriptedLLM({SCREEN_INSTRUCTIONS: lambda p: {"keep": list(range(40))}})
 
 
-def put_description(bid_cache, b_id, subject, terms=()):
-    bid_cache.put_description(Description(
-        b_id=b_id, doc_hash=f"hash-{b_id}", subject=subject, terms=list(terms), sources=["GeM-Bidding.pdf"],
-        has_scope=True, buyer_org=None, model="scripted", prompt_version="1", written_at=T))
+def put_description(bid_cache, b_id, subject, terms=(), **kw):
+    values = {"b_id": b_id, "doc_hash": f"hash-{b_id}", "subject": subject, "terms": list(terms),
+              "sources": ["GeM-Bidding.pdf"], "has_scope": True, "buyer_org": None, "model": "scripted",
+              "prompt_version": "1", "written_at": T}
+    values.update(kw)
+    bid_cache.put_description(Description(**values))
 
 
 def ids(found):
@@ -76,7 +80,8 @@ def build(gem, clock, bid_cache, llm, by_query, **settings):
     gem.add("POST", f"{B}/all-bids-data", site)
     gem.add("POST", f"{B}/search-bids", site)
     live = LiveSearcher(BidplusSession(ClientPool(transport=gem.transport(), clock=clock, sleep=clock.sleep)))
-    return Searcher(llm.model(), bid_cache, live, settings=SearchSettings(**settings) if settings else None), site
+    return Searcher(llm.model(), bid_cache, live, description_model="scripted",
+                    settings=SearchSettings(**settings) if settings else None), site
 
 
 def the_site(*row_ids):
@@ -141,6 +146,25 @@ async def test_a_vague_title_with_a_description_is_screened_by_it(gem, clock, bi
     assert "what it buys: Lockers for branches" in screened(llm)
     assert "what it buys: Loan origination system" not in screened(llm)
     assert ids(found) == {5} and "vague title" not in " ".join(found.candidates[0].why)
+
+
+@pytest.mark.parametrize(("model", "prompt_version", "doc_hash"), [
+    ("", "card", ""),
+    ("another-model", "1", "hash-5"),
+    ("scripted", "0", "hash-5"),
+])
+async def test_a_vague_title_ignores_legacy_wrong_model_and_old_prompt_descriptions(
+        gem, clock, bid_cache, model, prompt_version, doc_hash):
+    put_description(bid_cache, 5, "Loan origination system", model=model, prompt_version=prompt_version,
+                    doc_hash=doc_hash)
+    llm = ScriptedLLM({SCREEN_INSTRUCTIONS: [{"keep": []}]})
+    searcher, _ = build(gem, clock, bid_cache, llm, the_site(5))
+
+    found = await searcher.search(LOS, plan())
+
+    assert ids(found) == {5}
+    assert found.candidates[0].why[0].startswith("vague title")
+    assert llm.calls == []
 
 
 async def test_titles_the_screen_drops_come_back_in_the_rest_pool(gem, clock, bid_cache):

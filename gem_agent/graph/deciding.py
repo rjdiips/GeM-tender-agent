@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import asyncio
+import logging
 from datetime import date
 from typing import Literal
 
@@ -14,6 +15,7 @@ from gem_agent.index.db import Description
 from gem_agent.retrieval.embed import Embedder
 
 Route = Literal["match", "unsure", "net", "today", "drop", "unseen"]
+log = logging.getLogger(__name__)
 
 
 def screen_kept(c: Candidate) -> bool:
@@ -59,6 +61,15 @@ async def title_similarity(embedder: Embedder | None, topic: TopicDefinition, ti
     if embedder is None:
         return [0.0] * len(titles)
     topic_text = topic.meaning + "; " + "; ".join(topic.match_terms)
-    vectors = np.asarray(await asyncio.to_thread(embedder.encode, [topic_text, *titles]), dtype=np.float32)
-    unit = vectors / np.maximum(np.linalg.norm(vectors, axis=1, keepdims=True), 1e-12)
-    return (unit[1:] @ unit[0]).tolist()
+    try:
+        vectors = np.asarray(await asyncio.to_thread(embedder.encode, [topic_text, *titles]), dtype=np.float32)
+        if vectors.ndim != 2 or vectors.shape[0] != len(titles) + 1:
+            raise ValueError(f"expected {len(titles) + 1} vectors, got shape {vectors.shape}")
+        unit = vectors / np.maximum(np.linalg.norm(vectors, axis=1, keepdims=True), 1e-12)
+        scores = (unit[1:] @ unit[0]).tolist()
+        if len(scores) != len(titles):
+            raise ValueError(f"expected {len(titles)} scores, got {len(scores)}")
+        return scores
+    except Exception as exc:  # noqa: BLE001 - similarity only orders work; an outage must not stop the run
+        log.warning("title similarity unavailable (%s); using closing-date and bid-id order", exc)
+        return [0.0] * len(titles)

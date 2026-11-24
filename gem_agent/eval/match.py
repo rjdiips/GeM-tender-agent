@@ -54,6 +54,7 @@ class WayScore(BaseModel):
 class MatchReport(BaseModel):
     scores: list[WayScore]
     retire: bool
+    retirement_assessed: bool = True  # old reports assessed the full set; filtered runs opt out explicitly
 
 
 def _bid_from_label(label: Label) -> Bid:
@@ -91,7 +92,8 @@ async def describe_labelled(labelled: LabelledSet, describer: Describer, index: 
             if files is None:
                 return None
             row = known.get(b_id)
-            if row is not None and row.current(describer.model_name) and row.doc_hash == doc_hash(files):
+            if (row is not None and row.current(describer.model_name, describer.prompt_version)
+                    and row.doc_hash == doc_hash(files)):
                 return row
             try:
                 return await describer.describe(_bid(labels[b_id], index), files)
@@ -246,18 +248,22 @@ async def evaluate(labelled: LabelledSet, *, describer: Describer, matcher: Matc
                 for topics in topic_classes:
                     scores.append(score_way(way, reads, selected, topics=topics, run=run, model_calls=way_calls,
                                             descriptions=descriptions))
-    return MatchReport(scores=scores, retire=_retirement(scores))
+    retirement_assessed = topic is None
+    return MatchReport(scores=scores, retire=retirement_assessed and _retirement(scores),
+                       retirement_assessed=retirement_assessed)
 
 
 def report_text(report: MatchReport) -> str:
     subject_a = [score for score in report.scores if score.way == "A" and score.topics == "subject"]
     runs = len(subject_a)
-    if report.retire:
+    if report.retirement_assessed and report.retire:
         ending = (f"A alone missed no checked label in {runs} of {runs} runs: the safety net can be retired "
                   "(MATCH_SAFETY_NET=false). A person decides.")
     else:
         missed_runs = sum(score.checked_missed > 0 for score in subject_a)
         ending = f"Keep the safety net: A alone missed checked labels in {missed_runs} of {runs} runs."
+        if not report.retirement_assessed:
+            ending = "Retirement was not assessed for this topic-filtered run. " + ending
     lines = ["Match evaluation (buyer topics are scored apart)",
              (f"{'way':<12}{'topics':<9}{'run':>4}{'checked missed':>15}{'all missed':>12}"
               f"{'negatives read':>17}{'model calls':>13}")]

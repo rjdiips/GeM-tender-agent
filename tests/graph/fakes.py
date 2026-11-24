@@ -96,9 +96,12 @@ class FakeSearcher:
         if stage == "rest" and not progress["fake"].pending:
             done = progress["fake"]  # like live.rest: a search with nothing left keeps its progress (failed, say)
         group = topic.meaning.split(":")[0]
-        rest_pool = [Candidate(bid=b, group=group, why=["title screen: no", "fake"]) for b in dropped]
-        rest_pool += [Candidate(bid=b, group=group, why=["over the cap", "title words"]) for b in bids[limit:]]
-        return SearchResult(candidates=[Candidate(bid=b, group=group, why=["title words"]) for b in bids[:limit]],
+        rest_pool = [Candidate(bid=b, group=group, topic_key=topic.key(), why=["title screen: no", "fake"])
+                     for b in dropped]
+        rest_pool += [Candidate(bid=b, group=group, topic_key=topic.key(), why=["over the cap", "title words"])
+                      for b in bids[limit:]]
+        return SearchResult(candidates=[Candidate(bid=b, group=group, topic_key=topic.key(), why=["title words"])
+                                        for b in bids[:limit]],
                             rest_pool=rest_pool, pool=(len(bids) + len(dropped)) * 3, over_cap=cut > 0, cut=cut,
                             progress={**(progress or {}), "fake": done, **self.searches.get(stage, {})})
 
@@ -110,6 +113,7 @@ class FakeDescriber:
         self.subjects = dict(subjects or {})
         self.fail, self.has_scope = set(fail), has_scope
         self.model_name = "fake"
+        self.prompt_version = "1"
         self.described: list[int] = []
         self.rows: dict[int, Description] = {}
 
@@ -131,13 +135,16 @@ class FakeDescriber:
 
 
 class FakeMatcher:
-    def __init__(self, calls: dict[int, Call] | None = None, default="match"):
+    def __init__(self, calls: dict[int | tuple[str, int], Call] | None = None, default="match"):
         self.calls, self.default = dict(calls or {}), default
         self.batches: list[list[int]] = []
+        self.topics: list[str] = []
 
     async def match(self, topic, items: list[MatchItem]):
         self.batches.append([item.b_id for item in items])
-        return {item.b_id: self.calls.get(item.b_id, self.default) for item in items}
+        self.topics.append(topic.key())
+        return {item.b_id: self.calls.get((topic.key(), item.b_id),
+                                          self.calls.get(item.b_id, self.default)) for item in items}
 
 
 class FakeCollector:

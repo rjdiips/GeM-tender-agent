@@ -110,8 +110,9 @@ def test_description_text_usable_and_current():
     d = Description(b_id=1, doc_hash="h", subject="Enterprise KYC and AML for NABARD", terms=["AML", "CKYC"],
                     sources=["GeM-Bidding.pdf"], has_scope=True, buyer_org="NABARD", model="m", prompt_version="1",
                     written_at=NOW)
-    assert d.text() == "Enterprise KYC and AML for NABARD; AML; CKYC" and d.usable() and d.current("m")
-    assert not d.current("other") and not d.model_copy(update={"prompt_version": "card"}).current("m")
+    assert d.text() == "Enterprise KYC and AML for NABARD; AML; CKYC" and d.usable() and d.current("m", "1")
+    assert not d.current("other", "1") and not d.current("m", "0")
+    assert not d.model_copy(update={"prompt_version": "card"}).current("m", "1")
     assert d.model_copy(update={"subject": ""}).text() == "" and not d.model_copy(update={"subject": ""}).usable()
 
 
@@ -170,6 +171,20 @@ def test_descriptions_to_refresh_lists_open_bids_on_another_model_or_prompt(inde
 
     assert [b.b_id for b in index.descriptions_to_refresh("m", "1", 10)] == [2, 3, 1]
     assert [b.b_id for b in index.descriptions_to_refresh("m", "1", 2)] == [2, 3]
+
+
+def test_descriptions_to_refresh_puts_null_closing_dates_last_with_a_limit(index):
+    def listing(b_id, title, closing):
+        doc = row(b_id, NOV(10), closing or NOV(25), title)
+        if closing is None:
+            doc["final_end_date_sort"] = []
+        return Bid.from_listing(doc)
+
+    bids = [listing(3, "No date 3", None), listing(2, "Later", NOV(26)),
+            listing(1, "Sooner", NOV(25)), listing(4, "No date 4", None)]
+    index.upsert(bids, seen_at=NOV(16))
+
+    assert [b.b_id for b in index.descriptions_to_refresh("m", "1", 3)] == [1, 2, 3]
 
 
 def test_an_unchanged_bid_is_not_written_again(index):

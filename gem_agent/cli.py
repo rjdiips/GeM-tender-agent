@@ -240,18 +240,19 @@ async def _eval_match(settings: Settings, args: argparse.Namespace) -> int:
     index = BidIndex(settings.bid_cache_path)
     try:
         cache = DocCache(settings.cache_dir)
-        judge = Judge(model, cache, VerdictCache(Path(tempfile.mkdtemp(prefix="gem-eval-match-"))))
-        report = await evaluate(
-            LabelledSet.load(Path(args.set)),
-            describer=Describer(model, cache, index, model_name=settings.llm_model),
-            matcher=Matcher(model),
-            searcher=Searcher(model, index, live=None),  # type: ignore[arg-type]
-            judge=judge,
-            index=index,
-            cache=cache,
-            repeats=args.repeats,
-            topic=args.topic,
-        )
+        with tempfile.TemporaryDirectory(prefix="gem-eval-match-") as scratch:
+            judge = Judge(model, cache, VerdictCache(Path(scratch)))
+            report = await evaluate(
+                LabelledSet.load(Path(args.set)),
+                describer=Describer(model, cache, index, model_name=settings.llm_model),
+                matcher=Matcher(model),
+                searcher=Searcher(model, index, live=None, description_model=settings.llm_model),  # type: ignore[arg-type]
+                judge=judge,
+                index=index,
+                cache=cache,
+                repeats=args.repeats,
+                topic=args.topic,
+            )
     finally:
         index.close()
     print(report_text(report))

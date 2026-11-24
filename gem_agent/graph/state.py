@@ -26,7 +26,7 @@ class RunState(BaseModel):
     sizes: list[int] = []  # the shortlist size after each search round: a retry that barely shrinks it is not repeated
     done_ids: list[int] = []  # bids already processed: an outcome, an intentional non-result, or a read-cap cut
     described: int = 0  # new descriptions stored this request, across both stages
-    reads: dict[str, int] = {}  # full reads per group, across both stages
+    reads: dict[str, int] = {}  # full reads per topic.key(), across both stages
     # first: page 1 of every search is being judged; rest: the remaining pages' new bids; done: both judged
     stage: Literal["first", "rest", "done"] = "first"
     search_progress: dict[str, dict[str, SearchProgress]] = {}  # topic.key() -> search key -> pages read so far

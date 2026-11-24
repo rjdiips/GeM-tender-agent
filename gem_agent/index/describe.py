@@ -35,6 +35,7 @@ class Describer:
         if parallel < 1:
             raise ValueError("parallel must be at least 1")
         self.cache, self.index, self.model_name = cache, index, model_name
+        self.prompt_version = DESCRIBE_PROMPT_VERSION
         self._agent = Agent(model, output_type=NativeOutput(CardOutput), instructions=DESCRIBE_INSTRUCTIONS, retries=2)
         self._slots = asyncio.Semaphore(min(parallel, 3))
 
@@ -59,7 +60,7 @@ class Describer:
                 has_scope=bool(sections),
                 buyer_org=files.buyer_org,
                 model=self.model_name,
-                prompt_version=DESCRIBE_PROMPT_VERSION,
+                prompt_version=self.prompt_version,
                 written_at=datetime.now(),
             )
             self.index.put_description(description)

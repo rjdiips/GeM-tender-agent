@@ -170,15 +170,26 @@ class RecordingEmbedder:
 async def test_title_similarity_encodes_the_topic_and_titles_off_the_event_loop_and_returns_cosines():
     topic = TopicDefinition(user_text="LOS tenders", meaning="Loan Origination System for banks",
                             match_terms=["LOS", "loan origination"])
-    embedder = RecordingEmbedder([[3, 0], [2, 0], [-1, 0]])
+    embedder = RecordingEmbedder([[3, 4], [4, 3], [0, 10]])
     loop_thread = threading.get_ident()
 
-    scores = await title_similarity(embedder, topic, ["matching title", "opposite title"])
+    scores = await title_similarity(embedder, topic, ["matching title", "vertical title"])
 
-    assert scores == pytest.approx([1.0, -1.0])
+    assert scores == pytest.approx([0.96, 0.8])  # raw dot products would be 24 and 40
     assert embedder.calls == [["Loan Origination System for banks; LOS; loan origination",
-                               "matching title", "opposite title"]]
+                               "matching title", "vertical title"]]
     assert embedder.thread_ids[0] != loop_thread
+
+
+async def test_title_similarity_returns_zero_scores_when_encoding_fails(caplog):
+    class BrokenEmbedder:
+        def encode(self, texts):
+            raise RuntimeError("remote embedder unavailable")
+
+    topic = TopicDefinition(user_text="LOS tenders", meaning="Loan Origination System")
+
+    assert await title_similarity(BrokenEmbedder(), topic, ["one", "two"]) == [0.0, 0.0]
+    assert caplog.text.count("title similarity unavailable") == 1
 
 
 async def test_title_similarity_is_zero_for_every_title_without_an_embedder():

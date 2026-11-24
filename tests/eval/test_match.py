@@ -44,9 +44,10 @@ def label(b_id: int, *, topic: str = "aml", relevant: bool = True, title: str | 
 
 
 def description(b_id: int, *, subject: str = "Anti-money laundering platform", has_scope: bool = True,
-                doc_hash_value: str = "hash", model: str = "scripted") -> Description:
+                doc_hash_value: str = "hash", model: str = "scripted", prompt_version: str = "1") -> Description:
     return Description(b_id=b_id, doc_hash=doc_hash_value, subject=subject, terms=["AML"], sources=["bid.pdf"],
-                       has_scope=has_scope, buyer_org="A bank", model=model, prompt_version="1", written_at=NOW)
+                       has_scope=has_scope, buyer_org="A bank", model=model, prompt_version=prompt_version,
+                       written_at=NOW)
 
 
 def test_score_way_counts_checked_and_all_misses_and_non_matches_read():
@@ -94,6 +95,7 @@ def test_checked_excludes_only_unreviewed_labels():
 
 class FakeDescriber:
     model_name = "scripted"
+    prompt_version = "1"
 
     def __init__(self) -> None:
         self.described: list[int] = []
@@ -214,6 +216,24 @@ async def test_retirement_requires_three_zero_miss_subject_runs(tmp_path, repeat
     assert report_text(report).endswith(ending)
 
 
+async def test_a_topic_filtered_run_scores_but_never_recommends_global_retirement(tmp_path):
+    matcher = FakeMatcher(lambda topic, run, b_id: "match")
+    parts = evaluation_parts(tmp_path, [label(1), label(2, topic="mof")], matcher)
+    labelled, index, cache, describer, matcher, judge, searcher = parts
+    try:
+        report = await evaluate(labelled, describer=describer, matcher=matcher, searcher=searcher, judge=judge,
+                                index=index, cache=cache, repeats=3, topic="aml")
+    finally:
+        index.close()
+
+    assert report.retire is False
+    assert report.retirement_assessed is False
+    assert all(score.checked_missed == 0 for score in report.scores if score.way == "A")
+    text = report_text(report)
+    assert "Retirement was not assessed" in text
+    assert text.endswith("Keep the safety net: A alone missed checked labels in 0 of 3 runs.")
+
+
 async def test_describe_labelled_reads_only_cached_documents(tmp_path, monkeypatch):
     index = BidIndex(tmp_path / "bids.sqlite")
     cache = DocCache(tmp_path / "docs")
@@ -246,6 +266,28 @@ async def test_describe_labelled_reads_only_cached_documents(tmp_path, monkeypat
     assert set(descriptions) == {1, 2}
     assert descriptions[1] == known
     assert descriptions[2].subject == "Loan origination platform"
+    assert llm.count(DESCRIBE_INSTRUCTIONS) == 1
+
+
+async def test_describe_labelled_rewrites_a_description_from_an_old_prompt(tmp_path):
+    index = BidIndex(tmp_path / "bids.sqlite")
+    cache = DocCache(tmp_path / "docs")
+    bid = Bid.from_listing(listing_row(1, NOW, datetime(2026, 11, 28), "Known AML platform"))
+    index.upsert([bid], seen_at=NOW)
+    files = bid_files(cache, 1, [("bid.pdf", "bid_document", ["AML monitoring for a bank"])])
+    cache.save(files)
+    index.put_description(description(1, subject="Old prompt description", doc_hash_value=doc_hash(files),
+                                      prompt_version="0"))
+    labelled = LabelledSet(topics={"aml": AML}, items=[label(1, title=bid.title)])
+    llm = ScriptedLLM({DESCRIBE_INSTRUCTIONS: [{"subject": "Current AML platform", "terms": ["AML"]}]})
+    describer = Describer(llm.model(), cache, index, model_name="scripted")
+    try:
+        rows = await describe_labelled(labelled, describer, index, cache)
+    finally:
+        index.close()
+
+    assert rows[1].subject == "Current AML platform"
+    assert rows[1].prompt_version == "1"
     assert llm.count(DESCRIBE_INSTRUCTIONS) == 1
 
 
@@ -335,21 +377,25 @@ def test_match_cli_builds_no_gem_services_and_writes_json(tmp_path, monkeypatch,
     monkeypatch.setattr("gem_agent.app.factory.build_services", no_services)
     score = WayScore(way="A", topics="subject", run=1, checked_missed=0, all_missed=0, negatives_read=0,
                      negatives=0, model_calls=1, missed=[])
-    expected = MatchReport(scores=[score], retire=True)
-    seen = []
+    expected = MatchReport(scores=[score], retire=False, retirement_assessed=False)
+    seen, cache_roots = [], []
 
     async def fake_evaluate(labelled, **kwargs):
         seen.append(kwargs)
+        cache_roots.append(kwargs["judge"].verdicts.root.parent)
         assert kwargs["searcher"].live is None
         assert kwargs["repeats"] == 2
+        assert kwargs["topic"] == "aml"
         return expected
 
     monkeypatch.setattr("gem_agent.eval.match.evaluate", fake_evaluate)
 
-    assert main(["eval", "match", "--set", str(labelled_path), "--repeats", "2", "--out", str(out)]) == 0
+    assert main(["eval", "match", "--set", str(labelled_path), "--repeats", "2", "--topic", "aml",
+                 "--out", str(out)]) == 0
 
-    assert len(seen) == 1 and seen[0]["topic"] is None
+    assert len(seen) == 1 and seen[0]["topic"] == "aml"
+    assert len(cache_roots) == 1 and not cache_roots[0].exists()
     assert json.loads(out.read_text(encoding="utf-8")) == expected.model_dump(mode="json")
-    assert capsys.readouterr().out.strip().endswith(
-        "A alone missed no checked label in 1 of 1 runs: the safety net can be retired "
-        "(MATCH_SAFETY_NET=false). A person decides.")
+    output = capsys.readouterr().out.strip()
+    assert "Retirement was not assessed for this topic-filtered run." in output
+    assert output.endswith("Keep the safety net: A alone missed checked labels in 0 of 1 runs.")

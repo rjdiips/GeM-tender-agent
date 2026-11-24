@@ -123,8 +123,8 @@ class Description(BaseModel):
     def usable(self) -> bool:
         return self.subject != ""
 
-    def current(self, model: str) -> bool:
-        return self.prompt_version != "card" and self.model == model
+    def current(self, model: str, prompt_version: str) -> bool:
+        return self.prompt_version != "card" and self.prompt_version == prompt_version and self.model == model
 
 
 _DESCRIPTION_FIELDS = ("b_id", "doc_hash", "subject", "terms", "sources", "has_scope", "buyer_org", "model",
@@ -275,7 +275,7 @@ class BidIndex:
         rows = self._conn.execute(
             "SELECT b.raw FROM bids AS b LEFT JOIN descriptions AS d ON d.b_id = b.b_id "
             "WHERE b.state = 'open' AND (d.b_id IS NULL OR d.model != ? OR d.prompt_version != ?) "
-            "ORDER BY b.closing LIMIT ?", (model, prompt_version, limit)).fetchall()
+            "ORDER BY (b.closing IS NULL), b.closing, b.b_id LIMIT ?", (model, prompt_version, limit)).fetchall()
         return [Bid.from_listing(json.loads(raw)) for (raw,) in rows]
 
     def needing_cards(self, limit: int | None = None) -> list[Bid]:

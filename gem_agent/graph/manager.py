@@ -21,7 +21,14 @@ from gem_agent.graph.rulings import settle, topic_for
 from gem_agent.graph.services import Services
 from gem_agent.graph.state import RunState
 from gem_agent.graph.store import Outcome, Ruling, RunRecord
-from gem_agent.graph.views import bid_result, run_list_item, run_view, status_view, understood_view, with_names
+from gem_agent.graph.views import (
+    bid_result,
+    run_list_item,
+    run_view,
+    status_view,
+    understood_view,
+    with_names,
+)
 
 log = logging.getLogger(__name__)
 
@@ -125,7 +132,7 @@ class RunManager:
             else:
                 relevant = sum(1 for o in outcomes.values() if o.verdict and o.verdict.relevant)
                 text = stopped_line(read, total, relevant, deeper_ran=await self._deeper_ran(run_id))
-        except Exception:  # noqa: BLE001 - the line is lost; the run still ends with its done event
+        except Exception:  # the line is lost; the run still ends with its done event
             log.warning("run %s: the closing line could not be written", run_id, exc_info=True)
             return
         progress(self.s, run_id, text, phase="read")
@@ -139,7 +146,7 @@ class RunManager:
             async with checkpointer(self.s.checkpoint_path) as saver:
                 snap = await build_graph(self.s).compile(checkpointer=saver).aget_state(
                     {"configurable": {"thread_id": run_id}})
-        except Exception:  # noqa: BLE001 - without the checkpoint the log decides
+        except Exception:  # without the checkpoint the log decides
             log.warning("run %s: the checkpoint could not be read", run_id, exc_info=True)
             return False
         return snap.values.get("stage", "first") != "first"
@@ -260,7 +267,8 @@ class RunManager:
         if old and old.decision == decision:
             return []
         v, today = o.verdict, s.now().date()
-        topic = topic_for(record.request, o.group)
+        topic_key = o.topic_key or (o.verdict.topic_key if o.verdict else None)
+        topic = topic_for(record.request, o.group, topic_key=topic_key)
         # The fact behind the bid's current ruling says the opposite: newest wins, so it is replaced whoever made it.
         contradicted = o.ruling.fact_id if o.ruling and o.ruling.decision != decision else None
         existing = [f for f in s.memory.ruling_facts(user, short_name(topic)) if f.id != contradicted]
@@ -290,8 +298,12 @@ class RunManager:
         def stale(x: Outcome) -> bool:  # settled earlier by a fact that was just replaced
             return bool(x.ruling and x.ruling.by == "earlier" and x.ruling.fact_id in replaced)
 
+        def same_topic(x: Outcome) -> bool:
+            identity = x.topic_key or (x.verdict.topic_key if x.verdict else None) or x.group
+            return identity == (topic_key or topic.key())
+
         others = [x for x in s.store.outcomes(run_id).values()
-                  if x.b_id != b_id and x.group == o.group and x.verdict and x.verdict.borderline
+                  if x.b_id != b_id and same_topic(x) and x.verdict and x.verdict.borderline
                   and ((x.ruling is None and not x.undone) or stale(x))]
         settled = {x.b_id: await settle(s, user, topic, x.verdict, facts=[chosen]) for x in others}
         moved = False

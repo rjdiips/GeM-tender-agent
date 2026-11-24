@@ -10,7 +10,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Literal
 
-from pydantic import BaseModel, TypeAdapter
+from pydantic import BaseModel, Field, TypeAdapter, model_validator
 
 from gem_agent.agents.matcher import Call
 from gem_agent.agents.schemas import ProbeResult, SearchPlan, TenderRequest, Verdict
@@ -49,6 +49,7 @@ class Ruling(BaseModel):
 class Outcome(BaseModel):
     b_id: int
     group: str
+    topic_key: str | None = None  # TopicDefinition.key(); old outcomes fall back to their display group
     bid: Bid
     files: list[FileRecord] = []
     buyer_org: str | None = None
@@ -66,10 +67,24 @@ class ProcessProgress(BaseModel):
 
     done_ids: list[int] = []
     described: int = 0
-    reads: dict[str, int] = {}
-    calls: dict[int, Call] = {}
+    reads: dict[str, int] = {}  # topic.key() -> full reads; old display-group keys are migrated by the graph
+    calls: dict[str, dict[int, Call]] = {}  # topic.key() -> b_id -> match call
+    routes: dict[str, dict[int, str]] = {}  # topic.key() -> b_id -> route, so stage 2 can union later topic evidence
+    legacy_calls: dict[int, Call] = Field(default_factory=dict, exclude=True)  # pre-topic sidecars, reused only for one topic
     cut: int = 0
     pending_reads: dict[int, Outcome] = {}  # judged verdicts waiting for settlement and their outcome append
+
+    @model_validator(mode="before")
+    @classmethod
+    def migrate_legacy_calls(cls, value):
+        """Old process.json files keyed calls only by bid; never guess which topic that call belonged to."""
+        if isinstance(value, dict):
+            calls = value.get("calls")
+            if isinstance(calls, dict) and calls and all(isinstance(call, str) for call in calls.values()):
+                value = dict(value)
+                value["legacy_calls"] = {int(b_id): call for b_id, call in calls.items()}
+                value["calls"] = {}
+        return value
 
 
 _OUTCOMES = TypeAdapter(dict[int, Outcome])
@@ -117,8 +132,8 @@ class RunStore:
         self._write(self._dir(run_id) / "plan.json", json.dumps([p.model_dump(mode="json") for p in plans], indent=1))
 
     def save_shortlist(self, run_id: str, candidates: list[Candidate]) -> None:
-        rows = [{"b_id": c.bid.b_id, "bid_number": c.bid.bid_number, "title": c.bid.title, "group": c.group, "why": c.why}
-                for c in candidates]
+        rows = [{"b_id": c.bid.b_id, "bid_number": c.bid.bid_number, "title": c.bid.title, "group": c.group,
+                 "topic_key": c.topic_key, "why": c.why} for c in candidates]
         self._write(self._dir(run_id) / "shortlist.json", json.dumps(rows, indent=1))
 
     def shortlist_size(self, run_id: str) -> int:

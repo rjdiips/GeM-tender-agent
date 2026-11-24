@@ -45,9 +45,10 @@ def test_outcomes_stored_before_these_fields_still_load(tmp_path):
     row = outcome(1).model_dump(mode="json")
     row.pop("read_because", None)
     row.pop("not_read", None)
+    row.pop("topic_key", None)
     path.write_text(json.dumps(row) + "\n")
     o = store.outcomes("r")[1]
-    assert o.read_because is None and o.not_read == ""
+    assert o.topic_key is None and o.read_because is None and o.not_read == ""
 
 
 def test_read_because_and_not_read_survive_a_round_trip(tmp_path):
@@ -118,7 +119,7 @@ def test_a_record_with_a_line_separator_in_its_text_is_read_whole(tmp_path, capl
 def test_process_progress_round_trips_a_pending_read_verdict(tmp_path):
     verdict = FakeJudge()._verdict(LOS, bid(1), False, "judge", borderline=True)
     pending = Outcome(b_id=1, group="g", bid=bid(1), verdict=verdict, read_because="unsure")
-    progress = ProcessProgress(done_ids=[1], described=1, reads={"g": 1}, calls={1: "unsure"},
+    progress = ProcessProgress(done_ids=[1], described=1, reads={"g": 1}, calls={LOS.key(): {1: "unsure"}},
                                pending_reads={1: pending})
     store = RunStore(tmp_path)
 
@@ -126,6 +127,35 @@ def test_process_progress_round_trips_a_pending_read_verdict(tmp_path):
 
     assert store.process_progress("r") == progress
     assert store.process_progress("r").pending_reads[1].verdict == verdict
+
+
+def test_process_progress_round_trips_calls_per_topic(tmp_path):
+    other = LOS.model_copy(update={"meaning": "Line of Sight: radio surveys"})
+    progress = ProcessProgress(calls={LOS.key(): {1: "match"}, other.key(): {1: "no"}},
+                               routes={LOS.key(): {1: "net"}, other.key(): {1: "match"}})
+    store = RunStore(tmp_path)
+
+    store.save_process_progress("r", progress)
+
+    assert store.process_progress("r").calls == progress.calls
+    assert store.process_progress("r").routes == progress.routes
+
+
+def test_process_progress_reads_legacy_bid_only_calls_without_sharing_them(tmp_path):
+    path = tmp_path / "r" / "process.json"
+    path.parent.mkdir()
+    path.write_text(json.dumps({"done_ids": [], "described": 0, "reads": {}, "calls": {"1": "match"}, "cut": 0}))
+
+    progress = RunStore(tmp_path).process_progress("r")
+
+    assert progress.calls == {}
+    assert progress.legacy_calls == {1: "match"}
+
+
+def test_outcome_topic_key_survives_a_round_trip(tmp_path):
+    store = RunStore(tmp_path)
+    store.save_outcome("r", Outcome(b_id=1, group="LOS", topic_key=LOS.key(), bid=bid(1)))
+    assert store.outcomes("r")[1].topic_key == LOS.key()
 
 
 def test_process_progress_from_before_pending_reads_still_loads(tmp_path):

@@ -28,6 +28,8 @@ from tests.graph.fakes import (
 )
 
 SIGHT = LOS.model_copy(update={"meaning": "Line of Sight: radio survey for telecom towers"})
+COLLIDING = LOS.model_copy(update={"meaning": "Loan Origination System: fraud analytics for banks",
+                                   "domain": "financial crime", "match_terms": ["fraud analytics"]})
 
 
 def services(tmp_path, *, chat=None, searcher=None, collector=None, judge=None, planner=None, rulings=None,
@@ -300,6 +302,85 @@ async def test_every_pool_bid_is_described_once_and_matched(tmp_path):
     assert "Matched 3 bids: 3 match, 0 might." in texts_of(events)
 
 
+async def test_a_shared_bid_is_matched_for_each_topic_before_its_outcome_is_chosen(tmp_path):
+    describer, matcher, judge = FakeDescriber(), FakeMatcher({
+        (LOS.key(), 1): "no", (SIGHT.key(), 1): "match",
+    }), FakeJudge()
+    searcher = FakeSearcher([[bid(1)], [bid(1)]], more_pages=False)
+    s = services(tmp_path, chat=FakeChat(topics=[LOS, SIGHT]), searcher=searcher,
+                 describer=describer, matcher=matcher, judge=judge, workers=1)
+    events = await ask(RunManager(s), "LOS and line of sight tenders")
+
+    assert describer.described == [1]
+    assert matcher.batches == [[1], [1]]
+    assert matcher.topics == [LOS.key(), SIGHT.key()]
+    assert judge.judged == [1]
+    result = await result_of(events, 1)
+    assert result["group"] == "Line of Sight" and result["read_because"] == "match"
+    outcome = s.store.outcomes(events[0]["run"]["run_id"])[1]
+    assert outcome.topic_key == SIGHT.key()
+
+
+async def test_colliding_topic_names_do_not_share_calls_or_routing(tmp_path):
+    matcher, judge = FakeMatcher({
+        (LOS.key(), 1): "no", (COLLIDING.key(), 1): "match",
+    }), FakeJudge()
+    s = services(tmp_path, chat=FakeChat(topics=[LOS, COLLIDING]),
+                 searcher=FakeSearcher([[bid(1)], [bid(1)]], more_pages=False),
+                 describer=FakeDescriber(), matcher=matcher, judge=judge, workers=1)
+    events = await ask(RunManager(s), "LOS and fraud tenders")
+
+    assert matcher.batches == [[1], [1]]
+    assert matcher.topics == [LOS.key(), COLLIDING.key()]
+    assert judge.judged == [1]
+    outcome = s.store.outcomes(events[0]["run"]["run_id"])[1]
+    assert outcome.group == "Loan Origination System" and outcome.topic_key == COLLIDING.key()
+    assert outcome.verdict is not None and outcome.verdict.topic_key == COLLIDING.key()
+    assert outcome.read_because == "match"
+
+
+async def test_colliding_topic_names_have_separate_read_caps(tmp_path):
+    judge = FakeJudge()
+    s = services(tmp_path, chat=FakeChat(topics=[LOS, COLLIDING]),
+                 searcher=FakeSearcher([[bid(1)], [bid(2)]], cap=1, more_pages=False),
+                 describer=FakeDescriber(), matcher=FakeMatcher(), judge=judge, workers=1)
+    events = await ask(RunManager(s), "LOS and fraud tenders")
+    run_id = events[0]["run"]["run_id"]
+
+    assert judge.judged == [1, 2]
+    assert s.store.process_progress(run_id).reads == {LOS.key(): 1, COLLIDING.key(): 1}
+    assert not any("not read" in text for text in texts_of(events))
+
+
+async def test_a_bid_dropped_for_one_topic_is_rescued_when_another_topic_finds_it_in_stage_two(tmp_path):
+    matcher, judge = FakeMatcher({
+        (LOS.key(), 1): "no", (SIGHT.key(), 1): "match",
+    }), FakeJudge()
+    searcher = FakeSearcher([[], []], dropped=[[bid(1)], []], rest=[[], [bid(1)]])
+    s = services(tmp_path, chat=FakeChat(topics=[LOS, SIGHT]), searcher=searcher,
+                 describer=FakeDescriber(), matcher=matcher, judge=judge, workers=1)
+    events = await ask(RunManager(s), "LOS and line of sight tenders")
+    run_id = events[0]["run"]["run_id"]
+
+    assert matcher.topics == [LOS.key(), SIGHT.key()]
+    assert judge.judged == [1]
+    outcome = s.store.outcomes(run_id)[1]
+    assert outcome.topic_key == SIGHT.key() and outcome.read_because == "match"
+    assert outcome.verdict is not None and outcome.verdict.relevant
+    assert outcome.verdict.topic_key == SIGHT.key()
+
+
+async def test_stage_two_exclusions_are_scoped_to_each_topic(tmp_path):
+    s = services(tmp_path, chat=FakeChat(topics=[LOS, SIGHT]),
+                 searcher=FakeSearcher([[bid(1)], [bid(2)]], rest=[[bid(3)], [bid(4)]], cap=2),
+                 describer=FakeDescriber(), matcher=FakeMatcher(), workers=1)
+
+    await ask(RunManager(s), "LOS and line of sight tenders")
+
+    assert s.searcher.excluded == [{1}, {2}]
+    assert s.searcher.caps == [None, None, 1, 1]
+
+
 async def test_a_bid_the_description_matches_is_read_even_when_the_title_screen_dropped_it(tmp_path):
     describer, matcher, judge = FakeDescriber(), FakeMatcher(), FakeJudge()
     searcher = FakeSearcher([[bid(1, closing_day=25)]], dropped=[[bid(3, closing_day=19)]], more_pages=False)
@@ -430,6 +511,23 @@ async def test_the_description_cap_is_one_queue_across_topics(tmp_path):
     assert describer.described == [5] and matcher.batches == [[5]]
     assert (await result_of(events, 1))["read_because"] is None
     assert "1 bid not yet described; they will be checked on the next search." in texts_of(events)
+
+
+async def test_an_embedder_outage_keeps_deterministic_description_order(tmp_path, caplog):
+    class BrokenEmbedder:
+        def encode(self, texts):
+            raise RuntimeError("embedding service unavailable")
+
+    describer = FakeDescriber()
+    s = services(tmp_path, searcher=FakeSearcher([[bid(1, closing_day=20), bid(2, closing_day=18)]],
+                                                more_pages=False),
+                 describer=describer, matcher=FakeMatcher(), similarity_embedder=BrokenEmbedder())
+
+    events = await ask(RunManager(s), "LOS tenders")
+
+    assert events[-1] == {"type": "done", "status": "complete"}
+    assert describer.described == [2, 1]
+    assert caplog.text.count("title similarity unavailable") == 1
 
 
 async def test_match_batches_flush_as_each_forty_descriptions_become_ready(tmp_path):
@@ -950,7 +1048,34 @@ async def test_a_run_stopped_during_matching_resumes_without_repeating_batches_o
         saved = await build_graph(s).compile(checkpointer=saver).aget_state(
             {"configurable": {"thread_id": run_id}})
     assert saved.values["described"] == 41
-    assert saved.values["reads"] == {"Loan Origination System": 41}
+    assert saved.values["reads"] == {LOS.key(): 41}
+    assert s.store.load(run_id).status == "complete"
+
+
+async def test_a_resumed_shared_bid_keeps_match_calls_separate_per_topic(tmp_path):
+    describer, matcher = FakeDescriber(), BlockSecondMatchBatch()
+    s = services(tmp_path, chat=FakeChat(topics=[LOS, SIGHT]),
+                 searcher=FakeSearcher([[bid(1)], [bid(1)]], more_pages=False),
+                 describer=describer, matcher=matcher, checkpoint=tmp_path / "checkpoints.sqlite", workers=1)
+    manager = RunManager(s)
+    events = []
+
+    async def follow():
+        async for event in manager.ask("asha", "LOS and line of sight tenders"):
+            events.append(event)
+
+    task = asyncio.create_task(follow())
+    await asyncio.wait_for(matcher.entered.wait(), timeout=5)
+    run_id = next(e["run"]["run_id"] for e in events if e["type"] == "started")
+    await manager.stop("asha", run_id)
+    await asyncio.wait_for(task, timeout=5)
+    assert matcher.topics == [LOS.key()]
+
+    await manager.resume(run_id)
+
+    assert describer.described == [1]
+    assert matcher.batches == [[1], [1]]
+    assert matcher.topics == [LOS.key(), SIGHT.key()]
     assert s.store.load(run_id).status == "complete"
 
 
@@ -1034,7 +1159,7 @@ async def test_a_run_stopped_after_judging_resumes_with_its_read_count_and_witho
         saved = await build_graph(s).compile(checkpointer=saver).aget_state(
             {"configurable": {"thread_id": run_id}})
     assert saved.values["described"] == 4
-    assert saved.values["reads"] == {"Loan Origination System": 2}
+    assert saved.values["reads"] == {LOS.key(): 2}
     assert saved.values["cut"] == 2
     assert set(saved.values["done_ids"]) == {1, 2, 3, 4}
     assert s.store.load(run_id).status == "complete"
