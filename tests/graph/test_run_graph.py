@@ -656,6 +656,19 @@ async def test_plan_line(tmp_path):
     assert texts_of(await ask(RunManager(s), "LOS tenders"))[0] == "Searching GeM 5 ways."
 
 
+async def test_plan_line_is_singular_for_one_search(tmp_path, monkeypatch):
+    monkeypatch.setattr("gem_agent.graph.build.search_specs", lambda plan: [object()])
+    s = services(tmp_path)
+    assert texts_of(await ask(RunManager(s), "LOS tenders"))[0] == "Searching GeM 1 way."
+
+
+async def test_no_results_line_is_singular_for_one_search(tmp_path):
+    searcher = FakeSearcher([[]], more_pages=False, searches={"first": {"exact|BANKING SECTOR": FAILED}})
+    s = services(tmp_path, searcher=searcher)
+    events = await ask(RunManager(s), "LOS tenders")
+    assert "searched 1 way)" in [e["event"]["text"] for e in events if e["type"] == "progress"][-1]
+
+
 async def test_shortlist_line_singular_and_plural(tmp_path):
     one = await ask(RunManager(services(tmp_path / "one", searcher=FakeSearcher([[bid(1)]]))), "LOS tenders")
     assert "Shortlist: 1 bid to read from 3 titles checked, closing soonest first." in texts_of(one)

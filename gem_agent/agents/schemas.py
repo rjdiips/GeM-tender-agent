@@ -172,6 +172,10 @@ class ResolvedWindow(BaseModel):
             return f"published until {self.published_to:%d %b}"
         if self.closing_from and self.closing_to:
             return f"closing {span(self.closing_from, self.closing_to)}"
+        if self.closing_from:
+            return f"closing after {self.closing_from.day} {self.closing_from:%b}"
+        if self.closing_to:
+            return f"closing until {self.closing_to.day} {self.closing_to:%b}"
         return "open now"
 
 

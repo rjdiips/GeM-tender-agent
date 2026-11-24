@@ -11,6 +11,12 @@ from gem_agent.tools.gem.models import Bid
 from tests.index.helpers import row
 
 
+def test_understood_line_is_singular_for_one_matching_title():
+    line = render_event({"type": "understood", "understood": {
+        "summary": "Looking for LOS software, published 2–16 Nov.", "likely": 1}})
+    assert line == "Looking for LOS software, published 2–16 Nov. (1 matching title)"
+
+
 def test_progress_and_results_print_as_lines():
     assert render_event({"type": "progress", "event": {"at": "2026-11-16T13:40:09", "text": "Shortlist: 9 bids."}}) == \
         "13:40:09  Shortlist: 9 bids."

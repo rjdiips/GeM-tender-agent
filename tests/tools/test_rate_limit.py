@@ -84,6 +84,14 @@ async def test_error_seen_by_one_process_slows_the_other(clock, tmp_path):
     assert b.interval == 4.0 and clock.sleeps == [4.0, 4.0]
 
 
+async def test_shared_limiter_spikes_after_three_slow_responses(clock, tmp_path):
+    limiter = shared(clock, tmp_path / "bidplus")
+    for _ in range(3):
+        async with limiter.turn():
+            limiter.record(ok=True, latency=5.0)
+    assert limiter.interval == 4.0
+
+
 async def test_other_process_waits_while_a_request_is_in_flight(clock, tmp_path):
     import asyncio
 

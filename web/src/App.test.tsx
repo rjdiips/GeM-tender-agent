@@ -31,6 +31,14 @@ describe('web chat', () => {
     expect(screen.getByText('13:40:09')).toBeInTheDocument()
   })
 
+  it('uses a singular matching-title count for one title', async () => {
+    const api = new FakeApi()
+    api.current = run({ understood: { ...run().understood!, likely: 1 } })
+    setup(api)
+    expect(await screen.findByText('1 matching title')).toBeInTheDocument()
+    expect(screen.queryByText('1 matching titles')).not.toBeInTheDocument()
+  })
+
   it('splits relevant and quarantined bids with counts and urgency', async () => {
     setup()
     const tabs = await screen.findByRole('tablist')

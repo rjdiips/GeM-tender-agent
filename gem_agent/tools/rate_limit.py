@@ -138,15 +138,19 @@ class AdaptiveRateLimiter:
     def _load(self) -> None:
         if self._shared is None:
             return
+        latencies = self._state.latencies  # this process's recent responses: the file holds only shared settings
         try:
             data = json.loads(self._state_file().read_text(encoding="utf-8"))
             self._state = _State(**data)
         except (OSError, ValueError, TypeError):
             self._state = _State(interval=self.floor)
+        self._state.latencies = latencies
 
     def _save(self) -> None:
         if self._shared is None:
             return
+        data = asdict(self._state)
+        data.pop("latencies", None)  # a spike is judged from this process's responses, not an old file's
         tmp = self._state_file().with_suffix(".tmp")
-        tmp.write_text(json.dumps(asdict(self._state)), encoding="utf-8")
+        tmp.write_text(json.dumps(data), encoding="utf-8")
         tmp.replace(self._state_file())

@@ -23,6 +23,11 @@ def test_explicit_dates():
     assert (w.published_from, w.published_to) == (datetime(2026, 11, 5), datetime(2026, 11, 10, 23, 59, 59))
 
 
+def test_closing_after_a_named_date_is_described_as_such():
+    w = DateWindow(kind="closing", from_date=date(2026, 12, 1)).resolve(NOW, explicit_dates=True)
+    assert w.closing_to is None and w.describe() == "closing after 1 Dec"
+
+
 def test_no_window_means_all_open_bids():
     w = DateWindow().resolve(NOW)
     assert w.published_from is None and w.closing_from == NOW
