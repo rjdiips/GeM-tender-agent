@@ -138,8 +138,8 @@ async def main() -> None:
         screened = {}
         for side, bids in (("live_only", live_only), ("index_only", index_only)):
             to_screen = [b for b in bids if not (is_vague_title(b.title) and b.b_id not in cards)]
-            kept = await searcher._screen_titles(topic, to_screen, cards)
-            screened[side] = sorted({b.b_id for b in bids if kept is None or b.b_id in kept
+            kept, unscreened = await searcher._screen_titles(topic, to_screen, cards)
+            screened[side] = sorted({b.b_id for b in bids if b.b_id in unscreened or b.b_id in kept
                                      or (is_vague_title(b.title) and b.b_id not in cards)})
         pools[name] = {
             "live": len(live), "index": len(idx), "both": len(set(live) & set(idx)),

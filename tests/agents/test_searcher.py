@@ -198,6 +198,43 @@ async def test_a_failed_title_screen_keeps_every_title(gem, clock, bid_cache):
     assert any("screen failed" in w for c in found.candidates for w in c.why)
 
 
+async def test_one_failed_batch_does_not_keep_every_title(gem, clock, bid_cache):
+    # eight terms, ten bids each on page 1: an 80-title pool in one first stage
+    by_term = {f"fullText|term {k}": [mk(100 + 10 * k + i, f"Loan origination item {k}-{i}") for i in range(10)]
+               for k in range(8)}
+    failed_once = []
+
+    def flaky(prompt):
+        if not failed_once:
+            failed_once.append(prompt)
+            raise RuntimeError("timeout")
+        return {"keep": [0]}
+
+    searcher, _ = build(gem, clock, bid_cache, ScriptedLLM({SCREEN_INSTRUCTIONS: flaky}), by_term, screen_batch=40)
+    p = plan(categories=[], terms=[f"term {k}" for k in range(8)],
+             published_from=None, published_to=None, closing_from=None)
+    result = await searcher.search(LOS, p, stage="first")
+    assert len(result.candidates) == 3 and not any("screen failed" in w for c in result.candidates for w in c.why)
+
+
+async def test_half_that_fails_twice_keeps_only_its_titles(gem, clock, bid_cache):
+    # four terms, ten bids each: a 40-title pool, one batch, whose first title is junk-0
+    by_term = {f"fullText|term {k}": [mk(100 + 10 * k + i, f"junk-{10 * k + i}") for i in range(10)] for k in range(4)}
+
+    def junk_breaks_the_screen(prompt):
+        if "[0] junk-0" in prompt:
+            raise RuntimeError("timeout")
+        return {"keep": list(range(40))}
+
+    searcher, _ = build(gem, clock, bid_cache, ScriptedLLM({SCREEN_INSTRUCTIONS: junk_breaks_the_screen}),
+                        by_term, screen_batch=40)
+    p = plan(categories=[], terms=[f"term {k}" for k in range(4)],
+             published_from=None, published_to=None, closing_from=None)
+    result = await searcher.search(LOS, p, stage="first")
+    failed = [c for c in result.candidates if "screen failed: title kept for triage" in c.why]
+    assert len(failed) == 20
+
+
 async def test_every_buyer_a_search_lists_is_kept_for_the_planner(gem, clock, bid_cache):
     llm = ScriptedLLM({SCREEN_INSTRUCTIONS: [{"keep": []}]})
     searcher, _ = build(gem, clock, bid_cache, llm, the_site(1, 3, 4))

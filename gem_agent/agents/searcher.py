@@ -131,16 +131,16 @@ class Searcher:
         bids = [b for b, _ in pool.values()]
         cards = {b.b_id: c for b in bids if is_vague_title(b.title) and (c := self.bid_cache.card(b.b_id))}
         vague = {b.b_id for b in bids if is_vague_title(b.title) and b.b_id not in cards}
-        kept = await self._screen_titles(topic, [b for b in bids if b.b_id not in vague], cards)
+        kept, unscreened = await self._screen_titles(topic, [b for b in bids if b.b_id not in vague], cards)
         preferred = set(plan.prefer_ministries) | set(plan.prefer_departments)
         out = []
         for bid, why in pool.values():
             if bid.b_id in vague:
                 why = ["vague title: only its documents can tell", *why]
-            elif kept is not None and bid.b_id not in kept:
-                continue
-            elif kept is None:
+            elif bid.b_id in unscreened:
                 why = ["screen failed: title kept for triage", *why]
+            elif bid.b_id not in kept:
+                continue
             if preferred & {bid.ministry, bid.department}:
                 why = [*why, "preferred buyer"]
             out.append(Candidate(bid=bid, group=short_name(topic), why=why))
@@ -172,22 +172,38 @@ class Searcher:
         return not plan.bid_types or int(bid.bid_type) in plan.bid_types
 
     async def _screen_titles(self, topic: TopicDefinition, bids: list[Bid],
-                             cards: dict[int, str] | None = None) -> set[int] | None:
-        """The titles to keep, or None if the model could not answer: then nothing is dropped and triage decides
-        from the documents (one bad answer must not fail the run)."""
+                             cards: dict[int, str] | None = None) -> tuple[set[int], set[int]]:
+        """The titles to keep, and those left unscreened: a batch the model fails on is split in two and each half
+        tried once; only a half that fails again goes to triage (one bad answer must not fail the run)."""
         kept: set[int] = set()
+        unscreened: set[int] = set()
         for start in range(0, len(bids), self.settings.screen_batch):
             batch = bids[start : start + self.settings.screen_batch]
-            cards = cards or {}
-            listing = "\n".join(
-                f"[{i}] {b.title[:200]}{f' — what it buys: {cards[b.b_id][:300]}' if b.b_id in cards else ''}"
-                f" | {b.ministry or ''} / {b.department or ''}" for i, b in enumerate(batch))
-            try:
-                out: ScreenOutput = (await self._screen.run(
-                    f"{topic.render()}\n\nTenders:\n{listing}",
-                    model_settings={"max_tokens": self.settings.screen_max_tokens, "temperature": 0.0})).output
-            except Exception as exc:  # noqa: BLE001 - validation failure after retries, timeouts, …
-                log.warning("title screen failed (%s); keeping all %d titles for triage", exc, len(bids))
-                return None
-            kept |= {batch[i].b_id for i in out.keep if 0 <= i < len(batch)}
-        return kept
+            if (found := await self._screen_batch(topic, batch, cards)) is not None:
+                kept |= found
+                continue
+            half = (len(batch) + 1) // 2
+            for part in (batch[:half], batch[half:]):
+                if not part:
+                    continue
+                if (found := await self._screen_batch(topic, part, cards)) is not None:
+                    kept |= found
+                else:
+                    unscreened |= {b.b_id for b in part}
+        return kept, unscreened
+
+    async def _screen_batch(self, topic: TopicDefinition, batch: list[Bid],
+                            cards: dict[int, str] | None) -> set[int] | None:
+        """The b_ids the model keeps from one batch, or None if it could not answer."""
+        cards = cards or {}
+        listing = "\n".join(
+            f"[{i}] {b.title[:200]}{f' — what it buys: {cards[b.b_id][:300]}' if b.b_id in cards else ''}"
+            f" | {b.ministry or ''} / {b.department or ''}" for i, b in enumerate(batch))
+        try:
+            out: ScreenOutput = (await self._screen.run(
+                f"{topic.render()}\n\nTenders:\n{listing}",
+                model_settings={"max_tokens": self.settings.screen_max_tokens, "temperature": 0.0})).output
+        except Exception as exc:  # noqa: BLE001 - validation failure after retries, timeouts, …
+            log.warning("title screen failed (%s) for %d titles", exc, len(batch))
+            return None
+        return {batch[i].b_id for i in out.keep if 0 <= i < len(batch)}

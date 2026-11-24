@@ -174,9 +174,9 @@ async def main() -> None:
         everything = {**idx, **live}
         cards = {b: c for b, bid in everything.items() if is_vague_title(bid.title) and (c := index.card(b))}
         to_screen = [bid for b, bid in everything.items() if not (is_vague_title(bid.title) and b not in cards)]
-        kept = await searcher._screen_titles(topic, to_screen, cards)
+        kept, unscreened = await searcher._screen_titles(topic, to_screen, cards)
         plausible = {b for b, bid in everything.items()
-                     if kept is None or b in kept or (is_vague_title(bid.title) and b not in cards)}
+                     if b in unscreened or b in kept or (is_vague_title(bid.title) and b not in cards)}
         groups = {"both": sorted(plausible & set(live) & set(idx)),
                   "live_only": sorted(plausible & (set(live) - set(idx))),
                   "index_only": sorted(plausible & (set(idx) - set(live)))}
