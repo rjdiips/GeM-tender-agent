@@ -61,6 +61,11 @@ class Settings(BaseSettings):
     skills_dir: Path = Path("skills")
     knowledge_dir: Path = Path("knowledge")
 
+    # Retention: days after a bid closes before its cached files are deleted (jobs/retention.py)
+    retain_quarantine_days: int = 30  # documents of a bid no run found relevant
+    retain_kept_after_close_days: int = 180  # documents of a bid a run found relevant
+    retain_verdict_after_close_days: int = 30  # verdicts, for every bid
+
     @property
     def rate_limit_dir(self) -> Path:
         """Per-host limiter state shared by every process on this machine."""

@@ -98,6 +98,13 @@ On Windows, allow inbound 8700 once, as Administrator, or other machines cannot 
 New-NetFirewallRule -DisplayName "GeM tender agent 8700" -Direction Inbound -Protocol TCP -LocalPort 8700 -Action Allow
 ```
 
+Cached bid documents and verdicts are pruned on demand with `uv run gem-agent retention` (add `--dry-run` to
+see the numbers first, `--max-bids N` to cap one pass; default 2000). Documents of a bid no run found relevant go
+30 days after it closes (`RETAIN_QUARANTINE_DAYS`), documents of a relevant bid 180 days (`RETAIN_KEPT_AFTER_CLOSE_DAYS`),
+verdicts 30 days (`RETAIN_VERDICT_AFTER_CLOSE_DAYS`). A bid in a running run or in the labelled set is never touched.
+Run it by hand, or from cron at most hourly, and check `/proc/pressure/io` first: a pass reads every run and deletes
+one bid at a time, so do not start it while the disk is already busy.
+
 ## Remote models
 
 The LLM already lives behind `LLM_BASE_URL`. Embeddings and reranking can also run on another machine:

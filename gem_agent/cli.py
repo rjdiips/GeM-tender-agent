@@ -5,6 +5,7 @@ import argparse
 import asyncio
 import logging
 import sys
+from datetime import datetime
 from pathlib import Path
 
 from gem_agent.config import Settings, get_settings
@@ -131,6 +132,9 @@ def main(argv: list[str] | None = None) -> int:
     bf.add_argument("--dry-run", action="store_true", help="report what would be filled, write nothing")
     bf.add_argument("--redo-documents", action="store_true",
                     help="read again the dates taken from buyer documents (GeM pre-bid dates are kept)")
+    rt = sub.add_parser("retention", help="delete cached documents and verdicts past their retention window")
+    rt.add_argument("--dry-run", action="store_true", help="report what would be removed, delete nothing")
+    rt.add_argument("--max-bids", type=int, default=2000, help="bids processed in one pass (default 2000)")
     args = parser.parse_args(argv)
     settings = get_settings()
     setup_logging(quiet=args.command == "chat")
@@ -146,7 +150,18 @@ def main(argv: list[str] | None = None) -> int:
         return asyncio.run(_eval(settings, args))
     if args.command == "backfill-queries":
         return asyncio.run(_backfill_queries(settings, args.dry_run, args.redo_documents))
+    if args.command == "retention":
+        return cmd_retention(settings, args.dry_run, args.max_bids)
     return cmd_bids_migrate(args, settings)
+
+
+def cmd_retention(settings: Settings, dry_run: bool, max_bids: int) -> int:
+    from gem_agent.jobs.retention import prune_caches
+
+    report = prune_caches(settings, datetime.now(), dry_run=dry_run, max_bids=max_bids)
+    verb = "would be removed" if dry_run else "removed"
+    print(f"{report.bids} bids, {report.files} files, {report.bytes / 1_000_000:.1f} MB {verb}")
+    return 0
 
 
 async def _eval(settings: Settings, args: argparse.Namespace) -> int:
