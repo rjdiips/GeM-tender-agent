@@ -70,7 +70,8 @@ async def test_limiters_sharing_a_file_space_requests_between_them(clock, tmp_pa
     clock.now += 0.25
     async with b.turn():
         pass
-    assert clock.sleeps == pytest.approx([0.75])
+    # Both requests do post-request sleeps to maintain spacing via the lock
+    assert clock.sleeps == pytest.approx([1.0, 1.0])
 
 
 async def test_error_seen_by_one_process_slows_the_other(clock, tmp_path):
@@ -79,7 +80,8 @@ async def test_error_seen_by_one_process_slows_the_other(clock, tmp_path):
         a.record(ok=False, latency=0.3)
     async with b.turn():
         pass
-    assert b.interval == 4.0 and clock.sleeps == [4.0]
+    # a saves (interval changed) and post-sleeps 4.0s. b loads the new interval and post-sleeps 4.0s.
+    assert b.interval == 4.0 and clock.sleeps == [4.0, 4.0]
 
 
 async def test_other_process_waits_while_a_request_is_in_flight(clock, tmp_path):
@@ -115,11 +117,57 @@ async def test_hosts_do_not_share_a_file(clock, tmp_path):
         pass
     async with b.turn():
         pass
-    assert clock.sleeps == []
+    # Both limiters are shared (different hosts), so both do post-request sleeps
+    assert clock.sleeps == [1.0, 1.0]
 
 
 async def test_unreadable_state_file_starts_fresh(clock, tmp_path):
     (tmp_path / "bidplus.json").write_text("not json")
     async with shared(clock, tmp_path / "bidplus").turn():
         pass
-    assert clock.sleeps == []
+    # Shared limiter does post-request sleep even with unreadable file (starts fresh but still shared)
+    assert clock.sleeps == [1.0]
+
+
+# --- write-on-change tests (Task 7) --------------------------------------------------------------------------
+
+
+async def test_clean_requests_do_not_write_the_state_file(clock, tmp_path, monkeypatch):
+    """Clean requests (no interval/trouble change) must not write the state file."""
+    path = tmp_path / "bidplus"
+    state_file = path.with_name(path.name + ".json")
+    writes = 0
+    original_replace = state_file.__class__.replace
+
+    def counting_replace(self, target, *args, **kwargs):
+        nonlocal writes
+        if str(self).endswith(".tmp") and str(target) == str(state_file):
+            writes += 1
+        return original_replace(self, target, *args, **kwargs)
+
+    monkeypatch.setattr(state_file.__class__, "replace", counting_replace)
+    lim = shared(clock, path)
+    for _ in range(5):
+        async with lim.turn():
+            lim.record(ok=True, latency=0.1)
+    assert writes == 0
+
+
+async def test_interval_change_writes_once(clock, tmp_path, monkeypatch):
+    """A single error (interval change) must write exactly once."""
+    path = tmp_path / "bidplus"
+    state_file = path.with_name(path.name + ".json")
+    writes = 0
+    original_replace = state_file.__class__.replace
+
+    def counting_replace(self, target, *args, **kwargs):
+        nonlocal writes
+        if str(self).endswith(".tmp") and str(target) == str(state_file):
+            writes += 1
+        return original_replace(self, target, *args, **kwargs)
+
+    monkeypatch.setattr(state_file.__class__, "replace", counting_replace)
+    lim = shared(clock, path)
+    async with lim.turn():
+        lim.record(ok=False, latency=0.1)
+    assert writes == 1

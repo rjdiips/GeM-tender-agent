@@ -126,8 +126,10 @@ async def test_two_pools_with_a_shared_dir_space_requests_between_them(gem, cloc
     two = make_pool(gem, clock, shared_dir=tmp_path)
     await one.request("GET", f"{BIDPLUS}/x")
     await two.request("GET", f"{BIDPLUS}/x")
-    assert clock.sleeps == [1.0]
-    assert (tmp_path / "bidplus.gem.gov.in.json").exists()
+    # Both requests do post-request sleeps to maintain spacing via the lock
+    assert clock.sleeps == [1.0, 1.0]
+    # Clean requests don't write the state file (only writes on interval/trouble change)
+    assert not (tmp_path / "bidplus.gem.gov.in.json").exists()
 
 
 async def test_403_starts_a_fresh_session_on_the_first_retry(gem, clock):

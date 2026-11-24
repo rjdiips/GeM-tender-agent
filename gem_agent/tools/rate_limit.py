@@ -68,10 +68,16 @@ class AdaptiveRateLimiter:
                 if delay > 0:
                     await self._sleep(delay)
             s.last_start = self._clock()
+            interval_before, trouble_before = s.interval, s.last_trouble
             try:
                 yield
             finally:
-                self._save()
+                if self._shared is not None:
+                    remaining = s.last_start + s.interval - self._clock()
+                    if remaining > 0:
+                        await self._sleep(remaining)
+                if s.interval != interval_before or s.last_trouble != trouble_before:
+                    self._save()
 
     async def wait(self) -> None:
         async with self.turn():
