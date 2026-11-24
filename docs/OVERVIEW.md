@@ -31,10 +31,9 @@ It learns each user's preferences (user memory). Results start streaming within 
 | Retrieval | all-MiniLM-L6-v2 page embeddings (or a remote server), optional reranker, BM25, fusion (spec 3.5.1) |
 | Site access | httpx with a per-host rate limiter (≥1 s, 4 s after errors); Playwright planned as a fallback |
 | Documents | pypdf, PyMuPDF, Tesseract OCR, openpyxl, python-docx, archive extraction |
-| Storage | SQLite (bid index, checkpoints), file caches for documents and verdicts, JSON for memory |
+| Storage | SQLite (bid cache, checkpoints), file caches for documents, verdicts and base searches, JSON for memory |
 | Backend | FastAPI, with Server-Sent Events for live results |
 | Frontend | React 19 + Vite, tested with Vitest |
-| Ops | systemd timers: index sync every 15 min, full re-fetch nightly |
 | Sandbox (planned) | pydantic-monty, for skills the model writes itself |
 
 ## Layout
@@ -42,15 +41,15 @@ It learns each user's preferences (user memory). Results start streaming within 
 ```
 gem_agent/
 ├── gem_agent/
-│   ├── cli.py            # gem-agent CLI: chat, serve, index, eval, backfill-queries
+│   ├── cli.py            # gem-agent CLI: chat, serve, bids, eval, backfill-queries, retention
 │   ├── config.py         # settings from .env
 │   ├── app/              # FastAPI backend: ask, SSE events, runs, downloads, memory
 │   ├── graph/            # langgraph run graph, RunState, checkpointer, event store, RunManager
 │   ├── agents/           # chat, planner, searcher, collector, judge, reporter, memory step
-│   ├── tools/            # HTTP client + rate limiter, GeM tools, PDF/OCR, office/archive text, browser
+│   ├── tools/            # HTTP client + rate limiter, GeM tools (live search), PDF/OCR, office/archive text, browser
 │   ├── retrieval/        # bge-m3 embeddings, reranker, BM25, fusion, chunking
-│   ├── index/            # local open-bid index: sync, query, probe, bid cards
-│   ├── cache/            # document, verdict and lookup caches, pre-fetch
+│   ├── index/            # bid cache (bids.sqlite): listing data and bid cards, migration
+│   ├── cache/            # document, verdict, lookup and base-search caches, pre-fetch
 │   ├── memory/           # user memory, saved topic meanings, run log
 │   ├── harness/          # capabilities, ladder, discovery, skills, checks, Monty sandbox (stubs)
 │   ├── jobs/             # retention, saved searches, query-date backfill
@@ -58,10 +57,10 @@ gem_agent/
 ├── web/                  # React 19 + Vite chat UI
 ├── tests/                # pytest suite + recorded GeM and document fixtures (live tests: -m live)
 ├── eval/                 # labelled set, candidate selection, labelling material
-├── deploy/systemd/       # index sync (15 min) and nightly re-fetch timers
+├── deploy/tei/           # embedding and rerank services (TEI) for the model host
 ├── skills/               # saved skills + records (empty until the harness exists)
 ├── knowledge/            # users/<user>/memory.json, topics/
-└── data/                 # bids.sqlite, cache/, runs/ (not in git)
+└── data/                 # bids/bids.sqlite (bid cache), cache/, runs/ (not in git)
 ```
 
 ## Flow
@@ -69,16 +68,17 @@ gem_agent/
 Solid arrows are the main path; dotted arrows are side effects. Parts not built yet (see the end of this file) are left out.
 ```mermaid
 flowchart TD
-    subgraph BG["Background (systemd timers)"]
-        GEM[(GeM site)] -->|"full load, 15-min sync,<br/>nightly re-fetch"| IDX[(Local bid index<br/>bids.sqlite + title embeddings)]
-        IDX -.->|"vague titles"| CARDS["Bid cards<br/>(model reads docs)"] -.-> IDX
+    subgraph BG["Live GeM search and caches"]
+        GEM[(GeM site, read live)]
+        SC[(Base-search cache<br/>1 hour, complete searches only)]
+        BC[(Bid cache<br/>data/bids/bids.sqlite)]
     end
 
     U([User in web chat]) -->|"POST /api/ask"| RM["RunManager.ask"]
 
     subgraph UND["Understand (before any run)"]
         C1["Chat call 1: intent, 1-3 meanings,<br/>date window, buyer hints, stated facts"]
-        PR["Probe each meaning<br/>against the local index"]
+        PR["Probe each meaning<br/>live: page 1 of GeM search"]
         C2{"2+ meanings left?"}
         C3["Chat call 2: keep 1 or 2"]
         C1 --> PR --> C2
@@ -95,7 +95,7 @@ flowchart TD
 
     subgraph GRAPH["Run graph (langgraph, SQLite checkpoint)"]
         PL["plan<br/>Planner: categories, ministries,<br/>extra terms (enum-checked)"]
-        SE["search<br/>word + meaning match in index,<br/>model screens titles,<br/>closing soonest first"]
+        SE["search<br/>page 1 of every search"]
         AS{"Empty or<br/>over cap?<br/>(max 2 retries)"}
         RT["retry: widen / narrow"]
         subgraph PROC["process (a few bids in parallel)"]
@@ -111,15 +111,23 @@ flowchart TD
             DR -->|yes| DP --> OUT["Save outcome"]
             DR -->|no| OUT
         end
+        AP{"Only page 1 read so far?"}
+        SR["search_rest<br/>pages 2 onward of each search"]
         REP["report: 'Done: N relevant,<br/>M quarantined'"]
         PL --> SE --> AS
         AS -->|yes| RT --> PL
         AS -->|no| CO1
-        OUT --> REP
+        PROC --> AP
+        AP -->|yes| SR --> CO1
+        AP -->|no| REP
     end
     RUN --> PL
-    IDX --> SE
-    IDX --> PR
+    GEM --> SE
+    SC <--> SE
+    SE -.->|"listing data"| BC
+    SC <--> SR
+    GEM --> SR
+    GEM --> PR
     GEM --> CO1
     GEM --> CO2
     CACHE[(Doc + verdict cache)] <--> CO2
@@ -134,10 +142,10 @@ flowchart TD
 
 **Steps**
 
-- **Local index, in the background.** `index/sync.py` loads all of GeM's open bids once, then syncs every 15 minutes and re-fetches everything nightly. New titles get embeddings. For bids with vague titles, `index/cards.py` writes a bid card from the bid's documents. Searches read this index, not the live site.
-- **Understand.** `agents/chat.py` turns the message into an intent and 1–3 possible meanings, and checks each meaning against the index. A second model call picks between them only if two or more are left. Facts the user states go straight into user memory.
+- **Live search.** Nothing is loaded in the background: every search reads GeM live. The base searches (a fixed set of category and buyer searches) are kept for an hour, but only once read in full, so a second run within the hour does not read the same pages again. The listing data of each bid a search returns goes to the bid cache, `data/bids/bids.sqlite`, with a bid card for bids with vague titles (`index/cards.py`).
+- **Understand.** `agents/chat.py` turns the message into an intent and 1–3 possible meanings, and checks each meaning live on GeM (page 1 of up to 3 of its terms). A second model call picks between them only if two or more are left. Facts the user states go straight into user memory.
 - **Run or reply.** A search or refinement creates a run that executes as a background task (`graph/manager.py`). Anything else, such as "show rejected" or a question about memory, gets a reply and starts no run.
-- **Run graph.** plan → search → widen or narrow (at most 2 retries) → process → report (`graph/build.py`). Every step is checkpointed, so a run stopped by a crash or restart resumes when the app starts again.
+- **Run graph.** plan → search (page 1 of every search) → widen or narrow (at most 2 retries) → process → search_rest (pages 2 onward) → process → report (`graph/build.py`). The second process judges only the bids not seen before. Every step is checkpointed, and the checkpoint records the stage, so a run stopped by a crash or restart resumes at the second stage without reading page 1 again.
 - **Process each bid.** The Collector fetches the bid PDF, and the Judge's triage reads its first pages. Only bids that pass have their attachments fetched and get a full verdict (see [How the Judge decides](#how-the-judge-decides)). Documents and verdicts are cached across runs and users.
 - **Stream.** Each outcome goes to the web UI over SSE as soon as it is saved. `/api/runs/{id}/events` replays a run and then follows it live, so the user can leave the page and come back.
 - **After the run.** The user restores quarantined bids, downloads files or a zip, refines the request (a follow-on run that reuses the cache), and views or forgets memory facts.
@@ -159,12 +167,15 @@ The Judge (`agents/judge.py`) decides whether one bid is really about the user's
 
 ## What's left to implement
 
+**Built:**
+- **Borderline bids** (`agents/schemas.py`, `graph/rulings.py`). The Judge can say a bid is borderline and ask the user one question. The user's ruling in the web UI is remembered as a per-topic memory fact, settles the run's other bids that raise the same question, and decides similar bids in later runs.
+- **Retention**, on demand: `gem-agent retention [--dry-run] [--max-bids N]` deletes cached documents and verdicts past their window after closing (`jobs/retention.py`). Run logs and zips are not pruned.
+
 **Not built (modules are one-line stubs):**
 - **Harness**: Monty sandbox host modules, checks, discovery, skill builder and skill library (`harness/`). The agent can't yet write its own code when the site changes.
 - **Browser fallback** (`tools/browser.py`). When an HTTP route fails, that bid fails.
 - **Reporter** (`agents/reporter.py`). The report today is only "Done: N relevant, M quarantined", with no summary table or `summary.md`.
 - **Saved and scheduled searches** (`jobs/saved_searches.py`, `app/routes/saved_searches.py`), and the nightly pre-fetch for saved topics (`cache/prefetch.py`).
-- **Retention clean-up** (`jobs/retention.py`): quarantine after 30 days, zips, old run logs.
 - **Detailed run log** (`memory/run_log.py`): every request, tool call and model call.
 
 **Built but not wired in:**
@@ -175,7 +186,6 @@ The Judge (`agents/judge.py`) decides whether one bid is really about the user's
 - **Deleting by hand.** There is no API to delete a run or all of a user's data.
 
 **In progress / pending review:**
-- **Borderline bids.** The Judge will say "borderline" and ask the user one question; the user's ruling is remembered. The design and plan exist, but nothing is implemented.
 - **Labelled evaluation set.** 23 flagged labels and 2 disagreements need human review before precision and recall can be relied on.
 
 **Out of scope for now:** CPPP/GePNIC and bank tender portals, closed or awarded bids, and anything that needs a GeM login.

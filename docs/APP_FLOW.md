@@ -1,21 +1,22 @@
 # GeM Tender Agent — App Flow
 
-How a request moves through the app as built on 17 Nov 2026. The design is in [GEM_TENDER_AGENT.md](GEM_TENDER_AGENT.md); its section numbers are given in brackets.
+How a request moves through the app as built on 24 Nov 2026. The design is in [GEM_TENDER_AGENT.md](GEM_TENDER_AGENT.md); its section numbers are given in brackets.
 
-Solid arrows are the main path; dotted arrows are side effects. The diagram leaves out what is not built yet: the post-run memory step, the harness (7), saved searches and retention (see 14.1 of the spec).
+Solid arrows are the main path; dotted arrows are side effects. The diagram leaves out what is not built yet: the post-run memory step, the harness (7), saved searches and the nightly pre-fetch (see 14.1 of the spec).
 
 ```mermaid
 flowchart TD
-    subgraph BG["Background (systemd timers)"]
-        GEM[(GeM site)] -->|"full load, 15-min sync,<br/>nightly re-fetch"| IDX[(Local bid index<br/>bids.sqlite + title embeddings)]
-        IDX -.->|"vague titles"| CARDS["Bid cards<br/>(model reads docs)"] -.-> IDX
+    subgraph BG["Live GeM search and caches"]
+        GEM[(GeM site, read live)]
+        SC[(Base-search cache<br/>1 hour, complete searches only)]
+        BC[(Bid cache<br/>data/bids/bids.sqlite)]
     end
 
     U([User in web chat]) -->|"POST /api/ask"| RM["RunManager.ask"]
 
     subgraph UND["Understand (before any run)"]
         C1["Chat call 1: intent, 1-3 meanings,<br/>date window, buyer hints, stated facts"]
-        PR["Probe each meaning<br/>against the local index"]
+        PR["Probe each meaning<br/>live: page 1 of GeM search"]
         C2{"2+ meanings left?"}
         C3["Chat call 2: keep 1 or 2"]
         C1 --> PR --> C2
@@ -32,7 +33,7 @@ flowchart TD
 
     subgraph GRAPH["Run graph (langgraph, SQLite checkpoint)"]
         PL["plan<br/>Planner: categories, ministries,<br/>extra terms (enum-checked)"]
-        SE["search<br/>word + meaning match in index,<br/>model screens titles,<br/>closing soonest first"]
+        SE["search<br/>page 1 of every search"]
         AS{"Empty or<br/>over cap?<br/>(max 2 retries)"}
         RT["retry: widen / narrow"]
         subgraph PROC["process (a few bids in parallel)"]
@@ -44,15 +45,23 @@ flowchart TD
             TR -->|"clear no"| OUT
             TR -->|"maybe / yes"| CO2 --> JU --> OUT["Save outcome"]
         end
+        AP{"Only page 1 read so far?"}
+        SR["search_rest<br/>pages 2 onward of each search"]
         REP["report: 'Done: N relevant,<br/>M quarantined'"]
         PL --> SE --> AS
         AS -->|yes| RT --> PL
         AS -->|no| CO1
-        OUT --> REP
+        PROC --> AP
+        AP -->|yes| SR --> CO1
+        AP -->|no| REP
     end
     RUN --> PL
-    IDX --> SE
-    IDX --> PR
+    GEM --> SE
+    SC <--> SE
+    SE -.->|"listing data"| BC
+    SC <--> SR
+    GEM --> SR
+    GEM --> PR
     GEM --> CO1
     GEM --> CO2
     CACHE[(Doc + verdict cache)] <--> CO2
@@ -67,11 +76,11 @@ flowchart TD
 
 ## Steps
 
-1. **Local index, in the background** (6.2): `index/sync.py` does a full load of GeM's open bids once, then syncs every 15 minutes and re-fetches everything nightly. New titles get embeddings. For vague titles, `index/cards.py` writes a bid card from the bid's documents. Searches read this index, not the live site.
-2. **Understand** (5.3): `agents/chat.py` turns the message into an intent and 1–3 candidate meanings. It checks each meaning against the index, and a second call chooses between them only if two or more are left. Stated facts go straight into user memory.
+1. **Live search and caches** (6.2): nothing is loaded in the background. Every search reads GeM live. The base searches (a fixed set of category and buyer searches) are kept for an hour in `data/cache/searches/`, but only once a search has been read in full, so a second run within the hour does not read the same pages again. The listing data of each bid a search returns goes to the bid cache, `data/bids/bids.sqlite`, along with its bid card where a vague title has one (`index/db.py`, `index/cards.py`).
+2. **Understand** (5.3): `agents/chat.py` turns the message into an intent and 1–3 candidate meanings. It checks each meaning live on GeM (page 1 of up to 3 of its terms), and a second call chooses between them only if two or more are left. Stated facts go straight into user memory.
 3. **Run or reply** (`graph/manager.py`): a search or refinement creates a run that executes as a background task. Anything else (show rejected, memory questions) gets a reply on the current stream and starts no run.
-4. **Run graph** (`graph/build.py`, 5.1): plan → search → (widen or narrow, at most 2 retries) → process → report. Every step is checkpointed, so a run interrupted by a crash or restart resumes when the app starts.
-5. **Process each bid** (5.4): the Collector fetches the bid PDF and triage reads its first pages. Only bids that pass have their attachments fetched and a full verdict written, with quotes checked against the cited pages. Documents and verdicts are cached across runs and users.
+4. **Run graph** (`graph/build.py`, 5.1): plan → search (page 1 of every search) → (widen or narrow, at most 2 retries) → process → search_rest (pages 2 onward) → process → report. The second process judges only the bids not seen before. The checkpointed `stage` and `search_progress` mean a run interrupted by a crash or restart resumes at the second stage without reading page 1 again.
+5. **Process each bid** (5.4): a few bids at a time, closing soonest first. The Collector fetches the bid PDF and triage reads its first pages. Only bids that pass have their attachments fetched and a full verdict written, with quotes checked against the cited pages. Documents and verdicts are cached across runs and users.
 6. **Stream** (4.1): each outcome is streamed to the web UI over SSE as soon as it is saved. `/api/runs/{id}/events` replays a run and then follows it live, so the page can be rejoined.
 7. **Borderline bids** (4.1, 5.5): a bid the Judge cannot call without the user comes back as borderline with a question. The user rules "counts" or "doesn't count" in the web UI; the ruling becomes a per-topic memory fact, settles the run's other bids that raise the same question, and decides similar bids in later runs. Undo removes a fact the click created and un-settles what it settled. The run never waits.
 8. **After the run**: the user restores quarantined bids, downloads files or a zip, refines the request (a follow-on run that reuses the cache), and views or forgets memory facts.
