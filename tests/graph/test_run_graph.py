@@ -903,6 +903,20 @@ class BlockSecondMatchBatch(FakeMatcher):
         return await super().match(topic, items)
 
 
+class BlockFirstMatchBatch(FakeMatcher):
+    def __init__(self):
+        super().__init__()
+        self.entered = asyncio.Event()
+        self.blocked = False
+
+    async def match(self, topic, items):
+        if not self.blocked:
+            self.blocked = True
+            self.entered.set()
+            await asyncio.Event().wait()
+        return await super().match(topic, items)
+
+
 async def test_a_run_stopped_during_matching_resumes_without_repeating_batches_or_descriptions(tmp_path):
     from gem_agent.graph.build import build_graph
     from gem_agent.graph.checkpoint import checkpointer
@@ -940,6 +954,34 @@ async def test_a_run_stopped_during_matching_resumes_without_repeating_batches_o
     assert s.store.load(run_id).status == "complete"
 
 
+async def test_a_run_stopped_during_matching_keeps_the_restored_description_cap(tmp_path):
+    describer, matcher = FakeDescriber(), BlockFirstMatchBatch()
+    bids = [bid(1, closing_day=18), bid(2, closing_day=19), bid(3, closing_day=20), bid(4, closing_day=21)]
+    s = services(tmp_path, searcher=FakeSearcher([bids], more_pages=False), describer=describer, matcher=matcher,
+                 checkpoint=tmp_path / "checkpoints.sqlite", describe_cap=2, workers=1)
+    manager = RunManager(s)
+    events = []
+
+    async def follow():
+        async for event in manager.ask("asha", "LOS tenders"):
+            events.append(event)
+
+    task = asyncio.create_task(follow())
+    await asyncio.wait_for(matcher.entered.wait(), timeout=5)
+    run_id = next(e["run"]["run_id"] for e in events if e["type"] == "started")
+    await manager.stop("asha", run_id)
+    await asyncio.wait_for(task, timeout=5)
+    assert events[-1] == {"type": "done", "status": "stopped"}
+    assert describer.described == [1, 2] and matcher.batches == []
+
+    await manager.resume(run_id)
+
+    assert describer.described == [1, 2] and matcher.batches == [[1, 2]]
+    assert set(s.store.outcomes(run_id)) == {1, 2, 3, 4}
+    assert s.store.process_progress(run_id).described == 2
+    assert s.store.load(run_id).status == "complete"
+
+
 class BlockAfterRead(FakeRulings):
     def __init__(self):
         super().__init__()
@@ -963,7 +1005,8 @@ async def test_a_run_stopped_after_judging_resumes_with_its_read_count_and_witho
     searcher = FakeSearcher([[bid(1)]], dropped=[[bid(2), bid(3), bid(4)]], cap=2, more_pages=False)
     s = services(tmp_path, searcher=searcher, describer=describer, matcher=matcher, judge=judge, rulings=rulings,
                  checkpoint=tmp_path / "checkpoints.sqlite", workers=1)
-    rule(s)
+    fact = rule(s)
+    rulings.answers["Does bid 2 count for you?"] = RulingMatch(fact_id=fact.id, decision="counts")
     manager = RunManager(s)
     events = []
 
@@ -984,13 +1027,15 @@ async def test_a_run_stopped_after_judging_resumes_with_its_read_count_and_witho
 
     assert matcher.batches == [[1, 2, 3, 4]] and judge.judged == [1, 2]
     assert describer.described == [1, 2, 3, 4]
-    assert set(s.store.outcomes(run_id)) == {1}
+    outcomes = s.store.outcomes(run_id)
+    assert set(outcomes) == {1, 2}
+    assert outcomes[2].verdict.borderline and outcomes[2].ruling.decision == "counts"
     async with checkpointer(s.checkpoint_path) as saver:
         saved = await build_graph(s).compile(checkpointer=saver).aget_state(
             {"configurable": {"thread_id": run_id}})
     assert saved.values["described"] == 4
     assert saved.values["reads"] == {"Loan Origination System": 2}
-    assert saved.values["cut"] == 3
+    assert saved.values["cut"] == 2
     assert set(saved.values["done_ids"]) == {1, 2, 3, 4}
     assert s.store.load(run_id).status == "complete"
 

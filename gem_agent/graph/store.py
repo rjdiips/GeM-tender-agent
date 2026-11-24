@@ -46,16 +46,6 @@ class Ruling(BaseModel):
     at: datetime
 
 
-class ProcessProgress(BaseModel):
-    """Durable in-node progress for the describe/match/read pipeline, restored alongside the graph checkpoint."""
-
-    done_ids: list[int] = []
-    described: int = 0
-    reads: dict[str, int] = {}
-    calls: dict[int, Call] = {}
-    cut: int = 0
-
-
 class Outcome(BaseModel):
     b_id: int
     group: str
@@ -69,6 +59,17 @@ class Outcome(BaseModel):
     restored: bool = False
     ruling: Ruling | None = None
     undone: bool = False  # the user undid a ruling on this bid; never settle it automatically again
+
+
+class ProcessProgress(BaseModel):
+    """Durable in-node progress for the describe/match/read pipeline, restored alongside the graph checkpoint."""
+
+    done_ids: list[int] = []
+    described: int = 0
+    reads: dict[str, int] = {}
+    calls: dict[int, Call] = {}
+    cut: int = 0
+    pending_reads: dict[int, Outcome] = {}  # judged verdicts waiting for settlement and their outcome append
 
 
 _OUTCOMES = TypeAdapter(dict[int, Outcome])

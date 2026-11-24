@@ -321,7 +321,8 @@ def build_graph(s: Services) -> StateGraph:
         outcomes = s.store.outcomes(state.run_id)
         all_bids = {c.bid.b_id: c for c in [*state.candidates, *state.pool_rest]}
         stored = s.store.process_progress(state.run_id)
-        done = list(dict.fromkeys([*state.done_ids, *stored.done_ids, *outcomes]))
+        pending_reads = dict(stored.pending_reads)
+        done = list(dict.fromkeys([*state.done_ids, *stored.done_ids, *outcomes, *pending_reads]))
         done_set = set(done)
         todo = [c for b_id, c in all_bids.items() if b_id not in done_set]
         total = len(all_bids)
@@ -338,7 +339,8 @@ def build_graph(s: Services) -> StateGraph:
 
         def persist() -> None:
             s.store.save_process_progress(state.run_id, ProcessProgress(
-                done_ids=done, described=described, reads=reads, calls=calls, cut=base_cut + cut))
+                done_ids=done, described=described, reads=reads, calls=calls, cut=base_cut + cut,
+                pending_reads=pending_reads))
 
         def count_line() -> None:
             seen = [outcomes[b_id] for b_id in done if b_id in outcomes]
@@ -357,6 +359,21 @@ def build_graph(s: Services) -> StateGraph:
             emit(s, state.run_id, {"type": "result", "bid": bid_result(state.run_id, outcome)})
             count_line()
 
+        async def finish_pending_reads() -> None:
+            """Attach rulings to verdicts saved before an interruption, without judging or collecting again."""
+            for b_id, outcome in list(pending_reads.items()):
+                if b_id in outcomes:  # the outcome append succeeded before the sidecar could be cleared
+                    del pending_reads[b_id]
+                    persist()
+                    continue
+                topic = topic_for(state.request, outcome.group)
+                outcome.ruling = await settle(s, state.user, topic, outcome.verdict)
+                save(all_bids[b_id], outcome)
+                del pending_reads[b_id]
+                persist()
+
+        if pending_reads:
+            await finish_pending_reads()
         if not todo:
             return {"done_ids": done, "described": described, "reads": reads, "cut": base_cut,
                     **({"stage": "done"} if state.stage == "rest" else {})}
@@ -375,7 +392,7 @@ def build_graph(s: Services) -> StateGraph:
             if group_missing:
                 scores = await title_similarity(s.similarity_embedder, topic, [c.bid.title for c in group_missing])
                 similarity.update((c.bid.b_id, score) for c, score in zip(group_missing, scores, strict=True))
-        queue = describe_order(missing, similarity)[:max(0, s.describe_cap - state.described)]
+        queue = describe_order(missing, similarity)[:max(0, s.describe_cap - described)]
 
         ready: dict[str, list[MatchItem]] = {}
 
@@ -502,13 +519,17 @@ def build_graph(s: Services) -> StateGraph:
                         if refreshed is not None:
                             known[c.bid.b_id] = refreshed
                     verdict = await s.judge.judge(topic, c.bid, files, triage=triage_by_id.get(c.bid.b_id))
-                    reads[c.group] = reads.get(c.group, 0) + 1
-                    persist()  # the full read finished even if settling or saving is interrupted next
                     chosen = routes[c.bid.b_id]
                     outcome = Outcome(b_id=c.bid.b_id, group=c.group, bid=c.bid, files=files.files,
                                       buyer_org=files.buyer_org, verdict=verdict,
                                       read_because=None if chosen == "today" else chosen)
+                    reads[c.group] = reads.get(c.group, 0) + 1
+                    pending_reads[c.bid.b_id] = outcome
+                    mark_done(c)  # atomically persist the finished read, its verdict, and its consumed cap slot
                     outcome.ruling = await settle(s, state.user, topic, verdict)
+                    save(c, outcome)
+                    del pending_reads[c.bid.b_id]
+                    persist()
                 except Exception as exc:  # noqa: BLE001 - one bid failing never stops the run
                     log.warning("bid %s failed while being read: %s", c.bid.bid_number, exc)
                     outcome = Outcome(b_id=c.bid.b_id, group=c.group, bid=c.bid, error=str(exc)[:300])

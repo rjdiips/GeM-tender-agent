@@ -1,8 +1,9 @@
 import json
 from datetime import datetime
 
-from gem_agent.graph.store import Outcome, Ruling, RunStore
-from tests.graph.fakes import bid
+from gem_agent.graph.store import Outcome, ProcessProgress, Ruling, RunStore
+from tests.agents.helpers import LOS
+from tests.graph.fakes import FakeJudge, bid
 
 
 def outcome(b_id):
@@ -112,3 +113,28 @@ def test_a_record_with_a_line_separator_in_its_text_is_read_whole(tmp_path, capl
     store.save_outcome("r", Outcome(b_id=2, group="g", bid=bid(2, "Lot one\u2028Lot two\u2029end\x85")))
     assert store.outcomes("r")[2].bid.title == "Lot one\u2028Lot two\u2029end\x85"
     assert caplog.text == ""
+
+
+def test_process_progress_round_trips_a_pending_read_verdict(tmp_path):
+    verdict = FakeJudge()._verdict(LOS, bid(1), False, "judge", borderline=True)
+    pending = Outcome(b_id=1, group="g", bid=bid(1), verdict=verdict, read_because="unsure")
+    progress = ProcessProgress(done_ids=[1], described=1, reads={"g": 1}, calls={1: "unsure"},
+                               pending_reads={1: pending})
+    store = RunStore(tmp_path)
+
+    store.save_process_progress("r", progress)
+
+    assert store.process_progress("r") == progress
+    assert store.process_progress("r").pending_reads[1].verdict == verdict
+
+
+def test_process_progress_from_before_pending_reads_still_loads(tmp_path):
+    path = tmp_path / "r" / "process.json"
+    path.parent.mkdir()
+    path.write_text(json.dumps({"done_ids": [1], "described": 1, "reads": {"g": 1}, "calls": {"1": "match"},
+                                "cut": 0}))
+
+    progress = RunStore(tmp_path).process_progress("r")
+
+    assert progress.done_ids == [1] and progress.described == 1 and progress.reads == {"g": 1}
+    assert progress.pending_reads == {}
