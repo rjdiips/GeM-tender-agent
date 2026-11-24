@@ -9,11 +9,13 @@ The baseline is prompt version 1 from Task 10's preserved live run at commit
 DATA_DIR=.superpowers/live-eval-data uv run gem-agent eval match
 ```
 
-The table reports the worst of the three repeats. Subject-topic misses alone gate
-the decision: keep a candidate only when both A's checked misses and A's all
-misses are no higher than the previous kept version. Buyer-topic results are
-reported separately and never enter that gate. A negative read means a labelled
-irrelevant tender was still read.
+The table reports the worst of the three repeats. Versions 2–4 used the original
+subject-topic gate: keep a candidate only when both A's checked misses and A's all
+misses are no higher than the previous kept version. The correctness correction
+added version 5, which also had to restore A's buyer-topic worst-run checked and
+all misses to exactly 0. Failure of either v5 condition reverts all tuning to
+prompt version 1. Buyer-topic results remain tabulated separately. A negative
+read means a labelled irrelevant tender was still read.
 
 ## Tuning table
 
@@ -23,6 +25,11 @@ irrelevant tender was still read.
 | 2 | Payments: card-management or issuing software is `match` when the topic's own systems are bought | 2/2/1; **2** | 9/9/7; **9** | 73/75/74; **75/354** | 1/1/1; **1** | **Keep** (2 ≤ 3 and 9 ≤ 10) |
 | 3 | Named module in a broader suite: `match` when named, `unsure` when only the suite is named (on v2) | 2/2/2; **2** | 10/10/9; **10** | 55/58/52; **58/354** | 2/2/2; **2** | **Revert** (all misses 10 > 9) |
 | 4 | Same-family product: `unsure`, never `no` (on kept v2) | 1/1/2; **2** | 7/8/9; **9** | 76/67/75; **76/354** | 1/1/1; **1** | **Keep** (2 ≤ 2 and 9 ≤ 9) |
+| 5 | Buyer-topic matching takes precedence over what-is-bought tuning (on v4) | 2/3/1; **3** | 7/11/6; **11** | 79/50/80; **80/354** | 1/1/1; **1** | **Revert all tuning to v1** (subject 3 > 2, 11 > 9; buyer 1 ≠ 0) |
+
+The v2–v4 decisions record what was kept at that time. The v5 correctness ruling
+supersedes them: because v5 failed, the final prompt is version 1 and no tuning
+is kept.
 
 ## Buyer topics (scored apart)
 
@@ -32,15 +39,16 @@ irrelevant tender was still read.
 | 2 | 16/14/1; **16** | 17/15/1; **17** | 7/6/1; **7** |
 | 3 | 0/1/16; **16** | 0/1/17; **17** | 0/1/7; **7** |
 | 4 | 14/14/14; **14** | 15/15/15; **15** | 6/6/6; **6** |
+| 5 | 1/0/1; **1** | 1/0/1; **1** | 1/0/1; **1** |
 
 ## Outcome
 
-Final prompt version is **4**: version 2's payments rule plus version 4's
-same-family rule. Version 3 was tried and reverted. Against the preserved
-baseline, A's worst-run subject-topic checked misses improved from **3 to 2**
-and all misses from **10 to 9**; today-or-A checked misses remain **1**.
-A's buyer-topic misses remain worse than baseline and are a known concern,
-kept separate from the subject-topic gate.
+Final `MATCH_PROMPT_VERSION` is **"1"**. **No tuning was kept.** Version 5 failed
+both required conditions: A's subject worst-run checked/all misses were **3/11**
+(limit **2/9**), and A's buyer worst-run checked/all misses were **1/1** (required
+**0/0**). Per the correctness ruling, `gem_agent/agents/matcher.py` was reverted to
+the original version-1 prompt, withdrawing the earlier v2/v4 subject gains rather
+than shipping a buyer-topic regression.
 
 Full live outputs and pre-check evidence are preserved under
-`.superpowers/sdd/2026-11-24-describe-once/task-11-v{2,3,4}-*` (not committed).
+`.superpowers/sdd/2026-11-24-describe-once/task-11-v{2,3,4,5}-*` (not committed).
