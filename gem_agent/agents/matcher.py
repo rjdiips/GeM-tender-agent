@@ -14,11 +14,13 @@ from gem_agent.tools.gem.models import Bid
 
 log = logging.getLogger(__name__)
 
-MATCH_PROMPT_VERSION = "1"  # bump whenever MATCH_INSTRUCTIONS changes
+MATCH_PROMPT_VERSION = "4"  # bump whenever MATCH_INSTRUCTIONS changes
 
 MATCH_INSTRUCTIONS = """You decide, for one topic, which Indian government (GeM) tenders could be buying it, from a short
 description of what each tender buys.
 match: the topic itself is plainly in scope.
+For a payments topic, card-management or issuing software is match when the topic's own systems are what is bought.
+A product in the same family as the topic is unsure, never no.
 unsure: it might be: a broad platform or programme that could include the topic, a related-but-not-enough item that
 may come with it, or a description too thin to tell.
 Everything else is no: plainly about something else. Look-alikes listed under "NOT this" are no.
