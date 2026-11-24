@@ -18,7 +18,9 @@ from tests.graph.fakes import (
     BlockingCollector,
     FakeChat,
     FakeCollector,
+    FakeDescriber,
     FakeJudge,
+    FakeMatcher,
     FakePlanner,
     FakeRulings,
     FakeSearcher,
@@ -29,12 +31,17 @@ SIGHT = LOS.model_copy(update={"meaning": "Line of Sight: radio survey for telec
 
 
 def services(tmp_path, *, chat=None, searcher=None, collector=None, judge=None, planner=None, rulings=None,
-             checkpoint=":memory:"):
-    return Services(chat=chat or FakeChat(), planner=planner or FakePlanner(),
-                    searcher=searcher or FakeSearcher([[bid(1), bid(2, "Lockers", 18)]]),
-                    collector=collector or FakeCollector(), judge=judge or FakeJudge(),
-                    store=RunStore(tmp_path / "runs"), bus=EventBus(), memory=MemoryStore(tmp_path), now=lambda: NOW,
-                    checkpoint_path=checkpoint, rulings=rulings)
+             checkpoint=":memory:", describer=None, matcher=None, safety_net=True, describe_cap=300,
+             similarity_embedder=None, workers=4):
+    s = Services(chat=chat or FakeChat(), planner=planner or FakePlanner(),
+                 searcher=searcher or FakeSearcher([[bid(1), bid(2, "Lockers", 18)]]),
+                 collector=collector or FakeCollector(), judge=judge or FakeJudge(),
+                 store=RunStore(tmp_path / "runs"), bus=EventBus(), memory=MemoryStore(tmp_path), now=lambda: NOW,
+                 checkpoint_path=checkpoint, rulings=rulings)
+    s.describer, s.matcher = describer, matcher
+    s.safety_net, s.describe_cap = safety_net, describe_cap
+    s.similarity_embedder, s.workers = similarity_embedder, workers
+    return s
 
 
 async def ask(manager, text, run_id=None, user="asha"):
@@ -97,6 +104,16 @@ async def test_empty_shortlist_widens_at_most_twice(tmp_path):
     assert searcher.calls == 3 and len(planner.notes) == 3 and "broader" in planner.notes[1]
     assert any("No matching tenders" in e["event"]["text"] for e in events if e["type"] == "progress")
     assert events[-1]["type"] == "done"
+
+
+async def test_without_the_new_services_title_drops_still_take_exactly_todays_path(tmp_path):
+    searcher = FakeSearcher([[]], dropped=[[bid(3)]], more_pages=False)
+    s = services(tmp_path, searcher=searcher)
+    events = await ask(RunManager(s), "LOS tenders")
+    run_id = events[0]["run"]["run_id"]
+
+    assert s.store.outcomes(run_id) == {}
+    assert texts_of(events)[-1].startswith("No matching tenders found ")
 
 
 async def test_two_meanings_are_searched_and_grouped(tmp_path):
@@ -254,6 +271,7 @@ async def test_stop_is_refused_for_another_users_run(tmp_path):
 class UnreadableCollector(FakeCollector):
     async def collect(self, bid, **kw):
         if bid.b_id in self.fail:
+            self.calls.append((bid.b_id, kw.get("attachments", True)))
             raise DocumentUnavailable("GeM returned 503 three times")
         return await super().collect(bid, **kw)
 
@@ -264,6 +282,240 @@ async def test_unreadable_bid_shows_as_error_not_triage(tmp_path):
     run_id = events[0]["run"]["run_id"]
     outcome = s.store.outcomes(run_id)[2]
     assert outcome.error.startswith("bid document could not be downloaded") and outcome.verdict is None
+
+
+# --- descriptions, matching and routing ---------------------------------------------------------------------------
+
+
+async def test_every_pool_bid_is_described_once_and_matched(tmp_path):
+    describer, matcher = FakeDescriber(), FakeMatcher()
+    searcher = FakeSearcher([[bid(1, closing_day=20), bid(2, closing_day=21)]],
+                           dropped=[[bid(3, closing_day=19)]], more_pages=False)
+    s = services(tmp_path, searcher=searcher, describer=describer, matcher=matcher)
+    events = await ask(RunManager(s), "LOS tenders")
+
+    assert describer.described == [1, 2, 3]  # kept bids first, then closing order within each kind
+    assert matcher.batches == [[1, 2, 3]]
+    assert "Described 3 new bids (0 already known)." in texts_of(events)
+    assert "Matched 3 bids: 3 match, 0 might." in texts_of(events)
+
+
+async def test_a_bid_the_description_matches_is_read_even_when_the_title_screen_dropped_it(tmp_path):
+    describer, matcher, judge = FakeDescriber(), FakeMatcher(), FakeJudge()
+    searcher = FakeSearcher([[bid(1, closing_day=25)]], dropped=[[bid(3, closing_day=19)]], more_pages=False)
+    s = services(tmp_path, searcher=searcher, describer=describer, matcher=matcher, judge=judge)
+    events = await ask(RunManager(s), "LOS tenders")
+
+    assert 3 in judge.judged
+    result = await result_of(events, 3)
+    assert result["state"] == "relevant" and result["read_because"] == "match"
+
+
+async def test_a_run_with_only_title_dropped_hits_reports_the_match_it_rescued(tmp_path):
+    judge = FakeJudge()
+    s = services(tmp_path, searcher=FakeSearcher([[]], dropped=[[bid(3)]], more_pages=False), judge=judge,
+                 describer=FakeDescriber(), matcher=FakeMatcher())
+    events = await ask(RunManager(s), "LOS tenders")
+
+    assert judge.judged == [3]
+    assert texts_of(events)[-1] == "Done: 1 relevant, 0 quarantined."
+
+
+async def test_a_no_from_both_checks_quarantines_without_reading(tmp_path):
+    describer, matcher, judge = FakeDescriber({3: "Office lockers"}), FakeMatcher({3: "no"}), FakeJudge()
+    searcher = FakeSearcher([[bid(1)]], dropped=[[bid(3)]], more_pages=False)
+    s = services(tmp_path, searcher=searcher, describer=describer, matcher=matcher, judge=judge)
+    events = await ask(RunManager(s), "LOS tenders")
+
+    assert judge.judged == [1]
+    result = await result_of(events, 3)
+    assert result["state"] == "quarantined" and result["read_because"] is None
+    assert result["reason"] == ("Not a match: buys Office lockers. "
+                                "Ruled out by the description check and the title check.")
+
+
+async def test_the_safety_net_reads_a_no_the_title_screen_kept(tmp_path):
+    collector, judge = FakeCollector(), FakeJudge()
+    s = services(tmp_path, searcher=FakeSearcher([[bid(1)]], more_pages=False), collector=collector,
+                 judge=judge, describer=FakeDescriber(), matcher=FakeMatcher({1: "no"}))
+    events = await ask(RunManager(s), "LOS tenders")
+
+    assert (1, False) in collector.calls and collector.calls.count((1, True)) == 2
+    assert judge.judged == [1]
+    result = await result_of(events, 1)
+    assert result["state"] == "relevant" and result["read_because"] == "net"
+
+
+async def test_a_net_bid_that_triage_rules_out_is_quarantined_with_both_checks(tmp_path):
+    collector, judge = FakeCollector(), FakeJudge(no={1})
+    s = services(tmp_path, searcher=FakeSearcher([[bid(1)]], more_pages=False), collector=collector,
+                 judge=judge, describer=FakeDescriber({1: "Office lockers"}), matcher=FakeMatcher({1: "no"}))
+    events = await ask(RunManager(s), "LOS tenders")
+
+    assert collector.calls == [(1, True), (1, False)] and judge.judged == []
+    result = await result_of(events, 1)
+    assert result["state"] == "quarantined" and result["stage"] == "triage"
+    assert result["reason"] == ("Not a match: buys Office lockers. "
+                                "Ruled out by the description check and the first-pages check.")
+
+
+async def test_with_the_net_off_a_no_with_scope_drops_without_triage(tmp_path):
+    collector, judge = FakeCollector(), FakeJudge()
+    s = services(tmp_path, searcher=FakeSearcher([[bid(1)]], more_pages=False), collector=collector,
+                 judge=judge, describer=FakeDescriber({1: "Office lockers"}), matcher=FakeMatcher({1: "no"}),
+                 safety_net=False)
+    events = await ask(RunManager(s), "LOS tenders")
+
+    assert collector.calls == [(1, True)] and judge.judged == []
+    result = await result_of(events, 1)
+    assert result["state"] == "quarantined"
+    assert result["reason"] == "Not a match: buys Office lockers. Ruled out by the description check."
+
+
+async def test_reads_go_match_then_unsure_then_net(tmp_path):
+    judge = FakeJudge()
+    searcher = FakeSearcher([[bid(1, closing_day=25), bid(2, closing_day=24), bid(3, closing_day=23)]],
+                           more_pages=False)
+    s = services(tmp_path, searcher=searcher, judge=judge, describer=FakeDescriber(),
+                 matcher=FakeMatcher({1: "match", 2: "unsure", 3: "no"}), workers=1)
+
+    await ask(RunManager(s), "LOS tenders")
+
+    assert judge.judged == [1, 2, 3]
+
+
+async def test_net_and_today_share_one_closing_order_bucket(tmp_path):
+    judge = FakeJudge()
+    searcher = FakeSearcher([[bid(1, closing_day=25), bid(2, closing_day=24), bid(3, closing_day=23),
+                              bid(4, closing_day=20)]], more_pages=False)
+    s = services(tmp_path, searcher=searcher, judge=judge, describer=FakeDescriber({4: ""}),
+                 matcher=FakeMatcher({1: "match", 2: "unsure", 3: "no"}), workers=1)
+
+    await ask(RunManager(s), "LOS tenders")
+
+    assert judge.judged == [1, 2, 4, 3]
+
+
+async def test_new_descriptions_are_capped_per_request_and_the_rest_take_todays_path(tmp_path):
+    describer, matcher = FakeDescriber(), FakeMatcher()
+    searcher = FakeSearcher([[bid(1, closing_day=18), bid(2, closing_day=19), bid(3, closing_day=20)]],
+                           more_pages=False)
+    s = services(tmp_path, searcher=searcher, describer=describer, matcher=matcher, describe_cap=2)
+    events = await ask(RunManager(s), "LOS tenders")
+
+    assert describer.described == [1, 2] and matcher.batches == [[1, 2]]
+    result = await result_of(events, 3)
+    assert result["state"] == "relevant" and result["read_because"] is None
+    assert "1 bid not yet described; they will be checked on the next search." in texts_of(events)
+
+
+async def test_the_description_cap_is_shared_across_both_stages(tmp_path):
+    describer, matcher = FakeDescriber(), FakeMatcher()
+    searcher = FakeSearcher([[bid(1)]], rest=[[bid(2)]])
+    s = services(tmp_path, searcher=searcher, describer=describer, matcher=matcher, describe_cap=1)
+    events = await ask(RunManager(s), "LOS tenders")
+
+    assert describer.described == [1] and matcher.batches == [[1]]
+    assert (await result_of(events, 2))["read_because"] is None
+    assert "1 bid not yet described; they will be checked on the next search." in texts_of(events)
+
+
+async def test_the_description_cap_is_one_queue_across_topics(tmp_path):
+    describer, matcher = FakeDescriber(), FakeMatcher()
+    searcher = FakeSearcher([[bid(1, closing_day=20)], [bid(5, "Line of sight survey", closing_day=18)]])
+    s = services(tmp_path, chat=FakeChat(topics=[LOS, SIGHT]), searcher=searcher,
+                 describer=describer, matcher=matcher, describe_cap=1)
+    events = await ask(RunManager(s), "LOS tenders")
+
+    assert describer.described == [5] and matcher.batches == [[5]]
+    assert (await result_of(events, 1))["read_because"] is None
+    assert "1 bid not yet described; they will be checked on the next search." in texts_of(events)
+
+
+async def test_match_batches_flush_as_each_forty_descriptions_become_ready(tmp_path):
+    describer, matcher = FakeDescriber(), FakeMatcher()
+    bids = [bid(i) for i in range(1, 42)]
+    s = services(tmp_path, searcher=FakeSearcher([bids], more_pages=False), describer=describer, matcher=matcher)
+
+    await ask(RunManager(s), "LOS tenders")
+
+    assert matcher.batches == [list(range(1, 41)), [41]]
+
+
+async def test_the_read_cap_counts_across_both_stages_and_reports_what_it_cuts(tmp_path):
+    describer, matcher, judge = FakeDescriber(), FakeMatcher(), FakeJudge()
+    searcher = FakeSearcher([[bid(1), bid(2)]], rest=[[bid(3), bid(4), bid(5)]], cap=3)
+    s = services(tmp_path, searcher=searcher, describer=describer, matcher=matcher, judge=judge)
+    events = await ask(RunManager(s), "LOS tenders")
+
+    assert searcher.caps == [None, 1]
+    assert describer.described == [1, 2, 3, 4, 5]
+    assert matcher.batches == [[1, 2], [3, 4, 5]]
+    assert judge.judged == [1, 2, 3]
+    progress = texts_of(events)
+    assert progress.count("2 more matching bids not read; narrow the request to see them.") == 1
+    assert progress[-1] == ("Done: 3 relevant, 0 quarantined. 2 more matching bids not read; "
+                            "narrow the request to see them.")
+
+
+async def test_a_bid_cut_by_the_read_cap_is_not_matched_again_in_stage_two(tmp_path):
+    describer, matcher, judge = FakeDescriber(), FakeMatcher(), FakeJudge()
+    searcher = FakeSearcher([[bid(1)]], dropped=[[bid(2), bid(3)]], rest=[[bid(4)]], cap=2)
+    s = services(tmp_path, searcher=searcher, describer=describer, matcher=matcher, judge=judge)
+
+    await ask(RunManager(s), "LOS tenders")
+
+    assert matcher.batches == [[1, 2, 3], [4]]
+    assert judge.judged == [1, 2]
+
+
+async def test_a_bid_whose_documents_fail_while_described_is_an_error(tmp_path):
+    collector = UnreadableCollector(fail={1})
+    describer, matcher, judge = FakeDescriber(), FakeMatcher(), FakeJudge()
+    s = services(tmp_path, searcher=FakeSearcher([[bid(1)]], more_pages=False), collector=collector,
+                 describer=describer, matcher=matcher, judge=judge)
+    events = await ask(RunManager(s), "LOS tenders")
+    run_id = events[0]["run"]["run_id"]
+
+    outcome = s.store.outcomes(run_id)[1]
+    assert outcome.error.startswith("bid document could not be downloaded") and outcome.verdict is None
+    assert describer.described == [] and matcher.batches == [] and judge.judged == []
+    assert collector.calls == [(1, True)]
+
+
+async def test_an_undescribed_title_drop_is_not_retried_in_the_same_request(tmp_path):
+    class FailOnce(FakeDescriber):
+        def __init__(self):
+            super().__init__()
+            self.attempts: list[int] = []
+
+        async def describe(self, bid, files):
+            self.attempts.append(bid.b_id)
+            if bid.b_id == 3 and self.attempts.count(3) == 1:
+                return None
+            return await super().describe(bid, files)
+
+    describer, matcher = FailOnce(), FakeMatcher()
+    searcher = FakeSearcher([[bid(1)]], dropped=[[bid(3)]], rest=[[bid(4)]])
+    s = services(tmp_path, searcher=searcher, describer=describer, matcher=matcher)
+    events = await ask(RunManager(s), "LOS tenders")
+    run_id = events[0]["run"]["run_id"]
+
+    assert describer.attempts == [1, 3, 4]
+    assert describer.described == [1, 4] and matcher.batches == [[1], [4]]
+    assert 3 not in s.store.outcomes(run_id)
+
+
+async def test_the_second_stage_does_not_search_or_describe_pool_rest_bids_again(tmp_path):
+    describer, matcher = FakeDescriber(), FakeMatcher()
+    searcher = FakeSearcher([[bid(1)]], dropped=[[bid(3)]], rest=[[bid(3), bid(4)]])
+    s = services(tmp_path, searcher=searcher, describer=describer, matcher=matcher)
+
+    await ask(RunManager(s), "LOS tenders")
+
+    assert searcher.excluded == [{1, 3}]
+    assert describer.described == [1, 3, 4]
+    assert matcher.batches == [[1, 3], [4]]
 
 
 async def test_reading_reports_a_running_count_from_the_start_to_the_last_bid(tmp_path):
@@ -619,6 +871,24 @@ async def test_a_resumed_run_continues_with_the_second_stage(tmp_path):
     assert sorted(manager.view("asha", run_id)["results"], key=lambda b: b["b_id"])[2]["b_id"] == 3
 
 
+async def test_a_resumed_run_does_not_describe_or_match_completed_bids_again(tmp_path):
+    describer, matcher, judge = FakeDescriber(), FakeMatcher(), FakeJudge()
+    searcher = CrashInRest([[bid(1), bid(2, closing_day=21)]], rest=[[bid(2, closing_day=21), bid(3, closing_day=22)]])
+    s = services(tmp_path, searcher=searcher, describer=describer, matcher=matcher, judge=judge,
+                 checkpoint=tmp_path / "checkpoints.sqlite")
+    manager = RunManager(s)
+    events = await ask(manager, "LOS tenders")
+    run_id = events[0]["run"]["run_id"]
+    assert events[-1] == {"type": "done", "status": "failed"}
+    assert describer.described == [1, 2] and matcher.batches == [[1, 2]]
+
+    await manager.resume(run_id)
+
+    assert describer.described == [1, 2, 3] and matcher.batches == [[1, 2], [3]]
+    assert judge.judged == [1, 2, 3]
+    assert s.store.load(run_id).status == "complete"
+
+
 # --- progress lines in plain words: the copy in the table of the Task 9 brief -----------------------------------------
 
 
@@ -677,6 +947,17 @@ def test_read_count_line_singular_and_plural():
         return Outcome(b_id=b_id, group="LOS", bid=bid(b_id), verdict=judge._verdict(LOS, bid(b_id), relevant, stage))
     assert running_count(1, 1, [outcome(1, True, "judge")]) == "Read 1 of 1 bids: 1 relevant, 0 not a match."
     assert running_count(1, 1, [outcome(1, False, "triage")]) == "Read 1 of 1 bids: 0 relevant, 1 not a match."
+
+
+def test_describe_and_match_lines():
+    from gem_agent.graph.build import described_line, matched_line, undescribed_line
+
+    assert described_line(1, 0) == "Described 1 new bid (0 already known)."
+    assert described_line(12, 40) == "Described 12 new bids (40 already known)."
+    assert matched_line(52, 6, 4) == "Matched 52 bids: 6 match, 4 might."
+    assert matched_line(1, 1, 1) == "Matched 1 bid: 1 match, 1 might."
+    assert undescribed_line(3) == "3 bids not yet described; they will be checked on the next search."
+    assert undescribed_line(1) == "1 bid not yet described; they will be checked on the next search."
 
 
 def test_cut_line_singular_and_plural():

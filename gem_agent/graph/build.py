@@ -1,15 +1,12 @@
 """The run graph: plan → search → (widen / narrow, at most 2 retries) → process → search_rest →
 process → report.
 
-Searching has two stages: `search` reads page 1 of every search and `process` judges that shortlist, so the
-first verdicts do not wait for a broad search; `search_rest` then reads the remaining pages, and the second `process`
-judges only the bids not seen before. The checkpointed `stage` and `search_progress` let a resumed run carry on at
-the second stage without reading page 1 again.
-
-Understanding happens before the graph (the run manager needs the intent to decide whether there is a run at all).
-`process` collects and judges each candidate, closing soonest first, a few at a time: the bid document first and
-triage on it, the attachments only for bids that pass. Verdicts and documents are cached, so a resumed run skips
-work already done; `done_ids` in the checkpointed state skips it without even a cache lookup.
+Searching has two stages: `search` reads page 1 of every search and keeps both its shortlist and the in-window bids the
+title screen dropped or the cap cut. `process` describes that whole pool once, matches the descriptions to each topic,
+routes every bid, keeps today's title and first-pages checks as the safety net, then fully reads matches, might-matches
+and safety-net bids in that order. `search_rest` reads the remaining pages; the second `process` handles only bids not
+already completed. The checkpointed `stage`, `done_ids`, `described` and `reads` keep a resumed run from repeating work
+or exceeding the per-request limits.
 """
 from __future__ import annotations
 
@@ -21,7 +18,9 @@ from typing import Any
 from langgraph.graph import END, START, StateGraph
 
 from gem_agent.agents.chat import short_name
+from gem_agent.agents.matcher import MatchItem, buyer_line
 from gem_agent.agents.searcher import Candidate, search_specs
+from gem_agent.graph.deciding import describe_order, not_read_reason, route, title_similarity
 from gem_agent.graph.rulings import settle, topic_for
 from gem_agent.graph.services import Services
 from gem_agent.graph.state import RunState
@@ -75,6 +74,18 @@ def running_count(read: int, total: int, outcomes: Iterable[Outcome]) -> str:
 
 def cut_line(n: int) -> str:
     return f"{n} more matching bid{'s' if n != 1 else ''} not read; narrow the request to see them."
+
+
+def described_line(new: int, known: int) -> str:
+    return f"Described {new} new bid{'s' if new != 1 else ''} ({known} already known)."
+
+
+def matched_line(n: int, match: int, might: int) -> str:
+    return f"Matched {n} bid{'s' if n != 1 else ''}: {match} match, {might} might."
+
+
+def undescribed_line(n: int) -> str:
+    return f"{n} bid{'s' if n != 1 else ''} not yet described; they will be checked on the next search."
 
 
 def stopped_line(read: int, total: int, relevant: int, deeper_ran: bool) -> str:
@@ -154,9 +165,11 @@ def build_graph(s: Services) -> StateGraph:
         return {"plans": plans}
 
     async def search(state: RunState) -> dict[str, Any]:
-        """Stage 1: page 1 of every search."""
+        """Stage 1: page 1 of every search, plus the in-window bids outside the shortlist."""
         merged: dict[int, Candidate] = {}
+        rest: dict[int, Candidate] = {}
         pool, over_cap, cut = 0, False, 0
+        integrated = s.describer is not None and s.matcher is not None
         search_progress: dict[str, Any] = {}
         first_counts: dict[str, int] = {}
         skipped: list[str] = []
@@ -170,7 +183,10 @@ def build_graph(s: Services) -> StateGraph:
             skipped += [key.partition("|")[2] for key, p in result.progress.items() if p.skipped]
             for c in result.candidates:
                 merged.setdefault(c.bid.b_id, c)
+            for c in result.rest_pool:
+                rest.setdefault(c.bid.b_id, c)
         candidates = by_closing(merged.values())
+        pool_rest = by_closing(c for b_id, c in rest.items() if b_id not in merged)
         sizes = [*state.sizes, len(candidates)]  # this round's shortlist size: over-cap retries are judged on it
         s.store.save_shortlist(state.run_id, candidates)
         if candidates:
@@ -181,11 +197,12 @@ def build_graph(s: Services) -> StateGraph:
             progress(s, state.run_id, failed_line(failed, read), phase="search")
         if skipped:
             progress(s, state.run_id, skipped_line(list(dict.fromkeys(skipped))), phase="search")
-        if cut and not wants_retry(stage=state.stage, retries=state.retries, candidates=candidates, over_cap=over_cap,
-                                   search_progress=search_progress, sizes=sizes):
+        if cut and not integrated and not wants_retry(stage=state.stage, retries=state.retries, candidates=candidates,
+                                                      over_cap=over_cap, search_progress=search_progress, sizes=sizes):
             progress(s, state.run_id, cut_line(cut), phase="search")  # a narrowing retry comes next otherwise
-        return {"candidates": candidates, "pool": pool, "over_cap": over_cap, "search_progress": search_progress,
-                "first_counts": first_counts, "cut": cut, "sizes": sizes}
+        return {"candidates": candidates, "pool_rest": pool_rest, "pool": pool, "over_cap": over_cap,
+                "search_progress": search_progress, "first_counts": first_counts, "cut": 0 if integrated else cut,
+                "sizes": sizes}
 
     def after_search(state: RunState) -> str:
         if wants_retry(stage=state.stage, retries=state.retries, candidates=state.candidates, over_cap=state.over_cap,
@@ -196,7 +213,11 @@ def build_graph(s: Services) -> StateGraph:
     async def search_rest(state: RunState) -> dict[str, Any]:
         """Stage 2: the remaining pages of every search. Only bids not already in the run are added (and judged).
         The cap is per topic across both stages, so each topic's stage 2 gets what its stage 1 left of it."""
+        integrated = s.describer is not None and s.matcher is not None
         seen = {c.bid.b_id for c in state.candidates}
+        if integrated:
+            seen.update(c.bid.b_id for c in state.pool_rest)
+        pool_rest = {c.bid.b_id: c for c in state.pool_rest}
         new: list[Candidate] = []
         pool, cut = state.pool, 0
         search_progress = dict(state.search_progress)
@@ -231,17 +252,21 @@ def build_graph(s: Services) -> StateGraph:
                 if c.bid.b_id not in seen:  # the searcher may return a stage-1 bid again; it is judged once
                     seen.add(c.bid.b_id)
                     new.append(c)
+            for c in result.rest_pool:
+                if c.bid.b_id not in seen:
+                    seen.add(c.bid.b_id)
+                    pool_rest[c.bid.b_id] = c
         candidates = [*state.candidates, *by_closing(new)]
         if new:
             s.store.save_shortlist(state.run_id, candidates)
             progress(s, state.run_id, f"Found {len(new)} more bid{'s' if len(new) != 1 else ''} to read.", phase="search_rest")
-        if cut:
+        if cut and not integrated:
             progress(s, state.run_id, cut_line(cut), phase="search_rest")
         failed, read = failed_searches(search_progress, before=state.search_progress)
         if failed:
             progress(s, state.run_id, failed_line(failed, read), phase="search_rest")
-        return {"candidates": candidates, "pool": pool, "search_progress": search_progress, "stage": "rest",
-                "cut": state.cut + cut}
+        return {"candidates": candidates, "pool_rest": by_closing(pool_rest.values()), "pool": pool,
+                "search_progress": search_progress, "stage": "rest", "cut": state.cut if integrated else state.cut + cut}
 
     def after_process(state: RunState) -> str:
         return "search_rest" if state.stage == "first" else "report"
@@ -252,7 +277,7 @@ def build_graph(s: Services) -> StateGraph:
                  else "Too many matches; narrowing the search.", phase="retry")
         return {"adjust": adjust, "retries": state.retries + 1}
 
-    async def process(state: RunState) -> dict[str, Any]:
+    async def process_today(state: RunState) -> dict[str, Any]:
         slots = asyncio.Semaphore(s.workers)
         done = list(state.done_ids)
         total = len(state.candidates)
@@ -290,16 +315,210 @@ def build_graph(s: Services) -> StateGraph:
         await asyncio.gather(*(one(c) for c in todo))
         return {"done_ids": done, **({"stage": "done"} if state.stage == "rest" else {})}
 
+    async def process_matching(state: RunState) -> dict[str, Any]:
+        """Describe the whole pool, match per topic, route, keep the safety net, then read in priority order."""
+        slots = asyncio.Semaphore(s.workers)
+        done = list(state.done_ids)
+        done_set = set(done)
+        outcomes = s.store.outcomes(state.run_id)
+        all_bids = {c.bid.b_id: c for c in [*state.candidates, *state.pool_rest]}
+        todo = [c for b_id, c in all_bids.items() if b_id not in done_set]
+        total = len(all_bids)
+        described, reads, cut = state.described, dict(state.reads), 0
+        files_by_id: dict[int, Any] = {}
+        triage_by_id: dict[int, Any] = {}
+        routes: dict[int, str] = {}
+        calls: dict[int, Any] = {}
+
+        def count_line() -> None:
+            seen = [outcomes[b_id] for b_id in done if b_id in outcomes]
+            progress(s, state.run_id, running_count(len(seen), total, seen), "count", phase="read")
+
+        def mark_done(c: Candidate) -> None:
+            if c.bid.b_id not in done_set:
+                done.append(c.bid.b_id)
+                done_set.add(c.bid.b_id)
+
+        def save(c: Candidate, outcome: Outcome) -> None:
+            outcomes[c.bid.b_id] = outcome
+            s.store.save_outcome(state.run_id, outcome)
+            mark_done(c)
+            emit(s, state.run_id, {"type": "result", "bid": bid_result(state.run_id, outcome)})
+            count_line()
+
+        if not todo:
+            return {"done_ids": done, "described": described, "reads": reads, "cut": state.cut,
+                    **({"stage": "done"} if state.stage == "rest" else {})}
+        count_line()
+
+        known_all = s.describer.known(all_bids)
+        known = {b_id: row for b_id, row in known_all.items() if row.current(s.describer.model_name)}
+        known_count = len(known)
+        missing = [c for c in todo if c.bid.b_id not in known]
+        similarity: dict[int, float] = {}
+        for topic in state.request.topics:
+            group = short_name(topic)
+            group_missing = [c for c in missing if c.group == group]
+            if group_missing:
+                scores = await title_similarity(s.similarity_embedder, topic, [c.bid.title for c in group_missing])
+                similarity.update((c.bid.b_id, score) for c, score in zip(group_missing, scores, strict=True))
+        queue = describe_order(missing, similarity)[:max(0, s.describe_cap - state.described)]
+
+        ready: dict[str, list[MatchItem]] = {}
+
+        def item(c: Candidate, description) -> MatchItem:
+            return MatchItem(b_id=c.bid.b_id, description=description.text(),
+                             buyer=buyer_line(c.bid, description.buyer_org))
+
+        for c in todo:  # descriptions already in the cache lead every group's first batch
+            description = known.get(c.bid.b_id)
+            if description is not None and description.usable():
+                ready.setdefault(c.group, []).append(item(c, description))
+
+        async def flush(group: str) -> None:
+            items = ready[group]
+            while items:
+                batch = items[:40]
+                del items[:40]
+                calls.update(await s.matcher.match(topic_for(state.request, group), batch))
+
+        for group in list(ready):
+            await flush(group)
+
+        new = 0
+        for c in queue:  # serial GeM reads: describing adds no traffic parallelism
+            try:
+                files = await s.collector.collect(c.bid, attachments=True)
+            except Exception as exc:  # noqa: BLE001 - a document failure is this bid's error outcome
+                log.warning("bid %s failed while describing: %s", c.bid.bid_number, exc)
+                save(c, Outcome(b_id=c.bid.b_id, group=c.group, bid=c.bid, error=str(exc)[:300]))
+                continue
+            files_by_id[c.bid.b_id] = files
+            description = await s.describer.describe(c.bid, files)
+            if description is None:
+                continue
+            known[c.bid.b_id] = description
+            described += 1
+            new += 1
+            if description.usable():
+                ready.setdefault(c.group, []).append(item(c, description))
+                if len(ready[c.group]) >= 40:
+                    await flush(c.group)
+
+        progress(s, state.run_id, described_line(new, known_count), phase="read")
+        undescribed = sum(1 for c in todo if c.bid.b_id not in known)
+        if undescribed:
+            progress(s, state.run_id, undescribed_line(undescribed), phase="read")
+        for group in list(ready):
+            await flush(group)
+        if calls:
+            progress(s, state.run_id, matched_line(len(calls), sum(v == "match" for v in calls.values()),
+                                                   sum(v == "unsure" for v in calls.values())), phase="read")
+
+        to_screen: list[Candidate] = []
+        for c in todo:
+            if c.bid.b_id in done_set:
+                continue  # its documents failed while describing
+            description = known.get(c.bid.b_id)
+            chosen = route(c, description, calls.get(c.bid.b_id), safety_net=s.safety_net)
+            routes[c.bid.b_id] = chosen
+            if chosen == "drop":
+                files = files_by_id.get(c.bid.b_id)
+                checks = ["the description check", "the title check"] if s.safety_net else ["the description check"]
+                outcome = Outcome(b_id=c.bid.b_id, group=c.group, bid=c.bid,
+                                  files=files.files if files else [],
+                                  buyer_org=files.buyer_org if files else description.buyer_org,
+                                  not_read=not_read_reason(description, checks))
+                save(c, outcome)
+            elif chosen == "unseen":
+                mark_done(c)  # nothing to show, but this request must not try to describe it again in stage 2
+            elif chosen in ("net", "today"):
+                to_screen.append(c)
+            else:
+                triage_by_id[c.bid.b_id] = None
+
+        async def screen(c: Candidate) -> None:
+            async with slots:
+                topic = topic_for(state.request, c.group)
+                try:
+                    files = await s.collector.collect(c.bid, attachments=False)
+                    verdict, triage = await s.judge.screen(topic, c.bid, files)
+                    files_by_id[c.bid.b_id] = files
+                    if verdict is None:
+                        triage_by_id[c.bid.b_id] = triage
+                        return
+                    outcome = Outcome(b_id=c.bid.b_id, group=c.group, bid=c.bid, files=files.files,
+                                      buyer_org=files.buyer_org, verdict=verdict)
+                    if routes[c.bid.b_id] == "net":
+                        outcome.not_read = not_read_reason(
+                            known.get(c.bid.b_id), ["the description check", "the first-pages check"])
+                    outcome.ruling = await settle(s, state.user, topic, verdict)
+                except Exception as exc:  # noqa: BLE001 - one bid failing never stops the run
+                    log.warning("bid %s failed at the first-pages check: %s", c.bid.bid_number, exc)
+                    outcome = Outcome(b_id=c.bid.b_id, group=c.group, bid=c.bid, error=str(exc)[:300])
+                save(c, outcome)
+
+        await asyncio.gather(*(screen(c) for c in to_screen))
+
+        def unread(chosen: str) -> list[Candidate]:
+            return by_closing(c for c in todo if routes.get(c.bid.b_id) == chosen and c.bid.b_id not in done_set)
+
+        ordered = by_closing([c for c in todo if routes.get(c.bid.b_id) in ("net", "today")
+                              and c.bid.b_id not in done_set])
+        selected: list[Candidate] = []
+        for c in unread("match") + unread("unsure") + ordered:
+            used = reads.get(c.group, 0)
+            if used < s.searcher.settings.cap:
+                selected.append(c)
+                reads[c.group] = used + 1
+            else:
+                cut += 1
+                mark_done(c)  # already described and matched; later stages must not repeat that work
+
+        async def read(c: Candidate) -> None:
+            async with slots:
+                topic = topic_for(state.request, c.group)
+                try:
+                    files = await s.collector.collect(c.bid)
+                    files_by_id[c.bid.b_id] = files
+                    if s.describer.stale(c.bid.b_id, files):
+                        refreshed = await s.describer.describe(c.bid, files)
+                        if refreshed is not None:
+                            known[c.bid.b_id] = refreshed
+                    verdict = await s.judge.judge(topic, c.bid, files, triage=triage_by_id.get(c.bid.b_id))
+                    chosen = routes[c.bid.b_id]
+                    outcome = Outcome(b_id=c.bid.b_id, group=c.group, bid=c.bid, files=files.files,
+                                      buyer_org=files.buyer_org, verdict=verdict,
+                                      read_because=None if chosen == "today" else chosen)
+                    outcome.ruling = await settle(s, state.user, topic, verdict)
+                except Exception as exc:  # noqa: BLE001 - one bid failing never stops the run
+                    log.warning("bid %s failed while being read: %s", c.bid.bid_number, exc)
+                    outcome = Outcome(b_id=c.bid.b_id, group=c.group, bid=c.bid, error=str(exc)[:300])
+                save(c, outcome)
+
+        await asyncio.gather(*(read(c) for c in selected))
+        if cut:
+            progress(s, state.run_id, cut_line(cut), phase="read")
+        return {"done_ids": done, "described": described, "reads": reads, "cut": state.cut + cut,
+                **({"stage": "done"} if state.stage == "rest" else {})}
+
+    async def process(state: RunState) -> dict[str, Any]:
+        if s.describer is None or s.matcher is None:
+            return await process_today(state)
+        return await process_matching(state)
+
     async def report(state: RunState) -> dict[str, Any]:
         outcomes = list(s.store.outcomes(state.run_id).values())
         states = [bid_state(o) for o in outcomes if o.verdict or o.not_read]
         relevant, quarantined, borderline = (states.count(k) for k in ("relevant", "quarantined", "borderline"))
         failed = sum(1 for o in outcomes if o.error)
         searches = [p for t in state.search_progress.values() for p in t.values()]
-        if not state.candidates and searches and all(p.failed for p in searches):
+        integrated = s.describer is not None and s.matcher is not None
+        has_pool = bool(state.candidates or (integrated and state.pool_rest))
+        if not has_pool and searches and all(p.failed for p in searches):
             total = len({k for t in state.search_progress.values() for k in t})
             text = f"GeM could not be searched: all {total} searches failed. Try again in a few minutes."
-        elif not state.candidates:
+        elif not has_pool:
             text = (f"No matching tenders found {state.request.window.describe()} "
                     f"(looked at {state.pool:,} titles, searched {state.retries + 1} ways).")
         else:

@@ -16,6 +16,7 @@ class RunState(BaseModel):
     request: TenderRequest
     plans: list[SearchPlan] = []
     candidates: list[Candidate] = []
+    pool_rest: list[Candidate] = []  # in-window bids outside the shortlist: screen drops and cap cuts
     pool: int = 0
     over_cap: bool = False
     first_counts: dict[str, int] = {}  # topic.key() -> candidates its stage 1 kept: stage 2 gets the rest of the cap
@@ -23,7 +24,9 @@ class RunState(BaseModel):
     adjust: Literal["", "widen", "narrow"] = ""
     retries: int = 0
     sizes: list[int] = []  # the shortlist size after each search round: a retry that barely shrinks it is not repeated
-    done_ids: list[int] = []  # bids already collected and judged (skipped when a run resumes)
+    done_ids: list[int] = []  # bids already processed: an outcome, an intentional non-result, or a read-cap cut
+    described: int = 0  # new descriptions stored this request, across both stages
+    reads: dict[str, int] = {}  # full reads per group, across both stages
     # first: page 1 of every search is being judged; rest: the remaining pages' new bids; done: both judged
     stage: Literal["first", "rest", "done"] = "first"
     search_progress: dict[str, dict[str, SearchProgress]] = {}  # topic.key() -> search key -> pages read so far

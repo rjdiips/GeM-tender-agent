@@ -26,4 +26,8 @@ class Services:
     checkpoint_path: Path
     rulings: Any = None  # RulingsAgent; None leaves borderline bids for the user
     describer: Any = None  # describes bids from their documents; None keeps today's path (Task 8)
+    matcher: Any = None  # matches descriptions to a topic; None keeps today's path
+    safety_net: bool = True
+    describe_cap: int = 300
+    similarity_embedder: Any = None  # orders description work only; never drops a bid
     workers: int = 4  # bids collected and judged at a time (site traffic is limited per host anyway)

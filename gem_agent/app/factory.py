@@ -12,6 +12,7 @@ from pathlib import Path
 from gem_agent.agents.chat import ChatAgent
 from gem_agent.agents.collector import Collector
 from gem_agent.agents.judge import Judge, verdict_version
+from gem_agent.agents.matcher import Matcher
 from gem_agent.agents.models import chat_model
 from gem_agent.agents.planner import Planner
 from gem_agent.agents.probe import probe_live
@@ -109,6 +110,8 @@ def build_services(settings: Settings) -> tuple[Services, DocCache, list[Callabl
         store=RunStore(settings.runs_dir), bus=EventBus(), memory=memory, now=site_now, rulings=RulingsAgent(model),
         checkpoint_path=settings.runs_dir / "checkpoints.sqlite",
         describer=Describer(model, cache, bid_cache, model_name=settings.llm_model),
+        matcher=Matcher(model), safety_net=settings.match_safety_net, describe_cap=settings.describe_cap,
+        similarity_embedder=judge_embedder(settings),
     )
     settings.runs_dir.mkdir(parents=True, exist_ok=True)
 

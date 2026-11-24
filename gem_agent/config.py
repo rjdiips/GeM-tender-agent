@@ -48,6 +48,10 @@ class Settings(BaseSettings):
     rerank_api_key: str = ""
     rerank_timeout_s: float = 30.0
 
+    # Description matching: the safety net is on unless a person turns it off.
+    match_safety_net: bool = True
+    describe_cap: int = 300  # new descriptions per request, shared across all topics and both stages
+
     # Windows: full path to tesseract.exe when it is not on PATH (e.g. C:\Program Files\Tesseract-OCR\tesseract.exe)
     tesseract_cmd: str = ""
 

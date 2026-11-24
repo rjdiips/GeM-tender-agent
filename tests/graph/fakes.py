@@ -4,6 +4,7 @@ from __future__ import annotations
 from datetime import datetime
 
 from gem_agent.agents.chat import Understanding
+from gem_agent.agents.matcher import Call, MatchItem
 from gem_agent.agents.schemas import (
     Evidence,
     KeyFacts,
@@ -18,6 +19,7 @@ from gem_agent.agents.schemas import (
 )
 from gem_agent.agents.searcher import Candidate, SearchResult, SearchSettings
 from gem_agent.cache.docs import BidFiles, FileRecord
+from gem_agent.index.db import Description
 from gem_agent.tools.gem.live import SearchProgress
 from gem_agent.tools.gem.models import Bid
 from tests.agents.helpers import LOS
@@ -99,6 +101,43 @@ class FakeSearcher:
         return SearchResult(candidates=[Candidate(bid=b, group=group, why=["title words"]) for b in bids[:limit]],
                             rest_pool=rest_pool, pool=(len(bids) + len(dropped)) * 3, over_cap=cut > 0, cut=cut,
                             progress={**(progress or {}), "fake": done, **self.searches.get(stage, {})})
+
+
+class FakeDescriber:
+    """Stores one current fake description per successful call; failed bids keep any older row."""
+
+    def __init__(self, subjects: dict[int, str] | None = None, *, fail=(), has_scope=True):
+        self.subjects = dict(subjects or {})
+        self.fail, self.has_scope = set(fail), has_scope
+        self.model_name = "fake"
+        self.described: list[int] = []
+        self.rows: dict[int, Description] = {}
+
+    async def describe(self, bid, files):
+        if bid.b_id in self.fail:
+            return None
+        row = Description(b_id=bid.b_id, doc_hash="fake", subject=self.subjects.get(
+            bid.b_id, "Loan Origination System for RRBs"), terms=[], sources=[], has_scope=self.has_scope,
+            buyer_org=files.buyer_org, model=self.model_name, prompt_version="1", written_at=NOW)
+        self.rows[bid.b_id] = row
+        self.described.append(bid.b_id)
+        return row
+
+    def known(self, b_ids):
+        return {b_id: self.rows[b_id] for b_id in b_ids if b_id in self.rows}
+
+    def stale(self, b_id, files):
+        return False
+
+
+class FakeMatcher:
+    def __init__(self, calls: dict[int, Call] | None = None, default="match"):
+        self.calls, self.default = dict(calls or {}), default
+        self.batches: list[list[int]] = []
+
+    async def match(self, topic, items: list[MatchItem]):
+        self.batches.append([item.b_id for item in items])
+        return {item.b_id: self.calls.get(item.b_id, self.default) for item in items}
 
 
 class FakeCollector:
