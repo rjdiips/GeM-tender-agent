@@ -1,6 +1,6 @@
 # Describe Once, Match, Safety Net — Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** Describe each bid once into the bid cache, let the model match descriptions to each topic (A), and keep today's title screen plus triage as a safety net, so fewer relevant tenders are missed.
 
@@ -59,7 +59,7 @@
   ```
   `BidIndex.description(b_id) -> Description | None`, `BidIndex.descriptions(b_ids: Iterable[int]) -> dict[int, Description]`, `BidIndex.put_description(d: Description) -> None` (insert or replace), `BidIndex.descriptions_to_refresh(model: str, prompt_version: str, limit: int) -> list[Bid]` (open bids whose row has another model or prompt version, closing soonest first).
 
-- [ ] **Step 1: Write the failing tests** in `tests/index/test_db.py`:
+- [x] **Step 1: Write the failing tests** in `tests/index/test_db.py`:
 
 ```python
 def test_a_description_round_trips(tmp_path): ...
@@ -86,19 +86,19 @@ def test_pruning_a_bid_deletes_its_description(tmp_path): ...
 def test_descriptions_to_refresh_lists_open_bids_on_another_model_or_prompt(tmp_path): ...
 ```
 
-- [ ] **Step 2: Run them to verify they fail**
+- [x] **Step 2: Run them to verify they fail**
 
 Run: `uv run pytest tests/index/test_db.py -q`
 Expected: FAIL with `ImportError: cannot import name 'Description'`.
 
-- [ ] **Step 3: Implement in `gem_agent/index/db.py`.** Add a `descriptions` table to `SCHEMA` (columns as the model; `terms` and `sources` as JSON text, `has_scope` as INTEGER, `b_id` PRIMARY KEY). The card copy runs in `__init__` only when the table did not exist before `executescript` (check `sqlite_master` first): each non-empty `card` splits on `"; "` into subject and terms. `prune` deletes `descriptions` rows for the same doomed b_ids before deleting the bids.
+- [x] **Step 3: Implement in `gem_agent/index/db.py`.** Add a `descriptions` table to `SCHEMA` (columns as the model; `terms` and `sources` as JSON text, `has_scope` as INTEGER, `b_id` PRIMARY KEY). The card copy runs in `__init__` only when the table did not exist before `executescript` (check `sqlite_master` first): each non-empty `card` splits on `"; "` into subject and terms. `prune` deletes `descriptions` rows for the same doomed b_ids before deleting the bids.
 
-- [ ] **Step 4: Run the tests to verify they pass**
+- [x] **Step 4: Run the tests to verify they pass**
 
 Run: `uv run pytest tests/index -q`
 Expected: PASS.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add gem_agent/index/db.py tests/index/test_db.py
@@ -133,7 +133,7 @@ git commit -m "Bid cache keeps one description per bid; existing cards copied in
   In `gem_agent/index/cards.py`: `rfp_sections(collector, files, bid_text, max_files=3) -> tuple[str, list[str]]` (text, attachment file names used); `_rfp_sections` stays as a wrapper returning only the text (eval scripts import it).
   `Services` loses `cards`, gains `describer: Any = None` (None: the run behaves as today, Task 8).
 
-- [ ] **Step 1: Write the failing tests** in `tests/index/test_describe.py`, using `bid_files` and `ScriptedLLM` from `tests/agents/helpers.py`:
+- [x] **Step 1: Write the failing tests** in `tests/index/test_describe.py`, using `bid_files` and `ScriptedLLM` from `tests/agents/helpers.py`:
 
 ```python
 async def test_a_description_is_written_from_the_bid_document_and_scope_and_stored(tmp_path):
@@ -157,23 +157,23 @@ async def test_refresh_reads_only_cached_documents(tmp_path):
     # two open bids with "card" rows, one with documents in the DocCache: described 1, no_documents 1; no collector used
 ```
 
-- [ ] **Step 2: Run them to verify they fail**
+- [x] **Step 2: Run them to verify they fail**
 
 Run: `uv run pytest tests/index/test_describe.py -q`
 Expected: FAIL with `ModuleNotFoundError: gem_agent.index.describe`.
 
-- [ ] **Step 3: Implement `Describer` in `gem_agent/index/describe.py`.** The prompt is built as the spike's `describe_all` builds it (title, buyer, bid and parent documents up to 12000 chars, then `rfp_sections`); output type `CardOutput`; `max_tokens` 400; `retries=2`. A subject for which `cards.is_generic(subject, title)` holds is stored as `""` with no terms. `parallel` is an `asyncio.Semaphore` around the model call only.
+- [x] **Step 3: Implement `Describer` in `gem_agent/index/describe.py`.** The prompt is built as the spike's `describe_all` builds it (title, buyer, bid and parent documents up to 12000 chars, then `rfp_sections`); output type `CardOutput`; `max_tokens` 400; `retries=2`. A subject for which `cards.is_generic(subject, title)` holds is stored as `""` with no terms. `parallel` is an `asyncio.Semaphore` around the model call only.
 
-- [ ] **Step 4: Remove the card writer.** Delete `write_cards`, `CARD_INSTRUCTIONS`, `CardReport` and `clear_generic_cards` from `cards.py` with their tests; delete `write_cards` and its call from `build.py` `report`; drop `Services.cards`; in `factory.build_services` set `describer=Describer(model, cache, bid_cache, model_name=settings.llm_model)`.
+- [x] **Step 4: Remove the card writer.** Delete `write_cards`, `CARD_INSTRUCTIONS`, `CardReport` and `clear_generic_cards` from `cards.py` with their tests; delete `write_cards` and its call from `build.py` `report`; drop `Services.cards`; in `factory.build_services` set `describer=Describer(model, cache, bid_cache, model_name=settings.llm_model)`.
 
-- [ ] **Step 5: Add `gem-agent describe --refresh [--limit 200]`** in `cli.py`. It builds a `Describer` and `DocCache` only (no session), calls `refresh_descriptions`, and prints `described {n}, {m} without cached documents, {k} failed`.
+- [x] **Step 5: Add `gem-agent describe --refresh [--limit 200]`** in `cli.py`. It builds a `Describer` and `DocCache` only (no session), calls `refresh_descriptions`, and prints `described {n}, {m} without cached documents, {k} failed`.
 
-- [ ] **Step 6: Run the tests to verify they pass**
+- [x] **Step 6: Run the tests to verify they pass**
 
 Run: `uv run pytest tests/index tests/graph tests/test_cli.py -q`
 Expected: PASS.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add gem_agent/index/describe.py gem_agent/index/cards.py gem_agent/graph/build.py gem_agent/graph/services.py \
@@ -195,7 +195,7 @@ git commit -m "Describer writes one description per bid; the end-of-run card wri
 - Consumes: `BidIndex.description` (Task 1).
 - Produces: `SearchResult.rest_pool: list[Candidate] = []`, the in-window bids not in `candidates`. Each one's `why` starts with `"title screen: no"` (the screen dropped it) or `"over the cap"` (kept, but cut by the cap). `candidates`, `cut` and `over_cap` keep their meaning, so the narrowing retry is unchanged. `FakeSearcher(results, rest=..., dropped=((),))`: per stage-1 call, bids returned in `rest_pool` with `why=["title screen: no", "fake"]`.
 
-- [ ] **Step 1: Write the failing tests** in `tests/agents/test_searcher.py`:
+- [x] **Step 1: Write the failing tests** in `tests/agents/test_searcher.py`:
 
 ```python
 async def test_titles_the_screen_drops_come_back_in_the_rest_pool(gem, clock, bid_cache):
@@ -214,19 +214,19 @@ async def test_every_in_window_bid_is_stored_in_the_bid_cache(gem, clock, bid_ca
     # rest_pool bids too: bid_cache.get(b) is not None for every pool bid
 ```
 
-- [ ] **Step 2: Run them to verify they fail**
+- [x] **Step 2: Run them to verify they fail**
 
 Run: `uv run pytest tests/agents/test_searcher.py -q`
 Expected: FAIL (`SearchResult` has no `rest_pool`).
 
-- [ ] **Step 3: Implement in `Searcher.search`.** The vague-title context comes from `bid_cache.description(b_id)` when `usable()`, shown as `text()`; the `card` column is no longer read. Upsert every pool bid, not only candidates. Update the module docstring's step 4.
+- [x] **Step 3: Implement in `Searcher.search`.** The vague-title context comes from `bid_cache.description(b_id)` when `usable()`, shown as `text()`; the `card` column is no longer read. Upsert every pool bid, not only candidates. Update the module docstring's step 4.
 
-- [ ] **Step 4: Run the tests to verify they pass**
+- [x] **Step 4: Run the tests to verify they pass**
 
 Run: `uv run pytest tests/agents/test_searcher.py tests/graph -q`
 Expected: PASS.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add gem_agent/agents/searcher.py tests/agents/test_searcher.py tests/graph/fakes.py
@@ -248,7 +248,7 @@ git commit -m "Searcher returns the bids its title screen dropped, for the descr
   - An all-bids search (`kind` `exact` or `fullText`, sorted newest published first) stops after a page whose bids were all published before `window_start`. A `category` search is not stopped this way.
   - The Searcher calls it with `window_start=plan.published_from, keep=lambda b: self._in_scope(b, plan)`.
 
-- [ ] **Step 1: Write the failing tests** in `tests/tools/test_live.py` (rows built with `row(b_id, published, closing)`):
+- [x] **Step 1: Write the failing tests** in `tests/tools/test_live.py` (rows built with `row(b_id, published, closing)`):
 
 ```python
 async def test_an_all_bids_search_stops_after_a_page_older_than_the_window(gem, clock):
@@ -265,19 +265,19 @@ async def test_each_search_gets_an_equal_share_of_the_budget(gem, clock):
     # two fullText searches of 30 rows each, budget 20: each serves pages 1-2 and neither serves page 3
 ```
 
-- [ ] **Step 2: Run them to verify they fail**
+- [x] **Step 2: Run them to verify they fail**
 
 Run: `uv run pytest tests/tools/test_live.py -q`
 Expected: FAIL (`rest()` got an unexpected keyword argument `window_start`).
 
-- [ ] **Step 3: Implement in `live.py`; pass the window from `Searcher.search` stage `"rest"`.** A search stopped early stays `pending` and is never cached as complete (plan 1's rule).
+- [x] **Step 3: Implement in `live.py`; pass the window from `Searcher.search` stage `"rest"`.** A search stopped early stays `pending` and is never cached as complete (plan 1's rule).
 
-- [ ] **Step 4: Run the tests to verify they pass**
+- [x] **Step 4: Run the tests to verify they pass**
 
 Run: `uv run pytest tests/tools/test_live.py tests/agents/test_searcher.py -q`
 Expected: PASS.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add gem_agent/tools/gem/live.py gem_agent/agents/searcher.py tests/tools/test_live.py
@@ -309,7 +309,7 @@ git commit -m "Deeper pages stop past the window start, count only in-window bid
   ```
   Each line sent is `[i] {description} | buyer: {buyer}`. A batch that fails is split in half and each half tried once; bids in a half that fails again are `"unsure"`.
 
-- [ ] **Step 1: Write the failing tests** in `tests/agents/test_matcher.py` (`ScriptedLLM` keyed by `MATCH_INSTRUCTIONS`, topic `LOS`):
+- [x] **Step 1: Write the failing tests** in `tests/agents/test_matcher.py` (`ScriptedLLM` keyed by `MATCH_INSTRUCTIONS`, topic `LOS`):
 
 ```python
 async def test_each_bid_gets_match_unsure_or_no():
@@ -328,19 +328,19 @@ async def test_the_buyer_is_on_each_line():
     assert "| buyer: Ministry of Finance / Department of Financial Services / NABARD" in llm.calls[0][1]
 ```
 
-- [ ] **Step 2: Run them to verify they fail**
+- [x] **Step 2: Run them to verify they fail**
 
 Run: `uv run pytest tests/agents/test_matcher.py -q`
 Expected: FAIL with `ModuleNotFoundError`.
 
-- [ ] **Step 3: Implement `Matcher`** with `Agent(model, output_type=NativeOutput(MatchOut), instructions=MATCH_INSTRUCTIONS, retries=2)` and `{"max_tokens": 600, "temperature": 0.0}`; the prompt is `f"{topic.render()}\n\nTenders:\n{listing}"`.
+- [x] **Step 3: Implement `Matcher`** with `Agent(model, output_type=NativeOutput(MatchOut), instructions=MATCH_INSTRUCTIONS, retries=2)` and `{"max_tokens": 600, "temperature": 0.0}`; the prompt is `f"{topic.render()}\n\nTenders:\n{listing}"`.
 
-- [ ] **Step 4: Run the tests to verify they pass**
+- [x] **Step 4: Run the tests to verify they pass**
 
 Run: `uv run pytest tests/agents/test_matcher.py -q`
 Expected: PASS.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add gem_agent/agents/matcher.py tests/agents/test_matcher.py
@@ -375,7 +375,7 @@ git commit -m "Matcher decides match, unsure or no from descriptions, in batches
   `not_read_reason(d, ["the description check", "the title check"])` → `"Not a match: buys Lockers for branches. Ruled out by the description check and the title check."`; with no usable description, `"Not a match. Ruled out by …"`.
   `title_similarity` runs `embedder.encode` in `asyncio.to_thread` on `topic.meaning + "; " + "; ".join(topic.match_terms)` and the titles, and returns cosine scores; `[0.0, …]` when the embedder is None.
 
-- [ ] **Step 1: Write the failing tests** in `tests/graph/test_deciding.py`:
+- [x] **Step 1: Write the failing tests** in `tests/graph/test_deciding.py`:
 
 ```python
 def test_a_bid_is_never_dropped_on_one_no_while_the_net_is_on():
@@ -395,19 +395,19 @@ def test_describe_order_own_search_then_kept_then_closing_then_similarity(): ...
 def test_not_read_reason_names_the_subject_and_the_checks(): ...
 ```
 
-- [ ] **Step 2: Run them to verify they fail**
+- [x] **Step 2: Run them to verify they fail**
 
 Run: `uv run pytest tests/graph/test_deciding.py -q`
 Expected: FAIL with `ModuleNotFoundError`.
 
-- [ ] **Step 3: Implement `gem_agent/graph/deciding.py`.**
+- [x] **Step 3: Implement `gem_agent/graph/deciding.py`.**
 
-- [ ] **Step 4: Run the tests to verify they pass**
+- [x] **Step 4: Run the tests to verify they pass**
 
 Run: `uv run pytest tests/graph/test_deciding.py -q`
 Expected: PASS.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add gem_agent/graph/deciding.py tests/graph/test_deciding.py
@@ -425,7 +425,7 @@ git commit -m "One routing rule: a bid is dropped only when the description and 
 **Interfaces:**
 - Produces: `Outcome.read_because: Literal["match", "unsure", "net"] | None = None` and `Outcome.not_read: str = ""` (the `not_read_reason` text; set only for bids not fully read). `bid_result` gains `"read_because"`; its `"reason"` is, first that applies: the "doesn't count" ruling, `not_read`, the verdict's reason, the error text. `_judged(o)` is true for `o.not_read`. `running_count` counts a `not_read` bid as "not a match". `report` counts states over outcomes with a verdict **or** `not_read`.
 
-- [ ] **Step 1: Write the failing tests:**
+- [x] **Step 1: Write the failing tests:**
 
 ```python
 def test_a_bid_not_read_is_quarantined_with_its_reason():
@@ -445,19 +445,19 @@ def test_running_count_counts_bids_not_read_as_not_a_match():
 def test_outcomes_stored_before_these_fields_still_load(tmp_path): ...   # an outcomes.jsonl line without them
 ```
 
-- [ ] **Step 2: Run them to verify they fail**
+- [x] **Step 2: Run them to verify they fail**
 
 Run: `uv run pytest tests/graph -q`
 Expected: FAIL (`Outcome` has no field `not_read`).
 
-- [ ] **Step 3: Implement the fields and the view changes.**
+- [x] **Step 3: Implement the fields and the view changes.**
 
-- [ ] **Step 4: Run the tests to verify they pass**
+- [x] **Step 4: Run the tests to verify they pass**
 
 Run: `uv run pytest tests/graph -q`
 Expected: PASS.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add gem_agent/graph/store.py gem_agent/graph/views.py gem_agent/graph/build.py tests/graph
@@ -491,7 +491,7 @@ git commit -m "Bids ruled out without a full read are quarantined with the reaso
   6. **Read**: groups match → unsure → net/today, closing soonest within each, at most `cap - reads[group]` per group; the rest are counted into `cut` and reported with `cut_line` at the end. Each read: `collect(bid)`, re-describe when `describer.stale(...)`, `judge.judge(topic, bid, files, triage=<the triage answer or None>)`, `settle`, `read_because` = route (`"today"` → None).
   `search` stores `result.rest_pool` (merged across topics, excluding candidates) in `pool_rest` and stops printing `cut_line` (process reports cuts now); `search_rest` excludes `pool_rest` ids too and appends its own `rest_pool`.
 
-- [ ] **Step 1: Write the failing tests** in `tests/graph/test_run_graph.py` (services built with `describer=FakeDescriber(...)`, `matcher=FakeMatcher(...)`):
+- [x] **Step 1: Write the failing tests** in `tests/graph/test_run_graph.py` (services built with `describer=FakeDescriber(...)`, `matcher=FakeMatcher(...)`):
 
 ```python
 async def test_every_pool_bid_is_described_once_and_matched(tmp_path):
@@ -531,19 +531,19 @@ def test_describe_and_match_lines():
     assert undescribed_line(3) == "3 bids not yet described; they will be checked on the next search."
 ```
 
-- [ ] **Step 2: Run them to verify they fail**
+- [x] **Step 2: Run them to verify they fail**
 
 Run: `uv run pytest tests/graph/test_run_graph.py -q`
 Expected: the new tests FAIL; the existing ones still PASS.
 
-- [ ] **Step 3: Implement** settings, services, state, fakes and the `process` steps above. In `factory.build_services` set `matcher=Matcher(model)`, `safety_net=settings.match_safety_net`, `describe_cap=settings.describe_cap`, `similarity_embedder=judge_embedder(settings)`. Add `MATCH_SAFETY_NET=true` to `.env.example`. Update the `build.py` module docstring to the new process steps.
+- [x] **Step 3: Implement** settings, services, state, fakes and the `process` steps above. In `factory.build_services` set `matcher=Matcher(model)`, `safety_net=settings.match_safety_net`, `describe_cap=settings.describe_cap`, `similarity_embedder=judge_embedder(settings)`. Add `MATCH_SAFETY_NET=true` to `.env.example`. Update the `build.py` module docstring to the new process steps.
 
-- [ ] **Step 4: Run the tests to verify they pass** (check `/proc/pressure/io` first)
+- [x] **Step 4: Run the tests to verify they pass** (check `/proc/pressure/io` first)
 
 Run: `uv run pytest -q`
 Expected: PASS, whole suite.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add gem_agent/graph/build.py gem_agent/graph/state.py gem_agent/graph/services.py gem_agent/config.py \
@@ -563,7 +563,7 @@ git commit -m "Runs describe every pool bid once, match descriptions, and keep t
 - Consumes: `bid_result["read_because"]` (Task 7): `"match" | "unsure" | "net" | null`.
 - Produces: under a read bid's verdict, one line: `Read because: matches` / `Read because: might match` / `Read because: kept by the title check`; nothing for `null`. Quarantine rows already show `reason`, which now carries the description and the checks.
 
-- [ ] **Step 1: Write the failing test** in `ResultsPanel.test.tsx`:
+- [x] **Step 1: Write the failing test** in `ResultsPanel.test.tsx`:
 
 ```tsx
 it('says why a bid was read', () => {
@@ -573,19 +573,19 @@ it('says why a bid was read', () => {
 it('says nothing when the bid took the old path', () => { /* read_because: null → no "Read because" text */ })
 ```
 
-- [ ] **Step 2: Run it to verify it fails**
+- [x] **Step 2: Run it to verify it fails**
 
 Run: `cd web && npm test -- --run src/components/ResultsPanel.test.tsx`
 Expected: FAIL.
 
-- [ ] **Step 3: Add `read_because` to the `BidResult` type and render the line in `ResultsPanel.tsx`** in the `gt-why` block's style.
+- [x] **Step 3: Add `read_because` to the `BidResult` type and render the line in `ResultsPanel.tsx`** in the `gt-why` block's style.
 
-- [ ] **Step 4: Run tests and build**
+- [x] **Step 4: Run tests and build**
 
 Run: `cd web && npm test -- --run && npm run build`
 Expected: PASS and a clean build.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add web/src/api/types.ts web/src/components/ResultsPanel.tsx web/src/components/ResultsPanel.test.tsx \
@@ -623,7 +623,7 @@ git commit -m "Results say why each bid was read"
   - Per run: today = title screen (descriptions only for vague titles), then `judge.screen` with a temporary `VerdictCache`. A = `route(..., safety_net=False)`. "Today or A" = `route(..., safety_net=True)`. A bid routed `"net"` or `"today"` counts as read when today's path reads it.
   - `retire` is true when A misses no checked label in every one of the `repeats` runs, subject topics only. `report_text` ends with either `"A alone missed no checked label in 3 of 3 runs: the safety net can be retired (MATCH_SAFETY_NET=false). A person decides."` or `"Keep the safety net: A alone missed checked labels in {k} of {n} runs."`.
 
-- [ ] **Step 1: Write the failing tests** in `tests/eval/test_match.py`:
+- [x] **Step 1: Write the failing tests** in `tests/eval/test_match.py`:
 
 ```python
 def test_score_way_counts_checked_and_all_misses_and_non_matches_read(): ...
@@ -634,24 +634,24 @@ async def test_describe_labelled_reads_only_cached_documents(tmp_path):
 def test_report_text_lists_missed_tenders_with_their_descriptions(): ...
 ```
 
-- [ ] **Step 2: Run them to verify they fail**
+- [x] **Step 2: Run them to verify they fail**
 
 Run: `uv run pytest tests/eval/test_match.py -q`
 Expected: FAIL with `ModuleNotFoundError`.
 
-- [ ] **Step 3: Implement `gem_agent/eval/match.py` and the CLI wiring.**
+- [x] **Step 3: Implement `gem_agent/eval/match.py` and the CLI wiring.**
 
-- [ ] **Step 4: Run the tests to verify they pass**
+- [x] **Step 4: Run the tests to verify they pass**
 
 Run: `uv run pytest tests/eval tests/test_cli.py -q`
 Expected: PASS.
 
-- [ ] **Step 5: Run it once against the real model** (no GeM traffic; check `/proc/pressure/io` first; vLLM is shared, so run it when nobody else is mid-batch)
+- [x] **Step 5: Run it once against the real model** (no GeM traffic; check `/proc/pressure/io` first; vLLM is shared, so run it when nobody else is mid-batch)
 
 Run: `uv run gem-agent eval match`
 Expected: a report per way and run. "Today" and "today or A" checked-label misses are in the spike's range (today about 4, today or A about 1). Then `rm -r eval/describe_ab`.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add gem_agent/eval/match.py gem_agent/cli.py tests/eval/test_match.py
@@ -669,21 +669,21 @@ git commit -m "gem-agent eval match scores A, today's path and both on the label
 **Interfaces:**
 - Consumes: `gem-agent eval match` (Task 10).
 
-- [ ] **Step 1: Record the baseline.** Run `uv run gem-agent eval match` on prompt version "1". In `eval/match_tuning.md`, add a row with A's checked misses (worst of 3 runs), all misses (worst of 3), non-matches read, and "today or A" checked misses.
+- [x] **Step 1: Record the baseline.** Run `uv run gem-agent eval match` on prompt version "1". In `eval/match_tuning.md`, add a row with A's checked misses (worst of 3 runs), all misses (worst of 3), non-matches read, and "today or A" checked misses.
 
-- [ ] **Step 2: Change the prompt for one miss at a time**, each as its own version ("2", "3", "4"):
+- [x] **Step 2: Change the prompt for one miss at a time**, each as its own version ("2", "3", "4"):
   - card-management or issuing software for a *payments* topic: "match" when the topic's own systems are what is bought;
   - a named module inside a broader suite (EFRM in a "risk and compliance suite"): "match" when the module is named, "unsure" when only the suite is;
   - a product in the same family as the topic: "unsure", never "no".
 
-- [ ] **Step 3: Score each version** with `uv run gem-agent eval match`. Keep a change only if A's worst-run checked misses and all misses are no higher than the version before; otherwise revert it. Record every version's row, kept or not.
+- [x] **Step 3: Score each version** with `uv run gem-agent eval match`. Keep a change only if A's worst-run checked misses and all misses are no higher than the version before; otherwise revert it. Record every version's row, kept or not.
 
-- [ ] **Step 4: Run the matcher tests**
+- [x] **Step 4: Run the matcher tests**
 
 Run: `uv run pytest tests/agents/test_matcher.py -q`
 Expected: PASS (the tests key on `MATCH_INSTRUCTIONS` by name, not its text).
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add gem_agent/agents/matcher.py eval/match_tuning.md
@@ -697,14 +697,14 @@ git commit -m "Match prompt, first tuning round: <kept versions> (A checked miss
 **Files:**
 - Modify: `docs/APP_FLOW.md`, `docs/OVERVIEW.md`
 
-- [ ] **Step 1: Rewrite the process sections** to describe: the whole in-window pool; describe once (stored in `bids.sqlite`, 300 new per request, reused by every later run and user); match per topic; the safety net and the `MATCH_SAFETY_NET` setting; the read order and the 150 cap; Quarantine reasons for bids not read; `gem-agent describe --refresh`; `gem-agent eval match` and when the net may be retired. Remove every mention of bid cards being written after a run.
+- [x] **Step 1: Rewrite the process sections** to describe: the whole in-window pool; describe once (stored in `bids.sqlite`, 300 new per request, reused by every later run and user); match per topic; the safety net and the `MATCH_SAFETY_NET` setting; the read order and the 150 cap; Quarantine reasons for bids not read; `gem-agent describe --refresh`; `gem-agent eval match` and when the net may be retired. Remove every mention of bid cards being written after a run.
 
-- [ ] **Step 2: Check no stale names remain**
+- [x] **Step 2: Check no stale names remain**
 
 Run: `grep -n "write_cards\|card writer" docs/APP_FLOW.md docs/OVERVIEW.md`
 Expected: no output.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add docs/APP_FLOW.md docs/OVERVIEW.md
