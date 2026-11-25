@@ -14,16 +14,17 @@ from gem_agent.tools.gem.models import Bid
 
 log = logging.getLogger(__name__)
 
-MATCH_PROMPT_VERSION = "1"  # bump whenever MATCH_INSTRUCTIONS changes
-_EMPTY_BATCH_MIN = 10  # an all-empty answer for fewer bids can be a genuine all-no batch
+MATCH_PROMPT_VERSION = "2"  # bump whenever MATCH_INSTRUCTIONS changes
 
 MATCH_INSTRUCTIONS = """You decide, for one topic, which Indian government (GeM) tenders could be buying it, from a short
 description of what each tender buys.
+For every tender, choose exactly one of:
 match: the topic itself is plainly in scope.
 unsure: it might be: a broad platform or programme that could include the topic, a related-but-not-enough item that
 may come with it, or a description too thin to tell.
-Everything else is no: plainly about something else. Look-alikes listed under "NOT this" are no.
-Answer only with the bracketed numbers: no explanations.
+no: plainly about something else. Look-alikes listed under "NOT this" are no.
+Return three lists named match, unsure and no. Each bracketed number must appear in exactly one list; do not omit a
+tender. Answer only with those three lists: no explanations.
 Each line ends with the buyer. A topic about a buyer (a ministry, department or bank) matches on the buyer as well as on what is bought."""
 
 Call = Literal["match", "unsure", "no"]
@@ -38,6 +39,7 @@ class MatchItem(BaseModel):
 class MatchOut(BaseModel):
     match: list[int]
     unsure: list[int]
+    no: list[int]
 
 
 def buyer_line(bid: Bid, buyer_org: str | None) -> str:
@@ -91,13 +93,9 @@ class Matcher:
         except Exception as exc:  # noqa: BLE001 - validation failure after retries, timeouts, …
             log.warning("description match failed (%s) for %d tenders", exc, len(batch))
             return None
-        limit = len(batch) - 1
-        bad = [n for n in (*out.match, *out.unsure) if n < 0 or n > limit]
-        if bad:
-            log.warning("description match returned out-of-range numbers %s for %d tenders", bad[:5], len(batch))
-            return None
-        if len(batch) >= _EMPTY_BATCH_MIN and not out.match and not out.unsure:
-            log.warning("description match returned no numbers for a batch of %d tenders", len(batch))
+        chosen = [*out.match, *out.unsure, *out.no]
+        if sorted(chosen) != list(range(len(batch))):
+            log.warning("description match did not classify each of %d tenders exactly once: %s", len(batch), chosen[:50])
             return None
         return out
 

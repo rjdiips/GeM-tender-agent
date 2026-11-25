@@ -19,12 +19,12 @@ def bid(ministry=None, department=None):
                ministry=ministry, department=department)
 
 
-def empty(*positions):
-    return {"match": [], "unsure": list(positions)}
+def answer(match=(), unsure=(), no=()):
+    return {"match": list(match), "unsure": list(unsure), "no": list(no)}
 
 
 async def test_each_bid_gets_match_unsure_or_no():
-    llm = ScriptedLLM({MATCH_INSTRUCTIONS: [{"match": [0], "unsure": [2]}]})
+    llm = ScriptedLLM({MATCH_INSTRUCTIONS: [answer(match=[0], unsure=[2], no=[1])]})
     matcher = Matcher(llm.model())
 
     assert await matcher.match(LOS, [item(101), item(102), item(103)]) == {
@@ -33,55 +33,63 @@ async def test_each_bid_gets_match_unsure_or_no():
     assert matcher.calls == 1
 
 
-async def test_a_number_in_both_lists_is_a_match():
-    llm = ScriptedLLM({MATCH_INSTRUCTIONS: [{"match": [0], "unsure": [0]}]})
+async def test_a_batch_where_nothing_matches_is_a_valid_single_call():
+    llm = ScriptedLLM({MATCH_INSTRUCTIONS: [answer(no=range(12))]})
     matcher = Matcher(llm.model())
 
-    assert await matcher.match(LOS, [item(101), item(102)]) == {101: "match", 102: "no"}
+    assert await matcher.match(LOS, [item(n) for n in range(1, 13)]) == {n: "no" for n in range(1, 13)}
+    assert matcher.calls == 1
 
 
-async def test_out_of_range_numbers_fail_the_batch_and_it_is_split():
+async def test_an_empty_answer_fails_the_batch_and_it_is_split():
     replies = iter([
-        {"match": [7], "unsure": []},
-        {"match": [0, 1], "unsure": []},
-        {"match": [], "unsure": [0, 1]},
-    ])
-    llm = ScriptedLLM({MATCH_INSTRUCTIONS: lambda prompt: next(replies)})
-    matcher = Matcher(llm.model())
-
-    assert await matcher.match(LOS, [item(n) for n in range(1, 5)]) == {
-        1: "match", 2: "match", 3: "unsure", 4: "unsure",
-    }
-    assert [len(re.findall(r"^\[(\d+)\]", prompt, re.MULTILINE)) for _, prompt in llm.calls] == [4, 2, 2]
-
-
-async def test_a_large_all_empty_answer_fails_the_batch():
-    replies = iter([
-        {"match": [], "unsure": []},
-        {"match": [0, 1, 2, 3, 4, 5], "unsure": []},
-        {"match": [], "unsure": [0, 1, 2, 3, 4, 5]},
+        answer(),
+        answer(match=range(6)),
+        answer(no=range(6)),
     ])
     llm = ScriptedLLM({MATCH_INSTRUCTIONS: lambda prompt: next(replies)})
     matcher = Matcher(llm.model())
 
     assert await matcher.match(LOS, [item(n) for n in range(1, 13)]) == {
         **{n: "match" for n in range(1, 7)},
-        **{n: "unsure" for n in range(7, 13)},
+        **{n: "no" for n in range(7, 13)},
     }
+    assert matcher.calls == 3
 
 
-async def test_a_small_all_empty_answer_is_still_all_no():
-    llm = ScriptedLLM({MATCH_INSTRUCTIONS: [{"match": [], "unsure": []}]})
+async def test_a_number_in_two_lists_fails_the_batch():
+    replies = iter([
+        answer(match=[0], unsure=[0], no=[1, 2]),
+        answer(match=[0], no=[1]),
+        answer(no=[0]),
+    ])
+    llm = ScriptedLLM({MATCH_INSTRUCTIONS: lambda prompt: next(replies)})
+    matcher = Matcher(llm.model())
+    items = [item(n) for n in range(1, 4)]
+
+    assert await matcher.match(LOS, items) == {1: "match", 2: "no", 3: "no"}
+    assert matcher.calls == 3
+    assert [len(re.findall(r"^\[(\d+)\]", prompt, re.MULTILINE)) for _, prompt in llm.calls] == [3, 2, 1]
+
+
+async def test_numbers_starting_at_one_fail_the_batch():
+    replies = iter([
+        answer(match=[1, 2, 3, 4]),
+        answer(match=[0, 1]),
+        answer(no=[0, 1]),
+    ])
+    llm = ScriptedLLM({MATCH_INSTRUCTIONS: lambda prompt: next(replies)})
     matcher = Matcher(llm.model())
 
-    assert await matcher.match(LOS, [item(101), item(102)]) == {101: "no", 102: "no"}
-    assert matcher.calls == 1
+    assert await matcher.match(LOS, [item(n) for n in range(1, 5)]) == {
+        1: "match", 2: "match", 3: "no", 4: "no",
+    }
+    assert matcher.calls == 3
 
 
 async def test_more_than_forty_are_sent_in_batches_of_forty():
-    llm = ScriptedLLM({MATCH_INSTRUCTIONS: lambda prompt: {
-        "match": [int(n) for n in re.findall(r"^\[(\d+)\]", prompt, re.MULTILINE)], "unsure": [],
-    }})
+    llm = ScriptedLLM({MATCH_INSTRUCTIONS: lambda prompt: answer(
+        match=[int(n) for n in re.findall(r"^\[(\d+)\]", prompt, re.MULTILINE)])})
     matcher = Matcher(llm.model())
     items = [item(1000 + n) for n in range(85)]
 
@@ -91,9 +99,8 @@ async def test_more_than_forty_are_sent_in_batches_of_forty():
 
 
 async def test_a_custom_batch_size_is_honored_up_to_forty():
-    llm = ScriptedLLM({MATCH_INSTRUCTIONS: lambda prompt: {
-        "match": [int(n) for n in re.findall(r"^\[(\d+)\]", prompt, re.MULTILINE)], "unsure": [],
-    }})
+    llm = ScriptedLLM({MATCH_INSTRUCTIONS: lambda prompt: answer(
+        match=[int(n) for n in re.findall(r"^\[(\d+)\]", prompt, re.MULTILINE)])})
     matcher = Matcher(llm.model(), batch=2)
 
     assert await matcher.match(LOS, [item(n) for n in range(5)]) == {n: "match" for n in range(5)}
@@ -104,17 +111,17 @@ async def test_a_custom_batch_size_is_honored_up_to_forty():
 @pytest.mark.parametrize("batch", [0, -1, 41])
 def test_batch_size_must_be_between_one_and_forty(batch):
     with pytest.raises(ValueError, match="between 1 and 40"):
-        Matcher(ScriptedLLM({MATCH_INSTRUCTIONS: [empty()]}).model(), batch=batch)
+        Matcher(ScriptedLLM({MATCH_INSTRUCTIONS: [answer(no=range(1))]}).model(), batch=batch)
 
 
 async def test_a_failing_batch_is_split_and_a_half_that_fails_again_is_unsure():
-    replies = iter([RuntimeError("bad batch"), {"match": [0, 1], "unsure": []}, RuntimeError("bad half")])
+    replies = iter([RuntimeError("bad batch"), answer(match=[0, 1]), RuntimeError("bad half")])
 
     def reply(prompt):
-        answer = next(replies)
-        if isinstance(answer, Exception):
-            raise answer
-        return answer
+        response = next(replies)
+        if isinstance(response, Exception):
+            raise response
+        return response
 
     llm = ScriptedLLM({MATCH_INSTRUCTIONS: reply})
     matcher = Matcher(llm.model())
@@ -126,7 +133,7 @@ async def test_a_failing_batch_is_split_and_a_half_that_fails_again_is_unsure():
 
 
 async def test_the_buyer_is_on_each_line():
-    llm = ScriptedLLM({MATCH_INSTRUCTIONS: [empty()]})
+    llm = ScriptedLLM({MATCH_INSTRUCTIONS: [answer(no=[0, 1])]})
     matcher = Matcher(llm.model())
     items = [
         MatchItem(b_id=1, description="Loan origination system",
@@ -154,8 +161,8 @@ def test_buyer_line_leaves_empty_parts_out(ministry, department, org, expected):
     assert buyer_line(bid(ministry, department), org) == expected
 
 
-@pytest.mark.parametrize("payload", [{}, {"match": []}, {"unsure": []}])
-def test_match_out_requires_both_number_lists(payload):
+@pytest.mark.parametrize("payload", [{}, {"match": []}, {"unsure": []}, {"no": []}])
+def test_match_out_requires_all_three_number_lists(payload):
     with pytest.raises(ValidationError):
         MatchOut.model_validate(payload)
 
@@ -165,7 +172,7 @@ async def test_model_calls_use_zero_temperature_and_six_hundred_tokens():
 
     def reply(messages, info):
         settings.append(info.model_settings)
-        return ModelResponse(parts=[TextPart('{"match": [], "unsure": []}')])
+        return ModelResponse(parts=[TextPart('{"match": [], "unsure": [], "no": [0]}')])
 
     matcher = Matcher(FunctionModel(reply, model_name="scripted"))
     await matcher.match(LOS, [item(1)])
@@ -174,8 +181,8 @@ async def test_model_calls_use_zero_temperature_and_six_hundred_tokens():
 
 
 async def test_invalid_output_is_retried_twice_within_the_batch():
-    bad = {"match": "not a list", "unsure": []}
-    good = {"match": [0, 1, 2, 3], "unsure": []}
+    bad = {"match": "not a list", "unsure": [], "no": []}
+    good = answer(match=[0, 1, 2, 3])
     llm = ScriptedLLM({MATCH_INSTRUCTIONS: [bad, bad, good]})
     matcher = Matcher(llm.model())
 
@@ -187,7 +194,7 @@ async def test_invalid_output_is_retried_twice_within_the_batch():
 
 
 async def test_no_items_means_no_model_call():
-    llm = ScriptedLLM({MATCH_INSTRUCTIONS: [empty()]})
+    llm = ScriptedLLM({MATCH_INSTRUCTIONS: [answer()]})
     matcher = Matcher(llm.model())
 
     assert await matcher.match(LOS, []) == {}

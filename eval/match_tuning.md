@@ -52,3 +52,13 @@ than shipping a buyer-topic regression.
 
 Full live outputs and pre-check evidence are preserved under
 `.superpowers/sdd/2026-11-24-describe-once/task-11-v{2,3,4,5}-*` (not committed).
+
+## Later contract change: prompt version 2
+
+After this tuning round, the matcher output contract changed from two lists
+(`match`, `unsure`; everything else implied `no`) to three lists (`match`,
+`unsure`, `no`) with every bracketed bid required to appear exactly once.
+`MATCH_PROMPT_VERSION` is now **"2"**. This is a correctness change, not a
+tuning candidate, and **has not been scored**. The table above describes
+version 1 and its tuning candidates only; `gem-agent eval match` must be rerun
+on version 2 before comparing miss counts.
