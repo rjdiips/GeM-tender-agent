@@ -146,6 +146,13 @@ async def test_buyer_only_needs_the_word_only(stores):
     assert result.request.buyer_hints == ["cooperative banks"]
 
 
+async def test_progress_line_is_singular_for_one_matching_title(stores):
+    llm = ScriptedLLM({UNDERSTAND_INSTRUCTIONS: [candidates((LOS, 0.9))]})
+    result = await agent(llm, FakeProbe({LOS.meaning: 1}), stores).understand("asha", "LOS tenders", [], run_id="r1")
+    assert "(1 matching title)" in result.progress_line
+    assert "(1 matching titles)" not in result.progress_line
+
+
 async def test_progress_line_does_not_repeat_the_word_tenders(stores):
     rbi = LOS.model_copy(update={"meaning": "Reserve Bank of India (RBI) Tenders: procurement notices by the RBI"})
     llm = ScriptedLLM({UNDERSTAND_INSTRUCTIONS: [candidates((rbi, 0.9))]})

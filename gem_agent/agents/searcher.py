@@ -65,6 +65,25 @@ def search_specs(plan: SearchPlan) -> list[SearchSpec]:
     return list(dict.fromkeys(wanted))
 
 
+def in_scope(bid: Bid, plan: SearchPlan) -> bool:
+    """The plan's window and hard buyer filters, applied locally: no date filter goes to the site (GeM rejects a
+    half-open end-date range with 422). Shared by the Searcher and the earlier live probe."""
+    lo, hi = plan.published_from, plan.published_to
+    clo, chi = plan.closing_from, plan.closing_to
+    if (lo or hi) and (not bid.published or (lo and bid.published < lo) or (hi and bid.published > hi)):
+        return False
+    if (clo or chi) and not bid.closing:
+        return False
+    if (clo and bid.closing < clo) or (chi and bid.closing > chi):
+        return False
+    # both sides normalised: the Planner chose from names cut to 120 characters, the listing carries them whole
+    if plan.ministries and buyer_name(bid.ministry) not in _names(plan.ministries):
+        return False
+    if plan.departments and buyer_name(bid.department) not in _names(plan.departments):
+        return False
+    return not plan.bid_types or int(bid.bid_type) in plan.bid_types
+
+
 SCREEN_INSTRUCTIONS = """You screen Indian government (GeM) tender titles for one topic, before anyone reads the documents.
 Keep every tender whose title could plausibly be about the topic, including broad or generic titles that might
 contain it. Drop only titles that are plainly about something else. Look-alikes listed under "NOT this" are dropped.
@@ -127,13 +146,13 @@ class Searcher:
             # stage 2 only tops up a shortlist: three times the places left is enough, and every page costs a second
             outcomes = await self.live.rest(
                 specs, progress or {}, budget=cap * 3, on_page=on_page,
-                window_start=plan.published_from, keep=lambda b: self._in_scope(b, plan))
+                window_start=plan.published_from, keep=lambda b: in_scope(b, plan))
         new_progress = {**(progress or {}), **{o.spec.key: o.progress for o in outcomes}}
 
         pool: dict[int, tuple[Bid, list[str]]] = {}
         for outcome in outcomes:
             for bid in outcome.bids:
-                if bid.b_id in exclude or not self._in_scope(bid, plan):
+                if bid.b_id in exclude or not in_scope(bid, plan):
                     continue
                 pool.setdefault(bid.b_id, (bid, []))[1].append(outcome.spec.key)
         # the buyers of every bid in scope, screened in or not, widen the Planner's buyer choices (cache/lookups.py)
@@ -175,25 +194,6 @@ class Searcher:
                                    why=["over the cap", *c.why]) for c in out[cap:])
         return SearchResult(candidates=out[:cap], rest_pool=rest_pool, pool=len(pool), over_cap=cut > 0, cut=cut,
                             progress=new_progress)
-
-    @staticmethod
-    def _in_scope(bid: Bid, plan: SearchPlan) -> bool:
-        """The plan's window and hard buyer filters, applied here: no date filter goes to the site (GeM rejects a
-        half-open end-date range with 422)."""
-        lo, hi = plan.published_from, plan.published_to
-        clo, chi = plan.closing_from, plan.closing_to
-        if (lo or hi) and (not bid.published or (lo and bid.published < lo) or (hi and bid.published > hi)):
-            return False
-        if (clo or chi) and not bid.closing:
-            return False
-        if (clo and bid.closing < clo) or (chi and bid.closing > chi):
-            return False
-        # both sides normalised: the Planner chose from names cut to 120 characters, the listing carries them whole
-        if plan.ministries and buyer_name(bid.ministry) not in _names(plan.ministries):
-            return False
-        if plan.departments and buyer_name(bid.department) not in _names(plan.departments):
-            return False
-        return not plan.bid_types or int(bid.bid_type) in plan.bid_types
 
     async def _screen_titles(self, topic: TopicDefinition, bids: list[Bid],
                              descriptions: dict[int, str] | None = None) -> tuple[set[int], set[int]]:

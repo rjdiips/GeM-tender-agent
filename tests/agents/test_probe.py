@@ -21,6 +21,10 @@ def rows(prefix: int, n: int, published: datetime = T0) -> list[dict]:
     return [row(prefix + i, published, published + timedelta(days=5), f"Bid {prefix + i}") for i in range(n)]
 
 
+def closing_at(r: dict, when: datetime) -> dict:
+    return {**r, "final_end_date_sort": [when.strftime("%Y-%m-%dT%H:%M:%SZ")]}
+
+
 def make(gem, clock, by_query):
     site = FakeSearchSite(by_query)
     gem.add("GET", f"{B}/advance-search", "advance_search.html.gz")
@@ -61,6 +65,30 @@ async def test_probe_does_not_count_all_open_bids(gem, clock):
 
 def test_old_probe_with_window_count_loads():
     assert ProbeResult.model_validate({"meaning": "m", "window_count": 5, "strong": 2}).strong == 2
+
+
+async def test_probe_counts_only_bids_published_before_a_named_end_date(gem, clock):
+    old = rows(100, 1, published=T0 - timedelta(days=2))
+    live, _ = make(gem, clock, {"fullText|AML": [*old, *rows(200, 2)]})
+    p = await probe_live(live, AML_TOPIC, ResolvedWindow(published_to=T0 - timedelta(days=1)))
+    assert p.strong == 1 and p.top_titles == ["Bid 100"]
+
+
+async def test_probe_counts_only_bids_closing_inside_a_closing_window(gem, clock):
+    inside = rows(100, 2)
+    outside = [closing_at(r, T0 + timedelta(days=20)) for r in rows(200, 1)]
+    live, _ = make(gem, clock, {"fullText|AML": [*inside, *outside]})
+    window = ResolvedWindow(closing_from=T0 + timedelta(days=1), closing_to=T0 + timedelta(days=10))
+    p = await probe_live(live, AML_TOPIC, window)
+    assert p.strong == 2 and p.top_titles == ["Bid 100", "Bid 101"]
+
+
+async def test_probe_counts_only_bids_closing_after_a_named_date(gem, clock):
+    after = [closing_at(r, datetime(2026, 11, 25, 15)) for r in rows(100, 1)]
+    before = [closing_at(r, datetime(2026, 11, 20, 15)) for r in rows(200, 1)]
+    live, _ = make(gem, clock, {"fullText|AML": [*after, *before]})
+    p = await probe_live(live, AML_TOPIC, ResolvedWindow(closing_from=datetime(2026, 11, 24)))
+    assert p.strong == 1 and p.top_titles == ["Bid 100"]
 
 
 def test_understand_instructions_keep_a_general_class_whole():

@@ -23,9 +23,30 @@ def test_explicit_dates():
     assert (w.published_from, w.published_to) == (datetime(2026, 11, 5), datetime(2026, 11, 10, 23, 59, 59))
 
 
+def test_closing_after_a_named_date_is_described_as_such():
+    w = DateWindow(kind="closing", from_date=date(2026, 12, 1)).resolve(NOW, explicit_dates=True)
+    assert w.closing_to is None and w.describe() == "closing after 1 Dec"
+
+
+def test_closing_after_a_past_named_date_is_open_now():
+    w = DateWindow(kind="closing", from_date=date(2026, 11, 1)).resolve(NOW, explicit_dates=True)
+    assert w.describe() == "open now"
+
+
+def test_closing_until_a_named_end_date_is_described_as_such():
+    w = DateWindow(kind="closing", to_date=date(2026, 12, 5)).resolve(NOW, explicit_dates=True)
+    assert w.describe() == "closing until 5 Dec"
+
+
+def test_closing_between_two_named_dates_keeps_the_span():
+    w = DateWindow(kind="closing", from_date=date(2026, 12, 1), to_date=date(2026, 12, 5)).resolve(
+        NOW, explicit_dates=True)
+    assert w.describe() == "closing 1–5 Dec"
+
+
 def test_no_window_means_all_open_bids():
     w = DateWindow().resolve(NOW)
-    assert w.published_from is None and w.closing_from == NOW
+    assert w.published_from is None and w.closing_from == NOW and w.describe() == "open now"
 
 
 def test_describe_for_progress_line():
@@ -79,6 +100,11 @@ def test_to_date_only_published_window_keeps_the_named_end_and_names_it_in_the_c
     r = w.resolve(NOW, explicit_dates=True)
     assert (r.published_from, r.published_to) == (None, datetime(2026, 10, 31, 23, 59, 59))
     assert r.describe() == "published until 31 Oct"  # not "open now": the user named an end date
+
+
+def test_published_until_single_digit_day_has_no_leading_zero():
+    w = DateWindow(kind="published", to_date=date(2026, 11, 5)).resolve(NOW, explicit_dates=True)
+    assert w.describe() == "published until 5 Nov"
 
 
 def test_closing_after_a_date_stays_open_ended():

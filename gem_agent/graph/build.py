@@ -72,6 +72,10 @@ def running_count(read: int, total: int, outcomes: Iterable[Outcome]) -> str:
     return f"Read {read} of {total} bids: {', '.join(parts)}."
 
 
+def ways_line(n: int) -> str:
+    return f"{n} way" if n == 1 else f"{n} ways"
+
+
 def cut_line(n: int) -> str:
     return f"{n} more matching bid{'s' if n != 1 else ''} not read; narrow the request to see them."
 
@@ -172,7 +176,7 @@ def build_graph(s: Services) -> StateGraph:
         plans = [await s.planner.plan(state.request, topic, note=note) for topic in state.request.topics]
         s.store.save_plans(state.run_id, plans)
         searches = sum(len(search_specs(p)) for p in plans)  # one plan runs several GeM searches, not one
-        progress(s, state.run_id, f"Searching GeM {searches} ways.", phase="plan")
+        progress(s, state.run_id, f"Searching GeM {ways_line(searches)}.", phase="plan")
         return {"plans": plans}
 
     async def search(state: RunState) -> dict[str, Any]:
@@ -663,7 +667,7 @@ def build_graph(s: Services) -> StateGraph:
             text = f"GeM could not be searched: all {total} searches failed. Try again in a few minutes."
         elif not has_pool:
             text = (f"No matching tenders found {state.request.window.describe()} "
-                    f"(looked at {state.pool:,} titles, searched {state.retries + 1} ways).")
+                    f"(looked at {state.pool:,} titles, searched {ways_line(state.retries + 1)}).")
         else:
             text = f"Done: {relevant} relevant, {quarantined} quarantined" + (f", {failed} could not be read" if failed else "") + "."
             text += (" 1 bid needs your call: see Borderline." if borderline == 1
