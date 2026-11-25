@@ -50,12 +50,15 @@ class Describer:
             async with self._slots:
                 out = (await self._agent.run(prompt, model_settings={"max_tokens": 400, "temperature": 0.0})).output
             subject = out.subject.strip()
-            generic = is_generic(subject, bid.title)
+            if is_generic(subject, bid.title):
+                log.info("description for %s stayed generic; leaving it undescribed", bid.bid_number)
+                return None
+            terms = [term.strip() for term in out.terms if term.strip() and not is_generic(term, bid.title)]
             description = Description(
                 b_id=bid.b_id,
                 doc_hash=doc_hash(files),
-                subject="" if generic else subject,
-                terms=[] if generic else out.terms,
+                subject=subject,
+                terms=terms,
                 sources=[d.filename for d in docs] + attachments,
                 has_scope=bool(sections),
                 buyer_org=files.buyer_org,
@@ -103,7 +106,8 @@ async def refresh_descriptions(describer: Describer, index: BidIndex, cache: Doc
         else:
             report.described += 1
 
-    todo = index.descriptions_to_refresh(describer.model_name, DESCRIBE_PROMPT_VERSION, limit)
+    todo = [bid for bid in index.descriptions_to_refresh(describer.model_name, DESCRIBE_PROMPT_VERSION)
+            if cache.has(bid.b_id)][:limit]
     tasks = [asyncio.create_task(one(bid)) for bid in todo]
     try:
         await asyncio.gather(*tasks)

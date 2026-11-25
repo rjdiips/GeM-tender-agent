@@ -490,6 +490,38 @@ async def test_new_descriptions_are_capped_per_request_and_the_rest_take_todays_
     assert "1 bid not yet described; they will be checked on the next search." in texts_of(events)
 
 
+async def test_already_known_excludes_descriptions_written_by_this_request(tmp_path):
+    describer, matcher = FakeDescriber(), FakeMatcher()
+    searcher = FakeSearcher([[bid(1)]], rest=[[bid(2)]])
+    s = services(tmp_path, searcher=searcher, describer=describer, matcher=matcher)
+    events = await ask(RunManager(s), "LOS tenders")
+
+    lines = [text for text in texts_of(events) if text.startswith("Described ")]
+    assert lines == ["Described 1 new bid (0 already known).",
+                     "Described 1 new bid (0 already known)."]
+
+
+async def test_not_yet_described_does_not_count_a_document_failure(tmp_path):
+    describer, matcher = FakeDescriber(fail={2}), FakeMatcher()
+    searcher = FakeSearcher([[bid(1), bid(2), bid(3)]], more_pages=False)
+    s = services(tmp_path, searcher=searcher, describer=describer, matcher=matcher,
+                 collector=FakeCollector(fail={1}))
+    events = await ask(RunManager(s), "LOS tenders")
+
+    lines = [text for text in texts_of(events) if "not yet described" in text]
+    assert set(lines) == {"1 bid not yet described; they will be checked on the next search."}
+
+
+async def test_read_count_reaches_the_total_when_a_bid_is_cut(tmp_path):
+    searcher = FakeSearcher([[bid(1, closing_day=18), bid(2, closing_day=19)]], cap=1, more_pages=False)
+    s = services(tmp_path, searcher=searcher, describer=FakeDescriber(), matcher=FakeMatcher(), workers=1)
+    events = await ask(RunManager(s), "LOS tenders")
+
+    counts = [text for text in texts_of(events) if text.startswith("Read ")]
+    assert counts[-1] == "Read 2 of 2 bids: 1 relevant, 0 not a match."
+    assert "1 more matching bid not read; narrow the request to see them." in texts_of(events)
+
+
 async def test_the_description_cap_is_shared_across_both_stages(tmp_path):
     describer, matcher = FakeDescriber(), FakeMatcher()
     searcher = FakeSearcher([[bid(1)]], rest=[[bid(2)]])
@@ -656,6 +688,21 @@ async def test_process_reads_outcomes_once(tmp_path):
     collector.collect = spied
     await ask(RunManager(s), "LOS tenders")
     assert len(seen) == 20 and len(set(seen)) == 1  # every bid's collect saw the same number of reads
+
+
+async def test_process_progress_is_appended_without_rewriting_a_snapshot(tmp_path):
+    searcher = FakeSearcher([[bid(1), bid(2)]], more_pages=False)
+    s = services(tmp_path, searcher=searcher, describer=FakeDescriber(), matcher=FakeMatcher(), workers=1)
+    events = await ask(RunManager(s), "LOS tenders")
+    run_id = events[0]["run"]["run_id"]
+    run_dir = s.store.root / run_id
+
+    assert not (run_dir / "process.json").exists()
+    assert (run_dir / "process.jsonl").exists()
+    progress = s.store.process_progress(run_id)
+    assert set(progress.done_ids) == {1, 2}
+    assert progress.described == 2
+    assert progress.reads == {LOS.key(): 2}
 
 
 def test_every_bid_read_is_in_the_running_count():
@@ -1163,6 +1210,87 @@ async def test_a_run_stopped_after_judging_resumes_with_its_read_count_and_witho
     assert saved.values["cut"] == 2
     assert set(saved.values["done_ids"]) == {1, 2, 3, 4}
     assert s.store.load(run_id).status == "complete"
+
+
+async def test_resume_settles_a_pending_verdict_even_when_the_ruling_model_fails(tmp_path):
+    describer, matcher = FakeDescriber(), FakeMatcher()
+    judge, rulings = FakeJudge(borderline={2}), BlockAfterRead()
+    searcher = FakeSearcher([[bid(1)]], dropped=[[bid(2)]], cap=2, more_pages=False)
+    s = services(tmp_path, searcher=searcher, describer=describer, matcher=matcher, judge=judge, rulings=rulings,
+                 checkpoint=tmp_path / "checkpoints.sqlite", workers=1)
+    fact = rule(s)
+    rulings.answers["Does bid 2 count for you?"] = RulingMatch(fact_id=fact.id, decision="counts")
+    manager = RunManager(s)
+    events = []
+
+    async def follow():
+        async for event in manager.ask("asha", "LOS tenders"):
+            events.append(event)
+
+    task = asyncio.create_task(follow())
+    await asyncio.wait_for(rulings.entered.wait(), timeout=5)
+    run_id = next(e["run"]["run_id"] for e in events if e["type"] == "started")
+    await manager.stop("asha", run_id)
+    await asyncio.wait_for(task, timeout=5)
+    assert set(s.store.process_progress(run_id).pending_reads) == {2}
+
+    rulings.fail = True
+    await manager.resume(run_id)
+
+    outcomes = s.store.outcomes(run_id)
+    assert outcomes[2].verdict is not None and outcomes[2].verdict.borderline
+    assert outcomes[2].ruling is None
+    assert s.store.process_progress(run_id).pending_reads == {}
+    assert s.store.load(run_id).status == "complete"
+
+
+def test_an_old_candidate_without_a_topic_key_resolves_to_its_matching_topic():
+    from gem_agent.agents.searcher import Candidate
+    from gem_agent.graph.build import candidate_topic_key
+
+    old = Candidate(bid=bid(1), group="Loan Origination System", topic_key=None, why=["old checkpoint"])
+    assert candidate_topic_key(old, [LOS]) == LOS.key()
+
+
+async def test_resume_does_not_fail_forever_when_saving_a_pending_verdict_fails(tmp_path, monkeypatch):
+    describer, matcher = FakeDescriber(), FakeMatcher()
+    judge, rulings = FakeJudge(borderline={2}), BlockAfterRead()
+    searcher = FakeSearcher([[bid(1)]], dropped=[[bid(2)]], cap=2, more_pages=False)
+    s = services(tmp_path, searcher=searcher, describer=describer, matcher=matcher, judge=judge, rulings=rulings,
+                 checkpoint=tmp_path / "checkpoints.sqlite", workers=1)
+    fact = rule(s)
+    rulings.answers["Does bid 2 count for you?"] = RulingMatch(fact_id=fact.id, decision="counts")
+    manager = RunManager(s)
+    events = []
+
+    async def follow():
+        async for event in manager.ask("asha", "LOS tenders"):
+            events.append(event)
+
+    task = asyncio.create_task(follow())
+    await asyncio.wait_for(rulings.entered.wait(), timeout=5)
+    run_id = next(e["run"]["run_id"] for e in events if e["type"] == "started")
+    await manager.stop("asha", run_id)
+    await asyncio.wait_for(task, timeout=5)
+    assert set(s.store.process_progress(run_id).pending_reads) == {2}
+
+    original = s.store.save_outcome
+    failed = False
+
+    def fail_once(run_id, outcome):
+        nonlocal failed
+        if outcome.b_id == 2 and not failed:
+            failed = True
+            raise OSError("disk full")
+        return original(run_id, outcome)
+
+    monkeypatch.setattr(s.store, "save_outcome", fail_once)
+    await manager.resume(run_id)
+
+    assert failed
+    assert s.store.load(run_id).status == "complete"
+    assert s.store.outcomes(run_id)[2].verdict is not None
+    assert s.store.process_progress(run_id).pending_reads == {}
 
 
 async def test_a_post_save_presentation_failure_keeps_the_verdict_recoverable(tmp_path, monkeypatch):

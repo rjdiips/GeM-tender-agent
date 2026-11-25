@@ -19,12 +19,13 @@ from langgraph.graph import END, START, StateGraph
 
 from gem_agent.agents.chat import short_name
 from gem_agent.agents.matcher import Call, MatchItem, buyer_line
+from gem_agent.agents.schemas import TopicDefinition
 from gem_agent.agents.searcher import Candidate, search_specs
 from gem_agent.graph.deciding import describe_order, not_read_reason, route, title_similarity
 from gem_agent.graph.rulings import settle, topic_for
 from gem_agent.graph.services import Services
 from gem_agent.graph.state import RunState
-from gem_agent.graph.store import Outcome, ProcessProgress
+from gem_agent.graph.store import Outcome, ProcessEvent
 from gem_agent.graph.views import bid_result, bid_state
 from gem_agent.tools.gem.live import SearchProgress
 
@@ -168,6 +169,13 @@ def unique_bids(candidates: Iterable[Candidate]) -> list[Candidate]:
             seen.add(c.bid.b_id)
             out.append(c)
     return out
+
+
+def candidate_topic_key(c: Candidate, topics: Iterable[TopicDefinition]) -> str:
+    """The stable topic key, resolving a pre-topic checkpoint by its display group when needed."""
+    if c.topic_key:
+        return c.topic_key
+    return next((t.key() for t in topics if short_name(t) == c.group), c.group)
 
 
 def build_graph(s: Services) -> StateGraph:
@@ -350,7 +358,10 @@ def build_graph(s: Services) -> StateGraph:
         outcomes = s.store.outcomes(state.run_id)
         pairs: dict[tuple[str, int], Candidate] = {}
         for c in [*state.candidates, *state.pool_rest]:
-            pairs.setdefault((c.identity, c.bid.b_id), c)
+            key = candidate_topic_key(c, state.request.topics)
+            if c.topic_key != key:
+                c = c.model_copy(update={"topic_key": key})
+            pairs.setdefault((key, c.bid.b_id), c)
         all_bids = unique_bids(pairs.values())
         bids_by_id = {c.bid.b_id: c for c in all_bids}
         pairs_by_id: dict[int, list[Candidate]] = {}
@@ -390,23 +401,18 @@ def build_graph(s: Services) -> StateGraph:
             calls.setdefault(key, {}).update({b_id: call for b_id, call in stored.legacy_calls.items()
                                               if (key, b_id) in pairs})
 
-        def persist() -> None:
-            saved_routes: dict[str, dict[int, str]] = {}
-            for (topic_key, b_id), chosen in pair_routes.items():
-                saved_routes.setdefault(topic_key, {})[b_id] = chosen
-            s.store.save_process_progress(state.run_id, ProcessProgress(
-                done_ids=done, described=described, reads=reads, calls=calls, routes=saved_routes,
-                cut=base_cut + cut, pending_reads=pending_reads))
+        def record(kind: str, **kwargs: Any) -> None:
+            s.store.append_process_event(state.run_id, ProcessEvent(kind=kind, **kwargs))
 
         def count_line() -> None:
             seen = [outcomes[b_id] for b_id in done if b_id in outcomes]
-            progress(s, state.run_id, running_count(len(seen), total, seen), "count", phase="read")
+            progress(s, state.run_id, running_count(len(done), total, seen), "count", phase="read")
 
         def mark_done(c: Candidate) -> None:
             if c.bid.b_id not in done_set:
                 done.append(c.bid.b_id)
                 done_set.add(c.bid.b_id)
-                persist()
+                record("done", b_id=c.bid.b_id)
 
         def save(c: Candidate, outcome: Outcome) -> None:
             if outcome.topic_key is None:
@@ -433,14 +439,19 @@ def build_graph(s: Services) -> StateGraph:
             for b_id, outcome in list(pending_reads.items()):
                 if b_id in outcomes:  # the outcome append succeeded before the sidecar could be cleared
                     del pending_reads[b_id]
-                    persist()
+                    record("pending_clear", b_id=b_id)
                     continue
                 topic_key = outcome.topic_key or (outcome.verdict.topic_key if outcome.verdict else None)
                 topic = topic_for(state.request, outcome.group, topic_key=topic_key)
                 outcome.ruling = await settle(s, state.user, topic, outcome.verdict)
-                save(bids_by_id[b_id], outcome)
+                try:
+                    save(bids_by_id[b_id], outcome)
+                except Exception as exc:  # noqa: BLE001 - a failed write must not poison every later resume
+                    log.warning("bid %s: pending verdict could not be saved; leaving it pending: %s",
+                                outcome.bid.bid_number, exc)
+                    continue
                 del pending_reads[b_id]
-                persist()
+                record("pending_clear", b_id=b_id)
 
         if pending_reads:
             await finish_pending_reads()
@@ -484,7 +495,8 @@ def build_graph(s: Services) -> StateGraph:
                 del items[:40]
                 decided = await s.matcher.match(topics[topic_key], batch)
                 calls.setdefault(topic_key, {}).update(decided)
-                persist()
+                for b_id, call in decided.items():
+                    record("call", topic_key=topic_key, b_id=b_id, call=call)
 
         for topic_key in list(ready):
             await flush(topic_key)
@@ -505,7 +517,7 @@ def build_graph(s: Services) -> StateGraph:
             known[c.bid.b_id] = description
             described += 1
             new += 1
-            persist()
+            record("described")
             if description.usable():
                 affected = {pair.identity for pair in pairs_by_id[c.bid.b_id]}
                 for pair in pairs_by_id[c.bid.b_id]:
@@ -514,8 +526,8 @@ def build_graph(s: Services) -> StateGraph:
                     if len(ready[topic_key]) >= 40:
                         await flush(topic_key)
 
-        progress(s, state.run_id, described_line(new, known_count), phase="read")
-        undescribed = sum(1 for c in unique_bids(todo) if c.bid.b_id not in known)
+        progress(s, state.run_id, described_line(new, max(0, known_count - state.described)), phase="read")
+        undescribed = sum(1 for c in unique_bids(todo) if c.bid.b_id not in done_set and c.bid.b_id not in known)
         if undescribed:
             progress(s, state.run_id, undescribed_line(undescribed), phase="read")
         for topic_key in list(ready):
@@ -537,11 +549,11 @@ def build_graph(s: Services) -> StateGraph:
             description = known.get(c.bid.b_id)
             chosen = route(c, description, calls.get(c.identity, {}).get(c.bid.b_id), safety_net=s.safety_net)
             pair_routes[(c.identity, c.bid.b_id)] = chosen
+            record("route", topic_key=c.identity, b_id=c.bid.b_id, route=chosen)
             current = winners.get(c.bid.b_id)
             if current is None or priority[chosen] < priority[routes[c.bid.b_id]]:
                 winners[c.bid.b_id] = c
                 routes[c.bid.b_id] = chosen
-        persist()  # stage 2 can now distinguish a newly discovered topic pair from work already routed
 
         to_screen: list[Candidate] = []
         for representative in unique_bids(todo):
@@ -608,6 +620,7 @@ def build_graph(s: Services) -> StateGraph:
                 planned_reads[c.identity] = used + 1
             else:
                 cut += 1
+                record("cut")
                 hide_previous_outcome(c)
                 mark_done(c)  # already described and matched; later stages must not repeat that work
 
@@ -633,7 +646,9 @@ def build_graph(s: Services) -> StateGraph:
                                   files=files.files, buyer_org=files.buyer_org, verdict=verdict,
                                   read_because=None if chosen == "today" else chosen)
                 reads[c.identity] = reads.get(c.identity, 0) + 1
+                record("read", topic_key=c.identity)
                 pending_reads[c.bid.b_id] = outcome
+                record("pending", outcome=outcome)
                 mark_done(c)  # atomically persist the finished read, its verdict, and its consumed cap slot
                 try:
                     outcome.ruling = await settle(s, state.user, topic, verdict)
@@ -641,7 +656,7 @@ def build_graph(s: Services) -> StateGraph:
                     log.warning("bid %s could not be settled: %s", c.bid.bid_number, exc)
                 save(c, outcome)
                 del pending_reads[c.bid.b_id]
-                persist()
+                record("pending_clear", b_id=c.bid.b_id)
 
         await asyncio.gather(*(read(c) for c in selected))
         if cut:

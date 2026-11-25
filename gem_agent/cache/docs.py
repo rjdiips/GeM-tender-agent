@@ -107,6 +107,10 @@ class DocCache:
         path = self.root / f"docs/{b_id}/manifest.json"
         return BidFiles.model_validate_json(path.read_bytes()) if path.exists() else None
 
+    def has(self, b_id: int) -> bool:
+        """Whether a manifest is on disk; cheap enough to filter a refresh queue without reading it."""
+        return (self.root / f"docs/{b_id}/manifest.json").is_file()
+
     def save(self, files: BidFiles) -> None:
         self._write(f"docs/{files.b_id}/manifest.json", files.model_dump_json(indent=1).encode())
 

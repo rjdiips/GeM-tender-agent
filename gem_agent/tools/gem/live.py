@@ -165,6 +165,9 @@ class LiveSearcher:
             left = None if budget is None else max(0, budget - len(got))
             share = None if budget is None else max(1, left // pending_left)
             pending_left -= 1
+            if budget is not None and left == 0:
+                outcomes.append(SearchOutcome(spec, current, []))
+                continue
             if (hit := self._cached(spec)) is not None:
                 num_found, bids = hit
                 self._first_bids.pop((spec.key, tuple(current.first_ids)), None)
@@ -202,7 +205,7 @@ class LiveSearcher:
             added = page_ids - seen - counted
             counted.update(added)
             if on_page is not None:
-                on_page(len(added))
+                on_page(len(counted))
             past_window = (window_start is not None and spec.kind in ("exact", "fullText") and page.bids
                            and all(b.published is not None and b.published < window_start for b in page.bids))
             if past_window or (budget is not None and len(counted) >= budget):

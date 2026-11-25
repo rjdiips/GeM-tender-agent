@@ -75,7 +75,7 @@ async def test_a_failed_description_is_not_stored(tmp_path):
     assert llm.count(DESCRIBE_INSTRUCTIONS) == 3  # the initial call plus two retries
 
 
-async def test_a_description_restating_the_title_is_stored_empty(tmp_path):
+async def test_a_generic_description_is_not_stored(tmp_path):
     index, cache, [bid] = setup(tmp_path)
     files = bid_files(cache, bid.b_id, [("GeM-Bidding.pdf", "bid_document", ["Generic category only"])])
     llm = ScriptedLLM({DESCRIBE_INSTRUCTIONS: [{
@@ -84,10 +84,23 @@ async def test_a_description_restating_the_title_is_stored_empty(tmp_path):
     }]})
     describer = Describer(llm.model(), cache, index, model_name="scripted")
 
+    assert await describer.describe(bid, files) is None
+    assert index.description(bid.b_id) is None
+
+
+async def test_generic_terms_are_filtered_from_a_specific_description(tmp_path):
+    index, cache, [bid] = setup(tmp_path)
+    files = bid_files(cache, bid.b_id, [("GeM-Bidding.pdf", "bid_document", ["KYC platform"])])
+    llm = ScriptedLLM({DESCRIBE_INSTRUCTIONS: [{
+        "subject": "Enterprise KYC platform for NABARD",
+        "terms": ["IT projects", "KYC platform", "software"],
+    }]})
+    describer = Describer(llm.model(), cache, index, model_name="scripted")
+
     d = await describer.describe(bid, files)
 
-    assert d is not None and index.description(bid.b_id) == d
-    assert d.subject == "" and d.terms == [] and not d.usable()
+    assert d is not None and d.terms == ["KYC platform"]
+    assert index.description(bid.b_id).terms == ["KYC platform"]
 
 
 async def test_stale_only_when_a_row_exists_and_the_documents_changed(tmp_path):
@@ -148,9 +161,26 @@ async def test_refresh_reads_only_cached_documents(tmp_path):
 
     report = await refresh_descriptions(describer, index, cache, limit=10)
 
-    assert report == RefreshReport(described=1, no_documents=1, failed=0)
+    assert report == RefreshReport(described=1, no_documents=0, failed=0)
     assert index.description(1).subject == "Enterprise KYC platform"
     assert index.description(2).prompt_version == "card"
+    assert llm.count(DESCRIBE_INSTRUCTIONS) == 1
+
+
+async def test_refresh_skips_bids_without_cached_documents_before_the_limit(tmp_path):
+    index, cache, bids = setup(tmp_path, b_ids=(1, 2, 3))
+    for bid in bids:
+        copied_card(index, bid)
+    cache.save(bid_files(cache, 3, [("GeM-Bidding.pdf", "bid_document", ["Enterprise KYC platform"])]))
+    llm = ScriptedLLM({DESCRIBE_INSTRUCTIONS: [{"subject": "Enterprise KYC platform", "terms": ["KYC"]}]})
+    describer = Describer(llm.model(), cache, index, model_name="scripted")
+
+    report = await refresh_descriptions(describer, index, cache, limit=2)
+
+    assert report == RefreshReport(described=1, no_documents=0, failed=0)
+    assert index.description(1).prompt_version == "card"
+    assert index.description(2).prompt_version == "card"
+    assert index.description(3).subject == "Enterprise KYC platform"
     assert llm.count(DESCRIBE_INSTRUCTIONS) == 1
 
 

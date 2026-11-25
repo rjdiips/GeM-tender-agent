@@ -15,6 +15,7 @@ from gem_agent.tools.gem.models import Bid
 log = logging.getLogger(__name__)
 
 MATCH_PROMPT_VERSION = "1"  # bump whenever MATCH_INSTRUCTIONS changes
+_EMPTY_BATCH_MIN = 10  # an all-empty answer for fewer bids can be a genuine all-no batch
 
 MATCH_INSTRUCTIONS = """You decide, for one topic, which Indian government (GeM) tenders could be buying it, from a short
 description of what each tender buys.
@@ -89,6 +90,14 @@ class Matcher:
             )).output
         except Exception as exc:  # noqa: BLE001 - validation failure after retries, timeouts, …
             log.warning("description match failed (%s) for %d tenders", exc, len(batch))
+            return None
+        limit = len(batch) - 1
+        bad = [n for n in (*out.match, *out.unsure) if n < 0 or n > limit]
+        if bad:
+            log.warning("description match returned out-of-range numbers %s for %d tenders", bad[:5], len(batch))
+            return None
+        if len(batch) >= _EMPTY_BATCH_MIN and not out.match and not out.unsure:
+            log.warning("description match returned no numbers for a batch of %d tenders", len(batch))
             return None
         return out
 

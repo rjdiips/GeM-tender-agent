@@ -357,15 +357,29 @@ async def test_the_shared_budget_counts_duplicate_bids_once(gem, clock):
     assert more[1].progress.pages_read == 3 and not more[1].progress.pending
 
 
-async def test_each_pending_search_gets_at_least_one_bid_of_budget(gem, clock):
+async def test_the_deeper_page_count_is_cumulative(gem, clock):
+    aml, kyc = SearchSpec(kind="fullText", value="aml"), SearchSpec(kind="fullText", value="kyc")
+    live, _ = make_live(gem, clock, {aml.key: rows(20900, 30), kyc.key: rows(21000, 30)})
+    first = await live.first_pages([aml, kyc])
+    seen = []
+
+    await live.rest([aml, kyc], {o.spec.key: o.progress for o in first},
+                    on_page=lambda bids, budget: seen.append(bids))
+
+    assert seen == [10, 20, 30, 40]
+
+
+async def test_a_later_search_does_not_read_when_the_budget_is_exhausted(gem, clock):
     aml, kyc = SearchSpec(kind="fullText", value="aml"), SearchSpec(kind="fullText", value="kyc")
     live, site = make_live(gem, clock, {aml.key: rows(20900, 30), kyc.key: rows(21000, 30)})
     first = await live.first_pages([aml, kyc])
 
     more = await live.rest([aml, kyc], {o.spec.key: o.progress for o in first}, budget=1)
 
-    assert site.served == [(aml.key, 1), (kyc.key, 1), (aml.key, 2), (kyc.key, 2)]
-    assert all(o.progress.pages_read == 2 and o.progress.pending for o in more)
+    assert site.served == [(aml.key, 1), (kyc.key, 1), (aml.key, 2)]
+    assert more[0].progress.pages_read == 2 and more[0].progress.pending
+    assert more[1].progress.pages_read == 1 and more[1].progress.pending
+    assert more[1].bids == []
 
 
 async def test_a_search_stopped_at_the_window_is_pending_and_not_cached(gem, clock, tmp_path):

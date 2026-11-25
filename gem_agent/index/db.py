@@ -270,23 +270,17 @@ class BidIndex:
                 f"INSERT OR REPLACE INTO descriptions ({_DESCRIPTION_COLUMNS}) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                 _description_values(d))
 
-    def descriptions_to_refresh(self, model: str, prompt_version: str, limit: int) -> list[Bid]:
+    def descriptions_to_refresh(self, model: str, prompt_version: str, limit: int | None = None) -> list[Bid]:
         """Open bids with no description or one from another model or prompt, closing soonest first."""
-        rows = self._conn.execute(
-            "SELECT b.raw FROM bids AS b LEFT JOIN descriptions AS d ON d.b_id = b.b_id "
-            "WHERE b.state = 'open' AND (d.b_id IS NULL OR d.model != ? OR d.prompt_version != ?) "
-            "ORDER BY (b.closing IS NULL), b.closing, b.b_id LIMIT ?", (model, prompt_version, limit)).fetchall()
+        sql = ("SELECT b.raw FROM bids AS b LEFT JOIN descriptions AS d ON d.b_id = b.b_id "
+               "WHERE b.state = 'open' AND (d.b_id IS NULL OR d.model != ? OR d.prompt_version != ?) "
+               "ORDER BY (b.closing IS NULL), b.closing, b.b_id")
+        params: list[object] = [model, prompt_version]
+        if limit is not None:
+            sql += " LIMIT ?"
+            params.append(limit)
+        rows = self._conn.execute(sql, params).fetchall()
         return [Bid.from_listing(json.loads(raw)) for (raw,) in rows]
-
-    def needing_cards(self, limit: int | None = None) -> list[Bid]:
-        """Open bids whose title says nothing about the subject and that have no card yet, closing soonest first."""
-        from gem_agent.tools.gem.titles import is_vague_title
-
-        rows = self._conn.execute(
-            "SELECT raw, title FROM bids WHERE state = 'open' AND card IS NULL AND "
-            "(title LIKE 'Hiring of Agency for IT Projects%' OR title LIKE 'Custom Bid for Services%') ORDER BY closing")
-        out = [Bid.from_listing(json.loads(raw)) for raw, title in rows if is_vague_title(title)]
-        return out[:limit] if limit else out
 
     def prune(self, *, closed_before: datetime, keep: Iterable[int] = frozenset()) -> int:
         """Delete bids that closed before the cutoff, with their embeddings, except those in `keep` (the labelled

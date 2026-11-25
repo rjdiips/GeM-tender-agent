@@ -33,11 +33,49 @@ async def test_each_bid_gets_match_unsure_or_no():
     assert matcher.calls == 1
 
 
-async def test_a_number_in_both_lists_is_a_match_and_unknown_numbers_are_ignored():
-    llm = ScriptedLLM({MATCH_INSTRUCTIONS: [{"match": [0, 7], "unsure": [0, -1]}]})
+async def test_a_number_in_both_lists_is_a_match():
+    llm = ScriptedLLM({MATCH_INSTRUCTIONS: [{"match": [0], "unsure": [0]}]})
     matcher = Matcher(llm.model())
 
     assert await matcher.match(LOS, [item(101), item(102)]) == {101: "match", 102: "no"}
+
+
+async def test_out_of_range_numbers_fail_the_batch_and_it_is_split():
+    replies = iter([
+        {"match": [7], "unsure": []},
+        {"match": [0, 1], "unsure": []},
+        {"match": [], "unsure": [0, 1]},
+    ])
+    llm = ScriptedLLM({MATCH_INSTRUCTIONS: lambda prompt: next(replies)})
+    matcher = Matcher(llm.model())
+
+    assert await matcher.match(LOS, [item(n) for n in range(1, 5)]) == {
+        1: "match", 2: "match", 3: "unsure", 4: "unsure",
+    }
+    assert [len(re.findall(r"^\[(\d+)\]", prompt, re.MULTILINE)) for _, prompt in llm.calls] == [4, 2, 2]
+
+
+async def test_a_large_all_empty_answer_fails_the_batch():
+    replies = iter([
+        {"match": [], "unsure": []},
+        {"match": [0, 1, 2, 3, 4, 5], "unsure": []},
+        {"match": [], "unsure": [0, 1, 2, 3, 4, 5]},
+    ])
+    llm = ScriptedLLM({MATCH_INSTRUCTIONS: lambda prompt: next(replies)})
+    matcher = Matcher(llm.model())
+
+    assert await matcher.match(LOS, [item(n) for n in range(1, 13)]) == {
+        **{n: "match" for n in range(1, 7)},
+        **{n: "unsure" for n in range(7, 13)},
+    }
+
+
+async def test_a_small_all_empty_answer_is_still_all_no():
+    llm = ScriptedLLM({MATCH_INSTRUCTIONS: [{"match": [], "unsure": []}]})
+    matcher = Matcher(llm.model())
+
+    assert await matcher.match(LOS, [item(101), item(102)]) == {101: "no", 102: "no"}
+    assert matcher.calls == 1
 
 
 async def test_more_than_forty_are_sent_in_batches_of_forty():

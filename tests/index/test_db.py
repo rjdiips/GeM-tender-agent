@@ -75,14 +75,6 @@ def test_card_joins_the_stored_text_and_survives_a_relisting(index):
     assert index.card(1) is not None
 
 
-def test_bids_needing_a_card_are_open_vague_titles_without_one(index):
-    index.upsert([bid(1, title="Hiring of Agency for IT Projects- Milestone basis"),
-                  bid(2, title="Custom Bid for Services - ----"),
-                  bid(3, title="Supply of office chairs")], seen_at=NOV(14))
-    index.set_card(2, "Website redesign")
-    assert [b.b_id for b in index.needing_cards()] == [1]
-
-
 def test_a_description_round_trips(tmp_path):
     path = tmp_path / "bids.sqlite"
     index = BidIndex(path)

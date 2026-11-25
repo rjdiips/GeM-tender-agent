@@ -1,7 +1,7 @@
 import json
 from datetime import datetime
 
-from gem_agent.graph.store import Outcome, ProcessProgress, Ruling, RunStore
+from gem_agent.graph.store import Outcome, ProcessEvent, ProcessProgress, Ruling, RunStore
 from tests.agents.helpers import LOS
 from tests.graph.fakes import FakeJudge, bid
 
@@ -139,6 +139,37 @@ def test_process_progress_round_trips_calls_per_topic(tmp_path):
 
     assert store.process_progress("r").calls == progress.calls
     assert store.process_progress("r").routes == progress.routes
+
+
+def test_process_events_replay_incrementally(tmp_path):
+    verdict = FakeJudge()._verdict(LOS, bid(1), False, "judge", borderline=True)
+    pending = Outcome(b_id=1, group="g", bid=bid(1), verdict=verdict, read_because="unsure")
+    store = RunStore(tmp_path)
+    events = [
+        ProcessEvent(kind="done", b_id=1),
+        ProcessEvent(kind="described", number=2),
+        ProcessEvent(kind="read", topic_key=LOS.key()),
+        ProcessEvent(kind="call", topic_key=LOS.key(), b_id=1, call="match"),
+        ProcessEvent(kind="route", topic_key=LOS.key(), b_id=1, route="match"),
+        ProcessEvent(kind="cut", number=3),
+        ProcessEvent(kind="pending", outcome=pending),
+    ]
+    for event in events:
+        store.append_process_event("r", event)
+
+    progress = store.process_progress("r")
+
+    assert progress.done_ids == [1]
+    assert progress.described == 2
+    assert progress.reads == {LOS.key(): 1}
+    assert progress.calls == {LOS.key(): {1: "match"}}
+    assert progress.routes == {LOS.key(): {1: "match"}}
+    assert progress.cut == 3
+    assert progress.pending_reads == {1: pending}
+    assert not (tmp_path / "r" / "process.json").exists()
+
+    store.append_process_event("r", ProcessEvent(kind="pending_clear", b_id=1))
+    assert store.process_progress("r").pending_reads == {}
 
 
 def test_process_progress_reads_legacy_bid_only_calls_without_sharing_them(tmp_path):

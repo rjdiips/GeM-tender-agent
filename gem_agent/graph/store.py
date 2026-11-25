@@ -87,6 +87,36 @@ class ProcessProgress(BaseModel):
         return value
 
 
+class ProcessEvent(BaseModel):
+    """One small append to process.jsonl: no full rewrite of the growing progress document."""
+
+    kind: Literal["done", "described", "read", "call", "route", "cut", "pending", "pending_clear"]
+    b_id: int | None = None
+    topic_key: str | None = None
+    call: Call | None = None
+    route: str | None = None
+    number: int = 1
+    outcome: Outcome | None = None
+
+    def apply(self, progress: ProcessProgress) -> None:
+        if self.kind == "done" and self.b_id is not None and self.b_id not in progress.done_ids:
+            progress.done_ids.append(self.b_id)
+        elif self.kind == "described":
+            progress.described += self.number
+        elif self.kind == "read" and self.topic_key is not None:
+            progress.reads[self.topic_key] = progress.reads.get(self.topic_key, 0) + self.number
+        elif self.kind == "call" and self.topic_key is not None and self.b_id is not None and self.call is not None:
+            progress.calls.setdefault(self.topic_key, {})[self.b_id] = self.call
+        elif self.kind == "route" and self.topic_key is not None and self.b_id is not None and self.route is not None:
+            progress.routes.setdefault(self.topic_key, {})[self.b_id] = self.route
+        elif self.kind == "cut":
+            progress.cut += self.number
+        elif self.kind == "pending" and self.outcome is not None:
+            progress.pending_reads[self.outcome.b_id] = self.outcome
+        elif self.kind == "pending_clear" and self.b_id is not None:
+            progress.pending_reads.pop(self.b_id, None)
+
+
 _OUTCOMES = TypeAdapter(dict[int, Outcome])
 
 
@@ -144,18 +174,36 @@ class RunStore:
             return 0
 
     def process_progress(self, run_id: str) -> ProcessProgress:
-        """The pipeline's last durable in-node progress; older runs simply have none."""
+        """The pipeline's durable progress: an old snapshot, then the small events appended after it."""
         path = self._dir(run_id) / "process.json"
-        if not path.exists():
-            return ProcessProgress()
-        try:
-            return ProcessProgress.model_validate_json(path.read_bytes())
-        except (OSError, ValueError) as exc:
-            log.warning("run %s: process progress unreadable, rebuilding what can be rebuilt: %s", run_id, exc)
-            return ProcessProgress()
+        progress = ProcessProgress()
+        if path.exists():
+            try:
+                progress = ProcessProgress.model_validate_json(path.read_bytes())
+            except (OSError, ValueError) as exc:
+                log.warning("run %s: process snapshot unreadable, rebuilding from events: %s", run_id, exc)
+        log_path = self._dir(run_id) / "process.jsonl"
+        if log_path.exists():
+            for number, line in enumerate(log_path.read_bytes().split(b"\n"), 1):
+                if not line:
+                    continue
+                try:
+                    ProcessEvent.model_validate_json(line).apply(progress)
+                except ValueError:
+                    log.warning("run %s: skipping unreadable line %d of process.jsonl", run_id, number)
+        return progress
 
     def save_process_progress(self, run_id: str, progress: ProcessProgress) -> None:
-        self._write(self._dir(run_id) / "process.json", progress.model_dump_json(indent=1))
+        """Write a full snapshot; kept for old callers and tests. New runs append events instead."""
+        self._write(self._dir(run_id) / "process.json", progress.model_dump_json())
+
+    def append_process_event(self, run_id: str, event: ProcessEvent) -> None:
+        with locked(self._dir(run_id) / "process.lock"):
+            path = self._dir(run_id) / "process.jsonl"
+            path.parent.mkdir(parents=True, exist_ok=True)
+            lead = "\n" if _ends_mid_line(path) else ""
+            with path.open("a", encoding="utf-8") as f:
+                f.write(lead + event.model_dump_json() + "\n")
 
     def outcomes(self, run_id: str) -> dict[int, Outcome]:
         """outcomes.json as written by older runs, then the lines appended to outcomes.jsonl (last one wins)."""
