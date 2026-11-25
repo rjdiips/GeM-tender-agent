@@ -1,10 +1,10 @@
 // PROTOTYPE: mounts one chat-page variant, chosen by ?variant=A|B|C|D|E. All share variant A's layout.
 import { useState } from 'react'
 import { PrototypeSwitcher } from './PrototypeSwitcher'
-import VariantA, { name as nameA } from './VariantA'
-import VariantB, { name as nameB } from './VariantB'
-import VariantC, { name as nameC } from './VariantC'
-import VariantD, { name as nameD } from './VariantD'
+import VariantA, { name as nameA } from './_discarded/VariantA'
+import VariantB, { name as nameB } from './_discarded/VariantB'
+import VariantC, { name as nameC } from './_discarded/VariantC'
+import VariantD, { name as nameD } from './_discarded/VariantD'
 
 const VariantCLight = () => <VariantC theme="light" />
 const variants = { A: VariantA, B: VariantB, C: VariantC, D: VariantD, E: VariantCLight }

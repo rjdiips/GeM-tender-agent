@@ -28,9 +28,7 @@ web/dist/
 # --- Runtime data (indexes, caches, checkpoints, logs: ~GBs) ---
 data/*
 !data/.gitkeep
-# Run history stays local: the folders are copied between app hosts by hand, so a
-# commit does not carry conversations and results. Caches, the checkpoint db and
-# lock files stay out too. (Runs committed earlier stay tracked.)
+# Run history stays local
 data/runs/
 *.log
 *.sqlite

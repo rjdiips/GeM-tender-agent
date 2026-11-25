@@ -1,10 +1,10 @@
 // PROTOTYPE variant D: variant A's layout under a branded top bar, "enterprise fintech" design
 // (navy sidebar, white canvas, teal accent, elevated cards, KPI strip, status and urgency badges).
 import { useState } from 'react'
-import { history, memory, request, understood, type Bid } from './data'
+import { history, memory, request, understood, type Bid } from '../data'
 import { daysLeft, IconArchive, IconBrain, IconBuilding, IconCheck, IconClock, IconDownload, IconExternal, IconFile,
-  IconHistory, IconPlay, IconPlus, IconQuote, IconSearch, IconSend, IconShield, IconSparkle, IconUndo, IconX } from './icons'
-import { useReplay } from './useReplay'
+  IconHistory, IconPlay, IconPlus, IconQuote, IconSearch, IconSend, IconShield, IconSparkle, IconUndo, IconX } from '../icons'
+import { useReplay } from '../useReplay'
 
 export const name = 'Enterprise fintech'
 

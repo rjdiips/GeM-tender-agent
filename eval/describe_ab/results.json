@@ -1,0 +1,342 @@
+{
+ "descriptions": {
+  "ok": 261,
+  "failed": 0,
+  "with_scope": 258,
+  "empty": 0,
+  "median_seconds": 2.32,
+  "wall_seconds_this_run": 0.0
+ },
+ "today": [
+  {
+   "way": "today",
+   "labels": "all",
+   "positives": 61,
+   "missed": 18,
+   "missed_items": [
+    "ai:9835017:Supply of Industrial Enterprise Grade AI Analytics",
+    "ai:9948048:AI Based Deep Fake Videos Analysis Tool with Suppo",
+    "ai:10005257:Supply, installation and commissioning of AI serve",
+    "ai:10041106:HIGGSFIELD AI",
+    "ai:10085356:Hiring of Agency for IT Projects- Milestone basis",
+    "ai:10085999:Custom Bid for Services - AI-Based Vision Analytic",
+    "ai:10141243:SITC OF AI-BASED PERIMETER INTRUSION DETECTION SYS",
+    "kyc:10069360:Hiring of Agency for IT Projects- Milestone basis",
+    "kyc:10143892:Hiring of Agency for IT Projects- Milestone basis",
+    "ai:10130220:Data Analytics Service (Version 2) - Implementatio",
+    "mof:10101986:Pusher Guide Plate for MRV - 150,FEEDER FOR 27MM F",
+    "mof:10113214:Security Manpower Service (Version 2.0) - Office/C",
+    "mof:10148042:Monthly Basis Cab & Taxi Hiring Services - SUV; 25",
+    "mof:10153354:Monthly Basis Cab & Taxi Hiring Services - MUV; 20",
+    "mof:10153734:Manpower Outsourcing Services - Minimum wage - Sem",
+    "mof:10164428:Monthly Basis Cab & Taxi Hiring Services - Sedan; ",
+    "mof:10179966:Monthly Basis Cab & Taxi Hiring Services - Sedan; ",
+    "payments:10134647:Custom Bid for Services - Request for Proposal for"
+   ],
+   "negatives": 359,
+   "negatives_read": 20
+  },
+  {
+   "way": "today",
+   "labels": "reviewed+clear",
+   "positives": 41,
+   "missed": 11,
+   "missed_items": [
+    "ai:10085356:Hiring of Agency for IT Projects- Milestone basis",
+    "ai:10085999:Custom Bid for Services - AI-Based Vision Analytic",
+    "kyc:10069360:Hiring of Agency for IT Projects- Milestone basis",
+    "kyc:10143892:Hiring of Agency for IT Projects- Milestone basis",
+    "mof:10101986:Pusher Guide Plate for MRV - 150,FEEDER FOR 27MM F",
+    "mof:10113214:Security Manpower Service (Version 2.0) - Office/C",
+    "mof:10148042:Monthly Basis Cab & Taxi Hiring Services - SUV; 25",
+    "mof:10153354:Monthly Basis Cab & Taxi Hiring Services - MUV; 20",
+    "mof:10153734:Manpower Outsourcing Services - Minimum wage - Sem",
+    "mof:10164428:Monthly Basis Cab & Taxi Hiring Services - Sedan; ",
+    "mof:10179966:Monthly Basis Cab & Taxi Hiring Services - Sedan; "
+   ],
+   "negatives": 296,
+   "negatives_read": 7
+  }
+ ],
+ "today_stats": {
+  "screen_calls": 15,
+  "triage_calls": 89,
+  "seconds": 48.6
+ },
+ "A": [
+  {
+   "way": "A",
+   "labels": "all",
+   "positives": 61,
+   "missed": 28,
+   "missed_items": [
+    "ai:9752407:Artificial intelligence, Machine Learning, and Dee",
+    "ai:9835017:Supply of Industrial Enterprise Grade AI Analytics",
+    "ai:9948048:AI Based Deep Fake Videos Analysis Tool with Suppo",
+    "ai:10005257:Supply, installation and commissioning of AI serve",
+    "ai:10085999:Custom Bid for Services - AI-Based Vision Analytic",
+    "ai:10141243:SITC OF AI-BASED PERIMETER INTRUSION DETECTION SYS",
+    "mof:10132198:Cleaning, Sanitation and Disinfection Service - Ou",
+    "mof:10137225:High End Laptop - Notebook",
+    "mof:10170754:AMC of Integrated Security and Surveillance System",
+    "mof:10171298:Security Manpower Service (Version 2.0) - Office/C",
+    "mof:9943905:Hiring of Agency for IT Projects- Milestone basis",
+    "mof:10157351:Facility Management Service- Manpower based (Versi",
+    "mof:10096484:Vulnerability and Penetration Testing - Network; S",
+    "mof:10097681:Security Manpower Service (Version 2.0) - Hotel, B",
+    "mof:10100206:Cotton Towelling And Towels Conforming To IS 7056 ",
+    "mof:10101986:Pusher Guide Plate for MRV - 150,FEEDER FOR 27MM F",
+    "mof:10141147:Leasing in of Commercial Properties - HOLIDAY HOME",
+    "mof:10148042:Monthly Basis Cab & Taxi Hiring Services - SUV; 25",
+    "mof:10153354:Monthly Basis Cab & Taxi Hiring Services - MUV; 20",
+    "mof:10153734:Manpower Outsourcing Services - Minimum wage - Sem",
+    "mof:10159985:Safes (V3) ISI Marked to IS 550",
+    "mof:10162247:Hiring of Agency for IT Projects- Milestone basis",
+    "mof:10164428:Monthly Basis Cab & Taxi Hiring Services - Sedan; ",
+    "mof:10164769:Safe Deposit Locker Cabinets conforming to IS 5244",
+    "mof:10165795:Hiring of Agency for IT Projects- Milestone basis",
+    "mof:10179966:Monthly Basis Cab & Taxi Hiring Services - Sedan; ",
+    "payments:10037211:Comprehensive Credit and Debit Card Management Pla",
+    "payments:10134647:Custom Bid for Services - Request for Proposal for"
+   ],
+   "negatives": 359,
+   "negatives_read": 58
+  },
+  {
+   "way": "A",
+   "labels": "reviewed+clear",
+   "positives": 41,
+   "missed": 22,
+   "missed_items": [
+    "ai:10085999:Custom Bid for Services - AI-Based Vision Analytic",
+    "mof:10132198:Cleaning, Sanitation and Disinfection Service - Ou",
+    "mof:10137225:High End Laptop - Notebook",
+    "mof:10170754:AMC of Integrated Security and Surveillance System",
+    "mof:10171298:Security Manpower Service (Version 2.0) - Office/C",
+    "mof:9943905:Hiring of Agency for IT Projects- Milestone basis",
+    "mof:10157351:Facility Management Service- Manpower based (Versi",
+    "mof:10096484:Vulnerability and Penetration Testing - Network; S",
+    "mof:10097681:Security Manpower Service (Version 2.0) - Hotel, B",
+    "mof:10100206:Cotton Towelling And Towels Conforming To IS 7056 ",
+    "mof:10101986:Pusher Guide Plate for MRV - 150,FEEDER FOR 27MM F",
+    "mof:10141147:Leasing in of Commercial Properties - HOLIDAY HOME",
+    "mof:10148042:Monthly Basis Cab & Taxi Hiring Services - SUV; 25",
+    "mof:10153354:Monthly Basis Cab & Taxi Hiring Services - MUV; 20",
+    "mof:10153734:Manpower Outsourcing Services - Minimum wage - Sem",
+    "mof:10159985:Safes (V3) ISI Marked to IS 550",
+    "mof:10162247:Hiring of Agency for IT Projects- Milestone basis",
+    "mof:10164428:Monthly Basis Cab & Taxi Hiring Services - Sedan; ",
+    "mof:10164769:Safe Deposit Locker Cabinets conforming to IS 5244",
+    "mof:10165795:Hiring of Agency for IT Projects- Milestone basis",
+    "mof:10179966:Monthly Basis Cab & Taxi Hiring Services - Sedan; ",
+    "payments:10037211:Comprehensive Credit and Debit Card Management Pla"
+   ],
+   "negatives": 296,
+   "negatives_read": 42
+  }
+ ],
+ "A_strict_no_drops_all": [
+  {
+   "way": "A-strict",
+   "labels": "all",
+   "positives": 61,
+   "missed": 28,
+   "missed_items": [
+    "ai:9752407:Artificial intelligence, Machine Learning, and Dee",
+    "ai:9835017:Supply of Industrial Enterprise Grade AI Analytics",
+    "ai:9948048:AI Based Deep Fake Videos Analysis Tool with Suppo",
+    "ai:10005257:Supply, installation and commissioning of AI serve",
+    "ai:10085999:Custom Bid for Services - AI-Based Vision Analytic",
+    "ai:10141243:SITC OF AI-BASED PERIMETER INTRUSION DETECTION SYS",
+    "mof:10132198:Cleaning, Sanitation and Disinfection Service - Ou",
+    "mof:10137225:High End Laptop - Notebook",
+    "mof:10170754:AMC of Integrated Security and Surveillance System",
+    "mof:10171298:Security Manpower Service (Version 2.0) - Office/C",
+    "mof:9943905:Hiring of Agency for IT Projects- Milestone basis",
+    "mof:10157351:Facility Management Service- Manpower based (Versi",
+    "mof:10096484:Vulnerability and Penetration Testing - Network; S",
+    "mof:10097681:Security Manpower Service (Version 2.0) - Hotel, B",
+    "mof:10100206:Cotton Towelling And Towels Conforming To IS 7056 ",
+    "mof:10101986:Pusher Guide Plate for MRV - 150,FEEDER FOR 27MM F",
+    "mof:10141147:Leasing in of Commercial Properties - HOLIDAY HOME",
+    "mof:10148042:Monthly Basis Cab & Taxi Hiring Services - SUV; 25",
+    "mof:10153354:Monthly Basis Cab & Taxi Hiring Services - MUV; 20",
+    "mof:10153734:Manpower Outsourcing Services - Minimum wage - Sem",
+    "mof:10159985:Safes (V3) ISI Marked to IS 550",
+    "mof:10162247:Hiring of Agency for IT Projects- Milestone basis",
+    "mof:10164428:Monthly Basis Cab & Taxi Hiring Services - Sedan; ",
+    "mof:10164769:Safe Deposit Locker Cabinets conforming to IS 5244",
+    "mof:10165795:Hiring of Agency for IT Projects- Milestone basis",
+    "mof:10179966:Monthly Basis Cab & Taxi Hiring Services - Sedan; ",
+    "payments:10037211:Comprehensive Credit and Debit Card Management Pla",
+    "payments:10134647:Custom Bid for Services - Request for Proposal for"
+   ],
+   "negatives": 359,
+   "negatives_read": 57
+  }
+ ],
+ "A_stats": {
+  "match_calls": 15,
+  "seconds": 7.8
+ },
+ "A_calls": {
+  "match": 43,
+  "unsure": 47,
+  "no": 330
+ },
+ "B": {
+  "ai": {
+   "n": 43,
+   "positives": 15,
+   "read_to_keep_all": 30,
+   "positive_ranks": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    7,
+    9,
+    10,
+    13,
+    15,
+    16,
+    17,
+    19,
+    20,
+    30
+   ]
+  },
+  "aml": {
+   "n": 41,
+   "positives": 3,
+   "read_to_keep_all": 3,
+   "positive_ranks": [
+    1,
+    2,
+    3
+   ]
+  },
+  "consult": {
+   "n": 31,
+   "positives": 2,
+   "read_to_keep_all": 31,
+   "positive_ranks": [
+    22,
+    31
+   ]
+  },
+  "fraud": {
+   "n": 37,
+   "positives": 3,
+   "read_to_keep_all": 5,
+   "positive_ranks": [
+    1,
+    2,
+    5
+   ]
+  },
+  "kyc": {
+   "n": 37,
+   "positives": 3,
+   "read_to_keep_all": 13,
+   "positive_ranks": [
+    1,
+    9,
+    13
+   ]
+  },
+  "los": {
+   "n": 35,
+   "positives": 2,
+   "read_to_keep_all": 2,
+   "positive_ranks": [
+    1,
+    2
+   ]
+  },
+  "mof": {
+   "n": 29,
+   "positives": 24,
+   "read_to_keep_all": 26,
+   "positive_ranks": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
+   ]
+  },
+  "rbi": {
+   "n": 19,
+   "positives": 0,
+   "read_to_keep_all": 0,
+   "positive_ranks": []
+  },
+  "payments": {
+   "n": 37,
+   "positives": 6,
+   "read_to_keep_all": 18,
+   "positive_ranks": [
+    1,
+    2,
+    5,
+    10,
+    14,
+    18
+   ]
+  },
+  "treasury": {
+   "n": 28,
+   "positives": 0,
+   "read_to_keep_all": 0,
+   "positive_ranks": []
+  },
+  "mna": {
+   "n": 31,
+   "positives": 2,
+   "read_to_keep_all": 6,
+   "positive_ranks": [
+    3,
+    6
+   ]
+  },
+  "core_banking": {
+   "n": 26,
+   "positives": 1,
+   "read_to_keep_all": 5,
+   "positive_ranks": [
+    5
+   ]
+  },
+  "cib": {
+   "n": 26,
+   "positives": 0,
+   "read_to_keep_all": 0,
+   "positive_ranks": []
+  }
+ },
+ "B_total": {
+  "read_to_keep_all": 139,
+  "items": 420
+ }
+}

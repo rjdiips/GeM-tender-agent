@@ -1,9 +1,9 @@
 // PROTOTYPE variant C: variant A's layout, "midnight pro" design (deep neutrals, glass panels, mono numbers, emerald).
 import { useState } from 'react'
-import { history, memory, request, understood, type Bid } from './data'
+import { history, memory, request, understood, type Bid } from '../data'
 import { daysLeft, IconArchive, IconBrain, IconCheck, IconClock, IconDownload, IconExternal, IconFile, IconPlay,
-  IconMoon, IconPlus, IconQuote, IconSend, IconShield, IconSparkle, IconSun, IconUndo } from './icons'
-import { useReplay } from './useReplay'
+  IconMoon, IconPlus, IconQuote, IconSend, IconShield, IconSparkle, IconSun, IconUndo } from '../icons'
+import { useReplay } from '../useReplay'
 
 export const name = 'Midnight pro'
 

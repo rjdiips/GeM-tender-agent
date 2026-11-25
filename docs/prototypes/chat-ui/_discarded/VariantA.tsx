@@ -1,7 +1,7 @@
 // PROTOTYPE variant A: chat transcript in the middle, history on the left, results in a tabbed side panel.
 import { useState } from 'react'
-import { history, memory, request, type Bid } from './data'
-import { useReplay } from './useReplay'
+import { history, memory, request, type Bid } from '../data'
+import { useReplay } from '../useReplay'
 
 export const name = 'Chat + side panel'
 

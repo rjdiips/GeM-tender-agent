@@ -1,9 +1,9 @@
 // PROTOTYPE variant B: variant A's layout, "refined light" design (neutral greys, one indigo accent, hairlines).
 import { useState } from 'react'
-import { history, memory, request, understood, type Bid } from './data'
+import { history, memory, request, understood, type Bid } from '../data'
 import { daysLeft, IconArchive, IconBrain, IconBuilding, IconCheck, IconClock, IconDownload, IconExternal, IconFile,
-  IconHistory, IconPlay, IconPlus, IconQuote, IconSearch, IconSend, IconSparkle, IconUndo } from './icons'
-import { useReplay } from './useReplay'
+  IconHistory, IconPlay, IconPlus, IconQuote, IconSearch, IconSend, IconSparkle, IconUndo } from '../icons'
+import { useReplay } from '../useReplay'
 
 export const name = 'Refined light'
 
