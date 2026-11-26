@@ -38,7 +38,8 @@ dependencies = [
 gem-agent = "gem_agent.cli:main"
 
 [dependency-groups]
-dev = ["pytest", "pytest-asyncio", "ruff"]
+# pyright is pinned: a new release can add checks that fail CI with no code change.
+dev = ["pytest", "pytest-asyncio", "ruff", "pyright==1.1.414"]
 
 [build-system]
 requires = ["hatchling"]
@@ -50,6 +51,15 @@ packages = ["gem_agent"]
 [tool.ruff]
 line-length = 110
 target-version = "py311"
+
+[tool.pyright]
+# Keep this green: fix the logic or the annotation, never silence a real bug (see AGENTS.md).
+include = ["gem_agent"]
+typeCheckingMode = "standard"
+pythonVersion = "3.11"
+# Resolve imports against the uv-managed venv, so CI reports real type errors, not missing imports.
+venvPath = "."
+venv = ".venv"
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"

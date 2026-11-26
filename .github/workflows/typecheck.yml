@@ -1,0 +1,43 @@
+name: typecheck
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Least privilege: this job only needs to read the code to type-check it.
+permissions:
+  contents: read
+
+jobs:
+  pyright:
+    runs-on: ubuntu-latest
+    steps:
+      # persist-credentials: false — do not leave the GITHUB_TOKEN in the git
+      # config, so dependency install code from a PR cannot reuse it.
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@1db35dd8eee11c5894872e0b383ae6c406cf738d # v10.4.0
+        with:
+          # Only trusted pushes to main populate the shared cache; PR runs don't
+          # write it, so a PR-modified lockfile cannot poison main's cache.
+          enable-cache: ${{ github.event_name == 'push' }}
+
+      - name: Set up Python 3.11
+        run: uv python install 3.11
+
+      # --no-install-project installs the third-party deps pyright needs to resolve
+      # imports, but does NOT build/install the checked-out project itself, so a PR
+      # cannot execute arbitrary build-time code in this job. uv.lock hash-verifies
+      # every package; --frozen fails if the lock is stale.
+      - name: Sync dependencies
+        run: uv sync --frozen --no-install-project
+
+      # Gate: gem_agent/ must stay at 0 errors (scope set by [tool.pyright] in
+      # pyproject.toml). tests/ are intentionally not gated. --no-sync keeps uv from
+      # re-adding the project just removed above.
+      - name: Pyright
+        run: uv run --no-sync pyright
