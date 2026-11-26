@@ -1,0 +1,5851 @@
+{
+ "10162174": {
+  "b_id": 10162174,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 10162174,
+   "bid_number": "GEM/2026/B/8270903",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": null,
+   "department": "CEO Khadi and Village Industries Board",
+   "published": "2026-11-13T12:02:48",
+   "closing": "2026-11-23T13:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10162174",
+    "b_id": [
+     10162174
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8270903"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-13T12:02:48Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T13:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "Buykvib"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_deptName": [
+     "CEO Khadi and Village Industries Board"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10162174",
+    "filename": "GeM-Bidding-10162174.pdf",
+    "size": 106208,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "724916c2dfbd1fc4bebe7e48bd72e6f9b964b708e8fdc71a2400b5cc79096466",
+    "path": "docs/10162174/files/724916c2dfbd1fc4bebe7e48bd72e6f9b964b708e8fdc71a2400b5cc79096466.pdf",
+    "text_path": "docs/10162174/files/724916c2dfbd1fc4bebe7e48bd72e6f9b964b708e8fdc71a2400b5cc79096466.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "d51ed94fbf4d343e"
+   }
+  ],
+  "buyer_org": "Ceo Khadi And Village Industries Board",
+  "verdict": {
+   "b_id": 10162174,
+   "bid_number": "GEM/2026/B/8270903",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "5cedddbbce451b75",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for hiring an agency for IT projects, which is unrelated to fraud investigation or forensic services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-11-17T12:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 17-11-2026 12:00:00",
+    "file": "GeM-Bidding-10162174.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:16:38.177255"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10115716": {
+  "b_id": 10115716,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 10115716,
+   "bid_number": "GEM/2026/B/8230356",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": null,
+   "department": "Information Technology and Electronics Department Uttar Pradesh",
+   "published": "2026-11-06T15:38:30",
+   "closing": "2026-11-23T14:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10115716",
+    "b_id": [
+     10115716
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8230356"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-06T15:38:30Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T14:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "vkmaurya"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_deptName": [
+     "Information Technology and Electronics Department Uttar Pradesh"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10115716",
+    "filename": "GeM-Bidding-10115716.pdf",
+    "size": 103897,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "bd2d861ee6b09deae448151dc662cd850d4b969ee95e3a5025b66b59232c5e39",
+    "path": "docs/10115716/files/bd2d861ee6b09deae448151dc662cd850d4b969ee95e3a5025b66b59232c5e39.pdf",
+    "text_path": "docs/10115716/files/bd2d861ee6b09deae448151dc662cd850d4b969ee95e3a5025b66b59232c5e39.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Information Technology And Electronics Department Uttar",
+    "text_key": "080b673ccc014f6f"
+   }
+  ],
+  "buyer_org": "N/a",
+  "verdict": {
+   "b_id": 10115716,
+   "bid_number": "GEM/2026/B/8230356",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "acfa87e33d2315ef",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for hiring an agency for general IT projects, which does not match the specific requirement for fraud investigation and forensic services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:17:09.450875"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10049833": {
+  "b_id": 10049833,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 10049833,
+   "bid_number": "GEM/2026/B/8173820",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-10-16T21:04:35",
+   "closing": "2026-11-23T15:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "10049833",
+    "b_id": [
+     10049833
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8173820"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-10-16T21:04:35Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T15:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "ib_791638"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10049833",
+    "filename": "GeM-Bidding-10049833.pdf",
+    "size": 103526,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "b5903f8868a3f5bf71f0345091fb396e62a3c7ae06d162239f1c21c74d0269f1",
+    "path": "docs/10049833/files/b5903f8868a3f5bf71f0345091fb396e62a3c7ae06d162239f1c21c74d0269f1.pdf",
+    "text_path": "docs/10049833/files/b5903f8868a3f5bf71f0345091fb396e62a3c7ae06d162239f1c21c74d0269f1.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "949cfe0eb42b5e05"
+   }
+  ],
+  "buyer_org": "Indian Bank",
+  "verdict": {
+   "b_id": 10049833,
+   "bid_number": "GEM/2026/B/8173820",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "68312c2d4f3e695b",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for hiring an agency for IT projects, which is unrelated to fraud investigation or forensic services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-10-23T12:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 23-10-2026 12:00:00",
+    "file": "GeM-Bidding-10049833.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:17:09.596817"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10048017": {
+  "b_id": 10048017,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 10048017,
+   "bid_number": "GEM/2026/B/8172198",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-10-16T17:42:28",
+   "closing": "2026-11-23T15:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "10048017",
+    "b_id": [
+     10048017
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8172198"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-10-16T17:42:28Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T15:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "ib_791638"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10048017",
+    "filename": "GeM-Bidding-10048017.pdf",
+    "size": 99843,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "91d134b4f6b7da7d5601d7cbf0ceddefd9b53e87396175802f3342d0691711a0",
+    "path": "docs/10048017/files/91d134b4f6b7da7d5601d7cbf0ceddefd9b53e87396175802f3342d0691711a0.pdf",
+    "text_path": "docs/10048017/files/91d134b4f6b7da7d5601d7cbf0ceddefd9b53e87396175802f3342d0691711a0.pdf.text.json",
+    "pages": 6,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "43f74e30d9d977fa"
+   }
+  ],
+  "buyer_org": "Indian Bank",
+  "verdict": {
+   "b_id": 10048017,
+   "bid_number": "GEM/2026/B/8172198",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "9bc4966557818891",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for hiring an agency for general IT projects, which does not match the specific requirement for fraud investigation and forensic services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-10-27T15:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 27-10-2026 15:00:00",
+    "file": "GeM-Bidding-10048017.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:17:37.828169"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10162308": {
+  "b_id": 10162308,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 10162308,
+   "bid_number": "GEM/2026/B/8271027",
+   "title": "Custom Bid for Services - ----",
+   "category_id": "services_home_cust",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-11-13T12:23:43",
+   "closing": "2026-11-23T13:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10162308",
+    "b_id": [
+     10162308
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8271027"
+    ],
+    "b_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-13T12:23:43Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T13:00:00Z"
+    ],
+    "bd_category_name": [
+     "Custom Bid for Services - ----"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cust"
+    ],
+    "b.b_created_by": [
+     "buycon1.ssl.mh@gembuyer.in"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10162308",
+    "filename": "GeM-Bidding-10162308.pdf",
+    "size": 105601,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "55d475282501a51404f6687c569055918e73eb980ddcdc16ef62affb10c92352",
+    "path": "docs/10162308/files/55d475282501a51404f6687c569055918e73eb980ddcdc16ef62affb10c92352.pdf",
+    "text_path": "docs/10162308/files/55d475282501a51404f6687c569055918e73eb980ddcdc16ef62affb10c92352.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "98ab5b732da56965"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/downloadOmppdfile/",
+    "filename": "downloadOmppdfile",
+    "size": 0,
+    "kind": "empty",
+    "status": "empty",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": null,
+    "path": null,
+    "text_path": null,
+    "pages": 0,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10162308/1794551202.pdf",
+    "filename": "1794551202.pdf",
+    "size": 650336,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "c25dc80848eb1a51b014aea94250431131810d2d0c5cc7a2dd0c0651629a9bec",
+    "path": "docs/10162308/files/c25dc80848eb1a51b014aea94250431131810d2d0c5cc7a2dd0c0651629a9bec.pdf",
+    "text_path": "docs/10162308/files/c25dc80848eb1a51b014aea94250431131810d2d0c5cc7a2dd0c0651629a9bec.pdf.text.json",
+    "pages": 15,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Scope of Work",
+    "title": "Request for Proposal - Website Design, Development and Maintenance Services",
+    "text_key": "c5310590c53a7694"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10162308/1794551251.pdf",
+    "filename": "1794551251.pdf",
+    "size": 306390,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "fecdb1ee66fdd11c577a3062da9e19983d323169569a957031f4f51c34b36431",
+    "path": "docs/10162308/files/fecdb1ee66fdd11c577a3062da9e19983d323169569a957031f4f51c34b36431.pdf",
+    "text_path": "docs/10162308/files/fecdb1ee66fdd11c577a3062da9e19983d323169569a957031f4f51c34b36431.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Payment Terms",
+    "title": "Website Design, Development and Maintenance Services",
+    "text_key": "ac75fb8f0d5d2281"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10162308/1794551353.pdf",
+    "filename": "1794551353.pdf",
+    "size": 42019,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "4eeb07929b7f03bacf2a4d23d63121b8e1a16a9bf60ff8e01f564ec19cd2df08",
+    "path": "docs/10162308/files/4eeb07929b7f03bacf2a4d23d63121b8e1a16a9bf60ff8e01f564ec19cd2df08.pdf",
+    "text_path": "docs/10162308/files/4eeb07929b7f03bacf2a4d23d63121b8e1a16a9bf60ff8e01f564ec19cd2df08.pdf.text.json",
+    "pages": 2,
+    "ocr_pages": [],
+    "error": null,
+    "label": "GEM Availability Report (GAR)",
+    "title": "GeM Availability Report and past transaction summary report is generated based on the specifications searched by the Buyer. The specification may be modified…",
+    "text_key": "31343e68399f7eb8"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10162308/1794551406.pdf",
+    "filename": "1794551406.pdf",
+    "size": 709782,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "1bb90bfff8a273733793c88fed6412b9c2465b1e5bf2993446a8196983909aae",
+    "path": "docs/10162308/files/1bb90bfff8a273733793c88fed6412b9c2465b1e5bf2993446a8196983909aae.pdf",
+    "text_path": "docs/10162308/files/1bb90bfff8a273733793c88fed6412b9c2465b1e5bf2993446a8196983909aae.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Undertaking of Competent Authority",
+    "title": "Undertaking for Custom bid/BoQ Creation on GeM",
+    "text_key": "2b71870541d1d717"
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8271027/CL10360/Integrity_39835d7e-5629-4727-bada1794551753963_buycon1.ssl.mh@gembuyer.in.pdf",
+    "filename": "Integrity_39835d7e-5629-4727-bada1794551753963_buycon1.ssl.mh@gembuyer.in.pdf",
+    "size": 280469,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "c1f4a226ed55569352b552e06219558e5a3df14beea20ec7dc47f2e02dd09091",
+    "path": "docs/10162308/files/c1f4a226ed55569352b552e06219558e5a3df14beea20ec7dc47f2e02dd09091.pdf",
+    "text_path": "docs/10162308/files/c1f4a226ed55569352b552e06219558e5a3df14beea20ec7dc47f2e02dd09091.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Annexure - 5 – Integrity Pact",
+    "text_key": "c07e00a5e3966c9a"
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8271027/CLM0010/RFPW_2b92c136-2f88-4ae4-94691794551811317_buycon1.ssl.mh@gembuyer.in.pdf",
+    "filename": "RFPW_2b92c136-2f88-4ae4-94691794551811317_buycon1.ssl.mh@gembuyer.in.pdf",
+    "size": 650336,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "c25dc80848eb1a51b014aea94250431131810d2d0c5cc7a2dd0c0651629a9bec",
+    "path": "docs/10162308/files/c25dc80848eb1a51b014aea94250431131810d2d0c5cc7a2dd0c0651629a9bec.pdf",
+    "text_path": "docs/10162308/files/c25dc80848eb1a51b014aea94250431131810d2d0c5cc7a2dd0c0651629a9bec.pdf.text.json",
+    "pages": 15,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Request for Proposal - Website Design, Development and Maintenance Services",
+    "text_key": "c5310590c53a7694"
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261113",
+    "filename": "gtc-20261113.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261113.pdf",
+    "text_path": "gtc/20261113.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/103272503886864",
+    "filename": "103272503886864",
+    "size": 104933,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "document",
+    "sha256": "bea231248e8dcaec2045d90d53c0e62f76c08707065c31b74c7900b26a2c32e7",
+    "path": "docs/10162308/files/bea231248e8dcaec2045d90d53c0e62f76c08707065c31b74c7900b26a2c32e7.html",
+    "text_path": "docs/10162308/files/bea231248e8dcaec2045d90d53c0e62f76c08707065c31b74c7900b26a2c32e7.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Service level agreement (GeM)",
+    "text_key": "707673db90c8e1bc"
+   }
+  ],
+  "buyer_org": "Stockholding Services Limited",
+  "verdict": {
+   "b_id": 10162308,
+   "bid_number": "GEM/2026/B/8271027",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "a9a867ffc8985d29",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.95,
+   "stage": "judge",
+   "triage": "maybe",
+   "reason": "The tender is for website design, development, and maintenance services, not for fraud investigation or forensic accounting services.",
+   "evidence": [
+    {
+     "quote": "The objective of this RFP is to appoint a professional website development and management agency for StockHolding Services Limited (SSL) to design, develop, deploy, manage and maintain the SSL website",
+     "file": "1794551202.pdf",
+     "page": 3,
+     "verified": true
+    },
+    {
+     "quote": "Request for Proposal (RFP) for WEBSITE DESIGN, DEVELOPMENT AND MAINTENANCE SERVICES for STOCKHOLDING SERVICES LIMITED",
+     "file": "1794551202.pdf",
+     "page": 1,
+     "verified": true
+    },
+    {
+     "quote": "Goods / Services required: Website Design, Development and Maintenance Services",
+     "file": "1794551406.pdf",
+     "page": 1,
+     "verified": true
+    }
+   ],
+   "key_facts": {
+    "emd": "",
+    "min_turnover": "10 Lakh",
+    "contract_period": "1 Year(s) 1 Day(s)",
+    "estimated_value": "2000000",
+    "scope_summary": "Website design, development, and maintenance services."
+   },
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:17:38.915847"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10178476": {
+  "b_id": 10178476,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 10178476,
+   "bid_number": "GEM/2026/B/8284871",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": "Ministry of Communications",
+   "department": "Department of Posts",
+   "published": "2026-11-19T11:39:53",
+   "closing": "2026-11-23T16:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "10178476",
+    "b_id": [
+     10178476
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8284871"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-19T11:39:53Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T16:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "managerproc2"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     1
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Communications"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Posts"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10178476",
+    "filename": "GeM-Bidding-10178476.pdf",
+    "size": 102392,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "1c5c7010c31ba444623d6788bb2c84ab35a9be8b2373ce84995114e70b3d35a4",
+    "path": "docs/10178476/files/1c5c7010c31ba444623d6788bb2c84ab35a9be8b2373ce84995114e70b3d35a4.pdf",
+    "text_path": "docs/10178476/files/1c5c7010c31ba444623d6788bb2c84ab35a9be8b2373ce84995114e70b3d35a4.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "a737a099ae5569b0"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadMseMiiDoc/10178476/1795000338.pdf",
+    "filename": "1795000338.pdf",
+    "size": 235690,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "049fcfbae275318fda48ce3e8320f283b5be01bb15460c03727da7cc365cf504",
+    "path": "docs/10178476/files/049fcfbae275318fda48ce3e8320f283b5be01bb15460c03727da7cc365cf504.pdf",
+    "text_path": "docs/10178476/files/049fcfbae275318fda48ce3e8320f283b5be01bb15460c03727da7cc365cf504.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "RFP for Procurement of Managed Onsite Support Services and ATS for Real Time Transaction Monitoring (RTTM) Solution",
+    "text_key": "d8a086c567f13487"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10178476/1794998106.pdf",
+    "filename": "1794998106.pdf",
+    "size": 1453543,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "cd72587465b5635cc44d03476d71cfdff35b67285d1139975595db821a9f4cee",
+    "path": "docs/10178476/files/cd72587465b5635cc44d03476d71cfdff35b67285d1139975595db821a9f4cee.pdf",
+    "text_path": "docs/10178476/files/cd72587465b5635cc44d03476d71cfdff35b67285d1139975595db821a9f4cee.pdf.text.json",
+    "pages": 132,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Scope of Work",
+    "title": null,
+    "text_key": "2f2e85399167883f"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10178476/1794998159.pdf",
+    "filename": "1794998159.pdf",
+    "size": 1453543,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "cd72587465b5635cc44d03476d71cfdff35b67285d1139975595db821a9f4cee",
+    "path": "docs/10178476/files/cd72587465b5635cc44d03476d71cfdff35b67285d1139975595db821a9f4cee.pdf",
+    "text_path": "docs/10178476/files/cd72587465b5635cc44d03476d71cfdff35b67285d1139975595db821a9f4cee.pdf.text.json",
+    "pages": 132,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Payment Terms",
+    "title": null,
+    "text_key": "2f2e85399167883f"
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8284871/CL10360/integrity_a2502455-5fe3-4b4b-9a111794912338238_managerproc2.pdf",
+    "filename": "integrity_a2502455-5fe3-4b4b-9a111794912338238_managerproc2.pdf",
+    "size": 1852573,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "56ba53b2259d69ba4c79f92fb5725c99673c7a886acb2824c63dfc7a50a8572b",
+    "path": "docs/10178476/files/56ba53b2259d69ba4c79f92fb5725c99673c7a886acb2824c63dfc7a50a8572b.pdf",
+    "text_path": "docs/10178476/files/56ba53b2259d69ba4c79f92fb5725c99673c7a886acb2824c63dfc7a50a8572b.pdf.text.json",
+    "pages": 4,
+    "ocr_pages": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "error": null,
+    "label": null,
+    "title": "Integrity Pact",
+    "text_key": "4d79620c87b7a42e"
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8284871/CLM0010/RFPRTTM_b56c8529-9bf8-428d-9d581795001795413_managerproc2.pdf",
+    "filename": "RFPRTTM_b56c8529-9bf8-428d-9d581795001795413_managerproc2.pdf",
+    "size": 1453422,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "b440889275899c8e49fbde4cd223a5cda83ab26ebb9fdf95e800bd71e1fb3a8a",
+    "path": "docs/10178476/files/b440889275899c8e49fbde4cd223a5cda83ab26ebb9fdf95e800bd71e1fb3a8a.pdf",
+    "text_path": "docs/10178476/files/b440889275899c8e49fbde4cd223a5cda83ab26ebb9fdf95e800bd71e1fb3a8a.pdf.text.json",
+    "pages": 132,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "3e6f4084dae05ce4"
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261119",
+    "filename": "gtc-20261119.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261119.pdf",
+    "text_path": "gtc/20261119.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/103601373682576",
+    "filename": "103601373682576",
+    "size": 108414,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "document",
+    "sha256": "f131cd9e90d87cec95f878b17a316375487c8d068accda6402d5db201ee9fa5a",
+    "path": "docs/10178476/files/f131cd9e90d87cec95f878b17a316375487c8d068accda6402d5db201ee9fa5a.html",
+    "text_path": "docs/10178476/files/f131cd9e90d87cec95f878b17a316375487c8d068accda6402d5db201ee9fa5a.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Service level agreement (GeM)",
+    "text_key": "3f1745a4d182258e"
+   }
+  ],
+  "buyer_org": "India Post Payment Bank Limited",
+  "verdict": {
+   "b_id": 10178476,
+   "bid_number": "GEM/2026/B/8284871",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "a213c01709900730",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for hiring an agency for general IT projects, which does not match the specific requirement for fraud investigation and forensic services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:17:52.821520"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10083799": {
+  "b_id": 10083799,
+  "group": "Fraud Detection and Prevention Systems",
+  "bid": {
+   "b_id": 10083799,
+   "bid_number": "GEM/2026/B/8202879",
+   "title": "RFP for Appointment of Selection of Cloud Service Provider (CSP) for Cloud Hosting & Managed Servic",
+   "category_id": "home_univ_univ_univ_univ",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-10-26T17:55:42",
+   "closing": "2026-11-23T15:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10083799",
+    "b_id": [
+     10083799
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8202879"
+    ],
+    "b_category_name": [
+     "RFP for Appointment of Selection of Cloud Service Provider (CSP) for Cloud Hosting & Managed Servic"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-10-26T17:55:42Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T15:00:00Z"
+    ],
+    "bd_category_name": [
+     "RFP for Appointment of Selection of Cloud Service Provider (CSP) for Cloud Hosting & Managed Service"
+    ],
+    "b_is_custom_item": [
+     1
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_univ_univ_univ_univ"
+    ],
+    "b.b_created_by": [
+     "buycon12.sdmsl.mh@gembuyer.in"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10083799",
+    "filename": "GeM-Bidding-10083799.pdf",
+    "size": 120142,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "db41cf9dfd716a34b2cc342597760c576946debe30a32baafd89cbf325748f6e",
+    "path": "docs/10083799/files/db41cf9dfd716a34b2cc342597760c576946debe30a32baafd89cbf325748f6e.pdf",
+    "text_path": "docs/10083799/files/db41cf9dfd716a34b2cc342597760c576946debe30a32baafd89cbf325748f6e.pdf.text.json",
+    "pages": 8,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "RFP for Appointment of Selection of Cloud Service Provider",
+    "text_key": "3cc37c7094b23cda"
+   }
+  ],
+  "buyer_org": "Stockholding Document Management Services Ltd",
+  "verdict": {
+   "b_id": 10083799,
+   "bid_number": "GEM/2026/B/8202879",
+   "topic_key": "78d4134be604e672",
+   "doc_hash": "97f233fb9053c75f",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for cloud hosting and managed services, which is a general IT infrastructure requirement and does not mention fraud detection or prevention systems.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-11-02T11:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 02-11-2026 11:00:00",
+    "file": "GeM-Bidding-10083799.pdf",
+    "page": 6,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:18:13.061707"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10041561": {
+  "b_id": 10041561,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 10041561,
+   "bid_number": "GEM/2026/B/8166506",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": "Ministry of Petroleum and Natural Gas",
+   "department": "NUMALIGARH REFINERY Limited",
+   "published": "2026-10-15T15:31:41",
+   "closing": "2026-11-23T16:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10041561",
+    "b_id": [
+     10041561
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8166506"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-10-15T15:31:41Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T16:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "JyotishmanKakoty"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Petroleum and Natural Gas"
+    ],
+    "ba_official_details_deptName": [
+     "NUMALIGARH REFINERY Limited"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10041561",
+    "filename": "GeM-Bidding-10041561.pdf",
+    "size": 104303,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "fbab9b3dfea29eda08bb65aa9e2bf76bd5e527c9aaacca5f4dfcea951138d160",
+    "path": "docs/10041561/files/fbab9b3dfea29eda08bb65aa9e2bf76bd5e527c9aaacca5f4dfcea951138d160.pdf",
+    "text_path": "docs/10041561/files/fbab9b3dfea29eda08bb65aa9e2bf76bd5e527c9aaacca5f4dfcea951138d160.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [
+     7
+    ],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "ec3da299d1b71810"
+   }
+  ],
+  "buyer_org": "Numaligarh Refinery Limited",
+  "verdict": {
+   "b_id": 10041561,
+   "bid_number": "GEM/2026/B/8166506",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "e11a4939f7fe28be",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for hiring an agency for general IT projects, which does not match the specific requirement for fraud investigation and forensic services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:18:23.830697"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10020519": {
+  "b_id": 10020519,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 10020519,
+   "bid_number": "GEM/2026/B/8147860",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-10-12T13:39:48",
+   "closing": "2026-11-23T16:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10020519",
+    "b_id": [
+     10020519
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8147860"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-10-12T13:39:48Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T16:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "Srutidas_UCO"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10020519",
+    "filename": "GeM-Bidding-10020519.pdf",
+    "size": 104838,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "b822beb819f2b54801eef6bc73fd4a90c888ac79845267f86055262ae7b45453",
+    "path": "docs/10020519/files/b822beb819f2b54801eef6bc73fd4a90c888ac79845267f86055262ae7b45453.pdf",
+    "text_path": "docs/10020519/files/b822beb819f2b54801eef6bc73fd4a90c888ac79845267f86055262ae7b45453.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "abccf64582269067"
+   }
+  ],
+  "buyer_org": "Uco Bank",
+  "verdict": {
+   "b_id": 10020519,
+   "bid_number": "GEM/2026/B/8147860",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "f021805f41ac40a6",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for general IT project services, which does not match the specific requirement for fraud investigation and forensic accounting services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-10-16T13:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 16-10-2026 13:00:00",
+    "file": "GeM-Bidding-10020519.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:18:23.850379"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10199996": {
+  "b_id": 10199996,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 10199996,
+   "bid_number": "GEM/2026/R/774805",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-11-22T15:00:00",
+   "closing": "2026-11-23T17:00:00",
+   "bid_type": 2,
+   "eval_type": 0,
+   "parent_b_id": 9874255,
+   "parent_bid_number": "GEM/2026/B/8020411",
+   "total_quantity": 1,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "10199996",
+    "b_id": [
+     10199996
+    ],
+    "b_bid_number": [
+     "GEM/2026/R/774805"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     2
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     1
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-22T15:00:00Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T17:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "b_bid_number_parent": [
+     "GEM/2026/B/8020411"
+    ],
+    "b_id_parent": [
+     9874255
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "ra_b_status": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "ra_b_buyer_status": [
+     2
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "buyer3.iob.chennai"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showradocumentPdf/10199996",
+    "filename": "GeM-RA-10199996.pdf",
+    "size": 128967,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "9123c004c564bf3e980fd2b8ef5d569dc63d8ae340f9d7b94572fa2b27a24997",
+    "path": "docs/10199996/files/9123c004c564bf3e980fd2b8ef5d569dc63d8ae340f9d7b94572fa2b27a24997.pdf",
+    "text_path": "docs/10199996/files/9123c004c564bf3e980fd2b8ef5d569dc63d8ae340f9d7b94572fa2b27a24997.pdf.text.json",
+    "pages": 2,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "dbbb2059a07e6bc5"
+   },
+   {
+    "role": "parent_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/9874255",
+    "filename": "GeM-Bidding-9874255.pdf",
+    "size": 107187,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "8f0b24226b27bb9216574fc68d5a47b34c5e97e167ebc37ff47acd9b885ad604",
+    "path": "docs/10199996/files/8f0b24226b27bb9216574fc68d5a47b34c5e97e167ebc37ff47acd9b885ad604.pdf",
+    "text_path": "docs/10199996/files/8f0b24226b27bb9216574fc68d5a47b34c5e97e167ebc37ff47acd9b885ad604.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "332fff4cfd2b1e4d"
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261121",
+    "filename": "gtc-20261121.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 1,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261121.pdf",
+    "text_path": "gtc/20261121.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/downloadOmppdfile/",
+    "filename": "downloadOmppdfile",
+    "size": 0,
+    "kind": "empty",
+    "status": "empty",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": null,
+    "path": null,
+    "text_path": null,
+    "pages": 0,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/SepQ326/bidding/biddoc/bid-9874255/1789021277.pdf",
+    "filename": "1789021277.pdf",
+    "size": 1317723,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "c9b65514c3091679f0e36cbfec1cb4c37e17fb38789361fba36649f6b2f38cad",
+    "path": "docs/10199996/files/c9b65514c3091679f0e36cbfec1cb4c37e17fb38789361fba36649f6b2f38cad.pdf",
+    "text_path": "docs/10199996/files/c9b65514c3091679f0e36cbfec1cb4c37e17fb38789361fba36649f6b2f38cad.pdf.text.json",
+    "pages": 141,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Scope of Work",
+    "title": "GeM Tender",
+    "text_key": "332a62269220c4aa"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/SepQ326/bidding/biddoc/bid-9874255/1789021283.pdf",
+    "filename": "1789021283.pdf",
+    "size": 1317723,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "c9b65514c3091679f0e36cbfec1cb4c37e17fb38789361fba36649f6b2f38cad",
+    "path": "docs/10199996/files/c9b65514c3091679f0e36cbfec1cb4c37e17fb38789361fba36649f6b2f38cad.pdf",
+    "text_path": "docs/10199996/files/c9b65514c3091679f0e36cbfec1cb4c37e17fb38789361fba36649f6b2f38cad.pdf.text.json",
+    "pages": 141,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Payment Terms",
+    "title": "GeM Tender",
+    "text_key": "332a62269220c4aa"
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Sep/GEM_2026_B_8020411/CL10360/DRM_c613137b-a91c-4a0a-92c41789021560360_buyer3.iob.chennai.pdf",
+    "filename": "DRM_c613137b-a91c-4a0a-92c41789021560360_buyer3.iob.chennai.pdf",
+    "size": 1317723,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "c9b65514c3091679f0e36cbfec1cb4c37e17fb38789361fba36649f6b2f38cad",
+    "path": "docs/10199996/files/c9b65514c3091679f0e36cbfec1cb4c37e17fb38789361fba36649f6b2f38cad.pdf",
+    "text_path": "docs/10199996/files/c9b65514c3091679f0e36cbfec1cb4c37e17fb38789361fba36649f6b2f38cad.pdf.text.json",
+    "pages": 141,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "GeM Tender",
+    "text_key": "332a62269220c4aa"
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Sep/GEM_2026_B_8020411/CLM0010/DRM_ce3df3ac-9280-4467-8fd21789021575429_buyer3.iob.chennai.pdf",
+    "filename": "DRM_ce3df3ac-9280-4467-8fd21789021575429_buyer3.iob.chennai.pdf",
+    "size": 1317723,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "c9b65514c3091679f0e36cbfec1cb4c37e17fb38789361fba36649f6b2f38cad",
+    "path": "docs/10199996/files/c9b65514c3091679f0e36cbfec1cb4c37e17fb38789361fba36649f6b2f38cad.pdf",
+    "text_path": "docs/10199996/files/c9b65514c3091679f0e36cbfec1cb4c37e17fb38789361fba36649f6b2f38cad.pdf.text.json",
+    "pages": 141,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "GeM Tender",
+    "text_key": "332a62269220c4aa"
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20260910",
+    "filename": "gtc-20260910.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20260910.pdf",
+    "text_path": "gtc/20260910.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/97500911805025",
+    "filename": "97500911805025",
+    "size": 108414,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "document",
+    "sha256": "f131cd9e90d87cec95f878b17a316375487c8d068accda6402d5db201ee9fa5a",
+    "path": "docs/10199996/files/f131cd9e90d87cec95f878b17a316375487c8d068accda6402d5db201ee9fa5a.html",
+    "text_path": "docs/10199996/files/f131cd9e90d87cec95f878b17a316375487c8d068accda6402d5db201ee9fa5a.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Service level agreement (GeM)",
+    "text_key": "3f1745a4d182258e"
+   }
+  ],
+  "buyer_org": "Indian Overseas Bank",
+  "verdict": {
+   "b_id": 10199996,
+   "bid_number": "GEM/2026/R/774805",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "b5e31a7ab730709d",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for hiring an agency for IT projects, which is unrelated to fraud investigation or forensic services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:18:39.167694"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10128284": {
+  "b_id": 10128284,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 10128284,
+   "bid_number": "GEM/2026/B/8241476",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": null,
+   "department": "Education Department Andaman & Nicobar",
+   "published": "2026-11-12T16:21:20",
+   "closing": "2026-11-23T17:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10128284",
+    "b_id": [
+     10128284
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8241476"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-12T16:21:20Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T17:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "buyer201071"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_deptName": [
+     "Education Department Andaman & Nicobar"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10128284",
+    "filename": "GeM-Bidding-10128284.pdf",
+    "size": 104161,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "593b4d884abffeb4774e17a155f134c1c742e0ffab4f49ecb438a0bc62814e6d",
+    "path": "docs/10128284/files/593b4d884abffeb4774e17a155f134c1c742e0ffab4f49ecb438a0bc62814e6d.pdf",
+    "text_path": "docs/10128284/files/593b4d884abffeb4774e17a155f134c1c742e0ffab4f49ecb438a0bc62814e6d.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "552fc8a87dd8647c"
+   }
+  ],
+  "buyer_org": "N/a",
+  "verdict": {
+   "b_id": 10128284,
+   "bid_number": "GEM/2026/B/8241476",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "30e363b2bc2ea85c",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for hiring an agency for IT projects, which is unrelated to fraud investigation or forensic services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:18:46.506162"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "9849029": {
+  "b_id": 9849029,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 9849029,
+   "bid_number": "GEM/2026/B/7998476",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-09-04T20:53:43",
+   "closing": "2026-11-23T17:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "9849029",
+    "b_id": [
+     9849029
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/7998476"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-09-04T20:53:43Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T17:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "neha.nasreen"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/9849029",
+    "filename": "GeM-Bidding-9849029.pdf",
+    "size": 109510,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "184d1900532b381241c4ba200a994a83ebe4841e6457d5c572a5c7151f02d15d",
+    "path": "docs/9849029/files/184d1900532b381241c4ba200a994a83ebe4841e6457d5c572a5c7151f02d15d.pdf",
+    "text_path": "docs/9849029/files/184d1900532b381241c4ba200a994a83ebe4841e6457d5c572a5c7151f02d15d.pdf.text.json",
+    "pages": 8,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "f7915f1b283158cf"
+   }
+  ],
+  "buyer_org": "Bank Of Maharashtra",
+  "verdict": {
+   "b_id": 9849029,
+   "bid_number": "GEM/2026/B/7998476",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "a7249ed2216d55f9",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for general IT project implementation services, which does not match the specific requirement for fraud investigation and forensic accounting services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-09-15T15:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 15-09-2026 15:00:00",
+    "file": "GeM-Bidding-9849029.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:19:05.689095"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10123156": {
+  "b_id": 10123156,
+  "group": "Fraud Detection and Prevention Systems",
+  "bid": {
+   "b_id": 10123156,
+   "bid_number": "GEM/2026/B/8236877",
+   "title": "Custom Bid for Services - CHANGING REPAIR AND MAINTENANCE OF FDS DUCT AND HOPPER ID FAN FLOW STRAIG",
+   "category_id": "services_home_cust",
+   "ministry": "Ministry of Steel",
+   "department": "Steel Authority of India Limited",
+   "published": "2026-11-07T13:35:03",
+   "closing": "2026-11-23T17:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10123156",
+    "b_id": [
+     10123156
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8236877"
+    ],
+    "b_category_name": [
+     "Custom Bid for Services - CHANGING REPAIR AND MAINTENANCE OF FDS DUCT AND HOPPER ID FAN FLOW STRAIG"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-07T13:35:03Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T17:00:00Z"
+    ],
+    "bd_category_name": [
+     "Custom Bid for Services - CHANGING REPAIR AND MAINTENANCE OF FDS DUCT AND HOPPER ID FAN FLOW STRAIGHTENER ID FAN CASING REPAIR AND MISC DUCT REPAIR OF GCP SYSTEM OF CONVERTER 1 AND 2 OF SMS 2"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cust"
+    ],
+    "b.b_created_by": [
+     "User2@CCW"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Steel"
+    ],
+    "ba_official_details_deptName": [
+     "Steel Authority of India Limited"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10123156",
+    "filename": "GeM-Bidding-10123156.pdf",
+    "size": 100330,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "4cb33293904577626bafb91c9413647acba51825eb571187e3b7f5a7b397d9c8",
+    "path": "docs/10123156/files/4cb33293904577626bafb91c9413647acba51825eb571187e3b7f5a7b397d9c8.pdf",
+    "text_path": "docs/10123156/files/4cb33293904577626bafb91c9413647acba51825eb571187e3b7f5a7b397d9c8.pdf.text.json",
+    "pages": 6,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "9ec3141b896678ad"
+   }
+  ],
+  "buyer_org": "Bokaro Steel Plant",
+  "verdict": {
+   "b_id": 10123156,
+   "bid_number": "GEM/2026/B/8236877",
+   "topic_key": "78d4134be604e672",
+   "doc_hash": "8e70caf41e968840",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for the physical repair and maintenance of industrial ducts, fans, and casings in a steel plant, not for software or services related to fraud detection.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:19:18.265292"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10137838": {
+  "b_id": 10137838,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 10137838,
+   "bid_number": "GEM/2026/B/8249927",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": null,
+   "department": "Information Technology and Electronics Department Uttar Pradesh",
+   "published": "2026-11-12T18:17:31",
+   "closing": "2026-11-23T19:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10137838",
+    "b_id": [
+     10137838
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8249927"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-12T18:17:31Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T19:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "vkmaurya"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_deptName": [
+     "Information Technology and Electronics Department Uttar Pradesh"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10137838",
+    "filename": "GeM-Bidding-10137838.pdf",
+    "size": 113481,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "fa3e652b34e0a3e989de03bcbd704d60604d06ddf14b469cb321aa2a754431da",
+    "path": "docs/10137838/files/fa3e652b34e0a3e989de03bcbd704d60604d06ddf14b469cb321aa2a754431da.pdf",
+    "text_path": "docs/10137838/files/fa3e652b34e0a3e989de03bcbd704d60604d06ddf14b469cb321aa2a754431da.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Information Technology And Electronics Department Uttar",
+    "text_key": "aced7623b0201aee"
+   }
+  ],
+  "buyer_org": "N/a",
+  "verdict": {
+   "b_id": 10137838,
+   "bid_number": "GEM/2026/B/8249927",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "364bb70ec6fd83a2",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for hiring an agency to manage general IT projects, which does not match the specific requirement for fraud investigation and forensic services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:20:07.890555"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10036087": {
+  "b_id": 10036087,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 10036087,
+   "bid_number": "GEM/2026/B/8161724",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": "Ministry of Civil Aviation",
+   "department": "Airports Authority of India (AAI)",
+   "published": "2026-10-16T18:57:25",
+   "closing": "2026-11-23T19:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "10036087",
+    "b_id": [
+     10036087
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8161724"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-10-16T18:57:25Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T19:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "JE_IT1"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Civil Aviation"
+    ],
+    "ba_official_details_deptName": [
+     "Airports Authority of India (AAI)"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10036087",
+    "filename": "GeM-Bidding-10036087.pdf",
+    "size": 112061,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "d0d38e6ed1a1db976fbc59121434b09938d667facc87b62a8e12a433f456a9bd",
+    "path": "docs/10036087/files/d0d38e6ed1a1db976fbc59121434b09938d667facc87b62a8e12a433f456a9bd.pdf",
+    "text_path": "docs/10036087/files/d0d38e6ed1a1db976fbc59121434b09938d667facc87b62a8e12a433f456a9bd.pdf.text.json",
+    "pages": 8,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "2a037169ae8cbea4"
+   }
+  ],
+  "buyer_org": "Airports Authority Of India",
+  "verdict": {
+   "b_id": 10036087,
+   "bid_number": "GEM/2026/B/8161724",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "00bf0110637df71d",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for hiring an agency for IT projects, which is unrelated to fraud investigation or forensic services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-10-17T18:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 17-10-2026 18:00:00",
+    "file": "GeM-Bidding-10036087.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:20:08.436015"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10037444": {
+  "b_id": 10037444,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 10037444,
+   "bid_number": "GEM/2026/B/8162911",
+   "title": "Hiring of Consultants - Milestone/Deliverable Based - Management Consultants, AS PER RFP; Business ",
+   "category_id": "services_home_pr22455282_hi85156607",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-10-14T21:01:50",
+   "closing": "2026-11-23T16:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "10037444",
+    "b_id": [
+     10037444
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8162911"
+    ],
+    "b_category_name": [
+     "Hiring of Consultants - Milestone/Deliverable Based - Management Consultants, AS PER RFP; Business "
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-10-14T21:01:50Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T16:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Consultants - Milestone/Deliverable Based - Management Consultants, AS PER RFP; Business Transformation Expert, AS PER RFP; No; Hybrid(As specified in scope of work)"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_pr22455282_hi85156607"
+    ],
+    "b.b_created_by": [
+     "CO_PROCUREMENT_BUYER20"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10037444",
+    "filename": "GeM-Bidding-10037444.pdf",
+    "size": 104437,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "fdb6ae63271793f9e80ab8da30d9f17cfd8529b3069a5ba41124e6284a263cc3",
+    "path": "docs/10037444/files/fdb6ae63271793f9e80ab8da30d9f17cfd8529b3069a5ba41124e6284a263cc3.pdf",
+    "text_path": "docs/10037444/files/fdb6ae63271793f9e80ab8da30d9f17cfd8529b3069a5ba41124e6284a263cc3.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Central Office Dept Of Information Technology",
+    "text_key": "d7ad1a5787aa60c9"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/OctQ426/bidding/biddoc/bid-10037444/1791988256.pdf",
+    "filename": "1791988256.pdf",
+    "size": 17337,
+    "kind": "pdf",
+    "status": "placeholder",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "0d0e4f6fc72f7b9a229c391f4fe7404eb6b76c7d124b7b046a5ff78811febd75",
+    "path": "docs/10037444/files/0d0e4f6fc72f7b9a229c391f4fe7404eb6b76c7d124b7b046a5ff78811febd75.pdf",
+    "text_path": "docs/10037444/files/0d0e4f6fc72f7b9a229c391f4fe7404eb6b76c7d124b7b046a5ff78811febd75.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Scope Of work",
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/OctQ426/bidding/biddoc/bid-10037444/1791988264.pdf",
+    "filename": "1791988264.pdf",
+    "size": 17337,
+    "kind": "pdf",
+    "status": "placeholder",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "0d0e4f6fc72f7b9a229c391f4fe7404eb6b76c7d124b7b046a5ff78811febd75",
+    "path": "docs/10037444/files/0d0e4f6fc72f7b9a229c391f4fe7404eb6b76c7d124b7b046a5ff78811febd75.pdf",
+    "text_path": "docs/10037444/files/0d0e4f6fc72f7b9a229c391f4fe7404eb6b76c7d124b7b046a5ff78811febd75.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Profile of Consultants",
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadBuyerDoc/10037444/17919884556139.pdf",
+    "filename": "17919884556139.pdf",
+    "size": 17337,
+    "kind": "pdf",
+    "status": "placeholder",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "0d0e4f6fc72f7b9a229c391f4fe7404eb6b76c7d124b7b046a5ff78811febd75",
+    "path": "docs/10037444/files/0d0e4f6fc72f7b9a229c391f4fe7404eb6b76c7d124b7b046a5ff78811febd75.pdf",
+    "text_path": "docs/10037444/files/0d0e4f6fc72f7b9a229c391f4fe7404eb6b76c7d124b7b046a5ff78811febd75.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Oct/GEM_2026_B_8162911/CLM0012/MUSKANrfp_204a5437-888b-4220-88a91791991366321_CO_PROCUREMENT_BUYER20.pdf",
+    "filename": "MUSKANrfp_204a5437-888b-4220-88a91791991366321_CO_PROCUREMENT_BUYER20.pdf",
+    "size": 1332670,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "6eae18687a0fdd855bb4be0eceb49278a11be2e2c462d2bb322c4dec5dd2c6b2",
+    "path": "docs/10037444/files/6eae18687a0fdd855bb4be0eceb49278a11be2e2c462d2bb322c4dec5dd2c6b2.pdf",
+    "text_path": "docs/10037444/files/6eae18687a0fdd855bb4be0eceb49278a11be2e2c462d2bb322c4dec5dd2c6b2.pdf.text.json",
+    "pages": 112,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "REQUEST FOR PROPOSAL (RFP)",
+    "text_key": "0cf1802cb9223f37"
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261014",
+    "filename": "gtc-20261014.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261014.pdf",
+    "text_path": "gtc/20261014.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/100750282053136",
+    "filename": "100750282053136",
+    "size": 110204,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "document",
+    "sha256": "44d17e1be8cfe8cd8f4755221b5e960db8e4989aa4192ae144a3b217b68f4e85",
+    "path": "docs/10037444/files/44d17e1be8cfe8cd8f4755221b5e960db8e4989aa4192ae144a3b217b68f4e85.html",
+    "text_path": "docs/10037444/files/44d17e1be8cfe8cd8f4755221b5e960db8e4989aa4192ae144a3b217b68f4e85.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Service level agreement (GeM)",
+    "text_key": "b133ac2056d139d3"
+   }
+  ],
+  "buyer_org": "Union Bank Of India (ubi)",
+  "verdict": {
+   "b_id": 10037444,
+   "bid_number": "GEM/2026/B/8162911",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "592487cf5eb9f85e",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "judge",
+   "triage": "maybe",
+   "reason": "The tender is for a broad banking transformation consultant to streamline operations, accounting, and customer journeys, not for specialized fraud investigation or forensic services.",
+   "evidence": [
+    {
+     "quote": "The scope of Project Muskaan shall encompass Retail Operations and Branch Banking across both asset and liability products, including centralization of activities, review and strengthening of operational and accounting processes in CBS",
+     "file": "MUSKANrfp_204a5437-888b-4220-88a91791991366321_CO_PROCUREMENT_BUYER20.pdf",
+     "page": 30,
+     "verified": true
+    },
+    {
+     "quote": "Pillar No.4: Subject: Review of Accounting & Audit Processes in CBS related to Nominal A/Cs, Office A/Cs, General Ledger A/Cs Objective: The objective of this pillar is to standardize reconciliation of various transactions in the Bank",
+     "file": "MUSKANrfp_204a5437-888b-4220-88a91791991366321_CO_PROCUREMENT_BUYER20.pdf",
+     "page": 32,
+     "verified": true
+    },
+    {
+     "quote": "iv. Reconciliation, Financial Crime & Transaction-monitoring System and Processes including alerts (e.g. Money Mule Hunter, EFRMS, etc.)",
+     "file": "MUSKANrfp_204a5437-888b-4220-88a91791991366321_CO_PROCUREMENT_BUYER20.pdf",
+     "page": 46,
+     "verified": true
+    }
+   ],
+   "key_facts": {
+    "emd": "21000000",
+    "min_turnover": "20000 Lakh",
+    "contract_period": "2 Year(s)",
+    "estimated_value": "",
+    "scope_summary": "Management consulting for banking transformation, operational streamlining, and accounting process review."
+   },
+   "queries": {
+    "when": "2026-10-21T15:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 21-10-2026 15:00:00",
+    "file": "GeM-Bidding-10037444.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:20:11.756168"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10190381": {
+  "b_id": 10190381,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 10190381,
+   "bid_number": "GEM/2026/B/8295274",
+   "title": "Hiring of Consultants - Milestone/Deliverable Based - Legal Consultants; As Per NIT; Yes; Hybrid(As",
+   "category_id": "services_home_pr22455282_hi85156607",
+   "ministry": "Ministry of Housing & Urban Affairs (MoHUA)",
+   "department": "HOUSING AND URBAN DEVELOPMENT CORPORATION LTD",
+   "published": "2026-11-20T19:31:13",
+   "closing": "2026-11-24T14:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10190381",
+    "b_id": [
+     10190381
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8295274"
+    ],
+    "b_category_name": [
+     "Hiring of Consultants - Milestone/Deliverable Based - Legal Consultants; As Per NIT; Yes; Hybrid(As"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-20T19:31:13Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-24T14:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Consultants - Milestone/Deliverable Based - Legal Consultants; As Per NIT; Yes; Hybrid(As specified in scope of work)"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_pr22455282_hi85156607"
+    ],
+    "b.b_created_by": [
+     "BuyCon@01"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     1
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Housing & Urban Affairs (MoHUA)"
+    ],
+    "ba_official_details_deptName": [
+     "HOUSING AND URBAN DEVELOPMENT CORPORATION LTD"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10190381",
+    "filename": "GeM-Bidding-10190381.pdf",
+    "size": 102876,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "1e5b779f97ea0d98c7f9e4cf9fa5f539e201abe792448d8c0d77629c0e397aaf",
+    "path": "docs/10190381/files/1e5b779f97ea0d98c7f9e4cf9fa5f539e201abe792448d8c0d77629c0e397aaf.pdf",
+    "text_path": "docs/10190381/files/1e5b779f97ea0d98c7f9e4cf9fa5f539e201abe792448d8c0d77629c0e397aaf.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Consultants; As Per NIT; Yes; Hybrid(As specified in scope",
+    "text_key": "dfbbac7c973f44ec"
+   }
+  ],
+  "buyer_org": "Housing And Urban Development Corporation Ltd",
+  "verdict": {
+   "b_id": 10190381,
+   "bid_number": "GEM/2026/B/8295274",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "422d03170f0cd171",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is explicitly for hiring legal consultants, which is listed as a related but not sufficient term, and does not involve fraud investigation or forensic services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:20:49.140443"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10125559": {
+  "b_id": 10125559,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 10125559,
+   "bid_number": "GEM/2026/B/8239016",
+   "title": "Custom Bid for Services - GAP Analysis of DPDP ACT and Mitigation of GAP for StockHolding Document ",
+   "category_id": "services_home_cust",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-11-04T13:51:21",
+   "closing": "2026-11-23T17:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10125559",
+    "b_id": [
+     10125559
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8239016"
+    ],
+    "b_category_name": [
+     "Custom Bid for Services - GAP Analysis of DPDP ACT and Mitigation of GAP for StockHolding Document "
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-04T13:51:21Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T17:00:00Z"
+    ],
+    "bd_category_name": [
+     "Custom Bid for Services - GAP Analysis of DPDP ACT and Mitigation of GAP for StockHolding Document Management Service Limited"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_cust"
+    ],
+    "b.b_created_by": [
+     "buycon12.sdmsl.mh@gembuyer.in"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10125559",
+    "filename": "GeM-Bidding-10125559.pdf",
+    "size": 110271,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "f3d1a40249ec87949ae452a1e22ca71e36021b9a5eda04148b2c60d715a5967d",
+    "path": "docs/10125559/files/f3d1a40249ec87949ae452a1e22ca71e36021b9a5eda04148b2c60d715a5967d.pdf",
+    "text_path": "docs/10125559/files/f3d1a40249ec87949ae452a1e22ca71e36021b9a5eda04148b2c60d715a5967d.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "421506e339da879b"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/downloadOmppdfile/",
+    "filename": "downloadOmppdfile",
+    "size": 0,
+    "kind": "empty",
+    "status": "empty",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": null,
+    "path": null,
+    "text_path": null,
+    "pages": 0,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10125559/1793779044.pdf",
+    "filename": "1793779044.pdf",
+    "size": 1046593,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "44baa75ad9501d9f666e793727cf16301dc8cd40ba0b483c9eaf28cfe39fb281",
+    "path": "docs/10125559/files/44baa75ad9501d9f666e793727cf16301dc8cd40ba0b483c9eaf28cfe39fb281.pdf",
+    "text_path": "docs/10125559/files/44baa75ad9501d9f666e793727cf16301dc8cd40ba0b483c9eaf28cfe39fb281.pdf.text.json",
+    "pages": 29,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Scope of Work",
+    "title": "REQUEST FOR PROPOSAL (RFP)",
+    "text_key": "e0c1e4a110b27de2"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10125559/1793779049.pdf",
+    "filename": "1793779049.pdf",
+    "size": 1046593,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "44baa75ad9501d9f666e793727cf16301dc8cd40ba0b483c9eaf28cfe39fb281",
+    "path": "docs/10125559/files/44baa75ad9501d9f666e793727cf16301dc8cd40ba0b483c9eaf28cfe39fb281.pdf",
+    "text_path": "docs/10125559/files/44baa75ad9501d9f666e793727cf16301dc8cd40ba0b483c9eaf28cfe39fb281.pdf.text.json",
+    "pages": 29,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Payment Terms",
+    "title": "REQUEST FOR PROPOSAL (RFP)",
+    "text_key": "e0c1e4a110b27de2"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10125559/1793779140.pdf",
+    "filename": "1793779140.pdf",
+    "size": 535537,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "3ede3f72b16745559dc88d28d41c13ed1fe11081a8b37d7c6c576d942da0a854",
+    "path": "docs/10125559/files/3ede3f72b16745559dc88d28d41c13ed1fe11081a8b37d7c6c576d942da0a854.pdf",
+    "text_path": "docs/10125559/files/3ede3f72b16745559dc88d28d41c13ed1fe11081a8b37d7c6c576d942da0a854.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Undertaking of Competent Authority",
+    "title": "Undertaking forCustom Bid / BoO Creation on GeM (tobefilled bytheCompetent Authority)",
+    "text_key": "e22c4401cdb11d86"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10125559/1793780054.pdf",
+    "filename": "1793780054.pdf",
+    "size": 597730,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "4bc5bb97c88815821102a42217529291d6f88387966988800de5ea31ef612c22",
+    "path": "docs/10125559/files/4bc5bb97c88815821102a42217529291d6f88387966988800de5ea31ef612c22.pdf",
+    "text_path": "docs/10125559/files/4bc5bb97c88815821102a42217529291d6f88387966988800de5ea31ef612c22.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": "GEM Availability Report (GAR)",
+    "title": "GeM Availability Report and past transaction summary report is generated based on the specifications searched by the Buyer. The specification may be modified…",
+    "text_key": "1b4aa0d9aa623049"
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8239016/CLM0010/ATC_20bbc4f2-00fb-4baa-86521793780447445_buycon12.sdmsl.mh@gembuyer.in.pdf",
+    "filename": "ATC_20bbc4f2-00fb-4baa-86521793780447445_buycon12.sdmsl.mh@gembuyer.in.pdf",
+    "size": 1050996,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "document",
+    "sha256": "517e9b92a380a59fa5b3bfd27f7e4934d626d80b319047a561f8e33419f6cd20",
+    "path": "docs/10125559/files/517e9b92a380a59fa5b3bfd27f7e4934d626d80b319047a561f8e33419f6cd20.pdf",
+    "text_path": "docs/10125559/files/517e9b92a380a59fa5b3bfd27f7e4934d626d80b319047a561f8e33419f6cd20.pdf.text.json",
+    "pages": 29,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "REQUEST FOR PROPOSAL (RFP)",
+    "text_key": "19ae07c5b3932bbf"
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261104",
+    "filename": "gtc-20261104.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261104.pdf",
+    "text_path": "gtc/20261104.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/102526945062481",
+    "filename": "102526945062481",
+    "size": 104933,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "document",
+    "sha256": "bea231248e8dcaec2045d90d53c0e62f76c08707065c31b74c7900b26a2c32e7",
+    "path": "docs/10125559/files/bea231248e8dcaec2045d90d53c0e62f76c08707065c31b74c7900b26a2c32e7.html",
+    "text_path": "docs/10125559/files/bea231248e8dcaec2045d90d53c0e62f76c08707065c31b74c7900b26a2c32e7.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Service level agreement (GeM)",
+    "text_key": "707673db90c8e1bc"
+   }
+  ],
+  "buyer_org": "Stockholding Document Management Services Ltd",
+  "verdict": {
+   "b_id": 10125559,
+   "bid_number": "GEM/2026/B/8239016",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "a388e2b4b77b8f24",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "judge",
+   "triage": "maybe",
+   "reason": "The tender is for a GAP Analysis of the DPDP Act and data privacy/security compliance, not for fraud investigation or forensic services.",
+   "evidence": [
+    {
+     "quote": "Custom Bid for Services - GAP Analysis of DPDP ACT and Mitigation of GAP for StockHolding Document Management Service Limited",
+     "file": "1793779044.pdf",
+     "page": 1,
+     "verified": true
+    },
+    {
+     "quote": "Identify the details of data storage in the department /branch which includes Understanding the various endpoints and review mechanism used to store the received and processed data",
+     "file": "1793779044.pdf",
+     "page": 19,
+     "verified": true
+    },
+    {
+     "quote": "Reviewing all the involved process and analysing the risks associated with the security of data in transit, use and at rest.",
+     "file": "1793779044.pdf",
+     "page": 19,
+     "verified": true
+    }
+   ],
+   "key_facts": {
+    "emd": "",
+    "min_turnover": "7 Lakh",
+    "contract_period": "1 Year",
+    "estimated_value": "1500000",
+    "scope_summary": "GAP Analysis of DPDP Act implementation and mitigation of gaps for StockHolding Document Management Services Ltd."
+   },
+   "queries": {
+    "when": "2026-11-11T13:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 11-11-2026 13:00:00",
+    "file": "GeM-Bidding-10125559.pdf",
+    "page": 5,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:20:50.636945"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "9473647": {
+  "b_id": 9473647,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 9473647,
+   "bid_number": "GEM/2026/B/7669062",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": "Ministry of Chemicals and Fertilizers",
+   "department": "Department of Fertilizers",
+   "published": "2026-06-16T13:11:56",
+   "closing": "2026-11-23T21:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "9473647",
+    "b_id": [
+     9473647
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/7669062"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-06-16T13:11:56Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-23T21:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "sodbtfert"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Chemicals and Fertilizers"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Fertilizers"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/9473647",
+    "filename": "GeM-Bidding-9473647.pdf",
+    "size": 101527,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "4c7554104d06dd2a00a63788374adfbde207a9dbc1fb1685ecc0787f01df12ec",
+    "path": "docs/9473647/files/4c7554104d06dd2a00a63788374adfbde207a9dbc1fb1685ecc0787f01df12ec.pdf",
+    "text_path": "docs/9473647/files/4c7554104d06dd2a00a63788374adfbde207a9dbc1fb1685ecc0787f01df12ec.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [
+     7
+    ],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "4cd9b50e62048790"
+   }
+  ],
+  "buyer_org": "N/a",
+  "verdict": {
+   "b_id": 9473647,
+   "bid_number": "GEM/2026/B/7669062",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "303d9e1ac955494e",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for general IT project management services, which does not match the specific requirement for fraud investigation and forensic accounting services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-06-30T11:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 30-06-2026 11:00:00",
+    "file": "GeM-Bidding-9473647.pdf",
+    "page": 3,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:21:15.540117"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "9962043": {
+  "b_id": 9962043,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 9962043,
+   "bid_number": "GEM/2026/B/8096845",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": null,
+   "department": "Education Department Gujarat",
+   "published": "2026-10-28T11:06:14",
+   "closing": "2026-11-24T12:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "9962043",
+    "b_id": [
+     9962043
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8096845"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-10-28T11:06:14Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-24T12:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "buyer-gcas"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_deptName": [
+     "Education Department Gujarat"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/9962043",
+    "filename": "GeM-Bidding-9962043.pdf",
+    "size": 105126,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "ca01c7a71856699e7eb03df88540e1fa258d88ba9a927f75fc7686cebcb1ee12",
+    "path": "docs/9962043/files/ca01c7a71856699e7eb03df88540e1fa258d88ba9a927f75fc7686cebcb1ee12.pdf",
+    "text_path": "docs/9962043/files/ca01c7a71856699e7eb03df88540e1fa258d88ba9a927f75fc7686cebcb1ee12.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "8c8027fdc0b82944"
+   }
+  ],
+  "buyer_org": "Commissionerate Of Higher Education",
+  "verdict": {
+   "b_id": 9962043,
+   "bid_number": "GEM/2026/B/8096845",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "16b271421d349889",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for hiring an agency for IT projects, which is unrelated to fraud investigation or forensic services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:21:15.956884"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10042952": {
+  "b_id": 10042952,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 10042952,
+   "bid_number": "GEM/2026/B/8167771",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-10-15T18:57:53",
+   "closing": "2026-11-24T15:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10042952",
+    "b_id": [
+     10042952
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8167771"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-10-15T18:57:53Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-24T15:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "AMIT_PURCHASE"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10042952",
+    "filename": "GeM-Bidding-10042952.pdf",
+    "size": 111713,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "80795a01f71547819b299c3022e17f68280e59107a3a3f1e54fdfe7de2de10a3",
+    "path": "docs/10042952/files/80795a01f71547819b299c3022e17f68280e59107a3a3f1e54fdfe7de2de10a3.pdf",
+    "text_path": "docs/10042952/files/80795a01f71547819b299c3022e17f68280e59107a3a3f1e54fdfe7de2de10a3.pdf.text.json",
+    "pages": 8,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "a49605b92bf6a62b"
+   }
+  ],
+  "buyer_org": "N/a",
+  "verdict": {
+   "b_id": 10042952,
+   "bid_number": "GEM/2026/B/8167771",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "d9ac63d2a4a3790b",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for general IT project implementation services, which does not match the specific requirement for fraud investigation and forensic accounting services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-10-22T15:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 22-10-2026 15:00:00",
+    "file": "GeM-Bidding-10042952.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:21:36.019256"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "9924082": {
+  "b_id": 9924082,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 9924082,
+   "bid_number": "GEM/2026/B/8063686",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": "Ministry of Petroleum and Natural Gas",
+   "department": "NA",
+   "published": "2026-09-22T10:41:07",
+   "closing": "2026-11-24T15:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "9924082",
+    "b_id": [
+     9924082
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8063686"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-09-22T10:41:07Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-24T15:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "pallavic"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Petroleum and Natural Gas"
+    ],
+    "ba_official_details_deptName": [
+     "NA"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/9924082",
+    "filename": "GeM-Bidding-9924082.pdf",
+    "size": 110007,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "ffffa068596e197d16da2e95c2a4b59115fd8958e9f4d949370edac3ce710332",
+    "path": "docs/9924082/files/ffffa068596e197d16da2e95c2a4b59115fd8958e9f4d949370edac3ce710332.pdf",
+    "text_path": "docs/9924082/files/ffffa068596e197d16da2e95c2a4b59115fd8958e9f4d949370edac3ce710332.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "f6c75cebf69991c0"
+   }
+  ],
+  "buyer_org": "Hindustan Petroleum Corporation Ltd",
+  "verdict": {
+   "b_id": 9924082,
+   "bid_number": "GEM/2026/B/8063686",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "26ac66529963a375",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for hiring an agency for general IT projects, which does not match the specific topic of fraud investigation and forensic services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-09-29T15:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 29-09-2026 15:00:00",
+    "file": "GeM-Bidding-9924082.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:21:41.110648"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "9950504": {
+  "b_id": 9950504,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 9950504,
+   "bid_number": "GEM/2026/B/8086894",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": null,
+   "department": "Energy Department Odisha",
+   "published": "2026-09-26T15:30:31",
+   "closing": "2026-11-24T16:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "9950504",
+    "b_id": [
+     9950504
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8086894"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-09-26T15:30:31Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-24T16:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "sk.mazhar"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_deptName": [
+     "Energy Department Odisha"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/9950504",
+    "filename": "GeM-Bidding-9950504.pdf",
+    "size": 107859,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "cf35bd7da3ac65ab364cd68a5f1050bb351db3668ca067131d7f26156e67cbc0",
+    "path": "docs/9950504/files/cf35bd7da3ac65ab364cd68a5f1050bb351db3668ca067131d7f26156e67cbc0.pdf",
+    "text_path": "docs/9950504/files/cf35bd7da3ac65ab364cd68a5f1050bb351db3668ca067131d7f26156e67cbc0.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "1252894b05248207"
+   }
+  ],
+  "buyer_org": "Odisha Power Generation Corporation Limited",
+  "verdict": {
+   "b_id": 9950504,
+   "bid_number": "GEM/2026/B/8086894",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "34442a37ccc1cbf2",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for hiring an agency for IT projects, which is unrelated to fraud investigation or forensic services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-09-29T15:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 29-09-2026 15:00:00",
+    "file": "GeM-Bidding-9950504.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:22:04.317812"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "9894249": {
+  "b_id": 9894249,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 9894249,
+   "bid_number": "GEM/2026/B/8037612",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": null,
+   "department": "Health and Family Welfare Department Delhi",
+   "published": "2026-10-31T17:46:39",
+   "closing": "2026-11-24T18:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "9894249",
+    "b_id": [
+     9894249
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8037612"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-10-31T17:46:39Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-24T18:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "ExecPur"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_deptName": [
+     "Health and Family Welfare Department Delhi"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/9894249",
+    "filename": "GeM-Bidding-9894249.pdf",
+    "size": 112516,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "e2460b40f1d648331734f6423d080f06d8590a4030e8dbb5043277682353c21f",
+    "path": "docs/9894249/files/e2460b40f1d648331734f6423d080f06d8590a4030e8dbb5043277682353c21f.pdf",
+    "text_path": "docs/9894249/files/e2460b40f1d648331734f6423d080f06d8590a4030e8dbb5043277682353c21f.pdf.text.json",
+    "pages": 8,
+    "ocr_pages": [
+     8
+    ],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "bd99821dc19d9201"
+   }
+  ],
+  "buyer_org": "Institute Of Liver And Biliary Sciences",
+  "verdict": {
+   "b_id": 9894249,
+   "bid_number": "GEM/2026/B/8037612",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "d1f22325a2a7b0e0",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for hiring an agency for IT projects, which is unrelated to fraud investigation or forensic services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-11-03T15:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 03-11-2026 15:00:00",
+    "file": "GeM-Bidding-9894249.pdf",
+    "page": 5,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:22:12.498333"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "9932284": {
+  "b_id": 9932284,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 9932284,
+   "bid_number": "GEM/2026/B/8070903",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": "Ministry of Finance",
+   "department": "Department of Financial Services",
+   "published": "2026-09-22T22:37:57",
+   "closing": "2026-11-24T16:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "9932284",
+    "b_id": [
+     9932284
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8070903"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-09-22T22:37:57Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-24T16:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "buyer2.iob.chennai"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Financial Services"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/9932284",
+    "filename": "GeM-Bidding-9932284.pdf",
+    "size": 102992,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "cdb3f2f90e7f9f5ba4a9b3eaf82f7b705f336a9ec40e3c4c5c958cea383a8ad9",
+    "path": "docs/9932284/files/cdb3f2f90e7f9f5ba4a9b3eaf82f7b705f336a9ec40e3c4c5c958cea383a8ad9.pdf",
+    "text_path": "docs/9932284/files/cdb3f2f90e7f9f5ba4a9b3eaf82f7b705f336a9ec40e3c4c5c958cea383a8ad9.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [
+     7
+    ],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "82f73a1531307fa5"
+   }
+  ],
+  "buyer_org": "Indian Overseas Bank",
+  "verdict": {
+   "b_id": 9932284,
+   "bid_number": "GEM/2026/B/8070903",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "26921379f8705a18",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for hiring an agency for IT projects, which is unrelated to fraud investigation or forensic services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-10-08T11:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 08-10-2026 11:00:00",
+    "file": "GeM-Bidding-9932284.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:22:24.841047"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10023662": {
+  "b_id": 10023662,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 10023662,
+   "bid_number": "GEM/2026/B/8150608",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": "Ministry of Finance",
+   "department": "BANKING SECTOR",
+   "published": "2026-10-12T18:52:56",
+   "closing": "2026-11-24T19:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10023662",
+    "b_id": [
+     10023662
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8150608"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-10-12T18:52:56Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-24T19:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "procurement.bobcard"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Finance"
+    ],
+    "ba_official_details_deptName": [
+     "BANKING SECTOR"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10023662",
+    "filename": "GeM-Bidding-10023662.pdf",
+    "size": 107057,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "9d92ab5dcc2806d1da275941968baeca6337beaeb3d671b07de1df775f799786",
+    "path": "docs/10023662/files/9d92ab5dcc2806d1da275941968baeca6337beaeb3d671b07de1df775f799786.pdf",
+    "text_path": "docs/10023662/files/9d92ab5dcc2806d1da275941968baeca6337beaeb3d671b07de1df775f799786.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "bfcfadfc7e5f7418"
+   }
+  ],
+  "buyer_org": "Bank Of Baroda",
+  "verdict": {
+   "b_id": 10023662,
+   "bid_number": "GEM/2026/B/8150608",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "a4dff79cf49f7e33",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for hiring an agency for general IT projects, which does not match the specific requirement for fraud investigation and forensic services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-10-20T15:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 20-10-2026 15:00:00",
+    "file": "GeM-Bidding-10023662.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:23:04.799461"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "9896400": {
+  "b_id": 9896400,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 9896400,
+   "bid_number": "GEM/2026/B/8039499",
+   "title": "Hiring of Consultants - Milestone/Deliverable Based - Technology Consultants, Management Consultant",
+   "category_id": "services_home_pr22455282_hi85156607",
+   "ministry": "Ministry of Personnel Public Grievances and Pensions",
+   "department": "Department of Administrative Reforms and Public Grievances (DARPG)",
+   "published": "2026-10-13T16:39:23",
+   "closing": "2026-11-24T15:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "9896400",
+    "b_id": [
+     9896400
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8039499"
+    ],
+    "b_category_name": [
+     "Hiring of Consultants - Milestone/Deliverable Based - Technology Consultants, Management Consultant"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-10-13T16:39:23Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-24T15:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Consultants - Milestone/Deliverable Based - Technology Consultants, Management Consultants, Functional Consultants; Subject Matter Expert; No; Onsite"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_pr22455282_hi85156607"
+    ],
+    "b.b_created_by": [
+     "rishi.raj@nic.in"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Personnel Public Grievances and Pensions"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Administrative Reforms and Public Grievances (DARPG)"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/9896400",
+    "filename": "GeM-Bidding-9896400.pdf",
+    "size": 102911,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "db7e9638379fc63a9e7ff5c591b2a9d5d6c1c60a1edb16acf6f2bba392e28b86",
+    "path": "docs/9896400/files/db7e9638379fc63a9e7ff5c591b2a9d5d6c1c60a1edb16acf6f2bba392e28b86.pdf",
+    "text_path": "docs/9896400/files/db7e9638379fc63a9e7ff5c591b2a9d5d6c1c60a1edb16acf6f2bba392e28b86.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "d0adbce482d4ed38"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/SepQ326/bidding/biddoc/bid-9896400/1790768339.pdf",
+    "filename": "1790768339.pdf",
+    "size": 255868,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "1ec094cc82e0a86cc432e4af0b73944411e72b243933f681199d9d0375f82d73",
+    "path": "docs/9896400/files/1ec094cc82e0a86cc432e4af0b73944411e72b243933f681199d9d0375f82d73.pdf",
+    "text_path": "docs/9896400/files/1ec094cc82e0a86cc432e4af0b73944411e72b243933f681199d9d0375f82d73.pdf.text.json",
+    "pages": 2,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Scope Of work",
+    "title": "Scope of Work for Prime Minister’s Awards and Civil Services Day",
+    "text_key": "c606c3fc563b1d70"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/SepQ326/bidding/biddoc/bid-9896400/1790768346.pdf",
+    "filename": "1790768346.pdf",
+    "size": 122120,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "5ed1f327980f818a5e0c540f3e4c3ff95bfa3e07d57b83d44ebc1c936865160f",
+    "path": "docs/9896400/files/5ed1f327980f818a5e0c540f3e4c3ff95bfa3e07d57b83d44ebc1c936865160f.pdf",
+    "text_path": "docs/9896400/files/5ed1f327980f818a5e0c540f3e4c3ff95bfa3e07d57b83d44ebc1c936865160f.pdf.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Profile of Consultants",
+    "title": "Qualification and Experience Project Manager (1)",
+    "text_key": "da9239b9381c07f4"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadBuyerDoc/9896400/17918682558403.pdf",
+    "filename": "17918682558403.pdf",
+    "size": 145079,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "476e9e26a39457fba03994268ba2ba151312368f4f2dd711fbfe57875f612fe6",
+    "path": "docs/9896400/files/476e9e26a39457fba03994268ba2ba151312368f4f2dd711fbfe57875f612fe6.pdf",
+    "text_path": "docs/9896400/files/476e9e26a39457fba03994268ba2ba151312368f4f2dd711fbfe57875f612fe6.pdf.text.json",
+    "pages": 3,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "The technical proposal submitted by Bidders in the technical evaluation bid document will be evaluated in this stage. Bidders may also be required to make a…",
+    "text_key": "af9ff352aa8353eb"
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Oct/GEM_2026_B_8039499/CLM0012/RFP_8a848e31-9630-4c3d-b3b71791871600158_rishi.raj@nic.in.pdf",
+    "filename": "RFP_8a848e31-9630-4c3d-b3b71791871600158_rishi.raj@nic.in.pdf",
+    "size": 1031624,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 5,
+    "link_kind": "document",
+    "sha256": "9707c71a4bb8d34a08aa4bca1bad5103e5675d9b49dc79880ff07a6f71c8b4d0",
+    "path": "docs/9896400/files/9707c71a4bb8d34a08aa4bca1bad5103e5675d9b49dc79880ff07a6f71c8b4d0.pdf",
+    "text_path": "docs/9896400/files/9707c71a4bb8d34a08aa4bca1bad5103e5675d9b49dc79880ff07a6f71c8b4d0.pdf.text.json",
+    "pages": 59,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Request for Proposal",
+    "text_key": "40bd10af67f8215d"
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261013",
+    "filename": "gtc-20261013.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261013.pdf",
+    "text_path": "gtc/20261013.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/97938732960000",
+    "filename": "97938732960000",
+    "size": 110204,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "document",
+    "sha256": "44d17e1be8cfe8cd8f4755221b5e960db8e4989aa4192ae144a3b217b68f4e85",
+    "path": "docs/9896400/files/44d17e1be8cfe8cd8f4755221b5e960db8e4989aa4192ae144a3b217b68f4e85.html",
+    "text_path": "docs/9896400/files/44d17e1be8cfe8cd8f4755221b5e960db8e4989aa4192ae144a3b217b68f4e85.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Service level agreement (GeM)",
+    "text_key": "b133ac2056d139d3"
+   }
+  ],
+  "buyer_org": "National Conference On E-governance",
+  "verdict": {
+   "b_id": 9896400,
+   "bid_number": "GEM/2026/B/8039499",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "f14c5845fa19bb75",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.95,
+   "stage": "judge",
+   "triage": "maybe",
+   "reason": "The tender is for consultancy services to manage the Prime Minister's Awards and Civil Services Day, not for fraud investigation or forensic services.",
+   "evidence": [
+    {
+     "quote": "Scope of Work for Prime Minister’s Awards and Civil Services Day ... Assist Department in promoting Award scheme and encouraging Districts/ Organisations to compete for the PM’s Awards.",
+     "file": "1790768339.pdf",
+     "page": 1,
+     "verified": true
+    },
+    {
+     "quote": "The Bidder will be responsible for providing all requirements as listed out in RFP and/or requested subsequently by DARPG from time to time to achieve objective of the project.",
+     "file": "RFP_8a848e31-9630-4c3d-b3b71791871600158_rishi.raj@nic.in.pdf",
+     "page": 18,
+     "verified": true
+    },
+    {
+     "quote": "Subject: -Submission of the Pre-Qualification bid for providing Consultancy Services to DARPG for Prime Minister’s Awards PMA 2026, 2027 and CSD 2028 and Civil Services Day 2027, 2028 and 2029.",
+     "file": "RFP_8a848e31-9630-4c3d-b3b71791871600158_rishi.raj@nic.in.pdf",
+     "page": 29,
+     "verified": true
+    }
+   ],
+   "key_facts": {
+    "emd": "",
+    "min_turnover": "100 Lakh",
+    "contract_period": "2 Year(s) 9 Month(s) 4 Day(s)",
+    "estimated_value": "24600000",
+    "scope_summary": "Consultancy for Prime Minister's Awards and Civil Services Day organization"
+   },
+   "queries": {
+    "when": "2026-10-23T15:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 23-10-2026 15:00:00",
+    "file": "GeM-Bidding-9896400.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:23:05.625063"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10182722": {
+  "b_id": 10182722,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 10182722,
+   "bid_number": "GEM/2026/B/8288565",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": "Ministry of Consumer Affairs Food and Public Distribution",
+   "department": "Department of Food and Public Distribution",
+   "published": "2026-11-18T13:23:20",
+   "closing": "2026-11-25T14:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10182722",
+    "b_id": [
+     10182722
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8288565"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-18T13:23:20Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-25T14:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "buyer5rodelhi@cwc"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Consumer Affairs Food and Public Distribution"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Food and Public Distribution"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10182722",
+    "filename": "GeM-Bidding-10182722.pdf",
+    "size": 109643,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "031facddc60a129cc45081d851554d5bd1501a6914abdb51040309c09c2859a6",
+    "path": "docs/10182722/files/031facddc60a129cc45081d851554d5bd1501a6914abdb51040309c09c2859a6.pdf",
+    "text_path": "docs/10182722/files/031facddc60a129cc45081d851554d5bd1501a6914abdb51040309c09c2859a6.pdf.text.json",
+    "pages": 8,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "dd29fcf24fadbb4f"
+   }
+  ],
+  "buyer_org": "Central Warehousing Corporation (cwc)",
+  "verdict": {
+   "b_id": 10182722,
+   "bid_number": "GEM/2026/B/8288565",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "26b4972554cdc65d",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for hiring an agency for IT projects, which is unrelated to fraud investigation or forensic services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-11-21T12:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 21-11-2026 12:00:00",
+    "file": "GeM-Bidding-10182722.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:23:15.509939"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10011399": {
+  "b_id": 10011399,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 10011399,
+   "bid_number": "GEM/2026/B/8140166",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": null,
+   "department": "Health and Family Welfare Department Assam",
+   "published": "2026-10-12T10:37:13",
+   "closing": "2026-11-25T14:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10011399",
+    "b_id": [
+     10011399
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8140166"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-10-12T10:37:13Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-25T14:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "sm.it-amscl"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_deptName": [
+     "Health and Family Welfare Department Assam"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10011399",
+    "filename": "GeM-Bidding-10011399.pdf",
+    "size": 117143,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "60498233452367dc3a88bc8ea986407a6f93f1c9a1edb3811938576cfd922724",
+    "path": "docs/10011399/files/60498233452367dc3a88bc8ea986407a6f93f1c9a1edb3811938576cfd922724.pdf",
+    "text_path": "docs/10011399/files/60498233452367dc3a88bc8ea986407a6f93f1c9a1edb3811938576cfd922724.pdf.text.json",
+    "pages": 9,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "b1df910358e8c865"
+   }
+  ],
+  "buyer_org": "Assam Medical Services Corporation Limited",
+  "verdict": {
+   "b_id": 10011399,
+   "bid_number": "GEM/2026/B/8140166",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "1f815d24cebfd195",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for hiring an agency for IT projects, which is unrelated to fraud investigation or forensic services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-10-16T15:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 16-10-2026 15:00:00",
+    "file": "GeM-Bidding-10011399.pdf",
+    "page": 5,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:23:23.958515"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10086259": {
+  "b_id": 10086259,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 10086259,
+   "bid_number": "GEM/2026/B/8204902",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": "Ministry of Textiles",
+   "department": "The Cotton Corporation Of India Limited",
+   "published": "2026-10-27T15:25:46",
+   "closing": "2026-11-25T11:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "10086259",
+    "b_id": [
+     10086259
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8204902"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-10-27T15:25:46Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-25T11:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "CCI_SANDEEP"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Textiles"
+    ],
+    "ba_official_details_deptName": [
+     "The Cotton Corporation Of India Limited"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10086259",
+    "filename": "GeM-Bidding-10086259.pdf",
+    "size": 105617,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "a9035ed2031c2bbd85201ffb63416a78adf372b78e93d224989fa2556ab8f988",
+    "path": "docs/10086259/files/a9035ed2031c2bbd85201ffb63416a78adf372b78e93d224989fa2556ab8f988.pdf",
+    "text_path": "docs/10086259/files/a9035ed2031c2bbd85201ffb63416a78adf372b78e93d224989fa2556ab8f988.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "2b8bf5e2f53cd759"
+   }
+  ],
+  "buyer_org": "The Cotton Corporation Of India Limited",
+  "verdict": {
+   "b_id": 10086259,
+   "bid_number": "GEM/2026/B/8204902",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "3fe4c4f7e7300bad",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for hiring an agency for IT projects, which is unrelated to fraud investigation or forensic services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-11-12T15:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 12-11-2026 15:00:00",
+    "file": "GeM-Bidding-10086259.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:23:28.912086"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "9992526": {
+  "b_id": 9992526,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 9992526,
+   "bid_number": "GEM/2026/B/8123284",
+   "title": "Hiring of Agency for IT Projects- Milestone basis",
+   "category_id": "services_home_itse_hi12433188",
+   "ministry": null,
+   "department": "Information Technology and Electronics Department Uttar Pradesh",
+   "published": "2026-10-14T13:10:47",
+   "closing": "2026-11-25T15:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "9992526",
+    "b_id": [
+     9992526
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8123284"
+    ],
+    "b_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-10-14T13:10:47Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-25T15:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Agency for IT Projects- Milestone basis"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_itse_hi12433188"
+    ],
+    "b.b_created_by": [
+     "vkmaurya"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_deptName": [
+     "Information Technology and Electronics Department Uttar Pradesh"
+    ]
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/9992526",
+    "filename": "GeM-Bidding-9992526.pdf",
+    "size": 105715,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "581793c3bce9c0a383297fe184a6fea47abe4066cb5103643ba65963d1ca4294",
+    "path": "docs/9992526/files/581793c3bce9c0a383297fe184a6fea47abe4066cb5103643ba65963d1ca4294.pdf",
+    "text_path": "docs/9992526/files/581793c3bce9c0a383297fe184a6fea47abe4066cb5103643ba65963d1ca4294.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Information Technology And Electronics Department Uttar",
+    "text_key": "d1f113387675c384"
+   }
+  ],
+  "buyer_org": "N/a",
+  "verdict": {
+   "b_id": 9992526,
+   "bid_number": "GEM/2026/B/8123284",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "acc1572448916c71",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for general IT project management services, which does not match the specific requirement for fraud investigation and forensic accounting services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-10-19T15:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 19-10-2026 15:00:00",
+    "file": "GeM-Bidding-9992526.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:23:52.136021"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10045503": {
+  "b_id": 10045503,
+  "group": "Fraud Investigation and Forensic Services",
+  "bid": {
+   "b_id": 10045503,
+   "bid_number": "GEM/2026/B/8169958",
+   "title": "Hiring of Consultants - Milestone/Deliverable Based - Consultancy Services for compliance and imple",
+   "category_id": "services_home_pr22455282_hi85156607",
+   "ministry": "Ministry of Petroleum and Natural Gas",
+   "department": "INDIAN OIL CORPORATION LIMITED",
+   "published": "2026-10-19T11:08:03",
+   "closing": "2026-11-25T15:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 3,
+   "is_high_value": true,
+   "status": 1,
+   "raw": {
+    "id": "10045503",
+    "b_id": [
+     10045503
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8169958"
+    ],
+    "b_category_name": [
+     "Hiring of Consultants - Milestone/Deliverable Based - Consultancy Services for compliance and imple"
+    ],
+    "b_total_quantity": [
+     3
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     3
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-10-19T11:08:03Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-25T15:00:00Z"
+    ],
+    "bd_category_name": [
+     "Hiring of Consultants - Milestone/Deliverable Based - Consultancy Services for compliance and implementation of DPDP Act 2023 and Rules Bidder to quote One-Time charges for Phase-I of the engagement as per the Scope of Work including GST; DPDP Consul..,Hiring of Consultants - Milestone/Deliverable Based - Consultancy Services for compliance and implementation of DPDP Act 2023 and Rules One-Time charges for Phase-II of the engagement as per the Scope of Work including GST; DPDP Consultant; No; Hybri..,Hiring of Consultants - Milestone/Deliverable Based - Bidder to quote total price for 20 quarters  inclusive of GST for Consultancy Services, Support & Maintenance as per the Scope of Work Sustenance, Privacy management se; DPDP Consultant; No; Hybri.."
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     true
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_pr22455282_hi85156607"
+    ],
+    "b.b_created_by": [
+     "buycon44rhq"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Petroleum and Natural Gas"
+    ],
+    "ba_official_details_deptName": [
+     "INDIAN OIL CORPORATION LIMITED"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10045503",
+    "filename": "GeM-Bidding-10045503.pdf",
+    "size": 115169,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "8822e443760b1f3152852c330ca7ee496ab0f4c37cb0429ffd9f13bf678adce5",
+    "path": "docs/10045503/files/8822e443760b1f3152852c330ca7ee496ab0f4c37cb0429ffd9f13bf678adce5.pdf",
+    "text_path": "docs/10045503/files/8822e443760b1f3152852c330ca7ee496ab0f4c37cb0429ffd9f13bf678adce5.pdf.text.json",
+    "pages": 8,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "10d38c151c143a60"
+   }
+  ],
+  "buyer_org": "Indian Oil Corporation Limited",
+  "verdict": {
+   "b_id": 10045503,
+   "bid_number": "GEM/2026/B/8169958",
+   "topic_key": "39a5664db7c5b594",
+   "doc_hash": "029793e26b2e33f6",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for consultancy services related to the compliance and implementation of the DPDP Act 2023, which is a data privacy law, not for fraud investigation or forensic services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": {
+    "when": "2026-10-26T11:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 26-10-2026 11:00:00",
+    "file": "GeM-Bidding-10045503.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T12:24:18.905078"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ }
+}

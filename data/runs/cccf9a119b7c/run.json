@@ -1,0 +1,113 @@
+{
+ "run_id": "cccf9a119b7c",
+ "user": "rajdeep",
+ "title": "fraud tenders",
+ "request_text": "fraud tenders",
+ "created": "2026-11-23T12:11:01.880092",
+ "status": "stopped",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "fraud tenders",
+  "topics": [
+   {
+    "user_text": "fraud tenders",
+    "meaning": "Fraud Investigation and Forensic Services: professional services for investigating suspected fraud, including forensic accounting and digital forensics",
+    "domain": "Professional Services",
+    "match_terms": [
+     "fraud investigation",
+     "forensic audit",
+     "fraud inquiry",
+     "fraud examination",
+     "forensic accounting",
+     "fraud probe"
+    ],
+    "acronyms": {},
+    "related_but_not_enough": [
+     "internal audit",
+     "compliance audit",
+     "legal services"
+    ],
+    "not_this": [
+     "fraud prevention software",
+     "fraud training"
+    ],
+    "buyers": [],
+    "chosen_because": "Although the user's history suggests a software focus, the current search term 'fraud tenders' yields zero relevant software matches but 21 highly relevant forensic and investigation service tenders, making the service-oriented meaning the only viable option with actual results.",
+    "other_meanings_searched": [
+     "Fraud Detection and Prevention Systems: software and services that help organizations identify, monitor, and prevent fraudulent transactions and activities"
+    ]
+   },
+   {
+    "user_text": "fraud tenders",
+    "meaning": "Fraud Detection and Prevention Systems: software and services that help organizations identify, monitor, and prevent fraudulent transactions and activities",
+    "domain": "Technology/Security",
+    "match_terms": [
+     "fraud detection",
+     "fraud prevention",
+     "fraud management system",
+     "fraud monitoring",
+     "anti-fraud",
+     "fraud analytics",
+     "transaction fraud",
+     "identity fraud",
+     "fraud risk management"
+    ],
+    "acronyms": {
+     "FDS": "Fraud Detection System",
+     "FMS": "Fraud Management System"
+    },
+    "related_but_not_enough": [
+     "cybersecurity",
+     "compliance",
+     "AML",
+     "KYC",
+     "risk management"
+    ],
+    "not_this": [
+     "insurance fraud claims",
+     "fraud investigation services",
+     "legal fraud litigation"
+    ],
+    "buyers": [],
+    "chosen_because": "Although the user's history suggests a software focus, the current search term 'fraud tenders' yields zero relevant software matches but 21 highly relevant forensic and investigation service tenders, making the service-oriented meaning the only viable option with actual results.",
+    "other_meanings_searched": [
+     "Fraud Investigation and Forensic Services: professional services for investigating suspected fraud, including forensic accounting and digital forensics"
+    ]
+   }
+  ],
+  "window": {
+   "published_from": null,
+   "published_to": null,
+   "closing_from": "2026-11-23T12:10:11.166381",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "Fraud Investigation and Forensic Services: professional services for investigating suspected fraud, including forensic accounting and digital forensics",
+   "window_count": 44747,
+   "strong": 21,
+   "top_titles": [
+    "Server for Integrated Threat Intelligence SIEM,Workstation for Threat analysis design forensic,Serv",
+    "Mobile Device Forensic Extraction Software",
+    "Human Identification - DNA Kit Y Chromosomal STR (Forensic use)",
+    "Digital Forensic Workstation",
+    "Manpower Outsourcing Services - Fixed Remuneration - Scientific Assistant (Chemistry Group); Scient",
+    "Manpower Outsourcing Services - Fixed Remuneration - FORENSIC CRIME SCENE MANAGER; FORENSIC CRIME S",
+    "Data Extraction and Acquisition Software for Mobile with Workstation I,Data Extraction and Acquisit",
+    "Histology Lab,Hematology Lab,Dissection Hall,Biochemistry Lab,Pathology Lab,Pharmacology Lab,Microb"
+   ]
+  },
+  {
+   "meaning": "Fraud Detection and Prevention Systems: software and services that help organizations identify, monitor, and prevent fraudulent transactions and activities",
+   "window_count": 44747,
+   "strong": 0,
+   "top_titles": []
+  }
+ ],
+ "error": ""
+}

@@ -1,0 +1,2014 @@
+{
+ "10180199": {
+  "b_id": 10180199,
+  "group": "AI Platforms",
+  "bid": {
+   "b_id": 10180199,
+   "bid_number": "GEM/2026/B/8286384",
+   "title": "ARM BASED SOC NEURAL WORKSTATION",
+   "category_id": "home_univ_univ_univ_univ",
+   "ministry": "Ministry of Defence",
+   "department": "Department of Military Affairs",
+   "published": "2026-11-18T17:49:30",
+   "closing": "2026-11-28T18:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10180199",
+    "b_id": [
+     10180199
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8286384"
+    ],
+    "b_category_name": [
+     "ARM BASED SOC NEURAL WORKSTATION"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-18T17:49:30Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-28T18:00:00Z"
+    ],
+    "bd_category_name": [
+     "ARM BASED SOC NEURAL WORKSTATION"
+    ],
+    "b_is_custom_item": [
+     1
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_univ_univ_univ_univ"
+    ],
+    "b.b_created_by": [
+     "sanjitbnk"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Defence"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Military Affairs"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10180199",
+    "filename": "GeM-Bidding-10180199.pdf",
+    "size": 106909,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "d0fa5171b6521897bc62fb4e176cfc3b0f4d232efd89a81db6e30cb6da932a2e",
+    "path": "docs/10180199/files/d0fa5171b6521897bc62fb4e176cfc3b0f4d232efd89a81db6e30cb6da932a2e.pdf",
+    "text_path": "docs/10180199/files/d0fa5171b6521897bc62fb4e176cfc3b0f4d232efd89a81db6e30cb6da932a2e.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "34cf8865e5d17ee2"
+   }
+  ],
+  "buyer_org": "Indian Army",
+  "verdict": {
+   "b_id": 10180199,
+   "bid_number": "GEM/2026/B/8286384",
+   "topic_key": "726f5e41a3574211",
+   "doc_hash": "2f809aed8ecedef3",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for a hardware workstation (ARM based SOC Neural Workstation) rather than an AI software platform or infrastructure.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T13:00:18.567955"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10070842": {
+  "b_id": 10070842,
+  "group": "AI Platforms",
+  "bid": {
+   "b_id": 10070842,
+   "bid_number": "GEM/2026/B/8191758",
+   "title": "Laptop- Make in India Laptop with Next Gen AI Intel Core Ultra (Series 2) , Intel Core Ultra 5,Smar",
+   "category_id": "home_univ_univ_univ_univ",
+   "ministry": "Ministry of Defence",
+   "department": "Department of Military Affairs",
+   "published": "2026-11-19T17:14:01",
+   "closing": "2026-11-30T18:00:00",
+   "bid_type": 1,
+   "eval_type": 1,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 2,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10070842",
+    "b_id": [
+     10070842
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8191758"
+    ],
+    "b_category_name": [
+     "Laptop- Make in India Laptop with Next Gen AI Intel Core Ultra (Series 2) , Intel Core Ultra 5,Smar"
+    ],
+    "b_total_quantity": [
+     2
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     2
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     1
+    ],
+    "final_start_date_sort": [
+     "2026-11-19T17:14:01Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-30T18:00:00Z"
+    ],
+    "bd_category_name": [
+     "Laptop- Make in India Laptop with Next Gen AI Intel Core Ultra (Series 2) , Intel Core Ultra 5,Laptop- Make in India Laptop with Next Gen AI Intel Core Ultra (Series 2) , Intel Core Ultra 5,Smartphone - A19 Pro Chip, GPU\" 6-core with Neural Accelerators\" , Neural Processing Unit-16 Core,Smartphone - A19 Pro Chip, GPU\" 6-core with Neural Accelerators\" , Neural Processing Unit-16 Core"
+    ],
+    "b_is_custom_item": [
+     1
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_univ_univ_univ_univ"
+    ],
+    "b.b_created_by": [
+     "Dushyantbishnoi"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Defence"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Military Affairs"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10070842",
+    "filename": "GeM-Bidding-10070842.pdf",
+    "size": 124855,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "dff7251022e24dc55ef6f73f35ee9cfab7f5be0ec9a36363b0fd41b017d4f438",
+    "path": "docs/10070842/files/dff7251022e24dc55ef6f73f35ee9cfab7f5be0ec9a36363b0fd41b017d4f438.pdf",
+    "text_path": "docs/10070842/files/dff7251022e24dc55ef6f73f35ee9cfab7f5be0ec9a36363b0fd41b017d4f438.pdf.text.json",
+    "pages": 9,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "4ee8232125ac8efc"
+   }
+  ],
+  "buyer_org": "Indian Army",
+  "verdict": {
+   "b_id": 10070842,
+   "bid_number": "GEM/2026/B/8191758",
+   "topic_key": "726f5e41a3574211",
+   "doc_hash": "df945152029e6aff",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for purchasing hardware devices (laptops and smartphones) with specific AI-enabled processors, not for software AI platforms or infrastructure services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T13:00:21.559018"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10133574": {
+  "b_id": 10133574,
+  "group": "AI Platforms",
+  "bid": {
+   "b_id": 10133574,
+   "bid_number": "GEM/2026/B/8246172",
+   "title": "Laptop 15 6 Inch OS Window 11 Home Intel Core Ultra 7 256V 2 in 1 RAM 16 GB Storage 512 SSD,Laptop ",
+   "category_id": "home_boq_boql_boql_boq",
+   "ministry": "Ministry of Defence",
+   "department": "Department of Military Affairs",
+   "published": "2026-11-19T10:19:09",
+   "closing": "2026-12-03T14:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 15,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10133574",
+    "b_id": [
+     10133574
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8246172"
+    ],
+    "b_category_name": [
+     "Laptop 15 6 Inch OS Window 11 Home Intel Core Ultra 7 256V 2 in 1 RAM 16 GB Storage 512 SSD,Laptop "
+    ],
+    "b_total_quantity": [
+     15
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     7
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-19T10:19:09Z"
+    ],
+    "final_end_date_sort": [
+     "2026-12-03T14:00:00Z"
+    ],
+    "bd_category_name": [
+     "Laptop 15 6 Inch OS Window 11 Home Intel Core Ultra 7 256V 2 in 1 RAM 16 GB Storage 512 SSD,Laptop 15 6 Inch OS Window 11 Home Intel Core Ultra 5 226V 2 in 1 RAM 16 GB Storage 1 TB SSD,Laptop 14 Inch OS Window 11 Home Intel Core Ultra 5 322 RAM 16 GB Storage 1 TB SSD,Laptop 14 Inch OS Window 11 Home Intel Core 5 120U 2 in 1 RAM 16 GB Storage 1 TB SSD,Smartphone Screen Size 6.9 inch Android 15 with One UI 8 Processor Octa Core Snapdragon 8 Elite 12 GB RAM 256 GB SSD,Smartphone Screen Size 6.9 inch iOS 26 Processor 6 Core CPU 6 Core GPU 16 Core Neural Engine A 19 Pro 12 GB RAM 256 GB SSD,Smartphone Screen Size 6.3 inch iOS 26 Processor 6 Core CPU 6 Core GPU 16 Core Neural Engine A 19 Pro 12 GB RAM 512 GB SSD"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "bbt_title": [
+     "laptop and smartphone"
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_boq_boql_boql_boq"
+    ],
+    "b.b_created_by": [
+     "buyer_2jco"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Defence"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Military Affairs"
+    ],
+    "bd_details_is_boq": [
+     true
+    ],
+    "bd_details_new_boq": [
+     true
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10133574",
+    "filename": "GeM-Bidding-10133574.pdf",
+    "size": 157472,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "2369adaae75a042f068593a837a854f50dfde91e0a99bd3b6332ecb540e01d9e",
+    "path": "docs/10133574/files/2369adaae75a042f068593a837a854f50dfde91e0a99bd3b6332ecb540e01d9e.pdf",
+    "text_path": "docs/10133574/files/2369adaae75a042f068593a837a854f50dfde91e0a99bd3b6332ecb540e01d9e.pdf.text.json",
+    "pages": 14,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "574e8c38dd90e880"
+   }
+  ],
+  "buyer_org": "Indian Army",
+  "verdict": {
+   "b_id": 10133574,
+   "bid_number": "GEM/2026/B/8246172",
+   "topic_key": "726f5e41a3574211",
+   "doc_hash": "a7bc98e9d6318a52",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for purchasing physical hardware (laptops and smartphones), not for AI software platforms or infrastructure.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T13:00:22.499583"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10162118": {
+  "b_id": 10162118,
+  "group": "AI Platforms",
+  "bid": {
+   "b_id": 10162118,
+   "bid_number": "GEM/2026/B/8270854",
+   "title": "Tab with Latest Generation ARM processor with advance AI/Neural processing capacity, based on 3N",
+   "category_id": "home_univ_univ_univ_univ",
+   "ministry": "Ministry of Defence",
+   "department": "Department of Military Affairs",
+   "published": "2026-11-13T12:58:09",
+   "closing": "2026-12-04T13:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10162118",
+    "b_id": [
+     10162118
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8270854"
+    ],
+    "b_category_name": [
+     "Tab with Latest Generation ARM processor with advance AI/Neural processing capacity, based on 3N"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-13T12:58:09Z"
+    ],
+    "final_end_date_sort": [
+     "2026-12-04T13:00:00Z"
+    ],
+    "bd_category_name": [
+     "Tab with Latest Generation ARM processor with advance AI/Neural processing capacity, based on 3N"
+    ],
+    "b_is_custom_item": [
+     1
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_univ_univ_univ_univ"
+    ],
+    "b.b_created_by": [
+     "shivsingh@gem"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Defence"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Military Affairs"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10162118",
+    "filename": "GeM-Bidding-10162118.pdf",
+    "size": 117277,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "f4aa1dc392d7541ae547a515c074cd80bb15d2ea039f2eb3b7d8a9419b92ab76",
+    "path": "docs/10162118/files/f4aa1dc392d7541ae547a515c074cd80bb15d2ea039f2eb3b7d8a9419b92ab76.pdf",
+    "text_path": "docs/10162118/files/f4aa1dc392d7541ae547a515c074cd80bb15d2ea039f2eb3b7d8a9419b92ab76.pdf.text.json",
+    "pages": 9,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "9eedfe91b01a0da7"
+   }
+  ],
+  "buyer_org": "Indian Army",
+  "verdict": {
+   "b_id": 10162118,
+   "bid_number": "GEM/2026/B/8270854",
+   "topic_key": "726f5e41a3574211",
+   "doc_hash": "c3a63eb9f22f84d7",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for a hardware device (a tablet) with specific processor capabilities, not for an AI software platform or infrastructure.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T13:00:32.415999"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10152719": {
+  "b_id": 10152719,
+  "group": "AI Platforms",
+  "bid": {
+   "b_id": 10152719,
+   "bid_number": "GEM/2026/B/8262630",
+   "title": "Laptop with neural core enginer",
+   "category_id": "home_univ_univ_univ_univ",
+   "ministry": "Ministry of Education",
+   "department": "Department of Higher Education",
+   "published": "2026-11-13T15:37:20",
+   "closing": "2026-12-04T16:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10152719",
+    "b_id": [
+     10152719
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8262630"
+    ],
+    "b_category_name": [
+     "Laptop with neural core enginer"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-13T15:37:20Z"
+    ],
+    "final_end_date_sort": [
+     "2026-12-04T16:00:00Z"
+    ],
+    "bd_category_name": [
+     "Laptop with neural core enginer"
+    ],
+    "b_is_custom_item": [
+     1
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_univ_univ_univ_univ"
+    ],
+    "b.b_created_by": [
+     "ja_fa"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Education"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Higher Education"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10152719",
+    "filename": "GeM-Bidding-10152719.pdf",
+    "size": 99807,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "6a7ee93d3d6eca1f57e81cce46d5a649d127727d2762ea8db6edb86c4577b807",
+    "path": "docs/10152719/files/6a7ee93d3d6eca1f57e81cce46d5a649d127727d2762ea8db6edb86c4577b807.pdf",
+    "text_path": "docs/10152719/files/6a7ee93d3d6eca1f57e81cce46d5a649d127727d2762ea8db6edb86c4577b807.pdf.text.json",
+    "pages": 6,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "aa08d7c4ada7e46b"
+   }
+  ],
+  "buyer_org": "Indian Institute Of Technology (iit)",
+  "verdict": {
+   "b_id": 10152719,
+   "bid_number": "GEM/2026/B/8262630",
+   "topic_key": "726f5e41a3574211",
+   "doc_hash": "d0e3a6f009128cea",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for purchasing a physical hardware device (a laptop), whereas the topic requires software platforms for AI development and deployment.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T13:00:44.825011"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10171600": {
+  "b_id": 10171600,
+  "group": "AI Platforms",
+  "bid": {
+   "b_id": 10171600,
+   "bid_number": "GEM/2026/B/8278914",
+   "title": "Artificial intelligence, Machine Learning, and Deep Learning as a Service - Development, O&M; AI-As",
+   "category_id": "services_home_emer_arti",
+   "ministry": null,
+   "department": "Higher Education Department Uttar Pradesh",
+   "published": "2026-11-19T13:14:57",
+   "closing": "2026-11-30T14:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10171600",
+    "b_id": [
+     10171600
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8278914"
+    ],
+    "b_category_name": [
+     "Artificial intelligence, Machine Learning, and Deep Learning as a Service - Development, O&M; AI-As"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-19T13:14:57Z"
+    ],
+    "final_end_date_sort": [
+     "2026-11-30T14:00:00Z"
+    ],
+    "bd_category_name": [
+     "Artificial intelligence, Machine Learning, and Deep Learning as a Service - Development, O&M; AI-Assisted Evaluation of Handwritten Answer Scripts; Education; Image; As per Service Provider's Solutions; As per Service Provider's Solution; As per SoW;.."
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_emer_arti"
+    ],
+    "b.b_created_by": [
+     "csjmuamitp"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_deptName": [
+     "Higher Education Department Uttar Pradesh"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10171600",
+    "filename": "GeM-Bidding-10171600.pdf",
+    "size": 111126,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "72fec43255d0d4f2e5fa5d69a9303f5604fb0fbcc4464a592ca1f6d6d8a6a74f",
+    "path": "docs/10171600/files/72fec43255d0d4f2e5fa5d69a9303f5604fb0fbcc4464a592ca1f6d6d8a6a74f.pdf",
+    "text_path": "docs/10171600/files/72fec43255d0d4f2e5fa5d69a9303f5604fb0fbcc4464a592ca1f6d6d8a6a74f.pdf.text.json",
+    "pages": 8,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "bf9e576e6ae72f76"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10171600/1794926891.pdf",
+    "filename": "1794926891.pdf",
+    "size": 1316227,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "92eb1ac2a3f46c217e4e0e7ac8e6d4aaed0510a18aa40a54808b3f97d2c19d5b",
+    "path": "docs/10171600/files/92eb1ac2a3f46c217e4e0e7ac8e6d4aaed0510a18aa40a54808b3f97d2c19d5b.pdf",
+    "text_path": "docs/10171600/files/92eb1ac2a3f46c217e4e0e7ac8e6d4aaed0510a18aa40a54808b3f97d2c19d5b.pdf.text.json",
+    "pages": 19,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Scope of Work",
+    "title": "Scope of Work",
+    "text_key": "a055f92cf19fc4c7"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadBuyerDoc/10171600/17949271885829.pdf",
+    "filename": "17949271885829.pdf",
+    "size": 600729,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "270b3668e7f5ccc8677d0265b9feaf859afd673d368592677f43349d8b2573b2",
+    "path": "docs/10171600/files/270b3668e7f5ccc8677d0265b9feaf859afd673d368592677f43349d8b2573b2.pdf",
+    "text_path": "docs/10171600/files/270b3668e7f5ccc8677d0265b9feaf859afd673d368592677f43349d8b2573b2.pdf.text.json",
+    "pages": 5,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Satisfy all four conditions mentioned below (1-A) Rubric Generation from the Question Paper From the question paper alone, the platform generates a rubric for…",
+    "text_key": "b8fbbbc87362db71"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadBuyerDoc/10171600/17949271885943.pdf",
+    "filename": "17949271885943.pdf",
+    "size": 600729,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "270b3668e7f5ccc8677d0265b9feaf859afd673d368592677f43349d8b2573b2",
+    "path": "docs/10171600/files/270b3668e7f5ccc8677d0265b9feaf859afd673d368592677f43349d8b2573b2.pdf",
+    "text_path": "docs/10171600/files/270b3668e7f5ccc8677d0265b9feaf859afd673d368592677f43349d8b2573b2.pdf.text.json",
+    "pages": 5,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Satisfy all four conditions mentioned below (1-A) Rubric Generation from the Question Paper From the question paper alone, the platform generates a rubric for…",
+    "text_key": "b8fbbbc87362db71"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadBuyerDoc/10171600/17949271886067.pdf",
+    "filename": "17949271886067.pdf",
+    "size": 600729,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "270b3668e7f5ccc8677d0265b9feaf859afd673d368592677f43349d8b2573b2",
+    "path": "docs/10171600/files/270b3668e7f5ccc8677d0265b9feaf859afd673d368592677f43349d8b2573b2.pdf",
+    "text_path": "docs/10171600/files/270b3668e7f5ccc8677d0265b9feaf859afd673d368592677f43349d8b2573b2.pdf.text.json",
+    "pages": 5,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Satisfy all four conditions mentioned below (1-A) Rubric Generation from the Question Paper From the question paper alone, the platform generates a rubric for…",
+    "text_key": "b8fbbbc87362db71"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadBuyerDoc/10171600/17949271886184.pdf",
+    "filename": "17949271886184.pdf",
+    "size": 600729,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "270b3668e7f5ccc8677d0265b9feaf859afd673d368592677f43349d8b2573b2",
+    "path": "docs/10171600/files/270b3668e7f5ccc8677d0265b9feaf859afd673d368592677f43349d8b2573b2.pdf",
+    "text_path": "docs/10171600/files/270b3668e7f5ccc8677d0265b9feaf859afd673d368592677f43349d8b2573b2.pdf.text.json",
+    "pages": 5,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Satisfy all four conditions mentioned below (1-A) Rubric Generation from the Question Paper From the question paper alone, the platform generates a rubric for…",
+    "text_key": "b8fbbbc87362db71"
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261119",
+    "filename": "gtc-20261119.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 8,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261119.pdf",
+    "text_path": "gtc/20261119.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/103461446560000",
+    "filename": "103461446560000",
+    "size": 123093,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 8,
+    "link_kind": "document",
+    "sha256": "311d4fec3dc0be50eaf950ced154856c2d9bcdce0831e709c959cc1929dc68f0",
+    "path": "docs/10171600/files/311d4fec3dc0be50eaf950ced154856c2d9bcdce0831e709c959cc1929dc68f0.html",
+    "text_path": "docs/10171600/files/311d4fec3dc0be50eaf950ced154856c2d9bcdce0831e709c959cc1929dc68f0.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Service level agreement (GeM)",
+    "text_key": "f423332610dac882"
+   }
+  ],
+  "buyer_org": "Chhatrapati Shahu Ji Maharaj University Kanpur",
+  "verdict": {
+   "b_id": 10171600,
+   "bid_number": "GEM/2026/B/8278914",
+   "topic_key": "726f5e41a3574211",
+   "doc_hash": "f0404c8c71956bf9",
+   "relevant": true,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "judge",
+   "triage": "clearly_yes",
+   "reason": "The tender explicitly purchases an AI platform for the development, O&M, and AI-assisted evaluation of handwritten answer scripts, including features like rubric generation and AI co-pilot assistance.",
+   "evidence": [
+    {
+     "quote": "Scope of AI Solution required... Type of AI solution: AI-Assisted Evaluation of Handwritten Answer Scripts... Features of AI Platform: As per SoW",
+     "file": "GeM-Bidding-10171600.pdf",
+     "page": 4,
+     "verified": true
+    },
+    {
+     "quote": "This criterion evaluates whether the bidder's platform can convert the University's question papers into marking rubrics... The rationale for including this criterion is that every script must be marked against a faculty-approved scheme",
+     "file": "17949271885829.pdf",
+     "page": 1,
+     "verified": true
+    },
+    {
+     "quote": "An AI assistant within the platform that carries out repetitive work on the user's instruction across the lifecycle: drafting and editing rubric criteria, locating and summarising scripts or questions under review",
+     "file": "17949271885829.pdf",
+     "page": 4,
+     "verified": true
+    }
+   ],
+   "key_facts": {
+    "emd": "40000",
+    "min_turnover": "20 Lakh",
+    "contract_period": "4 Month(s)",
+    "estimated_value": "4000000",
+    "scope_summary": "AI platform for development and O&M of AI-assisted evaluation of handwritten answer scripts, including rubric generation, faculty control, and AI co-pilot features."
+   },
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T13:01:26.001270"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10183265": {
+  "b_id": 10183265,
+  "group": "AI Platforms",
+  "bid": {
+   "b_id": 10183265,
+   "bid_number": "GEM/2026/B/8289027",
+   "title": "Apple MackBook Pro Chip,Apple MackBook Pro CPU,Apple MackBook Pro GPU,Apple MackBook Pro Neural Eng",
+   "category_id": "home_boq_boql_boql_boq",
+   "ministry": "Ministry of Statistics and Programme Implementation",
+   "department": "Department of Statistics and Programme Implementation",
+   "published": "2026-11-18T17:15:27",
+   "closing": "2026-12-18T17:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 18,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10183265",
+    "b_id": [
+     10183265
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8289027"
+    ],
+    "b_category_name": [
+     "Apple MackBook Pro Chip,Apple MackBook Pro CPU,Apple MackBook Pro GPU,Apple MackBook Pro Neural Eng"
+    ],
+    "b_total_quantity": [
+     18
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     9
+    ],
+    "b_type": [
+     0
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-18T17:15:27Z"
+    ],
+    "final_end_date_sort": [
+     "2026-12-18T17:00:00Z"
+    ],
+    "bd_category_name": [
+     "Apple MackBook Pro Chip,Apple MackBook Pro CPU,Apple MackBook Pro GPU,Apple MackBook Pro Neural Engine,Apple MackBook Pro Memry,Apple MacBook Pro Storage,Apple MacBook Pro 14 inch and color,Apple MacBook Pro Coverage,Apple MacBook Pro Technical Specifications"
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "bbt_title": [
+     "Two Numbers of 14 inch Space Black Apple Mac Book Pro M6 Chip"
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "home_boq_boql_boql_boq"
+    ],
+    "b.b_created_by": [
+     "Ecsubuyer"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Statistics and Programme Implementation"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Statistics and Programme Implementation"
+    ],
+    "bd_details_is_boq": [
+     true
+    ],
+    "bd_details_new_boq": [
+     true
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10183265",
+    "filename": "GeM-Bidding-10183265.pdf",
+    "size": 151508,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "d423ed60bf6d155a08ac7315c159bd3c33e05462e8f52ce2a9c0a6563d63ee14",
+    "path": "docs/10183265/files/d423ed60bf6d155a08ac7315c159bd3c33e05462e8f52ce2a9c0a6563d63ee14.pdf",
+    "text_path": "docs/10183265/files/d423ed60bf6d155a08ac7315c159bd3c33e05462e8f52ce2a9c0a6563d63ee14.pdf.text.json",
+    "pages": 12,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "769f0195c9227cc3"
+   }
+  ],
+  "buyer_org": "Indian Statistical Institute",
+  "verdict": {
+   "b_id": 10183265,
+   "bid_number": "GEM/2026/B/8289027",
+   "topic_key": "726f5e41a3574211",
+   "doc_hash": "918fc7423cdf2e06",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "triage",
+   "triage": "clearly_no",
+   "reason": "The tender is for purchasing Apple MacBook Pro laptops (hardware), not for AI software platforms or infrastructure services.",
+   "evidence": [],
+   "key_facts": null,
+   "queries": null,
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T13:01:36.044889"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10178240": {
+  "b_id": 10178240,
+  "group": "AI Platforms",
+  "bid": {
+   "b_id": 10178240,
+   "bid_number": "GEM/2026/B/8284654",
+   "title": "Artificial intelligence, Machine Learning, and Deep Learning as a Service - Development, O&M, Integ",
+   "category_id": "services_home_emer_arti",
+   "ministry": "Ministry of Electronics and Information Technology",
+   "department": "Department of Electronics and Information Technology",
+   "published": "2026-11-18T10:12:50",
+   "closing": "2026-12-07T16:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10178240",
+    "b_id": [
+     10178240
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8284654"
+    ],
+    "b_category_name": [
+     "Artificial intelligence, Machine Learning, and Deep Learning as a Service - Development, O&M, Integ"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-18T10:12:50Z"
+    ],
+    "final_end_date_sort": [
+     "2026-12-07T16:00:00Z"
+    ],
+    "bd_category_name": [
+     "Artificial intelligence, Machine Learning, and Deep Learning as a Service - Development, O&M, Integration with pre-developed service provider’s module; Chatbots/Conversational Agents; As per RFQ; Audio, Free Text, Voice and Text WhatsApp Chatbot; Sup.."
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_emer_arti"
+    ],
+    "b.b_created_by": [
+     "y.ashish@digitalindia.gov.in"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Electronics and Information Technology"
+    ],
+    "ba_official_details_deptName": [
+     "Department of Electronics and Information Technology"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10178240",
+    "filename": "GeM-Bidding-10178240.pdf",
+    "size": 109116,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "57a8d13e15e6d9fd3f7f250eb2dcb3abe75fd01c41a2552139a2c004c7bf353d",
+    "path": "docs/10178240/files/57a8d13e15e6d9fd3f7f250eb2dcb3abe75fd01c41a2552139a2c004c7bf353d.pdf",
+    "text_path": "docs/10178240/files/57a8d13e15e6d9fd3f7f250eb2dcb3abe75fd01c41a2552139a2c004c7bf353d.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Ministry Of Electronics And Information Technology",
+    "text_key": "c6a36aebbfbb20f6"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/downloadOmppdfile/",
+    "filename": "downloadOmppdfile",
+    "size": 0,
+    "kind": "empty",
+    "status": "empty",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": null,
+    "path": null,
+    "text_path": null,
+    "pages": 0,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": ""
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/excel/bid-10178240/1794913200.xlsx",
+    "filename": "1794913200.xlsx",
+    "size": 13867,
+    "kind": "office",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "e50b5f08ab722a8b3af7ed02708fef7ecc40c38a2e9f4fa99adf8957f34157af",
+    "path": "docs/10178240/files/e50b5f08ab722a8b3af7ed02708fef7ecc40c38a2e9f4fa99adf8957f34157af.xlsx",
+    "text_path": "docs/10178240/files/e50b5f08ab722a8b3af7ed02708fef7ecc40c38a2e9f4fa99adf8957f34157af.xlsx.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Financial bid Format",
+    "title": "[Financial Bid Format] Annexure 1 - Format for Financial Proposal (BOQ)",
+    "text_key": "37dcf626602a11d0"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10178240/1794975508.pdf",
+    "filename": "1794975508.pdf",
+    "size": 1738481,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "7d90185a789064937f521c55ef1de8e099edb0b11be822ba65d072baba940499",
+    "path": "docs/10178240/files/7d90185a789064937f521c55ef1de8e099edb0b11be822ba65d072baba940499.pdf",
+    "text_path": "docs/10178240/files/7d90185a789064937f521c55ef1de8e099edb0b11be822ba65d072baba940499.pdf.text.json",
+    "pages": 51,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Scope of Work",
+    "title": "RFQ — NCST Gram Voice & Text WhatsApp Chatbot | NeGD, Digital India Corporation",
+    "text_key": "972b70f2e049f07a"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10178240/1794975529.pdf",
+    "filename": "1794975529.pdf",
+    "size": 84595,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "e138cca2de44164d38cbaaa340cfbe306113b668aa522e67108a01fc9ca24147",
+    "path": "docs/10178240/files/e138cca2de44164d38cbaaa340cfbe306113b668aa522e67108a01fc9ca24147.pdf",
+    "text_path": "docs/10178240/files/e138cca2de44164d38cbaaa340cfbe306113b668aa522e67108a01fc9ca24147.pdf.text.json",
+    "pages": 2,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Payment Terms",
+    "title": "RFQ — NCST Gram Voice & Text WhatsApp Chatbot | NeGD, Digital India Corporation",
+    "text_key": "33eba6ab6b1604fd"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10178240/1794975538.pdf",
+    "filename": "1794975538.pdf",
+    "size": 1738481,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "7d90185a789064937f521c55ef1de8e099edb0b11be822ba65d072baba940499",
+    "path": "docs/10178240/files/7d90185a789064937f521c55ef1de8e099edb0b11be822ba65d072baba940499.pdf",
+    "text_path": "docs/10178240/files/7d90185a789064937f521c55ef1de8e099edb0b11be822ba65d072baba940499.pdf.text.json",
+    "pages": 51,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Manpower Requirement",
+    "title": "RFQ — NCST Gram Voice & Text WhatsApp Chatbot | NeGD, Digital India Corporation",
+    "text_key": "972b70f2e049f07a"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10178240/1794975544.pdf",
+    "filename": "1794975544.pdf",
+    "size": 1738481,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 3,
+    "link_kind": "document",
+    "sha256": "7d90185a789064937f521c55ef1de8e099edb0b11be822ba65d072baba940499",
+    "path": "docs/10178240/files/7d90185a789064937f521c55ef1de8e099edb0b11be822ba65d072baba940499.pdf",
+    "text_path": "docs/10178240/files/7d90185a789064937f521c55ef1de8e099edb0b11be822ba65d072baba940499.pdf.text.json",
+    "pages": 51,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Data Privacy Policy",
+    "title": "RFQ — NCST Gram Voice & Text WhatsApp Chatbot | NeGD, Digital India Corporation",
+    "text_key": "972b70f2e049f07a"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10178240/1794975545.pdf",
+    "filename": "1794975545.pdf",
+    "size": 1738481,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "7d90185a789064937f521c55ef1de8e099edb0b11be822ba65d072baba940499",
+    "path": "docs/10178240/files/7d90185a789064937f521c55ef1de8e099edb0b11be822ba65d072baba940499.pdf",
+    "text_path": "docs/10178240/files/7d90185a789064937f521c55ef1de8e099edb0b11be822ba65d072baba940499.pdf.text.json",
+    "pages": 51,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Deployment / Infrastructure Requirement",
+    "title": "RFQ — NCST Gram Voice & Text WhatsApp Chatbot | NeGD, Digital India Corporation",
+    "text_key": "972b70f2e049f07a"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10178240/1794975550.pdf",
+    "filename": "1794975550.pdf",
+    "size": 1738481,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "7d90185a789064937f521c55ef1de8e099edb0b11be822ba65d072baba940499",
+    "path": "docs/10178240/files/7d90185a789064937f521c55ef1de8e099edb0b11be822ba65d072baba940499.pdf",
+    "text_path": "docs/10178240/files/7d90185a789064937f521c55ef1de8e099edb0b11be822ba65d072baba940499.pdf.text.json",
+    "pages": 51,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Existing Workflow / Process / Background",
+    "title": "RFQ — NCST Gram Voice & Text WhatsApp Chatbot | NeGD, Digital India Corporation",
+    "text_key": "972b70f2e049f07a"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10178240/1794975555.pdf",
+    "filename": "1794975555.pdf",
+    "size": 1738481,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "7d90185a789064937f521c55ef1de8e099edb0b11be822ba65d072baba940499",
+    "path": "docs/10178240/files/7d90185a789064937f521c55ef1de8e099edb0b11be822ba65d072baba940499.pdf",
+    "text_path": "docs/10178240/files/7d90185a789064937f521c55ef1de8e099edb0b11be822ba65d072baba940499.pdf.text.json",
+    "pages": 51,
+    "ocr_pages": [],
+    "error": null,
+    "label": "NDA",
+    "title": "RFQ — NCST Gram Voice & Text WhatsApp Chatbot | NeGD, Digital India Corporation",
+    "text_key": "972b70f2e049f07a"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10178240/1794975580.pdf",
+    "filename": "1794975580.pdf",
+    "size": 159445,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "56999c4b890a8f1dfaee12f058cacef381dca1835db21281d6efbceadcde9740",
+    "path": "docs/10178240/files/56999c4b890a8f1dfaee12f058cacef381dca1835db21281d6efbceadcde9740.pdf",
+    "text_path": "docs/10178240/files/56999c4b890a8f1dfaee12f058cacef381dca1835db21281d6efbceadcde9740.pdf.text.json",
+    "pages": 3,
+    "ocr_pages": [],
+    "error": null,
+    "label": "Financial Breakup Required",
+    "title": "RFQ — NCST Gram Voice & Text WhatsApp Chatbot | NeGD, Digital India Corporation",
+    "text_key": "6b048cf77e1b5562"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadBuyerTechDoc/10178240-17949760484254.pdf/10178240",
+    "filename": "10178240-17949760484254.pdf",
+    "size": 1738481,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "7d90185a789064937f521c55ef1de8e099edb0b11be822ba65d072baba940499",
+    "path": "docs/10178240/files/7d90185a789064937f521c55ef1de8e099edb0b11be822ba65d072baba940499.pdf",
+    "text_path": "docs/10178240/files/7d90185a789064937f521c55ef1de8e099edb0b11be822ba65d072baba940499.pdf.text.json",
+    "pages": 51,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "RFQ — NCST Gram Voice & Text WhatsApp Chatbot | NeGD, Digital India Corporation",
+    "text_key": "972b70f2e049f07a"
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261118",
+    "filename": "gtc-20261118.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261118.pdf",
+    "text_path": "gtc/20261118.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/103596569497600",
+    "filename": "103596569497600",
+    "size": 123093,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "document",
+    "sha256": "311d4fec3dc0be50eaf950ced154856c2d9bcdce0831e709c959cc1929dc68f0",
+    "path": "docs/10178240/files/311d4fec3dc0be50eaf950ced154856c2d9bcdce0831e709c959cc1929dc68f0.html",
+    "text_path": "docs/10178240/files/311d4fec3dc0be50eaf950ced154856c2d9bcdce0831e709c959cc1929dc68f0.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Service level agreement (GeM)",
+    "text_key": "f423332610dac882"
+   }
+  ],
+  "buyer_org": "National E-governance Division (negd)",
+  "verdict": {
+   "b_id": 10178240,
+   "bid_number": "GEM/2026/B/8284654",
+   "topic_key": "726f5e41a3574211",
+   "doc_hash": "e27a75193b2ecfcc",
+   "relevant": false,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "judge",
+   "triage": "clearly_yes",
+   "reason": "The tender is for the development and operation of a specific WhatsApp chatbot application for grievance redressal, not for the purchase of a general-purpose AI development platform or infrastructure.",
+   "evidence": [
+    {
+     "quote": "RFQ — NCST Gram Voice & Text WhatsApp Chatbot | NeGD, Digital India Corporation",
+     "file": "1794975550.pdf",
+     "page": 1,
+     "verified": true
+    },
+    {
+     "quote": "NCST Gram is envisaged as a WhatsApp-native, voice-and-text conversational grievance redressal service.",
+     "file": "1794975508.pdf",
+     "page": 9,
+     "verified": true
+    },
+    {
+     "quote": "The structured narrative shall be labelled 'AI-generated draft — for officer assistance only'; the petitioner/complainant-confirmed original text / audio and transcript is the record of complaint.",
+     "file": "1794975508.pdf",
+     "page": 14,
+     "verified": true
+    }
+   ],
+   "key_facts": {
+    "emd": "",
+    "min_turnover": "",
+    "contract_period": "3 Year(s)",
+    "estimated_value": "",
+    "scope_summary": "Development, O&M, and integration of a WhatsApp chatbot for grievance redressal."
+   },
+   "queries": {
+    "when": "2026-11-26T15:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 26-11-2026 15:00:00",
+    "file": "GeM-Bidding-10178240.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T13:02:36.286636"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ },
+ "10185937": {
+  "b_id": 10185937,
+  "group": "AI Platforms",
+  "bid": {
+   "b_id": 10185937,
+   "bid_number": "GEM/2026/B/8291398",
+   "title": "Artificial intelligence, Machine Learning, and Deep Learning as a Service - Development, O&M, Integ",
+   "category_id": "services_home_emer_arti",
+   "ministry": "Ministry of Development of North Eastern Region",
+   "department": "NA",
+   "published": "2026-11-19T15:57:11",
+   "closing": "2026-12-10T17:00:00",
+   "bid_type": 1,
+   "eval_type": 0,
+   "parent_b_id": null,
+   "parent_bid_number": null,
+   "total_quantity": 1,
+   "is_high_value": false,
+   "status": 1,
+   "raw": {
+    "id": "10185937",
+    "b_id": [
+     10185937
+    ],
+    "b_bid_number": [
+     "GEM/2026/B/8291398"
+    ],
+    "b_category_name": [
+     "Artificial intelligence, Machine Learning, and Deep Learning as a Service - Development, O&M, Integ"
+    ],
+    "b_total_quantity": [
+     1
+    ],
+    "b_status": [
+     1
+    ],
+    "b_bid_type": [
+     1
+    ],
+    "b_is_bunch": [
+     1
+    ],
+    "b_type": [
+     1
+    ],
+    "b_bid_to_ra": [
+     0
+    ],
+    "b_buyer_status": [
+     0
+    ],
+    "b_eval_type": [
+     0
+    ],
+    "final_start_date_sort": [
+     "2026-11-19T15:57:11Z"
+    ],
+    "final_end_date_sort": [
+     "2026-12-10T17:00:00Z"
+    ],
+    "bd_category_name": [
+     "Artificial intelligence, Machine Learning, and Deep Learning as a Service - Development, O&M, Integration with pre-developed service provider’s module; Chatbots/Conversational Agents, Machine Learning supported Data Management, as per RFP; As per RFP.."
+    ],
+    "b_is_custom_item": [
+     0
+    ],
+    "is_high_value": [
+     false
+    ],
+    "b_ra_to_bid": [
+     1
+    ],
+    "b_is_inactive": [
+     0
+    ],
+    "b_cat_id": [
+     "services_home_emer_arti"
+    ],
+    "b.b_created_by": [
+     "akhilesh.pandey13@nic.in"
+    ],
+    "ba_is_single_packet": [
+     0
+    ],
+    "ba_is_global_tendering": [
+     0
+    ],
+    "ba_is_limited_tendering": [
+     0
+    ],
+    "is_rc_bid": [
+     0
+    ],
+    "ba_official_details_minName": [
+     "Ministry of Development of North Eastern Region"
+    ],
+    "ba_official_details_deptName": [
+     "NA"
+    ],
+    "bid_schedule": [],
+    "parent_bid_schedule": []
+   }
+  },
+  "files": [
+   {
+    "role": "bid_document",
+    "url": "https://bidplus.gem.gov.in/showbidDocument/10185937",
+    "filename": "GeM-Bidding-10185937.pdf",
+    "size": 108646,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": null,
+    "link_kind": null,
+    "sha256": "1c3b9b97cd63bfd881da46a0c2b081b610f9c544296a44370a1752082162ddf7",
+    "path": "docs/10185937/files/1c3b9b97cd63bfd881da46a0c2b081b610f9c544296a44370a1752082162ddf7.pdf",
+    "text_path": "docs/10185937/files/1c3b9b97cd63bfd881da46a0c2b081b610f9c544296a44370a1752082162ddf7.pdf.text.json",
+    "pages": 7,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": "04c4bd293e62029f"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10185937/1795009131.pdf",
+    "filename": "1795009131.pdf",
+    "size": 487245,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "02e400c5977698fde53c72910c712185781c8695aca2fde01cb9f4c6bc8e8727",
+    "path": "docs/10185937/files/02e400c5977698fde53c72910c712185781c8695aca2fde01cb9f4c6bc8e8727.pdf",
+    "text_path": "docs/10185937/files/02e400c5977698fde53c72910c712185781c8695aca2fde01cb9f4c6bc8e8727.pdf.text.json",
+    "pages": 90,
+    "ocr_pages": [
+     66
+    ],
+    "error": null,
+    "label": "Scope of Work",
+    "title": "REQUEST FOR PROPOSAL (RFP)",
+    "text_key": "57ec0380a4897279"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10185937/1795009140.pdf",
+    "filename": "1795009140.pdf",
+    "size": 487245,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "02e400c5977698fde53c72910c712185781c8695aca2fde01cb9f4c6bc8e8727",
+    "path": "docs/10185937/files/02e400c5977698fde53c72910c712185781c8695aca2fde01cb9f4c6bc8e8727.pdf",
+    "text_path": "docs/10185937/files/02e400c5977698fde53c72910c712185781c8695aca2fde01cb9f4c6bc8e8727.pdf.text.json",
+    "pages": 90,
+    "ocr_pages": [
+     66
+    ],
+    "error": null,
+    "label": "Manpower Requirement",
+    "title": "REQUEST FOR PROPOSAL (RFP)",
+    "text_key": "57ec0380a4897279"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10185937/1795009147.pdf",
+    "filename": "1795009147.pdf",
+    "size": 487245,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "02e400c5977698fde53c72910c712185781c8695aca2fde01cb9f4c6bc8e8727",
+    "path": "docs/10185937/files/02e400c5977698fde53c72910c712185781c8695aca2fde01cb9f4c6bc8e8727.pdf",
+    "text_path": "docs/10185937/files/02e400c5977698fde53c72910c712185781c8695aca2fde01cb9f4c6bc8e8727.pdf.text.json",
+    "pages": 90,
+    "ocr_pages": [
+     66
+    ],
+    "error": null,
+    "label": "Data Privacy Policy",
+    "title": "REQUEST FOR PROPOSAL (RFP)",
+    "text_key": "57ec0380a4897279"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/resources/upload_nas/NovQ426/bidding/biddoc/bid-10185937/1795009285.pdf",
+    "filename": "1795009285.pdf",
+    "size": 487245,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "02e400c5977698fde53c72910c712185781c8695aca2fde01cb9f4c6bc8e8727",
+    "path": "docs/10185937/files/02e400c5977698fde53c72910c712185781c8695aca2fde01cb9f4c6bc8e8727.pdf",
+    "text_path": "docs/10185937/files/02e400c5977698fde53c72910c712185781c8695aca2fde01cb9f4c6bc8e8727.pdf.text.json",
+    "pages": 90,
+    "ocr_pages": [
+     66
+    ],
+    "error": null,
+    "label": "Financial Breakup Required",
+    "title": "REQUEST FOR PROPOSAL (RFP)",
+    "text_key": "57ec0380a4897279"
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/downloadBuyerDoc/10185937/17950728128169.pdf",
+    "filename": "17950728128169.pdf",
+    "size": 487245,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 4,
+    "link_kind": "document",
+    "sha256": "02e400c5977698fde53c72910c712185781c8695aca2fde01cb9f4c6bc8e8727",
+    "path": "docs/10185937/files/02e400c5977698fde53c72910c712185781c8695aca2fde01cb9f4c6bc8e8727.pdf",
+    "text_path": "docs/10185937/files/02e400c5977698fde53c72910c712185781c8695aca2fde01cb9f4c6bc8e8727.pdf.text.json",
+    "pages": 90,
+    "ocr_pages": [
+     66
+    ],
+    "error": null,
+    "label": null,
+    "title": "REQUEST FOR PROPOSAL (RFP)",
+    "text_key": "57ec0380a4897279"
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8291398/CLM0010/RFP_76409d4d-4a9c-453d-ba4b1795074287236_akhilesh.pandey13@nic.in.pdf",
+    "filename": "RFP_76409d4d-4a9c-453d-ba4b1795074287236_akhilesh.pandey13@nic.in.pdf",
+    "size": 487245,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "document",
+    "sha256": "02e400c5977698fde53c72910c712185781c8695aca2fde01cb9f4c6bc8e8727",
+    "path": "docs/10185937/files/02e400c5977698fde53c72910c712185781c8695aca2fde01cb9f4c6bc8e8727.pdf",
+    "text_path": "docs/10185937/files/02e400c5977698fde53c72910c712185781c8695aca2fde01cb9f4c6bc8e8727.pdf.text.json",
+    "pages": 90,
+    "ocr_pages": [
+     66
+    ],
+    "error": null,
+    "label": null,
+    "title": "REQUEST FOR PROPOSAL (RFP)",
+    "text_key": "57ec0380a4897279"
+   },
+   {
+    "role": "attachment",
+    "url": "https://fulfilment.gem.gov.in/contract/slafds?fileDownloadPath=SLA_UPLOAD_PATH/2026/Nov/GEM_2026_B_8291398/CLM0014/RFP_3f0bebc8-a207-4291-96951795074318430_akhilesh.pandey13@nic.in.pdf",
+    "filename": "RFP_3f0bebc8-a207-4291-96951795074318430_akhilesh.pandey13@nic.in.pdf",
+    "size": 487245,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 6,
+    "link_kind": "document",
+    "sha256": "02e400c5977698fde53c72910c712185781c8695aca2fde01cb9f4c6bc8e8727",
+    "path": "docs/10185937/files/02e400c5977698fde53c72910c712185781c8695aca2fde01cb9f4c6bc8e8727.pdf",
+    "text_path": "docs/10185937/files/02e400c5977698fde53c72910c712185781c8695aca2fde01cb9f4c6bc8e8727.pdf.text.json",
+    "pages": 90,
+    "ocr_pages": [
+     66
+    ],
+    "error": null,
+    "label": null,
+    "title": "REQUEST FOR PROPOSAL (RFP)",
+    "text_key": "57ec0380a4897279"
+   },
+   {
+    "role": "gtc",
+    "url": "https://admin.gem.gov.in/apis/v1/gtc/pdfByDate/?date=20261119",
+    "filename": "gtc-20261119.pdf",
+    "size": 741220,
+    "kind": "pdf",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "gtc",
+    "sha256": null,
+    "path": "gtc/20261119.pdf",
+    "text_path": "gtc/20261119.pdf.text.json",
+    "pages": 57,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": null,
+    "text_key": null
+   },
+   {
+    "role": "attachment",
+    "url": "https://bidplus.gem.gov.in/bidding/bid/bidsla/103753312567969",
+    "filename": "103753312567969",
+    "size": 123093,
+    "kind": "html",
+    "status": "ok",
+    "source_page": 7,
+    "link_kind": "document",
+    "sha256": "311d4fec3dc0be50eaf950ced154856c2d9bcdce0831e709c959cc1929dc68f0",
+    "path": "docs/10185937/files/311d4fec3dc0be50eaf950ced154856c2d9bcdce0831e709c959cc1929dc68f0.html",
+    "text_path": "docs/10185937/files/311d4fec3dc0be50eaf950ced154856c2d9bcdce0831e709c959cc1929dc68f0.html.text.json",
+    "pages": 1,
+    "ocr_pages": [],
+    "error": null,
+    "label": null,
+    "title": "Service level agreement (GeM)",
+    "text_key": "f423332610dac882"
+   }
+  ],
+  "buyer_org": "N/a",
+  "verdict": {
+   "b_id": 10185937,
+   "bid_number": "GEM/2026/B/8291398",
+   "topic_key": "726f5e41a3574211",
+   "doc_hash": "388a7bd8d78b788b",
+   "relevant": true,
+   "borderline": false,
+   "question": "",
+   "confidence": 0.9,
+   "stage": "judge",
+   "triage": "clearly_yes",
+   "reason": "The tender explicitly procures the development, integration, and operation of an AI-enabled conversational chatbot, which falls under the scope of AI platforms and applications.",
+   "evidence": [
+    {
+     "quote": "Selection of an agency for design, development, hosting, integration, implementation and operation and maintenance of an AI-enabled bilingual (Hindi and English) voice and text conversational chatbot",
+     "file": "RFP_76409d4d-4a9c-453d-ba4b1795074287236_akhilesh.pandey13@nic.in.pdf",
+     "page": 1,
+     "verified": true
+    },
+    {
+     "quote": "Scope of AI Solution required: Development , O&M , Integration with pre-developed service provider’s module. Type of AI solution: Chatbots/Conversational Agents , Machine Learning supported Data Management",
+     "file": "GeM-Bidding-10185937.pdf",
+     "page": 5,
+     "verified": true
+    },
+    {
+     "quote": "host the complete solution, including the AI inference workloads and the application, data and security layers, on the GPU Infrastructure made available by the Ministry",
+     "file": "1795009131.pdf",
+     "page": 12,
+     "verified": true
+    }
+   ],
+   "key_facts": {
+    "emd": "200000",
+    "min_turnover": "30 Lakh",
+    "contract_period": "3 Year(s) 7 Month(s) 1 Day(s)",
+    "estimated_value": "11800000",
+    "scope_summary": "Development, O&M, and integration of an AI-enabled bilingual conversational chatbot and ML-supported data management."
+   },
+   "queries": {
+    "when": "2026-11-27T12:00:00",
+    "source": "gem_pre_bid",
+    "kind": "pre_bid_meeting",
+    "quote": "Pre-Bid Date and Time 27-11-2026 12:00:00",
+    "file": "GeM-Bidding-10185937.pdf",
+    "page": 4,
+    "verified": true
+   },
+   "needs_review": false,
+   "model": "qwen/qwen3.6-35b-a3b",
+   "decided_at": "2026-11-23T13:03:06.956695"
+  },
+  "error": "",
+  "restored": false,
+  "ruling": null,
+  "undone": false
+ }
+}

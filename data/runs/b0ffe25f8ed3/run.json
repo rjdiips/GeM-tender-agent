@@ -1,0 +1,77 @@
+{
+ "run_id": "b0ffe25f8ed3",
+ "user": "rajdeep",
+ "title": "aml tenders this week",
+ "request_text": "aml tenders this week",
+ "created": "2026-11-23T11:38:47.635173",
+ "status": "stopped",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "aml tenders this week",
+  "topics": [
+   {
+    "user_text": "aml tenders this week",
+    "meaning": "Anti-Money Laundering (AML) Solutions: software and services for financial institutions to detect, prevent, and report money laundering and terrorist financing activities",
+    "domain": "banking",
+    "match_terms": [
+     "AML",
+     "Anti-Money Laundering",
+     "KYC",
+     "Know Your Customer",
+     "CFT",
+     "Counter Financing of Terrorism",
+     "Transaction Monitoring",
+     "Sanctions Screening",
+     "Customer Due Diligence",
+     "CDD",
+     "Enhanced Due Diligence",
+     "EDD"
+    ],
+    "acronyms": {
+     "AML": "Anti-Money Laundering"
+    },
+    "related_but_not_enough": [
+     "Fraud Detection",
+     "Compliance Management",
+     "Risk Management Software"
+    ],
+    "not_this": [
+     "Asset Management",
+     "Account Management",
+     "Automated Market Maker"
+    ],
+    "buyers": [],
+    "chosen_because": "Meaning 0 has a high plausibility score (0.95) and matches 90 open tenders, whereas Meaning 1 has low plausibility (0.05) and only 1 match.",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-11-16T00:00:00",
+   "published_to": "2026-11-23T11:38:38.747003",
+   "closing_from": "2026-11-23T11:38:38.747003",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "Anti-Money Laundering (AML) Solutions: software and services for financial institutions to detect, prevent, and report money laundering and terrorist financing activities",
+   "window_count": 45207,
+   "strong": 90,
+   "top_titles": [
+    "20OD 1 point 5T UPVC SEAMLESS STRAIGHT PIPE,50OD 3 point 7T UPVC SEAMLESS STRAIGHT PIPE,32OD 2 poin",
+    "SS316L SEAMLESS PIPES 2 INCH SCH 10 (2.77 mm WT)",
+    "Picrorhiza Kurroa Kutki Plants,Ashwagandha,Tulsi,Alovera,Lemon Grass,Brahmi,Bhringraj,Kalabama,Peep",
+    "Repair, Maintenance, and Installation of Plant/ Systems/Equipments (Version 2) - Maintenance Works ",
+    "DROP BOTROCLOT,TAB AMLODIPINE 5 MG,TAB CIPROFLOXACIN 500 MG,TAB DOLO 650 MG,TAB LIMCEE 500 mg,TAB A",
+    "Custom Bid for Services - 2YRS ARC FOR REPAIR,TESTING OF CAMLOCK COUPLING",
+    "4127261874,4142182344,4143101434,4143101024,4143100404,4125242564,4125242294,4127250364,4127250474,",
+    "Binder Clip 19 mm,Binder Clip 25 mm,Binder Clip 51 mm,Cello Tape 0 point 5 Inch Blue green Yellow,C"
+   ]
+  }
+ ],
+ "error": ""
+}

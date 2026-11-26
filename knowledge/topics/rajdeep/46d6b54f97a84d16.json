@@ -1,0 +1,43 @@
+{
+ "text": "aiml platform tenders",
+ "topics": [
+  {
+   "user_text": "aiml platform tenders",
+   "meaning": "AI/ML Platforms: software platforms that provide tools, models, and infrastructure for developing, training, and deploying artificial intelligence and machine learning applications",
+   "domain": "technology",
+   "match_terms": [
+    "AI platform",
+    "ML platform",
+    "Artificial Intelligence platform",
+    "Machine Learning platform",
+    "AI/ML platform",
+    "AI/ML solutions",
+    "AI development platform",
+    "ML development platform",
+    "AI infrastructure",
+    "ML infrastructure",
+    "AI model training platform",
+    "ML model deployment platform"
+   ],
+   "acronyms": {
+    "AI": "Artificial Intelligence",
+    "ML": "Machine Learning"
+   },
+   "related_but_not_enough": [
+    "AI consulting",
+    "AI strategy",
+    "AI hardware",
+    "AI chips",
+    "AI data centers"
+   ],
+   "not_this": [
+    "AIML",
+    "AIML course",
+    "AIML research paper"
+   ],
+   "buyers": [],
+   "chosen_because": "The user's history shows a consistent preference for broad platform categories (e.g., 'ai platforms'), and meaning [0] has a higher plausibility score (0.95) with a larger number of relevant tenders (30) compared to meaning [1].",
+   "other_meanings_searched": []
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+{
+ "text": "fraud tenders",
+ "topics": [
+  {
+   "user_text": "fraud tenders",
+   "meaning": "Fraud Investigation and Forensic Services: professional services for investigating suspected fraud, including forensic accounting and digital forensics",
+   "domain": "Professional Services",
+   "match_terms": [
+    "fraud investigation",
+    "forensic audit",
+    "fraud inquiry",
+    "fraud examination",
+    "forensic accounting",
+    "fraud probe"
+   ],
+   "acronyms": {},
+   "related_but_not_enough": [
+    "internal audit",
+    "compliance audit",
+    "legal services"
+   ],
+   "not_this": [
+    "fraud prevention software",
+    "fraud training"
+   ],
+   "buyers": [],
+   "chosen_because": "Although the user's history suggests a software focus, the current search term 'fraud tenders' yields zero relevant software matches but 21 highly relevant forensic and investigation service tenders, making the service-oriented meaning the only viable option with actual results.",
+   "other_meanings_searched": [
+    "Fraud Detection and Prevention Systems: software and services that help organizations identify, monitor, and prevent fraudulent transactions and activities"
+   ]
+  },
+  {
+   "user_text": "fraud tenders",
+   "meaning": "Fraud Detection and Prevention Systems: software and services that help organizations identify, monitor, and prevent fraudulent transactions and activities",
+   "domain": "Technology/Security",
+   "match_terms": [
+    "fraud detection",
+    "fraud prevention",
+    "fraud management system",
+    "fraud monitoring",
+    "anti-fraud",
+    "fraud analytics",
+    "transaction fraud",
+    "identity fraud",
+    "fraud risk management"
+   ],
+   "acronyms": {
+    "FDS": "Fraud Detection System",
+    "FMS": "Fraud Management System"
+   },
+   "related_but_not_enough": [
+    "cybersecurity",
+    "compliance",
+    "AML",
+    "KYC",
+    "risk management"
+   ],
+   "not_this": [
+    "insurance fraud claims",
+    "fraud investigation services",
+    "legal fraud litigation"
+   ],
+   "buyers": [],
+   "chosen_because": "Although the user's history suggests a software focus, the current search term 'fraud tenders' yields zero relevant software matches but 21 highly relevant forensic and investigation service tenders, making the service-oriented meaning the only viable option with actual results.",
+   "other_meanings_searched": [
+    "Fraud Investigation and Forensic Services: professional services for investigating suspected fraud, including forensic accounting and digital forensics"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+[
+ {
+  "topic_key": "e6336d8056449586",
+  "text": "Anti-Money Laundering (AML) Solutions: software and services for financial institutions to detect, prevent, and report money laundering and terrorist financing activities; AML; Anti-Money Laundering; KYC; Know Your Customer; CFT; Counter Financing of Terrorism; Transaction Monitoring; Sanctions Screening; Customer Due Diligence; CDD; Enhanced Due Diligence; EDD",
+  "terms": [
+   "AML",
+   "Anti-Money Laundering",
+   "KYC",
+   "Know Your Customer",
+   "CFT",
+   "Counter Financing of Terrorism",
+   "Transaction Monitoring",
+   "Sanctions Screening",
+   "Customer Due Diligence",
+   "CDD",
+   "Enhanced Due Diligence",
+   "EDD"
+  ],
+  "published_from": "2026-11-16T00:00:00",
+  "published_to": "2026-11-23T11:38:38.747003",
+  "closing_from": "2026-11-23T11:38:38.747003",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "AML tenders are typically filed under broad IT or consultancy categories rather than a specific 'AML' category, so no clear GeM category fit exists; extra terms capture common synonym usage in tender titles."
+ }
+]

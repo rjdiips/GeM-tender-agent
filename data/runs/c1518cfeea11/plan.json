@@ -1,0 +1,41 @@
+[
+ {
+  "topic_key": "78f0bf71ba66ff65",
+  "text": "AI/ML Platforms: software platforms that provide tools, models, and infrastructure for developing, training, and deploying artificial intelligence and machine learning applications; AI platform; ML platform; Artificial Intelligence platform; Machine Learning platform; AI/ML platform; AI/ML solutions; AI development platform; ML development platform; AI infrastructure; ML infrastructure; AI model training platform; ML model deployment platform",
+  "terms": [
+   "AI platform",
+   "ML platform",
+   "Artificial Intelligence platform",
+   "Machine Learning platform",
+   "AI/ML platform",
+   "AI/ML solutions",
+   "AI development platform",
+   "ML development platform",
+   "AI infrastructure",
+   "ML infrastructure",
+   "AI model training platform",
+   "ML model deployment platform",
+   "AI",
+   "ML",
+   "MLOps",
+   "Deep Learning",
+   "Neural Network",
+   "Computer Vision",
+   "NLP",
+   "Predictive Analytics",
+   "AI SDK",
+   "Model Registry"
+  ],
+  "published_from": null,
+  "published_to": null,
+  "closing_from": "2026-11-26T11:40:41.713103",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "GeM search logic prioritizes the first word of the query, so specific terms like 'MLOps' or 'Deep Learning' are included to capture infrastructure and specialized platform components that 'AI' alone might miss, while avoiding vague consultancy terms."
+ }
+]

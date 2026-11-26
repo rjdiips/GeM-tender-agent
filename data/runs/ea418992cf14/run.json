@@ -1,0 +1,79 @@
+{
+ "run_id": "ea418992cf14",
+ "user": "rajdeep",
+ "title": "ai platforms tenders in the last 2 weeks",
+ "request_text": "ai platforms tenders in the last 2 weeks",
+ "created": "2026-11-23T12:59:48.550259",
+ "status": "stopped",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "ai platforms tenders in the last 2 weeks",
+  "topics": [
+   {
+    "user_text": "ai platforms tenders in the last 2 weeks",
+    "meaning": "AI Platforms: software platforms that provide tools, models, and infrastructure for developing, training, and deploying artificial intelligence applications",
+    "domain": "Technology",
+    "match_terms": [
+     "AI platform",
+     "artificial intelligence platform",
+     "machine learning platform",
+     "ML platform",
+     "AI development platform",
+     "AI infrastructure",
+     "AI model hosting",
+     "generative AI platform",
+     "LLM platform",
+     "AI toolkit",
+     "AI software",
+     "AI solution"
+    ],
+    "acronyms": {
+     "AI": "Artificial Intelligence"
+    },
+    "related_but_not_enough": [
+     "AI consulting",
+     "AI training services",
+     "AI hardware",
+     "GPU servers",
+     "data labeling services"
+    ],
+    "not_this": [
+     "AI chips",
+     "AI robots",
+     "AI security"
+    ],
+    "buyers": [],
+    "chosen_because": "The user's history shows a consistent pattern of searching for 'AI Platforms' with this exact phrasing, and the high plausibility score (0.95) combined with 4440 relevant tender titles confirms this is the intended meaning.",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-11-09T00:00:00",
+   "published_to": "2026-11-23T12:59:39.068971",
+   "closing_from": "2026-11-23T12:59:39.068971",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "AI Platforms: software platforms that provide tools, models, and infrastructure for developing, training, and deploying artificial intelligence applications",
+   "window_count": 45126,
+   "strong": 4440,
+   "top_titles": [
+    "HP,Samsung HP,HP,HP,HP,HP,HP,HP,Xerox,Brother,Canon",
+    "Monthly Basis Cab & Taxi Hiring Services - MUV; 2000 km x 320 hours; Local",
+    "Central Venous Catheter Conforming to IS 10555 (Part 3),Epidural Anaesthesia Kit",
+    "Operation and Maintenance Of Electrical Systems/Electrical Installations - Manpower for O and M,Ope",
+    "REDIO TEST EQUIPMENT WITH VOIP ED137 support",
+    "Filt hyphen In hyphen Line 12 MCN or Filter High Pressure 420BAR 1 plus 1 slas 4 10 MCRN,Main Rolle",
+    "DRONES REDEFINED,THE MILITARY HISTORY BOOK BIG IDEAS SIMPLY,MILITARY AIRCRAFT INSIGNIA OF THE WORLD",
+    "Fencing Shade Net Cloth 3 x 50 Mtr,Artificial Plant Large With Pot,Small Artifical Plant With Pot,S"
+   ]
+  }
+ ],
+ "error": ""
+}

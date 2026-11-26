@@ -1,0 +1,40 @@
+{
+ "text": "aml tenders this week",
+ "topics": [
+  {
+   "user_text": "aml tenders this week",
+   "meaning": "Anti-Money Laundering (AML) Solutions: software and services for financial institutions to detect, prevent, and report money laundering and terrorist financing activities",
+   "domain": "banking",
+   "match_terms": [
+    "AML",
+    "Anti-Money Laundering",
+    "KYC",
+    "Know Your Customer",
+    "CFT",
+    "Counter Financing of Terrorism",
+    "Transaction Monitoring",
+    "Sanctions Screening",
+    "Customer Due Diligence",
+    "CDD",
+    "Enhanced Due Diligence",
+    "EDD"
+   ],
+   "acronyms": {
+    "AML": "Anti-Money Laundering"
+   },
+   "related_but_not_enough": [
+    "Fraud Detection",
+    "Compliance Management",
+    "Risk Management Software"
+   ],
+   "not_this": [
+    "Asset Management",
+    "Account Management",
+    "Automated Market Maker"
+   ],
+   "buyers": [],
+   "chosen_because": "Meaning 0 has a high plausibility score (0.95) and matches 90 open tenders, whereas Meaning 1 has low plausibility (0.05) and only 1 match.",
+   "other_meanings_searched": []
+  }
+ ]
+}

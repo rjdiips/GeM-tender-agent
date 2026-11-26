@@ -1,0 +1,37 @@
+[
+ {
+  "topic_key": "726f5e41a3574211",
+  "text": "AI Platforms: software platforms that provide tools, models, and infrastructure for developing, training, and deploying artificial intelligence applications; AI platform; artificial intelligence platform; machine learning platform; ML platform; AI development platform; AI infrastructure; AI model hosting; generative AI platform; LLM platform; AI toolkit; AI software; AI solution",
+  "terms": [
+   "AI platform",
+   "artificial intelligence platform",
+   "machine learning platform",
+   "ML platform",
+   "AI development platform",
+   "AI infrastructure",
+   "AI model hosting",
+   "generative AI platform",
+   "LLM platform",
+   "AI toolkit",
+   "AI software",
+   "AI solution",
+   "AI",
+   "MLOps",
+   "Neural Network",
+   "Deep Learning",
+   "NLP",
+   "Computer Vision"
+  ],
+  "published_from": "2026-11-09T00:00:00",
+  "published_to": "2026-11-23T12:59:39.068971",
+  "closing_from": "2026-11-23T12:59:39.068971",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "GeM search logic prioritizes the first word of the query; therefore, specific technical terms like 'MLOps' or 'Neural Network' are included in extra_terms to capture relevant infrastructure and software tenders that might not start with 'AI' or 'Artificial Intelligence' in their titles, while avoiding vague terms like 'digital' that fail to match effectively."
+ }
+]

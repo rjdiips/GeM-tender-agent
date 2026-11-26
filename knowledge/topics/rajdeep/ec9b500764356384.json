@@ -1,0 +1,42 @@
+{
+ "text": "ai platforms tender last 2 weeks",
+ "topics": [
+  {
+   "user_text": "ai platforms tender last 2 weeks",
+   "meaning": "AI Platforms: software platforms that provide tools, models, and infrastructure for developing, training, and deploying artificial intelligence applications",
+   "domain": "technology",
+   "match_terms": [
+    "AI platform",
+    "artificial intelligence platform",
+    "machine learning platform",
+    "ML platform",
+    "AI development platform",
+    "AI infrastructure",
+    "AI software",
+    "generative AI platform",
+    "LLM platform",
+    "AI toolkit",
+    "AI solution",
+    "AI system"
+   ],
+   "acronyms": {
+    "AI": "Artificial Intelligence"
+   },
+   "related_but_not_enough": [
+    "AI consulting",
+    "AI training services",
+    "AI hardware",
+    "data analytics",
+    "cloud computing"
+   ],
+   "not_this": [
+    "AI chips",
+    "AI robots",
+    "AI ethics policy"
+   ],
+   "buyers": [],
+   "chosen_because": "The user's previous history shows a pattern of searching for specific professional service categories (fraud, AML), and 'AI Platforms' is a broad, high-demand category with significant tender volume, whereas 'AI Software Solutions' is less distinct and has lower plausibility.",
+   "other_meanings_searched": []
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+[
+ {
+  "topic_key": "754c87e0559eae9d",
+  "text": "AI Platforms: software platforms that provide tools, models, and infrastructure for developing, training, and deploying artificial intelligence applications; AI platform; artificial intelligence platform; machine learning platform; ML platform; AI development platform; AI infrastructure; AI software; generative AI platform; LLM platform; AI toolkit; AI solution; AI system",
+  "terms": [
+   "AI platform",
+   "artificial intelligence platform",
+   "machine learning platform",
+   "ML platform",
+   "AI development platform",
+   "AI infrastructure",
+   "AI software",
+   "generative AI platform",
+   "LLM platform",
+   "AI toolkit",
+   "AI solution",
+   "AI system",
+   "AI",
+   "LLM",
+   "Generative AI",
+   "MLOps",
+   "Model Training",
+   "AI SDK"
+  ],
+  "published_from": "2026-11-09T00:00:00",
+  "published_to": "2026-11-23T12:34:07.172293",
+  "closing_from": "2026-11-23T12:34:07.172293",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [
+   "home_info_comp_comp_aisy"
+  ],
+  "reasons": "Added specific technical terms (LLM, MLOps, Generative AI) to filter out generic AI consulting or hardware tenders and target actual platform/software infrastructure bids."
+ }
+]

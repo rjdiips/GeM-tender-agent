@@ -1,0 +1,37 @@
+[
+ {
+  "topic_key": "24eccb7c59e85ce7",
+  "text": "AI Platforms: software platforms that provide tools, models, and infrastructure for developing, training, and deploying artificial intelligence applications; AI platform; artificial intelligence platform; machine learning platform; ML platform; AI development platform; AI infrastructure; generative AI platform; LLM platform; AI model marketplace; AI toolkit; AI software; AI services",
+  "terms": [
+   "AI platform",
+   "artificial intelligence platform",
+   "machine learning platform",
+   "ML platform",
+   "AI development platform",
+   "AI infrastructure",
+   "generative AI platform",
+   "LLM platform",
+   "AI model marketplace",
+   "AI toolkit",
+   "AI software",
+   "AI services",
+   "AI",
+   "LLM",
+   "Generative AI",
+   "MLOps",
+   "Model Training",
+   "AI SDK"
+  ],
+  "published_from": "2026-11-09T00:00:00",
+  "published_to": "2026-11-23T13:30:36.052540",
+  "closing_from": "2026-11-23T13:30:36.052540",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "GeM search heavily weights the first word; using specific technical terms like 'LLM', 'MLOps', and 'Generative AI' filters out generic IT hardware or consulting bids that often clutter results for 'AI platform'."
+ }
+]

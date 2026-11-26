@@ -1,0 +1,80 @@
+{
+ "run_id": "ace9df2880d9",
+ "user": "rajdeep",
+ "title": "ai platforms tenders in the last 2 weeks",
+ "request_text": "ai platforms tenders in the last 2 weeks",
+ "created": "2026-11-23T13:30:52.421835",
+ "status": "complete",
+ "parent_run_id": null,
+ "request": {
+  "intent": "refine",
+  "user_text": "ai platforms tenders in the last 2 weeks",
+  "topics": [
+   {
+    "user_text": "ai platforms tenders in the last 2 weeks",
+    "meaning": "AI Platforms: software platforms that provide tools, models, and infrastructure for developing, training, and deploying artificial intelligence applications",
+    "domain": "Technology",
+    "match_terms": [
+     "AI platform",
+     "artificial intelligence platform",
+     "machine learning platform",
+     "ML platform",
+     "AI development platform",
+     "AI infrastructure",
+     "generative AI platform",
+     "LLM platform",
+     "AI model marketplace",
+     "AI toolkit",
+     "AI software",
+     "AI services"
+    ],
+    "acronyms": {
+     "AI": "Artificial Intelligence"
+    },
+    "related_but_not_enough": [
+     "AI consulting",
+     "AI training",
+     "AI hardware",
+     "GPU servers",
+     "data labeling services"
+    ],
+    "not_this": [
+     "AI chips",
+     "AI robots",
+     "AI security",
+     "AI ethics"
+    ],
+    "buyers": [],
+    "chosen_because": "The user's history shows a consistent preference for software/platform-focused AI tenders, and the high plausibility score (0.95) combined with a large number of relevant titles confirms this is the intended meaning.",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-11-09T00:00:00",
+   "published_to": "2026-11-23T13:30:36.052540",
+   "closing_from": "2026-11-23T13:30:36.052540",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "AI Platforms: software platforms that provide tools, models, and infrastructure for developing, training, and deploying artificial intelligence applications",
+   "window_count": 44699,
+   "strong": 4396,
+   "top_titles": [
+    "Custom Bid for Services - Soil Investigation: Demolition and reconstruction of high security wall i",
+    "Manpower Outsourcing Services - Minimum wage - Highly-Skilled; Graduate; Healthcare",
+    "Motor Insurance Service - 4 Wheeler; 1197",
+    "Monthly Basis Cab & Taxi Hiring Services - MUV; 2000 km x 320 hours; Local",
+    "Manpower Outsourcing Services - Minimum wage - Semi-skilled; Secondary School; Admin",
+    "STRUCTURAL STEEL-PHASE 3",
+    "DRONES REDEFINED,THE MILITARY HISTORY BOOK BIG IDEAS SIMPLY,MILITARY AIRCRAFT INSIGNIA OF THE WORLD",
+    "Fencing Shade Net Cloth 3 x 50 Mtr,Artificial Plant Large With Pot,Small Artifical Plant With Pot,S"
+   ]
+  }
+ ],
+ "error": ""
+}

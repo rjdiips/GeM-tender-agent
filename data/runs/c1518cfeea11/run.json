@@ -1,0 +1,80 @@
+{
+ "run_id": "c1518cfeea11",
+ "user": "rajdeep",
+ "title": "aiml platform tenders",
+ "request_text": "aiml platform tenders",
+ "created": "2026-11-26T11:41:16.802104",
+ "status": "complete",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "aiml platform tenders",
+  "topics": [
+   {
+    "user_text": "aiml platform tenders",
+    "meaning": "AI/ML Platforms: software platforms that provide tools, models, and infrastructure for developing, training, and deploying artificial intelligence and machine learning applications",
+    "domain": "technology",
+    "match_terms": [
+     "AI platform",
+     "ML platform",
+     "Artificial Intelligence platform",
+     "Machine Learning platform",
+     "AI/ML platform",
+     "AI/ML solutions",
+     "AI development platform",
+     "ML development platform",
+     "AI infrastructure",
+     "ML infrastructure",
+     "AI model training platform",
+     "ML model deployment platform"
+    ],
+    "acronyms": {
+     "AI": "Artificial Intelligence",
+     "ML": "Machine Learning"
+    },
+    "related_but_not_enough": [
+     "AI consulting",
+     "AI strategy",
+     "AI hardware",
+     "AI chips",
+     "AI data centers"
+    ],
+    "not_this": [
+     "AIML",
+     "AIML course",
+     "AIML research paper"
+    ],
+    "buyers": [],
+    "chosen_because": "The user's history shows a consistent preference for broad platform categories (e.g., 'ai platforms'), and meaning [0] has a higher plausibility score (0.95) with a larger number of relevant tenders (30) compared to meaning [1].",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": null,
+   "published_to": null,
+   "closing_from": "2026-11-26T11:40:41.713103",
+   "closing_to": null,
+   "closing_after": false,
+   "closing_until": false
+  },
+  "buyer_hints": [],
+  "buyer_only": false
+ },
+ "probes": [
+  {
+   "meaning": "AI/ML Platforms: software platforms that provide tools, models, and infrastructure for developing, training, and deploying artificial intelligence and machine learning applications",
+   "strong": 30,
+   "top_titles": [
+    "Operation And Maintenance Of Water Supply Systems - Procurement of water Bowser supply of Potable W",
+    "Volleyball net,Bed side carpet,Humidifier,Stablizer,Idli Stand,Momo Stand,Toaster,Non Stick Tawa,Ka",
+    "Office Productivity Suite Software,AI Productivity Assistant Software,M365 E5,M365 SECURITY SUITE,M",
+    "A4 and Legal Size Multifunction Printer (MFP),Entry and Mid Level Laptop - Notebook,Dual Iris Scann",
+    "Custom Bid for Services - Mechanical FSE and C&I FSE for one year 2027",
+    "LP OF WHR SPARES,LP OF WHR SPARE",
+    "C5501130045 IMP (RATED DIA) , PN-50, P-1008A/B,C5501130047 SIDE COVER, PN-41, P-1008A/B,M5501130037",
+    "BARE FIBER H R 2.1 200,BARE FIBER H R 2.1 365"
+   ]
+  }
+ ],
+ "error": ""
+}

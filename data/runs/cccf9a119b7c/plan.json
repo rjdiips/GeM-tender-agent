@@ -1,0 +1,58 @@
+[
+ {
+  "topic_key": "39a5664db7c5b594",
+  "text": "Fraud Investigation and Forensic Services: professional services for investigating suspected fraud, including forensic accounting and digital forensics; fraud investigation; forensic audit; fraud inquiry; fraud examination; forensic accounting; fraud probe",
+  "terms": [
+   "fraud investigation",
+   "forensic audit",
+   "fraud inquiry",
+   "fraud examination",
+   "forensic accounting",
+   "fraud probe"
+  ],
+  "published_from": null,
+  "published_to": null,
+  "closing_from": "2026-11-23T12:10:11.166381",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "GeM search heavily weights the first word; using 'fraud' alone is too broad and matches software/training, so specific professional service terms like 'forensic audit' and 'fraud investigation' are required to target the requested domain."
+ },
+ {
+  "topic_key": "78d4134be604e672",
+  "text": "Fraud Detection and Prevention Systems: software and services that help organizations identify, monitor, and prevent fraudulent transactions and activities; fraud detection; fraud prevention; fraud management system; fraud monitoring; anti-fraud; fraud analytics; transaction fraud; identity fraud; fraud risk management",
+  "terms": [
+   "fraud detection",
+   "fraud prevention",
+   "fraud management system",
+   "fraud monitoring",
+   "anti-fraud",
+   "fraud analytics",
+   "transaction fraud",
+   "identity fraud",
+   "fraud risk management",
+   "FDS",
+   "FMS",
+   "transaction monitoring",
+   "real-time fraud",
+   "payment fraud",
+   "card fraud",
+   "account takeover"
+  ],
+  "published_from": null,
+  "published_to": null,
+  "closing_from": "2026-11-23T12:10:11.166381",
+  "closing_to": null,
+  "ministries": [],
+  "departments": [],
+  "prefer_ministries": [],
+  "prefer_departments": [],
+  "bid_types": [],
+  "categories": [],
+  "reasons": "GeM's search algorithm prioritizes the first word; using 'Fraud' alone is too broad and matches unrelated items like 'fraud investigation' or 'insurance claims'. Adding specific technical terms like 'transaction monitoring' and 'payment fraud' ensures the search captures the specific software and services for detecting financial fraud, excluding legal or insurance-related tenders."
+ }
+]
