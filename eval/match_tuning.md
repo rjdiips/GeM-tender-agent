@@ -59,6 +59,17 @@ After this tuning round, the matcher output contract changed from two lists
 (`match`, `unsure`; everything else implied `no`) to three lists (`match`,
 `unsure`, `no`) with every bracketed bid required to appear exactly once.
 `MATCH_PROMPT_VERSION` is now **"2"**. This is a correctness change, not a
-tuning candidate, and **has not been scored**. The table above describes
-version 1 and its tuning candidates only; `gem-agent eval match` must be rerun
-on version 2 before comparing miss counts.
+tuning candidate. The table above describes version 1 and its tuning candidates
+only.
+
+Version 2 was scored on 26 Nov 2026 with three repeats on the same labelled set.
+One 29-bid batch returned 28 indices, so the exact-once check split it; the
+other batches completed normally. Subject-topic worst-run results:
+
+| Version | A checked misses (runs; worst) | A all misses (runs; worst) | A negatives read (runs; worst) | Today-or-A checked misses (runs; worst) | A buyer checked misses (runs; worst) |
+|---|---|---|---|---|---|
+| 2 | 2/3/3; **3** | 7/9/10; **10** | 66/43/69; **69/354** | 1/1/1; **1** | 1/1/1; **1** |
+
+Version 2 therefore ties version 1 on checked and all misses, reads slightly
+more negatives (69 vs 67), and records one buyer-topic checked miss instead of
+zero. The safety net remains necessary and stays enabled.
