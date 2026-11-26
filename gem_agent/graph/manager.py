@@ -14,6 +14,8 @@ import uuid
 from collections.abc import AsyncIterator
 from typing import Any, Literal
 
+from langchain_core.runnables import RunnableConfig
+
 from gem_agent.agents.chat import short_name
 from gem_agent.graph.build import build_graph, emit, error_line, progress, stopped_line
 from gem_agent.graph.checkpoint import checkpointer
@@ -99,12 +101,16 @@ class RunManager:
             self.s.bus.unsubscribe(new_id, queue)
 
     async def _run(self, record: RunRecord, *, resume: bool = False) -> None:
-        config = {"configurable": {"thread_id": record.run_id}}
+        config: RunnableConfig = {"configurable": {"thread_id": record.run_id}}
         status = "complete"
         try:
             async with checkpointer(self.s.checkpoint_path) as saver:
                 graph = build_graph(self.s).compile(checkpointer=saver)
-                start = None if resume else RunState(run_id=record.run_id, user=record.user, request=record.request)
+                start = None
+                if not resume:
+                    if record.request is None:
+                        raise ValueError(f"run {record.run_id} has no understood request to run")
+                    start = RunState(run_id=record.run_id, user=record.user, request=record.request)
                 await graph.ainvoke(start, config)
         except asyncio.CancelledError:
             # Stopped from the web chat: bids already judged stay in the run; the checkpoint stays usable.
@@ -268,6 +274,8 @@ class RunManager:
             return []
         v, today = o.verdict, s.now().date()
         topic_key = o.topic_key or (o.verdict.topic_key if o.verdict else None)
+        if record.request is None:
+            raise RulingFailed("the run has no understood request to resolve a topic from")
         topic = topic_for(record.request, o.group, topic_key=topic_key)
         # The fact behind the bid's current ruling says the opposite: newest wins, so it is replaced whoever made it.
         contradicted = o.ruling.fact_id if o.ruling and o.ruling.decision != decision else None
@@ -305,7 +313,8 @@ class RunManager:
         others = [x for x in s.store.outcomes(run_id).values()
                   if x.b_id != b_id and same_topic(x) and x.verdict and x.verdict.borderline
                   and ((x.ruling is None and not x.undone) or stale(x))]
-        settled = {x.b_id: await settle(s, user, topic, x.verdict, facts=[chosen]) for x in others}
+        settled = {x.b_id: await settle(s, user, topic, x.verdict, facts=[chosen])
+                   for x in others if x.verdict is not None}
         moved = False
 
         def write(all_: dict[int, Outcome]) -> list[int]:

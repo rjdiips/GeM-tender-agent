@@ -13,7 +13,7 @@ from __future__ import annotations
 import asyncio
 import logging
 from collections.abc import Iterable
-from typing import Any
+from typing import Any, Literal
 
 from langgraph.graph import END, START, StateGraph
 
@@ -21,7 +21,7 @@ from gem_agent.agents.chat import short_name
 from gem_agent.agents.matcher import Call, MatchItem, buyer_line
 from gem_agent.agents.schemas import TopicDefinition
 from gem_agent.agents.searcher import Candidate, search_specs
-from gem_agent.graph.deciding import describe_order, not_read_reason, route, title_similarity
+from gem_agent.graph.deciding import Route, describe_order, not_read_reason, route, title_similarity
 from gem_agent.graph.rulings import settle, topic_for
 from gem_agent.graph.services import Services
 from gem_agent.graph.state import RunState
@@ -393,15 +393,18 @@ def build_graph(s: Services) -> StateGraph:
         cut = 0
         files_by_id: dict[int, Any] = {}
         triage_by_id: dict[int, Any] = {}
-        routes: dict[int, str] = {}
-        calls = {key: {b_id: call for b_id, call in topic_calls.items() if (key, b_id) in pairs}
-                 for key, topic_calls in stored.calls.items() if key in topics}
+        routes: dict[int, Route] = {}
+        calls: dict[str, dict[int, Call]] = {
+            key: {b_id: call for b_id, call in topic_calls.items() if (key, b_id) in pairs}
+            for key, topic_calls in stored.calls.items() if key in topics
+        }
         if stored.legacy_calls and len(state.request.topics) == 1:
             key = state.request.topics[0].key()
             calls.setdefault(key, {}).update({b_id: call for b_id, call in stored.legacy_calls.items()
                                               if (key, b_id) in pairs})
 
-        def record(kind: str, **kwargs: Any) -> None:
+        def record(kind: Literal["done", "described", "read", "call", "route", "cut", "pending", "pending_clear"],
+                   **kwargs: Any) -> None:
             s.store.append_process_event(state.run_id, ProcessEvent(kind=kind, **kwargs))
 
         def count_line() -> None:
@@ -437,6 +440,10 @@ def build_graph(s: Services) -> StateGraph:
         async def finish_pending_reads() -> None:
             """Attach rulings to verdicts saved before an interruption, without judging or collecting again."""
             for b_id, outcome in list(pending_reads.items()):
+                if outcome.verdict is None:  # a pending read with no verdict has nothing to settle
+                    del pending_reads[b_id]
+                    record("pending_clear", b_id=b_id)
+                    continue
                 if b_id in outcomes:  # the outcome append succeeded before the sidecar could be cleared
                     del pending_reads[b_id]
                     record("pending_clear", b_id=b_id)
@@ -570,7 +577,7 @@ def build_graph(s: Services) -> StateGraph:
                 checks = ["the description check", "the title check"] if s.safety_net else ["the description check"]
                 outcome = Outcome(b_id=c.bid.b_id, group=c.group, topic_key=c.topic_key, bid=c.bid,
                                   files=files.files if files else [],
-                                  buyer_org=files.buyer_org if files else description.buyer_org,
+                                  buyer_org=files.buyer_org if files else (description.buyer_org if description else None),
                                   not_read=not_read_reason(description, checks))
                 save(c, outcome)
             elif chosen == "unseen":
@@ -644,7 +651,7 @@ def build_graph(s: Services) -> StateGraph:
                 chosen = routes[c.bid.b_id]
                 outcome = Outcome(b_id=c.bid.b_id, group=c.group, topic_key=c.topic_key, bid=c.bid,
                                   files=files.files, buyer_org=files.buyer_org, verdict=verdict,
-                                  read_because=None if chosen == "today" else chosen)
+                                  read_because=chosen if chosen in ("match", "unsure", "net") else None)
                 reads[c.identity] = reads.get(c.identity, 0) + 1
                 record("read", topic_key=c.identity)
                 pending_reads[c.bid.b_id] = outcome

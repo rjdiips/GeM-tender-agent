@@ -202,13 +202,15 @@ class BidplusSession:
 
     async def token(self) -> str:
         async with self._token_lock:
-            if self._token is None:
+            token = self._token
+            if token is None:
                 page = await self.get(TOKEN_PAGE)
                 match = TOKEN_RE.search(page.text)
                 if not match:
                     raise TokenNotFound(self.base + TOKEN_PAGE, page.status_code, "csrf_bd_gem_nk not in page")
-                self._token = match.group(1)
-            return self._token
+                token = match.group(1)
+                self._token = token
+            return token
 
     async def get(self, path: str) -> httpx.Response:
         return await self.pool.request("GET", self.url(path))

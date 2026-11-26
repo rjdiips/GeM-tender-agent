@@ -15,7 +15,8 @@ def migrate_bids(old: BidIndex, new: BidIndex, keep_ids: set[int]) -> int:
         if bid is None:
             continue
         new.upsert([bid], seen_at=site_now())
-        if cards.get(b_id) is not None:
-            new.set_card(b_id, cards[b_id])
+        card = cards.get(b_id)
+        if card is not None:
+            new.set_card(b_id, card)
         copied += 1
     return copied
