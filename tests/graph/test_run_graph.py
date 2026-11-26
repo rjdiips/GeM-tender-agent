@@ -487,7 +487,7 @@ async def test_new_descriptions_are_capped_per_request_and_the_rest_take_todays_
     assert describer.described == [1, 2] and matcher.batches == [[1, 2]]
     result = await result_of(events, 3)
     assert result["state"] == "relevant" and result["read_because"] is None
-    assert "1 bid not yet described; they will be checked on the next search." in texts_of(events)
+    assert "1 bid not described: it will be read in full." in texts_of(events)
 
 
 async def test_already_known_excludes_descriptions_written_by_this_request(tmp_path):
@@ -508,8 +508,8 @@ async def test_not_yet_described_does_not_count_a_document_failure(tmp_path):
                  collector=FakeCollector(fail={1}))
     events = await ask(RunManager(s), "LOS tenders")
 
-    lines = [text for text in texts_of(events) if "not yet described" in text]
-    assert set(lines) == {"1 bid not yet described; they will be checked on the next search."}
+    lines = [text for text in texts_of(events) if "not described" in text]
+    assert set(lines) == {"1 bid not described: it will be read in full."}
 
 
 async def test_read_count_reaches_the_total_when_a_bid_is_cut(tmp_path):
@@ -517,8 +517,8 @@ async def test_read_count_reaches_the_total_when_a_bid_is_cut(tmp_path):
     s = services(tmp_path, searcher=searcher, describer=FakeDescriber(), matcher=FakeMatcher(), workers=1)
     events = await ask(RunManager(s), "LOS tenders")
 
-    counts = [text for text in texts_of(events) if text.startswith("Read ")]
-    assert counts[-1] == "Read 2 of 2 bids: 1 relevant, 0 not a match."
+    counts = [text for text in texts_of(events) if text.startswith("Checked ")]
+    assert counts[-1] == "Checked 2 of 2 bids: 1 relevant, 0 not a match."
     assert "1 more matching bid not read; narrow the request to see them." in texts_of(events)
 
 
@@ -530,7 +530,7 @@ async def test_the_description_cap_is_shared_across_both_stages(tmp_path):
 
     assert describer.described == [1] and matcher.batches == [[1]]
     assert (await result_of(events, 2))["read_because"] is None
-    assert "1 bid not yet described; they will be checked on the next search." in texts_of(events)
+    assert "1 bid not described: it will be read in full." in texts_of(events)
 
 
 async def test_the_description_cap_is_one_queue_across_topics(tmp_path):
@@ -542,7 +542,55 @@ async def test_the_description_cap_is_one_queue_across_topics(tmp_path):
 
     assert describer.described == [5] and matcher.batches == [[5]]
     assert (await result_of(events, 1))["read_because"] is None
-    assert "1 bid not yet described; they will be checked on the next search." in texts_of(events)
+    assert "1 bid not described: it will be read in full." in texts_of(events)
+
+
+async def test_a_matched_batch_is_read_while_the_rest_is_still_described(tmp_path):
+    order: list[tuple[str, int]] = []
+
+    class SlowDescriber(FakeDescriber):
+        async def describe(self, bid, files):
+            await asyncio.sleep(0.005)  # a real description waits on GeM and the model
+            order.append(("described", bid.b_id))
+            return await super().describe(bid, files)
+
+    class LoggingJudge(FakeJudge):
+        async def judge(self, topic, bid, files, triage=None):
+            order.append(("judged", bid.b_id))
+            return await super().judge(topic, bid, files, triage)
+
+    judge = LoggingJudge()
+    searcher = FakeSearcher([[bid(n) for n in range(1, 46)]], more_pages=False)
+    s = services(tmp_path, searcher=searcher, judge=judge, describer=SlowDescriber(),
+                 matcher=FakeMatcher({n: "no" for n in range(41, 46)}), safety_net=False)
+    events = await ask(RunManager(s), "LOS tenders")
+
+    first_read = order.index(next(o for o in order if o[0] == "judged"))
+    assert first_read < order.index(("described", 45))  # the first 40 were matched and read before describing ended
+    assert sorted(judge.judged) == list(range(1, 41))  # each match read once; the 'no' bids were not read in full
+    assert texts_of(events)[-1] == "Done: 40 relevant, 5 quarantined."
+
+
+async def test_bids_left_out_on_their_titles_are_counted_and_reported(tmp_path):
+    searcher = FakeSearcher([[bid(1)]], dropped=[[bid(3, "Lockers")]], more_pages=False)
+    s = services(tmp_path, searcher=searcher, describer=FakeDescriber(), matcher=FakeMatcher(), describe_cap=1)
+    events = await ask(RunManager(s), "LOS tenders")
+    texts = texts_of(events)
+
+    assert "Found 2 bids to check: 1 kept on its title, closing soonest first." in texts
+    assert ("1 bid not described: 1 left out on its title alone (search again to check it)." in texts)
+    counts = [e["event"]["text"] for e in events if e["type"] == "progress" and e["event"].get("kind") == "count"]
+    assert counts[-1] == "Checked 2 of 2 bids: 1 relevant, 0 not a match, 1 left out on its title alone."
+    assert texts[-1] == "Done: 1 relevant, 0 quarantined. 1 left out on its title alone; search again to check it."
+
+
+async def test_stage_two_counts_every_bid_it_found_not_only_the_title_keeps(tmp_path):
+    searcher = FakeSearcher([[bid(1)]], rest=[[bid(2)]])
+    searcher.dropped = [[]]
+    s = services(tmp_path, searcher=searcher, describer=FakeDescriber(), matcher=FakeMatcher())
+    events = await ask(RunManager(s), "LOS tenders")
+
+    assert "Found 1 more bid to check: 1 kept on its title." in texts_of(events)
 
 
 async def test_an_embedder_outage_keeps_deterministic_description_order(tmp_path, caplog):
@@ -657,10 +705,10 @@ async def test_reading_reports_a_running_count_from_the_start_to_the_last_bid(tm
     counts = [p["text"] for p in progress if p.get("kind") == "count"]
     assert texts[0] == "Searching GeM 5 ways."  # 4 base searches + the plan's one term
     assert texts[1].startswith("Shortlist: 20 bids")
-    assert texts[2] == counts[0] == "Read 0 of 20 bids: 0 relevant, 0 not a match."  # at once
+    assert texts[2] == counts[0] == "Checked 0 of 20 bids: 0 relevant, 0 not a match."  # at once
     assert len(counts) == 21  # then after every bid; the chat shows only the newest
     # 16 judged bids x 2 files + 3 triage rejections x 1 (bid document only); bid 7 failed
-    assert counts[-1] == "Read 20 of 20 bids: 16 relevant, 3 not a match, 1 could not be read."
+    assert counts[-1] == "Checked 20 of 20 bids: 16 relevant, 3 not a match, 1 could not be read."
     assert texts[-3:] == [counts[-1], "Looking through more GeM pages for older matches.",  # stage 2 is not silent
                           "Done: 16 relevant, 3 quarantined, 1 could not be read."]
 
@@ -715,7 +763,7 @@ def test_every_bid_read_is_in_the_running_count():
         return Outcome(b_id=b_id, group="LOS", bid=bid(b_id), verdict=None if error else v, error=error)
     line = running_count(4, 9, [outcome(1, True, "judge"), outcome(2, False, "triage"), outcome(3, False, "judge"),
                                 outcome(4, False, "judge", error="503")])
-    assert line == "Read 4 of 9 bids: 1 relevant, 2 not a match, 1 could not be read."
+    assert line == "Checked 4 of 9 bids: 1 relevant, 2 not a match, 1 could not be read."
 
 
 def test_running_count_counts_bids_not_read_as_not_a_match():
@@ -723,7 +771,7 @@ def test_running_count_counts_bids_not_read_as_not_a_match():
     from gem_agent.graph.store import Outcome
 
     o = Outcome(b_id=1, group="LOS", bid=bid(1), not_read="Not a match: buys Lockers.")
-    assert running_count(1, 1, [o]) == "Read 1 of 1 bids: 0 relevant, 1 not a match."
+    assert running_count(1, 1, [o]) == "Checked 1 of 1 bids: 0 relevant, 1 not a match."
 
 
 async def test_report_counts_a_bid_that_was_not_read(tmp_path):
@@ -1399,8 +1447,8 @@ def test_read_count_line_singular_and_plural():
 
     def outcome(b_id, relevant, stage):
         return Outcome(b_id=b_id, group="LOS", bid=bid(b_id), verdict=judge._verdict(LOS, bid(b_id), relevant, stage))
-    assert running_count(1, 1, [outcome(1, True, "judge")]) == "Read 1 of 1 bids: 1 relevant, 0 not a match."
-    assert running_count(1, 1, [outcome(1, False, "triage")]) == "Read 1 of 1 bids: 0 relevant, 1 not a match."
+    assert running_count(1, 1, [outcome(1, True, "judge")]) == "Checked 1 of 1 bids: 1 relevant, 0 not a match."
+    assert running_count(1, 1, [outcome(1, False, "triage")]) == "Checked 1 of 1 bids: 0 relevant, 1 not a match."
 
 
 def test_describe_and_match_lines():
@@ -1410,8 +1458,10 @@ def test_describe_and_match_lines():
     assert described_line(12, 40) == "Described 12 new bids (40 already known)."
     assert matched_line(52, 6, 4) == "Matched 52 bids: 6 match, 4 might."
     assert matched_line(1, 1, 1) == "Matched 1 bid: 1 match, 1 might."
-    assert undescribed_line(3) == "3 bids not yet described; they will be checked on the next search."
-    assert undescribed_line(1) == "1 bid not yet described; they will be checked on the next search."
+    assert undescribed_line(1, 0) == "1 bid not described: it will be read in full."
+    assert undescribed_line(0, 1) == "1 bid not described: 1 left out on its title alone (search again to check it)."
+    assert undescribed_line(69, 133) == ("202 bids not described: 69 will be read in full, 133 left out on their "
+                                         "titles alone (search again to check them).")
 
 
 def test_cut_line_singular_and_plural():
