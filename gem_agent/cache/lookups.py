@@ -70,17 +70,19 @@ class LookupCatalog:
         """Embeddings of the category labels, cached beside the list (keyed by model and label set)."""
         if self.embedder is None or not self.categories():
             return None
-        if self._vectors is None:
+        vectors = self._vectors
+        if vectors is None:
             labels = [c.label for c in self.categories()]
             key = hashlib.sha1(("\n".join(labels) + self.embedder.model_name).encode()).hexdigest()[:12]
             path = self.dir / f"categories.{key}.npy"
             if path.exists():
-                self._vectors = np.load(path)
+                vectors = np.load(path)
             else:
-                self._vectors = self.embedder.encode(labels).astype(np.float16)
+                vectors = self.embedder.encode(labels).astype(np.float16)
                 self.dir.mkdir(parents=True, exist_ok=True)
-                np.save(path, self._vectors)
-        return self._vectors.astype(np.float32)
+                np.save(path, vectors)
+            self._vectors = vectors
+        return vectors.astype(np.float32)
 
     def find_categories(self, query: str, terms: list[str], k: int = 15) -> list[Category]:
         cats = self.categories()

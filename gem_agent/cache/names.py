@@ -276,7 +276,8 @@ def download_name(bid_number: str, group: FileGroup) -> str:
     record = group.record
     suffix = re.search(r"\.\w{2,5}$", record.filename)
     ext = suffix.group(0) if suffix else _KIND_EXT.get(record.kind, "")
-    base, version = re.match(r"(.*?)( \(version \d+\))?$", group.name).groups()
+    parts = re.match(r"(.*?)( \(version \d+\))?$", group.name)
+    base, version = parts.groups() if parts else (group.name, "")
     name = _shorten(base, 90).rstrip("…").strip() + (version or "")
     if ext and name.lower().endswith(ext.lower()):  # still named by its file name: "RFP.pdf", not "RFP.pdf.pdf"
         name = name[: -len(ext)]

@@ -88,7 +88,7 @@ class LiveSearcher:
 
     def _cached(self, spec: SearchSpec) -> tuple[int, list[Bid]] | None:
         """A fresh, readable cache entry for a base search: (num_found, bids); else None."""
-        if not self._cacheable(spec):
+        if self.cache is None or not self._cacheable(spec):
             return None
         hit = self.cache.get(spec.key)
         if hit is None:
@@ -126,7 +126,7 @@ class LiveSearcher:
             return SearchOutcome(spec, progress, [])
         seen[signature] = spec.key
         bids = _dedupe(page.bids)
-        if self._cacheable(spec):
+        if self._cacheable(spec) and self.cache is not None:
             if page.page_count <= 1:
                 self.cache.put(spec.key, page.num_found, [b.raw for b in bids])
             else:
@@ -163,7 +163,7 @@ class LiveSearcher:
                 outcomes.append(SearchOutcome(spec, current, []))
                 continue
             left = None if budget is None else max(0, budget - len(got))
-            share = None if budget is None else max(1, left // pending_left)
+            share = None if budget is None or left is None else max(1, left // pending_left)
             pending_left -= 1
             if budget is not None and left == 0:
                 outcomes.append(SearchOutcome(spec, current, []))
@@ -212,7 +212,7 @@ class LiveSearcher:
                 break
         bids = _dedupe(bids)
         first = self._first_bids.pop((spec.key, tuple(current.first_ids)), None)
-        if self._cacheable(spec) and first is not None and not new.failed and new.pages_read == new.page_count:
+        if self._cacheable(spec) and self.cache is not None and first is not None and not new.failed and new.pages_read == new.page_count:
             whole = _dedupe([*first, *bids])
             self.cache.put(spec.key, new.num_found, [b.raw for b in whole])
         return SearchOutcome(spec, new, bids)

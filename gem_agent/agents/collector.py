@@ -64,7 +64,7 @@ class Collector:
             corrigendum = cached.corrigendum if cached else None
         current = bool(cached and not force and cached.main_ok and cached.corrigendum_flag == has_corrigendum
                        and _same_corrigendum(cached.corrigendum, corrigendum))
-        fresh = current and (not attachments or cached.complete_ok)
+        fresh = current and cached is not None and (not attachments or cached.complete_ok)
         if fresh and cached and (not cached.partial or not attachments):
             changed = False
             if cached.buyer_org is None:  # manifests written before the field existed

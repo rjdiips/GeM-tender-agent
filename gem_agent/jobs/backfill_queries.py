@@ -47,13 +47,16 @@ async def backfill_queries(judge: Judge, cache: DocCache, verdicts: VerdictCache
         if files is None:
             report.no_documents += 1
             return b_id, None
-        ask = any(bid_state(o) == "relevant" and o.verdict.stage != "triage" for _, o in rows)
+        ask = any(bid_state(o) == "relevant" and o.verdict is not None and o.verdict.stage != "triage"
+                  for _, o in rows)
         found, asked = await judge.find_queries(rows[0][1].bid, files, ask=ask)
         report.model_calls += asked
         return b_id, found
 
     for b_id, found in await asyncio.gather(*(one(b, rows) for b, rows in todo.items())):
         for run_id, o in todo[b_id]:
+            if o.verdict is None:
+                continue  # todo only holds rows that were judged
             if found is None and o.verdict.queries is None:
                 continue
             if found is None:
@@ -67,6 +70,8 @@ async def backfill_queries(judge: Judge, cache: DocCache, verdicts: VerdictCache
 
             def set_queries(all_: dict[int, Outcome], b_id: int = b_id, found: QueriesDeadline | None = found) -> list[int]:
                 fresh = all_[b_id]  # read inside the lock: a ruling made meanwhile stays
+                if fresh.verdict is None:
+                    return []
                 all_[b_id] = fresh.model_copy(update={"verdict": fresh.verdict.model_copy(update={"queries": found})})
                 return [b_id]
 
