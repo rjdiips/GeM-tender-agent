@@ -201,7 +201,7 @@ class BidIndex:
                     counts.updated += 1
                 else:
                     counts.unchanged += 1
-                if tracked_same and old[-3] == raw_json and old[-2] == "open" and old[-1] == 0:
+                if old is not None and tracked_same and old[-3] == raw_json and old[-2] == "open" and old[-1] == 0:
                     continue  # nothing to write: same fields, same listing, already open and not missed
                 cols = ["b_id", *values, "raw", "embed_text", "state", "missed_refreshes", "first_seen", "last_seen"]
                 row = [bid.b_id, *values.values(), raw_json, embed_text(bid, card), "open", 0, seen, seen]

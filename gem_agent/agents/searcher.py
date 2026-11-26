@@ -74,7 +74,7 @@ def in_scope(bid: Bid, plan: SearchPlan) -> bool:
         return False
     if (clo or chi) and not bid.closing:
         return False
-    if (clo and bid.closing < clo) or (chi and bid.closing > chi):
+    if (clo and bid.closing and bid.closing < clo) or (chi and bid.closing and bid.closing > chi):
         return False
     # both sides normalised: the Planner chose from names cut to 120 characters, the listing carries them whole
     if plan.ministries and buyer_name(bid.ministry) not in _names(plan.ministries):
