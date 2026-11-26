@@ -84,13 +84,17 @@ def score(rows: list[Row], topic: str = "all") -> Score:
     """A borderline verdict is neither in nor out: it counts as found for recall (the reader sees it) but never as
     relevant, so precision is untouched."""
     ok = [r for r in rows if r.verdict is not None]
-    border = [r for r in ok if r.verdict.borderline]
-    tp = sum(r.label.relevant and r.judged for r in ok)
-    fp = sum(not r.label.relevant and r.judged for r in ok)
+    border = [r for r in ok if r.verdict is not None and r.verdict.borderline]
+    # judged is verdict.relevant for every row here, spelled out because pyright cannot narrow through the property
+    tp = sum(r.verdict is not None and r.label.relevant and r.verdict.relevant for r in ok)
+    fp = sum(r.verdict is not None and not r.label.relevant and r.verdict.relevant for r in ok)
     found_borderline = sum(r.label.relevant for r in border)
-    fn = sum(r.label.relevant and not r.judged and not r.verdict.borderline for r in ok)
-    tn = sum(not r.label.relevant and not r.judged and not r.verdict.borderline for r in ok)
-    lost = sum(r.label.relevant and r.verdict.stage == "triage" and not r.verdict.relevant for r in ok)
+    fn = sum(r.verdict is not None and r.label.relevant and not r.verdict.relevant and not r.verdict.borderline
+             for r in ok)
+    tn = sum(r.verdict is not None and not r.label.relevant and not r.verdict.relevant and not r.verdict.borderline
+             for r in ok)
+    lost = sum(r.verdict is not None and r.label.relevant and r.verdict.stage == "triage" and not r.verdict.relevant
+               for r in ok)
     on_unsure = sum(r.label.unsure for r in border)
     found = tp + found_borderline
     return Score(topic=topic, n=len(rows), tp=tp, fp=fp, fn=fn, tn=tn, failed=len(rows) - len(ok), triage_lost=lost,
@@ -115,20 +119,20 @@ def report(rows: list[Row]) -> str:
     lines.append(f"\nBorderline rate: {total.borderline} of {judged} judged ({pct(total.borderline / judged if judged else None)}). "
                  f"Agreement with unsure labels: {total.borderline_on_unsure} of {total.borderline} borderline verdicts "
                  f"are on unsure labels; {total.unsure_judged_borderline} of {total.unsure} unsure labels judged borderline.")
-    wrong = [r for r in rows if r.verdict is not None and not r.verdict.borderline and r.judged != r.label.relevant]
+    wrong = [(r, r.verdict) for r in rows
+             if r.verdict is not None and not r.verdict.borderline and r.judged != r.label.relevant]
     if wrong:
         lines.append("\nDisagreements (label → judge):")
-        for r in wrong:
-            v = r.verdict
+        for r, v in wrong:
             lines.append(f"  {r.label.topic:<12} {r.label.bid_number:<22} {'in' if r.label.relevant else 'out'} → "
                          f"{'in' if v.relevant else 'out'} [{v.stage}{', unsure label' if r.label.unsure else ''}] "
                          f"{v.reason[:110]}")
-    asked = [r for r in rows if r.verdict is not None and r.verdict.borderline]
+    asked = [(r, r.verdict) for r in rows if r.verdict is not None and r.verdict.borderline]
     if asked:
         lines.append("\nBorderline (question):")
-        for r in asked:
+        for r, v in asked:
             lines.append(f"  {r.label.topic:<12} {r.label.bid_number:<22} label {'in' if r.label.relevant else 'out'}"
-                         f"{' (unsure)' if r.label.unsure else ''}: {r.verdict.question}")
+                         f"{' (unsure)' if r.label.unsure else ''}: {v.question}")
     for r in rows:
         if r.error:
             lines.append(f"  FAILED {r.label.bid_number}: {r.error[:120]}")
