@@ -399,3 +399,52 @@ def test_match_cli_builds_no_gem_services_and_writes_json(tmp_path, monkeypatch,
     output = capsys.readouterr().out.strip()
     assert "Retirement was not assessed for this topic-filtered run." in output
     assert output.endswith("Keep the safety net: A alone missed checked labels in 0 of 1 runs.")
+
+
+class RecordingMatcher(FakeMatcher):
+    def __init__(self) -> None:
+        super().__init__(lambda topic, run, b_id: "match")
+        self.buyers: dict[int, str] = {}
+
+    async def match(self, topic, items):
+        self.buyers.update({item.b_id: item.buyer for item in items})
+        return await super().match(topic, items)
+
+
+FIRST_PAGE = ("मं ालय/रा!य का नाम/Ministry/State Name\nMinistry Of Finance\n"
+              "\x01वभाग का नाम/Department Name\nDepartment Of Economic Affairs\n"
+              "संगठन का नाम/Organisation Name\nSecurity Printing And Minting Corporation Of India Limited\n")
+
+
+async def test_a_labelled_bid_missing_from_the_bid_list_keeps_its_ministry_from_the_bid_document(tmp_path):
+    matcher = RecordingMatcher()
+    labelled, index, cache, describer, matcher, judge, searcher = evaluation_parts(
+        tmp_path, [label(1), label(2, topic="mof")], matcher)
+    cache.save(bid_files(cache, 2, [("bid.pdf", "bid_document", [FIRST_PAGE])]))
+    index.close()
+    index = BidIndex(tmp_path / "empty.sqlite")  # neither label is in the bid list: both are rebuilt from labels
+    try:
+        report = await evaluate(labelled, describer=describer, matcher=matcher, searcher=searcher, judge=judge,
+                                index=index, cache=cache, repeats=1)
+    finally:
+        index.close()
+
+    assert matcher.buyers[2].startswith("Ministry Of Finance / Department Of Economic Affairs")
+    assert report.buyer_unknown == []
+
+
+async def test_a_buyer_topic_bid_with_no_known_ministry_is_reported(tmp_path):
+    matcher = RecordingMatcher()
+    labelled, index, cache, describer, matcher, judge, searcher = evaluation_parts(
+        tmp_path, [label(1), label(2, topic="mof")], matcher)
+    index.close()
+    index = BidIndex(tmp_path / "empty.sqlite")  # bid 2's cached document has no ministry line
+    try:
+        report = await evaluate(labelled, describer=describer, matcher=matcher, searcher=searcher, judge=judge,
+                                index=index, cache=cache, repeats=1)
+    finally:
+        index.close()
+
+    assert report.buyer_unknown == [2]  # bid 1 is a subject topic: its ministry does not decide it
+    assert ("Buyer details missing for 1 buyer-topic bid (2): its buyer scores understate both ways."
+            in report_text(report))

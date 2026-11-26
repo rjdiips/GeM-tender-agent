@@ -25,6 +25,7 @@ from gem_agent.eval.labelled import Label, LabelledSet
 from gem_agent.graph.deciding import route
 from gem_agent.index.db import BidIndex, Description
 from gem_agent.index.describe import Describer
+from gem_agent.tools.gem.bid_fields import department, ministry
 from gem_agent.tools.gem.models import Bid
 from gem_agent.tools.gem.titles import is_vague_title
 
@@ -55,6 +56,7 @@ class MatchReport(BaseModel):
     scores: list[WayScore]
     retire: bool
     retirement_assessed: bool = True  # old reports assessed the full set; filtered runs opt out explicitly
+    buyer_unknown: list[int] = []  # buyer-topic bids with no ministry: their buyer scores understate both ways
 
 
 def _bid_from_label(label: Label) -> Bid:
@@ -63,8 +65,26 @@ def _bid_from_label(label: Label) -> Bid:
                bid_type=2 if "/R/" in label.bid_number else 1)
 
 
-def _bid(label: Label, index: BidIndex) -> Bid:
-    return index.get(label.b_id) or _bid_from_label(label)
+def _bid(label: Label, index: BidIndex, cache: DocCache) -> Bid:
+    """The cached listing; else one rebuilt from the label, with the ministry and department from the bid document.
+    A live search always has them, and buyer topics are decided on them."""
+    bid = index.get(label.b_id)
+    if bid is not None:
+        return bid
+    return _with_document_buyer(_bid_from_label(label), _load_files(cache, label.b_id), cache)
+
+
+def _with_document_buyer(bid: Bid, files: BidFiles | None, cache: DocCache) -> Bid:
+    document = next((f for f in files.files if f.role == "bid_document" and f.status == "ok"), None) if files else None
+    if document is None:
+        return bid
+    try:
+        pages = cache.load_text(document)
+    except Exception as exc:  # noqa: BLE001 - an unreadable document leaves the label's bid as it was
+        log.warning("bid document for %s could not be read for its buyer: %s", bid.b_id, exc)
+        return bid
+    first = pages[0].text if pages else ""
+    return bid.model_copy(update={"ministry": ministry(first), "department": department(first)})
 
 
 def _load_files(cache: DocCache, b_id: int) -> BidFiles | None:
@@ -96,7 +116,7 @@ async def describe_labelled(labelled: LabelledSet, describer: Describer, index: 
                     and row.doc_hash == doc_hash(files)):
                 return row
             try:
-                return await describer.describe(_bid(labels[b_id], index), files)
+                return await describer.describe(_bid(labels[b_id], index, cache), files)
             except Exception as exc:  # noqa: BLE001 - one failed bid must not stop the evaluation
                 log.warning("description for %s failed: %s", b_id, exc)
                 return None
@@ -216,7 +236,11 @@ async def evaluate(labelled: LabelledSet, *, describer: Describer, matcher: Matc
     selected = labelled.model_copy(update={"items": items})
     descriptions = await describe_labelled(selected, describer, index, cache)
     labels = {item.b_id: item for item in items}
-    bids = {b_id: _bid(label, index) for b_id, label in labels.items()}
+    bids = {b_id: _bid(label, index, cache) for b_id, label in labels.items()}
+    buyer_unknown = sorted(b_id for b_id, label in labels.items()
+                           if label.topic in BUYER_TOPICS and not bids[b_id].ministry)
+    if buyer_unknown:
+        log.warning("%d buyer-topic bids have no ministry: %s", len(buyer_unknown), buyer_unknown)
     files = {b_id: _load_files(cache, b_id) for b_id in bids}
     topic_classes: list[Topics] = []
     if any(item.topic not in BUYER_TOPICS for item in items):
@@ -250,7 +274,7 @@ async def evaluate(labelled: LabelledSet, *, describer: Describer, matcher: Matc
                                             descriptions=descriptions))
     retirement_assessed = topic is None
     return MatchReport(scores=scores, retire=retirement_assessed and _retirement(scores),
-                       retirement_assessed=retirement_assessed)
+                       retirement_assessed=retirement_assessed, buyer_unknown=buyer_unknown)
 
 
 def report_text(report: MatchReport) -> str:
@@ -277,5 +301,10 @@ def report_text(report: MatchReport) -> str:
         for score in missed:
             lines.append(f"  {score.way} / {score.topics} / run {score.run}")
             lines.extend(f"    {item}" for item in score.missed)
+    if report.buyer_unknown:
+        n = len(report.buyer_unknown)
+        ids = ", ".join(str(b_id) for b_id in report.buyer_unknown)
+        lines.extend(["", (f"Buyer details missing for {n} buyer-topic bid{'s' if n != 1 else ''} ({ids}): "
+                           f"{'its' if n == 1 else 'their'} buyer scores understate both ways.")])
     lines.extend(["", ending])
     return "\n".join(lines)

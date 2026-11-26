@@ -73,3 +73,46 @@ other batches completed normally. Subject-topic worst-run results:
 Version 2 therefore ties version 1 on checked and all misses, reads slightly
 more negatives (69 vs 67), and records one buyer-topic checked miss instead of
 zero. The safety net remains necessary and stays enabled.
+
+## Buyer-topic miss was a harness gap (26 Nov 2026)
+
+The version 2 buyer-topic miss was the same tender in every run: 10101986, coin
+minting machine parts for India Government Mint (Security Printing and Minting
+Corporation of India, which GeM lists under the Ministry of Finance).
+
+**Cause:** 73 labelled bids, 7 of them `mof`, are no longer in the bid cache.
+The harness rebuilt them from their labels with no ministry or department, so
+the matcher's buyer line held only the organisation name. A live search always
+has the ministry from GeM's listing. Six of the seven still matched because
+their organisation names say Income Tax or CBEC; the Mint's does not. Those
+same seven were exactly today's seven buyer-topic misses in every run, so
+today's buyer score was understated for the same reason.
+
+**Check, before the fix:**
+
+- Matched alone, 10101986 was `match` in 3 of 3 runs, with or without the ministry.
+- In the full 29-bid batch, it was missed in 3 of 3 runs as rebuilt, and in 0 of 3
+  once "Ministry Of Finance" was filled in for the seven rebuilt bids.
+
+**Fix:** a bid rebuilt from its label now takes its ministry and department from
+the cached bid document's first page (`tools/gem/bid_fields.py`). The report
+lists any buyer-topic bid still without a ministry. On the current set, all 73
+rebuilt labels get one.
+
+**Version 2, buyer topics, after the fix** (`gem-agent eval match --topic mof
+--repeats 3`):
+
+| Way | Checked misses (runs) | All misses (runs) | Negatives read (runs) |
+|---|---|---|---|
+| today | 0/0/0 | 0/0/0 | 0/5 each |
+| A | 0/0/0 | 0/0/0 | 0/5 each |
+| today or A | 0/0/0 | 0/0/0 | 0/5 each |
+
+Version 2 therefore has no buyer-topic regression. The buyer results in the
+tuning table above (v1–v5) were scored with the same gap, so they understate
+both ways. The large v2/v4 buyer swings may still be real, but they were not
+measured fairly.
+
+The fix also changes the buyer line for the 66 rebuilt subject-topic bids, so the
+subject-topic numbers above should be re-scored before they are compared with
+later versions.
