@@ -1,0 +1,39 @@
+{
+ "text": "anti money laundering software tenders published in the last 2 weeks",
+ "topics": [
+  {
+   "user_text": "anti money laundering software tenders published in the last 2 weeks",
+   "meaning": "Anti-Money Laundering Software: software that helps financial institutions detect, monitor, and report suspicious transactions to comply with AML regulations",
+   "domain": "banking",
+   "match_terms": [
+    "anti money laundering",
+    "AML",
+    "anti-money laundering",
+    "AML software",
+    "transaction monitoring",
+    "suspicious activity reporting",
+    "KYC",
+    "customer due diligence",
+    "sanctions screening",
+    "financial crime prevention"
+   ],
+   "acronyms": {
+    "AML": "Anti-Money Laundering"
+   },
+   "related_but_not_enough": [
+    "compliance management system",
+    "fraud detection software",
+    "know your customer software",
+    "financial crime compliance"
+   ],
+   "not_this": [
+    "money laundering prevention laws",
+    "financial intelligence unit",
+    "pmla"
+   ],
+   "buyers": [],
+   "chosen_because": "the only plausible meaning",
+   "other_meanings_searched": []
+  }
+ ]
+}

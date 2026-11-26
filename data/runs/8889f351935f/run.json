@@ -1,0 +1,73 @@
+{
+ "run_id": "8889f351935f",
+ "user": "review",
+ "title": "core banking tenders closing in the next 7 days",
+ "request_text": "core banking tenders closing in the next 7 days",
+ "created": "2026-11-23T13:55:43.536629",
+ "status": "stopped",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "core banking tenders closing in the next 7 days",
+  "topics": [
+   {
+    "user_text": "core banking tenders closing in the next 7 days",
+    "meaning": "Core Banking Solution: software that manages a bank's daily banking transactions, processing, and other banking activities",
+    "domain": "banking",
+    "match_terms": [
+     "core banking solution",
+     "core banking system",
+     "CBS",
+     "core banking",
+     "internet banking",
+     "mobile banking",
+     "retail banking software",
+     "banking application"
+    ],
+    "acronyms": {
+     "CBS": "Core Banking Solution"
+    },
+    "related_but_not_enough": [
+     "loan management system",
+     "payment gateway",
+     "customer relationship management",
+     "ATM software"
+    ],
+    "not_this": [
+     "core banking infrastructure",
+     "core network"
+    ],
+    "buyers": [],
+    "chosen_because": "The user's previous history of searching for 'anti money laundering software' indicates a preference for financial software solutions, and the high plausibility score (0.95) combined with relevant tender titles confirms that 'Core Banking Solution' is the intended meaning.",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": null,
+   "published_to": null,
+   "closing_from": "2026-11-23T13:55:35.849888",
+   "closing_to": "2026-11-30T23:59:59"
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": 10
+ },
+ "probes": [
+  {
+   "meaning": "Core Banking Solution: software that manages a bank's daily banking transactions, processing, and other banking activities",
+   "window_count": 44793,
+   "strong": 547,
+   "top_titles": [
+    "Attending to break down calls,Replacement lightening arrestor,Replacement of faulty 11KV outdoor ca",
+    "Specification for Asphalt Base with Acrylic synthetic surface on asphalt on asphalt base 8 layers s",
+    "4MP IP OUTDOOR HEAVY DUTY BULLET CAMERA,4MP IP INDOOR DOME CAMERA,64 CHANNEL ENTERPRISE NETWORK VID",
+    "LED Luminaire For Road And Street Lights Conforming To IS 10322 (Part 5/Section 3) (V3),Self Ballas",
+    "PVC Insulated Copper Cable Single Core and Multi Core Circular Sheathed with Flexible Conductor (V2",
+    "Check for leakage /seepage work,Repair/replace temperature and humidity meter,Internal and external",
+    "PROCUREMENT DIGGING LAYING AND COMPLETE INSTALLATION OF 10 KM 48 CORE UNARMOURED OFC AT AF STATION ",
+    "24 port fiberport layer3 core switch,08 port layer 2 fully managed switch 2SFP Port,10G Base SR Fib"
+   ]
+  }
+ ],
+ "error": ""
+}

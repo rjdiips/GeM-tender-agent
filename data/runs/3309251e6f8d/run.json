@@ -1,0 +1,76 @@
+{
+ "run_id": "3309251e6f8d",
+ "user": "review",
+ "title": "anti money laundering software tenders published in the last 2 weeks",
+ "request_text": "anti money laundering software tenders published in the last 2 weeks",
+ "created": "2026-11-23T13:51:25.967313",
+ "status": "stopped",
+ "parent_run_id": null,
+ "request": {
+  "intent": "search",
+  "user_text": "anti money laundering software tenders published in the last 2 weeks",
+  "topics": [
+   {
+    "user_text": "anti money laundering software tenders published in the last 2 weeks",
+    "meaning": "Anti-Money Laundering Software: software that helps financial institutions detect, monitor, and report suspicious transactions to comply with AML regulations",
+    "domain": "banking",
+    "match_terms": [
+     "anti money laundering",
+     "AML",
+     "anti-money laundering",
+     "AML software",
+     "transaction monitoring",
+     "suspicious activity reporting",
+     "KYC",
+     "customer due diligence",
+     "sanctions screening",
+     "financial crime prevention"
+    ],
+    "acronyms": {
+     "AML": "Anti-Money Laundering"
+    },
+    "related_but_not_enough": [
+     "compliance management system",
+     "fraud detection software",
+     "know your customer software",
+     "financial crime compliance"
+    ],
+    "not_this": [
+     "money laundering prevention laws",
+     "financial intelligence unit",
+     "pmla"
+    ],
+    "buyers": [],
+    "chosen_because": "the only plausible meaning",
+    "other_meanings_searched": []
+   }
+  ],
+  "window": {
+   "published_from": "2026-11-09T00:00:00",
+   "published_to": "2026-11-23T13:51:22.872376",
+   "closing_from": "2026-11-23T13:51:22.872376",
+   "closing_to": null
+  },
+  "buyer_hints": [],
+  "buyer_only": false,
+  "limit": null
+ },
+ "probes": [
+  {
+   "meaning": "Anti-Money Laundering Software: software that helps financial institutions detect, monitor, and report suspicious transactions to comply with AML regulations",
+   "window_count": 44794,
+   "strong": 309,
+   "top_titles": [
+    "Ondansetron Syp 2 mgOBLIQUE5ml in bott of 30 ml,Iron drops PaediatricPOINT Each ml contains Ferrous",
+    "Truck Mounted Fog Cannon / Anti Smog Gun / Dust Suppression System (V2)",
+    "ANTI MISSILE SCREEN (STRUCTURAL),ANTI ANE POST (STRUCTURAL),STORE SHELTER (STRUCTURAL)",
+    "20OD 1 point 5T UPVC SEAMLESS STRAIGHT PIPE,50OD 3 point 7T UPVC SEAMLESS STRAIGHT PIPE,32OD 2 poin",
+    "SS316L SEAMLESS PIPES 2 INCH SCH 10 (2.77 mm WT)",
+    "Picrorhiza Kurroa Kutki Plants,Ashwagandha,Tulsi,Alovera,Lemon Grass,Brahmi,Bhringraj,Kalabama,Peep",
+    "Repair, Maintenance, and Installation of Plant/ Systems/Equipments (Version 2) - Maintenance Works ",
+    "DROP BOTROCLOT,TAB AMLODIPINE 5 MG,TAB CIPROFLOXACIN 500 MG,TAB DOLO 650 MG,TAB LIMCEE 500 mg,TAB A"
+   ]
+  }
+ ],
+ "error": ""
+}

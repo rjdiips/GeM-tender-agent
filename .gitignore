@@ -28,8 +28,10 @@ web/dist/
 # --- Runtime data (indexes, caches, checkpoints, logs: ~GBs) ---
 data/*
 !data/.gitkeep
-# Run history stays local
-data/runs/
+# Run history is tracked so another app host shows the same conversations and results;
+# the checkpoint db and lock files stay out (the *.sqlite and *.lock rules below).
+!data/runs/
+!data/runs/**
 *.log
 *.sqlite
 *.sqlite-shm
@@ -38,11 +40,7 @@ data/runs/
 *.lock
 *.tmp
 
-# --- Per-user / generated knowledge ---
-knowledge/users/*
-!knowledge/users/.gitkeep
-knowledge/topics/*
-!knowledge/topics/.gitkeep
+# --- Per-user / generated knowledge: tracked, like run history ---
 
 # --- Docs (kept local, not in git) ---
 # docs/

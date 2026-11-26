@@ -1,0 +1,36 @@
+{
+ "text": "core banking tenders closing in the next 7 days",
+ "topics": [
+  {
+   "user_text": "core banking tenders closing in the next 7 days",
+   "meaning": "Core Banking Solution: software that manages a bank's daily banking transactions, processing, and other banking activities",
+   "domain": "banking",
+   "match_terms": [
+    "core banking solution",
+    "core banking system",
+    "CBS",
+    "core banking",
+    "internet banking",
+    "mobile banking",
+    "retail banking software",
+    "banking application"
+   ],
+   "acronyms": {
+    "CBS": "Core Banking Solution"
+   },
+   "related_but_not_enough": [
+    "loan management system",
+    "payment gateway",
+    "customer relationship management",
+    "ATM software"
+   ],
+   "not_this": [
+    "core banking infrastructure",
+    "core network"
+   ],
+   "buyers": [],
+   "chosen_because": "The user's previous history of searching for 'anti money laundering software' indicates a preference for financial software solutions, and the high plausibility score (0.95) combined with relevant tender titles confirms that 'Core Banking Solution' is the intended meaning.",
+   "other_meanings_searched": []
+  }
+ ]
+}
