@@ -6,7 +6,7 @@ model can only pick values that exist; validation would reject anything else and
 """
 from __future__ import annotations
 
-from typing import Literal, Protocol
+from typing import Literal, Protocol, cast
 
 from pydantic import BaseModel, Field, create_model
 from pydantic_ai import Agent, NativeOutput
@@ -34,16 +34,27 @@ class Lookups(Protocol):
     def departments(self, hints: list[str], k: int = 30) -> list[str]: ...
 
 
+class _PlanOut(Protocol):
+    """What plan_output_model's create_model output carries; the fields mirror its field list."""
+    ministries: list[str]
+    departments: list[str]
+    categories: list[str]
+    bid_types: list[int]
+    extra_terms: list[str]
+    reasons: str
+
+
 def _choice(values: list[str]) -> object:
     return Literal[tuple(values or [NONE])]  # type: ignore[valid-type]
 
 
 def plan_output_model(ministries: list[str], departments: list[str], categories: list[str]) -> type[BaseModel]:
+    # all fields required: see schemas.KeyFacts
     return create_model(
         "PlanOutput",
-        ministries=(list[_choice(ministries)], ...),  # all required: see schemas.KeyFacts
-        departments=(list[_choice(departments)], ...),
-        categories=(list[_choice(categories)], Field(max_length=5)),
+        ministries=(list[_choice(ministries)], ...),  # pyright: ignore[reportInvalidTypeForm]  # dynamic Literal built at runtime
+        departments=(list[_choice(departments)], ...),  # pyright: ignore[reportInvalidTypeForm]  # dynamic Literal built at runtime
+        categories=(list[_choice(categories)], Field(max_length=5)),  # pyright: ignore[reportInvalidTypeForm]  # dynamic Literal built at runtime
         bid_types=(list[Literal[1, 2, 5]], ...),
         extra_terms=(list[str], Field(max_length=8)),
         reasons=(str, ...),
@@ -77,7 +88,8 @@ class Planner:
                          + "\n".join(f"- {m}" for m in ministries) + "\n</ministries>")
         if note:
             lines.append(f"\nNote: {note}")
-        out = (await agent.run("\n".join(lines), model_settings={"max_tokens": 500, "temperature": 0.0})).output
+        out: _PlanOut = cast(_PlanOut, (await agent.run("\n".join(lines),
+                                                        model_settings={"max_tokens": 500, "temperature": 0.0})).output)
         def pick(values: list[str]) -> list[str]:
             return [v for v in values if v != NONE]
 

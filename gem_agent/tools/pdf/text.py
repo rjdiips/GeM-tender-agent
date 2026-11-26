@@ -36,8 +36,10 @@ def extract_pdf(pdf: bytes, ocr: OcrFn | None, min_chars: int = MIN_TEXT_CHARS) 
         return []
     pages = []
     try:
-        for i, page in enumerate(doc):
-            text = page.get_text()
+        for i in range(doc.page_count):
+            page = doc[i]
+            # what get_text() does for the "text" option, spelled with the typed calls it wraps
+            text = page.get_textpage(flags=pymupdf.TEXTFLAGS_TEXT).extractText()
             if text_chars(text) >= min_chars:
                 pages.append(PageText(page=i + 1, text=text, method="text"))
             elif ocr is not None:
