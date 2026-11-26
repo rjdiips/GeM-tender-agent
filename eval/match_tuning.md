@@ -116,3 +116,28 @@ measured fairly.
 The fix also changes the buyer line for the 66 rebuilt subject-topic bids, so the
 subject-topic numbers above should be re-scored before they are compared with
 later versions.
+
+## Version 2 baseline with the fixed harness (26 Nov 2026)
+
+`gem-agent eval match --repeats 3`, all topics. This is the baseline for the next
+tuning round.
+
+| Way (subject topics) | Checked misses (runs; worst) | All misses (runs; worst) | Negatives read (runs; worst) | Model calls per run |
+|---|---|---|---|---|
+| today | 4/3/4; **4** | 11/10/11; **11** | 26/22/20; **26/354** | 99–119 |
+| A | 1/1/1; **1** | 7/6/6; **7** | 113/73/111; **113/354** | 15 |
+| today or A | 1/1/1; **1** | 5/5/5; **5** | 124/79/116; **124/354** | 114–134 |
+
+Buyer topics: 0 checked and 0 all misses for every way in every run.
+
+- **The one checked miss** in every run, for both A and today-or-A, is
+  `ai:10085999`: AI vision analytics (PPE, boulder and ore detection) for NMDC.
+- **Today-or-A's five misses are all on the AI topic,** all of the AI-on-CCTV
+  or AI-server kind whose definition the spec says must be reconciled with its
+  labels.
+- **No banking topic is missed** by today-or-A in any run.
+- **A reads more non-matches** than in the earlier version 2 scoring (worst 113
+  vs 69). The ministry and department in the buyer line are the only input that
+  changed.
+
+Retirement: not met. A alone missed one checked label in 3 of 3 runs.
